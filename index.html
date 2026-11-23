@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PajamasDog — Cozy pajamas for dogs &amp; cats</title>
+<title>PajamasDog — See your pet in pajamas</title>
 <meta name="description" content="Pajamas, clothes, beds, toys and gear for dogs and cats in one place. PajamasDog.">
 <link rel="icon" href="/favicon.ico?v=3" sizes="48x48">
 <link rel="icon" type="image/png" sizes="192x192" href="/img/icon-192.png?v=3">
@@ -45,6 +45,14 @@ header nav{display:flex;gap:18px;font-size:15px}
 .cats-row a:first-child{background:var(--pink)}
 .cats-row a span{font-size:26px;line-height:1}
 .tag img.plg{height:14px;display:block}
+.kicker{display:inline-block;font-size:13px;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);margin-bottom:10px}
+.btn.big{font-size:19px;padding:16px 30px;cursor:pointer}
+.btn.big span{font-size:22px;margin-right:8px;vertical-align:-2px}
+.hero .privacy{font-size:12px;opacity:.7;margin-top:10px}
+.cats-row.under{padding:0 16px;margin-top:0}
+.cats-row.under a{background:var(--card)}
+.cats-row.under a:first-child{background:var(--card)}
+@media(max-width:600px){.hero .btn{display:block;text-align:center;margin:12px 0 0}.hero .btn.ghost{margin-left:0}}
 .btn.pet span{font-size:22px;margin-right:8px;vertical-align:-2px}
 .btn.ghost{background:rgba(255,255,255,.16);box-shadow:none;animation:none;margin-left:8px;backdrop-filter:blur(6px)}
 .btn{display:inline-block;margin-top:18px;padding:14px 30px;border-radius:999px;background:var(--pink);color:#fff;font-weight:600;font-size:17px;box-shadow:0 6px 18px rgba(255,61,127,.45);animation:pump 3s ease-in-out infinite}
@@ -108,10 +116,19 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
   <div class="sparkle" id="sparkle" aria-hidden="true"></div>
   <div class="snow" id="snow" aria-hidden="true"></div>
   <div class="txt">
-    <h1>Wrap them in <b>warmth</b><br>this winter.</h1>
-    <p>Cozy pajamas for little dogs &amp; cats.</p>
-    <div class="cats-row"><a href="#shop" data-go="dogs"><span>🐶</span>Dogs</a><a href="#shop" data-go="cats"><span>🐱</span>Cats</a><a href="#shop" data-go="pajamas"><span>👕</span>Pajamas</a><a href="#shop" data-go="hat"><span>🧶</span>Hats</a><a href="#shop" data-go="tie"><span>🎀</span>Bow ties</a><a href="#shop" data-go="bell"><span>🔔</span>Bells</a><a href="#shop" data-go="leash"><span>🦮</span>Leashes</a><a href="#shop" data-go="bowl"><span>🥣</span>Bowls</a><a href="#shop" data-go="food"><span>🍖</span>Food</a><a href="#shop" data-go="treat"><span>🦴</span>Treats</a><a href="#shop" data-go="chew"><span>🪥</span>Chews</a></div>
+    <span class="kicker">✨ Try-on · free</span>
+    <h1>See <b>your pet</b><br>in pajamas.</h1>
+    <p>Add one photo. Swipe 30+ cozy looks. Shop the one you love.</p>
+    <label class="btn big" for="heroPhoto"><span>📷</span>Add your pet's photo</label>
+    <input type="file" accept="image/*" id="heroPhoto" hidden>
+    <a class="btn ghost" href="#pajamas">Just browse</a>
+    <p class="privacy">Your photo stays on your phone.</p>
+
   </div>
+</div>
+
+<div class="sec" style="padding-top:18px">
+  <div class="cats-row under"><a href="#shop" data-go="dogs"><span>🐶</span>Dogs</a><a href="#shop" data-go="cats"><span>🐱</span>Cats</a><a href="#shop" data-go="pajamas"><span>👕</span>Pajamas</a><a href="#shop" data-go="hat"><span>🧶</span>Hats</a><a href="#shop" data-go="tie"><span>🎀</span>Bow ties</a><a href="#shop" data-go="bell"><span>🔔</span>Bells</a><a href="#shop" data-go="leash"><span>🦮</span>Leashes</a><a href="#shop" data-go="bowl"><span>🥣</span>Bowls</a><a href="#shop" data-go="food"><span>🍖</span>Food</a><a href="#shop" data-go="treat"><span>🦴</span>Treats</a><a href="#shop" data-go="chew"><span>🪥</span>Chews</a></div>
 </div>
 
 <div class="sec win" id="pajamas">
@@ -244,6 +261,20 @@ async function fillRows(){
     tile('','img/p/leash_jack.webp','Walk buddies','Coming soon');
 }
 fillRows();
+
+// ---- Hero try-on: pick a photo here, carry it to the try-on page ----
+document.getElementById('heroPhoto')?.addEventListener('change', e => {
+  const f = e.target.files[0]; if(!f) return;
+  const img = new Image();
+  img.onload = () => {
+    const k = Math.min(1, 1400 / Math.max(img.width, img.height));
+    const c = document.createElement('canvas'); c.width = img.width*k; c.height = img.height*k;
+    c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+    try { sessionStorage.setItem('pd:photo', c.toDataURL('image/jpeg', .86)); } catch(err){}
+    location.href = 'tryon.html?from=home';
+  };
+  img.src = URL.createObjectURL(f);
+});
 
 // ---- Hero: gentle snowfall (near flakes bigger/faster, far flakes small/blurred) ----
 (function(){
