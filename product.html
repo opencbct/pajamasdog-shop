@@ -20,6 +20,8 @@
 .ship{font-size:13px;opacity:.6;margin:10px 0 18px}
 .acts{display:grid;gap:10px}
 @media(min-width:768px){main.two{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}.info{padding-top:8px}}
+.price{font-size:26px;font-weight:300;margin:6px 0 10px}.price small{font-size:13px;opacity:.65;margin-left:6px}
+.sizes{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
 </style>
 <link rel="stylesheet" href="logo-motion.css">
 </head>
@@ -49,12 +51,18 @@
     <div class="info">
       <h1>${p.name}</h1>
       <p>${p.note||''}</p>
-      <div class="ship">${live ? `Sold, shipped and returned by ${shop}.` : 'Coming soon.'}${p.look && !look && !tried ? ' Photo shows a similar style.' : ''}</div>
+      ${p.src==='pd' ? `<div class="price">$${p.price.toFixed(2)} <small>Free US shipping · 7–12 days</small></div>
+      <div class="sizes">${(p.sizes||[]).map((z,i)=>`<button class="chip${i===1?' on':''}" data-z="${z}">${z}</button>`).join('')}</div>` : ''}
+      <div class="ship">${p.src==='pd' ? 'Sold by PajamasDog.' : live ? `Sold, shipped and returned by ${shop}.` : 'Coming soon.'}${p.look && !look && !tried ? ' Photo shows a similar style.' : ''}</div>
       <div class="acts">
-        ${live ? `<a class="btn" href="${linkOf(p)}" rel="sponsored noopener" target="_blank">See it on ${shop}</a>` : ''}
+        ${p.src==='pd' ? `<button class="btn" id="buy">${CHECKOUT_API ? 'Buy now' : 'Checkout opens soon'}</button>`
+          : live ? `<a class="btn" href="${linkOf(p)}" rel="sponsored noopener" target="_blank">See it on ${shop}</a>` : ''}
         ${p.cat==='pajamas' ? `<a class="btn ghost" href="tryon.html?id=${encodeURIComponent(p.id)}">Try it on my pet</a>` : ''}
       </div>
     </div>`;
+  main.querySelector('.sizes')?.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return;
+    main.querySelectorAll('.sizes .chip').forEach(c => c.classList.toggle('on', c===b)); });
+  main.querySelector('#buy')?.addEventListener('click', () => payDirect([{id:p.id, size:main.querySelector('.sizes .on')?.dataset.z}]));
 })();
 </script>
 </body>

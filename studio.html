@@ -417,9 +417,14 @@ function cart(){
     keys.map(k => { const items = groups[k], name = (SOURCES[k]||{}).label || k;
       if(k==='amazon'){ const q = items.map((p,i) => `ASIN.${i+1}=${p.asin}&Quantity.${i+1}=1`).join('&');
         return `<a class="btn" href="https://www.amazon.com/gp/aws/cart/add.html?${q}${AMAZON_TAG?`&AssociateTag=${AMAZON_TAG}`:''}" target="_blank" rel="sponsored noopener">Add ${items.length>1?'all '+items.length:'it'} to Amazon cart</a>`; }
+      if(k==='pd'){ const t = items.reduce((a,p)=>a+p.price,0);
+        return `<div class="shopgrp"><b>PajamasDog · ${items.length} item${items.length>1?'s':''} · free US shipping</b><button class="btn" id="payPd">${CHECKOUT_API ? 'Pay $'+t.toFixed(2)+' · one checkout' : 'Checkout opens soon · $'+t.toFixed(2)}</button></div>`; }
       return `<div class="shopgrp"><b>${name} · ${items.length} item${items.length>1?'s':''}</b>${items.map(p => `<a class="btn ghost" href="${linkOf(p)}" target="_blank" rel="sponsored noopener">Buy ${p.name} on ${name}</a>`).join('')}</div>`;
     }).join('');
 }
+$('checkouts').addEventListener('click', e => { if(!e.target.closest('#payPd')) return;
+  payDirect(Object.values(worn).filter(p => p && p.src==='pd').map(p => ({id:p.id, size:sizeOf()})));
+});
 $('lines').addEventListener('click', e => {
   const x = e.target.closest('.x'); if(x){ delete worn[x.dataset.k]; if(openAlt===x.dataset.k) openAlt=null; return update(); }
   const ab = e.target.closest('.alt-b'); if(ab){ openAlt = openAlt===ab.dataset.k ? null : ab.dataset.k; return cart(); }

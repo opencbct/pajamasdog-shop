@@ -9,7 +9,7 @@ const DEMO = new URLSearchParams(location.search).has('demo'); // repeat samples
 // Add a shop here + its products in the feed; nothing else changes.
 // Amazon tracking ID for pajamasdog.com (create it in Amazon Associates, then put it here).
 const AMAZON_TAG = 'pajamasdog-20';
-const linkOf = p => p.asin ? `https://www.amazon.com/dp/${p.asin}${AMAZON_TAG?`?tag=${AMAZON_TAG}`:''}` : (p.url||'#');
+const linkOf = p => p.src==='pd' ? `product.html?id=${encodeURIComponent(p.id)}` : p.asin ? `https://www.amazon.com/dp/${p.asin}${AMAZON_TAG?`?tag=${AMAZON_TAG}`:''}` : (p.url||'#');
 // Partner shop doors (hero chips). Put each affiliate ID here once approved;
 // until then the links still work, they just earn nothing.
 const PARTNER_IDS = { coupang:'', naver:'', cj:'' };
@@ -19,11 +19,17 @@ const PARTNER_LINKS = {
   naver:   q => `https://search.shopping.naver.com/search/all?query=${encodeURIComponent(q)}`,
   cj:      q => `https://cjdropshipping.com/search/${encodeURIComponent(q)}.html`,
 };
+// Our checkout server (Stripe + CJ order, AWS Lambda). Empty = not open yet.
+const CHECKOUT_API = '';
+const PREVIEW = (() => { try { if(new URLSearchParams(location.search).has('preview')) sessionStorage.setItem('pd:preview','1'); return !!sessionStorage.getItem('pd:preview'); } catch(e){ return false; } })();
 const SOURCES = {
   amazon:  {label:'Amazon',  regions:['US']},       // tracking tag goes in each product url
   coupang: {label:'Coupang', regions:['KR']},
   naver:   {label:'Naver',   regions:['KR']},
   cj:      {label:'CJ',      regions:['GLOBAL','US','KR']},
+  // Our own products (we are the seller, CJ ships). US only for now.
+  // Hidden on the live site until CHECKOUT_API is set; add ?preview to see them.
+  pd:      {label:'PajamasDog', regions:(CHECKOUT_API || PREVIEW) ? ['US'] : []},
   sample:  {label:'Soon',    regions:['GLOBAL','US','KR']},
 };
 // Visitor region from the browser clock + language (no tracking, no IP lookup).
@@ -89,3 +95,11 @@ async function tryOn(photoFile, product, pose='sit'){
   document.addEventListener('DOMContentLoaded', () => watch());
   new MutationObserver(() => watch()).observe(document.documentElement, {childList:true, subtree:true});
 })();
+
+// Pay for our own (pd) items. The server sets every price; the browser only sends ids + sizes.
+async function payDirect(lines, wrap='none', gift=null){
+  if(!CHECKOUT_API){ alert('Checkout opens soon.'); return; }
+  const r = await fetch(CHECKOUT_API.replace(/\/$/,'')+'/checkout', {method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({items: lines.map(l => ({id:l.id, size:l.size||'', qty:1})), wrap, gift})});
+  const j = await r.json(); if(j.url) location.href = j.url; else alert(j.error || 'Checkout failed. Please try again.');
+}

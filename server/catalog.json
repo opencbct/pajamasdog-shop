@@ -1,14 +1,250 @@
 {
-  "_note": "PajamasDog direct products (we are the seller). Prices live ONLY here on the server; the browser never sets a price. cj_vid = CJ Dropshipping variant id. Fill after picking winners on CJ. TEST items must be removed before going live.",
-  "currency": "usd",
-  "items": {
-    "pd-test-pj": {"name": "TEST · Cozy fleece pajama", "price": 1999, "cj_vid": "", "sizes": ["XS","S","M","L","XL"], "test": true}
+ "_note": "PajamasDog direct products (we are the seller). Prices live ONLY here on the server; the browser never sets a price. cj_vid = CJ Dropshipping variant id. Fill after picking winners on CJ. TEST items must be removed before going live.",
+ "currency": "usd",
+ "items": {
+  "pd-test-pj": {
+   "name": "TEST \u00b7 Cozy fleece pajama",
+   "price": 1999,
+   "cj_vid": "",
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "test": true
   },
-  "wraps": {
-    "none":    {"name": "No gift wrap", "price": 0},
-    "simple":  {"name": "Gift bag + tissue", "price": 299},
-    "festive": {"name": "Holiday box + ribbon", "price": 599},
-    "luxury":  {"name": "Luxury box, ribbon + printed photo card", "price": 999}
+  "pd-01": {
+   "name": "Rubber duck satin pajama",
+   "price": 2699,
+   "cj_pid": "1444222714729598976",
+   "variants": {
+    "Blue-XS": "1444222714788319232",
+    "Blue-S": "1444222714796707840",
+    "Blue-M": "1444222714809290752",
+    "Blue-L": "1444222714817679360",
+    "Blue-XL": "1444222714826067968",
+    "Blue-XXL": "1444222714834456576",
+    "Blue-XXXL": "1444222714842845184"
+   },
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL",
+    "XXXL"
+   ]
   },
-  "shipping": {"US": 0, "default": 799}
+  "pd-04": {
+   "name": "Plush animal-print pajama",
+   "price": 2599,
+   "cj_pid": "1498178745700323328",
+   "variants": {
+    "Milk-S": "1498178745767432192",
+    "Milk-M": "1498178745767432193",
+    "Milk-L": "1498178745771626496",
+    "Milk-XL": "1498178745771626497",
+    "Milk-2XL": "1498178745771626498",
+    "Milk-3XL": "1498178745775820800",
+    "Pink beauty-S": "1498178745775820801",
+    "Pink beauty-M": "1498178745780015104",
+    "Pink beauty-2XL": "1498178745780015105",
+    "Red cow-S": "1498178745780015106",
+    "Red cow-L": "1498178745784209408",
+    "Red cow-XL": "1498178745784209409",
+    "Red cow-2XL": "1498178745784209410",
+    "Red cow-3XL": "1498178745788403712",
+    "Dark green cow-S": "1498178745788403713",
+    "Dark green cow-M": "1498178745792598016",
+    "Dark green cow-L": "1498178745792598017",
+    "Dark green cow-XL": "1498178745792598018",
+    "Dark green cow-2XL": "1498178745796792320",
+    "Dark green cow-3XL": "1498178745796792321"
+   },
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ]
+  },
+  "pd-06": {
+   "name": "Coral fleece dog bathrobe",
+   "price": 3699,
+   "cj_pid": "1462688813464817664",
+   "variants": {
+    "Yellow-XS": "1462688813552898048",
+    "Yellow-S": "1462688813557092352",
+    "Yellow-M": "1462688813557092353",
+    "Yellow-L": "1462688813561286656",
+    "Yellow-XL": "1462688813561286657",
+    "Yellow-2XL": "1462688813561286658"
+   },
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ]
+  },
+  "pd-07": {
+   "name": "Teddy bear winter pajama",
+   "price": 2799,
+   "cj_pid": "1456563130837635072",
+   "variants": {
+    "Bear style-XS": "1456563130929909760",
+    "Bear style-S": "1456563130934104064",
+    "Bear style-M": "1456563130934104065",
+    "Bear style-L": "1456563130938298368",
+    "Bear style-XL": "1456563130938298369",
+    "Bear style-2XL": "1456563130938298370",
+    "Bear style-3XL": "1456563130942492672",
+    "Middle Cow Point-XS": "1456563130942492673",
+    "Middle Cow Point-S": "1456563130942492674",
+    "Middle Cow Point-M": "1456563130942492675",
+    "Middle Cow Point-L": "1456563130946686976",
+    "Middle Cow Point-XL": "1456563130946686977",
+    "Middle Cow Point-2XL": "1456563130946686978",
+    "Middle Cow Point-3XL": "1456563130946686979",
+    "Duckling-XS": "1456563130950881280",
+    "Duckling-S": "1456563130950881281",
+    "Duckling-M": "1456563130950881282",
+    "Duckling-L": "1456563130955075584",
+    "Duckling-XL": "1456563130955075585",
+    "Duckling-2XL": "1456563130955075586",
+    "Duckling-3XL": "1456563130955075587"
+   },
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ]
+  },
+  "pd-12": {
+   "name": "Camo hooded snow suit",
+   "price": 2299,
+   "cj_pid": "1379728405527924736",
+   "variants": {
+    "Camouflage green-S": "1379728406945599488",
+    "Camouflage green-M": "1379728407008514048",
+    "Camouflage green-L": "1379728407071428608",
+    "Camouflage green-XL": "1379728407130148864",
+    "Camouflage green-2XL": "1379728407193063424",
+    "Camouflage blue-S": "1379728407255977984",
+    "Camouflage blue-M": "1379728407314698240",
+    "Camouflage blue-L": "1379728407386001408",
+    "Camouflage blue-XL": "1379728407453110272",
+    "Camouflage blue-2XL": "1379728407520219136",
+    "Camouflage orange-S": "1379728407587328000",
+    "Camouflage orange-M": "1379728407654436864",
+    "Camouflage orange-L": "1379728407721545728",
+    "Camouflage orange-XL": "1379728407780265984",
+    "Camouflage orange-2XL": "1379728407843180544"
+   },
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ]
+  },
+  "pd-19": {
+   "name": "Penguin plush onesie",
+   "price": 1999,
+   "cj_pid": "1576125363036631040",
+   "variants": {
+    "Grey penguin-S": "1576125363065991168",
+    "Grey penguin-M": "1576125363065991169",
+    "Grey penguin-L": "1576125363070185472",
+    "Grey penguin-XL": "1576125363070185473",
+    "Grey ladybird-S": "1576125363070185474",
+    "Grey ladybird-M": "1576125363074379776",
+    "Grey ladybird-L": "1576125363074379777",
+    "Grey ladybird-XL": "1576125363074379778"
+   },
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ]
+  },
+  "pd-20": {
+   "name": "Candy bear PJ set + hat",
+   "price": 2199,
+   "cj_pid": "1444925381252616192",
+   "variants": {
+    "Blue-S-Suit with hat": "1444925381323919360",
+    "Blue-M-Suit with hat": "1444925381336502272",
+    "Blue-L-Suit with hat": "1444925381353279488",
+    "Blue-XL-Suit with hat": "1444925381365862400",
+    "Blue-2XL-Suit with hat": "1444925381382639616"
+   },
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ]
+  },
+  "pd-23": {
+   "name": "Plaid quilted cloak",
+   "price": 3299,
+   "cj_pid": "1452893259000057856",
+   "variants": {
+    "Pink-S": "1452893259075555328",
+    "Pink-M": "1452893259079749632",
+    "Pink-L": "1452893259079749633",
+    "Pink-XL": "1452893259079749634",
+    "Pink-2XL": "1452893259079749635",
+    "Blue-S": "1452893259083943936",
+    "Blue-M": "1452893259083943937",
+    "Blue-L": "1452893259083943938",
+    "Blue-XL": "1452893259083943939",
+    "Blue-2XL": "1452893259088138240"
+   },
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ]
+  }
+ },
+ "wraps": {
+  "none": {
+   "name": "No gift wrap",
+   "price": 0
+  },
+  "simple": {
+   "name": "Gift bag + tissue",
+   "price": 299
+  },
+  "festive": {
+   "name": "Holiday box + ribbon",
+   "price": 599
+  },
+  "luxury": {
+   "name": "Luxury box, ribbon + printed photo card",
+   "price": 999
+  }
+ },
+ "shipping": {
+  "US": 0,
+  "default": 799
+ }
 }

@@ -1,5 +1,147 @@
 [
  {
+  "id": "pd-01",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Rubber duck satin pajama",
+  "note": "Blue satin · button front · XS–3XL",
+  "color": "#2a5bd7",
+  "img": "img/cj/pd01.webp",
+  "price": 26.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL",
+   "XXXL"
+  ]
+ },
+ {
+  "id": "pd-04",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Plush animal-print pajama",
+  "note": "Cow, tiger or pink · soft plush · S–3XL",
+  "color": "#e9e4dc",
+  "img": "img/cj/pd04.webp",
+  "price": 25.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL"
+  ]
+ },
+ {
+  "id": "pd-06",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Coral fleece dog bathrobe",
+  "note": "Yellow · after-bath robe · big dogs too",
+  "color": "#f2d64b",
+  "img": "img/cj/pd06.webp",
+  "price": 36.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ]
+ },
+ {
+  "id": "pd-07",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Teddy bear winter pajama",
+  "note": "Bear or cow print · fleece lined · XS–3XL",
+  "color": "#f4efe6",
+  "img": "img/cj/pd07.webp",
+  "price": 27.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL"
+  ]
+ },
+ {
+  "id": "pd-12",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Camo hooded snow suit",
+  "note": "Green, blue or orange camo · 4 legs · S–2XL",
+  "color": "#4b5a3c",
+  "img": "img/cj/pd12.webp",
+  "price": 22.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ]
+ },
+ {
+  "id": "pd-19",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Penguin plush onesie",
+  "note": "Grey · penguin or ladybird · S–XL",
+  "color": "#5a5a66",
+  "img": "img/cj/pd19.webp",
+  "price": 19.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
+ },
+ {
+  "id": "pd-20",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Candy bear PJ set + hat",
+  "note": "Blue cotton set with sleep cap · S–2XL",
+  "color": "#2747b8",
+  "img": "img/cj/pd20.webp",
+  "price": 21.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ]
+ },
+ {
+  "id": "pd-23",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Plaid quilted cloak",
+  "note": "Pink or blue · bear-ear hood · S–2XL",
+  "color": "#f1c7d4",
+  "img": "img/cj/pd23.webp",
+  "price": 32.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "pet": "cat"
+ },
+ {
   "id": "a-B0FGCJ1S7K",
   "src": "amazon",
   "cat": "pajamas",
