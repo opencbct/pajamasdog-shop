@@ -16,6 +16,9 @@
    "XL",
    "XXL",
    "XXXL"
+  ],
+  "colors": [
+   "Blue"
   ]
  },
  {
@@ -34,6 +37,12 @@
    "XL",
    "2XL",
    "3XL"
+  ],
+  "colors": [
+   "Cow",
+   "Pink",
+   "Red cow",
+   "Green cow"
   ]
  },
  {
@@ -52,6 +61,9 @@
    "L",
    "XL",
    "2XL"
+  ],
+  "colors": [
+   "Yellow"
   ]
  },
  {
@@ -71,6 +83,11 @@
    "XL",
    "2XL",
    "3XL"
+  ],
+  "colors": [
+   "Bear",
+   "Cow print",
+   "Duckling"
   ]
  },
  {
@@ -88,6 +105,11 @@
    "L",
    "XL",
    "2XL"
+  ],
+  "colors": [
+   "Green camo",
+   "Blue camo",
+   "Orange camo"
   ]
  },
  {
@@ -104,6 +126,10 @@
    "M",
    "L",
    "XL"
+  ],
+  "colors": [
+   "Penguin",
+   "Ladybird"
   ]
  },
  {
@@ -121,6 +147,9 @@
    "L",
    "XL",
    "2XL"
+  ],
+  "colors": [
+   "Blue"
   ]
  },
  {
@@ -139,7 +168,11 @@
    "XL",
    "2XL"
   ],
-  "pet": "cat"
+  "pet": "cat",
+  "colors": [
+   "Pink",
+   "Blue"
+  ]
  },
  {
   "id": "a-B0FGCJ1S7K",

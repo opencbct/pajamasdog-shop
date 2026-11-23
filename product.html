@@ -52,7 +52,8 @@
       <h1>${p.name}</h1>
       <p>${p.note||''}</p>
       ${p.src==='pd' ? `<div class="price">$${p.price.toFixed(2)} <small>Free US shipping · 7–12 days</small></div>
-      <div class="sizes">${(p.sizes||[]).map((z,i)=>`<button class="chip${i===1?' on':''}" data-z="${z}">${z}</button>`).join('')}</div>` : ''}
+      ${(p.colors||[]).length>1 ? `<div class="sizes cols">${p.colors.map((c,i)=>`<button class="chip${i===0?' on':''}" data-c="${i}">${c}</button>`).join('')}</div>` : ''}
+      <div class="sizes szs">${(p.sizes||[]).map((z,i)=>`<button class="chip${i===1?' on':''}" data-z="${z}">${z}</button>`).join('')}</div>` : ''}
       <div class="ship">${p.src==='pd' ? 'Sold by PajamasDog.' : live ? `Sold, shipped and returned by ${shop}.` : 'Coming soon.'}${p.look && !look && !tried ? ' Photo shows a similar style.' : ''}</div>
       <div class="acts">
         ${p.src==='pd' ? `<button class="btn" id="buy">${CHECKOUT_API ? 'Buy now' : 'Checkout opens soon'}</button>`
@@ -60,9 +61,9 @@
         ${p.cat==='pajamas' ? `<a class="btn ghost" href="tryon.html?id=${encodeURIComponent(p.id)}">Try it on my pet</a>` : ''}
       </div>
     </div>`;
-  main.querySelector('.sizes')?.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return;
-    main.querySelectorAll('.sizes .chip').forEach(c => c.classList.toggle('on', c===b)); });
-  main.querySelector('#buy')?.addEventListener('click', () => payDirect([{id:p.id, size:main.querySelector('.sizes .on')?.dataset.z}]));
+  main.querySelectorAll('.sizes').forEach(box => box.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return;
+    box.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c===b)); }));
+  main.querySelector('#buy')?.addEventListener('click', () => payDirect([{id:p.id, size:main.querySelector('.szs .on')?.dataset.z, c:+(main.querySelector('.cols .on')?.dataset.c||0)}]));
 })();
 </script>
 </body>

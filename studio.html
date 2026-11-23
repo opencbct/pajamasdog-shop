@@ -423,7 +423,10 @@ function cart(){
     }).join('');
 }
 $('checkouts').addEventListener('click', e => { if(!e.target.closest('#payPd')) return;
-  payDirect(Object.values(worn).filter(p => p && p.src==='pd').map(p => ({id:p.id, size:sizeOf()})));
+  // studio size chart says XXL; some CJ items call it 2XL
+  const fit = (p, z) => (p.sizes||[]).includes(z) ? z : z==='XXL' && (p.sizes||[]).includes('2XL') ? '2XL' : z;
+  const z = sizeOf(); if(!z){ alert('Enter your pet\'s chest size above so we can pick the right size.'); return; }
+  payDirect(Object.values(worn).filter(p => p && p.src==='pd').map(p => ({id:p.id, size:fit(p, z), c:0})));
 });
 $('lines').addEventListener('click', e => {
   const x = e.target.closest('.x'); if(x){ delete worn[x.dataset.k]; if(openAlt===x.dataset.k) openAlt=null; return update(); }

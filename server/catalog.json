@@ -36,6 +36,9 @@
     "XL",
     "XXL",
     "XXXL"
+   ],
+   "colors": [
+    "Blue"
    ]
   },
   "pd-04": {
@@ -71,6 +74,12 @@
     "XL",
     "2XL",
     "3XL"
+   ],
+   "colors": [
+    "Milk",
+    "Pink beauty",
+    "Red cow",
+    "Dark green cow"
    ]
   },
   "pd-06": {
@@ -92,6 +101,9 @@
     "L",
     "XL",
     "2XL"
+   ],
+   "colors": [
+    "Yellow"
    ]
   },
   "pd-07": {
@@ -129,6 +141,11 @@
     "XL",
     "2XL",
     "3XL"
+   ],
+   "colors": [
+    "Bear style",
+    "Middle Cow Point",
+    "Duckling"
    ]
   },
   "pd-12": {
@@ -158,6 +175,11 @@
     "L",
     "XL",
     "2XL"
+   ],
+   "colors": [
+    "Camouflage green",
+    "Camouflage blue",
+    "Camouflage orange"
    ]
   },
   "pd-19": {
@@ -179,6 +201,10 @@
     "M",
     "L",
     "XL"
+   ],
+   "colors": [
+    "Grey penguin",
+    "Grey ladybird"
    ]
   },
   "pd-20": {
@@ -198,6 +224,9 @@
     "L",
     "XL",
     "2XL"
+   ],
+   "colors": [
+    "Blue"
    ]
   },
   "pd-23": {
@@ -222,6 +251,10 @@
     "L",
     "XL",
     "2XL"
+   ],
+   "colors": [
+    "Pink",
+    "Blue"
    ]
   }
  },

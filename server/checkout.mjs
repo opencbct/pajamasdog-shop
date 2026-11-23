@@ -22,11 +22,15 @@ async function createCheckout(req) {
     if (p.test && process.env.STAGE === 'live') return json(400, { error: 'Test item in live mode' });
     const size = p.sizes?.includes(it.size) ? it.size : '';
     const qty = Math.max(1, Math.min(5, parseInt(it.qty) || 1));
+    // CJ variant = color (by index in p.colors) + size. Refuse when we can't map it, so we never charge for something we can't ship.
+    const color = p.colors?.[parseInt(it.c) || 0] || '';
+    const vkey = p.variants ? Object.keys(p.variants).find(k => k.startsWith(color + '-') && k.split('-').includes(size)) : '';
+    if (p.variants && (!size || !vkey)) return json(400, { error: `Please pick a size for ${p.name}` });
     form.append(`line_items[${n}][price_data][currency]`, CATALOG.currency);
     form.append(`line_items[${n}][price_data][unit_amount]`, String(p.price));
     form.append(`line_items[${n}][price_data][product_data][name]`, p.name + (size ? ` · ${size}` : ''));
     form.append(`line_items[${n}][quantity]`, String(qty));
-    form.append(`metadata[item_${n}]`, `${it.id}|${size}|${qty}`);
+    form.append(`metadata[item_${n}]`, `${it.id}|${size}|${qty}|${vkey || ''}`);
     n++;
   }
   if (!n) return json(400, { error: 'Cart is empty' });
@@ -41,6 +45,7 @@ async function createCheckout(req) {
   form.append('success_url', `${SITE}/thanks.html?s={CHECKOUT_SESSION_ID}`);
   form.append('cancel_url', `${SITE}/studio.html`);
   form.append('shipping_address_collection[allowed_countries][0]', 'US');
+  form.append('phone_number_collection[enabled]', 'true'); // the carrier needs a phone number
   form.append('metadata[wrap]', wrap);
   form.append('metadata[gift_to]', String(g.to || '').slice(0, 60));
   form.append('metadata[gift_from]', String(g.from || '').slice(0, 60));
@@ -55,8 +60,9 @@ async function createCheckout(req) {
 function verifyStripe(raw, header) {
   const parts = Object.fromEntries((header || '').split(',').map(kv => kv.split('=')));
   if (!parts.t || !parts.v1 || Math.abs(Date.now() / 1000 - parts.t) > 300) return false;
-  const mac = crypto.createHmac('sha256', process.env.STRIPE_WEBHOOK_SECRET).update(`${parts.t}.${raw}`).digest('hex');
-  return crypto.timingSafeEqual(Buffer.from(mac), Buffer.from(parts.v1));
+  const mac = Buffer.from(crypto.createHmac('sha256', process.env.STRIPE_WEBHOOK_SECRET).update(`${parts.t}.${raw}`).digest('hex'));
+  const sig = Buffer.from(parts.v1);
+  return mac.length === sig.length && crypto.timingSafeEqual(mac, sig);
 }
 
 // ---- 3. Paid → place the order at CJ (they ship to the customer) ----
@@ -69,7 +75,8 @@ async function placeCjOrder(session) {
   const ship = session.collected_information?.shipping_details || session.shipping_details || {};
   const a = ship.address || {};
   const products = Object.entries(session.metadata || {}).filter(([k]) => k.startsWith('item_')).map(([, v]) => {
-    const [id, , qty] = v.split('|'); return { vid: CATALOG.items[id]?.cj_vid, quantity: +qty };
+    const [id, , qty, vkey] = v.split('|'); const p = CATALOG.items[id] || {};
+    return { vid: (vkey && p.variants?.[vkey]) || p.cj_vid, quantity: +qty };
   }).filter(p => p.vid);
   if (!products.length) return { skipped: 'no CJ variants mapped yet' };
   const token = await cjToken();
@@ -77,7 +84,7 @@ async function placeCjOrder(session) {
     method: 'POST', headers: { 'content-type': 'application/json', 'CJ-Access-Token': token },
     body: JSON.stringify({ orderNumber: session.id, shippingCountryCode: a.country, shippingProvince: a.state, shippingCity: a.city,
       shippingAddress: [a.line1, a.line2].filter(Boolean).join(' '), shippingZip: a.postal_code, shippingCustomerName: ship.name,
-      shippingPhone: session.customer_details?.phone || '', remark: `Gift: ${session.metadata?.wrap || 'none'} ${session.metadata?.gift_msg || ''}`.slice(0, 200),
+      shippingPhone: session.customer_details?.phone || '', email: session.customer_details?.email || '', remark: `Gift: ${session.metadata?.wrap || 'none'} ${session.metadata?.gift_msg || ''}`.slice(0, 200),
       logisticName: 'CJPacket Ordinary', fromCountryCode: 'CN', products }) });
   return r.json();
 }
@@ -91,7 +98,9 @@ export const handler = async (event) => {
     if (path.endsWith('/webhook')) {
       if (!verifyStripe(raw, event.headers?.['stripe-signature'])) return json(400, { error: 'bad signature' });
       const ev = JSON.parse(raw);
-      if (ev.type === 'checkout.session.completed') { const r = await placeCjOrder(ev.data.object); console.log('CJ order', JSON.stringify(r)); }
+      // Only paid sessions become CJ orders. CJ order number = Stripe session id, so a retried webhook can't double-order.
+      // The CJ order is created unpaid: 형님 pays it in CJ (wallet) until we trust the flow.
+      if (ev.type === 'checkout.session.completed' && ev.data.object.payment_status === 'paid') { const r = await placeCjOrder(ev.data.object); console.log('CJ order', JSON.stringify(r)); }
       return json(200, { ok: true });
     }
     return json(404, { error: 'not found' });
