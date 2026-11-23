@@ -39,6 +39,7 @@ header nav{display:flex;gap:18px;font-size:15px}
 .partners span{opacity:.75;margin-right:2px}
 .partners a{cursor:pointer;font-weight:600;letter-spacing:.3px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.16);backdrop-filter:blur(6px)}
 @media(min-width:768px){.partners{position:absolute;right:20px;bottom:30px;margin:0}}
+.btn.pet span{font-size:22px;margin-right:8px;vertical-align:-2px}
 .btn.ghost{background:rgba(255,255,255,.16);box-shadow:none;animation:none;margin-left:8px;backdrop-filter:blur(6px)}
 .btn{display:inline-block;margin-top:18px;padding:14px 30px;border-radius:999px;background:var(--pink);color:#fff;font-weight:600;font-size:17px;box-shadow:0 6px 18px rgba(255,61,127,.45);animation:pump 3s ease-in-out infinite}
 @keyframes pump{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
@@ -103,8 +104,8 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
   <div class="txt">
     <h1>Wrap them in <b>warmth</b><br>this winter.</h1>
     <p>Cozy pajamas for little dogs &amp; cats.</p>
-    <a class="btn" href="#pajamas">Shop pajamas</a>
-    <a class="btn ghost" href="tryon.html">Try on your pet</a>
+    <a class="btn pet" href="#shop" data-go="dogs"><span>🐶</span>Dogs</a>
+    <a class="btn pet ghost" href="#shop" data-go="cats"><span>🐱</span>Cats</a>
     <div class="partners" id="partners"><span>Shop from</span><a data-p="amazon" data-q="dog pajamas">Amazon</a><a data-p="coupang" data-q="강아지 잠옷">Coupang</a><a data-p="naver" data-q="강아지 잠옷">NAVER</a></div>
   </div>
 </div>
@@ -156,6 +157,7 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
   <div class="chips" id="chips">
     <button class="chip on" data-k="all">All</button>
     <button class="chip" data-k="pajamas">Pajamas</button>
+    <button class="chip" data-k="dogs">Dogs</button>
     <button class="chip" data-k="cats">Cats</button>
     <button class="chip" data-k="matching">Matching PJs</button>
     <button class="chip" data-k="acc">Accessories</button>
