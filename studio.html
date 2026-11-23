@@ -28,6 +28,13 @@ h1 b{font-weight:600;color:var(--pink)}
 .stage .ln *{fill:#1c1928;stroke:#f3f1f8;stroke-width:3.2;stroke-linejoin:round}
 .stage .vw{fill:rgba(243,241,248,.45);font:600 13px Nunito,sans-serif;letter-spacing:3px}
 .fur{display:none}
+.alt-b{grid-column:2/4;justify-self:start;background:none;border:0;color:#0cc0df;font:inherit;font-size:13px;padding:0;cursor:pointer}
+.alts{grid-column:1/4;display:grid;gap:6px;margin-top:4px}
+.alt{display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:center;background:var(--chip);border:0;border-radius:14px;padding:6px 10px 6px 6px;color:var(--txt);font:inherit;text-align:left;cursor:pointer}
+.alt .sw2{width:40px;height:40px;border-radius:10px;overflow:hidden;background:var(--c)}
+.alt .sw2 img{width:100%;height:100%;object-fit:cover}
+.alt b{display:block;font-weight:400;font-size:13px}.alt small{font-size:12px;opacity:.65}
+.alt i{font-style:normal;font-size:12px;padding:4px 10px;border-radius:999px;background:var(--pink);color:#fff}
 .minicart{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;background:var(--pink);color:#fff;border-radius:999px;padding:14px 18px;text-align:center;font-size:15px;box-shadow:0 8px 24px rgba(0,0,0,.45)}
 .minicart b{font-weight:600}
 .minicart span{display:inline-grid;place-items:center;min-width:24px;height:24px;border-radius:12px;background:#fff;color:var(--pink);font-weight:700;margin-right:4px}
@@ -359,13 +366,21 @@ $('suggItems').addEventListener('click', e => { const b = e.target.closest('.it'
 $('wearAll').addEventListener('click', () => { Object.assign(worn, suggestion); update(); });
 
 // ---- Outfit cart ----
+// Other shops / products for the same slot: cheapest known price first, other shops before the same shop.
+let openAlt = null;
+function alternatives(s, cur){
+  return all.filter(p => s.match(p) && fits(p) && p.id !== cur.id)
+    .sort((a,b) => (a.price||1e9) - (b.price||1e9) || (a.src===cur.src) - (b.src===cur.src)).slice(0,8);
+}
 function cart(){
   const ps = SLOTS.map(s => worn[s.k] && {s, p:worn[s.k]}).filter(Boolean);
   $('minicart').hidden = !ps.length; $('mcN').textContent = ps.length;
   $('count').textContent = ps.length ? `${ps.length} item${ps.length>1?'s':''}` : '';
   $('lines').innerHTML = ps.length ? ps.map(({s,p}) => `<div class="line"><a class="th" style="--c:${colorOf(p)}" href="product.html?id=${encodeURIComponent(p.id)}">${p.img?`<img src="${p.img}" alt="">`:''}</a>
      <div><b>${p.name}</b><small>${p.note||''}${sizeOf() && !['bowl','leash'].includes(s.k) ? ' · Size '+sizeOf() : ''}</small><small>${p.price ? '$'+p.price.toFixed(2) : 'Price shown on '+shopName(p)} · Ships &amp; returns by ${shopName(p)}</small></div>
-     <button class="x" data-k="${s.k}" aria-label="Remove">×</button></div>`).join('')
+     <button class="x" data-k="${s.k}" aria-label="Remove">×</button>
+     <button class="alt-b" data-k="${s.k}">${openAlt===s.k ? 'Close options' : 'Other options & prices ›'}</button>
+     ${openAlt===s.k ? `<div class="alts">${alternatives(s,p).map(a => `<button class="alt" data-k="${s.k}" data-id="${a.id}"><span class="sw2" style="--c:${colorOf(a)}">${a.img?`<img src="${a.img}" alt="">`:''}</span><span class="at"><b>${a.name}</b><small>${shopName(a)} · ${a.price ? '$'+a.price.toFixed(2) : 'see price'}</small></span><i>Swap</i></button>`).join('') || '<p class="empty">No other options yet.</p>'}</div>` : ''}</div>`).join('')
      : '<p class="empty">Nothing yet — dress up your pet above.</p>';
   const priced = ps.filter(x => x.p.price);
   $('total').textContent = !ps.length ? '—' : priced.length===ps.length ? '$'+priced.reduce((t,x)=>t+x.p.price,0).toFixed(2) : 'See prices at checkout';
@@ -377,7 +392,11 @@ function cart(){
     co.textContent = az.length>1 ? `Add all ${az.length} to Amazon cart` : 'Add to Amazon cart'; }
   else { co.href='#'; co.style.opacity=.4; co.style.pointerEvents='none'; co.textContent='Add whole outfit to Amazon cart'; }
 }
-$('lines').addEventListener('click', e => { const b = e.target.closest('.x'); if(!b) return; delete worn[b.dataset.k]; update(); });
+$('lines').addEventListener('click', e => {
+  const x = e.target.closest('.x'); if(x){ delete worn[x.dataset.k]; if(openAlt===x.dataset.k) openAlt=null; return update(); }
+  const ab = e.target.closest('.alt-b'); if(ab){ openAlt = openAlt===ab.dataset.k ? null : ab.dataset.k; return cart(); }
+  const al = e.target.closest('.alt'); if(al){ worn[al.dataset.k] = all.find(p => p.id===al.dataset.id); openAlt = null; return update(); }
+});
 
 function update(){ draw(); drawItems(); suggest(); cart(); }
 
