@@ -242,9 +242,7 @@
   "color": "#c8333c",
   "tags": [
    "hat"
-  ],
-  "img": "img/p/goggles.webp",
-  "look": true
+  ]
  },
  {
   "id": "a-B0G7Z3TQJD",
@@ -491,6 +489,44 @@
   "tags": [
    "chew",
    "treat"
+  ]
+ },
+ {
+  "id": "a-B01H85BZ6M",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B01H85BZ6M",
+  "name": "Dog goggles",
+  "note": "Enjoying · classic black",
+  "color": "#222222",
+  "tags": [
+   "glasses"
+  ],
+  "img": "img/p/goggles.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0GTW2CR9C",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0GTW2CR9C",
+  "name": "Silver mirror goggles",
+  "note": "Small–medium dogs",
+  "color": "#b8c0c8",
+  "tags": [
+   "glasses"
+  ]
+ },
+ {
+  "id": "a-B0BXH1RWQN",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0BXH1RWQN",
+  "name": "Small breed goggles",
+  "note": "PETLESO · black",
+  "color": "#2b2b2b",
+  "tags": [
+   "glasses"
   ]
  }
 ]

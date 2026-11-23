@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dress-up studio — PajamasDog</title>
+<meta name="description" content="Pick your pet, dress it in pajamas, hats, collars, leashes and goggles, and see the whole look with prices.">
+<link rel="icon" href="/favicon.ico?v=3" sizes="48x48">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png?v=3">
+<meta name="theme-color" content="#15131c">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shop.css">
+<link rel="stylesheet" href="logo-motion.css">
+<style>
+main{max-width:1100px}
+h1{font-weight:300;font-size:28px;margin:4px 0 12px}
+h1 b{font-weight:600;color:var(--pink)}
+.lbl{font-size:13px;opacity:.6;margin:14px 2px 8px}
+.row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.row::-webkit-scrollbar{display:none}
+.wrap{display:grid;gap:18px}
+.wrap>div{min-width:0}
+.stage svg{max-height:62vh;margin:0 auto}
+@media(min-width:900px){.wrap{grid-template-columns:1.05fr 1fr;align-items:start}.left{position:sticky;top:12px}}
+.stage{border-radius:24px;background:radial-gradient(circle at 50% 35%,#2d2840,#15131c 70%);position:relative;overflow:hidden}
+.stage svg{display:block;width:100%;height:auto}
+.stage .put{position:absolute;inset:auto 0 14px 0;text-align:center;font-size:13px;opacity:.6}
+.fur{display:flex;gap:8px;margin-top:10px}
+.fur button{width:30px;height:30px;border-radius:50%;border:2px solid transparent;cursor:pointer}
+.fur button.on{border-color:#fff}
+.items{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px 0 6px}
+.items::-webkit-scrollbar{display:none}
+.it{flex:0 0 112px;background:var(--card);border-radius:16px;padding:6px;border:2px solid transparent;cursor:pointer;text-align:left;color:var(--txt);font:inherit}
+.it.on{border-color:var(--pink)}
+.it .sw{aspect-ratio:1/1;border-radius:12px;overflow:hidden;background:var(--c)}
+.it .sw img{width:100%;height:100%;object-fit:cover;display:block}
+.it b{display:block;font-weight:400;font-size:12px;line-height:1.25;margin-top:6px;height:30px;overflow:hidden}
+/* suggestions */
+.sugg{border-radius:20px;background:linear-gradient(135deg,#2a2140,#1d2a3a);padding:14px}
+.sugg h3{font-weight:400;font-size:16px;margin-bottom:4px}
+.sugg p{font-size:12px;opacity:.7;margin-bottom:10px}
+.sugg .btn{margin-top:10px;padding:12px;font-size:15px}
+/* cart */
+.cart{background:var(--card);border-radius:20px;padding:14px;margin-top:4px}
+.cart h3{font-weight:400;font-size:18px;margin-bottom:8px;display:flex;justify-content:space-between}
+.line{display:grid;grid-template-columns:52px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-top:1px solid rgba(255,255,255,.07)}
+.line .th{width:52px;height:52px;border-radius:12px;overflow:hidden;background:var(--c)}
+.line .th img{width:100%;height:100%;object-fit:cover}
+.line b{font-weight:400;font-size:14px;display:block}
+.line small{display:block;font-size:12px;opacity:.65;line-height:1.35}
+.line .x{background:none;border:0;color:var(--txt);opacity:.6;font-size:20px;cursor:pointer}
+.empty{opacity:.6;font-size:14px;padding:6px 0}
+.total{display:flex;justify-content:space-between;margin:10px 0 12px;font-size:15px}
+.note{font-size:11px;opacity:.55;margin-top:8px;line-height:1.4}
+</style>
+</head>
+<body>
+<header>
+  <a href="/"><img src="img/wordmark.svg" alt="PajamasDog"></a>
+  <a class="back" href="/">← Home</a>
+</header>
+<main>
+  <h1>👗 Dress-up <b>studio</b></h1>
+  <div class="wrap">
+    <div class="left">
+      <div class="row" id="animals"></div>
+      <div class="stage" id="stage"></div>
+      <div class="fur" id="fur"></div>
+      <button class="btn" id="share" style="margin-top:12px">📤 Share my pet's look</button>
+    </div>
+    <div>
+      <div class="row" id="slots"></div>
+      <div class="items" id="items" style="margin-top:10px"></div>
+
+      <div class="sugg" id="sugg" hidden>
+        <h3>✨ Matches your look</h3>
+        <p>Picked for you in the same colours.</p>
+        <div class="items" id="suggItems"></div>
+        <button class="btn ghost" id="wearAll">Try the full look</button>
+      </div>
+
+      <div class="cart">
+        <h3><span>Your outfit</span><span id="count"></span></h3>
+        <div id="lines"></div>
+        <div class="total"><span>Total</span><span id="total">—</span></div>
+        <a class="btn" id="checkout" href="#" target="_blank" rel="sponsored noopener">Add whole outfit to Amazon cart</a>
+        <p class="note">Prices, delivery and returns are set by each shop and shown at checkout. PajamasDog may earn a commission.</p>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>PajamasDog links to partner shops. <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
+
+<script src="shop.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+// ---- Animals (layouts) ----
+const ANIMALS = [
+  {k:'small', label:'🐶 Small dog', head:78, body:[95,100], snout:'short', ears:'flop', pet:'dog'},
+  {k:'big',   label:'🐕 Big dog',   head:86, body:[112,118], snout:'long', ears:'flop', pet:'dog'},
+  {k:'frenchie', label:'🐾 Frenchie', head:84, body:[100,98], snout:'flat', ears:'bat', pet:'dog'},
+  {k:'cat',   label:'🐱 Cat',       head:74, body:[88,104], snout:'cat',  ears:'cat',  pet:'cat'},
+];
+const FURS = ['#f4ead9','#d9a066','#8a5a3b','#3b3434','#b9b9c2','#ffffff'];
+// ---- Slots (what can be worn together) ----
+const SLOTS = [
+  {k:'pj',    label:'👕 Pajamas', match:p => p.cat==='pajamas' || p.cat==='matching' || (p.tags||[]).includes('rain')},
+  {k:'hat',   label:'🧶 Hats',    match:p => (p.tags||[]).includes('hat')},
+  {k:'collar',label:'🎀 Collars', match:p => (p.tags||[]).includes('tie') || (p.tags||[]).includes('bell')},
+  {k:'glasses',label:'🕶️ Goggles', match:p => (p.tags||[]).includes('glasses')},
+  {k:'leash', label:'🦮 Leashes', match:p => (p.tags||[]).includes('leash')},
+];
+let animal = ANIMALS[0], fur = FURS[1], slot = SLOTS[0], all = [], worn = {};
+
+// colour helpers (for "same colour" suggestions)
+const hex = h => { h=(h||'#888').replace('#',''); return [0,2,4].map(i=>parseInt(h.substr(i,2),16)); };
+const dist = (a,b) => { const x=hex(a), y=hex(b); return Math.hypot(x[0]-y[0],x[1]-y[1],x[2]-y[2]); };
+const colorOf = p => p.color || '#ff3d7f';
+const shade = (c,k) => '#'+hex(c).map(v=>Math.max(0,Math.min(255,Math.round(v*k))).toString(16).padStart(2,'0')).join('');
+
+// ---- Draw the pet with every worn layer ----
+function draw(){
+  const A = animal, h = A.head, [bw,bh] = A.body, cx = 200, hy = 165, by = 320;
+  const pj = worn.pj, hat = worn.hat, col = worn.collar, gl = worn.glasses, le = worn.leash;
+  const furD = shade(fur,.82), nose = '#2a2226';
+  let ears='';
+  if(A.ears==='flop') ears = `<ellipse cx="${cx-h*.82}" cy="${hy+10}" rx="${h*.32}" ry="${h*.62}" fill="${furD}" transform="rotate(18 ${cx-h*.82} ${hy+10})"/><ellipse cx="${cx+h*.82}" cy="${hy+10}" rx="${h*.32}" ry="${h*.62}" fill="${furD}" transform="rotate(-18 ${cx+h*.82} ${hy+10})"/>`;
+  if(A.ears==='bat') ears = `<path d="M${cx-h*.75} ${hy-h*.35} L${cx-h*.95} ${hy-h*1.25} L${cx-h*.25} ${hy-h*.8}Z" fill="${fur}"/><path d="M${cx+h*.75} ${hy-h*.35} L${cx+h*.95} ${hy-h*1.25} L${cx+h*.25} ${hy-h*.8}Z" fill="${fur}"/><path d="M${cx-h*.72} ${hy-h*.5} L${cx-h*.85} ${hy-h*1.05} L${cx-h*.38} ${hy-h*.78}Z" fill="#f3b3c1"/><path d="M${cx+h*.72} ${hy-h*.5} L${cx+h*.85} ${hy-h*1.05} L${cx+h*.38} ${hy-h*.78}Z" fill="#f3b3c1"/>`;
+  if(A.ears==='cat') ears = `<path d="M${cx-h*.85} ${hy-h*.3} L${cx-h*.7} ${hy-h*1.15} L${cx-h*.2} ${hy-h*.75}Z" fill="${fur}"/><path d="M${cx+h*.85} ${hy-h*.3} L${cx+h*.7} ${hy-h*1.15} L${cx+h*.2} ${hy-h*.75}Z" fill="${fur}"/><path d="M${cx-h*.72} ${hy-h*.45} L${cx-h*.65} ${hy-h*.95} L${cx-h*.35} ${hy-h*.72}Z" fill="#f3b3c1"/><path d="M${cx+h*.72} ${hy-h*.45} L${cx+h*.65} ${hy-h*.95} L${cx+h*.35} ${hy-h*.72}Z" fill="#f3b3c1"/>`;
+  let snout='';
+  if(A.snout==='short') snout = `<ellipse cx="${cx}" cy="${hy+h*.38}" rx="${h*.42}" ry="${h*.3}" fill="${shade(fur,1.08)}"/>`;
+  if(A.snout==='long')  snout = `<ellipse cx="${cx}" cy="${hy+h*.42}" rx="${h*.46}" ry="${h*.36}" fill="${shade(fur,1.08)}"/>`;
+  if(A.snout==='flat')  snout = `<ellipse cx="${cx}" cy="${hy+h*.34}" rx="${h*.5}" ry="${h*.26}" fill="${shade(fur,.75)}"/>`;
+  if(A.snout==='cat')   snout = `<ellipse cx="${cx}" cy="${hy+h*.34}" rx="${h*.3}" ry="${h*.2}" fill="${shade(fur,1.1)}"/><g stroke="#fff" stroke-width="2" opacity=".7"><path d="M${cx-h*.3} ${hy+h*.32} L${cx-h*.85} ${hy+h*.22}"/><path d="M${cx-h*.3} ${hy+h*.4} L${cx-h*.85} ${hy+h*.45}"/><path d="M${cx+h*.3} ${hy+h*.32} L${cx+h*.85} ${hy+h*.22}"/><path d="M${cx+h*.3} ${hy+h*.4} L${cx+h*.85} ${hy+h*.45}"/></g>`;
+  // pajamas layer
+  let pjL = '';
+  if(pj){ const c = colorOf(pj), c2 = shade(c,.78);
+    pjL = `<defs><pattern id="pt" width="26" height="26" patternUnits="userSpaceOnUse"><rect width="26" height="26" fill="${c}"/><circle cx="7" cy="7" r="3" fill="rgba(255,255,255,.35)"/><circle cx="20" cy="19" r="3" fill="rgba(255,255,255,.25)"/></pattern></defs>
+      <ellipse cx="${cx}" cy="${by+8}" rx="${bw+3}" ry="${bh-6}" fill="url(#pt)"/>
+      <rect x="${cx-bw*.62}" y="${by+bh*.55}" width="${bw*.42}" height="${bh*.5}" rx="20" fill="${c2}"/><rect x="${cx+bw*.2}" y="${by+bh*.55}" width="${bw*.42}" height="${bh*.5}" rx="20" fill="${c2}"/>
+      <path d="M${cx-h*.55} ${hy+h*.85} Q${cx} ${hy+h*1.15} ${cx+h*.55} ${hy+h*.85}" stroke="${c2}" stroke-width="16" fill="none" stroke-linecap="round"/>`; }
+  // collar / bow tie / bell
+  let colL = '';
+  if(col){ const c = colorOf(col), y = hy+h*.95;
+    colL = `<path d="M${cx-h*.6} ${y-6} Q${cx} ${y+18} ${cx+h*.6} ${y-6}" stroke="${c}" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <path d="M${cx} ${y+8} l-28 -16 v32 z M${cx} ${y+8} l28 -16 v32 z" fill="${shade(c,1.15)}"/><circle cx="${cx}" cy="${y+8}" r="7" fill="${shade(c,.8)}"/>
+      ${(col.tags||[]).includes('bell') ? `<circle cx="${cx}" cy="${y+30}" r="10" fill="#f2c94c"/><circle cx="${cx}" cy="${y+33}" r="2.5" fill="#8a6a10"/>` : ''}`; }
+  // leash
+  let leL = '';
+  if(le){ const c = colorOf(le) === '#888' ? '#e0e0e0' : colorOf(le), y = hy+h*.98;
+    leL = `<path d="M${cx+h*.35} ${y} C ${cx+150} ${y+40}, ${cx+130} ${y+160}, 398 ${y+90}" stroke="${c}" stroke-width="6" fill="none"/><circle cx="${cx+h*.35}" cy="${y}" r="7" fill="#c0c0c0"/>`; }
+  // hat
+  let hatL = '';
+  if(hat){ const c = colorOf(hat), top = hy-h*.98;
+    hatL = `<path d="M${cx-h*.82} ${hy-h*.42} Q${cx-h*.8} ${top-h*.2} ${cx} ${top-h*.28} Q${cx+h*.8} ${top-h*.2} ${cx+h*.82} ${hy-h*.42}Z" fill="${c}"/>
+      <rect x="${cx-h*.9}" y="${hy-h*.55}" width="${h*1.8}" height="${h*.26}" rx="${h*.12}" fill="${shade(c,.78)}"/>
+      <g stroke="${shade(c,.85)}" stroke-width="3" opacity=".6">${[-.5,-.25,0,.25,.5].map(k=>`<path d="M${cx+h*k} ${hy-h*.56} L${cx+h*k*.8} ${top-h*.1}"/>`).join('')}</g>
+      <circle cx="${cx}" cy="${top-h*.32}" r="${h*.2}" fill="#fff"/>`; }
+  // goggles
+  let glL = '';
+  if(gl){ const c = colorOf(gl), ey = hy-h*.05, ex = h*.36;
+    glL = `<path d="M${cx-h*.95} ${ey} L${cx+h*.95} ${ey}" stroke="#222" stroke-width="7"/>
+      <rect x="${cx-ex-h*.32}" y="${ey-h*.2}" width="${h*.64}" height="${h*.42}" rx="${h*.16}" fill="${c}" stroke="#111" stroke-width="5" opacity=".95"/>
+      <rect x="${cx+ex-h*.32}" y="${ey-h*.2}" width="${h*.64}" height="${h*.42}" rx="${h*.16}" fill="${c}" stroke="#111" stroke-width="5" opacity=".95"/>
+      <path d="M${cx-ex-h*.18} ${ey-h*.1} l${h*.18} 0" stroke="rgba(255,255,255,.7)" stroke-width="4" stroke-linecap="round"/><path d="M${cx+ex-h*.18} ${ey-h*.1} l${h*.18} 0" stroke="rgba(255,255,255,.7)" stroke-width="4" stroke-linecap="round"/>`; }
+  const eyes = gl ? '' : `<circle cx="${cx-h*.36}" cy="${hy-h*.05}" r="${h*.11}" fill="#1b1517"/><circle cx="${cx+h*.36}" cy="${hy-h*.05}" r="${h*.11}" fill="#1b1517"/><circle cx="${cx-h*.32}" cy="${hy-h*.09}" r="${h*.035}" fill="#fff"/><circle cx="${cx+h*.4}" cy="${hy-h*.09}" r="${h*.035}" fill="#fff"/>`;
+  $('stage').innerHTML = `<svg viewBox="0 0 400 470" role="img" aria-label="${A.label} wearing the selected outfit">
+    <ellipse cx="${cx}" cy="452" rx="${bw*1.1}" ry="14" fill="rgba(0,0,0,.35)"/>
+    ${A.pet==='cat' ? `<path d="M${cx+bw*.8} ${by+40} C ${cx+bw*1.5} ${by-10}, ${cx+bw*1.35} ${by-120}, ${cx+bw*1.05} ${by-110}" stroke="${fur}" stroke-width="22" fill="none" stroke-linecap="round"/>` : `<path d="M${cx+bw*.85} ${by+20} q40 -40 26 -80" stroke="${fur}" stroke-width="18" fill="none" stroke-linecap="round"/>`}
+    <ellipse cx="${cx}" cy="${by+8}" rx="${bw}" ry="${bh-8}" fill="${fur}"/>
+    <ellipse cx="${cx-bw*.42}" cy="${by+bh*.92}" rx="${bw*.26}" ry="${bh*.16}" fill="${shade(fur,1.05)}"/><ellipse cx="${cx+bw*.42}" cy="${by+bh*.92}" rx="${bw*.26}" ry="${bh*.16}" fill="${shade(fur,1.05)}"/>
+    ${pjL}${leL}
+    ${A.ears==='flop' ? '' : ears}
+    <circle cx="${cx}" cy="${hy}" r="${h}" fill="${fur}"/>
+    ${A.ears==='flop' ? ears : ''}
+    ${snout}<ellipse cx="${cx}" cy="${hy+h*.22}" rx="${h*.15}" ry="${h*.1}" fill="${nose}"/>
+    <path d="M${cx} ${hy+h*.3} q-${h*.14} ${h*.16} -${h*.26} ${h*.06} M${cx} ${hy+h*.3} q${h*.14} ${h*.16} ${h*.26} ${h*.06}" stroke="${nose}" stroke-width="3" fill="none" stroke-linecap="round"/>
+    ${eyes}${colL}${glL}${hatL}
+  </svg>${Object.keys(worn).length ? '' : '<div class="put">Tap an item below to dress up</div>'}`;
+}
+
+// ---- Item lists ----
+const swatch = p => `<div class="sw" style="--c:${colorOf(p)}">${p.img?`<img src="${p.img}" alt="" loading="lazy">`:''}</div>`;
+const fits = p => !(animal.pet==='dog' && p.pet==='cat');
+function drawItems(){
+  const list = all.filter(p => slot.match(p) && fits(p));
+  $('items').innerHTML = list.length ? list.map(p => `<button class="it${worn[slot.k]?.id===p.id?' on':''}" data-id="${p.id}">${swatch(p)}<b>${p.name}</b></button>`).join('') : '<p class="empty">More coming soon.</p>';
+}
+$('items').addEventListener('click', e => { const b = e.target.closest('.it'); if(!b) return;
+  const p = all.find(x => x.id===b.dataset.id);
+  if(worn[slot.k]?.id === p.id) delete worn[slot.k]; else worn[slot.k] = p;
+  update(); });
+
+// ---- Same-colour suggestions for the slots still empty ----
+let suggestion = {};
+function suggest(){
+  suggestion = {};
+  const base = worn.pj || worn.hat || worn.collar || worn.glasses || worn.leash;
+  if(!base){ $('sugg').hidden = true; return; }
+  for(const s of SLOTS){ if(worn[s.k]) continue;
+    const opts = all.filter(p => s.match(p) && fits(p)); if(!opts.length) continue;
+    suggestion[s.k] = opts.sort((a,b) => dist(colorOf(a),colorOf(base)) - dist(colorOf(b),colorOf(base)))[0]; }
+  const ps = Object.entries(suggestion);
+  $('sugg').hidden = !ps.length;
+  $('suggItems').innerHTML = ps.map(([k,p]) => `<button class="it" data-k="${k}" data-id="${p.id}">${swatch(p)}<b>${p.name}</b></button>`).join('');
+}
+$('suggItems').addEventListener('click', e => { const b = e.target.closest('.it'); if(!b) return; worn[b.dataset.k] = all.find(x => x.id===b.dataset.id); update(); });
+$('wearAll').addEventListener('click', () => { Object.assign(worn, suggestion); update(); });
+
+// ---- Outfit cart ----
+function cart(){
+  const ps = SLOTS.map(s => worn[s.k] && {s, p:worn[s.k]}).filter(Boolean);
+  $('count').textContent = ps.length ? `${ps.length} item${ps.length>1?'s':''}` : '';
+  $('lines').innerHTML = ps.length ? ps.map(({s,p}) => `<div class="line"><a class="th" style="--c:${colorOf(p)}" href="product.html?id=${encodeURIComponent(p.id)}">${p.img?`<img src="${p.img}" alt="">`:''}</a>
+     <div><b>${p.name}</b><small>${p.note||''}</small><small>${p.price ? '$'+p.price.toFixed(2) : 'Price shown on '+shopName(p)} · Ships &amp; returns by ${shopName(p)}</small></div>
+     <button class="x" data-k="${s.k}" aria-label="Remove">×</button></div>`).join('')
+     : '<p class="empty">Nothing yet — dress up your pet above.</p>';
+  const priced = ps.filter(x => x.p.price);
+  $('total').textContent = !ps.length ? '—' : priced.length===ps.length ? '$'+priced.reduce((t,x)=>t+x.p.price,0).toFixed(2) : 'See prices at checkout';
+  // Amazon lets one link add several products to the cart at once.
+  const az = ps.map(x => x.p).filter(p => p.asin);
+  const co = $('checkout');
+  if(az.length){ const q = az.map((p,i) => `ASIN.${i+1}=${p.asin}&Quantity.${i+1}=1`).join('&');
+    co.href = `https://www.amazon.com/gp/aws/cart/add.html?${q}${AMAZON_TAG?`&AssociateTag=${AMAZON_TAG}`:''}`; co.style.opacity=1; co.style.pointerEvents='auto';
+    co.textContent = az.length>1 ? `Add all ${az.length} to Amazon cart` : 'Add to Amazon cart'; }
+  else { co.href='#'; co.style.opacity=.4; co.style.pointerEvents='none'; co.textContent='Add whole outfit to Amazon cart'; }
+}
+$('lines').addEventListener('click', e => { const b = e.target.closest('.x'); if(!b) return; delete worn[b.dataset.k]; update(); });
+
+function update(){ draw(); drawItems(); suggest(); cart(); }
+
+// ---- Pickers ----
+$('animals').innerHTML = ANIMALS.map((a,i) => `<button class="chip${i?'':' on'}" data-i="${i}">${a.label}</button>`).join('');
+$('animals').addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return;
+  document.querySelectorAll('#animals .chip').forEach(c => c.classList.toggle('on', c===b)); animal = ANIMALS[+b.dataset.i];
+  for(const k in worn) if(!fits(worn[k])) delete worn[k]; update(); });
+$('fur').innerHTML = FURS.map((c,i) => `<button style="background:${c}" class="${i===1?'on':''}" data-c="${c}" aria-label="Fur colour"></button>`).join('');
+$('fur').addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#fur button').forEach(x => x.classList.toggle('on', x===b)); fur = b.dataset.c; draw(); });
+$('slots').innerHTML = SLOTS.map((s,i) => `<button class="chip${i?'':' on'}" data-i="${i}">${s.label}</button>`).join('');
+$('slots').addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return;
+  document.querySelectorAll('#slots .chip').forEach(c => c.classList.toggle('on', c===b)); slot = SLOTS[+b.dataset.i]; drawItems(); });
+
+
+// ---- Share: the dressed pet + our logo + link, as one picture ----
+const LOGO = new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'img/wordmark.svg'; });
+$('share').addEventListener('click', async () => {
+  const svg = $('stage').querySelector('svg').outerHTML.replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" ');
+  const pic = await new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg); });
+  const W = 1080, H = 1350, c = document.createElement('canvas'); c.width = W; c.height = H; const g = c.getContext('2d');
+  const bg = g.createRadialGradient(W/2,H*.35,50,W/2,H*.4,W*.9); bg.addColorStop(0,'#2d2840'); bg.addColorStop(1,'#15131c'); g.fillStyle = bg; g.fillRect(0,0,W,H);
+  g.drawImage(pic, 40, 60, W-80, (W-80)*470/400);
+  const logo = await LOGO, lw = 420, lh = lw*logo.naturalHeight/logo.naturalWidth;
+  g.drawImage(logo, (W-lw)/2, H-lh-70, lw, lh);
+  g.fillStyle = '#ffd3e2'; g.font = '600 34px Nunito, sans-serif'; g.textAlign = 'center'; g.fillText('Dress yours at pajamasdog.com', W/2, H-36);
+  c.toBlob(async blob => {
+    const file = new File([blob], 'my-pajamasdog-look.jpg', {type:'image/jpeg'});
+    const data = {files:[file], title:'My pet\'s new look', text:'Dress up your pet 👉 https://pajamasdog.com/studio.html'};
+    try { if(navigator.canShare && navigator.canShare(data)) return await navigator.share(data); } catch(e){ if(e.name==='AbortError') return; }
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = file.name; a.click();
+  }, 'image/jpeg', .92);
+});
+
+(async () => {
+  await getProducts('all', 0); all = await FEED;
+  const want = new URLSearchParams(location.search).get('animal'); const ai = ANIMALS.findIndex(a => a.k===want);
+  if(ai > 0) document.querySelector(`#animals .chip[data-i="${ai}"]`).click(); else update();
+})();
+</script>
+</body>
+</html>
