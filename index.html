@@ -162,7 +162,7 @@ const tile = (bg, ic, t, sub, url) => `<a class="tile" style="background:${bg}" 
 async function fillRows(){
   for(const row of document.querySelectorAll('[data-row]')){
     const items = (await getProducts(row.dataset.row, 0)).slice(0,12);
-    row.innerHTML = items.length ? items.map(card).join('') : tile('#ffe9c7','<span class="plogo" style="--w:110px;--a:#2b2340;--b:#1fa7e0"><i></i><i></i></span>','Coming soon','Picked for winter');
+    row.innerHTML = items.length ? items.map(card).join('') : tile('#ffe9c7','🦴','Coming soon','Picked for winter');
   }
   const ADOPT = {
     US:[['#dff1ff','🐶','Petfinder','Dogs near you','https://www.petfinder.com'],['#ffe3ec','🏠','Adopt-a-Pet','Shelters & rescues','https://www.adoptapet.com']],
