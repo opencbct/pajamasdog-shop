@@ -362,6 +362,97 @@
   "look": true
  },
  {
+  "id": "a-B0013MTJYC",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0013MTJYC",
+  "name": "Puppia soft mesh harness",
+  "note": "Korean design · best seller",
+  "color": "#f6b6c8",
+  "img": "img/p/maltese_harness.webp",
+  "look": true,
+  "tags": [
+   "leash",
+   "harness"
+  ]
+ },
+ {
+  "id": "a-B0DD6222M4",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0DD6222M4",
+  "name": "Puppia festive plaid vest harness",
+  "note": "Korean design · holiday",
+  "color": "#2f6b46",
+  "img": "img/p/plaid_pug.webp",
+  "look": true,
+  "tags": [
+   "leash",
+   "harness",
+   "gift"
+  ]
+ },
+ {
+  "id": "a-B0FRN3VH8J",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0FRN3VH8J",
+  "name": "Puppia Max winter vest harness",
+  "note": "Korean design · zip-up",
+  "color": "#2f3f6b",
+  "img": "img/p/puffer_pom.webp",
+  "look": true,
+  "tags": [
+   "leash",
+   "harness"
+  ]
+ },
+ {
+  "id": "a-B0FRNB5774",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0FRNB5774",
+  "name": "Puppia Wynter step-in vest",
+  "note": "Korean design · fleece",
+  "color": "#6b6b3f",
+  "img": "img/p/puffer_four.webp",
+  "look": true,
+  "tags": [
+   "leash",
+   "harness"
+  ]
+ },
+ {
+  "id": "a-B0CDHD7G2J",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0CDHD7G2J",
+  "name": "Puppia Jace diamond vest harness",
+  "note": "Korean design · fleece lined",
+  "color": "#d9c7a6",
+  "img": "img/p/pom_sweater.webp",
+  "look": true,
+  "tags": [
+   "leash",
+   "harness"
+  ]
+ },
+ {
+  "id": "a-B07X8NJ4FK",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B07X8NJ4FK",
+  "name": "Puppia Terry suede vest harness",
+  "note": "Korean design · warm",
+  "color": "#7a2335",
+  "img": "img/p/red_boa.webp",
+  "look": true,
+  "tags": [
+   "leash",
+   "harness"
+  ]
+ },
+ {
   "id": "a-B0DY73PHVY",
   "src": "amazon",
   "cat": "acc",
