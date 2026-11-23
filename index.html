@@ -37,6 +37,19 @@ h2{font-weight:300;font-size:28px;margin-bottom:16px}
 .card .cap b{font-weight:400;font-size:16px;display:block}
 .card .cap span{font-size:13px;opacity:.65}
 .tag{position:absolute;top:10px;left:10px;background:rgba(255,255,255,.92);border-radius:999px;padding:4px 10px;font-size:12px}
+.sec{max-width:1200px;margin:0 auto;padding:30px 0 6px}
+.sec .hd{display:flex;align-items:baseline;justify-content:space-between;padding:0 16px;margin-bottom:12px}
+.sec .hd h2{margin:0;font-size:26px}
+.sec .hd a{font-size:15px;color:var(--pink)}
+.row{display:flex;gap:12px;overflow-x:auto;padding:0 16px 8px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.row::-webkit-scrollbar{display:none}
+.row>*{flex:0 0 44%;scroll-snap-align:start}
+@media(min-width:768px){.row>*{flex:0 0 23%}}
+.tile{border-radius:20px;aspect-ratio:1/1.18;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;color:var(--ink);position:relative;overflow:hidden}
+.tile .ic{position:absolute;top:14px;left:16px;font-size:44px}
+.tile b{font-weight:400;font-size:18px}
+.tile span{font-size:13px;opacity:.7}
+.sec.win .hd h2 b{font-weight:600;color:var(--pink)}
 .more{text-align:center;padding:26px 0;font-size:14px;opacity:.6}
 .band{margin-top:28px !important;background:var(--ink);color:#fff;text-align:center;padding:42px 20px;border-radius:24px;margin:0 16px}
 .band h2{color:#fff;margin-bottom:6px}
@@ -48,7 +61,7 @@ footer{text-align:center;font-size:13px;opacity:.6;padding:30px 16px 40px}
 <body>
 <header>
   <a href="/"><img src="img/logo.png" alt="PajamasDog"></a>
-  <nav><a href="#shop">Clothes</a><a href="#shop">Walk</a><a href="#shop">Beds</a><a href="#shop">Toys</a></nav>
+  <nav><a href="#pajamas">Pajamas</a><a href="#acc">Accessories</a><a href="#food">Food</a><a href="#adopt">Adopt</a><a href="#clubs">Clubs</a></nav>
 </header>
 
 <div class="hero">
@@ -56,25 +69,42 @@ footer{text-align:center;font-size:13px;opacity:.6;padding:30px 16px 40px}
   <div class="txt">
     <h1>Wrap them in <b>warmth</b><br>this winter.</h1>
     <p>Cozy pajamas for little dogs.</p>
-    <a class="btn" href="#shop">Shop pajamas</a>
+    <a class="btn" href="#pajamas">Shop pajamas</a>
   </div>
 </div>
 
-<div class="band">
-  <h2>Opening soon</h2>
-  <p>New styles every week.</p>
+<div class="sec win" id="pajamas">
+  <div class="hd"><h2>Winter <b>pajamas</b></h2><a href="#shop" data-go="pajamas">See all</a></div>
+  <div class="row" data-row="pajamas"></div>
+</div>
+
+<div class="sec" id="acc">
+  <div class="hd"><h2>Accessories</h2><a href="#shop" data-go="acc">See all</a></div>
+  <div class="row" data-row="acc"></div>
+</div>
+
+<div class="sec" id="food">
+  <div class="hd"><h2>Food</h2><a href="#shop" data-go="food">See all</a></div>
+  <div class="row" data-row="food"></div>
+</div>
+
+<div class="sec" id="adopt">
+  <div class="hd"><h2>Adopt a dog</h2></div>
+  <div class="row" id="adoptRow"></div>
+</div>
+
+<div class="sec" id="clubs">
+  <div class="hd"><h2>Dog clubs</h2></div>
+  <div class="row" id="clubRow"></div>
 </div>
 
 <section id="shop">
-  <h2>Everything for your dog</h2>
+  <h2>All products</h2>
   <div class="chips" id="chips">
     <button class="chip on" data-k="all">All</button>
-    <button class="chip" data-k="wear">Clothes</button>
-    <button class="chip" data-k="walk">Walk</button>
-    <button class="chip" data-k="eat">Bowls</button>
-    <button class="chip" data-k="bed">Beds</button>
-    <button class="chip" data-k="toy">Toys</button>
-    <button class="chip" data-k="groom">Grooming</button>
+    <button class="chip" data-k="pajamas">Pajamas</button>
+    <button class="chip" data-k="acc">Accessories</button>
+    <button class="chip" data-k="food">Food</button>
   </div>
   <div class="grid" id="grid"></div>
   <div id="more" class="more">Loading more…</div>
@@ -89,7 +119,9 @@ footer{text-align:center;font-size:13px;opacity:.6;padding:30px 16px 40px}
 // Now: reads products/feed.json. Later: the same function calls the partner
 // product API (page number + page size), so the page never needs to change.
 const PAGE_SIZE = 12;
-const BLOCK = /\b(treat|food|kibble|jerky|chew stick|supplement|cbd|vitamin)s?\b/i; // no edibles (FDA)
+const EDIBLE = /\b(treat|food|kibble|jerky|chew stick|supplement|cbd|vitamin)s?\b/i;
+// Food only as links to shops that sell it themselves; never via CJ dropship (we would be the seller).
+const blocked = p => (p.cat==='food' || EDIBLE.test(p.name)) && (p.src==='cj');
 const DEMO = new URLSearchParams(location.search).has('demo'); // repeat samples to test scrolling
 
 // Shops we link to. Each one is shown only where it can really ship.
@@ -113,8 +145,8 @@ const canShip = p => (SOURCES[p.src||'sample']||{regions:[]}).regions.includes(R
 
 let FEED = null;
 async function getProducts(cat, page){
-  if(!FEED){ FEED = (await (await fetch('products/feed.json',{cache:'no-store'})).json()).filter(p => !BLOCK.test(p.name) && canShip(p)); }
-  let list = FEED.filter(p => cat==='all' || p.cat===cat);
+  FEED = FEED || fetch('products/feed.json',{cache:'no-store'}).then(r=>r.json()).then(a=>a.filter(p => !blocked(p) && canShip(p)));
+  let list = (await FEED).filter(p => cat==='all' || p.cat===cat);
   if(DEMO && list.length){ const out=[]; for(let i=0;i<PAGE_SIZE;i++){ const p=list[(page*PAGE_SIZE+i)%list.length]; out.push({...p,id:p.id+'-'+page+'-'+i}); } return page<20?out:[]; }
   return list.slice(page*PAGE_SIZE, (page+1)*PAGE_SIZE);
 }
@@ -140,6 +172,27 @@ document.getElementById('chips').addEventListener('click', e => {
   cat=b.dataset.k; page=0; done=false; busy=false; run++; grid.innerHTML=''; loadNext();
 });
 loadNext();
+
+// ---- Home rows -------------------------------------------------------------
+const tile = (bg, ic, t, sub, url) => `<a class="tile" style="background:${bg}" ${url?`href="${url}" target="_blank" rel="noopener"`:''}><span class="ic">${ic}</span><b>${t}</b><span>${sub}</span></a>`;
+async function fillRows(){
+  for(const row of document.querySelectorAll('[data-row]')){
+    const items = (await getProducts(row.dataset.row, 0)).slice(0,8);
+    row.innerHTML = items.length ? items.map(card).join('') : tile('#ffe9c7','🦴','Coming soon','Picked for winter');
+  }
+  const ADOPT = {
+    US:[['#dff1ff','🐶','Petfinder','Dogs near you','https://www.petfinder.com'],['#ffe3ec','🏠','Adopt-a-Pet','Shelters & rescues','https://www.adoptapet.com']],
+    KR:[['#dff1ff','🐶','동물보호관리시스템','유기견 공고','https://www.animal.go.kr'],['#ffe3ec','🏠','포인핸드','입양 · 임시보호','https://pawinhand.kr']],
+  };
+  const a = ADOPT[REGION] || [...ADOPT.US];
+  document.getElementById('adoptRow').innerHTML = a.map(x=>tile(...x)).join('') + tile('#eef7e4','💛','Adoption tips','Coming soon');
+  document.getElementById('clubRow').innerHTML =
+    tile('#efe8ff','🐾','Meetup','Dog groups near you','https://www.meetup.com/topics/dogs/') +
+    tile('#fff1d6','📸','PajamasDog club','Share your pup · soon') +
+    tile('#e3f6f5','🏃','Walk buddies','Coming soon');
+}
+fillRows();
+document.querySelectorAll('[data-go]').forEach(a => a.addEventListener('click', () => document.querySelector(`.chip[data-k="${a.dataset.go}"]`)?.click()));
 </script>
 </body>
 </html>

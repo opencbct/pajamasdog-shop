@@ -1,7 +1,7 @@
 [
  {
   "id": "s1",
-  "cat": "wear",
+  "cat": "pajamas",
   "name": "Silk pajama set",
   "note": "Black \u00b7 Pink",
   "img": "img/hero.webp",
@@ -9,7 +9,7 @@
  },
  {
   "id": "s2",
-  "cat": "wear",
+  "cat": "pajamas",
   "name": "Fleece onesie",
   "note": "Leopard",
   "img": "img/fleece.webp",
@@ -17,7 +17,7 @@
  },
  {
   "id": "s3",
-  "cat": "wear",
+  "cat": "pajamas",
   "name": "Bear hoodie",
   "note": "Cream",
   "img": "img/hoodie.webp",
@@ -25,7 +25,7 @@
  },
  {
   "id": "s4",
-  "cat": "wear",
+  "cat": "acc",
   "name": "Reflective raincoat",
   "note": "Yellow",
   "img": "img/raincoat.webp",
@@ -33,7 +33,7 @@
  },
  {
   "id": "s5",
-  "cat": "walk",
+  "cat": "acc",
   "name": "Retractable leash",
   "note": "Black",
   "img": "img/leash.webp",
@@ -41,7 +41,7 @@
  },
  {
   "id": "s6",
-  "cat": "eat",
+  "cat": "acc",
   "name": "Raised bowl",
   "note": "Daisy white",
   "img": "img/bowl.webp",
