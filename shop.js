@@ -10,6 +10,15 @@ const DEMO = new URLSearchParams(location.search).has('demo'); // repeat samples
 // Amazon tracking ID for pajamasdog.com (create it in Amazon Associates, then put it here).
 const AMAZON_TAG = '';
 const linkOf = p => p.asin ? `https://www.amazon.com/dp/${p.asin}${AMAZON_TAG?`?tag=${AMAZON_TAG}`:''}` : (p.url||'#');
+// Partner shop doors (hero chips). Put each affiliate ID here once approved;
+// until then the links still work, they just earn nothing.
+const PARTNER_IDS = { coupang:'', naver:'', cj:'' };
+const PARTNER_LINKS = {
+  amazon:  q => `https://www.amazon.com/s?k=${encodeURIComponent(q)}${AMAZON_TAG?`&tag=${AMAZON_TAG}`:''}`,
+  coupang: q => `https://www.coupang.com/np/search?q=${encodeURIComponent(q)}`,
+  naver:   q => `https://search.shopping.naver.com/search/all?query=${encodeURIComponent(q)}`,
+  cj:      q => `https://cjdropshipping.com/search/${encodeURIComponent(q)}.html`,
+};
 const SOURCES = {
   amazon:  {label:'Amazon',  regions:['US']},       // tracking tag goes in each product url
   coupang: {label:'Coupang', regions:['KR']},

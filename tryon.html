@@ -98,17 +98,18 @@ function shrink(file){
 }
 // Put the PajamasDog logo on the picture itself, so a saved or shared photo carries the brand.
 const LOGO = new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'img/wordmark.png'; });
-async function brand(url){
+async function brand(url, tint){
   const [img, logo] = await Promise.all([new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = url; }), LOGO]);
   // crop to the 4:5 frame people see, so the shared picture matches the screen
   const iw = img.naturalWidth, ih = img.naturalHeight, cw = Math.min(iw, ih * 4/5), ch = cw * 5/4;
   const c = document.createElement('canvas'); c.width = Math.round(cw); c.height = Math.round(ch);
   const g = c.getContext('2d'); g.drawImage(img, (iw - cw) / 2, (ih - ch) / 2, cw, ch, 0, 0, c.width, c.height);
-  const w = c.width * 0.34, h = w * logo.naturalHeight / logo.naturalWidth, m = c.width * 0.04;
+  if(tint){ const tg = g.createLinearGradient(0, c.height*.45, 0, c.height); tg.addColorStop(0, tint+'00'); tg.addColorStop(1, tint+'8c'); g.fillStyle = tg; g.fillRect(0, c.height*.45, c.width, c.height*.55); }
+  const w = c.width * 0.36, h = w * logo.naturalHeight / logo.naturalWidth, m = c.width * 0.04;
   const fade = g.createLinearGradient(0, c.height - h - m * 2.2, 0, c.height);   // soft dark band so the logo reads on any photo
-  fade.addColorStop(0, 'rgba(21,19,28,0)'); fade.addColorStop(1, 'rgba(21,19,28,.55)');
+  fade.addColorStop(0, 'rgba(21,19,28,0)'); fade.addColorStop(1, 'rgba(21,19,28,.35)');
   g.fillStyle = fade; g.fillRect(0, c.height - h - m * 2.2, c.width, h + m * 2.2);
-  g.shadowColor = 'rgba(0,0,0,.45)'; g.shadowBlur = c.width * 0.01;
+  g.imageSmoothingQuality = 'high'; g.shadowColor = 'rgba(0,0,0,.5)'; g.shadowBlur = c.width * 0.008;
   g.drawImage(logo, m, c.height - h - m, w, h);
   return c.toDataURL('image/jpeg', .9);
 }
@@ -125,11 +126,10 @@ async function render(){
   $('outfits').children[idx]?.scrollIntoView({inline:'center', block:'nearest', behavior:'smooth'});
   $('stage').classList.add('loading');
   try {
-    if(!cache[key]){ const r = await tryOn(photo, p, pose); cache[key] = {...r, url: await brand(r.url)}; }
+    if(!cache[key]){ const r = await tryOn(photo, p, pose); cache[key] = {...r, url: await brand(r.url, r.preview ? (p.color || '#ff3d7f') : null)}; }
     if(my !== run) return;
     $('shot').src = cache[key].url;
     $('prevTag').classList.toggle('hide', !cache[key].preview);
-    $('tint').classList.toggle('hide', !cache[key].preview);
   } catch(e){ if(my===run) $('note').textContent = 'Could not dress up — try again.'; }
   finally { if(my===run) $('stage').classList.remove('loading'); }
 }
@@ -157,7 +157,7 @@ $('file').addEventListener('change', async e => {
   photo = await shrink(f);
   Object.keys(cache).forEach(k => delete cache[k]);
   ['add'].forEach(id => $(id).classList.add('hide'));
-  ['shot','badge','mini','note','controls','tint'].forEach(id => $(id).classList.remove('hide'));
+  ['shot','badge','mini','note','controls'].forEach(id => $(id).classList.remove('hide'));
   render();
 });
 
