@@ -43,7 +43,7 @@ pieces.sort(key=lambda m: np.where(m)[1].min())
 subs = sorted(comps(sub, 1), key=lambda m: np.where(m)[1].min())
 
 bb = np.argwhere(alpha); (y0, x0), (y1, x1) = bb.min(0), bb.max(0) + 1
-S = min(W * 0.82 / (x1 - x0), H * 0.55 / (y1 - y0))               # logo scale on canvas
+S = min(W * float(__import__("os").environ.get("LW",".82")) / (x1 - x0), H * float(__import__("os").environ.get("LH",".55")) / (y1 - y0))               # logo scale on canvas
 OX = (W - (x1 - x0) * S) / 2 - x0 * S
 OY = (H - (y1 - y0) * S) / 2 - y0 * S
 

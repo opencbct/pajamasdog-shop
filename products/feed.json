@@ -528,5 +528,41 @@
   "tags": [
    "glasses"
   ]
+ },
+ {
+  "id": "a-B0BFPG6P5Z",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0BFPG6P5Z",
+  "name": "Anti-slip socks 16 pcs",
+  "note": "4 styles · small dogs & cats",
+  "color": "#e7a9c0",
+  "tags": [
+   "socks"
+  ]
+ },
+ {
+  "id": "a-B085NH75RH",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B085NH75RH",
+  "name": "Double-grip dog socks",
+  "note": "PUPTECK · grey",
+  "color": "#8d9199",
+  "tags": [
+   "socks"
+  ]
+ },
+ {
+  "id": "a-B0149MAIXS",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0149MAIXS",
+  "name": "Grippers non-slip socks",
+  "note": "Traction control",
+  "color": "#c8333c",
+  "tags": [
+   "socks"
+  ]
  }
 ]

@@ -78,9 +78,11 @@ async function tryOn(photoFile, product, pose='sit'){
   if(!('IntersectionObserver' in window)) return;
   const io = new IntersectionObserver(es => es.forEach(e => {
     const el = e.target;
+    if(e.isIntersecting && el.tagName==='VIDEO'){ el.currentTime = 0; el.play().catch(()=>{}); return; }
     if(e.isIntersecting){ el.classList.remove('lm-go'); void el.offsetWidth; el.classList.add('lm-go'); }
   }), {threshold:.6});
-  const watch = root => (root||document).querySelectorAll('header a img, .plogo').forEach(el => {
+  const watch = root => (root||document).querySelectorAll('header a img, header .hlogo, .plogo').forEach(el => {
+    if(el.tagName==='VIDEO'){ if(el.dataset.lm) return; el.dataset.lm = 1; io.observe(el); return; }
     const t = el.tagName==='IMG' ? el.parentElement : el;
     if(t.dataset.lm) return; t.dataset.lm = 1; t.classList.add('lm'); io.observe(t);
   });

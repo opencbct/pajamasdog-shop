@@ -20,12 +20,35 @@ h1 b{font-weight:600;color:var(--pink)}
 .row::-webkit-scrollbar{display:none}
 .wrap{display:grid;gap:18px}
 .wrap>div{min-width:0}
-.stage svg{max-height:62vh;margin:0 auto}
+.stage svg{max-height:60vh;margin:0 auto}
 @media(min-width:900px){.wrap{grid-template-columns:1.05fr 1fr;align-items:start}.left{position:sticky;top:12px}}
-.stage{border-radius:24px;background:radial-gradient(circle at 50% 35%,#2d2840,#15131c 70%);position:relative;overflow:hidden}
+.stage{border-radius:24px;background:#1c1928;position:relative;overflow:hidden}
 .stage svg{display:block;width:100%;height:auto}
 .stage .put{position:absolute;inset:auto 0 14px 0;text-align:center;font-size:13px;opacity:.6}
-.fur{display:flex;gap:8px;margin-top:10px}
+.stage .ln *{fill:#1c1928;stroke:#f3f1f8;stroke-width:3.2;stroke-linejoin:round}
+.stage .vw{fill:rgba(243,241,248,.45);font:600 13px Nunito,sans-serif;letter-spacing:3px}
+.fur{display:none}
+.sns{display:flex;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap}
+.sns span{font-size:13px;opacity:.65;margin-right:2px}
+.sns button{width:40px;height:40px;border-radius:50%;border:0;display:grid;place-items:center;cursor:pointer;color:#fff;font-size:17px;padding:0}
+.sns img{width:20px;height:20px;filter:invert(1)}
+.sns button[data-net=kakaotalk] img{filter:none}
+.stage .mg path,.stage .mg ellipse{stroke:#0cc0df;stroke-width:2.5;stroke-dasharray:6 5;fill:none}
+.stage .mg text{fill:#0cc0df;font:700 15px Nunito,sans-serif;paint-order:stroke;stroke:#1c1928;stroke-width:5px;stroke-dasharray:none}
+.stage .put{position:static;padding:0 0 12px}
+.turn{display:flex;gap:8px;justify-content:center;margin:10px 0 0;flex-wrap:wrap}
+.turn button{background:var(--chip);color:var(--txt);border:0;border-radius:999px;padding:9px 16px;font:inherit;cursor:pointer}
+.turn button.on{background:#fff;color:#15131c}
+.meas{background:var(--card);border-radius:20px;padding:14px;margin-top:12px}
+.meas h3{font-weight:400;font-size:16px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.meas .g{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.meas label{font-size:12px;opacity:.7}
+.meas input{width:100%;margin-top:4px;padding:10px;border-radius:12px;border:0;background:var(--chip);color:var(--txt);font:inherit;font-size:16px}
+.meas .res{margin-top:12px;font-size:15px}
+.meas .res b{color:var(--pink);font-size:20px}
+.meas small{display:block;opacity:.55;font-size:11px;margin-top:6px}
+.stage{cursor:grab;touch-action:pan-y}
+
 .fur button{width:30px;height:30px;border-radius:50%;border:2px solid transparent;cursor:pointer}
 .fur button.on{border-color:#fff}
 .items{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px 0 6px}
@@ -56,7 +79,7 @@ h1 b{font-weight:600;color:var(--pink)}
 </head>
 <body>
 <header>
-  <a href="/"><img src="img/wordmark.svg" alt="PajamasDog"></a>
+  <a href="/" aria-label="PajamasDog home"><video class="hlogo" src="img/logo_anim.mp4" poster="img/logo_poster.jpg" muted playsinline autoplay preload="auto"></video></a>
   <a class="back" href="/">← Home</a>
 </header>
 <main>
@@ -64,9 +87,23 @@ h1 b{font-weight:600;color:var(--pink)}
   <div class="wrap">
     <div class="left">
       <div class="row" id="animals"></div>
+      <div class="row" id="breeds" style="margin:8px 0 10px"></div>
       <div class="stage" id="stage"></div>
       <div class="fur" id="fur"></div>
-      <button class="btn" id="share" style="margin-top:12px">📤 Share my pet's look</button>
+      <div class="turn"><button id="rl" aria-label="Turn left">⟲</button><button id="spin">360° spin</button><button id="rr" aria-label="Turn right">⟳</button><button id="gd">📏 Guide</button></div>
+      <div class="meas">
+        <h3><span>📏 Your pet's size</span><span class="row" id="units"><button class="chip on" data-u="cm">cm</button><button class="chip" data-u="in">in</button></span></h3>
+        <div class="g">
+          <div><label for="m-neck">Neck</label><input id="m-neck" inputmode="decimal" placeholder="—"></div>
+          <div><label for="m-chest">Chest</label><input id="m-chest" inputmode="decimal" placeholder="—"></div>
+          <div><label for="m-back">Back</label><input id="m-back" inputmode="decimal" placeholder="—"></div>
+          <div><label for="m-wt">Weight <span id="wu">kg</span></label><input id="m-wt" inputmode="decimal" placeholder="—"></div>
+        </div>
+        <div class="res" id="sizeRes">Enter the chest size to see your size.</div>
+        <small>General guide. Every shop has its own chart — check it on the product page before ordering.</small>
+      </div>
+
+      <div class="sns" id="sns"><button data-net="instagram" data-mode="file" aria-label="Share to Instagram" title="Instagram" style="background:#E4405F"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/instagram.svg" alt=""></button><button data-net="kakaotalk" data-mode="file" aria-label="Share to KakaoTalk" title="KakaoTalk" style="background:#FFCD00"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/kakaotalk.svg" alt=""></button><button data-net="facebook" data-mode="url" aria-label="Share to Facebook" title="Facebook" style="background:#0866FF"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/facebook.svg" alt=""></button><button data-net="x" data-mode="url" aria-label="Share to X" title="X" style="background:#000000"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/x.svg" alt=""></button><button data-net="whatsapp" data-mode="url" aria-label="Share to WhatsApp" title="WhatsApp" style="background:#25D366"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/whatsapp.svg" alt=""></button><button data-net="pinterest" data-mode="url" aria-label="Share to Pinterest" title="Pinterest" style="background:#BD081C"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/pinterest.svg" alt=""></button><button data-net="save" aria-label="Save picture" title="Save" style="background:#3a3550">⬇</button></div>
     </div>
     <div>
       <div class="row" id="slots"></div>
@@ -95,13 +132,33 @@ h1 b{font-weight:600;color:var(--pink)}
 <script>
 const $ = id => document.getElementById(id);
 // ---- Animals (layouts) ----
+// Breeds grouped by size. Each breed sets the head/body shape, ears, snout, fur and markings.
+const B = (k,label,size,o) => Object.assign({k,label,size,pet:'dog',head:78,body:[95,100],snout:'short',ears:'flop'},o);
 const ANIMALS = [
-  {k:'small', label:'🐶 Small dog', head:78, body:[95,100], snout:'short', ears:'flop', pet:'dog'},
-  {k:'big',   label:'🐕 Big dog',   head:86, body:[112,118], snout:'long', ears:'flop', pet:'dog'},
-  {k:'frenchie', label:'🐾 Frenchie', head:84, body:[100,98], snout:'flat', ears:'bat', pet:'dog'},
-  {k:'cat',   label:'🐱 Cat',       head:74, body:[88,104], snout:'cat',  ears:'cat',  pet:'cat'},
+  B('maltese','Maltese','small',{fur:'#ffffff',fluff:true,head:76}),
+  B('poodle','Toy Poodle','small',{fur:'#c98a55',fluff:true,head:74,ears:'longflop'}),
+  B('pomeranian','Pomeranian','small',{fur:'#e8a44f',fluff:true,ears:'up',snout:'tiny',head:80,body:[98,96]}),
+  B('chihuahua','Chihuahua','small',{fur:'#e9c79a',ears:'bigup',snout:'tiny',head:74,body:[80,90]}),
+  B('yorkie','Yorkshire Terrier','small',{fur:'#a87a4a',ears:'up',snout:'short',mask:'yorkie',head:72,body:[82,92]}),
+  B('shihtzu','Shih Tzu','small',{fur:'#f2e4cf',fluff:true,ears:'longflop',snout:'flat',mask:'shihtzu'}),
+  B('bichon','Bichon Frise','small',{fur:'#ffffff',fluff:true,ears:'flop',head:82}),
+  B('frenchie','French Bulldog','small',{fur:'#d9a066',ears:'bat',snout:'flat',head:84,body:[100,98]}),
+  B('pug','Pug','small',{fur:'#e3c592',ears:'flop',snout:'flat',mask:'pug',head:82,body:[98,96]}),
+  B('dachshund','Dachshund','small',{fur:'#8a4b2a',ears:'longflop',snout:'long',body:[128,82]}),
+  B('corgi','Corgi','medium',{fur:'#d98a3d',ears:'bigup',snout:'long',mask:'corgi',head:80,body:[118,92]}),
+  B('beagle','Beagle','medium',{fur:'#c6823f',ears:'longflop',snout:'long',mask:'beagle',head:80,body:[104,104]}),
+  B('shiba','Shiba Inu','medium',{fur:'#d98a3d',ears:'up',snout:'long',mask:'shiba',head:82,body:[104,104]}),
+  B('golden','Golden Retriever','large',{fur:'#d9a45a',ears:'flop',snout:'long',head:88,body:[116,120]}),
+  B('lab','Labrador','large',{fur:'#3b3434',ears:'flop',snout:'long',head:88,body:[116,120]}),
+  B('husky','Siberian Husky','large',{fur:'#8f97a3',ears:'up',snout:'long',mask:'husky',head:88,body:[114,120]}),
+  {k:'koshort',label:'Korean Shorthair',size:'cat',pet:'cat',head:74,body:[88,104],snout:'cat',ears:'cat',fur:'#d9a066',mask:'tabby'},
+  {k:'persian',label:'Persian',size:'cat',pet:'cat',head:80,body:[96,100],snout:'flat',ears:'cat',fur:'#f4ead9',fluff:true},
+  {k:'siamese',label:'Siamese',size:'cat',pet:'cat',head:72,body:[84,104],snout:'cat',ears:'cat',fur:'#efe2cc',mask:'siamese'},
+  {k:'fold',label:'Scottish Fold',size:'cat',pet:'cat',head:80,body:[92,100],snout:'cat',ears:'fold',fur:'#b9b9c2'},
+  {k:'russian',label:'Russian Blue',size:'cat',pet:'cat',head:74,body:[86,104],snout:'cat',ears:'cat',fur:'#7f8796'},
 ];
-const FURS = ['#f4ead9','#d9a066','#8a5a3b','#3b3434','#b9b9c2','#ffffff'];
+const SIZES = [{k:'small',label:'🐶 Small'},{k:'medium',label:'🐕 Medium'},{k:'large',label:'🦮 Large'},{k:'cat',label:'🐱 Cats'}];
+const FURS = ['#ffffff','#f4ead9','#e9c79a','#d9a066','#c98a55','#8a5a3b','#3b3434','#8f97a3','#b9b9c2'];
 // ---- Slots (what can be worn together) ----
 const SLOTS = [
   {k:'pj',    label:'👕 Pajamas', match:p => p.cat==='pajamas' || p.cat==='matching' || (p.tags||[]).includes('rain')},
@@ -109,8 +166,10 @@ const SLOTS = [
   {k:'collar',label:'🎀 Collars', match:p => (p.tags||[]).includes('tie') || (p.tags||[]).includes('bell')},
   {k:'glasses',label:'🕶️ Goggles', match:p => (p.tags||[]).includes('glasses')},
   {k:'leash', label:'🦮 Leashes', match:p => (p.tags||[]).includes('leash')},
+  {k:'socks', label:'🧦 Socks & booties', match:p => (p.tags||[]).includes('socks')},
+  {k:'bowl',  label:'🥣 Bowls', match:p => (p.tags||[]).includes('bowl')},
 ];
-let animal = ANIMALS[0], fur = FURS[1], slot = SLOTS[0], all = [], worn = {};
+let seedF = 0, animal = ANIMALS[0], fur = ANIMALS[0].fur, size = 'small', slot = SLOTS[0], all = [], worn = {};
 
 // colour helpers (for "same colour" suggestions)
 const hex = h => { h=(h||'#888').replace('#',''); return [0,2,4].map(i=>parseInt(h.substr(i,2),16)); };
@@ -125,13 +184,32 @@ function draw(){
   const furD = shade(fur,.82), nose = '#2a2226';
   let ears='';
   if(A.ears==='flop') ears = `<ellipse cx="${cx-h*.82}" cy="${hy+10}" rx="${h*.32}" ry="${h*.62}" fill="${furD}" transform="rotate(18 ${cx-h*.82} ${hy+10})"/><ellipse cx="${cx+h*.82}" cy="${hy+10}" rx="${h*.32}" ry="${h*.62}" fill="${furD}" transform="rotate(-18 ${cx+h*.82} ${hy+10})"/>`;
+  if(A.ears==='longflop') ears = `<ellipse cx="${cx-h*.86}" cy="${hy+h*.3}" rx="${h*.3}" ry="${h*.85}" fill="${furD}" transform="rotate(10 ${cx-h*.86} ${hy+h*.3})"/><ellipse cx="${cx+h*.86}" cy="${hy+h*.3}" rx="${h*.3}" ry="${h*.85}" fill="${furD}" transform="rotate(-10 ${cx+h*.86} ${hy+h*.3})"/>`;
+  if(A.ears==='up') ears = `<path d="M${cx-h*.8} ${hy-h*.35} L${cx-h*.62} ${hy-h*1.12} L${cx-h*.2} ${hy-h*.78}Z" fill="${fur}"/><path d="M${cx+h*.8} ${hy-h*.35} L${cx+h*.62} ${hy-h*1.12} L${cx+h*.2} ${hy-h*.78}Z" fill="${fur}"/><path d="M${cx-h*.66} ${hy-h*.5} L${cx-h*.58} ${hy-h*.95} L${cx-h*.34} ${hy-h*.74}Z" fill="${shade(fur,1.15)}"/><path d="M${cx+h*.66} ${hy-h*.5} L${cx+h*.58} ${hy-h*.95} L${cx+h*.34} ${hy-h*.74}Z" fill="${shade(fur,1.15)}"/>`;
+  if(A.ears==='bigup') ears = `<path d="M${cx-h*.75} ${hy-h*.25} L${cx-h*1.15} ${hy-h*1.25} L${cx-h*.2} ${hy-h*.8}Z" fill="${fur}"/><path d="M${cx+h*.75} ${hy-h*.25} L${cx+h*1.15} ${hy-h*1.25} L${cx+h*.2} ${hy-h*.8}Z" fill="${fur}"/><path d="M${cx-h*.7} ${hy-h*.42} L${cx-h*1.0} ${hy-h*1.08} L${cx-h*.36} ${hy-h*.8}Z" fill="#f3b3c1"/><path d="M${cx+h*.7} ${hy-h*.42} L${cx+h*1.0} ${hy-h*1.08} L${cx+h*.36} ${hy-h*.8}Z" fill="#f3b3c1"/>`;
+  if(A.ears==='fold') ears = `<path d="M${cx-h*.8} ${hy-h*.55} q${h*.15} -${h*.35} ${h*.48} -${h*.3} q-${h*.1} ${h*.2} -${h*.48} ${h*.3}Z" fill="${furD}"/><path d="M${cx+h*.8} ${hy-h*.55} q-${h*.15} -${h*.35} -${h*.48} -${h*.3} q${h*.1} ${h*.2} ${h*.48} ${h*.3}Z" fill="${furD}"/>`;
   if(A.ears==='bat') ears = `<path d="M${cx-h*.75} ${hy-h*.35} L${cx-h*.95} ${hy-h*1.25} L${cx-h*.25} ${hy-h*.8}Z" fill="${fur}"/><path d="M${cx+h*.75} ${hy-h*.35} L${cx+h*.95} ${hy-h*1.25} L${cx+h*.25} ${hy-h*.8}Z" fill="${fur}"/><path d="M${cx-h*.72} ${hy-h*.5} L${cx-h*.85} ${hy-h*1.05} L${cx-h*.38} ${hy-h*.78}Z" fill="#f3b3c1"/><path d="M${cx+h*.72} ${hy-h*.5} L${cx+h*.85} ${hy-h*1.05} L${cx+h*.38} ${hy-h*.78}Z" fill="#f3b3c1"/>`;
   if(A.ears==='cat') ears = `<path d="M${cx-h*.85} ${hy-h*.3} L${cx-h*.7} ${hy-h*1.15} L${cx-h*.2} ${hy-h*.75}Z" fill="${fur}"/><path d="M${cx+h*.85} ${hy-h*.3} L${cx+h*.7} ${hy-h*1.15} L${cx+h*.2} ${hy-h*.75}Z" fill="${fur}"/><path d="M${cx-h*.72} ${hy-h*.45} L${cx-h*.65} ${hy-h*.95} L${cx-h*.35} ${hy-h*.72}Z" fill="#f3b3c1"/><path d="M${cx+h*.72} ${hy-h*.45} L${cx+h*.65} ${hy-h*.95} L${cx+h*.35} ${hy-h*.72}Z" fill="#f3b3c1"/>`;
   let snout='';
   if(A.snout==='short') snout = `<ellipse cx="${cx}" cy="${hy+h*.38}" rx="${h*.42}" ry="${h*.3}" fill="${shade(fur,1.08)}"/>`;
   if(A.snout==='long')  snout = `<ellipse cx="${cx}" cy="${hy+h*.42}" rx="${h*.46}" ry="${h*.36}" fill="${shade(fur,1.08)}"/>`;
   if(A.snout==='flat')  snout = `<ellipse cx="${cx}" cy="${hy+h*.34}" rx="${h*.5}" ry="${h*.26}" fill="${shade(fur,.75)}"/>`;
+  if(A.snout==='tiny')  snout = `<ellipse cx="${cx}" cy="${hy+h*.32}" rx="${h*.3}" ry="${h*.22}" fill="${shade(fur,1.1)}"/>`;
   if(A.snout==='cat')   snout = `<ellipse cx="${cx}" cy="${hy+h*.34}" rx="${h*.3}" ry="${h*.2}" fill="${shade(fur,1.1)}"/><g stroke="#fff" stroke-width="2" opacity=".7"><path d="M${cx-h*.3} ${hy+h*.32} L${cx-h*.85} ${hy+h*.22}"/><path d="M${cx-h*.3} ${hy+h*.4} L${cx-h*.85} ${hy+h*.45}"/><path d="M${cx+h*.3} ${hy+h*.32} L${cx+h*.85} ${hy+h*.22}"/><path d="M${cx+h*.3} ${hy+h*.4} L${cx+h*.85} ${hy+h*.45}"/></g>`;
+  // breed markings and fluffy coat
+  let marks = '', fluffL = '';
+  const M = A.mask;
+  if(M==='husky')   marks = `<path d="M${cx-h*.95} ${hy-h*.2} Q${cx} ${hy-h*1.1} ${cx+h*.95} ${hy-h*.2} L${cx+h*.4} ${hy+h*.05} Q${cx} ${hy-h*.45} ${cx-h*.4} ${hy+h*.05}Z" fill="${shade(fur,.55)}"/><path d="M${cx-h*.5} ${hy+h*.1} Q${cx} ${hy+h*1.0} ${cx+h*.5} ${hy+h*.1} Q${cx} ${hy-h*.25} ${cx-h*.5} ${hy+h*.1}" fill="#fff"/>`;
+  if(M==='shiba'||M==='corgi') marks = `<path d="M${cx-h*.55} ${hy+h*.15} Q${cx} ${hy+h*.95} ${cx+h*.55} ${hy+h*.15} Q${cx} ${hy-h*.15} ${cx-h*.55} ${hy+h*.15}" fill="#fff6e8"/><circle cx="${cx-h*.36}" cy="${hy-h*.28}" r="${h*.08}" fill="#fff6e8"/><circle cx="${cx+h*.36}" cy="${hy-h*.28}" r="${h*.08}" fill="#fff6e8"/>`;
+  if(M==='beagle')  marks = `<path d="M${cx-h*.14} ${hy-h*.95} L${cx+h*.14} ${hy-h*.95} L${cx+h*.2} ${hy+h*.2} L${cx-h*.2} ${hy+h*.2}Z" fill="#fff"/><ellipse cx="${cx}" cy="${hy+h*.42}" rx="${h*.46}" ry="${h*.34}" fill="#fff"/>`;
+  if(M==='pug')     marks = `<ellipse cx="${cx}" cy="${hy+h*.3}" rx="${h*.55}" ry="${h*.38}" fill="#2e2626"/><ellipse cx="${cx-h*.36}" cy="${hy-h*.05}" rx="${h*.2}" ry="${h*.17}" fill="#2e2626" opacity=".6"/><ellipse cx="${cx+h*.36}" cy="${hy-h*.05}" rx="${h*.2}" ry="${h*.17}" fill="#2e2626" opacity=".6"/>`;
+  if(M==='siamese') marks = `<ellipse cx="${cx}" cy="${hy+h*.25}" rx="${h*.5}" ry="${h*.45}" fill="#6b4a3a" opacity=".85"/>`;
+  if(M==='tabby')   marks = `<g stroke="${shade(fur,.62)}" stroke-width="7" stroke-linecap="round"><path d="M${cx} ${hy-h*.95} L${cx} ${hy-h*.6}"/><path d="M${cx-h*.25} ${hy-h*.9} L${cx-h*.2} ${hy-h*.62}"/><path d="M${cx+h*.25} ${hy-h*.9} L${cx+h*.2} ${hy-h*.62}"/></g>`;
+  if(M==='yorkie')  marks = `<path d="M${cx-h*.95} ${hy+h*.1} Q${cx} ${hy-h*1.15} ${cx+h*.95} ${hy+h*.1} Q${cx} ${hy-h*.4} ${cx-h*.95} ${hy+h*.1}" fill="#5a6475"/>`;
+  if(M==='shihtzu') marks = `<path d="M${cx-h*.18} ${hy-h*1.02} L${cx+h*.18} ${hy-h*1.02} L${cx+h*.1} ${hy-h*.4} L${cx-h*.1} ${hy-h*.4}Z" fill="#fff"/><ellipse cx="${cx-h*.36}" cy="${hy-h*.05}" rx="${h*.22}" ry="${h*.2}" fill="${shade(fur,.7)}"/><ellipse cx="${cx+h*.36}" cy="${hy-h*.05}" rx="${h*.22}" ry="${h*.2}" fill="${shade(fur,.7)}"/>`;
+  if(A.fluff){ seedF = 3; const puff = (x,y,r) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${fur}"/>`;
+    for(let i=0;i<16;i++){ const t = i/16*Math.PI*2; fluffL += puff(cx+Math.cos(t)*h*.98, hy+Math.sin(t)*h*.98, h*.24); }
+    for(let i=0;i<14;i++){ const t = i/14*Math.PI*2; fluffL += puff(cx+Math.cos(t)*bw*.95, by+8+Math.sin(t)*(bh-10)*.95, bw*.22); } }
   // pajamas layer
   let pjL = '';
   if(pj){ const c = colorOf(pj), c2 = shade(c,.78);
@@ -164,19 +242,87 @@ function draw(){
       <rect x="${cx+ex-h*.32}" y="${ey-h*.2}" width="${h*.64}" height="${h*.42}" rx="${h*.16}" fill="${c}" stroke="#111" stroke-width="5" opacity=".95"/>
       <path d="M${cx-ex-h*.18} ${ey-h*.1} l${h*.18} 0" stroke="rgba(255,255,255,.7)" stroke-width="4" stroke-linecap="round"/><path d="M${cx+ex-h*.18} ${ey-h*.1} l${h*.18} 0" stroke="rgba(255,255,255,.7)" stroke-width="4" stroke-linecap="round"/>`; }
   const eyes = gl ? '' : `<circle cx="${cx-h*.36}" cy="${hy-h*.05}" r="${h*.11}" fill="#1b1517"/><circle cx="${cx+h*.36}" cy="${hy-h*.05}" r="${h*.11}" fill="#1b1517"/><circle cx="${cx-h*.32}" cy="${hy-h*.09}" r="${h*.035}" fill="#fff"/><circle cx="${cx+h*.4}" cy="${hy-h*.09}" r="${h*.035}" fill="#fff"/>`;
-  $('stage').innerHTML = `<svg viewBox="0 0 400 470" role="img" aria-label="${A.label} wearing the selected outfit">
-    <ellipse cx="${cx}" cy="452" rx="${bw*1.1}" ry="14" fill="rgba(0,0,0,.35)"/>
-    ${A.pet==='cat' ? `<path d="M${cx+bw*.8} ${by+40} C ${cx+bw*1.5} ${by-10}, ${cx+bw*1.35} ${by-120}, ${cx+bw*1.05} ${by-110}" stroke="${fur}" stroke-width="22" fill="none" stroke-linecap="round"/>` : `<path d="M${cx+bw*.85} ${by+20} q40 -40 26 -80" stroke="${fur}" stroke-width="18" fill="none" stroke-linecap="round"/>`}
-    <ellipse cx="${cx}" cy="${by+8}" rx="${bw}" ry="${bh-8}" fill="${fur}"/>
-    <ellipse cx="${cx-bw*.42}" cy="${by+bh*.92}" rx="${bw*.26}" ry="${bh*.16}" fill="${shade(fur,1.05)}"/><ellipse cx="${cx+bw*.42}" cy="${by+bh*.92}" rx="${bw*.26}" ry="${bh*.16}" fill="${shade(fur,1.05)}"/>
-    ${pjL}${leL}
-    ${A.ears==='flop' ? '' : ears}
-    <circle cx="${cx}" cy="${hy}" r="${h}" fill="${fur}"/>
-    ${A.ears==='flop' ? ears : ''}
-    ${snout}<ellipse cx="${cx}" cy="${hy+h*.22}" rx="${h*.15}" ry="${h*.1}" fill="${nose}"/>
-    <path d="M${cx} ${hy+h*.3} q-${h*.14} ${h*.16} -${h*.26} ${h*.06} M${cx} ${hy+h*.3} q${h*.14} ${h*.16} ${h*.26} ${h*.06}" stroke="${nose}" stroke-width="3" fill="none" stroke-linecap="round"/>
-    ${eyes}${colL}${glL}${hatL}
-  </svg>${Object.keys(worn).length ? '' : '<div class="put">Tap an item below to dress up</div>'}`;
+  const LC = '#f3f1f8', BG = '#1c1928';
+  // tail drawn as an outlined stroke (white line with page-colour core)
+  const tailD = A.pet==='cat' ? `M${cx+bw*.8} ${by+40} C ${cx+bw*1.5} ${by-10}, ${cx+bw*1.35} ${by-120}, ${cx+bw*1.05} ${by-110}` : `M${cx+bw*.85} ${by+20} q40 -40 26 -80`;
+  const tail = `<path d="${tailD}" stroke="${LC}" stroke-width="20" fill="none" stroke-linecap="round"/><path d="${tailD}" stroke="${BG}" stroke-width="14" fill="none" stroke-linecap="round"/>`;
+  const face = `<ellipse cx="${cx}" cy="${hy+h*.22}" rx="${h*.15}" ry="${h*.1}" fill="${LC}"/>
+    <path d="M${cx} ${hy+h*.3} q-${h*.14} ${h*.16} -${h*.26} ${h*.06} M${cx} ${hy+h*.3} q${h*.14} ${h*.16} ${h*.26} ${h*.06}" stroke="${LC}" stroke-width="3" fill="none" stroke-linecap="round"/>
+    ${gl ? '' : `<circle cx="${cx-h*.36}" cy="${hy-h*.05}" r="${h*.09}" fill="${LC}"/><circle cx="${cx+h*.36}" cy="${hy-h*.05}" r="${h*.09}" fill="${LC}"/>`}`;
+  const sk = worn.socks, bw2 = worn.bowl;
+  const sockL = sk ? `<ellipse cx="${cx-bw*.42}" cy="${by+bh*.9}" rx="${bw*.28}" ry="${bh*.18}" fill="${colorOf(sk)}"/><ellipse cx="${cx+bw*.42}" cy="${by+bh*.9}" rx="${bw*.28}" ry="${bh*.18}" fill="${colorOf(sk)}"/><path d="M${cx-bw*.62} ${by+bh*.86} h${bw*.4} M${cx+bw*.22} ${by+bh*.86} h${bw*.4}" stroke="rgba(255,255,255,.6)" stroke-width="4"/>` : '';
+  const bowlL = bw2 ? `<path d="M${cx-bw-70} 420 h70 l-10 30 h-50z" fill="${colorOf(bw2)}"/><ellipse cx="${cx-bw-35}" cy="420" rx="35" ry="8" fill="${shade(colorOf(bw2),.7)}"/>` : '';
+  const tailBack = `<path d="M${cx} ${by+bh*.2} q-10 -70 18 -120" stroke="${LC}" stroke-width="20" fill="none" stroke-linecap="round"/><path d="M${cx} ${by+bh*.2} q-10 -70 18 -120" stroke="${BG}" stroke-width="14" fill="none" stroke-linecap="round"/>`;
+  const colBand = col ? `<path d="M${cx-h*.6} ${hy+h*.95-6} Q${cx} ${hy+h*.95+18} ${cx+h*.6} ${hy+h*.95-6}" stroke="${colorOf(col)}" stroke-width="12" fill="none" stroke-linecap="round"/>` : '';
+  const glStrap = gl ? `<path d="M${cx-h*.95} ${hy-h*.05} L${cx+h*.95} ${hy-h*.05}" stroke="#222" stroke-width="8"/>` : '';
+  const frontV = `${tail}
+    <g class="ln">${fluffL}<ellipse cx="${cx}" cy="${by+8}" rx="${bw}" ry="${bh-8}"/>
+    <ellipse cx="${cx-bw*.42}" cy="${by+bh*.92}" rx="${bw*.26}" ry="${bh*.16}"/><ellipse cx="${cx+bw*.42}" cy="${by+bh*.92}" rx="${bw*.26}" ry="${bh*.16}"/></g>
+    ${pjL}${sockL}${leL}
+    <g class="ln">${['flop','longflop'].includes(A.ears) ? '' : ears}
+    <circle cx="${cx}" cy="${hy}" r="${h}"/>
+    ${['flop','longflop'].includes(A.ears) ? ears : ''}${marks}${snout}</g>
+    ${face}${colL}${glL}${hatL}${bowlL}`;
+  const backV = `<g class="ln">${fluffL}<ellipse cx="${cx}" cy="${by+8}" rx="${bw}" ry="${bh-8}"/>
+    <ellipse cx="${cx-bw*.42}" cy="${by+bh*.92}" rx="${bw*.26}" ry="${bh*.16}"/><ellipse cx="${cx+bw*.42}" cy="${by+bh*.92}" rx="${bw*.26}" ry="${bh*.16}"/></g>
+    ${pjL}${sockL}${tailBack}${leL}
+    <g class="ln">${ears}<circle cx="${cx}" cy="${hy}" r="${h}"/></g>${colBand}${glStrap}${hatL}${bowlL}`;
+  const VIEWS = ['FRONT','RIGHT SIDE','BACK','LEFT SIDE'];
+  const panel = (k, ox) => { k = ((k%4)+4)%4;
+    const body = k===0 ? frontV : k===2 ? backV : side(k===3);
+    const tf = k===1 ? `translate(${ox-400},0)` : k===3 ? `matrix(-1,0,0,1,${ox+800},0)` : `translate(${ox},0)`;
+    return `<text x="${ox+200}" y="28" text-anchor="middle" class="vw">${VIEWS[k]} · ${k*90}°</text><ellipse cx="${ox+200}" cy="452" rx="${bw*1.1}" ry="12" fill="rgba(0,0,0,.35)"/><g transform="${tf}">${body}</g>`; };
+  $('stage').innerHTML = `<svg viewBox="0 0 400 470" role="img" aria-label="${A.label} wearing the selected outfit, ${VIEWS[angle]} view">${panel(angle,0)}</svg>
+    <div class="put">${Object.keys(worn).length ? 'Drag or tap ⟲ ⟳ to turn 360°' : 'Tap an item below to dress up · drag to turn 360°'}</div>`;
+}
+// ---- Side view (facing right), same breed shape and the same worn items ----
+function side(mirror){
+  const A = animal, h = A.head*.78, [bw,bh] = A.body, LC = '#f3f1f8', BG = '#1c1928';
+  const leg = A.leg || ({small:.75, medium:.8, large:1.1, cat:.8})[A.size] || .8;
+  const rx = Math.min(150, bw*.95), ry = bh*.5, legH = 78*leg, gy = 448;
+  const sx = 590, sy = gy - legH - ry*.75;
+  const hx = sx + rx*.82, hy = sy - ry - h*.35;
+  const snL = ({long:.95, short:.6, tiny:.4, flat:.25, cat:.45})[A.snout] || .6;
+  const legs = [sx-rx*.62, sx-rx*.38, sx+rx*.38, sx+rx*.62].map((x,i) => `<rect x="${x-11}" y="${sy+ry*.2}" width="22" height="${gy-(sy+ry*.2)}" rx="11"/>`).join('');
+  let ear = '';
+  if(['up','bigup','cat','bat'].includes(A.ears)) { const t = A.ears==='bigup'||A.ears==='bat' ? 1.25 : 1; ear = `<path d="M${hx-h*.55} ${hy-h*.55} L${hx-h*.35} ${hy-h*1.25*t} L${hx+h*.05} ${hy-h*.75}Z"/>`; }
+  else if(A.ears==='fold') ear = `<path d="M${hx-h*.5} ${hy-h*.7} q${h*.2} -${h*.3} ${h*.45} -${h*.1}Z"/>`;
+  const tailD = A.pet==='cat' ? `M${sx-rx*.9} ${sy} C ${sx-rx*1.4} ${sy-20}, ${sx-rx*1.25} ${sy-130}, ${sx-rx*1.05} ${sy-120}` : `M${sx-rx*.92} ${sy-ry*.3} q-30 -30 -18 -70`;
+  let fluff = '';
+  if(A.fluff){ for(let i=0;i<14;i++){ const t=i/14*Math.PI*2; fluff += `<circle cx="${sx+Math.cos(t)*rx*.95}" cy="${sy+Math.sin(t)*ry*.95}" r="${ry*.3}"/>`; }
+    for(let i=0;i<10;i++){ const t=i/10*Math.PI*2; fluff += `<circle cx="${hx+Math.cos(t)*h*.95}" cy="${hy+Math.sin(t)*h*.95}" r="${h*.26}"/>`; } }
+  const flop = ['flop','longflop'].includes(A.ears) ? `<ellipse cx="${hx-h*.35}" cy="${hy+h*.1}" rx="${h*.3}" ry="${h*(A.ears==='longflop'?.85:.6)}" transform="rotate(12 ${hx-h*.35} ${hy+h*.1})"/>` : '';
+  const pj = worn.pj, hat = worn.hat, col = worn.collar, gl = worn.glasses, le = worn.leash;
+  let L = '';
+  if(pj){ const c = colorOf(pj), c2 = shade(c,.78);
+    L += `<defs><pattern id="pt2" width="26" height="26" patternUnits="userSpaceOnUse"><rect width="26" height="26" fill="${c}"/><circle cx="7" cy="7" r="3" fill="rgba(255,255,255,.35)"/><circle cx="20" cy="19" r="3" fill="rgba(255,255,255,.25)"/></pattern></defs>
+      ${[sx-rx*.62, sx-rx*.38, sx+rx*.38, sx+rx*.62].map(x => `<rect x="${x-13}" y="${sy+ry*.1}" width="26" height="${(gy-sy)*.55}" rx="12" fill="${c2}"/>`).join('')}
+      <ellipse cx="${sx}" cy="${sy}" rx="${rx+3}" ry="${ry+3}" fill="url(#pt2)"/><path d="M${hx-h*.6} ${hy+h*.7} Q${sx+rx*.7} ${sy-ry*.2} ${sx+rx*.55} ${sy+ry*.6}" stroke="${c2}" stroke-width="14" fill="none" stroke-linecap="round"/>`; }
+  const neckX = hx-h*.25, neckY = hy+h*.95;
+  let top = '';
+  if(col){ const c = colorOf(col);
+    top += `<path d="M${neckX-20} ${neckY-26} Q${neckX+6} ${neckY+8} ${neckX+30} ${neckY-14}" stroke="${c}" stroke-width="11" fill="none" stroke-linecap="round"/>
+      <path d="M${neckX+26} ${neckY-6} l18 -12 v24z" fill="${shade(c,1.15)}"/>${(col.tags||[]).includes('bell') ? `<circle cx="${neckX+22}" cy="${neckY+12}" r="9" fill="#f2c94c"/>` : ''}`; }
+  if(le){ const c = colorOf(le); top += `<path d="M${neckX+10} ${neckY+4} C ${neckX+70} ${neckY+60}, 740 ${gy-150}, 798 ${gy-170}" stroke="${c}" stroke-width="6" fill="none"/>`; }
+  if(gl){ const c = colorOf(gl); top += `<path d="M${hx-h*.9} ${hy-h*.15} L${hx+h*.2} ${hy-h*.2}" stroke="#222" stroke-width="6"/><rect x="${hx+h*.05}" y="${hy-h*.45}" width="${h*.62}" height="${h*.48}" rx="${h*.18}" fill="${c}" stroke="#111" stroke-width="5"/>`; }
+  if(hat){ const c = colorOf(hat); top += `<path d="M${hx-h*.85} ${hy-h*.45} Q${hx-h*.6} ${hy-h*1.5} ${hx+h*.2} ${hy-h*1.25} Q${hx+h*.75} ${hy-h*.95} ${hx+h*.6} ${hy-h*.55}Z" fill="${c}"/><rect x="${hx-h*.92}" y="${hy-h*.62}" width="${h*1.6}" height="${h*.26}" rx="${h*.12}" fill="${shade(c,.78)}" transform="rotate(-6 ${hx} ${hy})"/><circle cx="${hx-h*.15}" cy="${hy-h*1.45}" r="${h*.22}" fill="#fff"/>`; }
+  if(worn.socks){ const c = colorOf(worn.socks); L += [sx-rx*.62, sx-rx*.38, sx+rx*.38, sx+rx*.62].map(x => `<rect x="${x-13}" y="${gy-34}" width="26" height="36" rx="10" fill="${c}"/>`).join(''); }
+  if(worn.bowl){ const c = colorOf(worn.bowl); L += `<path d="M${hx+h*.4} ${gy-30} h70 l-10 32 h-50z" fill="${c}"/><ellipse cx="${hx+h*.4+35}" cy="${gy-30}" rx="35" ry="8" fill="${shade(c,.7)}"/>`; }
+  // measurement guide with the real numbers the user typed (text un-mirrored on the left side)
+  const m = measures(), U = m.unit, flip = x => mirror ? `transform="matrix(-1,0,0,1,${2*x},0)"` : '';
+  const bx1 = sx-rx, bx2 = sx+rx*.55, cxm = sx-rx*.15, topY = sy-ry*(A.fluff?1.35:1)-18;
+  const guide = `<g class="mg"><path d="M${bx1} ${topY} L${bx2} ${topY} M${bx1} ${topY-8} v16 M${bx2} ${topY-8} v16"/>
+    <text x="${(bx1+bx2)/2}" y="${topY-12}" text-anchor="middle" ${flip((bx1+bx2)/2)}>Back ${m.back?m.back+U:'?'}</text>
+    <ellipse cx="${cxm}" cy="${sy}" rx="14" ry="${ry+4}"/><text x="${cxm}" y="${sy-4}" text-anchor="middle" ${flip(cxm)}>Chest ${m.chest?m.chest+U:'?'}</text>
+    <ellipse cx="${neckX}" cy="${neckY-8}" rx="10" ry="26" transform="rotate(-30 ${neckX} ${neckY-8})"/><path d="M${neckX-8} ${neckY+10} L${cxm+40} ${sy+14}"/><text x="${cxm}" y="${sy+20}" text-anchor="middle" ${flip(cxm)}>Neck ${m.neck?m.neck+U:'?'}</text></g>`;
+  return `<ellipse cx="${sx}" cy="${gy+4}" rx="${rx*1.15}" ry="12" fill="rgba(0,0,0,.35)"/>
+    <path d="${tailD}" stroke="${LC}" stroke-width="20" fill="none" stroke-linecap="round"/><path d="${tailD}" stroke="${BG}" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <g class="ln">${legs}${fluff}<ellipse cx="${sx}" cy="${sy}" rx="${rx}" ry="${ry}"/><path d="M${sx+rx*.45} ${sy-ry*.6} Q${hx-h*.3} ${hy+h*.2} ${hx} ${hy+h*.4} L${sx+rx*.85} ${sy}Z"/></g>
+    ${L}
+    <g class="ln">${ear}<circle cx="${hx}" cy="${hy}" r="${h}"/><ellipse cx="${hx+h*(.65+snL*.5)}" cy="${hy+h*.25}" rx="${h*(.35+snL*.45)}" ry="${h*.34}"/>${flop}</g>
+    <ellipse cx="${hx+h*(.95+snL*.9)}" cy="${hy+h*.12}" rx="${h*.13}" ry="${h*.1}" fill="${LC}"/>
+    ${gl ? '' : `<circle cx="${hx+h*.38}" cy="${hy-h*.18}" r="${h*.1}" fill="${LC}"/>`}
+    ${top}${showGuide ? guide : ''}`;
 }
 
 // ---- Item lists ----
@@ -212,7 +358,7 @@ function cart(){
   const ps = SLOTS.map(s => worn[s.k] && {s, p:worn[s.k]}).filter(Boolean);
   $('count').textContent = ps.length ? `${ps.length} item${ps.length>1?'s':''}` : '';
   $('lines').innerHTML = ps.length ? ps.map(({s,p}) => `<div class="line"><a class="th" style="--c:${colorOf(p)}" href="product.html?id=${encodeURIComponent(p.id)}">${p.img?`<img src="${p.img}" alt="">`:''}</a>
-     <div><b>${p.name}</b><small>${p.note||''}</small><small>${p.price ? '$'+p.price.toFixed(2) : 'Price shown on '+shopName(p)} · Ships &amp; returns by ${shopName(p)}</small></div>
+     <div><b>${p.name}</b><small>${p.note||''}${sizeOf() && !['bowl','leash'].includes(s.k) ? ' · Size '+sizeOf() : ''}</small><small>${p.price ? '$'+p.price.toFixed(2) : 'Price shown on '+shopName(p)} · Ships &amp; returns by ${shopName(p)}</small></div>
      <button class="x" data-k="${s.k}" aria-label="Remove">×</button></div>`).join('')
      : '<p class="empty">Nothing yet — dress up your pet above.</p>';
   const priced = ps.filter(x => x.p.price);
@@ -230,11 +376,18 @@ $('lines').addEventListener('click', e => { const b = e.target.closest('.x'); if
 function update(){ draw(); drawItems(); suggest(); cart(); }
 
 // ---- Pickers ----
-$('animals').innerHTML = ANIMALS.map((a,i) => `<button class="chip${i?'':' on'}" data-i="${i}">${a.label}</button>`).join('');
+function breedRow(){
+  const list = ANIMALS.filter(a => a.size===size);
+  $('breeds').innerHTML = list.map(a => `<button class="chip${a===animal?' on':''}" data-k="${a.k}">${a.label}</button>`).join('');
+}
+function pickBreed(a){ animal = a; fur = a.fur || fur; for(const k in worn) if(!fits(worn[k])) delete worn[k];
+  document.querySelectorAll('#fur button').forEach(x => x.classList.toggle('on', x.dataset.c===fur)); breedRow(); update(); }
+$('animals').innerHTML = SIZES.map((z,i) => `<button class="chip${i?'':' on'}" data-k="${z.k}">${z.label}</button>`).join('');
 $('animals').addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return;
-  document.querySelectorAll('#animals .chip').forEach(c => c.classList.toggle('on', c===b)); animal = ANIMALS[+b.dataset.i];
-  for(const k in worn) if(!fits(worn[k])) delete worn[k]; update(); });
-$('fur').innerHTML = FURS.map((c,i) => `<button style="background:${c}" class="${i===1?'on':''}" data-c="${c}" aria-label="Fur colour"></button>`).join('');
+  document.querySelectorAll('#animals .chip').forEach(c => c.classList.toggle('on', c===b)); size = b.dataset.k;
+  pickBreed(ANIMALS.find(a => a.size===size)); });
+$('breeds').addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return; pickBreed(ANIMALS.find(a => a.k===b.dataset.k)); });
+$('fur').innerHTML = FURS.map((c,i) => `<button style="background:${c}" class="${c===fur?'on':''}" data-c="${c}" aria-label="Fur colour"></button>`).join('');
 $('fur').addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return;
   document.querySelectorAll('#fur button').forEach(x => x.classList.toggle('on', x===b)); fur = b.dataset.c; draw(); });
 $('slots').innerHTML = SLOTS.map((s,i) => `<button class="chip${i?'':' on'}" data-i="${i}">${s.label}</button>`).join('');
@@ -242,29 +395,65 @@ $('slots').addEventListener('click', e => { const b = e.target.closest('.chip');
   document.querySelectorAll('#slots .chip').forEach(c => c.classList.toggle('on', c===b)); slot = SLOTS[+b.dataset.i]; drawItems(); });
 
 
+// ---- Real measurements → suggested size ----
+let unit = 'cm', angle = 0, showGuide = true, spinT = null;
+const num = id => parseFloat(($(id).value||'').replace(',','.')) || 0;
+function measures(){ return {unit, neck:num('m-neck'), chest:num('m-chest'), back:num('m-back'), wt:num('m-wt')}; }
+// general chest chart (cm) used by most pet-clothing shops
+const CHART = [['XXS',0,30],['XS',30,36],['S',36,43],['M',43,51],['L',51,61],['XL',61,71],['XXL',71,999]];
+function sizeOf(){ const m = measures(); if(!m.chest) return null; const c = unit==='in' ? m.chest*2.54 : m.chest;
+  return (CHART.find(([,lo,hi]) => c>=lo && c<hi)||CHART[6])[0]; }
+function showSize(){ const z = sizeOf(), m = measures();
+  $('sizeRes').innerHTML = z ? `Suggested size: <b>${z}</b>${m.back?` · back ${m.back}${unit}`:''}${m.wt?` · ${m.wt}${unit==='in'?'lb':'kg'}`:''}` : 'Enter the chest size to see your size.'; }
+['m-neck','m-chest','m-back','m-wt'].forEach(id => $(id).addEventListener('input', () => { showSize(); draw(); cart(); }));
+$('units').addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return;
+  document.querySelectorAll('#units .chip').forEach(c => c.classList.toggle('on', c===b)); unit = b.dataset.u; $('wu').textContent = unit==='in'?'lb':'kg'; showSize(); draw(); });
+// ---- Turn the pet 360°: buttons, drag, auto spin ----
+const turn = d => { angle = ((angle+d)%4+4)%4; draw(); };
+$('rl').onclick = () => turn(-1); $('rr').onclick = () => turn(1);
+$('gd').onclick = () => { showGuide = !showGuide; $('gd').classList.toggle('on', showGuide); draw(); }; $('gd').classList.add('on');
+$('spin').onclick = () => { if(spinT){ clearInterval(spinT); spinT=null; $('spin').classList.remove('on'); return; }
+  $('spin').classList.add('on'); spinT = setInterval(() => turn(1), 800); };
+let dx0 = null;
+$('stage').addEventListener('pointerdown', e => { dx0 = e.clientX; });
+$('stage').addEventListener('pointerup', e => { if(dx0===null) return; const d = e.clientX - dx0; dx0 = null; if(Math.abs(d) > 30) turn(d<0 ? 1 : -1); });
+
 // ---- Share: the dressed pet + our logo + link, as one picture ----
 const LOGO = new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'img/wordmark.svg'; });
-$('share').addEventListener('click', async () => {
+async function lookImage(){
   const svg = $('stage').querySelector('svg').outerHTML.replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" ');
   const pic = await new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg); });
   const W = 1080, H = 1350, c = document.createElement('canvas'); c.width = W; c.height = H; const g = c.getContext('2d');
-  const bg = g.createRadialGradient(W/2,H*.35,50,W/2,H*.4,W*.9); bg.addColorStop(0,'#2d2840'); bg.addColorStop(1,'#15131c'); g.fillStyle = bg; g.fillRect(0,0,W,H);
-  g.drawImage(pic, 40, 60, W-80, (W-80)*470/400);
+  g.fillStyle = '#1c1928'; g.fillRect(0,0,W,H);
+  const pw = W-160, ph = pw*470/400; g.drawImage(pic, 80, 40, pw, ph);
   const logo = await LOGO, lw = 420, lh = lw*logo.naturalHeight/logo.naturalWidth;
-  g.drawImage(logo, (W-lw)/2, H-lh-70, lw, lh);
-  g.fillStyle = '#ffd3e2'; g.font = '600 34px Nunito, sans-serif'; g.textAlign = 'center'; g.fillText('Dress yours at pajamasdog.com', W/2, H-36);
-  c.toBlob(async blob => {
-    const file = new File([blob], 'my-pajamasdog-look.jpg', {type:'image/jpeg'});
-    const data = {files:[file], title:'My pet\'s new look', text:'Dress up your pet 👉 https://pajamasdog.com/studio.html'};
-    try { if(navigator.canShare && navigator.canShare(data)) return await navigator.share(data); } catch(e){ if(e.name==='AbortError') return; }
-    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = file.name; a.click();
-  }, 'image/jpeg', .92);
+  g.drawImage(logo, (W-lw)/2, H-lh-80, lw, lh);
+  g.fillStyle = '#ffd3e2'; g.font = '600 34px Nunito, sans-serif'; g.textAlign = 'center'; g.fillText('Dress yours at pajamasdog.com', W/2, H-40);
+  return new Promise(r => c.toBlob(r, 'image/jpeg', .92));
+}
+const LINK = 'https://pajamasdog.com/studio.html', TXT = 'My pet\'s new look 🐾 Dress yours';
+const SHARE_URL = {
+  facebook: u => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(u)}`,
+  x:        u => `https://x.com/intent/post?text=${encodeURIComponent(TXT)}&url=${encodeURIComponent(u)}`,
+  whatsapp: u => `https://wa.me/?text=${encodeURIComponent(TXT+' '+u)}`,
+  pinterest:u => `https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(u)}&description=${encodeURIComponent(TXT)}`,
+};
+const save = blob => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'my-pajamasdog-look.jpg'; a.click(); };
+$('sns').addEventListener('click', async e => {
+  const b = e.target.closest('button'); if(!b) return; const net = b.dataset.net;
+  if(SHARE_URL[net]) return window.open(SHARE_URL[net](LINK), '_blank', 'noopener,width=620,height=640');
+  const blob = await lookImage(); if(net==='save') return save(blob);
+  // Instagram / KakaoTalk take a picture through the phone's share sheet
+  const file = new File([blob], 'my-pajamasdog-look.jpg', {type:'image/jpeg'});
+  const data = {files:[file], title:TXT, text:TXT+' 👉 '+LINK};
+  try { if(navigator.canShare && navigator.canShare(data)) return await navigator.share(data); } catch(err){ if(err.name==='AbortError') return; }
+  save(blob);
 });
 
 (async () => {
   await getProducts('all', 0); all = await FEED;
-  const want = new URLSearchParams(location.search).get('animal'); const ai = ANIMALS.findIndex(a => a.k===want);
-  if(ai > 0) document.querySelector(`#animals .chip[data-i="${ai}"]`).click(); else update();
+  const want = new URLSearchParams(location.search).get('animal'); const a = ANIMALS.find(x => x.k===want);
+  if(a){ size = a.size; document.querySelectorAll('#animals .chip').forEach(c => c.classList.toggle('on', c.dataset.k===size)); pickBreed(a); } else pickBreed(ANIMALS[0]);
 })();
 </script>
 </body>
