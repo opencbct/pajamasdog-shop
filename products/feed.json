@@ -564,5 +564,53 @@
   "tags": [
    "socks"
   ]
+ },
+ {
+  "id": "a-B0BWL5RTS5",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0BWL5RTS5",
+  "name": "Classic gift bags + tissue",
+  "note": "🎁 Simple · Hallmark 3 bags",
+  "color": "#c8333c",
+  "tags": [
+   "gift"
+  ]
+ },
+ {
+  "id": "a-B0HJ2G74W5",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0HJ2G74W5",
+  "name": "Holiday gift bags 12-pack",
+  "note": "🎄 Festive · 6 designs + tissue",
+  "color": "#2e6b45",
+  "tags": [
+   "gift"
+  ]
+ },
+ {
+  "id": "a-B0C7MV94WS",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0C7MV94WS",
+  "name": "Red magnetic gift box",
+  "note": "✨ Premium · ribbon + card",
+  "color": "#b3122e",
+  "tags": [
+   "gift"
+  ]
+ },
+ {
+  "id": "a-B0BNMB36QR",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0BNMB36QR",
+  "name": "Luxury black gift box",
+  "note": "💎 Luxury · ribbon, 2 cards, filler",
+  "color": "#1d1b22",
+  "tags": [
+   "gift"
+  ]
  }
 ]

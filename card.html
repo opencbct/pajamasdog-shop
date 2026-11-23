@@ -71,8 +71,8 @@ const STYLES = [
   {k:'forest',  label:'🌲 Forest',  bg:['#1f5a3a','#0b2417'], accent:'#ff4d6d', snow:true,  lights:true},
   {k:'candy',   label:'🍭 Candy',   bg:['#ff9ec4','#b8367a'], accent:'#ffffff', snow:false, lights:true},
 ];
-const MSGS = ['Merry Christmas', 'Happy Holidays', 'Season\'s Greetings', 'Merry Woofmas', 'Meowy Christmas'];
-let st = STYLES[0], msg = MSGS[0], pet = null, seed = 1;
+let MSGS = ['Merry Christmas', 'Happy Holidays', 'Season\'s Greetings', 'Merry Woofmas', 'Meowy Christmas'];
+let st = STYLES[0], msg = MSGS[0], pet = null, seed = 1, GIFT = null;
 const LOGO = new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'img/wordmark.svg'; });
 const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
 
@@ -99,7 +99,10 @@ async function draw(){
   g.textAlign='center'; g.fillStyle=st.accent; g.shadowColor='rgba(0,0,0,.35)'; g.shadowBlur=12;
   g.font='86px Pacifico'; g.fillText(msg, W/2, 118);
   const nm = $('name').value.trim();
-  g.font='300 52px Nunito'; g.fillStyle='#fff'; g.fillText(nm ? `Love, ${nm} 🐾` : 'Love, from our little one 🐾', W/2, fy+fh+100);
+  g.font='300 52px Nunito'; g.fillStyle='#fff';
+  const line = GIFT ? `For ${nm||'you'}${GIFT.from?' · from '+GIFT.from:''} 🐾` : (nm ? `Love, ${nm} 🐾` : 'Love, from our little one 🐾');
+  g.fillText(line, W/2, fy+fh+90);
+  if(GIFT && GIFT.msg){ g.font='300 34px Nunito'; g.fillStyle='rgba(255,255,255,.85)'; g.fillText(GIFT.msg.slice(0,60), W/2, fy+fh+145); }
   g.shadowBlur=0;
   const logo = await LOGO, lw = 380, lh = lw*logo.naturalHeight/logo.naturalWidth;
   g.drawImage(logo, (W-lw)/2, H-lh-36, lw, lh);
@@ -123,6 +126,9 @@ function load(file){
 $('file').addEventListener('change', e => { const f = e.target.files[0]; if(f) load(f); });
 // a photo picked on the home page comes along
 (async () => { let c = null; try { c = sessionStorage.getItem('pd:photo'); sessionStorage.removeItem('pd:photo'); } catch(e){}
+  let gf = null; try { gf = JSON.parse(sessionStorage.getItem('pd:gift')||'null'); sessionStorage.removeItem('pd:gift'); } catch(e){}
+  if(gf){ if(gf.occ){ msg = gf.occ; if(!MSGS.includes(gf.occ)) MSGS.unshift(gf.occ); chips($('msgs'), MSGS, m => m, 0, m => msg = m); }
+    GIFT = gf; if(gf.to) $('name').value = gf.to; }
   if(c){ const b = await (await fetch(c)).blob(); load(b); } })();
 
 $('share').addEventListener('click', () => cv.toBlob(async blob => {

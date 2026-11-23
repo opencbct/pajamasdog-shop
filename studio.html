@@ -28,6 +28,14 @@ h1 b{font-weight:600;color:var(--pink)}
 .stage .ln *{fill:#1c1928;stroke:#f3f1f8;stroke-width:3.2;stroke-linejoin:round}
 .stage .vw{fill:rgba(243,241,248,.45);font:600 13px Nunito,sans-serif;letter-spacing:3px}
 .fur{display:none}
+.giftbar{display:grid;gap:8px;margin:12px 0 4px}
+.gift{display:grid;gap:8px;background:linear-gradient(135deg,#3a1f3a,#2a2140);border-radius:16px;padding:12px;margin-bottom:8px}
+.gift .g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.gift input,.gift textarea{width:100%;padding:11px 12px;border-radius:12px;border:0;background:rgba(255,255,255,.1);color:var(--txt);font:inherit;font-size:15px;resize:none}
+.gift .btn{padding:12px;font-size:15px}
+.banner{background:linear-gradient(135deg,#ff3d7f,#7a2bd6);border-radius:20px;padding:16px;margin-bottom:12px;text-align:center}
+.banner b{font-size:20px;font-weight:600;display:block}.banner p{opacity:.9;margin-top:4px}
+.giftbar .btn{padding:12px;font-size:15px}
 .alt-b{grid-column:2/4;justify-self:start;background:none;border:0;color:#0cc0df;font:inherit;font-size:13px;padding:0;cursor:pointer}
 .alts{grid-column:1/4;display:grid;gap:6px;margin-top:4px}
 .alt{display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:center;background:var(--chip);border:0;border-radius:14px;padding:6px 10px 6px 6px;color:var(--txt);font:inherit;text-align:left;cursor:pointer}
@@ -130,6 +138,16 @@ body{padding-bottom:70px}
       <div class="cart" id="cartbox">
         <h3><span>Your outfit</span><span id="count"></span></h3>
         <div id="lines"></div>
+        <div class="giftbar"><button class="btn ghost" id="giftBtn">🎁 Send as a gift</button></div>
+        <div class="gift" id="giftBox" hidden>
+          <div class="row" id="occ"><button class="chip on" data-o="Merry Christmas">🎄 Christmas</button><button class="chip" data-o="Happy Birthday">🎂 Birthday</button><button class="chip" data-o="Happy Gotcha Day">🏡 Gotcha day</button><button class="chip" data-o="Just Because">💛 Just because</button></div>
+          <div class="g2"><input id="gTo" placeholder="To (pet or person)"><input id="gFrom" placeholder="From"></div>
+          <textarea id="gMsg" rows="2" maxlength="140" placeholder="Your message (optional)"></textarea>
+          <button class="btn ghost" id="wrapBtn">🎀 1. Choose wrapping</button>
+          <button class="btn ghost" id="cardBtn">💌 2. Make the gift card</button>
+          <button class="btn" id="revealBtn">🎁 3. Send the surprise link</button>
+          <p class="note">At Amazon checkout, pick their address and tick <b>"This order contains a gift"</b> — prices are hidden and your message goes in the box.</p>
+        </div>
         <div class="total"><span>Total</span><span id="total">—</span></div>
         <a class="btn" id="checkout" href="#" target="_blank" rel="sponsored noopener">Add whole outfit to Amazon cart</a>
         <p class="note">Prices, delivery and returns are set by each shop and shown at checkout. PajamasDog may earn a commission.</p>
@@ -180,6 +198,7 @@ const SLOTS = [
   {k:'leash', label:'🦮 Leashes', match:p => (p.tags||[]).includes('leash')},
   {k:'socks', label:'🧦 Socks & booties', match:p => (p.tags||[]).includes('socks')},
   {k:'bowl',  label:'🥣 Bowls', match:p => (p.tags||[]).includes('bowl')},
+  {k:'gift',  label:'🎁 Gift wrap', match:p => (p.tags||[]).includes('gift')},
 ];
 let seedF = 0, animal = ANIMALS[0], fur = ANIMALS[0].fur, size = 'small', slot = SLOTS[0], all = [], worn = {};
 
@@ -443,6 +462,42 @@ let dx0 = null;
 $('stage').addEventListener('pointerdown', e => { dx0 = e.clientX; });
 $('stage').addEventListener('pointerup', e => { if(dx0===null) return; const d = e.clientX - dx0; dx0 = null; if(Math.abs(d) > 30) turn(d<0 ? 1 : -1); });
 
+// ---- Gift: occasion, to/from, wrapping tiers, gift card, surprise link ----
+let occasion = 'Merry Christmas';
+const gift = () => ({to:$('gTo').value.trim(), from:$('gFrom').value.trim(), msg:$('gMsg').value.trim(), occ:occasion});
+$('giftBtn').addEventListener('click', () => { $('giftBox').hidden = !$('giftBox').hidden; });
+$('occ').addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return;
+  document.querySelectorAll('#occ .chip').forEach(c => c.classList.toggle('on', c===b)); occasion = b.dataset.o; });
+$('wrapBtn').addEventListener('click', () => {
+  const i = SLOTS.findIndex(x => x.k==='gift'); document.querySelectorAll('#slots .chip')[i].click();
+  $('slots').scrollIntoView({behavior:'smooth', block:'center'});
+});
+$('cardBtn').addEventListener('click', async () => {
+  const blob = await lookImage();
+  const url = await new Promise(r => { const fr = new FileReader(); fr.onload = () => r(fr.result); fr.readAsDataURL(blob); });
+  try { sessionStorage.setItem('pd:photo', url); sessionStorage.setItem('pd:gift', JSON.stringify(gift())); } catch(e){}
+  location.href = 'card.html?from=studio';
+});
+// A link that opens this page for the receiver with the same look already on, plus the message.
+function revealLink(){
+  const g = gift(), q = new URLSearchParams({animal:animal.k, look:SLOTS.map(s => worn[s.k]?.id).filter(Boolean).join(','), occ:g.occ});
+  if(g.to) q.set('to', g.to); if(g.from) q.set('from', g.from); if(g.msg) q.set('msg', g.msg);
+  return 'https://pajamasdog.com/studio.html?' + q.toString();
+}
+$('revealBtn').addEventListener('click', async () => {
+  const link = revealLink(), g = gift(), text = `${g.occ}${g.to?', '+g.to:''}! 🎁 A surprise is waiting for you`;
+  try { if(navigator.share) return await navigator.share({title:'A gift for you', text, url:link}); } catch(e){ if(e.name==='AbortError') return; }
+  try { await navigator.clipboard.writeText(text+' '+link); $('revealBtn').textContent = '✅ Link copied — paste it in a message'; } catch(e){ prompt('Copy this link', link); }
+});
+// Receiver side: ?look=...&to=...&from=...&msg=...
+function openGift(){
+  const q = new URLSearchParams(location.search); if(!q.get('look')) return;
+  for(const id of q.get('look').split(',')){ const p = all.find(x => x.id===id); const s = p && SLOTS.find(s => s.match(p)); if(s) worn[s.k] = p; }
+  const esc = t => (t||'').replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+  const b = document.createElement('div'); b.className = 'banner';
+  b.innerHTML = `<b>🎁 ${esc(q.get('occ')||'A gift for you')}${q.get('to')?', '+esc(q.get('to')):''}!</b><p>${q.get('msg')?esc(q.get('msg')):'Someone picked this cozy look for you.'}${q.get('from')?' — '+esc(q.get('from')):''}</p>`;
+  document.querySelector('main h1').after(b); update();
+}
 // ---- Share: the dressed pet + our logo + link, as one picture ----
 const LOGO = new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'img/wordmark.svg'; });
 async function lookImage(){
@@ -478,6 +533,7 @@ $('sns').addEventListener('click', async e => {
 (async () => {
   await getProducts('all', 0); all = await FEED;
   const want = new URLSearchParams(location.search).get('animal'); const a = ANIMALS.find(x => x.k===want);
+  setTimeout(openGift, 0);
   if(a){ size = a.size; document.querySelectorAll('#animals .chip').forEach(c => c.classList.toggle('on', c.dataset.k===size)); pickBreed(a); } else pickBreed(ANIMALS[0]);
 })();
 </script>
