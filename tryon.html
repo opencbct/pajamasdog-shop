@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Try it on your dog — PajamasDog</title>
+<title>Try it on your pet — PajamasDog</title>
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta name="theme-color" content="#15131c">
@@ -46,16 +46,16 @@ h1{font-weight:300;font-size:26px;margin:4px 0 12px}
   <a class="back" href="/">← Shop</a>
 </header>
 <main>
-  <h1>Try it on your dog</h1>
+  <h1>Try it on your pet</h1>
 
   <div class="stage" id="stage">
     <label class="add" id="add">
       <span class="ic">📷</span>
-      <b>Add your dog's photo</b>
+      <b>Add your pet's photo</b>
       <span>Your photo stays on your phone.</span>
       <input type="file" accept="image/*" id="file" hidden>
     </label>
-    <img id="shot" class="hide" alt="Your dog">
+    <img id="shot" class="hide" alt="Your pet">
     <div class="tint hide" id="tint"></div>
     <div class="badge hide" id="badge"><span class="tag" id="poseTag"></span><span class="tag" id="prevTag" style="background:var(--pink);color:#fff">AI preview soon</span></div>
     <div class="mini hide" id="mini"></div>
@@ -71,7 +71,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 12px}
     <div class="pick"><b id="pName"></b><span id="pNote"></span></div>
     <div class="acts">
       <a class="btn" id="love" href="#">Love it — see this pajama</a>
-      <button class="btn ghost" id="share" type="button">Share my dog</button>
+      <button class="btn ghost" id="share" type="button">Share my pet</button>
       <label class="btn ghost" for="file">Change photo</label>
     </div>
   </div>
@@ -147,7 +147,7 @@ $('share').addEventListener('click', async () => {
   const p = outfits[idx], r = cache[p.id+'|'+pose]; if(!r) return;
   const blob = await (await fetch(r.url)).blob();
   const file = new File([blob], 'my-pajamasdog.jpg', {type:'image/jpeg'});
-  const data = {files:[file], title:'My dog in PajamasDog', text:'Try it on your dog at pajamasdog.com'};
+  const data = {files:[file], title:'My pet in PajamasDog', text:'Try it on your pet at pajamasdog.com'};
   try { if(navigator.canShare && navigator.canShare(data)) return await navigator.share(data); } catch(e){ if(e.name==='AbortError') return; }
   const a = document.createElement('a'); a.href = r.url; a.download = 'my-pajamasdog.jpg'; a.click();
 });

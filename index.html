@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PajamasDog — Cozy pajamas for dogs</title>
-<meta name="description" content="Dog clothes, beds, toys, bowls and walk gear in one place. PajamasDog.">
+<title>PajamasDog — Cozy pajamas for dogs &amp; cats</title>
+<meta name="description" content="Pajamas, clothes, beds, toys and gear for dogs and cats in one place. PajamasDog.">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="192x192" href="/img/icon-192.png">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
@@ -75,16 +75,16 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
 <body>
 <header>
   <a href="/"><img src="img/wordmark.png" alt="PajamasDog"></a>
-  <nav><a href="#pajamas">Pajamas</a><a href="#acc">Accessories</a><a href="#food">Food</a><a href="#adopt">Adopt</a><a href="#clubs">Clubs</a></nav>
+  <nav><a href="#pajamas">Pajamas</a><a href="#acc">Accessories</a><a href="#food">Food</a><a href="#used">Used</a><a href="#adopt">Adopt</a><a href="#clubs">Groups</a></nav>
 </header>
 
 <div class="hero">
   <img src="img/hero_winter.webp" alt="French bulldog in a winter sweater by the Christmas tree">
   <div class="txt">
     <h1>Wrap them in <b>warmth</b><br>this winter.</h1>
-    <p>Cozy pajamas for little dogs.</p>
+    <p>Cozy pajamas for little dogs &amp; cats.</p>
     <a class="btn" href="#pajamas">Shop pajamas</a>
-    <a class="btn ghost" href="tryon.html">Try on your dog</a>
+    <a class="btn ghost" href="tryon.html">Try on your pet</a>
     <div class="partners" id="partners"><span>Shop from</span><a data-p="amazon" data-q="dog pajamas">Amazon</a><a data-p="coupang" data-q="강아지 잠옷">Coupang</a><a data-p="naver" data-q="강아지 잠옷">NAVER</a></div>
   </div>
 </div>
@@ -104,13 +104,18 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
   <div class="row" data-row="food"></div>
 </div>
 
+<div class="sec" id="used">
+  <div class="hd"><h2>Used &amp; swap</h2></div>
+  <div class="row" id="usedRow"></div>
+</div>
+
 <div class="sec" id="adopt">
-  <div class="hd"><h2>Adopt a dog</h2></div>
+  <div class="hd"><h2>Adopt a pet</h2></div>
   <div class="row" id="adoptRow"></div>
 </div>
 
 <div class="sec" id="clubs">
-  <div class="hd"><h2>Dog clubs</h2></div>
+  <div class="hd"><h2>Pet groups</h2></div>
   <div class="row" id="clubRow"></div>
 </div>
 
@@ -164,15 +169,31 @@ async function fillRows(){
     const items = (await getProducts(row.dataset.row, 0)).slice(0,12);
     row.innerHTML = items.length ? items.map(card).join('') : tile('#ffe9c7','🦴','Coming soon','Picked for winter');
   }
+  // Used pet goods (dogs & cats): local second-hand markets (goods only, never animals).
+  const USED = {
+    US:[['#e7f0ff','🛍️','Facebook Marketplace','Pet clothes near you','https://www.facebook.com/marketplace/search/?query=pet%20clothes'],
+        ['#e9fbef','📦','OfferUp','Pet supplies nearby','https://offerup.com/search?q=pet%20supplies'],
+        ['#ffe7ef','👗','Poshmark','Pre-loved pet clothes','https://poshmark.com/search?query=pet%20clothes'],
+        ['#fff3dc','🏷️','Mercari','Pet clothes & gear','https://www.mercari.com/search/?keyword=pet%20clothes']],
+    KR:[['#fff0e0','🥕','당근마켓','동네 반려동물 용품','https://www.daangn.com/kr/buy-sell/?search=%EB%B0%98%EB%A0%A4%EB%8F%99%EB%AC%BC%20%EC%9A%A9%ED%92%88'],
+        ['#ffe9e9','⚡','번개장터','반려동물 용품 중고','https://m.bunjang.co.kr/search/products?q=%EB%B0%98%EB%A0%A4%EB%8F%99%EB%AC%BC%20%EC%9A%A9%ED%92%88']],
+  };
+  document.getElementById('usedRow').innerHTML = (USED[REGION] || USED.US).map(x=>tile(...x)).join('') +
+    tile('#efe8ff','🐾','Sell yours here','Goods only · coming soon');
   const ADOPT = {
-    US:[['#dff1ff','🐶','Petfinder','Dogs near you','https://www.petfinder.com'],['#ffe3ec','🏠','Adopt-a-Pet','Shelters & rescues','https://www.adoptapet.com']],
-    KR:[['#dff1ff','🐶','동물보호관리시스템','유기견 공고','https://www.animal.go.kr'],['#ffe3ec','🏠','포인핸드','입양 · 임시보호','https://pawinhand.kr']],
+    US:[['#dff1ff','🐶','Petfinder','Dogs & cats near you','https://www.petfinder.com'],['#ffe3ec','🏠','Adopt-a-Pet','Shelters & rescues','https://www.adoptapet.com']],
+    KR:[['#dff1ff','🐶','동물보호관리시스템','유기견 · 유기묘 공고','https://www.animal.go.kr'],['#ffe3ec','🏠','포인핸드','입양 · 임시보호','https://pawinhand.kr']],
   };
   const a = ADOPT[REGION] || [...ADOPT.US];
   document.getElementById('adoptRow').innerHTML = a.map(x=>tile(...x)).join('') + tile('#eef7e4','💛','Adoption tips','Coming soon');
-  document.getElementById('clubRow').innerHTML =
-    tile('#efe8ff','🐾','Meetup','Dog groups near you','https://www.meetup.com/topics/dogs/') +
-    tile('#fff1d6','<span class="plogo" style="--w:110px;--a:#5e17eb;--b:#ff3d7f"><i></i><i></i></span>','PajamasDog club','Share your pup · soon') +
+  const GROUPS = {
+    US:[['#efe8ff','🐶','Meetup · dogs','Dog groups near you','https://www.meetup.com/topics/dogs/'],
+        ['#ffe9f2','🐱','Meetup · cats','Cat groups near you','https://www.meetup.com/topics/cats/'],
+        ['#e7f0ff','👥','Facebook groups','Dog & cat lovers','https://www.facebook.com/search/groups/?q=dog%20and%20cat%20lovers']],
+    KR:[['#e9fbef','☕','네이버 카페','반려동물 카페 찾기','https://section.cafe.naver.com/ca-fe/home/search/cafes?q=%EB%B0%98%EB%A0%A4%EB%8F%99%EB%AC%BC']],
+  };
+  document.getElementById('clubRow').innerHTML = (GROUPS[REGION] || GROUPS.US).map(x=>tile(...x)).join('') +
+    tile('#fff1d6','<span class="plogo" style="--w:110px;--a:#5e17eb;--b:#ff3d7f"><i></i><i></i></span>','PajamasDog club','Share your pet · soon') +
     tile('#e3f6f5','🏃','Walk buddies','Coming soon');
 }
 fillRows();

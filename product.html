@@ -38,7 +38,7 @@
   if(!p){ main.innerHTML = '<div class="info"><h1>This item is not available here.</h1><p><a href="/">Back to the shop</a></p></div>'; return; }
   document.title = p.name + ' — PajamasDog';
   let tried = null; try { tried = sessionStorage.getItem('tryon:'+p.id); } catch(e){}
-  const pic = tried ? `<img src="${tried}" alt="Your dog in ${p.name}"><span class="tag mine">Your dog</span>` : visualOf(p);
+  const pic = tried ? `<img src="${tried}" alt="Your pet in ${p.name}"><span class="tag mine">Your pet</span>` : visualOf(p);
   const shop = shopName(p);
   const live = p.src && p.src!=='sample';
   main.innerHTML = `
@@ -49,7 +49,7 @@
       <div class="ship">${live ? `Sold, shipped and returned by ${shop}.` : 'Coming soon.'}</div>
       <div class="acts">
         ${live ? `<a class="btn" href="${linkOf(p)}" rel="sponsored noopener" target="_blank">See it on ${shop}</a>` : ''}
-        ${p.cat==='pajamas' ? `<a class="btn ghost" href="tryon.html?id=${encodeURIComponent(p.id)}">Try it on my dog</a>` : ''}
+        ${p.cat==='pajamas' ? `<a class="btn ghost" href="tryon.html?id=${encodeURIComponent(p.id)}">Try it on my pet</a>` : ''}
       </div>
     </div>`;
 })();
