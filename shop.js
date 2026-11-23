@@ -39,7 +39,7 @@ const canShip = p => (SOURCES[p.src||'sample']||{regions:[]}).regions.includes(R
 let FEED = null;
 async function getProducts(cat, page){
   FEED = FEED || fetch('products/feed.json',{cache:'no-store'}).then(r=>r.json()).then(a=>a.filter(p => !blocked(p) && canShip(p)));
-  let list = (await FEED).filter(p => cat==='all' || p.cat===cat || (cat==='cats' && p.pet==='cat') || (cat==='dogs' && p.pet!=='cat' && (p.cat==='pajamas'||p.cat==='matching')));
+  let list = (await FEED).filter(p => cat==='all' || p.cat===cat || (p.tags||[]).includes(cat) || (cat==='cats' && p.pet==='cat') || (cat==='dogs' && p.pet!=='cat' && (p.cat==='pajamas'||p.cat==='matching')));
   if(DEMO && list.length){ const out=[]; for(let i=0;i<PAGE_SIZE;i++){ const p=list[(page*PAGE_SIZE+i)%list.length]; out.push({...p,id:p.id+'-'+page+'-'+i}); } return page<20?out:[]; }
   return list.slice(page*PAGE_SIZE, (page+1)*PAGE_SIZE);
 }
@@ -48,6 +48,9 @@ async function getProducts(cat, page){
 async function getProduct(id){ await getProducts('all',0); return (await FEED).find(p => p.id===id); }
 // Product picture: real image, or a color tile until an approved image exists.
 const visualOf = p => p.img ? `<img src="${p.img}" alt="${p.name}">` : `<div class="ph" style="--c:${p.color||'#f3c6d6'}"><span>🐾</span></div>`;
+// Partner badge: uses img/partners/<src>.svg when we have the partner's approved logo file; else the name.
+const PARTNER_LOGOS = {}; // e.g. amazon:'img/partners/amazon.svg' (add only after approval)
+const shopBadge = src => PARTNER_LOGOS[src] ? `<img class="plg" src="${PARTNER_LOGOS[src]}" alt="${(SOURCES[src]||{}).label||''}">` : ((SOURCES[src]||{}).label||'');
 const shopName = p => (SOURCES[p.src||'sample']||{}).label || '';
 
 // ---- AI try-on -------------------------------------------------------------

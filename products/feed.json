@@ -213,7 +213,10 @@
   "name": "Retractable leash",
   "note": "Black",
   "img": "img/leash.webp",
-  "url": "#"
+  "url": "#",
+  "tags": [
+   "leash"
+  ]
  },
  {
   "id": "s6",
@@ -221,7 +224,10 @@
   "name": "Raised bowl",
   "note": "Daisy white",
   "img": "img/bowl.webp",
-  "url": "#"
+  "url": "#",
+  "tags": [
+   "bowl"
+  ]
  },
  {
   "id": "a-B0HPB43FM4",
@@ -276,5 +282,158 @@
   "name": "Plush calming bed + blanket",
   "note": "Pet Craft Supply · cream",
   "color": "#e9dcc6"
+ },
+ {
+  "id": "a-B0DY73PHVY",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0DY73PHVY",
+  "name": "Christmas bow tie + bell collar",
+  "note": "2-pack · dogs & cats",
+  "color": "#2e6b45",
+  "tags": [
+   "tie",
+   "bell"
+  ]
+ },
+ {
+  "id": "a-B0DY7679WC",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0DY7679WC",
+  "name": "Bow tie bell collar",
+  "note": "Sunflower bees · 2-pack",
+  "color": "#e6b93c",
+  "tags": [
+   "tie",
+   "bell"
+  ]
+ },
+ {
+  "id": "a-B0B28W9VN5",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0B28W9VN5",
+  "name": "Plaid bow tie cat collar",
+  "note": "AIITLE · breakaway bell",
+  "color": "#8a63c7",
+  "tags": [
+   "tie",
+   "bell"
+  ],
+  "pet": "cat"
+ },
+ {
+  "id": "a-B0H756JQZC",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0H756JQZC",
+  "name": "Dressy bow collar",
+  "note": "Black & white · bell",
+  "color": "#3a3a3a",
+  "tags": [
+   "tie",
+   "bell"
+  ],
+  "pet": "cat"
+ },
+ {
+  "id": "a-B0GFD2KYYR",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0GFD2KYYR",
+  "name": "Red knit beanie",
+  "note": "Ear flaps · small/medium",
+  "color": "#c8333c",
+  "tags": [
+   "hat"
+  ]
+ },
+ {
+  "id": "a-B0G7Z3TQJD",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0G7Z3TQJD",
+  "name": "Knit hat with ear flaps",
+  "note": "Blue · winter walks",
+  "color": "#3f6fb6",
+  "tags": [
+   "hat"
+  ]
+ },
+ {
+  "id": "a-B0G7Y9XF2G",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0G7Y9XF2G",
+  "name": "Knit hat with ear flaps",
+  "note": "Grey · winter walks",
+  "color": "#8d9199",
+  "tags": [
+   "hat"
+  ]
+ },
+ {
+  "id": "a-B0CYPQMDQ9",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0CYPQMDQ9",
+  "name": "Elevated slow feeder bowl",
+  "note": "Ceramic · bamboo stand",
+  "color": "#c9a77c",
+  "tags": [
+   "bowl"
+  ]
+ },
+ {
+  "id": "a-B0845XJ32Q",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0845XJ32Q",
+  "name": "Slow feeder puzzle bowl",
+  "note": "Leash Boss · 1.5 cup",
+  "color": "#7b8089",
+  "tags": [
+   "bowl"
+  ]
+ },
+ {
+  "id": "a-B006W6YHRS",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B006W6YHRS",
+  "name": "Greenies Petite dental treats",
+  "note": "60 count",
+  "color": "#5fa86a",
+  "tags": [
+   "chew",
+   "treat"
+  ]
+ },
+ {
+  "id": "a-B0186R3NT8",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0186R3NT8",
+  "name": "DentaLife daily oral care",
+  "note": "40 count · small/medium",
+  "color": "#3d82c4",
+  "tags": [
+   "chew",
+   "treat"
+  ]
+ },
+ {
+  "id": "a-B00HVT9VH6",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B00HVT9VH6",
+  "name": "Brushless toothpaste chews",
+  "note": "Ark Naturals · large breeds",
+  "color": "#6aa3a0",
+  "tags": [
+   "chew",
+   "treat"
+  ]
  }
 ]
