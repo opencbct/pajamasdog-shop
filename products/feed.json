@@ -453,6 +453,88 @@
   ]
  },
  {
+  "id": "a-B095VTL5JC",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B095VTL5JC",
+  "name": "Howlpot ramen cup sniff toy",
+  "note": "Korean design · hide-and-seek",
+  "color": "#e8a23a",
+  "img": "img/p/plush_toy.webp",
+  "look": true,
+  "tags": [
+   "toy"
+  ]
+ },
+ {
+  "id": "a-B0C9L9LHTC",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0C9L9LHTC",
+  "name": "Howlpot gimbap squeaky toy",
+  "note": "Korean design · K-food",
+  "color": "#2f6b46",
+  "img": "img/p/rope_toys.webp",
+  "look": true,
+  "tags": [
+   "toy"
+  ]
+ },
+ {
+  "id": "a-B0C95MXWLJ",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0C95MXWLJ",
+  "name": "Howlpot hopang bun sniff toy",
+  "note": "Korean design · K-dessert",
+  "color": "#f3d9b1",
+  "img": "img/p/ball_toy.webp",
+  "look": true,
+  "tags": [
+   "toy"
+  ]
+ },
+ {
+  "id": "a-B0C9G69Z3N",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0C9G69Z3N",
+  "name": "Howlpot half onion sniff toy",
+  "note": "Korean design · nose work",
+  "color": "#c9a6d9",
+  "img": "img/p/rope_toy.webp",
+  "look": true,
+  "tags": [
+   "toy"
+  ]
+ },
+ {
+  "id": "a-B0CCQKZQWD",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0CCQKZQWD",
+  "name": "Howlpot foldable carrier bag",
+  "note": "Made in Korea · small dogs",
+  "color": "#b5835a",
+  "tags": [
+   "carrier"
+  ]
+ },
+ {
+  "id": "a-B07L8W5HS3",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B07L8W5HS3",
+  "name": "Howlpot leather rope leash",
+  "note": "Korean design · Buttero leather",
+  "color": "#8a5a3c",
+  "img": "img/p/leash_jack.webp",
+  "look": true,
+  "tags": [
+   "leash"
+  ]
+ },
+ {
   "id": "a-B0DY73PHVY",
   "src": "amazon",
   "cat": "acc",
