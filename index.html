@@ -45,6 +45,15 @@ header nav{display:flex;gap:18px;font-size:15px}
 .cats-row a:first-child{background:var(--pink)}
 .cats-row a span{font-size:26px;line-height:1}
 .tag img.plg{height:14px;display:block}
+.row.fun>*{flex:0 0 62%}
+@media(min-width:768px){.row.fun>*{flex:0 0 27%}}
+.fun-c{position:relative;border-radius:22px;padding:18px 16px 16px;min-height:190px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;color:#fff;background:linear-gradient(140deg,var(--c1),var(--c2));overflow:hidden}
+.fun-c .e{position:absolute;top:12px;left:14px;font-size:42px}
+.fun-c b{font-weight:600;font-size:18px;line-height:1.15}
+.fun-c>span:not(.e){font-size:13px;opacity:.9}
+.fun-c i{position:absolute;top:14px;right:14px;font-style:normal;font-size:12px;padding:4px 10px;border-radius:999px;background:rgba(0,0,0,.25)}
+.fun-c.live i{background:#fff;color:#15131c;font-weight:600}
+.fun-c:not(.live){opacity:.75}
 .kicker{display:inline-block;font-size:13px;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);margin-bottom:10px}
 .btn.big{font-size:19px;padding:16px 30px;cursor:pointer}
 .btn.big span{font-size:22px;margin-right:8px;vertical-align:-2px}
@@ -116,14 +125,27 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
   <div class="sparkle" id="sparkle" aria-hidden="true"></div>
   <div class="snow" id="snow" aria-hidden="true"></div>
   <div class="txt">
-    <span class="kicker">✨ Try-on · free</span>
+    <span class="kicker">✨ AI try-on · free</span>
     <h1>See <b>your pet</b><br>in pajamas.</h1>
     <p>Add one photo. Swipe 30+ cozy looks. Shop the one you love.</p>
     <label class="btn big" for="heroPhoto"><span>📷</span>Add your pet's photo</label>
     <input type="file" accept="image/*" id="heroPhoto" hidden>
-    <a class="btn ghost" href="#pajamas">Just browse</a>
+    <a class="btn ghost" href="#fun">More AI fun ✨</a>
     <p class="privacy">Your photo stays on your phone.</p>
 
+  </div>
+</div>
+
+<div class="sec" id="fun">
+  <div class="hd"><h2>✨ AI <b style="font-weight:600;color:var(--pink)">fun</b> with your pet</h2></div>
+  <div class="row fun">
+    <a class="fun-c live" href="tryon.html" style="--c1:#ff3d7f;--c2:#7a2bd6"><span class="e">👕</span><b>Try on outfits</b><span>Swipe 30+ looks on your pet</span><i>Play</i></a>
+    <a class="fun-c live" href="card.html" style="--c1:#b3122e;--c2:#1f5a3a"><span class="e">🎄</span><b>Christmas card</b><span>Your pet, festive, in seconds</span><i>Play</i></a>
+    <a class="fun-c" style="--c1:#ffb703;--c2:#fb5607"><span class="e">💬</span><b>What's my pet thinking?</b><span>AI reads the face, adds a bubble</span><i>Soon</i></a>
+    <a class="fun-c" style="--c1:#3a86ff;--c2:#8338ec"><span class="e">🎬</span><b>Runway show</b><span>A 5-second fashion video</span><i>Soon</i></a>
+    <a class="fun-c" style="--c1:#06d6a0;--c2:#118ab2"><span class="e">🧩</span><b>Personality type</b><span>Cozy sleeper? Snack boss?</span><i>Soon</i></a>
+    <a class="fun-c" style="--c1:#ef476f;--c2:#ffd166"><span class="e">👨‍👩‍👧</span><b>Family PJs photo</b><span>You + your pet, same pajamas</span><i>Soon</i></a>
+    <a class="fun-c" style="--c1:#5e17eb;--c2:#0cc0df"><span class="e">🎮</span><b>Pet game hero</b><span>Your pet stars in the PajamasDog game</span><i>Soon</i></a>
   </div>
 </div>
 

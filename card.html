@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Christmas card — PajamasDog</title>
+<meta name="description" content="Turn your pet's photo into a Christmas card in seconds.">
+<link rel="icon" href="/favicon.ico?v=3" sizes="48x48">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png?v=3">
+<meta name="theme-color" content="#15131c">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shop.css">
+<link rel="stylesheet" href="logo-motion.css">
+<style>
+main{max-width:560px}
+h1{font-weight:300;font-size:28px;margin:4px 0 4px}
+h1 b{font-weight:600;color:var(--pink)}
+.lead{opacity:.75;margin-bottom:14px}
+.stage{position:relative;border-radius:24px;overflow:hidden;background:var(--card)}
+canvas{width:100%;display:block}
+.add{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;aspect-ratio:4/5;border:2px dashed rgba(255,255,255,.25);border-radius:24px;cursor:pointer;text-align:center;padding:20px}
+.add .ic{font-size:56px}.add b{font-weight:400;font-size:20px}.add span{font-size:13px;opacity:.6}
+.lbl{font-size:13px;opacity:.6;margin:16px 2px 8px}
+.row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.row::-webkit-scrollbar{display:none}
+input[type=text]{width:100%;padding:13px 16px;border-radius:14px;border:0;background:var(--chip);color:var(--txt);font:inherit;font-size:16px}
+.acts{display:grid;gap:10px;margin-top:16px}
+.hide{display:none!important}
+</style>
+</head>
+<body>
+<header>
+  <a href="/"><img src="img/wordmark.svg" alt="PajamasDog"></a>
+  <a class="back" href="/">← Home</a>
+</header>
+<main>
+  <h1>🎄 Christmas <b>card</b></h1>
+  <p class="lead">One photo → a festive card to share or print.</p>
+
+  <label class="add" id="add" for="file">
+    <span class="ic">📷</span><b>Add your pet's photo</b><span>Your photo stays on your phone.</span>
+  </label>
+  <input type="file" accept="image/*" id="file" hidden>
+  <div class="stage hide" id="stage"><canvas id="cv" width="1080" height="1350"></canvas></div>
+
+  <div id="controls" class="hide">
+    <div class="lbl">Pet's name</div>
+    <input type="text" id="name" maxlength="18" placeholder="e.g. Mochi">
+    <div class="lbl">Style</div>
+    <div class="row" id="styles"></div>
+    <div class="lbl">Message</div>
+    <div class="row" id="msgs"></div>
+    <div class="acts">
+      <button class="btn" id="share">Share my card</button>
+      <a class="btn ghost" href="/#matching">Shop matching Christmas PJs</a>
+      <label class="btn ghost" for="file">Change photo</label>
+    </div>
+  </div>
+</main>
+<footer>PajamasDog may earn a commission on partner purchases. <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
+
+<script src="shop.js"></script>
+<script>
+// Christmas card maker — runs fully in the browser now. When the AI key is set,
+// the same photo can also be redrawn by AI (Santa outfit, tree scene) before framing.
+const $ = id => document.getElementById(id);
+const cv = $('cv'), g = cv.getContext('2d'), W = cv.width, H = cv.height;
+const STYLES = [
+  {k:'classic', label:'🎄 Classic', bg:['#7a1020','#2b0a12'], accent:'#f6d27a', snow:true,  lights:true},
+  {k:'snow',    label:'❄️ Snow',    bg:['#1d3b6b','#0b1530'], accent:'#ffffff', snow:true,  lights:false},
+  {k:'forest',  label:'🌲 Forest',  bg:['#1f5a3a','#0b2417'], accent:'#ff4d6d', snow:true,  lights:true},
+  {k:'candy',   label:'🍭 Candy',   bg:['#ff9ec4','#b8367a'], accent:'#ffffff', snow:false, lights:true},
+];
+const MSGS = ['Merry Christmas', 'Happy Holidays', 'Season\'s Greetings', 'Merry Woofmas', 'Meowy Christmas'];
+let st = STYLES[0], msg = MSGS[0], pet = null, seed = 1;
+const LOGO = new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'img/wordmark.svg'; });
+const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+async function draw(){
+  if(!pet) return;
+  await document.fonts.load('80px Pacifico');
+  seed = 7;
+  const bg = g.createLinearGradient(0,0,0,H); bg.addColorStop(0, st.bg[0]); bg.addColorStop(1, st.bg[1]);
+  g.fillStyle = bg; g.fillRect(0,0,W,H);
+  // bokeh lights
+  if(st.lights) for(let i=0;i<40;i++){ const x=rnd()*W, y=rnd()*H*.55, r=8+rnd()*30;
+    const c = g.createRadialGradient(x,y,0,x,y,r); c.addColorStop(0,'rgba(255,236,190,.85)'); c.addColorStop(1,'rgba(255,220,150,0)');
+    g.fillStyle=c; g.beginPath(); g.arc(x,y,r,0,7); g.fill(); }
+  // photo in a rounded frame
+  const fx=110, fy=170, fw=W-220, fh=fw*1.1, rad=60;
+  g.save(); g.shadowColor='rgba(0,0,0,.45)'; g.shadowBlur=40; g.fillStyle=st.accent;
+  rr(fx-14,fy-14,fw+28,fh+28,rad+12); g.fill(); g.restore();
+  g.save(); rr(fx,fy,fw,fh,rad); g.clip();
+  const s = Math.max(fw/pet.width, fh/pet.height), dw=pet.width*s, dh=pet.height*s;
+  g.drawImage(pet, fx+(fw-dw)/2, fy+(fh-dh)/2, dw, dh); g.restore();
+  // snow
+  if(st.snow){ g.fillStyle='rgba(255,255,255,.9)'; for(let i=0;i<160;i++){ const x=rnd()*W, y=rnd()*H, r=1.5+rnd()*5; g.globalAlpha=.4+rnd()*.6; g.beginPath(); g.arc(x,y,r,0,7); g.fill(); } g.globalAlpha=1; }
+  // text
+  g.textAlign='center'; g.fillStyle=st.accent; g.shadowColor='rgba(0,0,0,.35)'; g.shadowBlur=12;
+  g.font='86px Pacifico'; g.fillText(msg, W/2, 118);
+  const nm = $('name').value.trim();
+  g.font='300 52px Nunito'; g.fillStyle='#fff'; g.fillText(nm ? `Love, ${nm} 🐾` : 'Love, from our little one 🐾', W/2, fy+fh+100);
+  g.shadowBlur=0;
+  const logo = await LOGO, lw = 380, lh = lw*logo.naturalHeight/logo.naturalWidth;
+  g.drawImage(logo, (W-lw)/2, H-lh-36, lw, lh);
+}
+function rr(x,y,w,h,r){ g.beginPath(); g.moveTo(x+r,y); g.arcTo(x+w,y,x+w,y+h,r); g.arcTo(x+w,y+h,x,y+h,r); g.arcTo(x,y+h,x,y,r); g.arcTo(x,y,x+w,y,r); g.closePath(); }
+
+function chips(box, items, label, on, pick){
+  box.innerHTML = items.map((it,i) => `<button class="chip${i===0?' on':''}" data-i="${i}">${label(it)}</button>`).join('');
+  box.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return;
+    box.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c===b)); pick(items[+b.dataset.i]); draw(); });
+}
+chips($('styles'), STYLES, s => s.label, 0, s => st = s);
+chips($('msgs'), MSGS, m => m, 0, m => msg = m);
+$('name').addEventListener('input', draw);
+
+function load(file){
+  const img = new Image();
+  img.onload = () => { pet = img; $('add').classList.add('hide'); $('stage').classList.remove('hide'); $('controls').classList.remove('hide'); draw(); };
+  img.src = URL.createObjectURL(file);
+}
+$('file').addEventListener('change', e => { const f = e.target.files[0]; if(f) load(f); });
+// a photo picked on the home page comes along
+(async () => { let c = null; try { c = sessionStorage.getItem('pd:photo'); sessionStorage.removeItem('pd:photo'); } catch(e){}
+  if(c){ const b = await (await fetch(c)).blob(); load(b); } })();
+
+$('share').addEventListener('click', () => cv.toBlob(async blob => {
+  const file = new File([blob], 'pajamasdog-christmas.jpg', {type:'image/jpeg'});
+  const data = {files:[file], title:'Merry Christmas from my pet', text:'Make yours at pajamasdog.com'};
+  try { if(navigator.canShare && navigator.canShare(data)) return await navigator.share(data); } catch(e){ if(e.name==='AbortError') return; }
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = file.name; a.click();
+}, 'image/jpeg', .92));
+</script>
+</body>
+</html>
