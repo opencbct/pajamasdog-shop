@@ -6,7 +6,350 @@
   "asin": "B0FGCJ1S7K",
   "name": "Thermal fleece jumpsuit",
   "note": "Navy · small dogs",
-  "color": "#2f3f6b"
+  "color": "#2f3f6b",
+  "img": "img/p/puffer_pom.webp",
+  "look": true
+ },
+ {
+  "id": "a-B093734TG9",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B093734TG9",
+  "name": "Turtleneck fleece onesie",
+  "note": "Pink · cyeollo",
+  "color": "#f6b6c8",
+  "img": "img/p/pug_sweater.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0C4H1Y7LP",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B0C4H1Y7LP",
+  "name": "Thermal fleece pjs",
+  "note": "Purple · cyeollo",
+  "color": "#8b6cc9",
+  "img": "img/p/puffer_four.webp",
+  "look": true
+ },
+ {
+  "id": "a-B09372MGYZ",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B09372MGYZ",
+  "name": "Turtleneck stretch jumpsuit",
+  "note": "Red · cyeollo",
+  "color": "#d9434b",
+  "img": "img/p/scarf_poodle.webp",
+  "look": true
+ },
+ {
+  "id": "a-B09XB9NNGK",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B09XB9NNGK",
+  "name": "Thermal stretch onesie",
+  "note": "Navy · cyeollo",
+  "color": "#33406e",
+  "img": "img/p/pom_sweater.webp",
+  "look": true
+ },
+ {
+  "id": "a-B09TDFXBC1",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B09TDFXBC1",
+  "name": "Fleece jumpsuit 2-pack",
+  "note": "Cows + elephants",
+  "color": "#f7c3d6",
+  "img": "img/p/yorkie_tee.webp",
+  "look": true
+ },
+ {
+  "id": "a-B09GDHKJ9S",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B09GDHKJ9S",
+  "name": "Fleece jumpsuit",
+  "note": "Pink clouds",
+  "color": "#fbd5e0",
+  "img": "img/hoodie.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0D7J76RY1",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B0D7J76RY1",
+  "name": "Warm fleece bodysuit",
+  "note": "Red · XXS–L",
+  "color": "#c8333c",
+  "img": "img/p/red_boa.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0CGDP77ZN",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B0CGDP77ZN",
+  "name": "Stretchy velvet pajamas",
+  "note": "BEAUTYZOO",
+  "color": "#c9b8a6",
+  "img": "img/p/pajama_bichon.webp",
+  "look": true
+ },
+ {
+  "id": "a-B08B3WF7M9",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B08B3WF7M9",
+  "name": "Christmas snowflake onesie",
+  "note": "KYEESE",
+  "color": "#2f6b4f",
+  "img": "img/p/santa_golden.webp",
+  "look": true
+ },
+ {
+  "id": "a-B08B3WSRZT",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B08B3WSRZT",
+  "name": "Velvet Christmas onesie",
+  "note": "KYEESE · red",
+  "color": "#b8323a",
+  "img": "img/p/plaid_pug.webp",
+  "look": true
+ },
+ {
+  "id": "a-B07R8V98X9",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B07R8V98X9",
+  "name": "Lightweight printed onesie",
+  "note": "Small dogs",
+  "color": "#9fd3e8",
+  "img": "img/p/yorkie.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0B8N6XZCN",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B0B8N6XZCN",
+  "name": "4-leg fleece jumpsuit",
+  "note": "Pink · medium/large dogs",
+  "color": "#f3a9c2",
+  "img": "img/fleece.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0CPDQQGSP",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0CPDQQGSP",
+  "name": "Fluffy fleece blanket",
+  "note": "Bedsure · small dogs & cats",
+  "color": "#d8c3b0",
+  "img": "img/p/pug_blanket.webp",
+  "look": true
+ },
+ {
+  "id": "a-B09TW8NFM4",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B09TW8NFM4",
+  "name": "Calming donut bed + blanket",
+  "note": "Himax · light grey",
+  "color": "#b9bcc4",
+  "img": "img/p/cavalier_blanket.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0BYCKQTPD",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0BYCKQTPD",
+  "name": "Hooded cave bed",
+  "note": "Chocolate · dogs & cats",
+  "color": "#7a5136",
+  "img": "img/p/lying_dog.webp",
+  "look": true
+ },
+ {
+  "id": "a-B088W413XV",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B088W413XV",
+  "name": "Plush calming bed + blanket",
+  "note": "Pet Craft Supply · cream",
+  "color": "#e9dcc6",
+  "img": "img/p/plush_toy.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0DY73PHVY",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0DY73PHVY",
+  "name": "Christmas bow tie + bell collar",
+  "note": "2-pack · dogs & cats",
+  "color": "#2e6b45",
+  "tags": [
+   "tie",
+   "bell"
+  ],
+  "img": "img/p/bandana.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0DY7679WC",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0DY7679WC",
+  "name": "Bow tie bell collar",
+  "note": "Sunflower bees · 2-pack",
+  "color": "#e6b93c",
+  "tags": [
+   "tie",
+   "bell"
+  ],
+  "img": "img/p/sunflower.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0H756JQZC",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0H756JQZC",
+  "name": "Dressy bow collar",
+  "note": "Black & white · bell",
+  "color": "#3a3a3a",
+  "tags": [
+   "tie",
+   "bell"
+  ],
+  "pet": "cat",
+  "img": "img/p/tophat.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0GFD2KYYR",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0GFD2KYYR",
+  "name": "Red knit beanie",
+  "note": "Ear flaps · small/medium",
+  "color": "#c8333c",
+  "tags": [
+   "hat"
+  ],
+  "img": "img/p/goggles.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0G7Z3TQJD",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0G7Z3TQJD",
+  "name": "Knit hat with ear flaps",
+  "note": "Blue · winter walks",
+  "color": "#3f6fb6",
+  "tags": [
+   "hat"
+  ],
+  "img": "img/p/sunhat.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0CYPQMDQ9",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0CYPQMDQ9",
+  "name": "Elevated slow feeder bowl",
+  "note": "Ceramic · bamboo stand",
+  "color": "#c9a77c",
+  "tags": [
+   "bowl"
+  ],
+  "img": "img/p/food_circle.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0845XJ32Q",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0845XJ32Q",
+  "name": "Slow feeder puzzle bowl",
+  "note": "Leash Boss · 1.5 cup",
+  "color": "#7b8089",
+  "tags": [
+   "bowl"
+  ],
+  "img": "img/bowl.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0G3983FR4",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B0G3983FR4",
+  "name": "Silk pajama shirt",
+  "note": "Black satin · small dogs",
+  "tags": [],
+  "img": "img/hero.webp",
+  "look": true
+ },
+ {
+  "id": "a-B092RZX4M3",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B092RZX4M3",
+  "name": "Hooded reflective raincoat",
+  "note": "Yellow · leash hole",
+  "tags": [
+   "rain"
+  ],
+  "img": "img/raincoat.webp",
+  "look": true
+ },
+ {
+  "id": "a-B07M98NH5L",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B07M98NH5L",
+  "name": "Retractable leash 16 ft",
+  "note": "Fida · up to 26 lbs",
+  "tags": [
+   "leash"
+  ],
+  "img": "img/leash.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0GSZ7P1P2",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0GSZ7P1P2",
+  "name": "Retractable leash 10 ft",
+  "note": "Gluckelk · tiny & small dogs",
+  "tags": [
+   "leash"
+  ],
+  "img": "img/p/leash_jack.webp",
+  "look": true
+ },
+ {
+  "id": "a-B0BCGYLV7T",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0BCGYLV7T",
+  "name": "Retractable leash 9.8 ft",
+  "note": "Wrist strap · up to 22 lbs",
+  "tags": [
+   "leash"
+  ],
+  "img": "img/p/corgi_walk.webp",
+  "look": true
  },
  {
   "id": "a-B0H8Q2LF9C",
@@ -19,15 +362,6 @@
   "color": "#7d5bd1"
  },
  {
-  "id": "a-B093734TG9",
-  "src": "amazon",
-  "cat": "pajamas",
-  "asin": "B093734TG9",
-  "name": "Turtleneck fleece onesie",
-  "note": "Pink · cyeollo",
-  "color": "#f6b6c8"
- },
- {
   "id": "a-B0H8PVB6CD",
   "src": "amazon",
   "cat": "pajamas",
@@ -36,15 +370,6 @@
   "name": "Cat fleece 4-leg onesie",
   "note": "Green · hairless cats",
   "color": "#4f9a6a"
- },
- {
-  "id": "a-B0C4H1Y7LP",
-  "src": "amazon",
-  "cat": "pajamas",
-  "asin": "B0C4H1Y7LP",
-  "name": "Thermal fleece pjs",
-  "note": "Purple · cyeollo",
-  "color": "#8b6cc9"
  },
  {
   "id": "a-B0DNZSQ7DP",
@@ -57,15 +382,6 @@
   "color": "#d9b48f"
  },
  {
-  "id": "a-B09372MGYZ",
-  "src": "amazon",
-  "cat": "pajamas",
-  "asin": "B09372MGYZ",
-  "name": "Turtleneck stretch jumpsuit",
-  "note": "Red · cyeollo",
-  "color": "#d9434b"
- },
- {
   "id": "a-B0DMSP6V2P",
   "src": "amazon",
   "cat": "pajamas",
@@ -74,15 +390,6 @@
   "name": "Cat thick fleece turtleneck",
   "note": "Winter pjs · cats",
   "color": "#a8b4c8"
- },
- {
-  "id": "a-B09XB9NNGK",
-  "src": "amazon",
-  "cat": "pajamas",
-  "asin": "B09XB9NNGK",
-  "name": "Thermal stretch onesie",
-  "note": "Navy · cyeollo",
-  "color": "#33406e"
  },
  {
   "id": "a-B0FCDHS3JF",
@@ -95,78 +402,6 @@
   "color": "#f08a3c"
  },
  {
-  "id": "a-B09TDFXBC1",
-  "src": "amazon",
-  "cat": "pajamas",
-  "asin": "B09TDFXBC1",
-  "name": "Fleece jumpsuit 2-pack",
-  "note": "Cows + elephants",
-  "color": "#f7c3d6"
- },
- {
-  "id": "a-B09GDHKJ9S",
-  "src": "amazon",
-  "cat": "pajamas",
-  "asin": "B09GDHKJ9S",
-  "name": "Fleece jumpsuit",
-  "note": "Pink clouds",
-  "color": "#fbd5e0"
- },
- {
-  "id": "a-B0D7J76RY1",
-  "src": "amazon",
-  "cat": "pajamas",
-  "asin": "B0D7J76RY1",
-  "name": "Warm fleece bodysuit",
-  "note": "Red · XXS–L",
-  "color": "#c8333c"
- },
- {
-  "id": "a-B0CGDP77ZN",
-  "src": "amazon",
-  "cat": "pajamas",
-  "asin": "B0CGDP77ZN",
-  "name": "Stretchy velvet pajamas",
-  "note": "BEAUTYZOO",
-  "color": "#c9b8a6"
- },
- {
-  "id": "a-B08B3WF7M9",
-  "src": "amazon",
-  "cat": "pajamas",
-  "asin": "B08B3WF7M9",
-  "name": "Christmas snowflake onesie",
-  "note": "KYEESE",
-  "color": "#2f6b4f"
- },
- {
-  "id": "a-B08B3WSRZT",
-  "src": "amazon",
-  "cat": "pajamas",
-  "asin": "B08B3WSRZT",
-  "name": "Velvet Christmas onesie",
-  "note": "KYEESE · red",
-  "color": "#b8323a"
- },
- {
-  "id": "a-B07R8V98X9",
-  "src": "amazon",
-  "cat": "pajamas",
-  "asin": "B07R8V98X9",
-  "name": "Lightweight printed onesie",
-  "note": "Small dogs",
-  "color": "#9fd3e8"
- },
- {
-  "id": "a-B0B8N6XZCN",
-  "src": "amazon",
-  "cat": "pajamas",
-  "asin": "B0B8N6XZCN",
-  "name": "4-leg fleece jumpsuit",
-  "note": "Pink · medium/large dogs",
-  "color": "#f3a9c2"
- },
- {
   "id": "a-B0B8N6YH6Q",
   "src": "amazon",
   "cat": "pajamas",
@@ -174,60 +409,6 @@
   "name": "4-leg fleece jumpsuit",
   "note": "Gray · large dogs",
   "color": "#9a9ea6"
- },
- {
-  "id": "s1",
-  "cat": "pajamas",
-  "name": "Silk pajama set",
-  "note": "Black · Pink",
-  "img": "img/hero.webp",
-  "url": "#"
- },
- {
-  "id": "s2",
-  "cat": "pajamas",
-  "name": "Fleece onesie",
-  "note": "Leopard",
-  "img": "img/fleece.webp",
-  "url": "#"
- },
- {
-  "id": "s3",
-  "cat": "pajamas",
-  "name": "Bear hoodie",
-  "note": "Cream",
-  "img": "img/hoodie.webp",
-  "url": "#"
- },
- {
-  "id": "s4",
-  "cat": "acc",
-  "name": "Reflective raincoat",
-  "note": "Yellow",
-  "img": "img/raincoat.webp",
-  "url": "#"
- },
- {
-  "id": "s5",
-  "cat": "acc",
-  "name": "Retractable leash",
-  "note": "Black",
-  "img": "img/leash.webp",
-  "url": "#",
-  "tags": [
-   "leash"
-  ]
- },
- {
-  "id": "s6",
-  "cat": "acc",
-  "name": "Raised bowl",
-  "note": "Daisy white",
-  "img": "img/bowl.webp",
-  "url": "#",
-  "tags": [
-   "bowl"
-  ]
  },
  {
   "id": "a-B0HPB43FM4",
@@ -248,68 +429,6 @@
   "color": "#2f5c9a"
  },
  {
-  "id": "a-B0CPDQQGSP",
-  "src": "amazon",
-  "cat": "acc",
-  "asin": "B0CPDQQGSP",
-  "name": "Fluffy fleece blanket",
-  "note": "Bedsure · small dogs & cats",
-  "color": "#d8c3b0"
- },
- {
-  "id": "a-B09TW8NFM4",
-  "src": "amazon",
-  "cat": "acc",
-  "asin": "B09TW8NFM4",
-  "name": "Calming donut bed + blanket",
-  "note": "Himax · light grey",
-  "color": "#b9bcc4"
- },
- {
-  "id": "a-B0BYCKQTPD",
-  "src": "amazon",
-  "cat": "acc",
-  "asin": "B0BYCKQTPD",
-  "name": "Hooded cave bed",
-  "note": "Chocolate · dogs & cats",
-  "color": "#7a5136"
- },
- {
-  "id": "a-B088W413XV",
-  "src": "amazon",
-  "cat": "acc",
-  "asin": "B088W413XV",
-  "name": "Plush calming bed + blanket",
-  "note": "Pet Craft Supply · cream",
-  "color": "#e9dcc6"
- },
- {
-  "id": "a-B0DY73PHVY",
-  "src": "amazon",
-  "cat": "acc",
-  "asin": "B0DY73PHVY",
-  "name": "Christmas bow tie + bell collar",
-  "note": "2-pack · dogs & cats",
-  "color": "#2e6b45",
-  "tags": [
-   "tie",
-   "bell"
-  ]
- },
- {
-  "id": "a-B0DY7679WC",
-  "src": "amazon",
-  "cat": "acc",
-  "asin": "B0DY7679WC",
-  "name": "Bow tie bell collar",
-  "note": "Sunflower bees · 2-pack",
-  "color": "#e6b93c",
-  "tags": [
-   "tie",
-   "bell"
-  ]
- },
- {
   "id": "a-B0B28W9VN5",
   "src": "amazon",
   "cat": "acc",
@@ -324,44 +443,6 @@
   "pet": "cat"
  },
  {
-  "id": "a-B0H756JQZC",
-  "src": "amazon",
-  "cat": "acc",
-  "asin": "B0H756JQZC",
-  "name": "Dressy bow collar",
-  "note": "Black & white · bell",
-  "color": "#3a3a3a",
-  "tags": [
-   "tie",
-   "bell"
-  ],
-  "pet": "cat"
- },
- {
-  "id": "a-B0GFD2KYYR",
-  "src": "amazon",
-  "cat": "acc",
-  "asin": "B0GFD2KYYR",
-  "name": "Red knit beanie",
-  "note": "Ear flaps · small/medium",
-  "color": "#c8333c",
-  "tags": [
-   "hat"
-  ]
- },
- {
-  "id": "a-B0G7Z3TQJD",
-  "src": "amazon",
-  "cat": "acc",
-  "asin": "B0G7Z3TQJD",
-  "name": "Knit hat with ear flaps",
-  "note": "Blue · winter walks",
-  "color": "#3f6fb6",
-  "tags": [
-   "hat"
-  ]
- },
- {
   "id": "a-B0G7Y9XF2G",
   "src": "amazon",
   "cat": "acc",
@@ -371,30 +452,6 @@
   "color": "#8d9199",
   "tags": [
    "hat"
-  ]
- },
- {
-  "id": "a-B0CYPQMDQ9",
-  "src": "amazon",
-  "cat": "acc",
-  "asin": "B0CYPQMDQ9",
-  "name": "Elevated slow feeder bowl",
-  "note": "Ceramic · bamboo stand",
-  "color": "#c9a77c",
-  "tags": [
-   "bowl"
-  ]
- },
- {
-  "id": "a-B0845XJ32Q",
-  "src": "amazon",
-  "cat": "acc",
-  "asin": "B0845XJ32Q",
-  "name": "Slow feeder puzzle bowl",
-  "note": "Leash Boss · 1.5 cup",
-  "color": "#7b8089",
-  "tags": [
-   "bowl"
   ]
  },
  {
