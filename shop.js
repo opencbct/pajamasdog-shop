@@ -103,6 +103,6 @@ async function tryOn(photoFile, product, pose='sit'){
 async function payDirect(lines, wrap='none', gift=null){
   if(!CHECKOUT_API){ alert('Checkout opens soon.'); return; }
   const r = await fetch(CHECKOUT_API.replace(/\/$/,'')+'/checkout', {method:'POST', headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({items: lines.map(l => ({id:l.id, size:l.size||'', qty:1})), wrap, gift})});
+    body: JSON.stringify({items: lines.map(l => ({id:l.id, size:l.size||'', c:l.c||0, qty:1})), wrap, gift})});
   const j = await r.json(); if(j.url) location.href = j.url; else alert(j.error || 'Checkout failed. Please try again.');
 }
