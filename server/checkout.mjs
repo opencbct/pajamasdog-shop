@@ -82,7 +82,7 @@ async function placeCjOrder(session) {
   const token = await cjToken();
   const r = await fetch('https://developers.cjdropshipping.com/api2.0/v1/shopping/order/createOrderV2', {
     method: 'POST', headers: { 'content-type': 'application/json', 'CJ-Access-Token': token },
-    body: JSON.stringify({ orderNumber: session.id, shippingCountryCode: a.country, shippingProvince: a.state, shippingCity: a.city,
+    body: JSON.stringify({ orderNumber: session.id, shippingCountryCode: a.country, shippingCountry: a.country === 'US' ? 'United States' : a.country, shippingProvince: a.state, shippingCity: a.city,
       shippingAddress: [a.line1, a.line2].filter(Boolean).join(' '), shippingZip: a.postal_code, shippingCustomerName: ship.name,
       shippingPhone: session.customer_details?.phone || '', email: session.customer_details?.email || '', remark: `Gift: ${session.metadata?.wrap || 'none'} ${session.metadata?.gift_msg || ''}`.slice(0, 200),
       logisticName: 'CJPacket Ordinary', fromCountryCode: 'CN', products }) });
