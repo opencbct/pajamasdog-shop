@@ -28,6 +28,11 @@ h1 b{font-weight:600;color:var(--pink)}
 .stage .ln *{fill:#1c1928;stroke:#f3f1f8;stroke-width:3.2;stroke-linejoin:round}
 .stage .vw{fill:rgba(243,241,248,.45);font:600 13px Nunito,sans-serif;letter-spacing:3px}
 .fur{display:none}
+.checkouts{display:grid;gap:8px}
+.split{font-size:13px;opacity:.75}
+.shopgrp{display:grid;gap:6px}
+.shopgrp b{font-weight:400;font-size:13px;opacity:.8}
+.shopgrp .btn{padding:11px;font-size:14px}
 .giftbar{display:grid;gap:8px;margin:12px 0 4px}
 .gift{display:grid;gap:8px;background:linear-gradient(135deg,#3a1f3a,#2a2140);border-radius:16px;padding:12px;margin-bottom:8px}
 .gift .g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
@@ -149,7 +154,7 @@ body{padding-bottom:70px}
           <p class="note">At Amazon checkout, pick their address and tick <b>"This order contains a gift"</b> — prices are hidden and your message goes in the box.</p>
         </div>
         <div class="total"><span>Total</span><span id="total">—</span></div>
-        <a class="btn" id="checkout" href="#" target="_blank" rel="sponsored noopener">Add whole outfit to Amazon cart</a>
+        <div id="checkouts" class="checkouts"></div>
         <p class="note">Prices, delivery and returns are set by each shop and shown at checkout. PajamasDog may earn a commission.</p>
       </div>
     </div>
@@ -403,13 +408,17 @@ function cart(){
      : '<p class="empty">Nothing yet — dress up your pet above.</p>';
   const priced = ps.filter(x => x.p.price);
   $('total').textContent = !ps.length ? '—' : priced.length===ps.length ? '$'+priced.reduce((t,x)=>t+x.p.price,0).toFixed(2) : 'See prices at checkout';
-  // Amazon lets one link add several products to the cart at once.
-  const az = ps.map(x => x.p).filter(p => p.asin);
-  const co = $('checkout');
-  if(az.length){ const q = az.map((p,i) => `ASIN.${i+1}=${p.asin}&Quantity.${i+1}=1`).join('&');
-    co.href = `https://www.amazon.com/gp/aws/cart/add.html?${q}${AMAZON_TAG?`&AssociateTag=${AMAZON_TAG}`:''}`; co.style.opacity=1; co.style.pointerEvents='auto';
-    co.textContent = az.length>1 ? `Add all ${az.length} to Amazon cart` : 'Add to Amazon cart'; }
-  else { co.href='#'; co.style.opacity=.4; co.style.pointerEvents='none'; co.textContent='Add whole outfit to Amazon cart'; }
+  // One checkout button per shop. Amazon takes the whole group in one link; other shops open item by item.
+  const groups = {};
+  ps.forEach(({p}) => (groups[p.src||'sample'] ||= []).push(p));
+  const keys = Object.keys(groups);
+  $('checkouts').innerHTML = !keys.length ? '<a class="btn" style="opacity:.4;pointer-events:none">Checkout</a>' :
+    (keys.length > 1 ? `<p class="split">Your outfit comes from ${keys.length} shops — check out at each one:</p>` : '') +
+    keys.map(k => { const items = groups[k], name = (SOURCES[k]||{}).label || k;
+      if(k==='amazon'){ const q = items.map((p,i) => `ASIN.${i+1}=${p.asin}&Quantity.${i+1}=1`).join('&');
+        return `<a class="btn" href="https://www.amazon.com/gp/aws/cart/add.html?${q}${AMAZON_TAG?`&AssociateTag=${AMAZON_TAG}`:''}" target="_blank" rel="sponsored noopener">Add ${items.length>1?'all '+items.length:'it'} to Amazon cart</a>`; }
+      return `<div class="shopgrp"><b>${name} · ${items.length} item${items.length>1?'s':''}</b>${items.map(p => `<a class="btn ghost" href="${linkOf(p)}" target="_blank" rel="sponsored noopener">Buy ${p.name} on ${name}</a>`).join('')}</div>`;
+    }).join('');
 }
 $('lines').addEventListener('click', e => {
   const x = e.target.closest('.x'); if(x){ delete worn[x.dataset.k]; if(openAlt===x.dataset.k) openAlt=null; return update(); }
