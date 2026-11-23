@@ -39,7 +39,7 @@ const canShip = p => (SOURCES[p.src||'sample']||{regions:[]}).regions.includes(R
 let FEED = null;
 async function getProducts(cat, page){
   FEED = FEED || fetch('products/feed.json',{cache:'no-store'}).then(r=>r.json()).then(a=>a.filter(p => !blocked(p) && canShip(p)));
-  let list = (await FEED).filter(p => cat==='all' || p.cat===cat);
+  let list = (await FEED).filter(p => cat==='all' || p.cat===cat || (cat==='cats' && p.pet==='cat'));
   if(DEMO && list.length){ const out=[]; for(let i=0;i<PAGE_SIZE;i++){ const p=list[(page*PAGE_SIZE+i)%list.length]; out.push({...p,id:p.id+'-'+page+'-'+i}); } return page<20?out:[]; }
   return list.slice(page*PAGE_SIZE, (page+1)*PAGE_SIZE);
 }

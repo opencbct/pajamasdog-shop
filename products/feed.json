@@ -9,6 +9,16 @@
   "color": "#2f3f6b"
  },
  {
+  "id": "a-B0H8Q2LF9C",
+  "src": "amazon",
+  "cat": "pajamas",
+  "pet": "cat",
+  "asin": "B0H8Q2LF9C",
+  "name": "Cat fleece 4-leg onesie",
+  "note": "Purple · hairless cats",
+  "color": "#7d5bd1"
+ },
+ {
   "id": "a-B093734TG9",
   "src": "amazon",
   "cat": "pajamas",
@@ -16,6 +26,16 @@
   "name": "Turtleneck fleece onesie",
   "note": "Pink · cyeollo",
   "color": "#f6b6c8"
+ },
+ {
+  "id": "a-B0H8PVB6CD",
+  "src": "amazon",
+  "cat": "pajamas",
+  "pet": "cat",
+  "asin": "B0H8PVB6CD",
+  "name": "Cat fleece 4-leg onesie",
+  "note": "Green · hairless cats",
+  "color": "#4f9a6a"
  },
  {
   "id": "a-B0C4H1Y7LP",
@@ -27,6 +47,16 @@
   "color": "#8b6cc9"
  },
  {
+  "id": "a-B0DNZSQ7DP",
+  "src": "amazon",
+  "cat": "pajamas",
+  "pet": "cat",
+  "asin": "B0DNZSQ7DP",
+  "name": "Cat coral fleece turtleneck",
+  "note": "Sphynx · kitten pjs",
+  "color": "#d9b48f"
+ },
+ {
   "id": "a-B09372MGYZ",
   "src": "amazon",
   "cat": "pajamas",
@@ -36,6 +66,16 @@
   "color": "#d9434b"
  },
  {
+  "id": "a-B0DMSP6V2P",
+  "src": "amazon",
+  "cat": "pajamas",
+  "pet": "cat",
+  "asin": "B0DMSP6V2P",
+  "name": "Cat thick fleece turtleneck",
+  "note": "Winter pjs · cats",
+  "color": "#a8b4c8"
+ },
+ {
   "id": "a-B09XB9NNGK",
   "src": "amazon",
   "cat": "pajamas",
@@ -43,6 +83,16 @@
   "name": "Thermal stretch onesie",
   "note": "Navy · cyeollo",
   "color": "#33406e"
+ },
+ {
+  "id": "a-B0FCDHS3JF",
+  "src": "amazon",
+  "cat": "pajamas",
+  "pet": "cat",
+  "asin": "B0FCDHS3JF",
+  "name": "Fluffy cat winter sweater",
+  "note": "Orange · GigglyHouse",
+  "color": "#f08a3c"
  },
  {
   "id": "a-B09TDFXBC1",
