@@ -43,7 +43,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 12px}
 </head>
 <body>
 <header>
-  <a href="/"><img src="img/wordmark.png" alt="PajamasDog"></a>
+  <a href="/"><img src="img/wordmark.svg" alt="PajamasDog"></a>
   <a class="back" href="/">← Shop</a>
 </header>
 <main>
@@ -98,7 +98,7 @@ function shrink(file){
   });
 }
 // Put the PajamasDog logo on the picture itself, so a saved or shared photo carries the brand.
-const LOGO = new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'img/wordmark.png'; });
+const LOGO = new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'img/wordmark.svg'; });
 async function brand(url, tint){
   const [img, logo] = await Promise.all([new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = url; }), LOGO]);
   // crop to the 4:5 frame people see, so the shared picture matches the screen
