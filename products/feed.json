@@ -1,9 +1,135 @@
 [
  {
+  "id": "a-B0FGCJ1S7K",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B0FGCJ1S7K",
+  "name": "Thermal fleece jumpsuit",
+  "note": "Navy · small dogs",
+  "color": "#2f3f6b"
+ },
+ {
+  "id": "a-B093734TG9",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B093734TG9",
+  "name": "Turtleneck fleece onesie",
+  "note": "Pink · cyeollo",
+  "color": "#f6b6c8"
+ },
+ {
+  "id": "a-B0C4H1Y7LP",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B0C4H1Y7LP",
+  "name": "Thermal fleece pjs",
+  "note": "Purple · cyeollo",
+  "color": "#8b6cc9"
+ },
+ {
+  "id": "a-B09372MGYZ",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B09372MGYZ",
+  "name": "Turtleneck stretch jumpsuit",
+  "note": "Red · cyeollo",
+  "color": "#d9434b"
+ },
+ {
+  "id": "a-B09XB9NNGK",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B09XB9NNGK",
+  "name": "Thermal stretch onesie",
+  "note": "Navy · cyeollo",
+  "color": "#33406e"
+ },
+ {
+  "id": "a-B09TDFXBC1",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B09TDFXBC1",
+  "name": "Fleece jumpsuit 2-pack",
+  "note": "Cows + elephants",
+  "color": "#f7c3d6"
+ },
+ {
+  "id": "a-B09GDHKJ9S",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B09GDHKJ9S",
+  "name": "Fleece jumpsuit",
+  "note": "Pink clouds",
+  "color": "#fbd5e0"
+ },
+ {
+  "id": "a-B0D7J76RY1",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B0D7J76RY1",
+  "name": "Warm fleece bodysuit",
+  "note": "Red · XXS–L",
+  "color": "#c8333c"
+ },
+ {
+  "id": "a-B0CGDP77ZN",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B0CGDP77ZN",
+  "name": "Stretchy velvet pajamas",
+  "note": "BEAUTYZOO",
+  "color": "#c9b8a6"
+ },
+ {
+  "id": "a-B08B3WF7M9",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B08B3WF7M9",
+  "name": "Christmas snowflake onesie",
+  "note": "KYEESE",
+  "color": "#2f6b4f"
+ },
+ {
+  "id": "a-B08B3WSRZT",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B08B3WSRZT",
+  "name": "Velvet Christmas onesie",
+  "note": "KYEESE · red",
+  "color": "#b8323a"
+ },
+ {
+  "id": "a-B07R8V98X9",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B07R8V98X9",
+  "name": "Lightweight printed onesie",
+  "note": "Small dogs",
+  "color": "#9fd3e8"
+ },
+ {
+  "id": "a-B0B8N6XZCN",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B0B8N6XZCN",
+  "name": "4-leg fleece jumpsuit",
+  "note": "Pink · medium/large dogs",
+  "color": "#f3a9c2"
+ },
+ {
+  "id": "a-B0B8N6YH6Q",
+  "src": "amazon",
+  "cat": "pajamas",
+  "asin": "B0B8N6YH6Q",
+  "name": "4-leg fleece jumpsuit",
+  "note": "Gray · large dogs",
+  "color": "#9a9ea6"
+ },
+ {
   "id": "s1",
   "cat": "pajamas",
   "name": "Silk pajama set",
-  "note": "Black \u00b7 Pink",
+  "note": "Black · Pink",
   "img": "img/hero.webp",
   "url": "#"
  },

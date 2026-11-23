@@ -50,6 +50,8 @@ h2{font-weight:300;font-size:28px;margin-bottom:16px}
 .tile b{font-weight:400;font-size:18px}
 .tile span{font-size:13px;opacity:.7}
 .sec.win .hd h2 b{font-weight:600;color:var(--pink)}
+.ph{aspect-ratio:1/1;background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.45),transparent 55%),var(--c);display:flex;align-items:center;justify-content:center}
+.ph span{font-size:54px;opacity:.55;filter:grayscale(1) brightness(3)}
 .more{text-align:center;padding:26px 0;font-size:14px;opacity:.6}
 .band{margin-top:28px !important;background:var(--ink);color:#fff;text-align:center;padding:42px 20px;border-radius:24px;margin:0 16px}
 .band h2{color:#fff;margin-bottom:6px}
@@ -126,6 +128,9 @@ const DEMO = new URLSearchParams(location.search).has('demo'); // repeat samples
 
 // Shops we link to. Each one is shown only where it can really ship.
 // Add a shop here + its products in the feed; nothing else changes.
+// Amazon tracking ID for pajamasdog.com (create it in Amazon Associates, then put it here).
+const AMAZON_TAG = '';
+const linkOf = p => p.asin ? `https://www.amazon.com/dp/${p.asin}${AMAZON_TAG?`?tag=${AMAZON_TAG}`:''}` : (p.url||'#');
 const SOURCES = {
   amazon:  {label:'Amazon',  regions:['US']},       // tracking tag goes in each product url
   coupang: {label:'Coupang', regions:['KR']},
@@ -154,7 +159,7 @@ async function getProducts(cat, page){
 // ---- Infinite scroll --------------------------------------------------------
 const grid = document.getElementById('grid'), more = document.getElementById('more');
 let cat='all', page=0, busy=false, done=false, run=0;
-const card = p => `<a class="card" href="${p.url||'#'}" rel="sponsored noopener" target="_blank"><span class="tag">${(SOURCES[p.src||"sample"]||{}).label||""}</span><img src="${p.img}" alt="${p.name}" loading="lazy"><div class="cap"><b>${p.name}</b><span>${p.note||''}</span></div></a>`;
+const card = p => `<a class="card" href="${linkOf(p)}" rel="sponsored noopener" target="_blank"><span class="tag">${(SOURCES[p.src||"sample"]||{}).label||""}</span>${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:`<div class="ph" style="--c:${p.color||'#f3c6d6'}"><span>🐾</span></div>`}<div class="cap"><b>${p.name}</b><span>${p.note||''}</span></div></a>`;
 async function loadNext(){
   if(busy||done) return; busy=true; const my=run;
   more.textContent='Loading more…';
@@ -177,7 +182,7 @@ loadNext();
 const tile = (bg, ic, t, sub, url) => `<a class="tile" style="background:${bg}" ${url?`href="${url}" target="_blank" rel="noopener"`:''}><span class="ic">${ic}</span><b>${t}</b><span>${sub}</span></a>`;
 async function fillRows(){
   for(const row of document.querySelectorAll('[data-row]')){
-    const items = (await getProducts(row.dataset.row, 0)).slice(0,8);
+    const items = (await getProducts(row.dataset.row, 0)).slice(0,12);
     row.innerHTML = items.length ? items.map(card).join('') : tile('#ffe9c7','🦴','Coming soon','Picked for winter');
   }
   const ADOPT = {
