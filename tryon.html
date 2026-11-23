@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Try it on your dog — PajamasDog</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta name="theme-color" content="#15131c">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shop.css">
+<style>
+main{max-width:560px}
+h1{font-weight:300;font-size:26px;margin:4px 0 12px}
+.stage{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:var(--card);touch-action:pan-y}
+.stage img{width:100%;height:100%;object-fit:cover;display:block}
+.stage .tint{position:absolute;inset:auto 0 0 0;height:55%;background:linear-gradient(transparent,var(--c));opacity:.55;pointer-events:none;transition:background .3s}
+.stage .badge{position:absolute;top:14px;left:14px;display:flex;gap:6px}
+.stage .mini{position:absolute;right:12px;bottom:12px;width:74px;border-radius:14px;overflow:hidden;border:3px solid #fff;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+.stage .mini img,.stage .mini .ph{width:100%;aspect-ratio:1/1;height:auto}
+.stage .mini .ph span{font-size:22px}
+.stage .note{position:absolute;left:14px;bottom:16px;right:100px;font-size:13px;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.stage .busy{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(21,19,28,.55);font-size:15px}
+.stage.loading .busy{display:flex}
+.add{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:2px dashed rgba(255,255,255,.25);border-radius:24px;cursor:pointer;text-align:center;padding:20px}
+.add .ic{font-size:56px}
+.add b{font-weight:400;font-size:20px}
+.add span{font-size:13px;opacity:.6}
+.lbl{font-size:13px;opacity:.6;margin:16px 2px 8px}
+.poses,.outfits{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.poses::-webkit-scrollbar,.outfits::-webkit-scrollbar{display:none}
+.outfits button{flex:0 0 74px;border:3px solid transparent;border-radius:16px;overflow:hidden;padding:0;background:none;cursor:pointer}
+.outfits button.on{border-color:var(--pink)}
+.outfits img,.outfits .ph{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.outfits .ph span{font-size:22px}
+.pick{margin:18px 2px 12px}
+.pick b{font-weight:400;font-size:18px;display:block}
+.pick span{font-size:13px;opacity:.65}
+.acts{display:grid;gap:10px}
+.hide{display:none!important}
+</style>
+</head>
+<body>
+<header>
+  <a href="/"><img src="img/wordmark.png" alt="PajamasDog"></a>
+  <a class="back" href="/">← Shop</a>
+</header>
+<main>
+  <h1>Try it on your dog</h1>
+
+  <div class="stage" id="stage">
+    <label class="add" id="add">
+      <span class="ic">📷</span>
+      <b>Add your dog's photo</b>
+      <span>Your photo stays on your phone.</span>
+      <input type="file" accept="image/*" id="file" hidden>
+    </label>
+    <img id="shot" class="hide" alt="Your dog">
+    <div class="tint hide" id="tint"></div>
+    <div class="badge hide" id="badge"><span class="tag" id="poseTag"></span><span class="tag" id="prevTag" style="background:var(--pink);color:#fff">AI preview soon</span></div>
+    <div class="mini hide" id="mini"></div>
+    <div class="note hide" id="note">Swipe to change outfits</div>
+    <div class="busy">Dressing up…</div>
+  </div>
+
+  <div id="controls" class="hide">
+    <div class="lbl">Pose</div>
+    <div class="poses" id="poses"></div>
+    <div class="lbl">Outfit</div>
+    <div class="outfits" id="outfits"></div>
+    <div class="pick"><b id="pName"></b><span id="pNote"></span></div>
+    <div class="acts">
+      <a class="btn" id="love" href="#">Love it — see this pajama</a>
+      <label class="btn ghost" for="file">Change photo</label>
+    </div>
+  </div>
+</main>
+
+<script src="shop.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+let photo = null, outfits = [], idx = 0, pose = 'sit', run = 0;
+const cache = {};   // "productId|pose" -> {url, preview}
+
+// Shrink the photo on the phone (faster, and small enough to keep for the detail page).
+function shrink(file){
+  return new Promise(res => {
+    const img = new Image();
+    img.onload = () => {
+      const s = Math.min(1, 1000 / Math.max(img.width, img.height));
+      const c = document.createElement('canvas'); c.width = img.width*s; c.height = img.height*s;
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      c.toBlob(b => res(new File([b], 'dog.jpg', {type:'image/jpeg'})), 'image/jpeg', .86);
+    };
+    img.src = URL.createObjectURL(file);
+  });
+}
+const toDataURL = url => fetch(url).then(r=>r.blob()).then(b => new Promise(r => { const f=new FileReader(); f.onload=()=>r(f.result); f.readAsDataURL(b); }));
+
+async function render(){
+  const p = outfits[idx]; if(!p || !photo) return;
+  const my = ++run, key = p.id+'|'+pose;
+  $('pName').textContent = p.name; $('pNote').textContent = p.note || '';
+  $('mini').innerHTML = visualOf(p);
+  $('tint').style.setProperty('--c', p.color || '#ff3d7f');
+  $('poseTag').textContent = POSES.find(x=>x.k===pose).label;
+  document.querySelectorAll('#outfits button').forEach((b,i) => b.classList.toggle('on', i===idx));
+  $('outfits').children[idx]?.scrollIntoView({inline:'center', block:'nearest', behavior:'smooth'});
+  $('stage').classList.add('loading');
+  try {
+    cache[key] = cache[key] || await tryOn(photo, p, pose);
+    if(my !== run) return;
+    $('shot').src = cache[key].url;
+    $('prevTag').classList.toggle('hide', !cache[key].preview);
+    $('tint').classList.toggle('hide', !cache[key].preview);
+  } catch(e){ if(my===run) $('note').textContent = 'Could not dress up — try again.'; }
+  finally { if(my===run) $('stage').classList.remove('loading'); }
+}
+
+// "Love it": stop here, keep this picture, open this product's detail page.
+$('love').addEventListener('click', async e => {
+  e.preventDefault();
+  const p = outfits[idx], r = cache[p.id+'|'+pose];
+  if(r){ try { sessionStorage.setItem('tryon:'+p.id, await toDataURL(r.url)); } catch(err){} }
+  location.href = 'product.html?id=' + encodeURIComponent(p.id) + '&from=tryon';
+});
+
+$('file').addEventListener('change', async e => {
+  const f = e.target.files[0]; if(!f) return;
+  photo = await shrink(f);
+  Object.keys(cache).forEach(k => delete cache[k]);
+  ['add'].forEach(id => $(id).classList.add('hide'));
+  ['shot','badge','mini','note','controls','tint'].forEach(id => $(id).classList.remove('hide'));
+  render();
+});
+
+// Swipe on the photo = next / previous outfit.
+let x0 = null;
+$('stage').addEventListener('pointerdown', e => { x0 = e.clientX; });
+$('stage').addEventListener('pointerup', e => {
+  if(x0===null || !photo) return; const dx = e.clientX - x0; x0 = null;
+  if(Math.abs(dx) < 40) return;
+  idx = (idx + (dx<0?1:-1) + outfits.length) % outfits.length; render();
+});
+
+(async () => {
+  outfits = (await getProducts('pajamas', 0)).concat(await getProducts('pajamas', 1));
+  const want = new URLSearchParams(location.search).get('id');
+  idx = Math.max(0, outfits.findIndex(p => p.id===want));
+  $('outfits').innerHTML = outfits.map((p,i) => `<button aria-label="${p.name}" data-i="${i}">${visualOf(p)}</button>`).join('');
+  $('outfits').addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return; idx = +b.dataset.i; render(); });
+  $('poses').innerHTML = POSES.map(x => `<button class="chip${x.k===pose?' on':''}" data-k="${x.k}">${x.ic} ${x.label}</button>`).join('');
+  $('poses').addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if(!b) return; pose = b.dataset.k;
+    document.querySelectorAll('#poses .chip').forEach(c => c.classList.toggle('on', c===b)); render();
+  });
+})();
+</script>
+</body>
+</html>

@@ -25,6 +25,7 @@ header nav{display:flex;gap:18px;font-size:15px}
 .hero h1{font-weight:300;font-size:clamp(34px,7vw,64px);line-height:1.05;letter-spacing:-.5px}
 .hero h1 b{font-weight:600;color:#ffd3e2}
 .hero p{margin-top:8px;font-size:17px;opacity:.95}
+.btn.ghost{background:rgba(255,255,255,.16);box-shadow:none;animation:none;margin-left:8px;backdrop-filter:blur(6px)}
 .btn{display:inline-block;margin-top:18px;padding:14px 30px;border-radius:999px;background:var(--pink);color:#fff;font-weight:600;font-size:17px;box-shadow:0 6px 18px rgba(255,61,127,.45);animation:pump 3s ease-in-out infinite}
 @keyframes pump{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 section{max-width:1200px;margin:0 auto;padding:36px 16px}
@@ -80,11 +81,12 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
     <h1>Wrap them in <b>warmth</b><br>this winter.</h1>
     <p>Cozy pajamas for little dogs.</p>
     <a class="btn" href="#pajamas">Shop pajamas</a>
+    <a class="btn ghost" href="tryon.html">Try on your dog</a>
   </div>
 </div>
 
 <div class="sec win" id="pajamas">
-  <div class="hd"><h2>Winter <b>pajamas</b></h2><a href="#shop" data-go="pajamas">See all</a></div>
+  <div class="hd"><h2>Winter <b>pajamas</b></h2><span><a href="tryon.html" style="margin-right:14px">Try on</a><a href="#shop" data-go="pajamas">See all</a></span></div>
   <div class="row" data-row="pajamas"></div>
 </div>
 
@@ -123,51 +125,16 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
 
 <footer><span class="plogo" style="--w:220px;--a:#ffd3e2;--b:#ff3d7f;opacity:1;margin-bottom:14px"><i></i><i></i></span><br>PajamasDog links to partner shops and may earn a commission on purchases, at no extra cost to you. As an Amazon Associate we earn from qualifying purchases. Orders, shipping and returns are handled by each shop.<br><br>© 2026 PajamasDog</footer>
 
+<script src="shop.js"></script>
 <script>
 // ---- Product source -------------------------------------------------------
 // getProducts(cat, page) returns one page of products.
 // Now: reads products/feed.json. Later: the same function calls the partner
 // product API (page number + page size), so the page never needs to change.
-const PAGE_SIZE = 12;
-const EDIBLE = /\b(treat|food|kibble|jerky|chew stick|supplement|cbd|vitamin)s?\b/i;
-// Food only as links to shops that sell it themselves; never via CJ dropship (we would be the seller).
-const blocked = p => (p.cat==='food' || EDIBLE.test(p.name)) && (p.src==='cj');
-const DEMO = new URLSearchParams(location.search).has('demo'); // repeat samples to test scrolling
-
-// Shops we link to. Each one is shown only where it can really ship.
-// Add a shop here + its products in the feed; nothing else changes.
-// Amazon tracking ID for pajamasdog.com (create it in Amazon Associates, then put it here).
-const AMAZON_TAG = '';
-const linkOf = p => p.asin ? `https://www.amazon.com/dp/${p.asin}${AMAZON_TAG?`?tag=${AMAZON_TAG}`:''}` : (p.url||'#');
-const SOURCES = {
-  amazon:  {label:'Amazon',  regions:['US']},       // tracking tag goes in each product url
-  coupang: {label:'Coupang', regions:['KR']},
-  naver:   {label:'Naver',   regions:['KR']},
-  cj:      {label:'CJ',      regions:['GLOBAL','US','KR']},
-  sample:  {label:'Soon',    regions:['GLOBAL','US','KR']},
-};
-// Visitor region from the browser clock + language (no tracking, no IP lookup).
-const REGION = (() => {
-  const q = new URLSearchParams(location.search).get('region'); if(q) return q.toUpperCase();
-  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-  if(tz==='Asia/Seoul' || /^ko/i.test(navigator.language)) return 'KR';
-  if(/^America\/(New_York|Chicago|Denver|Los_Angeles|Phoenix|Anchorage|Detroit|Indiana|Boise)|^Pacific\/Honolulu/.test(tz)) return 'US';
-  return 'GLOBAL';
-})();
-const canShip = p => (SOURCES[p.src||'sample']||{regions:[]}).regions.includes(REGION);
-
-let FEED = null;
-async function getProducts(cat, page){
-  FEED = FEED || fetch('products/feed.json',{cache:'no-store'}).then(r=>r.json()).then(a=>a.filter(p => !blocked(p) && canShip(p)));
-  let list = (await FEED).filter(p => cat==='all' || p.cat===cat);
-  if(DEMO && list.length){ const out=[]; for(let i=0;i<PAGE_SIZE;i++){ const p=list[(page*PAGE_SIZE+i)%list.length]; out.push({...p,id:p.id+'-'+page+'-'+i}); } return page<20?out:[]; }
-  return list.slice(page*PAGE_SIZE, (page+1)*PAGE_SIZE);
-}
-
 // ---- Infinite scroll --------------------------------------------------------
 const grid = document.getElementById('grid'), more = document.getElementById('more');
 let cat='all', page=0, busy=false, done=false, run=0;
-const card = p => `<a class="card" href="${linkOf(p)}" rel="sponsored noopener" target="_blank"><span class="tag">${(SOURCES[p.src||"sample"]||{}).label||""}</span>${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:`<div class="ph" style="--c:${p.color||'#f3c6d6'}"><span>🐾</span></div>`}<div class="cap"><b>${p.name}</b><span>${p.note||''}</span></div></a>`;
+const card = p => `<a class="card" href="product.html?id=${encodeURIComponent(p.id)}"><span class="tag">${(SOURCES[p.src||"sample"]||{}).label||""}</span>${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:`<div class="ph" style="--c:${p.color||'#f3c6d6'}"><span>🐾</span></div>`}<div class="cap"><b>${p.name}</b><span>${p.note||''}</span></div></a>`;
 async function loadNext(){
   if(busy||done) return; busy=true; const my=run;
   more.textContent='Loading more…';

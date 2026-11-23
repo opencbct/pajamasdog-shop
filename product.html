@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PajamasDog</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta name="theme-color" content="#15131c">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shop.css">
+<style>
+.pic{border-radius:24px;overflow:hidden;position:relative;margin-top:4px}
+.pic img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pic .tag{position:absolute;top:14px;left:14px}
+.pic .mine{position:absolute;top:14px;right:14px;left:auto;background:var(--pink);color:#fff}
+.info{padding:18px 4px 8px}
+.info h1{font-weight:300;font-size:28px;line-height:1.15}
+.info p{opacity:.7;margin-top:6px}
+.ship{font-size:13px;opacity:.6;margin:10px 0 18px}
+.acts{display:grid;gap:10px}
+@media(min-width:768px){main.two{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}.info{padding-top:8px}}
+</style>
+</head>
+<body>
+<header>
+  <a href="/"><img src="img/wordmark.png" alt="PajamasDog"></a>
+  <a class="back" href="javascript:history.length>1?history.back():location.href='/'">← Back</a>
+</header>
+<main id="main" class="two"></main>
+<footer>PajamasDog links to partner shops and may earn a commission on purchases, at no extra cost to you. As an Amazon Associate we earn from qualifying purchases. Orders, shipping and returns are handled by each shop.</footer>
+<script src="shop.js"></script>
+<script>
+(async () => {
+  const q = new URLSearchParams(location.search);
+  const p = await getProduct(q.get('id'));
+  const main = document.getElementById('main');
+  if(!p){ main.innerHTML = '<div class="info"><h1>This item is not available here.</h1><p><a href="/">Back to the shop</a></p></div>'; return; }
+  document.title = p.name + ' — PajamasDog';
+  let tried = null; try { tried = sessionStorage.getItem('tryon:'+p.id); } catch(e){}
+  const pic = tried ? `<img src="${tried}" alt="Your dog in ${p.name}"><span class="tag mine">Your dog</span>` : visualOf(p);
+  const shop = shopName(p);
+  const live = p.src && p.src!=='sample';
+  main.innerHTML = `
+    <div class="pic">${pic}${tried?'':`<span class="tag">${shop}</span>`}</div>
+    <div class="info">
+      <h1>${p.name}</h1>
+      <p>${p.note||''}</p>
+      <div class="ship">${live ? `Sold, shipped and returned by ${shop}.` : 'Coming soon.'}</div>
+      <div class="acts">
+        ${live ? `<a class="btn" href="${linkOf(p)}" rel="sponsored noopener" target="_blank">See it on ${shop}</a>` : ''}
+        ${p.cat==='pajamas' ? `<a class="btn ghost" href="tryon.html?id=${encodeURIComponent(p.id)}">Try it on my dog</a>` : ''}
+      </div>
+    </div>`;
+})();
+</script>
+</body>
+</html>
