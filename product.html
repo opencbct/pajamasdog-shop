@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PajamasDog</title>
-<link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico?v=3" sizes="48x48">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png?v=3">
 <meta name="theme-color" content="#15131c">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shop.css">
@@ -39,11 +39,13 @@
   if(!p){ main.innerHTML = '<div class="info"><h1>This item is not available here.</h1><p><a href="/">Back to the shop</a></p></div>'; return; }
   document.title = p.name + ' — PajamasDog';
   let tried = null; try { tried = sessionStorage.getItem('tryon:'+p.id); } catch(e){}
-  const pic = tried ? `<img src="${tried}" alt="Your pet in ${p.name}"><span class="tag mine">Your pet</span>` : visualOf(p);
+  const look = (q.get('look')||'').match(/^img\/p\/[\w-]+\.webp$/) ? q.get('look') : null;
+  const pic = tried ? `<img src="${tried}" alt="Your pet in ${p.name}"><span class="tag mine">Your pet</span>`
+            : look ? `<img src="${look}" alt="${p.name}"><span class="tag mine">Similar pick</span>` : visualOf(p);
   const shop = shopName(p);
   const live = p.src && p.src!=='sample';
   main.innerHTML = `
-    <div class="pic">${pic}${tried?'':`<span class="tag">${shop}</span>`}</div>
+    <div class="pic">${pic}${(tried||look)?'':`<span class="tag">${shop}</span>`}</div>
     <div class="info">
       <h1>${p.name}</h1>
       <p>${p.note||''}</p>

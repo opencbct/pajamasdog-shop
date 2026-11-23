@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery — PajamasDog</title>
+<meta name="description" content="Cozy pets in pajamas, sweaters and winter looks. Share yours with #PajamasDog.">
+<link rel="icon" href="/favicon.ico?v=3" sizes="48x48">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png?v=3">
+<meta name="theme-color" content="#15131c">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shop.css">
+<link rel="stylesheet" href="logo-motion.css">
+<style>
+main{max-width:1200px}
+h1{font-weight:300;font-size:clamp(30px,6vw,48px);line-height:1.1;margin:6px 0 4px}
+h1 b{font-weight:600;color:var(--pink)}
+.lead{opacity:.75;margin-bottom:16px}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -16px 16px;padding:0 16px}
+.tabs::-webkit-scrollbar{display:none}
+/* masonry */
+.wall{columns:2;column-gap:10px}
+@media(min-width:768px){.wall{columns:4;column-gap:14px}}
+.ph-card{break-inside:avoid;margin-bottom:10px;border-radius:18px;overflow:hidden;position:relative;background:var(--card);display:block}
+@media(min-width:768px){.ph-card{margin-bottom:14px}}
+.ph-card img{width:100%;display:block;transition:transform .5s}
+.ph-card:hover img{transform:scale(1.04)}
+.ph-card .t{position:absolute;left:10px;bottom:10px;font-size:12px;background:rgba(21,19,28,.7);padding:4px 10px;border-radius:999px;backdrop-filter:blur(4px)}
+.ph-card.reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+.ph-card.reveal.in{opacity:1;transform:none}
+/* share band */
+.share{margin:26px 0 8px;border-radius:24px;padding:26px 20px;background:linear-gradient(135deg,#2a2140,#3a1f3a);text-align:center}
+.share h2{font-weight:300;font-size:26px;margin-bottom:6px}
+.share p{opacity:.8;margin-bottom:16px}
+.share .btn{max-width:320px;margin:0 auto 14px}
+.socials{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.socials a{padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.1);font-size:14px}
+</style>
+</head>
+<body>
+<header>
+  <a href="/"><img src="img/wordmark.png" alt="PajamasDog"></a>
+  <a class="back" href="/">← Shop</a>
+</header>
+<main>
+  <h1>Cozy <b>gallery</b></h1>
+  <p class="lead">Pets in their warmest looks. Tap a photo to shop the look.</p>
+
+  <div class="tabs" id="tabs">
+    <button class="chip on" data-k="all">All</button>
+    <button class="chip" data-k="winter">Winter PJs</button>
+    <button class="chip" data-k="style">Style</button>
+    <button class="chip" data-k="play">Play &amp; walk</button>
+    <button class="chip" data-k="home">Cozy home</button>
+  </div>
+
+  <div class="wall" id="wall"></div>
+
+  <div class="share">
+    <h2>Show us your pet 🐾</h2>
+    <p>Try a pajama on your pet, then share it with <b>#PajamasDog</b>.</p>
+    <a class="btn" href="tryon.html">Try on your pet</a>
+    <div class="socials">
+      <a href="https://www.instagram.com/explore/tags/pajamasdog/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/hashtag/pajamasdog" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.tiktok.com/tag/pajamasdog" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.facebook.com/hashtag/pajamasdog" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</main>
+
+<footer><span class="plogo" style="--w:200px;--a:#ffd3e2;--b:#ff3d7f"><i></i><i></i></span><br><br>PajamasDog links to partner shops and may earn a commission on purchases. <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
+
+<script src="shop.js"></script>
+<script>
+// Our own photos. k = tab, s = where "Shop this look" goes.
+// id = product shown on the detail page (closest match to the look)
+const P = (n,k,t,id) => ({src:`img/p/${n}.webp`, k, t, id});
+const PHOTOS = [
+  P('pajama_bichon','winter','Silk PJs','s1'), P('santa_golden','winter','Santa look','a-B08B3WF7M9'),
+  P('pug_blanket','home','Blanket burrito','a-B0CPDQQGSP'), P('puffer_pom','winter','Puffer coat','a-B0FGCJ1S7K'),
+  P('bandana','style','Bandana','a-B0D7J76RY1'), P('corgis','play','Corgi crew','s5'),
+  P('cavalier_blanket','home','Nap time','a-B09TW8NFM4'), P('plaid_pug','winter','Plaid PJs','a-B08B3WSRZT'),
+  P('tophat','style','Top hat','a-B0CGDP77ZN'), P('running','play','Zoomies','s5'),
+  P('scarf_poodle','winter','Cozy scarf','a-B09372MGYZ'), P('sunflower','style','Flower collar','s6'),
+  P('pug_sweater','winter','Knit sweater','a-B093734TG9'), P('lying_dog','home','Sofa day','a-B0BYCKQTPD'),
+  P('goggles','style','Snow goggles','s4'), P('corgi_walk','play','Morning walk','s5'),
+  P('puffer_four','winter','Puffer squad','a-B0C4H1Y7LP'), P('yorkie_tee','style','Red tee','a-B0D7J76RY1'),
+  P('leash_jack','play','Ready to go','s5'), P('pom_sweater','winter','Sweater weather','a-B09XB9NNGK'),
+  P('maltese_harness','style','Harness','s5'), P('collie','play','Park day','s4'),
+  P('red_boa','winter','Red boa','a-B09GDHKJ9S'), P('sunhat','style','Sun hat','s4'),
+  P('rope_toy','play','Tug time','a-B088W413XV'), P('yorkie','style','Little star','a-B09TDFXBC1'),
+  P('plush_toy','home','Best friend','a-B088W413XV'), P('ball_toy','play','Fetch','s6'),
+];
+const wall = document.getElementById('wall');
+let shown = [];
+function draw(k){
+  shown = PHOTOS.filter(p => k==='all' || p.k===k);
+  wall.innerHTML = shown.map((p,i) => `<a class="ph-card reveal" href="product.html?id=${encodeURIComponent(p.id)}&look=${encodeURIComponent(p.src)}"><img src="${p.src}" alt="${p.t}" loading="lazy"><span class="t">${p.t}</span></a>`).join('');
+  wall.querySelectorAll('.reveal').forEach(el => rv.observe(el));
+}
+// fade cards in as they scroll into view
+const rv = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); rv.unobserve(e.target); } }), {rootMargin:'0px 0px -40px'});
+document.getElementById('tabs').addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if(!b) return;
+  document.querySelectorAll('#tabs .chip').forEach(c => c.classList.toggle('on', c===b)); draw(b.dataset.k);
+});
+draw('all');
+</script>
+</body>
+</html>
