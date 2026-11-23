@@ -81,7 +81,7 @@ footer{text-align:center;font-size:13px;opacity:.6;padding:30px 16px 40px}
 </section>
 
 
-<footer>© 2026 PajamasDog</footer>
+<footer>PajamasDog links to partner shops and may earn a commission on purchases, at no extra cost to you. As an Amazon Associate we earn from qualifying purchases. Orders, shipping and returns are handled by each shop.<br><br>© 2026 PajamasDog</footer>
 
 <script>
 // ---- Product source -------------------------------------------------------
@@ -91,9 +91,29 @@ footer{text-align:center;font-size:13px;opacity:.6;padding:30px 16px 40px}
 const PAGE_SIZE = 12;
 const BLOCK = /\b(treat|food|kibble|jerky|chew stick|supplement|cbd|vitamin)s?\b/i; // no edibles (FDA)
 const DEMO = new URLSearchParams(location.search).has('demo'); // repeat samples to test scrolling
+
+// Shops we link to. Each one is shown only where it can really ship.
+// Add a shop here + its products in the feed; nothing else changes.
+const SOURCES = {
+  amazon:  {label:'Amazon',  regions:['US']},       // tracking tag goes in each product url
+  coupang: {label:'Coupang', regions:['KR']},
+  naver:   {label:'Naver',   regions:['KR']},
+  cj:      {label:'CJ',      regions:['GLOBAL','US','KR']},
+  sample:  {label:'Soon',    regions:['GLOBAL','US','KR']},
+};
+// Visitor region from the browser clock + language (no tracking, no IP lookup).
+const REGION = (() => {
+  const q = new URLSearchParams(location.search).get('region'); if(q) return q.toUpperCase();
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+  if(tz==='Asia/Seoul' || /^ko/i.test(navigator.language)) return 'KR';
+  if(/^America\/(New_York|Chicago|Denver|Los_Angeles|Phoenix|Anchorage|Detroit|Indiana|Boise)|^Pacific\/Honolulu/.test(tz)) return 'US';
+  return 'GLOBAL';
+})();
+const canShip = p => (SOURCES[p.src||'sample']||{regions:[]}).regions.includes(REGION);
+
 let FEED = null;
 async function getProducts(cat, page){
-  if(!FEED){ FEED = (await (await fetch('products/feed.json',{cache:'no-store'})).json()).filter(p => !BLOCK.test(p.name)); }
+  if(!FEED){ FEED = (await (await fetch('products/feed.json',{cache:'no-store'})).json()).filter(p => !BLOCK.test(p.name) && canShip(p)); }
   let list = FEED.filter(p => cat==='all' || p.cat===cat);
   if(DEMO && list.length){ const out=[]; for(let i=0;i<PAGE_SIZE;i++){ const p=list[(page*PAGE_SIZE+i)%list.length]; out.push({...p,id:p.id+'-'+page+'-'+i}); } return page<20?out:[]; }
   return list.slice(page*PAGE_SIZE, (page+1)*PAGE_SIZE);
@@ -102,7 +122,7 @@ async function getProducts(cat, page){
 // ---- Infinite scroll --------------------------------------------------------
 const grid = document.getElementById('grid'), more = document.getElementById('more');
 let cat='all', page=0, busy=false, done=false, run=0;
-const card = p => `<a class="card" href="${p.url||'#'}" rel="sponsored noopener" target="_blank"><span class="tag">Soon</span><img src="${p.img}" alt="${p.name}" loading="lazy"><div class="cap"><b>${p.name}</b><span>${p.note||''}</span></div></a>`;
+const card = p => `<a class="card" href="${p.url||'#'}" rel="sponsored noopener" target="_blank"><span class="tag">${(SOURCES[p.src||"sample"]||{}).label||""}</span><img src="${p.img}" alt="${p.name}" loading="lazy"><div class="cap"><b>${p.name}</b><span>${p.note||''}</span></div></a>`;
 async function loadNext(){
   if(busy||done) return; busy=true; const my=run;
   more.textContent='Loading more…';
