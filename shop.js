@@ -8,7 +8,7 @@ const DEMO = new URLSearchParams(location.search).has('demo'); // repeat samples
 // Shops we link to. Each one is shown only where it can really ship.
 // Add a shop here + its products in the feed; nothing else changes.
 // Amazon tracking ID for pajamasdog.com (create it in Amazon Associates, then put it here).
-const AMAZON_TAG = '';
+const AMAZON_TAG = 'pajamasdog-20';
 const linkOf = p => p.asin ? `https://www.amazon.com/dp/${p.asin}${AMAZON_TAG?`?tag=${AMAZON_TAG}`:''}` : (p.url||'#');
 // Partner shop doors (hero chips). Put each affiliate ID here once approved;
 // until then the links still work, they just earn nothing.
