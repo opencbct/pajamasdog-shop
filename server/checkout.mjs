@@ -1,0 +1,99 @@
+// PajamasDog direct checkout — AWS Lambda (Node 20, no dependencies). NOT DEPLOYED.
+// Routes (Lambda function URL):
+//   POST /checkout  {items:[{id,qty,size}], wrap, gift:{to,from,msg}, country}  -> {url} (Stripe Checkout)
+//   POST /webhook   Stripe event (checkout.session.completed)                -> places the CJ order
+// Env: STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, CJ_API_KEY, SITE_URL (https://pajamasdog.com)
+// Money: Stripe payouts go to the Bluevine account set in the Stripe dashboard (never in code).
+import crypto from 'node:crypto';
+import { readFileSync } from 'node:fs';
+const CATALOG = JSON.parse(readFileSync(new URL('./catalog.json', import.meta.url)));
+const SITE = process.env.SITE_URL || 'https://pajamasdog.com';
+const json = (code, body) => ({ statusCode: code, headers: { 'content-type': 'application/json', 'access-control-allow-origin': SITE }, body: JSON.stringify(body) });
+
+// ---- 1. Create a Stripe Checkout session from SERVER prices only ----
+async function createCheckout(req) {
+  const items = (req.items || []).slice(0, 20);
+  const wrap = CATALOG.wraps[req.wrap] ? req.wrap : 'none';
+  const form = new URLSearchParams();
+  let n = 0;
+  for (const it of items) {
+    const p = CATALOG.items[it.id];
+    if (!p) return json(400, { error: `Unknown item ${it.id}` });
+    if (p.test && process.env.STAGE === 'live') return json(400, { error: 'Test item in live mode' });
+    const size = p.sizes?.includes(it.size) ? it.size : '';
+    const qty = Math.max(1, Math.min(5, parseInt(it.qty) || 1));
+    form.append(`line_items[${n}][price_data][currency]`, CATALOG.currency);
+    form.append(`line_items[${n}][price_data][unit_amount]`, String(p.price));
+    form.append(`line_items[${n}][price_data][product_data][name]`, p.name + (size ? ` · ${size}` : ''));
+    form.append(`line_items[${n}][quantity]`, String(qty));
+    form.append(`metadata[item_${n}]`, `${it.id}|${size}|${qty}`);
+    n++;
+  }
+  if (!n) return json(400, { error: 'Cart is empty' });
+  if (CATALOG.wraps[wrap].price) {
+    form.append(`line_items[${n}][price_data][currency]`, CATALOG.currency);
+    form.append(`line_items[${n}][price_data][unit_amount]`, String(CATALOG.wraps[wrap].price));
+    form.append(`line_items[${n}][price_data][product_data][name]`, `Gift wrap · ${CATALOG.wraps[wrap].name}`);
+    form.append(`line_items[${n}][quantity]`, '1');
+  }
+  const g = req.gift || {};
+  form.append('mode', 'payment');
+  form.append('success_url', `${SITE}/thanks.html?s={CHECKOUT_SESSION_ID}`);
+  form.append('cancel_url', `${SITE}/studio.html`);
+  form.append('shipping_address_collection[allowed_countries][0]', 'US');
+  form.append('metadata[wrap]', wrap);
+  form.append('metadata[gift_to]', String(g.to || '').slice(0, 60));
+  form.append('metadata[gift_from]', String(g.from || '').slice(0, 60));
+  form.append('metadata[gift_msg]', String(g.msg || '').slice(0, 300));
+  const r = await fetch('https://api.stripe.com/v1/checkout/sessions', {
+    method: 'POST', headers: { authorization: `Bearer ${process.env.STRIPE_SECRET_KEY}`, 'content-type': 'application/x-www-form-urlencoded' }, body: form });
+  const s = await r.json();
+  return r.ok ? json(200, { url: s.url }) : json(502, { error: s.error?.message || 'Stripe error' });
+}
+
+// ---- 2. Verify the Stripe webhook signature ----
+function verifyStripe(raw, header) {
+  const parts = Object.fromEntries((header || '').split(',').map(kv => kv.split('=')));
+  if (!parts.t || !parts.v1 || Math.abs(Date.now() / 1000 - parts.t) > 300) return false;
+  const mac = crypto.createHmac('sha256', process.env.STRIPE_WEBHOOK_SECRET).update(`${parts.t}.${raw}`).digest('hex');
+  return crypto.timingSafeEqual(Buffer.from(mac), Buffer.from(parts.v1));
+}
+
+// ---- 3. Paid → place the order at CJ (they ship to the customer) ----
+async function cjToken() {
+  const r = await fetch('https://developers.cjdropshipping.com/api2.0/v1/authentication/getAccessToken', {
+    method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ apiKey: process.env.CJ_API_KEY }) });
+  return (await r.json()).data?.accessToken;
+}
+async function placeCjOrder(session) {
+  const ship = session.collected_information?.shipping_details || session.shipping_details || {};
+  const a = ship.address || {};
+  const products = Object.entries(session.metadata || {}).filter(([k]) => k.startsWith('item_')).map(([, v]) => {
+    const [id, , qty] = v.split('|'); return { vid: CATALOG.items[id]?.cj_vid, quantity: +qty };
+  }).filter(p => p.vid);
+  if (!products.length) return { skipped: 'no CJ variants mapped yet' };
+  const token = await cjToken();
+  const r = await fetch('https://developers.cjdropshipping.com/api2.0/v1/shopping/order/createOrderV2', {
+    method: 'POST', headers: { 'content-type': 'application/json', 'CJ-Access-Token': token },
+    body: JSON.stringify({ orderNumber: session.id, shippingCountryCode: a.country, shippingProvince: a.state, shippingCity: a.city,
+      shippingAddress: [a.line1, a.line2].filter(Boolean).join(' '), shippingZip: a.postal_code, shippingCustomerName: ship.name,
+      shippingPhone: session.customer_details?.phone || '', remark: `Gift: ${session.metadata?.wrap || 'none'} ${session.metadata?.gift_msg || ''}`.slice(0, 200),
+      logisticName: 'CJPacket Ordinary', fromCountryCode: 'CN', products }) });
+  return r.json();
+}
+
+export const handler = async (event) => {
+  const path = event.rawPath || event.path || '';
+  const raw = event.isBase64Encoded ? Buffer.from(event.body || '', 'base64').toString() : (event.body || '');
+  if (event.requestContext?.http?.method === 'OPTIONS') return { statusCode: 204, headers: { 'access-control-allow-origin': SITE, 'access-control-allow-headers': 'content-type', 'access-control-allow-methods': 'POST' } };
+  try {
+    if (path.endsWith('/checkout')) return await createCheckout(JSON.parse(raw || '{}'));
+    if (path.endsWith('/webhook')) {
+      if (!verifyStripe(raw, event.headers?.['stripe-signature'])) return json(400, { error: 'bad signature' });
+      const ev = JSON.parse(raw);
+      if (ev.type === 'checkout.session.completed') { const r = await placeCjOrder(ev.data.object); console.log('CJ order', JSON.stringify(r)); }
+      return json(200, { ok: true });
+    }
+    return json(404, { error: 'not found' });
+  } catch (e) { console.error(e); return json(500, { error: 'server error' }); }
+};

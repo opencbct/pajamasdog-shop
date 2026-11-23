@@ -1,0 +1,14 @@
+{
+  "_note": "PajamasDog direct products (we are the seller). Prices live ONLY here on the server; the browser never sets a price. cj_vid = CJ Dropshipping variant id. Fill after picking winners on CJ. TEST items must be removed before going live.",
+  "currency": "usd",
+  "items": {
+    "pd-test-pj": {"name": "TEST · Cozy fleece pajama", "price": 1999, "cj_vid": "", "sizes": ["XS","S","M","L","XL"], "test": true}
+  },
+  "wraps": {
+    "none":    {"name": "No gift wrap", "price": 0},
+    "simple":  {"name": "Gift bag + tissue", "price": 299},
+    "festive": {"name": "Holiday box + ribbon", "price": 599},
+    "luxury":  {"name": "Luxury box, ribbon + printed photo card", "price": 999}
+  },
+  "shipping": {"US": 0, "default": 799}
+}
