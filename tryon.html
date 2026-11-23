@@ -19,7 +19,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 12px}
 .stage .mini{position:absolute;right:12px;bottom:12px;width:74px;border-radius:14px;overflow:hidden;border:3px solid #fff;box-shadow:0 4px 14px rgba(0,0,0,.4)}
 .stage .mini img,.stage .mini .ph{width:100%;aspect-ratio:1/1;height:auto}
 .stage .mini .ph span{font-size:22px}
-.stage .note{position:absolute;left:14px;bottom:16px;right:100px;font-size:13px;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.stage .note{position:absolute;left:16px;top:52px;right:16px;font-size:13px;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
 .stage .busy{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(21,19,28,.55);font-size:15px}
 .stage.loading .busy{display:flex}
 .add{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:2px dashed rgba(255,255,255,.25);border-radius:24px;cursor:pointer;text-align:center;padding:20px}
@@ -71,6 +71,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 12px}
     <div class="pick"><b id="pName"></b><span id="pNote"></span></div>
     <div class="acts">
       <a class="btn" id="love" href="#">Love it — see this pajama</a>
+      <button class="btn ghost" id="share" type="button">Share my dog</button>
       <label class="btn ghost" for="file">Change photo</label>
     </div>
   </div>
@@ -87,13 +88,29 @@ function shrink(file){
   return new Promise(res => {
     const img = new Image();
     img.onload = () => {
-      const s = Math.min(1, 1000 / Math.max(img.width, img.height));
+      const s = Math.min(1, 1400 / Math.max(img.width, img.height));
       const c = document.createElement('canvas'); c.width = img.width*s; c.height = img.height*s;
       c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
       c.toBlob(b => res(new File([b], 'dog.jpg', {type:'image/jpeg'})), 'image/jpeg', .86);
     };
     img.src = URL.createObjectURL(file);
   });
+}
+// Put the PajamasDog logo on the picture itself, so a saved or shared photo carries the brand.
+const LOGO = new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'img/wordmark.png'; });
+async function brand(url){
+  const [img, logo] = await Promise.all([new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = url; }), LOGO]);
+  // crop to the 4:5 frame people see, so the shared picture matches the screen
+  const iw = img.naturalWidth, ih = img.naturalHeight, cw = Math.min(iw, ih * 4/5), ch = cw * 5/4;
+  const c = document.createElement('canvas'); c.width = Math.round(cw); c.height = Math.round(ch);
+  const g = c.getContext('2d'); g.drawImage(img, (iw - cw) / 2, (ih - ch) / 2, cw, ch, 0, 0, c.width, c.height);
+  const w = c.width * 0.34, h = w * logo.naturalHeight / logo.naturalWidth, m = c.width * 0.04;
+  const fade = g.createLinearGradient(0, c.height - h - m * 2.2, 0, c.height);   // soft dark band so the logo reads on any photo
+  fade.addColorStop(0, 'rgba(21,19,28,0)'); fade.addColorStop(1, 'rgba(21,19,28,.55)');
+  g.fillStyle = fade; g.fillRect(0, c.height - h - m * 2.2, c.width, h + m * 2.2);
+  g.shadowColor = 'rgba(0,0,0,.45)'; g.shadowBlur = c.width * 0.01;
+  g.drawImage(logo, m, c.height - h - m, w, h);
+  return c.toDataURL('image/jpeg', .9);
 }
 const toDataURL = url => fetch(url).then(r=>r.blob()).then(b => new Promise(r => { const f=new FileReader(); f.onload=()=>r(f.result); f.readAsDataURL(b); }));
 
@@ -108,7 +125,7 @@ async function render(){
   $('outfits').children[idx]?.scrollIntoView({inline:'center', block:'nearest', behavior:'smooth'});
   $('stage').classList.add('loading');
   try {
-    cache[key] = cache[key] || await tryOn(photo, p, pose);
+    if(!cache[key]){ const r = await tryOn(photo, p, pose); cache[key] = {...r, url: await brand(r.url)}; }
     if(my !== run) return;
     $('shot').src = cache[key].url;
     $('prevTag').classList.toggle('hide', !cache[key].preview);
@@ -121,8 +138,18 @@ async function render(){
 $('love').addEventListener('click', async e => {
   e.preventDefault();
   const p = outfits[idx], r = cache[p.id+'|'+pose];
-  if(r){ try { sessionStorage.setItem('tryon:'+p.id, await toDataURL(r.url)); } catch(err){} }
+  if(r){ try { sessionStorage.setItem('tryon:'+p.id, r.url); } catch(err){} }
   location.href = 'product.html?id=' + encodeURIComponent(p.id) + '&from=tryon';
+});
+
+// Share the branded picture (phone share sheet), or save it on computers.
+$('share').addEventListener('click', async () => {
+  const p = outfits[idx], r = cache[p.id+'|'+pose]; if(!r) return;
+  const blob = await (await fetch(r.url)).blob();
+  const file = new File([blob], 'my-pajamasdog.jpg', {type:'image/jpeg'});
+  const data = {files:[file], title:'My dog in PajamasDog', text:'Try it on your dog at pajamasdog.com'};
+  try { if(navigator.canShare && navigator.canShare(data)) return await navigator.share(data); } catch(e){ if(e.name==='AbortError') return; }
+  const a = document.createElement('a'); a.href = r.url; a.download = 'my-pajamasdog.jpg'; a.click();
 });
 
 $('file').addEventListener('change', async e => {
