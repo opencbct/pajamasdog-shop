@@ -26,6 +26,11 @@ header nav{display:flex;gap:18px;font-size:15px}
 .sparkle i.star{background:radial-gradient(circle,#fff 0,rgba(255,255,255,.7) 12%,rgba(255,255,255,0) 40%),linear-gradient(transparent 47%,rgba(255,255,255,.8) 50%,transparent 53%),linear-gradient(90deg,transparent 47%,rgba(255,255,255,.8) 50%,transparent 53%)}
 @keyframes twinkle{0%,100%{opacity:0;transform:scale(.6)}45%{opacity:var(--o);transform:scale(1)}60%{opacity:calc(var(--o)*.6)}}
 @media (prefers-reduced-motion:reduce){.sparkle{display:none}}
+.snow{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.snow i{position:absolute;top:-12px;border-radius:50%;background:#fff;opacity:var(--o);filter:blur(var(--b));animation:fall var(--d) linear var(--w) infinite}
+@keyframes fall{0%{transform:translate(0,-10px)}25%{transform:translate(var(--x),25vh)}50%{transform:translate(0,50vh)}75%{transform:translate(var(--x),75vh)}100%{transform:translate(0,105vh)}}
+@media (prefers-reduced-motion:reduce){.snow{display:none}}
+.hero .txt{z-index:2}
 .hero .txt{position:absolute;left:0;right:0;bottom:0;padding:28px 20px 30px;background:linear-gradient(transparent,rgba(30,20,45,.72));color:#fff}
 .hero h1{font-weight:300;font-size:clamp(34px,7vw,64px);line-height:1.05;letter-spacing:-.5px}
 .hero h1 b{font-weight:600;color:#ffd3e2}
@@ -94,6 +99,7 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
 <div class="hero">
   <img src="img/hero_winter.webp" alt="French bulldog in a winter sweater by the Christmas tree">
   <div class="sparkle" id="sparkle" aria-hidden="true"></div>
+  <div class="snow" id="snow" aria-hidden="true"></div>
   <div class="txt">
     <h1>Wrap them in <b>warmth</b><br>this winter.</h1>
     <p>Cozy pajamas for little dogs &amp; cats.</p>
@@ -225,6 +231,17 @@ async function fillRows(){
     tile('','img/p/leash_jack.webp','Walk buddies','Coming soon');
 }
 fillRows();
+
+// ---- Hero: gentle snowfall (near flakes bigger/faster, far flakes small/blurred) ----
+(function(){
+  const box = document.getElementById('snow'); if(!box) return;
+  const n = innerWidth < 600 ? 45 : 90, out = [];
+  for(let i=0;i<n;i++){
+    const near = Math.random() < .25, sz = near ? 5+Math.random()*4 : 2+Math.random()*3;
+    out.push(`<i style="left:${(Math.random()*100).toFixed(1)}%;width:${sz.toFixed(1)}px;height:${sz.toFixed(1)}px;--o:${(near?.9:.45+Math.random()*.35).toFixed(2)};--b:${near?0:1}px;--x:${(Math.random()*40-20).toFixed(0)}px;--d:${(near?6+Math.random()*4:10+Math.random()*8).toFixed(1)}s;--w:${(-Math.random()*18).toFixed(1)}s"></i>`);
+  }
+  box.innerHTML = out.join('');
+})();
 
 // ---- Hero: twinkling tree lights (kept off the dog's face in the middle) ----
 (function(){
