@@ -8,7 +8,7 @@ import crypto from 'node:crypto';
 import { readFileSync } from 'node:fs';
 const CATALOG = JSON.parse(readFileSync(new URL('./catalog.json', import.meta.url)));
 const SITE = process.env.SITE_URL || 'https://pajamasdog.com';
-const json = (code, body) => ({ statusCode: code, headers: { 'content-type': 'application/json', 'access-control-allow-origin': SITE }, body: JSON.stringify(body) });
+const json = (code, body) => ({ statusCode: code, headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
 
 // ---- 1. Create a Stripe Checkout session from SERVER prices only ----
 async function createCheckout(req) {
@@ -92,7 +92,7 @@ async function placeCjOrder(session) {
 export const handler = async (event) => {
   const path = event.rawPath || event.path || '';
   const raw = event.isBase64Encoded ? Buffer.from(event.body || '', 'base64').toString() : (event.body || '');
-  if (event.requestContext?.http?.method === 'OPTIONS') return { statusCode: 204, headers: { 'access-control-allow-origin': SITE, 'access-control-allow-headers': 'content-type', 'access-control-allow-methods': 'POST' } };
+  // CORS (preflight + allow-origin) is handled by the Lambda Function URL config, not here.
   try {
     if (path.endsWith('/checkout')) return await createCheckout(JSON.parse(raw || '{}'));
     if (path.endsWith('/webhook')) {

@@ -19,9 +19,12 @@ const PARTNER_LINKS = {
   naver:   q => `https://search.shopping.naver.com/search/all?query=${encodeURIComponent(q)}`,
   cj:      q => `https://cjdropshipping.com/search/${encodeURIComponent(q)}.html`,
 };
-// Our checkout server (Stripe + CJ order, AWS Lambda). Empty = not open yet.
-const CHECKOUT_API = '';
+// Our checkout server (Stripe + CJ order, AWS Lambda pajamasdog-checkout).
+// CHECKOUT_LIVE=false: Stripe TEST mode, only reachable with ?preview. Flip to true after live keys.
+const CHECKOUT_LIVE = false;
+const CHECKOUT_URL = 'https://6l5lt5zx2k7jra6ynbmmd32usm0nhbay.lambda-url.us-east-1.on.aws';
 const PREVIEW = (() => { try { if(new URLSearchParams(location.search).has('preview')) sessionStorage.setItem('pd:preview','1'); return !!sessionStorage.getItem('pd:preview'); } catch(e){ return false; } })();
+const CHECKOUT_API = (CHECKOUT_LIVE || PREVIEW) ? CHECKOUT_URL : '';
 const SOURCES = {
   amazon:  {label:'Amazon',  regions:['US']},       // tracking tag goes in each product url
   coupang: {label:'Coupang', regions:['KR']},
