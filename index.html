@@ -54,6 +54,13 @@ h2{font-weight:300;font-size:28px;margin-bottom:16px}
 .row>*{flex:0 0 44%;scroll-snap-align:start}
 @media(min-width:768px){.row>*{flex:0 0 23%}}
 .tile{border-radius:20px;aspect-ratio:1/1.18;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;color:var(--ink);position:relative;overflow:hidden}
+.vband{position:relative;max-width:1168px;margin:30px auto 6px;width:calc(100% - 32px);border-radius:24px;overflow:hidden}
+.vband video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.vband .vt{position:absolute;left:0;right:0;bottom:0;padding:22px;background:linear-gradient(transparent,rgba(15,12,22,.75))}
+.vband h2{margin:0;font-size:clamp(24px,4vw,40px)}
+.vband p{opacity:.85}
+.tile.photo{background-size:cover;background-position:center;color:#fff}
+.tile.photo span{opacity:.85}
 .tile .ic{position:absolute;top:14px;left:16px;font-size:44px}
 .tile b{font-weight:400;font-size:18px}
 .tile span{font-size:13px;opacity:.7}
@@ -93,6 +100,13 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
   <div class="hd"><h2>Winter <b>pajamas</b></h2><span><a href="tryon.html" style="margin-right:14px">Try on</a><a href="#shop" data-go="pajamas">See all</a></span></div>
   <div class="row" data-row="pajamas"></div>
 </div>
+
+<div class="sec" id="looks">
+  <div class="hd"><h2>Cozy looks</h2><a href="tryon.html">Try on your pet</a></div>
+  <div class="row"><a class="tile photo" href="tryon.html" style="background-image:url(img/p/pajama_bichon.webp)"></a><a class="tile photo" href="tryon.html" style="background-image:url(img/p/pug_blanket.webp)"></a><a class="tile photo" href="tryon.html" style="background-image:url(img/p/santa_golden.webp)"></a><a class="tile photo" href="tryon.html" style="background-image:url(img/p/puffer_pom.webp)"></a><a class="tile photo" href="tryon.html" style="background-image:url(img/p/cavalier_blanket.webp)"></a><a class="tile photo" href="tryon.html" style="background-image:url(img/p/plaid_pug.webp)"></a><a class="tile photo" href="tryon.html" style="background-image:url(img/p/scarf_poodle.webp)"></a><a class="tile photo" href="tryon.html" style="background-image:url(img/p/pug_sweater.webp)"></a><a class="tile photo" href="tryon.html" style="background-image:url(img/p/puffer_four.webp)"></a><a class="tile photo" href="tryon.html" style="background-image:url(img/p/pom_sweater.webp)"></a></div>
+</div>
+
+<div class="vband"><video src="img/poms.mp4" poster="img/poms.jpg" autoplay muted loop playsinline></video><div class="vt"><h2>Wrap them in warmth</h2><p>The cozy pajama season is here.</p></div></div>
 
 <div class="sec" id="acc">
   <div class="hd"><h2>Accessories</h2><a href="#shop" data-go="acc">See all</a></div>
@@ -164,38 +178,38 @@ document.getElementById('chips').addEventListener('click', e => {
 loadNext();
 
 // ---- Home rows -------------------------------------------------------------
-const tile = (bg, ic, t, sub, url) => `<a class="tile" style="background:${bg}" ${url?`href="${url}" target="_blank" rel="noopener"`:''}><span class="ic">${ic}</span><b>${t}</b><span>${sub}</span></a>`;
+const tile = (bg, ic, t, sub, url) => /^img\//.test(ic) ? `<a class="tile photo" style="background-image:linear-gradient(transparent 45%,rgba(15,12,22,.85)),url(${ic})" ${url?`href="${url}" target="_blank" rel="noopener"`:''}><b>${t}</b><span>${sub}</span></a>` : `<a class="tile" style="background:${bg}" ${url?`href="${url}" target="_blank" rel="noopener"`:''}><span class="ic">${ic}</span><b>${t}</b><span>${sub}</span></a>`;
 async function fillRows(){
   for(const row of document.querySelectorAll('[data-row]')){
     const items = (await getProducts(row.dataset.row, 0)).slice(0,12);
-    row.innerHTML = items.length ? items.map(card).join('') : tile('#ffe9c7','🦴','Coming soon','Picked for winter');
+    row.innerHTML = items.length ? items.map(card).join('') : tile('','img/p/food_circle.webp','Coming soon','Picked for winter');
   }
   // Used pet goods (dogs & cats): local second-hand markets (goods only, never animals).
   const USED = {
-    US:[['#e7f0ff','🛍️','Facebook Marketplace','Pet clothes near you','https://www.facebook.com/marketplace/search/?query=pet%20clothes'],
-        ['#e9fbef','📦','OfferUp','Pet supplies nearby','https://offerup.com/search?q=pet%20supplies'],
-        ['#ffe7ef','👗','Poshmark','Pre-loved pet clothes','https://poshmark.com/search?query=pet%20clothes'],
-        ['#fff3dc','🏷️','Mercari','Pet clothes & gear','https://www.mercari.com/search/?keyword=pet%20clothes']],
-    KR:[['#fff0e0','🥕','당근마켓','동네 반려동물 용품','https://www.daangn.com/kr/buy-sell/?search=%EB%B0%98%EB%A0%A4%EB%8F%99%EB%AC%BC%20%EC%9A%A9%ED%92%88'],
-        ['#ffe9e9','⚡','번개장터','반려동물 용품 중고','https://m.bunjang.co.kr/search/products?q=%EB%B0%98%EB%A0%A4%EB%8F%99%EB%AC%BC%20%EC%9A%A9%ED%92%88']],
+    US:[['','img/p/pom_sweater.webp','Facebook Marketplace','Pet clothes near you','https://www.facebook.com/marketplace/search/?query=pet%20clothes'],
+        ['','img/p/rope_toy.webp','OfferUp','Pet supplies nearby','https://offerup.com/search?q=pet%20supplies'],
+        ['','img/p/yorkie_tee.webp','Poshmark','Pre-loved pet clothes','https://poshmark.com/search?query=pet%20clothes'],
+        ['','img/p/tophat.webp','Mercari','Pet clothes & gear','https://www.mercari.com/search/?keyword=pet%20clothes']],
+    KR:[['','img/p/pom_sweater.webp','당근마켓','동네 반려동물 용품','https://www.daangn.com/kr/buy-sell/?search=%EB%B0%98%EB%A0%A4%EB%8F%99%EB%AC%BC%20%EC%9A%A9%ED%92%88'],
+        ['','img/p/yorkie_tee.webp','번개장터','반려동물 용품 중고','https://m.bunjang.co.kr/search/products?q=%EB%B0%98%EB%A0%A4%EB%8F%99%EB%AC%BC%20%EC%9A%A9%ED%92%88']],
   };
   document.getElementById('usedRow').innerHTML = (USED[REGION] || USED.US).map(x=>tile(...x)).join('') +
-    tile('#efe8ff','🐾','Sell yours here','Goods only · coming soon');
+    tile('','img/p/bandana.webp','Sell yours here','Goods only · coming soon');
   const ADOPT = {
-    US:[['#dff1ff','🐶','Petfinder','Dogs & cats near you','https://www.petfinder.com'],['#ffe3ec','🏠','Adopt-a-Pet','Shelters & rescues','https://www.adoptapet.com']],
-    KR:[['#dff1ff','🐶','동물보호관리시스템','유기견 · 유기묘 공고','https://www.animal.go.kr'],['#ffe3ec','🏠','포인핸드','입양 · 임시보호','https://pawinhand.kr']],
+    US:[['','img/p/corgis.webp','Petfinder','Dogs & cats near you','https://www.petfinder.com'],['','img/p/lying_dog.webp','Adopt-a-Pet','Shelters & rescues','https://www.adoptapet.com']],
+    KR:[['','img/p/corgis.webp','동물보호관리시스템','유기견 · 유기묘 공고','https://www.animal.go.kr'],['','img/p/lying_dog.webp','포인핸드','입양 · 임시보호','https://pawinhand.kr']],
   };
   const a = ADOPT[REGION] || [...ADOPT.US];
-  document.getElementById('adoptRow').innerHTML = a.map(x=>tile(...x)).join('') + tile('#eef7e4','💛','Adoption tips','Coming soon');
+  document.getElementById('adoptRow').innerHTML = a.map(x=>tile(...x)).join('') + tile('','img/p/collie.webp','Adoption tips','Coming soon');
   const GROUPS = {
-    US:[['#efe8ff','🐶','Meetup · dogs','Dog groups near you','https://www.meetup.com/topics/dogs/'],
+    US:[['','img/p/corgi_walk.webp','Meetup · dogs','Dog groups near you','https://www.meetup.com/topics/dogs/'],
         ['#ffe9f2','🐱','Meetup · cats','Cat groups near you','https://www.meetup.com/topics/cats/'],
-        ['#e7f0ff','👥','Facebook groups','Dog & cat lovers','https://www.facebook.com/search/groups/?q=dog%20and%20cat%20lovers']],
-    KR:[['#e9fbef','☕','네이버 카페','반려동물 카페 찾기','https://section.cafe.naver.com/ca-fe/home/search/cafes?q=%EB%B0%98%EB%A0%A4%EB%8F%99%EB%AC%BC']],
+        ['','img/p/maltese_harness.webp','Facebook groups','Dog & cat lovers','https://www.facebook.com/search/groups/?q=dog%20and%20cat%20lovers']],
+    KR:[['','img/p/corgi_walk.webp','네이버 카페','반려동물 카페 찾기','https://section.cafe.naver.com/ca-fe/home/search/cafes?q=%EB%B0%98%EB%A0%A4%EB%8F%99%EB%AC%BC']],
   };
   document.getElementById('clubRow').innerHTML = (GROUPS[REGION] || GROUPS.US).map(x=>tile(...x)).join('') +
     tile('#fff1d6','<span class="plogo" style="--w:110px;--a:#5e17eb;--b:#ff3d7f"><i></i><i></i></span>','PajamasDog club','Share your pet · soon') +
-    tile('#e3f6f5','🏃','Walk buddies','Coming soon');
+    tile('','img/p/leash_jack.webp','Walk buddies','Coming soon');
 }
 fillRows();
 document.querySelectorAll('#partners a').forEach(a => { a.href = PARTNER_LINKS[a.dataset.p](a.dataset.q); a.target = '_blank'; a.rel = 'sponsored noopener'; });
