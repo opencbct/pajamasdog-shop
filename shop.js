@@ -69,3 +69,18 @@ async function tryOn(photoFile, product, pose='sit'){
   if(!r.ok) throw new Error('try-on failed');
   return {url: URL.createObjectURL(await r.blob()), preview:false};
 }
+
+// ---- Logo motion: replay a small bounce + shine whenever a logo scrolls into view.
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    const el = e.target;
+    if(e.isIntersecting){ el.classList.remove('lm-go'); void el.offsetWidth; el.classList.add('lm-go'); }
+  }), {threshold:.6});
+  const watch = root => (root||document).querySelectorAll('header a img, .plogo').forEach(el => {
+    const t = el.tagName==='IMG' ? el.parentElement : el;
+    if(t.dataset.lm) return; t.dataset.lm = 1; t.classList.add('lm'); io.observe(t);
+  });
+  document.addEventListener('DOMContentLoaded', () => watch());
+  new MutationObserver(() => watch()).observe(document.documentElement, {childList:true, subtree:true});
+})();

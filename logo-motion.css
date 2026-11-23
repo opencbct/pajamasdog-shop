@@ -1,0 +1,13 @@
+/* Logo motion: plays each time a logo scrolls into view (class .lm-go added by shop.js) */
+.lm{display:inline-block;transform-origin:50% 90%;will-change:transform}
+.lm.lm-go{animation:lmPop .9s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes lmPop{0%{transform:translateY(14px) scale(.82) rotate(-4deg);opacity:.2}55%{transform:translateY(-6px) scale(1.06) rotate(2deg);opacity:1}75%{transform:translateY(2px) scale(.98) rotate(-1deg)}100%{transform:none}}
+/* light sweep over the logo */
+.lm{position:relative;overflow:hidden;border-radius:6px}
+.lm::after{content:"";position:absolute;inset:-20% auto -20% -60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);opacity:0;pointer-events:none}
+.lm.lm-go::after{animation:lmShine 1.1s .55s ease-out both}
+@keyframes lmShine{0%{left:-60%;opacity:1}100%{left:130%;opacity:0}}
+/* two-colour logo: coloured letters drop in after the white ones */
+.lm.lm-go .plogo i+i,.plogo.lm.lm-go i+i{animation:lmDrop .7s .25s cubic-bezier(.3,1.5,.5,1) both}
+@keyframes lmDrop{0%{transform:translateY(-30%);opacity:0}100%{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.lm.lm-go,.lm.lm-go::after,.lm.lm-go .plogo i+i,.plogo.lm.lm-go i+i{animation:none}}
