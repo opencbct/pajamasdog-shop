@@ -222,5 +222,59 @@
   "note": "Daisy white",
   "img": "img/bowl.webp",
   "url": "#"
+ },
+ {
+  "id": "a-B0HPB43FM4",
+  "src": "amazon",
+  "cat": "matching",
+  "asin": "B0HPB43FM4",
+  "name": "Matching Christmas PJs",
+  "note": "Dog + owner · blue",
+  "color": "#3d6fb5"
+ },
+ {
+  "id": "a-B0HP1G98M9",
+  "src": "amazon",
+  "cat": "matching",
+  "asin": "B0HP1G98M9",
+  "name": "Matching Christmas PJs set",
+  "note": "Pet tank + owner set",
+  "color": "#2f5c9a"
+ },
+ {
+  "id": "a-B0CPDQQGSP",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0CPDQQGSP",
+  "name": "Fluffy fleece blanket",
+  "note": "Bedsure · small dogs & cats",
+  "color": "#d8c3b0"
+ },
+ {
+  "id": "a-B09TW8NFM4",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B09TW8NFM4",
+  "name": "Calming donut bed + blanket",
+  "note": "Himax · light grey",
+  "color": "#b9bcc4"
+ },
+ {
+  "id": "a-B0BYCKQTPD",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0BYCKQTPD",
+  "name": "Hooded cave bed",
+  "note": "Chocolate · dogs & cats",
+  "color": "#7a5136"
+ },
+ {
+  "id": "a-B088W413XV",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B088W413XV",
+  "name": "Plush calming bed + blanket",
+  "note": "Pet Craft Supply · cream",
+  "color": "#e9dcc6"
  }
 ]
