@@ -2,19 +2,6 @@
  "_note": "PajamasDog direct products (we are the seller). Prices live ONLY here on the server; the browser never sets a price. cj_vid = CJ Dropshipping variant id. Fill after picking winners on CJ. TEST items must be removed before going live.",
  "currency": "usd",
  "items": {
-  "pd-test-pj": {
-   "name": "TEST \u00b7 Cozy fleece pajama",
-   "price": 1999,
-   "cj_vid": "",
-   "sizes": [
-    "XS",
-    "S",
-    "M",
-    "L",
-    "XL"
-   ],
-   "test": true
-  },
   "pd-01": {
    "name": "Rubber duck satin pajama",
    "price": 2699,

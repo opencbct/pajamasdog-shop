@@ -21,7 +21,7 @@ const PARTNER_LINKS = {
 };
 // Our checkout server (Stripe + CJ order, AWS Lambda pajamasdog-checkout).
 // CHECKOUT_LIVE=false: Stripe TEST mode, only reachable with ?preview. Flip to true after live keys.
-const CHECKOUT_LIVE = false;
+const CHECKOUT_LIVE = true;
 const CHECKOUT_URL = 'https://6l5lt5zx2k7jra6ynbmmd32usm0nhbay.lambda-url.us-east-1.on.aws';
 const PREVIEW = (() => { try { if(new URLSearchParams(location.search).has('preview')) sessionStorage.setItem('pd:preview','1'); return !!sessionStorage.getItem('pd:preview'); } catch(e){ return false; } })();
 const CHECKOUT_API = (CHECKOUT_LIVE || PREVIEW) ? CHECKOUT_URL : '';
