@@ -288,7 +288,7 @@
   "color": "#c9b8a6",
   "img": "img/p/pajama_bichon.webp",
   "look": true,
-  "badge": "07"
+  "badge": "12"
  },
  {
   "id": "a-B08B3WF7M9",
@@ -1102,5 +1102,8455 @@
   "tags": [
    "gift"
   ]
+ },
+ {
+  "id": "cj-61592576",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Red Pajamas",
+  "note": "2 colors · S–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-61592576.webp",
+  "price": 34.99,
+  "price_max": 34.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Red",
+   "Blue"
+  ],
+  "tags": [
+   "pajamas"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/434c08d0-7d0b-44aa-b252-68b7015a12a3.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-69AA0CE0",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "White Pajamas",
+  "note": "S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-69AA0CE0.webp",
+  "price": 29.99,
+  "price_max": 30.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "White"
+  ],
+  "tags": [
+   "pajamas"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/20200611/9395834603902.jpg"
+ },
+ {
+  "id": "cj-93657344",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Anxiety Pajamas",
+  "note": "5 colors · S–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-93657344.webp",
+  "price": 23.99,
+  "price_max": 28.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Black",
+   "Red",
+   "Pink",
+   "Purple",
+   "Skyblue"
+  ],
+  "tags": [
+   "pajamas"
+  ],
+  "badge": "00",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/b5214c04-43e9-4ec9-ac80-ff72c91ccecb.jpg?bid=2407170331071940600"
+ },
+ {
+  "id": "cj-75807232",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Comfortable Silk Pajamas",
+  "note": "2 colors · XS–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-75807232.webp",
+  "price": 17.99,
+  "price_max": 17.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Pink",
+   "Navy Blue"
+  ],
+  "tags": [
+   "pajamas"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/ae9899b4-7538-4b48-96c6-feff11e5531c.jpg"
+ },
+ {
+  "id": "cj-15418368",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Pink Pajamas",
+  "note": "3 colors · XS–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-15418368.webp?v=2",
+  "price": 19.99,
+  "price_max": 24.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Pink",
+   "Navy Blue",
+   "Black"
+  ],
+  "tags": [
+   "pajamas"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/d8f83dd5-5869-459d-8223-531f999b90ab.jpg"
+ },
+ {
+  "id": "cj-18795520",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Hotel Bath Bathrobe",
+  "note": "5 colors · S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-18795520.webp",
+  "price": 19.99,
+  "price_max": 19.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Yp A White",
+   "Yp B Army Green",
+   "Yp C Gray",
+   "Yp D Pink",
+   "Yp E Purple"
+  ],
+  "tags": [
+   "pajamas"
+  ],
+  "badge": "07",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/84d1f70f-d00a-4a94-9b99-27a0af485a76.jpg"
+ },
+ {
+  "id": "cj-65090304",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Striped Pajamas",
+  "note": "6 colors · S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-65090304.webp",
+  "price": 18.99,
+  "price_max": 18.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Grey",
+   "Red",
+   "Blue",
+   "Pink Colorful",
+   "Green Colorful",
+   "Red Colorful"
+  ],
+  "tags": [
+   "pajamas"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/63a6a703-5f5b-49e7-bbde-da96ffc17317.jpg"
+ },
+ {
+  "id": "cj-65329408",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Plaid Khaki Blue Pajamas",
+  "note": "2 colors · S–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-65329408.webp",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Khaki",
+   "Navy Blue"
+  ],
+  "tags": [
+   "pajamas"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/6792b000-23b4-4456-a221-e74da6b3def8.jpg"
+ },
+ {
+  "id": "cj-09534464",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Warm Thickened Flannel Pajamas",
+  "note": "3 colors · S–L",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-09534464.webp",
+  "price": 21.99,
+  "price_max": 23.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "White",
+   "Gray",
+   "Pink"
+  ],
+  "tags": [
+   "pajamas"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/583a16de-09fa-4917-849b-29b5884a754d.jpg"
+ },
+ {
+  "id": "cj-64353536",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Bathing Quick Drying Bathrobe",
+  "note": "3 colors · One size",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-64353536.webp",
+  "price": 35.99,
+  "price_max": 35.99,
+  "sizes": [],
+  "colors": [
+   "Blue",
+   "Pink",
+   "Purple"
+  ],
+  "tags": [
+   "pajamas"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/903e6c58-884c-42a1-a8f4-3491af0a9a2c.jpg"
+ },
+ {
+  "id": "cj-95825152",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Fully Surrounded Elastic Pajamas",
+  "note": "2 colors · XS–3XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-95825152.webp",
+  "price": 30.99,
+  "price_max": 36.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL"
+  ],
+  "colors": [
+   "Grey",
+   "Dark Blue"
+  ],
+  "tags": [
+   "pajamas"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/0abcbd64-6902-4bf7-9d3e-5e0dc2e0afe5.jpg"
+ },
+ {
+  "id": "cj-18218496",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Pink Pajamas · Pink",
+  "note": "3 colors · XS–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-18218496.webp",
+  "price": 17.99,
+  "price_max": 17.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Pink",
+   "Blue",
+   "Black"
+  ],
+  "tags": [
+   "pajamas"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/643d33bb-3ce3-434d-805b-e572f063d49b.jpg"
+ },
+ {
+  "id": "cj-33216512",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Silk Robe",
+  "note": "2 colors · XS–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-33216512.webp",
+  "price": 19.99,
+  "price_max": 19.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Blue",
+   "Pink"
+  ],
+  "tags": [
+   "pajamas"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/1b7b493a-f057-4578-aa3f-087001963ae5.jpg",
+  "badge": "09"
+ },
+ {
+  "id": "cj-71626200",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Halloween Prisoner Costume",
+  "note": "S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-71626200.webp?v=2",
+  "price": 30.99,
+  "price_max": 36.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Prison Uniform"
+  ],
+  "tags": [
+   "tops"
+  ],
+  "badge": "06",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2026/08/20/08/f849c6f2-a554-4268-9e9d-fd888e15351f_fine.jpeg"
+ },
+ {
+  "id": "cj-61111810",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Halloween Dark Harvest Costume",
+  "note": "S–L",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-61111810.webp",
+  "price": 39.99,
+  "price_max": 39.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "tags": [
+   "tops"
+  ],
+  "badge": "11",
+  "img_src": "https://cj-product-center.oss-accelerate.aliyuncs.com/supplier/1688/0509fcd4-980e-4549-84dc-bbea104c4a8b.jpg"
+ },
+ {
+  "id": "cj-11632100",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Life Jacket",
+  "note": "4 colors · XS–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-11632100.webp",
+  "price": 25.99,
+  "price_max": 30.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Blue And Green",
+   "Orange",
+   "Purple Patchwork",
+   "Red Stitching"
+  ],
+  "tags": [
+   "tops"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/83ddcd9a-5cdd-4e06-ba67-3ca22d97a96c.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-21618400",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Christmas Costume",
+  "note": "S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-21618400.webp",
+  "price": 20.99,
+  "price_max": 23.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "White"
+  ],
+  "tags": [
+   "tops"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/04e30361-bffb-46d7-9873-b1f9e85c6825.jpg"
+ },
+ {
+  "id": "cj-93932802",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Costumes Props Nun Tee",
+  "note": "S–L",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-93932802.webp",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Nun Uniform Large Quantity"
+  ],
+  "tags": [
+   "tops"
+  ],
+  "badge": "09",
+  "img_src": "https://cj-product-center.oss-accelerate.aliyuncs.com/supplier/1688/74998adb-6905-4b66-9c27-df4b466a2c8d.jpg"
+ },
+ {
+  "id": "cj-31618900",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Santa Claus Outfit Costume",
+  "note": "S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-31618900.webp",
+  "price": 22.99,
+  "price_max": 22.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "tags": [
+   "tops"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/8e813142-b3b9-443f-b4ab-769ac2d1b51a.jpg"
+ },
+ {
+  "id": "cj-01635500",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Cotton Alaskan Coat",
+  "note": "S–5XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-01635500.webp",
+  "price": 47.99,
+  "price_max": 77.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL",
+   "4XL",
+   "5XL"
+  ],
+  "colors": [
+   "White"
+  ],
+  "tags": [
+   "tops"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/61099761-ba7f-40f5-8293-985231047608.jpg"
+ },
+ {
+  "id": "cj-71611200",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Reflective Outdoor Life Jacket",
+  "note": "4 colors · XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-71611200.webp",
+  "price": 35.99,
+  "price_max": 40.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Orange",
+   "Pink",
+   "Blue",
+   "Fluorescent Green"
+  ],
+  "tags": [
+   "tops"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/bda9db92-eeb7-4ba4-907c-13fe0cb587b3.jpg"
+ },
+ {
+  "id": "cj-21622900",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Life Swimsuit Swimming Jacket",
+  "note": "S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-21622900.webp?v=2",
+  "price": 27.99,
+  "price_max": 27.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "tags": [
+   "tops"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/321e0522-6731-4912-8e34-0ccd3eadf721.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-01616600",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Senior Tee",
+  "note": "7 colors · XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-01616600.webp?v=2",
+  "price": 27.99,
+  "price_max": 33.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Navy Blue Four Seasons",
+   "Orange Four Seasons",
+   "Yellow Four Seasons",
+   "Black Summer Style",
+   "Yellow Summer Style",
+   "Khaki Summer Style",
+   "Gray Summer Style"
+  ],
+  "tags": [
+   "tops"
+  ],
+  "badge": "06",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/ed9fd8e8-a46e-45f7-b2dd-190c22ec1253.jpg"
+ },
+ {
+  "id": "cj-49382400",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Comfortable Color Stripes Sweater",
+  "note": "XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-49382400.webp",
+  "price": 19.99,
+  "price_max": 19.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Color Stripes Colorful Sweater"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/18180958-6a95-450c-8ddb-066cda560680.jpg"
+ },
+ {
+  "id": "cj-41725184",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Solid Sweater",
+  "note": "5 colors · S–3XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-41725184.webp",
+  "price": 52.99,
+  "price_max": 52.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL"
+  ],
+  "colors": [
+   "Light Grayish Green",
+   "Rose Red",
+   "Blue",
+   "Green",
+   "Yellow"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/3a7b09e3-dfea-4034-8cae-a117111a669b.jpg"
+ },
+ {
+  "id": "cj-01627800",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Snowflake Brown Sweater",
+  "note": "3 colors · XXS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-01627800.webp",
+  "price": 27.99,
+  "price_max": 39.99,
+  "sizes": [
+   "XXS",
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Gray",
+   "Dark Brown",
+   "Dark Brown And Grey"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/b70cdc37-39ed-47ea-bd56-9bd0dfafd3f9.jpg"
+ },
+ {
+  "id": "cj-72861184",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Tiger Costume",
+  "note": "3 colors · 3XL–8XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-72861184.webp",
+  "price": 28.99,
+  "price_max": 31.99,
+  "sizes": [
+   "3XL",
+   "4XL",
+   "5XL",
+   "6XL",
+   "7XL",
+   "8XL"
+  ],
+  "colors": [
+   "Tiger Pet Costume",
+   "Grey Rabbit",
+   "Dinosaur"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/f169ca57-a77b-4b60-b6bc-c58c9d4b35a1.jpg"
+ },
+ {
+  "id": "cj-71726336",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Thanksgiving Lapel Retro Sweater",
+  "note": "3 colors · S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-71726336.webp",
+  "price": 20.99,
+  "price_max": 23.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Color Contrast Check",
+   "Black Turkey",
+   "Black Boo"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/7e807dc3-54d7-408c-b1ca-7e2505bf6cc0.jpg"
+ },
+ {
+  "id": "cj-68582912",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Acrylic Sweater",
+  "note": "3 colors · S–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-68582912.webp",
+  "price": 24.99,
+  "price_max": 24.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Pink",
+   "White",
+   "Yellow"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "06",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/db7e42f6-8f1f-4ad4-a550-f59e855dd09c.jpg"
+ },
+ {
+  "id": "cj-38590976",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Striped Knitted Cardigan Sweater",
+  "note": "6 colors · XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-38590976.webp",
+  "price": 23.99,
+  "price_max": 23.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Red Full Printed Bear",
+   "Blue Full Printed Bear",
+   "Beige Full Printed Bear",
+   "Beige Hooded Fur Ball",
+   "Blue Blue Cat Fur Ball",
+   "Pink Hooded Fur Ball"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/fc8efaff-6dfa-4785-889d-794013ec7f69.jpg"
+ },
+ {
+  "id": "cj-81643776",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Warm Comfortable Sweater",
+  "note": "3 colors · One size",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-81643776.webp",
+  "price": 24.99,
+  "price_max": 33.99,
+  "sizes": [],
+  "colors": [
+   "Pink",
+   "Green",
+   "Suit"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/0e700040-1b96-413b-949f-a7b227e44c5c.jpg"
+ },
+ {
+  "id": "cj-67160320",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Valentine Love Knitted Sweater",
+  "note": "3 colors · S–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-67160320.webp",
+  "price": 18.99,
+  "price_max": 18.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Pink",
+   "Red",
+   "Blue"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/30527af7-9873-4a37-a64b-3dd90b309d42.jpg"
+ },
+ {
+  "id": "cj-01607500",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Color Block Cardigan Sweater",
+  "note": "3 colors · XS–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-01607500.webp",
+  "price": 23.99,
+  "price_max": 24.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Chrysanthemum",
+   "Sky Blue Collar",
+   "Mohair"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/58348b91-906e-4b54-a02e-0fdd8c41f18b.jpg"
+ },
+ {
+  "id": "cj-35413504",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Cardigan Sweater",
+  "note": "XS–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-35413504.webp",
+  "price": 28.99,
+  "price_max": 28.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Gray"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "14",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/bd3db034-2d4b-4064-910a-5549b8af25f7.jpg"
+ },
+ {
+  "id": "cj-66325760",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Christmas Bone Stripe Sweater",
+  "note": "15 colors · S–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-66325760.webp",
+  "price": 19.99,
+  "price_max": 20.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Myd Grey",
+   "Myd Red",
+   "Myd Green",
+   "Myd Grey",
+   "Myd Orange",
+   "Myd Pink",
+   "Myd Blue",
+   "Myd Beige",
+   "Myd Blue",
+   "Myd Green",
+   "Myd Blue",
+   "Myd Yellow",
+   "Myd Black",
+   "Myd Red",
+   "Myd Green"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/a32bb87f-dc54-4637-88ac-8ffbbd9c34e8.jpg"
+ },
+ {
+  "id": "cj-25213952",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Snow Elk Christmas Sweater",
+  "note": "XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-25213952.webp",
+  "price": 23.99,
+  "price_max": 23.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/79652e96-ba74-44ac-a46c-d46d5b649e2c.jpg"
+ },
+ {
+  "id": "cj-34798336",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Simple Warm Knitted Sweater",
+  "note": "5 colors · XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-34798336.webp",
+  "price": 20.99,
+  "price_max": 20.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Red Bear",
+   "Blue Bear",
+   "Beige Bear",
+   "Grey",
+   "Black"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/e7309b30-696b-4639-be8a-ef21a416a6f0.jpg"
+ },
+ {
+  "id": "cj-37931520",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Vintage Plaid Sweater",
+  "note": "2 colors · XS–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-37931520.webp",
+  "price": 33.99,
+  "price_max": 39.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Brownc",
+   "Brownw"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/c647269f-7fe2-49ff-bc76-5a9cecd2b1d2.jpg",
+  "badge": "06"
+ },
+ {
+  "id": "cj-44877056",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Sweater",
+  "note": "2 colors · S–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-44877056.webp",
+  "price": 22.99,
+  "price_max": 29.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Clothes",
+   "Hat"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/db3d80bd-3939-4772-9210-091fe8b82318.jpg"
+ },
+ {
+  "id": "cj-67831296",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Christmas Rhombus Love Sweater",
+  "note": "2 colors · S–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-67831296.webp",
+  "price": 30.99,
+  "price_max": 33.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Red",
+   "Purple"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/d4dd95ea-06ae-404c-8cbc-55d912f817f2.jpg"
+ },
+ {
+  "id": "cj-39942400",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Plush Warm Solid Sweater",
+  "note": "3 colors · S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-39942400.webp",
+  "price": 47.99,
+  "price_max": 59.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Pink",
+   "Light Blue",
+   "Light Purple"
+  ],
+  "tags": [
+   "sweater"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/3a0b0d87-eebf-49a3-a8e9-35c6f400385b.jpg"
+ },
+ {
+  "id": "cj-68606464",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Warm Hoodie",
+  "note": "3 colors · XS–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-68606464.webp",
+  "price": 27.99,
+  "price_max": 27.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Raw Coconut Latte",
+   "Little White Chino",
+   "Extra American"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/5169742a-214f-457f-aaef-ec56db8da520.jpg"
+ },
+ {
+  "id": "cj-18360576",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Simple Hooded Sweater",
+  "note": "4 colors · S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-18360576.webp",
+  "price": 22.99,
+  "price_max": 22.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Green",
+   "Black",
+   "Gray",
+   "Red"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "badge": "07",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/05be6c85-da1f-4761-8a54-5da47915d6f1.jpg"
+ },
+ {
+  "id": "cj-01628500",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Xl Sweater",
+  "note": "5 colors · One size",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-01628500.webp",
+  "price": 31.99,
+  "price_max": 32.99,
+  "sizes": [
+   "Blue"
+  ],
+  "colors": [
+   "Xl",
+   "Xl",
+   "Xl",
+   "Xl",
+   "Xl"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/158ea93e-9309-4dea-a70e-efeab8d8706f.jpg"
+ },
+ {
+  "id": "cj-61491200",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Stitching Zipper Pullover Sweater",
+  "note": "2 colors · XS–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-61491200.webp",
+  "price": 27.99,
+  "price_max": 27.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Pink",
+   "Blue"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/e2c31a47-0816-4f67-879d-754f315d0ddc.jpg"
+ },
+ {
+  "id": "cj-60603392",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Christmas Sweatshirt Hoodie",
+  "note": "2 colors · XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-60603392.webp",
+  "price": 22.99,
+  "price_max": 22.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Red",
+   "Green"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "badge": "09",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2023/10/23/16/cadcacdb-026b-4bb6-b300-81b20d6829ba.jpg"
+ },
+ {
+  "id": "cj-09325568",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Hooded Plaid Sweater",
+  "note": "6 colors · S–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-09325568.webp",
+  "price": 19.99,
+  "price_max": 19.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Red",
+   "Yellow",
+   "Blue",
+   "Green",
+   "Rose Red",
+   "Purple"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/7a0e506c-98e7-4501-8138-7dbfa2fcdabf.jpg"
+ },
+ {
+  "id": "cj-16851456",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Halloween Pumpkin Sweater",
+  "note": "2 colors · S–L",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-16851456.webp",
+  "price": 19.99,
+  "price_max": 19.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Black",
+   "Yellow"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/b010be42-2cd9-41d4-a30e-cd7c6aa67532.jpg"
+ },
+ {
+  "id": "cj-46349824",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Warm Sweater",
+  "note": "2 colors · 3XL–7XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-46349824.webp",
+  "price": 37.99,
+  "price_max": 44.99,
+  "sizes": [
+   "3XL",
+   "4XL",
+   "5XL",
+   "6XL",
+   "7XL"
+  ],
+  "colors": [
+   "Blue",
+   "Yellow"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/8c892e79-9674-405a-8238-c0aa67e75c5e.jpg"
+ },
+ {
+  "id": "cj-93783808",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Christmas Thickened Hoodie",
+  "note": "S–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-93783808.webp",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Black And Red Plaid"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "badge": "16",
+  "img_src": "https://cf.cjdropshipping.com/d0bf58da-ffeb-4103-a3d4-f91840a858e1.jpg"
+ },
+ {
+  "id": "cj-57707520",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Thick Plush Sweater",
+  "note": "2 colors · XXS–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-57707520.webp",
+  "price": 30.99,
+  "price_max": 40.99,
+  "sizes": [
+   "XXS",
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "White",
+   "Purple Leopard Print"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/04b236bb-62ea-485b-af05-39c4c6d523ea.jpg"
+ },
+ {
+  "id": "cj-76966400",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Green Coat Sweater",
+  "note": "8 colors · XS–8XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-76966400.webp",
+  "price": 33.99,
+  "price_max": 33.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL",
+   "XXXL",
+   "4XL",
+   "5XL",
+   "6XL",
+   "7xl",
+   "8XL"
+  ],
+  "colors": [
+   "Green Coat",
+   "Green Coat",
+   "Green Coat",
+   "Green Coat",
+   "Primary Green Coat",
+   "Primary Green Coat",
+   "Primary Green Coat",
+   "Primary Green Coat"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/c1aeff35-3e5a-49b3-a990-4f6003b4e8ac.jpg"
+ },
+ {
+  "id": "cj-38585856",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Christmas Thickened Plaid Sweater",
+  "note": "5 colors · S–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-38585856.webp",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Black Paisley",
+   "Blue Paisley",
+   "Christmas Series",
+   "White Paisley",
+   "Black Red Checker"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "badge": "07",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/88867145-cd74-48ed-afb3-8f52ee21fcf8.jpg"
+ },
+ {
+  "id": "cj-99568128",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Internet Celebrity Handsome Sweater",
+  "note": "2 colors · XS–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-99568128.webp?v=2",
+  "price": 25.99,
+  "price_max": 25.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Xiaofa Sweater Lake Green",
+   "Xiaofa Sweater Rose Red"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/59e45314-8a80-4c1b-a94d-32835e30488c.jpg"
+ },
+ {
+  "id": "cj-39305216",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Puppet Two Pod Sweater",
+  "note": "XS–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-39305216.webp",
+  "price": 22.99,
+  "price_max": 22.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "La Sweater"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/9af1cad9-ebd3-4652-95a7-14b5e25cb7bf.jpg",
+  "badge": "12"
+ },
+ {
+  "id": "cj-36709376",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Thickened Hoodie",
+  "note": "M–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-36709376.webp",
+  "price": 19.99,
+  "price_max": 19.99,
+  "sizes": [
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Yellow"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/cd2e425e-4aa5-4b3d-9dc8-f1d65fa72df9.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-01611000",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Halloween Pumpkin Two Sweater",
+  "note": "2 colors · S–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-01611000.webp",
+  "price": 23.99,
+  "price_max": 24.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Black",
+   "Orange"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/c221f320-d8fd-4eb8-8fe4-daf3926270fd.jpg",
+  "badge": "00"
+ },
+ {
+  "id": "cj-18611456",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Hairless Sweater",
+  "note": "XXS–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-18611456.webp",
+  "price": 28.99,
+  "price_max": 28.99,
+  "sizes": [
+   "XXS",
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/62759de2-385f-4b2e-a4a9-a7b623429468.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-25357568",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Sleeved Cotton Hoodie",
+  "note": "XS–22",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-25357568.webp",
+  "price": 33.99,
+  "price_max": 44.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "22"
+  ],
+  "colors": [
+   "Silver"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/c4b7b718-a313-47d1-8148-a5e4eab48131.jpg"
+ },
+ {
+  "id": "cj-11601700",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Warm Cold Proof Collar",
+  "note": "2 colors · XS–XXXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-11601700.webp",
+  "price": 33.99,
+  "price_max": 37.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL",
+   "XXXL"
+  ],
+  "colors": [
+   "Dark Gray",
+   "Wine Red"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "badge": "12",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2024/10/15/08/9b191ca4-8eed-4961-883a-fe46a8d6c768_trans.jpeg"
+ },
+ {
+  "id": "cj-11751168",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "College Uniform Set",
+  "note": "One size",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-11751168.webp",
+  "price": 23.99,
+  "price_max": 24.99,
+  "sizes": [],
+  "colors": [
+   "Green"
+  ],
+  "tags": [
+   "hoodie"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/b18f7d9a-b409-41b4-ab7f-56f96cb7aad5.jpg"
+ },
+ {
+  "id": "cj-71601600",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Anxiety Warm Vest",
+  "note": "XXS–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-71601600.webp?v=2",
+  "price": 28.99,
+  "price_max": 39.99,
+  "sizes": [
+   "XXS",
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Heather Gray"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "10",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2024/07/18/02/774004f3-cabb-49d2-9f06-afb0c510718e.jpg"
+ },
+ {
+  "id": "cj-08C0BD14",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Thick Warm Coat",
+  "note": "2 colors · S–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-08C0BD14.webp",
+  "price": 25.99,
+  "price_max": 25.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Light Brown",
+   "Dark Grey"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/15696864/656515890674.jpg"
+ },
+ {
+  "id": "cj-97581056",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Cotton Zipper Jacket",
+  "note": "9 colors · S–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-97581056.webp",
+  "price": 25.99,
+  "price_max": 26.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Dz Black",
+   "Dz Red",
+   "Dz Army Green",
+   "Dz Blue",
+   "Dz Red",
+   "Dz Army Green",
+   "Dz Black",
+   "Dz Red",
+   "Dz Army Green"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/443d621b-6f76-4806-9451-b908c2d75f44.jpg"
+ },
+ {
+  "id": "cj-47463936",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Trendy Cool Jacket",
+  "note": "XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-47463936.webp",
+  "price": 22.99,
+  "price_max": 22.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "S Golden Thread Coat"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/fb60a4ff-be3c-416d-a746-ef550a9f749d.jpg"
+ },
+ {
+  "id": "cj-B5A32A1A",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Waterproof Reflective Raincoat",
+  "note": "5 colors · S–5XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-B5A32A1A.webp",
+  "price": 37.99,
+  "price_max": 47.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL",
+   "4XL",
+   "5XL"
+  ],
+  "colors": [
+   "Orange",
+   "Pink",
+   "Fluorescent Green",
+   "Dark Blue",
+   "Yellow"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/20200619/3806024661915.jpg"
+ },
+ {
+  "id": "cj-71384576",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Thickened Warmth Jacket",
+  "note": "2 colors · S–3XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-71384576.webp",
+  "price": 23.99,
+  "price_max": 29.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL"
+  ],
+  "colors": [
+   "Grey",
+   "Green"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "00",
+  "img_src": "https://cf.cjdropshipping.com/d58e333d-ba7a-4190-bcdc-90de0c0fe588.jpg"
+ },
+ {
+  "id": "cj-65859072",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Outdoor Breathable Cooling Vest",
+  "note": "4 colors · S–3XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-65859072.webp",
+  "price": 35.99,
+  "price_max": 43.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL"
+  ],
+  "colors": [
+   "Blue",
+   "Orange",
+   "Green",
+   "Pink"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/4ff67c25-f6c9-44be-aa76-294c1b6a1a15.jpg",
+  "badge": "06"
+ },
+ {
+  "id": "cj-98911232",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Heavy Cotton Jacket",
+  "note": "2 colors · XS–3XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-98911232.webp",
+  "price": 23.99,
+  "price_max": 28.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL"
+  ],
+  "colors": [
+   "Green",
+   "Red"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/6057dbfb-b143-4b07-a38e-96a47612b1ac.jpg"
+ },
+ {
+  "id": "cj-01604500",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Full Body Reflective Jacket",
+  "note": "S–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-01604500.webp",
+  "price": 41.99,
+  "price_max": 49.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Silver Gray"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/b61edd52-86bb-4dc9-818a-611434f9e847.jpg"
+ },
+ {
+  "id": "cj-35EBD8A9",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Super Warm Coat",
+  "note": "10 colors · 14–20",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-35EBD8A9.webp",
+  "price": 30.99,
+  "price_max": 42.99,
+  "sizes": [
+   "14",
+   "10",
+   "Size10",
+   "Size12",
+   "Size14",
+   "Size16",
+   "Size18",
+   "Size20",
+   "Size22",
+   "Size24",
+   "Size26",
+   "16",
+   "22",
+   "18",
+   "12",
+   "26",
+   "24",
+   "20"
+  ],
+  "colors": [
+   "Yellow Grey",
+   "Red Camouflage",
+   "Orange Yellow",
+   "Navy Camouflage",
+   "Red Blue",
+   "Coffee",
+   "Green Camouflage",
+   "Pink",
+   "Dark Blue Camouflage",
+   "Sky Blue Camouflage"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/20200913/1560737746373.jpg",
+  "badge": "04"
+ },
+ {
+  "id": "cj-20241664",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Polyester Emotional Comfort Jacket",
+  "note": "XS–XXXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-20241664.webp?v=2",
+  "price": 48.99,
+  "price_max": 58.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL",
+   "XXXL"
+  ],
+  "colors": [
+   "Dark Grey"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/099c748e-0e85-44dd-9f03-04ce3c52e35f.jpg",
+  "badge": "07"
+ },
+ {
+  "id": "cj-85952000",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Full Nylon Jacket",
+  "note": "6 colors · XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-85952000.webp",
+  "price": 21.99,
+  "price_max": 24.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Pink",
+   "Lake Blue",
+   "Red",
+   "Black",
+   "Dark Blue",
+   "Silver"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "00",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/3b893447-42d6-4bd3-bc67-f35a229c2caa.jpg"
+ },
+ {
+  "id": "cj-99665408",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Coat",
+  "note": "S–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-99665408.webp",
+  "price": 25.99,
+  "price_max": 25.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Khaki"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/b8c95a64-9847-43aa-8f42-3e697bf8c66f.jpg"
+ },
+ {
+  "id": "cj-83155712",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Anxiety Medical Treatment Vest",
+  "note": "19 colors · XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-83155712.webp",
+  "price": 33.99,
+  "price_max": 48.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Dark Grey",
+   "Lake Green",
+   "Fluorescent Green",
+   "Rose Red",
+   "Light Grey",
+   "Dark Grey Set",
+   "Fluorescent Green Set",
+   "Lake Green Set",
+   "Light Grey Set",
+   "Rose Red Set",
+   "Dark Grey Set",
+   "Fluorescent Green Set",
+   "Lake Green Set",
+   "Light Grey Set",
+   "Rose Red Set",
+   "Dark Grey Set",
+   "Fluorescent Green Set",
+   "Lake Green Set",
+   "Light Grey Set"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "12",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2025/03/02/05/8a3843b3-2496-4977-a72e-3140d235e1a6.jpg"
+ },
+ {
+  "id": "cj-9AC89C18",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Zipper Jacket",
+  "note": "4 colors · XS–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-9AC89C18.webp",
+  "price": 43.99,
+  "price_max": 43.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Black",
+   "Green",
+   "Blue",
+   "Red"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/16023456/333346583520.jpg"
+ },
+ {
+  "id": "cj-B9E5EA2E",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Wool Cotton Hat",
+  "note": "3 colors · S–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-B9E5EA2E.webp",
+  "price": 41.99,
+  "price_max": 41.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Yellow",
+   "Blue",
+   "Grey"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/16013088/416244883796.jpg"
+ },
+ {
+  "id": "cj-DAC9F62A",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Hood Jacket",
+  "note": "2 colors · XS–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-DAC9F62A.webp",
+  "price": 33.99,
+  "price_max": 45.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Black",
+   "White"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/16010496/853767648162.jpg"
+ },
+ {
+  "id": "cj-91600400",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Cashmere Jacket",
+  "note": "16 colors · S–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-91600400.webp",
+  "price": 21.99,
+  "price_max": 24.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Dz Purple Camouflage",
+   "Dz Orange Camouflage",
+   "Dz Black",
+   "Dz Purplish Red",
+   "Dz Blue Coffee",
+   "Dz Green Coffee",
+   "Dz Blue",
+   "Dz Black",
+   "Dz Orange Gray",
+   "Dz Red And Blue",
+   "Dz Purplish Blue",
+   "Dz Pink",
+   "Dz Hide Gray Spots",
+   "Dz Pink Gray Dots",
+   "Dz Purplish Blue",
+   "Dz Dark Gray"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "14",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2024/08/20/07/527a9ed3-2438-40eb-a93d-0418976375a9.jpg"
+ },
+ {
+  "id": "cj-37911296",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Warm Jacket",
+  "note": "S–XXXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-37911296.webp",
+  "price": 21.99,
+  "price_max": 25.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL",
+   "XXXL"
+  ],
+  "colors": [
+   "Golden"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "14",
+  "img_src": "https://cf.cjdropshipping.com/1614933100289.jpg"
+ },
+ {
+  "id": "cj-91603300",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Onesie",
+  "note": "3 colors · S–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-91603300.webp",
+  "price": 21.99,
+  "price_max": 25.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Brown",
+   "Yellow",
+   "Pink"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/907f906c-8f9c-425b-ba89-4f4561b4292c.jpg"
+ },
+ {
+  "id": "cj-81608600",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Corduroy Onesie",
+  "note": "XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-81608600.webp",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Good Friend Overalls"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/aeb039bc-f446-4f5f-8664-627a8e51b6bd.jpg"
+ },
+ {
+  "id": "cj-81608300",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Bear Onesie",
+  "note": "XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-81608300.webp",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Little Bear O Bubble"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/8fe8eb67-7278-4cea-b2b7-e00d1957d35d.jpg",
+  "badge": "07"
+ },
+ {
+  "id": "cj-21611400",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Color Matching Onesie",
+  "note": "3 colors · S–5XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-21611400.webp",
+  "price": 35.99,
+  "price_max": 45.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL",
+   "4XL",
+   "5XL"
+  ],
+  "colors": [
+   "Red And Blue",
+   "Red And White",
+   "Black And White"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/dd21720a-e45d-4ae7-bc37-101088952728.jpg"
+ },
+ {
+  "id": "cj-81630700",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Anxiety Emotion Calming Vest",
+  "note": "6 colors · XS–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-81630700.webp",
+  "price": 23.99,
+  "price_max": 32.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Heather Gray",
+   "Light Gray",
+   "Dark Blue",
+   "Rose Red",
+   "Dark Green",
+   "Brown"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "badge": "14",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/ea60f345-fe51-4e53-808e-b83811c4e8a3.jpg"
+ },
+ {
+  "id": "cj-21628600",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Seasons Breathable Soft Onesie",
+  "note": "3 colors · XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-21628600.webp",
+  "price": 34.99,
+  "price_max": 41.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Color Mixing",
+   "Dark Blue",
+   "Yellow"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/22a79ee0-e477-43c1-a93d-8853493bb7ec.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-11606200",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Protective Gear Front Onesie",
+  "note": "3 colors · S–3XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-11606200.webp",
+  "price": 25.99,
+  "price_max": 34.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL"
+  ],
+  "colors": [
+   "Black",
+   "Dark Gray",
+   "Light Gray"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/3667d70d-d987-413b-9a9d-0c153b394b5a.jpg",
+  "badge": "12"
+ },
+ {
+  "id": "cj-41619300",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Anti Lint Onesie",
+  "note": "3 colors · XS–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-41619300.webp",
+  "price": 24.99,
+  "price_max": 25.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "White",
+   "Blue",
+   "Brown"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/64fb122a-810b-46ee-a281-d048961e0ae6.jpg",
+  "badge": "10"
+ },
+ {
+  "id": "cj-91601300",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Poodle Cotton Padded Coat",
+  "note": "2 colors · XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-91601300.webp?v=2",
+  "price": 18.99,
+  "price_max": 18.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Beige",
+   "Red"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "badge": "06",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/d2ebacaf-bcd7-4a49-a38a-d8cef1f99d66.jpg"
+ },
+ {
+  "id": "cj-41613300",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "One Piece Raincoat",
+  "note": "5 colors · S–3XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-41613300.webp",
+  "price": 30.99,
+  "price_max": 33.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL"
+  ],
+  "colors": [
+   "Dark Gray",
+   "Red",
+   "Orange Yellow",
+   "Purple",
+   "Gray"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/948b1fed-2fde-4877-91d4-b7ef44efa6af.jpg"
+ },
+ {
+  "id": "cj-81625200",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Thickened Camouflage Onesie",
+  "note": "3 colors · 5XL–7XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-81625200.webp",
+  "price": 26.99,
+  "price_max": 28.99,
+  "sizes": [
+   "5XL",
+   "6XL",
+   "7XL"
+  ],
+  "colors": [
+   "Black Gray Camouflage",
+   "L Green Camouflage",
+   "Navy Blue Camouflage"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "badge": "14",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/8b8f9d53-9210-4eac-85b6-f81e795e77b4.jpg"
+ },
+ {
+  "id": "cj-31606300",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Warm Comfortable Onesie",
+  "note": "2 colors · XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-31606300.webp",
+  "price": 18.99,
+  "price_max": 18.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Green",
+   "Yellow"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "badge": "07",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/825f7d7a-40b1-48ca-9d69-b01b3ca633a0.jpg"
+ },
+ {
+  "id": "cj-31613900",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Feet Heart Vintage Onesie",
+  "note": "XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-31613900.webp",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Heart Vintage Suspender Pants"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/824a1220-7e06-4a15-9d03-eed43224b274.jpg"
+ },
+ {
+  "id": "cj-81627500",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Shaped Splicing Thick Coat",
+  "note": "2 colors · XS–3L",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-81627500.webp",
+  "price": 22.99,
+  "price_max": 24.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "3L"
+  ],
+  "colors": [
+   "Red",
+   "Blue"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/063e0897-9e8a-4c6d-9ef0-28643372283f.jpg"
+ },
+ {
+  "id": "cj-11625800",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Fleece Lined Bread Onesie",
+  "note": "XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-11625800.webp",
+  "price": 22.99,
+  "price_max": 22.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Bread Bear Overalls"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/5d3c9b7d-6347-4d5d-9cb7-f7185c9d9b40.jpg",
+  "badge": "10"
+ },
+ {
+  "id": "cj-51627400",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Denim Pants Onesie",
+  "note": "2 colors · S–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-51627400.webp",
+  "price": 18.99,
+  "price_max": 18.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Red Stripes",
+   "Blue Stripes"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/85a130b5-685a-4c0f-ad85-8addb6e8ac75.jpg",
+  "badge": "10"
+ },
+ {
+  "id": "cj-91627000",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Fleece Lined Thick Onesie",
+  "note": "2 colors · XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-91627000.webp",
+  "price": 26.99,
+  "price_max": 26.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Light Brown",
+   "Dark Brown"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/d11e2388-edf4-42dd-86f2-50c7ece980c3.jpg",
+  "badge": "10"
+ },
+ {
+  "id": "cj-01622100",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Diaper Belly Dustproof Onesie",
+  "note": "S–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-01622100.webp",
+  "price": 19.99,
+  "price_max": 20.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Peacock Blue"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "badge": "08",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2025/05/17/12/78966f97-6c56-451f-8420-22643b1cdced_trans.jpeg"
+ },
+ {
+  "id": "cj-41613100",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Cartoon Print Onesie",
+  "note": "XS–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-41613100.webp",
+  "price": 17.99,
+  "price_max": 17.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Light Green"
+  ],
+  "tags": [
+   "jumpsuit"
+  ],
+  "badge": "12",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2024/12/27/04/c179623e-6744-4408-86d5-191347303834_fine.jpeg"
+ },
+ {
+  "id": "cj-97129216",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Princess Dress",
+  "note": "XS–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-97129216.webp",
+  "price": 25.99,
+  "price_max": 25.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Beige"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/8ab2fe04-6d07-423c-9439-158515b83fbd.jpg"
+ },
+ {
+  "id": "cj-48944384",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Pugs Dress",
+  "note": "1–6",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-48944384.webp",
+  "price": 26.99,
+  "price_max": 27.99,
+  "sizes": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6"
+  ],
+  "colors": [
+   "Pink"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "badge": "16",
+  "img_src": "https://cf.cjdropshipping.com/9d7c1334-08f6-4823-a73a-f41e53d2a9d5.jpg"
+ },
+ {
+  "id": "cj-63939072",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Bears Dress",
+  "note": "2 colors · XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-63939072.webp",
+  "price": 18.99,
+  "price_max": 18.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Coffee",
+   "Navy Blue"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "badge": "04",
+  "img_src": "https://cf.cjdropshipping.com/0f9b482f-92b1-47fc-b4b9-d126d5951509.jpg"
+ },
+ {
+  "id": "cj-17383424",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Bear Dress",
+  "note": "2 colors · XS–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-17383424.webp",
+  "price": 23.99,
+  "price_max": 25.99,
+  "sizes": [
+   "XS",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Brown",
+   "Beige"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/c43d67f6-873f-490f-ac62-f209457dfd00.jpg"
+ },
+ {
+  "id": "cj-29379072",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Thin Dress",
+  "note": "3 colors · S–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-29379072.webp",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Cherry",
+   "Yellow",
+   "Red"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/1622600294644.jpg"
+ },
+ {
+  "id": "cj-89829888",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Sling Dress",
+  "note": "2 colors · XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-89829888.webp",
+  "price": 20.99,
+  "price_max": 20.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Black White",
+   "White"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/76117859-0156-4b3a-b443-7e19ff2c68e6.jpg"
+ },
+ {
+  "id": "cj-38574848",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Mesh Flower Embroidery Dress",
+  "note": "3 colors · XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-38574848.webp",
+  "price": 19.99,
+  "price_max": 27.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Dress",
+   "Sunflower Hat",
+   "Daisy Hat"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/0d7f0dcd-30ea-41dd-a911-6817b2e8b982.jpg"
+ },
+ {
+  "id": "cj-E2A1EE7C",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Princess Mesh Thin Dress",
+  "note": "3 colors · XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-E2A1EE7C.webp",
+  "price": 19.99,
+  "price_max": 19.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Light Green",
+   "Pink",
+   "Sky Blue"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/15260832/11866511274525.png"
+ },
+ {
+  "id": "cj-31616300",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Halloween Party Suit Dress",
+  "note": "S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-31616300.webp?v=2",
+  "price": 17.99,
+  "price_max": 17.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Suit"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/e27ffe10-2c63-44be-b4a8-38397eda8acd.jpg",
+  "badge": "16"
+ },
+ {
+  "id": "cj-53394944",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Cartoon Suspender Dress",
+  "note": "2 colors · XXS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-53394944.webp",
+  "price": 23.99,
+  "price_max": 23.99,
+  "sizes": [
+   "XXS",
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "White",
+   "Brown"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/e11c8dcb-8ab4-41b7-b0a5-2e147b4c9877.jpg",
+  "badge": "14"
+ },
+ {
+  "id": "cj-47870976",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Christmas Outfit Tree Costume",
+  "note": "2 colors · S–L",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-47870976.webp?v=2",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Green",
+   "Red"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2025/06/29/08/56d6c93d-4db8-45e5-9519-c7c02230ec02.jpg",
+  "badge": "12"
+ },
+ {
+  "id": "cj-81328896",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Solid Color Flower Dress",
+  "note": "2 colors · S–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-81328896.webp",
+  "price": 19.99,
+  "price_max": 19.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Purple",
+   "West Red"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/12d8ab77-466a-4a71-b841-896fb465475b.jpg"
+ },
+ {
+  "id": "cj-36334336",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Cotton Ultra Thin Dress",
+  "note": "No1–No7",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-36334336.webp",
+  "price": 24.99,
+  "price_max": 26.99,
+  "sizes": [
+   "No1",
+   "No2",
+   "No3",
+   "No4",
+   "No5",
+   "No6",
+   "No7"
+  ],
+  "colors": [
+   "Printing"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/731cb13e-3b4b-4b93-89af-911648e72719.jpg"
+ },
+ {
+  "id": "cj-41620900",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Purple Dress",
+  "note": "2 colors · S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-41620900.webp",
+  "price": 23.99,
+  "price_max": 23.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Purple",
+   "Pink"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/01e23860-bd49-4c83-86f0-b187767ef87b.jpg",
+  "badge": "06"
+ },
+ {
+  "id": "cj-68907008",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Tie Dress",
+  "note": "2 colors · XXS–3XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-68907008.webp",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [
+   "XXS",
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL"
+  ],
+  "colors": [
+   "White",
+   "Pink"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/3af1a73d-c41b-4609-8935-71a04b711aa6.jpg",
+  "badge": "12"
+ },
+ {
+  "id": "cj-88877568",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Fashionable Set",
+  "note": "S–M",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-88877568.webp",
+  "price": 22.99,
+  "price_max": 23.99,
+  "sizes": [
+   "S",
+   "M"
+  ],
+  "colors": [
+   "White"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/07f41dc9-7ce1-4309-80ba-c5eb55c8cd07.jpg"
+ },
+ {
+  "id": "cj-27704576",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Cow Bear Suspenders Dress",
+  "note": "2 colors · One size",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-27704576.webp",
+  "price": 38.99,
+  "price_max": 38.99,
+  "sizes": [],
+  "colors": [
+   "Cow Color",
+   "Tie Dye Gray Black"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/1617592661418.jpg"
+ },
+ {
+  "id": "cj-49248768",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Princess Hanfu Anti Dress",
+  "note": "S–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-49248768.webp",
+  "price": 36.99,
+  "price_max": 40.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/4388ec72-189f-4c02-b038-4a0405c6d8d6.jpg",
+  "badge": "10"
+ },
+ {
+  "id": "cj-14411520",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Denim Flying Sleeve Dress",
+  "note": "XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-14411520.webp",
+  "price": 19.99,
+  "price_max": 19.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Denim Plaid"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/1620445831033.jpg",
+  "badge": "12"
+ },
+ {
+  "id": "cj-89436928",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Chessboard Dress",
+  "note": "L–3XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-89436928.webp?v=2",
+  "price": 23.99,
+  "price_max": 23.99,
+  "sizes": [
+   "L",
+   "XL",
+   "XXL",
+   "3XL"
+  ],
+  "colors": [
+   "Black And White Checkerboard"
+  ],
+  "tags": [
+   "dress"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/c0e46762-d5a5-4a73-8e73-58afcc243ddf.jpg",
+  "badge": "09"
+ },
+ {
+  "id": "cj-81610600",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Chest Strap Cotton Coat",
+  "note": "3 colors · XS–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-81610600.webp",
+  "price": 24.99,
+  "price_max": 24.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Dz Blue",
+   "Dz Green",
+   "Dz Red"
+  ],
+  "tags": [
+   "set"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/104dd1d1-235f-415d-95a8-ac37d1c94202.jpg",
+  "badge": "06"
+ },
+ {
+  "id": "cj-17874432",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Halloween Costumes Glow Pajamas",
+  "note": "S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-17874432.webp",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Default"
+  ],
+  "tags": [
+   "set"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/f537fc94-e843-474a-8703-8e052fe05843.jpg"
+ },
+ {
+  "id": "cj-53856768",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Vivifying Fall Tassels Costume",
+  "note": "5 colors · One size",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-53856768.webp",
+  "price": 18.99,
+  "price_max": 18.99,
+  "sizes": [],
+  "colors": [
+   "Red",
+   "Orange",
+   "Green",
+   "Brown",
+   "Red"
+  ],
+  "tags": [
+   "set"
+  ],
+  "badge": "06",
+  "img_src": "https://cf.cjdropshipping.com/2dea05b4-ddae-468d-9fad-b311cc7d67ae.jpg"
+ },
+ {
+  "id": "cj-87446016",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Halloween Costumes Bat Dress",
+  "note": "S–L",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-87446016.webp?v=2",
+  "price": 21.99,
+  "price_max": 22.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Default"
+  ],
+  "tags": [
+   "set"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/d4b54da4-3774-435f-88ca-c23dc7d33b30.jpg"
+ },
+ {
+  "id": "cj-39820544",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Soft Warm Halloween Costume",
+  "note": "4 colors · S–Xxl",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-39820544.webp",
+  "price": 18.99,
+  "price_max": 18.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "Xl",
+   "Xxl"
+  ],
+  "colors": [
+   "Green",
+   "Purple",
+   "Yellow",
+   "Pink"
+  ],
+  "tags": [
+   "set"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/4f1fe2a5-809b-46df-b5e6-5f5559b727d7.jpeg",
+  "badge": "12"
+ },
+ {
+  "id": "cj-51614100",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Courier Standing Outing Set",
+  "note": "S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-51614100.webp",
+  "price": 20.99,
+  "price_max": 20.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Coffee"
+  ],
+  "tags": [
+   "set"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/beae3e30-2f95-491a-8bdf-856b7320f6cc.jpg"
+ },
+ {
+  "id": "cj-21625000",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Absorbent Thickening Quick Towel Robe",
+  "note": "S–XXXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-21625000.webp",
+  "price": 54.99,
+  "price_max": 73.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL",
+   "XXXL"
+  ],
+  "colors": [
+   "Wearable And Scrubbing"
+  ],
+  "tags": [
+   "set"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/8048b0d6-59c6-47c0-98cd-50fc6e331c71.jpg",
+  "badge": "00"
+ },
+ {
+  "id": "cj-67767040",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Halloween Party Decor Dress",
+  "note": "One size",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-67767040.webp",
+  "price": 18.99,
+  "price_max": 18.99,
+  "sizes": [],
+  "colors": [
+   "One Size"
+  ],
+  "tags": [
+   "set"
+  ],
+  "badge": "14",
+  "img_src": "https://cf.cjdropshipping.com/d58cf4c8-6fcf-4dc9-8259-7ae5cc6dda71.jpeg"
+ },
+ {
+  "id": "cj-41882112",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Back Brace Ivdd Harness",
+  "note": "S–L",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-41882112.webp",
+  "price": 42.99,
+  "price_max": 46.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "tags": [
+   "set"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/db6aa77d-5072-4838-9449-f9bbbc9ad38a.jpg"
+ },
+ {
+  "id": "cj-93240832",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Jeans Ruffles Denim Dress",
+  "note": "2 colors · S–Xxl",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-93240832.webp",
+  "price": 18.99,
+  "price_max": 18.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "Xl",
+   "Xxl"
+  ],
+  "colors": [
+   "Light Blue",
+   "Dark Blue"
+  ],
+  "tags": [
+   "set"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/cc6d3567-863c-48b6-962c-b2df91fdd78d.jpeg"
+ },
+ {
+  "id": "cj-21622300",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Fur Leather Coat",
+  "note": "2 colors · S–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-21622300.webp",
+  "price": 28.99,
+  "price_max": 28.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Black",
+   "Wine Red"
+  ],
+  "tags": [
+   "set"
+  ],
+  "badge": "10",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2024/10/12/08/b840f7a8-578f-43d6-8e9c-1f65c4e89ee9.jpg"
+ },
+ {
+  "id": "cj-11625600",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Dachshund Halloween Suit Set",
+  "note": "2 colors · S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-11625600.webp",
+  "price": 25.99,
+  "price_max": 34.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "White Captain",
+   "Blue Pilot"
+  ],
+  "tags": [
+   "set"
+  ],
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2024/11/02/03/bebd6e53-0661-41cd-8a9b-f5da0e53c5f0.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-77626880",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Warm Waterproof Coat",
+  "note": "8 colors · S–5XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-77626880.webp",
+  "price": 24.99,
+  "price_max": 26.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL",
+   "4XL",
+   "5XL"
+  ],
+  "colors": [
+   "Blue",
+   "Black Red",
+   "Pink",
+   "Green",
+   "Red",
+   "Gray",
+   "Yellow",
+   "Khaki"
+  ],
+  "tags": [
+   "set"
+  ],
+  "badge": "14",
+  "img_src": "https://cf.cjdropshipping.com/4aa0627f-7a9e-4f10-97b6-edfd7a5be50e.jpg"
+ },
+ {
+  "id": "cj-48158720",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Thin Drawstring Chest Dress",
+  "note": "M–L",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-48158720.webp",
+  "price": 22.99,
+  "price_max": 22.99,
+  "sizes": [
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Grey"
+  ],
+  "tags": [
+   "set"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/832f1075-013e-4a02-948f-265c362cccbd.jpg"
+ },
+ {
+  "id": "cj-14578432",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Mermaid Creative Costumes Costume",
+  "note": "2 colors · One size",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-14578432.webp",
+  "price": 20.99,
+  "price_max": 20.99,
+  "sizes": [],
+  "colors": [
+   "Pink",
+   "Blue"
+  ],
+  "tags": [
+   "set"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/9f1af02c-31af-442e-9be4-c9ecf999a62a.jpg"
+ },
+ {
+  "id": "cj-21626300",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Outdoor Sunshade Anti Hat",
+  "note": "2 colors · S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-21626300.webp?v=2",
+  "price": 27.99,
+  "price_max": 27.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Blue Pcs Set",
+   "Brown Pcs Set"
+  ],
+  "tags": [
+   "set"
+  ],
+  "badge": "08",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2025/04/27/02/8771f513-817a-4318-98eb-f45628827434_trans.jpeg"
+ },
+ {
+  "id": "cj-21602500",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Animal Suit Onesie",
+  "note": "2 colors · XS–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-21602500.webp",
+  "price": 23.99,
+  "price_max": 23.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Lok Yellow Chick",
+   "Lomi Brown Tiger"
+  ],
+  "tags": [
+   "set"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/2c9da9c9-fbe0-4799-b4a7-b99b4a66093c.jpg"
+ },
+ {
+  "id": "cj-91608900",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Shark Life Swimming Vest",
+  "note": "7 colors · XS–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-91608900.webp",
+  "price": 45.99,
+  "price_max": 51.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Sailboat",
+   "Sailboat Blue",
+   "Pink Camouflage",
+   "Pink Mermaid",
+   "Blue Camouflage",
+   "Gray Shark",
+   "Purple"
+  ],
+  "tags": [
+   "set"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/04f74fce-4212-44b4-871f-0fecda3e9472.jpg"
+ },
+ {
+  "id": "cj-51622200",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Portable Halloween Costume",
+  "note": "2 colors · One size",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-51622200.webp",
+  "price": 32.99,
+  "price_max": 32.99,
+  "sizes": [],
+  "colors": [
+   "Red",
+   "Gold"
+  ],
+  "tags": [
+   "set"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/fe72526a-e387-421e-9102-9081ca2b226e.jpg"
+ },
+ {
+  "id": "cj-61627500",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Halloween Striped Costume",
+  "note": "S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-61627500.webp",
+  "price": 21.99,
+  "price_max": 26.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Black And White"
+  ],
+  "tags": [
+   "set"
+  ],
+  "badge": "08",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2025/09/23/04/d1502e3b-2179-4f54-bc17-7d0a77ff040e_fine.jpeg"
+ },
+ {
+  "id": "cj-87038464",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Thickened Warm Coat",
+  "note": "2 colors · S–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-87038464.webp",
+  "price": 45.99,
+  "price_max": 52.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Blue Red",
+   "Black And White"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "14",
+  "img_src": "https://cf.cjdropshipping.com/0fb67895-30a7-4894-b1d6-ba7288c3c61a.jpg"
+ },
+ {
+  "id": "cj-66403584",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Warm Cotton Padded Coat",
+  "note": "8 colors · S–5XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-66403584.webp",
+  "price": 32.99,
+  "price_max": 36.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL",
+   "4XL",
+   "5XL"
+  ],
+  "colors": [
+   "Black",
+   "Blue",
+   "Green",
+   "Purple",
+   "Red",
+   "Silver",
+   "Rose Red",
+   "Lake Blue"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/f9165af0-f30f-45fa-b2df-b1e7647a0772.png"
+ },
+ {
+  "id": "cj-69243904",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Warm Thicken Jacket",
+  "note": "4 colors · S–5XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-69243904.webp",
+  "price": 20.99,
+  "price_max": 22.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL",
+   "4XL",
+   "5XL"
+  ],
+  "colors": [
+   "Blue",
+   "Red",
+   "Rose Red",
+   "Fluorescent Green"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/af9f1930-492c-4112-88d7-389325740edb.jpg"
+ },
+ {
+  "id": "cj-98314240",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Waterproof Medum Jacket",
+  "note": "2 colors · S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-98314240.webp",
+  "price": 35.99,
+  "price_max": 40.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Gray",
+   "Pink"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "07",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/73df97ff-ec0d-470e-82c2-441d79468f61.jpg"
+ },
+ {
+  "id": "cj-92373248",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Adjustable Warm Cotton Jacket",
+  "note": "2 colors · S–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-92373248.webp",
+  "price": 32.99,
+  "price_max": 36.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Red",
+   "Navy Blue"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/a972396c-3a20-474d-90ab-174930c43919.jpg"
+ },
+ {
+  "id": "cj-77512192",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Thickened Waterproof Outdoor Jacket",
+  "note": "2 colors · S–5XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-77512192.webp",
+  "price": 39.99,
+  "price_max": 47.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL",
+   "4XL",
+   "5XL"
+  ],
+  "colors": [
+   "Blue",
+   "Green"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/8701b06d-70c9-4b98-8ef0-024eb35f9b97.jpg"
+ },
+ {
+  "id": "cj-82171648",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Shell Outdoors Jacket",
+  "note": "3 colors · S–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-82171648.webp?v=2",
+  "price": 42.99,
+  "price_max": 46.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Blue",
+   "Rose Red",
+   "Gray"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/350a8e97-e143-4e97-be29-d68977f3c8f9.jpg"
+ },
+ {
+  "id": "cj-73742592",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Waterproof Warm Shell Jacket",
+  "note": "4 colors · S–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-73742592.webp",
+  "price": 28.99,
+  "price_max": 28.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Blue",
+   "Gray",
+   "Red",
+   "Pink"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/16993152/1721827325873623040.jpg",
+  "badge": "07"
+ },
+ {
+  "id": "cj-13873920",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Thickened Reflective Cotton Coat",
+  "note": "XS–7XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-13873920.webp",
+  "price": 33.99,
+  "price_max": 45.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL",
+   "4XL",
+   "5XL",
+   "6XL",
+   "7XL"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "18",
+  "img_src": "https://cf.cjdropshipping.com/8692dda2-ffb9-4468-9b7c-28e8973ba436.jpg"
+ },
+ {
+  "id": "cj-21572096",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Waterproof Warm Costume",
+  "note": "7 colors · XS–5XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-21572096.webp",
+  "price": 41.99,
+  "price_max": 54.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL",
+   "4XL",
+   "5XL"
+  ],
+  "colors": [
+   "Army Green",
+   "Baby Blue",
+   "Black",
+   "Blue",
+   "Purple",
+   "Red",
+   "Roseo"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/105326b8-2bd2-4c90-922f-a1015e8c12db.png"
+ },
+ {
+  "id": "cj-40694784",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Zippered Cotton Padded Coat",
+  "note": "9 colors · XS–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-40694784.webp",
+  "price": 23.99,
+  "price_max": 23.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Red",
+   "Rose Red",
+   "Blue",
+   "Green",
+   "Purple",
+   "Black",
+   "Dark Green",
+   "Rose Red A",
+   "Purple A"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/a82eb554-3d11-4357-9154-b95f3280364f.jpg"
+ },
+ {
+  "id": "cj-02389248",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Padded Coat",
+  "note": "3 colors · XS–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-02389248.webp",
+  "price": 33.99,
+  "price_max": 42.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Green",
+   "Khaki",
+   "Green And Khaki"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/df996595-f4b3-4d65-9975-e2b38dd952c5.jpg"
+ },
+ {
+  "id": "cj-44463104",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Cotton Chest Vest",
+  "note": "6 colors · XS–4XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-44463104.webp",
+  "price": 31.99,
+  "price_max": 34.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL",
+   "4XL"
+  ],
+  "colors": [
+   "Red",
+   "Green",
+   "Purple",
+   "Blue",
+   "Black",
+   "Pink"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/3bfdac72-a125-4282-a9f8-ee80bcda9851.jpg",
+  "badge": "10"
+ },
+ {
+  "id": "cj-09958656",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Waterproof Warm Cotton Jacket",
+  "note": "5 colors · 10–26",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-09958656.webp",
+  "price": 25.99,
+  "price_max": 29.99,
+  "sizes": [
+   "10",
+   "12",
+   "14",
+   "16",
+   "18",
+   "20",
+   "22",
+   "24",
+   "26"
+  ],
+  "colors": [
+   "Blue",
+   "Pink",
+   "Yellow",
+   "Coffee",
+   "Orange"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "07",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/f50d1d49-23f0-44cd-909a-6b50dfdcd6dc.jpg"
+ },
+ {
+  "id": "cj-16555776",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Thickened Leg Cotton Coat",
+  "note": "3 colors · S–2XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-16555776.webp",
+  "price": 27.99,
+  "price_max": 27.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Black",
+   "Red",
+   "Brown"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "06",
+  "img_src": "https://cf.cjdropshipping.com/732d61ca-7132-401a-baa8-fa7c39d1a8d6.jpg"
+ },
+ {
+  "id": "cj-56993024",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Warm Cotton Buckle Vest",
+  "note": "8 colors · XS–XXL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-56993024.webp",
+  "price": 22.99,
+  "price_max": 26.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Light Blue",
+   "Light Khaki",
+   "Light Purple",
+   "Red",
+   "Wine Red",
+   "Black",
+   "Sky Blue",
+   "Pink"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "08",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2023/10/24/04/5f677722-ba62-429b-a5e1-8b1f2416dd2c.jpg"
+ },
+ {
+  "id": "cj-35315712",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Thickened Thermal Cotton Coat",
+  "note": "2 colors · S–XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-35315712.webp",
+  "price": 51.99,
+  "price_max": 58.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Grey",
+   "Pink"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/5e795996-fbe7-422b-9ae9-2a55cfdf6d05.jpg"
+ },
+ {
+  "id": "cj-17497088",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Waterproof Warm Coat",
+  "note": "7 colors · S–5XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-17497088.webp",
+  "price": 32.99,
+  "price_max": 36.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL",
+   "4XL",
+   "5XL"
+  ],
+  "colors": [
+   "Red Chest Back Vest",
+   "Army Green Chest Back Vest",
+   "Dark Blue Chest Back Vest",
+   "Black Chest Back Vest",
+   "Purple Chest Back Vest",
+   "Rose Red Chest Back Vest",
+   "Blue Green Chest Back Vest"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2023/12/18/05/d76c8e87-df39-4de5-9327-2e0e7107d021.jpg",
+  "badge": "18"
+ },
+ {
+  "id": "cj-40494080",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Winter Reflective Cold Coat",
+  "note": "5 colors · 3XL–5XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-40494080.webp?v=2",
+  "price": 39.99,
+  "price_max": 39.99,
+  "sizes": [
+   "3XL",
+   "4XL",
+   "5XL"
+  ],
+  "colors": [
+   "Red",
+   "Dark Blue",
+   "Green",
+   "Purple",
+   "Black"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/9349d7ef-6bf0-4307-b4a8-c7247d93fda2.jpg",
+  "badge": "12"
+ },
+ {
+  "id": "cj-84273408",
+  "src": "pd",
+  "cat": "pajamas",
+  "name": "Windproof Warm Reflective Coat",
+  "note": "7 colors · S–7XL",
+  "color": "#5e17eb",
+  "img": "img/cj/cj-84273408.webp",
+  "price": 27.99,
+  "price_max": 40.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL",
+   "4XL",
+   "5XL",
+   "6XL",
+   "7XL"
+  ],
+  "colors": [
+   "Orange Black",
+   "Pink",
+   "White Yellow",
+   "Blue Green",
+   "Black",
+   "Silver Black",
+   "Black Gold"
+  ],
+  "tags": [
+   "coat"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/7b62be85-c4ee-416d-9549-49ead312d124.jpg"
+ },
+ {
+  "id": "cj-30444288",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Waterproof Adjustable Breathbale Boots",
+  "note": "XS–XXL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-30444288.webp?v=2",
+  "price": 24.99,
+  "price_max": 31.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/16992288/1721449276715962368.jpg",
+  "badge": "04"
+ },
+ {
+  "id": "cj-49876992",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Breathable Boots",
+  "note": "8 colors · Brown–Yellow",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-49876992.webp",
+  "price": 40.99,
+  "price_max": 43.99,
+  "sizes": [
+   "Brown",
+   "cyan",
+   "Yellow"
+  ],
+  "colors": [
+   "One",
+   "Two",
+   "Three",
+   "Four",
+   "Five",
+   "Six",
+   "Seven",
+   "Eight"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "badge": "09",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2023/10/25/08/c19e2509-e22d-4381-b703-995e73aaf9b8.png"
+ },
+ {
+  "id": "cj-31971840",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Foot Cover Waterproof Boots",
+  "note": "2 colors · 1–8",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-31971840.webp",
+  "price": 30.99,
+  "price_max": 30.99,
+  "sizes": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8"
+  ],
+  "colors": [
+   "Black",
+   "Red"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/52a28f7c-1345-4ed3-842d-302b5feb6b21.jpg"
+ },
+ {
+  "id": "cj-02551296",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Waterproof Rain Boots",
+  "note": "2 colors · 1–5",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-02551296.webp",
+  "price": 25.99,
+  "price_max": 25.99,
+  "sizes": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "colors": [
+   "Red",
+   "Coffee"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "badge": "04",
+  "img_src": "https://cf.cjdropshipping.com/ad4801ba-09e9-478d-b618-6540ad21f182.jpg"
+ },
+ {
+  "id": "cj-14465792",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Winter Reflective Warm Boots",
+  "note": "3 colors · 1size–8size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-14465792.webp",
+  "price": 23.99,
+  "price_max": 23.99,
+  "sizes": [
+   "1size",
+   "2size",
+   "3size",
+   "4size",
+   "5size",
+   "6size",
+   "7size",
+   "8size"
+  ],
+  "colors": [
+   "Black",
+   "Orange",
+   "Red"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "badge": "17",
+  "img_src": "https://cf.cjdropshipping.com/1621578645140.jpg"
+ },
+ {
+  "id": "cj-45003008",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Waterproof Rain Boots · Cloth Black",
+  "note": "8 colors · 1–5",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-45003008.webp",
+  "price": 25.99,
+  "price_max": 25.99,
+  "sizes": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "colors": [
+   "Cloth Black",
+   "Cloth Red",
+   "Tangerine",
+   "Cloth Green",
+   "Breathable Mesh Black",
+   "Breathable Net Red",
+   "Breathable Mesh Orange",
+   "Breathable Mesh Green"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/92cbcb35-132d-4a15-be47-95ee4f6f6315.jpg"
+ },
+ {
+  "id": "cj-12843776",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Soft Soled Scratch Boots",
+  "note": "6 colors · Size0–Size2",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-12843776.webp",
+  "price": 24.99,
+  "price_max": 27.99,
+  "sizes": [
+   "Size0",
+   "Size1",
+   "Size2"
+  ],
+  "colors": [
+   "Carrot",
+   "Sport Blue",
+   "Sport Orange",
+   "Polka Dot Pink",
+   "Omelette",
+   "Polka Dot Black"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/8d7b8d66-979b-491e-b745-52a6414f35ea.jpg",
+  "badge": "04"
+ },
+ {
+  "id": "cj-01614900",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Soft Bottom Thin Boots",
+  "note": "9 colors · No 3–No 2",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-01614900.webp",
+  "price": 21.99,
+  "price_max": 34.99,
+  "sizes": [
+   "No 3",
+   "No 5",
+   "No 6",
+   "No 7",
+   "No 4",
+   "No 2"
+  ],
+  "colors": [
+   "Orange Price For Two",
+   "Black Price For Two",
+   "Blue Price For Two",
+   "Sky Blue",
+   "Purple",
+   "Pink",
+   "Blue",
+   "Light Green",
+   "Orange"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/79e819d8-856a-4f2c-9889-68a72fb006c3.jpg"
+ },
+ {
+  "id": "cj-47251712",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Waterproof Splash Proof Boots",
+  "note": "S–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-47251712.webp",
+  "price": 33.99,
+  "price_max": 33.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/a2787646-426a-4f58-81f3-a17c2c5e7fbe.jpg"
+ },
+ {
+  "id": "cj-46478336",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Wear Resistant Breathable Boots",
+  "note": "One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-46478336.webp",
+  "price": 36.99,
+  "price_max": 36.99,
+  "sizes": [],
+  "colors": [
+   "Grey"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/6944213e-de36-4ca2-a552-e8e74a5cbabf.jpg"
+ },
+ {
+  "id": "cj-61765120",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Waterproof Snow General Boots",
+  "note": "2 colors · XS–2XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-61765120.webp",
+  "price": 44.99,
+  "price_max": 44.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Black",
+   "Blue"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/1d6f6a68-1851-4e39-9971-4ee1b08cd50e.jpg",
+  "badge": "09"
+ },
+ {
+  "id": "cj-06115072",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Winter Thick Lamb Boots",
+  "note": "3 colors · 1–5",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-06115072.webp",
+  "price": 17.99,
+  "price_max": 17.99,
+  "sizes": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "colors": [
+   "Pink",
+   "Blue",
+   "Khaki"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "badge": "14",
+  "img_src": "https://cf.cjdropshipping.com/faa3fbf3-9ab5-4419-a2dc-534d7f018b21.jpg"
+ },
+ {
+  "id": "cj-48635136",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Waterproof Snow General Boots · Black",
+  "note": "2 colors · XS–2XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-48635136.webp",
+  "price": 61.99,
+  "price_max": 61.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Black",
+   "Blue"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/c657bc28-67b9-4cb4-ab48-876fc99accdd.jpg",
+  "badge": "12"
+ },
+ {
+  "id": "cj-32647936",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Breathable Sports Mesh Boots",
+  "note": "4 colors · 1–5",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-32647936.webp",
+  "price": 18.99,
+  "price_max": 18.99,
+  "sizes": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "colors": [
+   "Pink",
+   "Yellow",
+   "Blue",
+   "Red"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/2c5761fd-d71b-4142-8521-3732f6e2c11e.jpg",
+  "badge": "09"
+ },
+ {
+  "id": "cj-71558400",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Wear Resistant Breathable Boots · Grey",
+  "note": "1–8",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-71558400.webp",
+  "price": 37.99,
+  "price_max": 37.99,
+  "sizes": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8"
+  ],
+  "colors": [
+   "Grey"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/3abb685c-009c-4b28-a4cb-a6429fa44610.jpg"
+ },
+ {
+  "id": "cj-97198336",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Wearable Breathable Shoe Boots",
+  "note": "2 colors · S–XXL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-97198336.webp",
+  "price": 26.99,
+  "price_max": 27.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Blue",
+   "Red"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/e053b580-c060-4fd4-b706-71e58dc63633.jpg"
+ },
+ {
+  "id": "cj-91809536",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Sneaker Running Boots",
+  "note": "3 colors · 1–5",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-91809536.webp",
+  "price": 27.99,
+  "price_max": 27.99,
+  "sizes": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "colors": [
+   "Yellow",
+   "Red",
+   "Pink"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/16984512/1718161115566968832.jpg"
+ },
+ {
+  "id": "cj-83910144",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Leopard Print Boots",
+  "note": "3 colors · Size1–Size5",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-83910144.webp",
+  "price": 20.99,
+  "price_max": 20.99,
+  "sizes": [
+   "Size1",
+   "Size2",
+   "Size3",
+   "Size4",
+   "Size5"
+  ],
+  "colors": [
+   "Gold",
+   "Red",
+   "Pink"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/f5aa7b72-0dcb-4b4a-9008-33193355c60a.jpg"
+ },
+ {
+  "id": "cj-31626800",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Booties Waterproof Boots",
+  "note": "6 colors · Size1–Size8",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-31626800.webp",
+  "price": 28.99,
+  "price_max": 35.99,
+  "sizes": [
+   "Size1",
+   "Size2",
+   "Size3",
+   "Size4",
+   "Size5",
+   "Size6",
+   "Size7",
+   "Size8"
+  ],
+  "colors": [
+   "Black No Logo Pc",
+   "Red No Logo Pc",
+   "Breathable Black Hc Pc",
+   "Breathable Red Hc Pc",
+   "Waterproof Black No Logo Pc",
+   "Waterproof Red No Logo Pc"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "badge": "10",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2024/07/08/08/3dbd3625-c179-4c4e-a11e-ae4e49b74485_trans.jpeg"
+ },
+ {
+  "id": "cj-03011328",
+  "src": "pd",
+  "cat": "acc",
+  "name": "All One Waterproof Boots",
+  "note": "4 colors · S–2XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-03011328.webp",
+  "price": 20.99,
+  "price_max": 21.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Green",
+   "Pink",
+   "Red",
+   "Black"
+  ],
+  "tags": [
+   "socks"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/058c823e-5a58-47b9-9311-53502c3f3ac9.jpg"
+ },
+ {
+  "id": "cj-20801280",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Saliva Scarf",
+  "note": "2 colors · XS–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-20801280.webp",
+  "price": 21.99,
+  "price_max": 25.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Blue",
+   "Pink"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/fa214aae-8f4d-472a-930a-1f60cc7be3fc.jpg"
+ },
+ {
+  "id": "cj-16358400",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Reflective Bandanas Triangular Scarf",
+  "note": "2 colors · S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-16358400.webp",
+  "price": 17.99,
+  "price_max": 17.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Green",
+   "Orange"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/6c06f397-f748-4406-b0cc-a84b4c67f795.jpeg"
+ },
+ {
+  "id": "cj-35590144",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Winter Adjustable Warm Collar",
+  "note": "2 colors · S–M",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-35590144.webp",
+  "price": 19.99,
+  "price_max": 20.99,
+  "sizes": [
+   "S",
+   "M"
+  ],
+  "colors": [
+   "Red",
+   "Green"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/fe3fd200-8006-483a-891b-ef9f6ac1a098.jpeg"
+ },
+ {
+  "id": "cj-77427968",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Christmas Two Leg Scarf",
+  "note": "2 colors · XS–2XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-77427968.webp",
+  "price": 17.99,
+  "price_max": 17.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "White",
+   "Navy Blue"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/66bd1cc9-ccf4-4c44-b7cb-ec32bca721b8.jpg",
+  "badge": "09"
+ },
+ {
+  "id": "cj-09402112",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Cool Down Ice Scarf",
+  "note": "4 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-09402112.webp",
+  "price": 36.99,
+  "price_max": 40.99,
+  "sizes": [],
+  "colors": [
+   "Strawberry Pink",
+   "Banana Yellow",
+   "Pineapple White",
+   "Cactus Blue"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/db5e2100-635d-4594-a0ec-bafe660cd33a.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-51417856",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Bib Drool Bow Tie",
+  "note": "2 colors · XS–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-51417856.webp",
+  "price": 20.99,
+  "price_max": 24.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Black",
+   "Black"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/3ab41a67-ab64-4cac-bc9b-ba787a9bbb4c.jpg"
+ },
+ {
+  "id": "cj-71220992",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Collarchristmas Red Scarf",
+  "note": "XS–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-71220992.webp",
+  "price": 20.99,
+  "price_max": 23.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/bf9c462d-b7f4-432a-a6db-d8a078bfb786.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-21605200",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Japanese Bib Scarf",
+  "note": "8 colors · S–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-21605200.webp",
+  "price": 27.99,
+  "price_max": 32.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Red Rhombus",
+   "Blue Rhombus",
+   "Blue Small Cherry Blossoms",
+   "Red Small Cherry Blossoms",
+   "Red With Tassels",
+   "Blue With Tassels",
+   "Little Cherry Blossom Blue",
+   "Little Cherry Blossoms In Red"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2025/06/25/03/0694b83f-83e4-4e21-a9cd-b326d7905d29_fine.jpeg",
+  "badge": "14"
+ },
+ {
+  "id": "cj-63550464",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Saliva Christmas Deer Scarf",
+  "note": "2 colors · XS–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-63550464.webp",
+  "price": 20.99,
+  "price_max": 20.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Green",
+   "Red"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "badge": "06",
+  "img_src": "https://cf.cjdropshipping.com/6662713f-1f21-4a57-b65b-c5206ec7f9ba_trans.jpeg"
+ },
+ {
+  "id": "cj-49510144",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Fashionable Bib Lace Scarf",
+  "note": "XS–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-49510144.webp",
+  "price": 19.99,
+  "price_max": 21.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/e2b6615f-742d-4fae-bb7e-023c9527834b.jpg"
+ },
+ {
+  "id": "cj-76989696",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Simplicity Creativity Bib Scarf",
+  "note": "XS–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-76989696.webp",
+  "price": 19.99,
+  "price_max": 21.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "White"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "badge": "04",
+  "img_src": "https://cf.cjdropshipping.com/b43767e5-84ea-4463-a1be-a78519c8c395.jpg"
+ },
+ {
+  "id": "cj-44803328",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Knitted Neck Bib Bandana",
+  "note": "3 colors · XS–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-44803328.webp",
+  "price": 20.99,
+  "price_max": 24.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Yellow",
+   "Red",
+   "Purple"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "badge": "14",
+  "img_src": "https://cf.cjdropshipping.com/af862f4c-6f83-4fd3-8929-6ec45ef33a2a.jpg"
+ },
+ {
+  "id": "cj-91620800",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Triangle Wool Scarf",
+  "note": "10 colors · S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-91620800.webp",
+  "price": 20.99,
+  "price_max": 26.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Pumpkin Bib",
+   "Grimace Pentagram Bib",
+   "Spider Bib",
+   "Bat Bib",
+   "Clown Bib",
+   "Earl Shawl",
+   "Black Pumpkin Hat",
+   "Blue Bottle Hat",
+   "Orange Hat",
+   "Purple Hat"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/d4b1a80e-316e-4678-a3ac-a2f003022674.jpg"
+ },
+ {
+  "id": "cj-44015616",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Lace Scarf",
+  "note": "One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-44015616.webp",
+  "price": 17.99,
+  "price_max": 17.99,
+  "sizes": [
+   "S"
+  ],
+  "colors": [
+   "White"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/4cc71582-9c17-44dd-b531-ed89cb8873a5.jpg"
+ },
+ {
+  "id": "cj-14152962",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Christmas Santa Reindeer Costume",
+  "note": "5 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-14152962.webp",
+  "price": 19.99,
+  "price_max": 21.99,
+  "sizes": [],
+  "colors": [
+   "Green Bib With Deer",
+   "Red Bib With Santa Claus",
+   "Green Hat",
+   "White Hat",
+   "Red Hat"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "badge": "06",
+  "img_src": "https://cf.cjdropshipping.com/b72380c6-1f87-4712-a953-4bff04bbe672.jpg"
+ },
+ {
+  "id": "cj-81639700",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Christmas Bell Festive Scarf",
+  "note": "One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-81639700.webp",
+  "price": 17.99,
+  "price_max": 17.99,
+  "sizes": [],
+  "colors": [
+   "Christmas Tree Hidden Hook"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "badge": "17",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/b003927c-d473-4f39-86d7-5b20901e6f6b.jpg"
+ },
+ {
+  "id": "cj-66247937",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Winter Festive Scarf",
+  "note": "4 colors · S–M",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-66247937.webp",
+  "price": 18.99,
+  "price_max": 22.99,
+  "sizes": [
+   "S",
+   "M"
+  ],
+  "colors": [
+   "Lion Dance Blessing",
+   "Red Lion",
+   "Peace And Joy",
+   "Nian Beast Scarf"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "badge": "17",
+  "img_src": "https://cf.cjdropshipping.com/ebd79485-36b0-4380-aba7-ea29e046064b.jpg"
+ },
+ {
+  "id": "cj-99894528",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Lace Bib Shooting Bandana",
+  "note": "XS–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-99894528.webp",
+  "price": 21.99,
+  "price_max": 24.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Yellow"
+  ],
+  "tags": [
+   "scarf"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/effabfdf-b977-47a6-9230-e58c75995d2e.jpg"
+ },
+ {
+  "id": "cj-60923648",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Ties Kids Bow Tie",
+  "note": "One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-60923648.webp",
+  "price": 47.99,
+  "price_max": 47.99,
+  "sizes": [
+   "50PCS"
+  ],
+  "colors": [
+   "Random"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/1b303df3-4372-4883-939a-c4e8bb0fe113.jpg"
+ },
+ {
+  "id": "cj-05627136",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Ornament Bow Tie",
+  "note": "4 colors · S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-05627136.webp",
+  "price": 20.99,
+  "price_max": 21.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Star And Moon Model",
+   "Bow Korean Dog Model",
+   "Big Flash Diamond Model",
+   "Kt Model"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "00",
+  "img_src": "https://cf.cjdropshipping.com/01471134-9610-4ee3-b63c-f252558329ea.png"
+ },
+ {
+  "id": "cj-80197376",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Puppet Bow Tie",
+  "note": "6 colors · M–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-80197376.webp",
+  "price": 20.99,
+  "price_max": 20.99,
+  "sizes": [
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Wine Red Bell",
+   "Black Checkered Bell",
+   "Wine Red Cheetah",
+   "Black Gecko",
+   "Wine Red Cat",
+   "Black Grid Cat"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/1f04cada-7c0e-4f24-b047-6ddbc7a77eaf.png"
+ },
+ {
+  "id": "cj-58547456",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Bow Tie",
+  "note": "XS–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-58547456.webp",
+  "price": 30.99,
+  "price_max": 30.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Agate Green Water Wave Gold"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "07",
+  "img_src": "https://cf.cjdropshipping.com/5a2c5ec7-16b3-45bf-bd6f-91c29a957945.jpg"
+ },
+ {
+  "id": "cj-30800384",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Bib Bow Tie",
+  "note": "XS–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-30800384.webp",
+  "price": 19.99,
+  "price_max": 22.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Light Green"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/5c282c32-9cd4-4004-b051-811e947f79bb.jpg"
+ },
+ {
+  "id": "cj-56965120",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Mesh Pearl Bow Tie",
+  "note": "S–3XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-56965120.webp",
+  "price": 21.99,
+  "price_max": 22.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL",
+   "3XL"
+  ],
+  "colors": [
+   "Pink"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/949f968d-fdd5-48e0-9fc3-d574c759dd9f.jpg"
+ },
+ {
+  "id": "cj-36651010",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Tuxedo Suit Adjustable Bandana",
+  "note": "S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-36651010.webp",
+  "price": 24.99,
+  "price_max": 25.99,
+  "sizes": [
+   "S",
+   "L"
+  ],
+  "colors": [
+   "Default"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/d05d3b0e-3970-458a-81ad-a43e78c0a2ee.jpg"
+ },
+ {
+  "id": "cj-08342016",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Knot Traction Bow Tie",
+  "note": "3 colors · S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-08342016.webp",
+  "price": 47.99,
+  "price_max": 48.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Blue",
+   "Grey",
+   "Pink"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/8a15ba30-49bd-4cc4-986a-fb7a0bd31bb9.jpg"
+ },
+ {
+  "id": "cj-45009920",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Gentleman Suit Bib Bandana",
+  "note": "5 colors · M–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-45009920.webp",
+  "price": 20.99,
+  "price_max": 20.99,
+  "sizes": [
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Black",
+   "Wine Red",
+   "Red",
+   "Wine Red Double Sided",
+   "Red Double Sided"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/25846856-ae2e-41d6-9965-630ee95155cd.jpg"
+ },
+ {
+  "id": "cj-52299520",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Saliva Bow Tie",
+  "note": "2 colors · XS–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-52299520.webp",
+  "price": 21.99,
+  "price_max": 25.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Red",
+   "Black"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/647d730d-0fc0-422c-b4a7-84f621dce522.jpg"
+ },
+ {
+  "id": "cj-61906944",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Gentleman Beret Tie Bow Tie",
+  "note": "3 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-61906944.webp",
+  "price": 23.99,
+  "price_max": 32.99,
+  "sizes": [],
+  "colors": [
+   "Peaked Cap",
+   "Tie",
+   "Set"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/2aad9251-dacf-4fe2-a2b0-d73463ad378d.jpg"
+ },
+ {
+  "id": "cj-92557056",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Original Bow Tie",
+  "note": "2 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-92557056.webp",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [],
+  "colors": [
+   "Pink Beige",
+   "Blue Beige"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/9acb02e5-7814-4086-bd1e-b6002b5865af.jpg"
+ },
+ {
+  "id": "cj-68323328",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Birthday Gold Silver Bow Tie",
+  "note": "2 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-68323328.webp",
+  "price": 24.99,
+  "price_max": 24.99,
+  "sizes": [],
+  "colors": [
+   "Silver",
+   "Gold"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "06",
+  "img_src": "https://cf.cjdropshipping.com/726ddd58-c1d8-458f-90cc-b004e69d0dc6.jpg"
+ },
+ {
+  "id": "cj-9FA9A385",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Winter Warm Bowknot Bow Tie",
+  "note": "2 colors · XS–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-9FA9A385.webp",
+  "price": 39.99,
+  "price_max": 40.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Ginger",
+   "Milky"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/16070112/7370747106645.jpg"
+ },
+ {
+  "id": "cj-17886464",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Christmas Party Props Bow Tie",
+  "note": "10 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-17886464.webp",
+  "price": 62.99,
+  "price_max": 62.99,
+  "sizes": [],
+  "colors": [
+   "Style",
+   "Style",
+   "Style",
+   "Style",
+   "Style",
+   "Style",
+   "Style",
+   "Style",
+   "Style",
+   "Style"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "06",
+  "img_src": "https://cf.cjdropshipping.com/9395ffe2-1ada-41f1-b658-a39af306f1f2.png"
+ },
+ {
+  "id": "cj-69953536",
+  "src": "pd",
+  "cat": "acc",
+  "name": "British Academy Bib Bow Tie",
+  "note": "4 colors · S–M",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-69953536.webp",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [
+   "S",
+   "M"
+  ],
+  "colors": [
+   "Red Grid",
+   "Blue Grid",
+   "Pink Line",
+   "Blue Line"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/096345d8-c130-4438-88ee-19739d95b80c.jpg"
+ },
+ {
+  "id": "cj-01320192",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Princess Bow Tie",
+  "note": "One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-01320192.webp",
+  "price": 32.99,
+  "price_max": 32.99,
+  "sizes": [
+   "1pack"
+  ],
+  "colors": [
+   "Mixed Color"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/ffc617c1-1a64-4c61-b040-c69a0ed48ff2.jpg"
+ },
+ {
+  "id": "cj-03654400",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Neck Mouth Necktie Bandana",
+  "note": "2 colors · XS–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-03654400.webp",
+  "price": 22.99,
+  "price_max": 25.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Blue Bow",
+   "Blue Long Ribbon Bow"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/9050c0e6-3f61-4674-b042-f382baa69f22.jpg"
+ },
+ {
+  "id": "cj-68130304",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Lace Saliva Bow Tie",
+  "note": "6 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-68130304.webp",
+  "price": 18.99,
+  "price_max": 18.99,
+  "sizes": [],
+  "colors": [
+   "Grey Ribbons",
+   "Pink Ribbons",
+   "Grey Yarn",
+   "Pink Yarn",
+   "Beige Yarn",
+   "Blue Yarn"
+  ],
+  "tags": [
+   "tie"
+  ],
+  "badge": "07",
+  "img_src": "https://cf.cjdropshipping.com/424c84ab-773b-4431-b61a-565a74df3f54.jpg"
+ },
+ {
+  "id": "cj-11625800",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Beaded Name Bracelet Collar",
+  "note": "9 colors · 40cm–50cm",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-11625800.webp",
+  "price": 23.99,
+  "price_max": 26.99,
+  "sizes": [
+   "40cm",
+   "50cm"
+  ],
+  "colors": [
+   "Color",
+   "Color",
+   "Color",
+   "Color",
+   "Color",
+   "Color",
+   "Color",
+   "Color",
+   "Color"
+  ],
+  "tags": [
+   "necklace"
+  ],
+  "badge": "10",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2025/08/01/01/e240ca6b-a312-4fee-9059-92d984384ce7.jpg"
+ },
+ {
+  "id": "cj-0C2660EF",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Led Flashing Safety Collar Charm",
+  "note": "7 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-0C2660EF.webp",
+  "price": 23.99,
+  "price_max": 23.99,
+  "sizes": [],
+  "colors": [
+   "Ice Blue",
+   "Green",
+   "Red",
+   "White",
+   "Blue",
+   "Pink",
+   "Yellow"
+  ],
+  "tags": [
+   "necklace"
+  ],
+  "badge": "07",
+  "img_src": "https://cf.cjdropshipping.com/20210115/3590186937301.jpg"
+ },
+ {
+  "id": "cj-78109953",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Diamonds Mixed Color Collar Charm",
+  "note": "6 colors · S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-78109953.webp",
+  "price": 18.99,
+  "price_max": 19.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "White",
+   "Pink White",
+   "Blue",
+   "Red",
+   "Black",
+   "Pink"
+  ],
+  "tags": [
+   "necklace"
+  ],
+  "badge": "00",
+  "img_src": "https://cf.cjdropshipping.com/67a252cb-8752-4c27-b2d0-198bb9b141dc.jpg"
+ },
+ {
+  "id": "cj-A776B88C",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Custom Metal Engraved Collar Charm",
+  "note": "7 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-A776B88C.webp",
+  "price": 22.99,
+  "price_max": 24.99,
+  "sizes": [
+   "M"
+  ],
+  "colors": [
+   "Vip",
+   "Uk Bulldog",
+   "Demu",
+   "Samoyed",
+   "Alaska",
+   "Doberman",
+   "Corgi"
+  ],
+  "tags": [
+   "necklace"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/20210112/1420556404944.jpg"
+ },
+ {
+  "id": "cj-11597824",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Pple Tracker Airtag Collar",
+  "note": "3 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-11597824.webp?v=2",
+  "price": 24.99,
+  "price_max": 27.99,
+  "sizes": [],
+  "colors": [
+   "S Green",
+   "M Green",
+   "L Green"
+  ],
+  "tags": [
+   "necklace"
+  ],
+  "badge": "06",
+  "img_src": "https://cf.cjdropshipping.com/8ee5895c-2e4e-4447-85d0-388a6729096f.jpg"
+ },
+ {
+  "id": "cj-81086976",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Anti Lost Card Collar Charm",
+  "note": "6 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-81086976.webp",
+  "price": 17.99,
+  "price_max": 17.99,
+  "sizes": [],
+  "colors": [
+   "Corgi",
+   "German Shepherd",
+   "Golden Retriever",
+   "Husky Fato",
+   "Labrador",
+   "Teddy"
+  ],
+  "tags": [
+   "necklace"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/aa512748-ec5f-47e7-8a64-b32a76b65475.jpg"
+ },
+ {
+  "id": "cj-74808832",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Retro Flower Collar Charm",
+  "note": "2 colors · XS–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-74808832.webp",
+  "price": 25.99,
+  "price_max": 27.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "White",
+   "Pink"
+  ],
+  "tags": [
+   "necklace"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/e19cbd5a-e04e-405d-9b24-56209b0a6bd6.jpg"
+ },
+ {
+  "id": "cj-56924416",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Led Glowing Night Collar",
+  "note": "One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-56924416.webp",
+  "price": 22.99,
+  "price_max": 22.99,
+  "sizes": [],
+  "colors": [
+   "White"
+  ],
+  "tags": [
+   "necklace"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/1e235249-26a5-4f23-885b-88d23ee49613.jpg"
+ },
+ {
+  "id": "cj-81642500",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Crafthub Print Demend Collar Charm",
+  "note": "One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-81642500.webp",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [
+   "3cm"
+  ],
+  "colors": [
+   "Default"
+  ],
+  "tags": [
+   "necklace"
+  ],
+  "badge": "12",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2025/10/21/07/0efa36d2-1abe-48e0-b50f-54701c612848_fine.jpeg"
+ },
+ {
+  "id": "cj-98569984",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Fur Ball Warm Hat",
+  "note": "2 colors · S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-98569984.webp",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Grey",
+   "Pink"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/259f14f4-9d6f-463c-bd0d-12ed5d141266.jpg"
+ },
+ {
+  "id": "cj-05683712",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Halloween Pitaya Fruit Hat",
+  "note": "One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-05683712.webp",
+  "price": 17.99,
+  "price_max": 17.99,
+  "sizes": [
+   "L"
+  ],
+  "colors": [
+   "Pink Green"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/3da9ab15-bf22-4c2a-a3a2-6ae66e844782.jpg"
+ },
+ {
+  "id": "cj-16363264",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Christmas Felt Cloth Hat",
+  "note": "6 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-16363264.webp?v=2",
+  "price": 17.99,
+  "price_max": 17.99,
+  "sizes": [],
+  "colors": [
+   "Gift Box Duck",
+   "Christmas Tree Duck",
+   "Antler Duck",
+   "Garland Duck",
+   "Crooked Duck",
+   "Snowman Duck"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "06",
+  "img_src": "https://cf.cjdropshipping.com/74639c44-3991-475b-b570-ae5f55d74066.jpeg"
+ },
+ {
+  "id": "cj-17295360",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Knitted Warm Windproof Hat",
+  "note": "7 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-17295360.webp",
+  "price": 21.99,
+  "price_max": 28.99,
+  "sizes": [],
+  "colors": [
+   "Pink",
+   "Red",
+   "Grey",
+   "Black",
+   "Beige",
+   "Set",
+   "Set"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/f43a413b-04c4-4acb-97c8-1872cb9a12a4.jpg"
+ },
+ {
+  "id": "cj-00438016",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Pirate Leaky Ear Costume",
+  "note": "S–M",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-00438016.webp",
+  "price": 25.99,
+  "price_max": 26.99,
+  "sizes": [
+   "S",
+   "M"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/f4a257c4-2d0e-4ebd-a3ca-3c3589188060.jpg"
+ },
+ {
+  "id": "cj-01618600",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Creative Versatile Outdoor Hat",
+  "note": "3 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-01618600.webp",
+  "price": 24.99,
+  "price_max": 24.99,
+  "sizes": [],
+  "colors": [
+   "Blue S",
+   "Pink S",
+   "Black S"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "00",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/5fe578e7-c656-418b-b502-b399bd12d0be.jpg"
+ },
+ {
+  "id": "cj-80743680",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Changing Outfit Scarf",
+  "note": "S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-80743680.webp",
+  "price": 27.99,
+  "price_max": 27.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "White"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/20ac7498-a360-4241-9266-82d607e68c86.jpg"
+ },
+ {
+  "id": "cj-59756800",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Christmas Hand Woven Hat",
+  "note": "6 colors · S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-59756800.webp",
+  "price": 27.99,
+  "price_max": 39.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Red Snowflake Hat",
+   "Red Scarf",
+   "Red Christmas Suit",
+   "Green Snowflake Cap",
+   "Green Scarf",
+   "Green Christmas Suit"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/2449c41d-1524-4ac0-837a-f4aff8fab4c6.jpg"
+ },
+ {
+  "id": "cj-20745472",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Girl Pearls Purely Hat",
+  "note": "S–M",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-20745472.webp",
+  "price": 27.99,
+  "price_max": 27.99,
+  "sizes": [
+   "S",
+   "M"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/2b494057-e3de-4b9f-9b9f-44f9555e016e.jpg"
+ },
+ {
+  "id": "cj-89474048",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Ear Holes Adjustable Hat",
+  "note": "3 colors · S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-89474048.webp",
+  "price": 20.99,
+  "price_max": 20.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Dark Blue",
+   "Medium Blue",
+   "Light Blue"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/e80b85c5-7f94-4f3c-aa0b-c58880b7f17b.jpeg"
+ },
+ {
+  "id": "cj-31613800",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Concave Shape Pumpkin Hat",
+  "note": "4 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-31613800.webp?v=2",
+  "price": 25.99,
+  "price_max": 25.99,
+  "sizes": [],
+  "colors": [
+   "Black",
+   "Beige",
+   "Red",
+   "Brown"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/22262ab1-36cc-41b5-a640-7d437770dbc0.jpg"
+ },
+ {
+  "id": "cj-11287040",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Fleece Lined Thermal Hat",
+  "note": "S–M",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-11287040.webp",
+  "price": 30.99,
+  "price_max": 30.99,
+  "sizes": [
+   "S",
+   "M"
+  ],
+  "colors": [
+   "Default"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/afd7ffb3-94f9-4fc5-9f54-5fc3724fbd3b.jpg"
+ },
+ {
+  "id": "cj-25782784",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Helmet Outing Motorcycle Set",
+  "note": "S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-25782784.webp",
+  "price": 30.99,
+  "price_max": 33.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Default"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "14",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/cb1035e2-bbe3-421e-a178-b425a88d6d46.jpg"
+ },
+ {
+  "id": "cj-35944962",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Hats Ear Holes Costume",
+  "note": "4 colors · S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-35944962.webp",
+  "price": 20.99,
+  "price_max": 20.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Yellow",
+   "Orange",
+   "Blue",
+   "Purple"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/1f054ef7-27b5-410c-8b44-a6104292a5ec.jpg"
+ },
+ {
+  "id": "cj-97475584",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Bamboo Dragonfly Shade Hat",
+  "note": "12 colors · S–M",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-97475584.webp",
+  "price": 24.99,
+  "price_max": 28.99,
+  "sizes": [
+   "S",
+   "M"
+  ],
+  "colors": [
+   "Sunflower Bamboo Dragonfly Hat",
+   "Green Grass Sunflower Hat",
+   "Grey Straw Hat",
+   "Pink Straw Hat",
+   "Green Straw Hat",
+   "Flower Hat",
+   "Cherry Bamboo Dragonfly Hat",
+   "Cherry Blossom Windmill Cap",
+   "Creamy Pink Florets",
+   "Cream Blue Flowers",
+   "Creamy Purple Flowers",
+   "Creamy Yellow Flowers"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/f534d03b-03c5-406a-8e46-5fad912bf339.jpg"
+ },
+ {
+  "id": "cj-42580480",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Two Piece Hand Scarf",
+  "note": "S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-42580480.webp",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/0930b0de-ebb3-44b8-9e76-399a56af4c8c.jpg"
+ },
+ {
+  "id": "cj-31620200",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Adjustable Sun Proof Hat",
+  "note": "5 colors · S–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-31620200.webp",
+  "price": 22.99,
+  "price_max": 25.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Apricot",
+   "Blue",
+   "Milk Blue",
+   "Purple",
+   "Black"
+  ],
+  "tags": [
+   "hat"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/f4511840-56c0-4694-8a2c-7fdb858ce714.jpg"
+ },
+ {
+  "id": "cj-71774464",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Windproof Goggles",
+  "note": "7 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-71774464.webp",
+  "price": 37.99,
+  "price_max": 52.99,
+  "sizes": [],
+  "colors": [
+   "Silver Coated Models",
+   "Black Big Frame",
+   "White Big Frame",
+   "White Transparent",
+   "Small Dog Silver Coating",
+   "Small Dog Blue Coating",
+   "Black Framed S Shaped"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/bc303eb8-9a96-46ec-ae17-e1a369dbd0c0.jpg"
+ },
+ {
+  "id": "cj-02166784",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Ski Wind Protection Goggles",
+  "note": "5 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-02166784.webp",
+  "price": 23.99,
+  "price_max": 23.99,
+  "sizes": [],
+  "colors": [
+   "Red",
+   "Grey",
+   "Blue",
+   "Silver",
+   "Transparent"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/df12e4f0-ef50-40c2-8580-811d4d97af39.jpg"
+ },
+ {
+  "id": "cj-60843008",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Windproof Outdoor Cool Sunglasses",
+  "note": "6 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-60843008.webp?v=2",
+  "price": 22.99,
+  "price_max": 22.99,
+  "sizes": [],
+  "colors": [
+   "Zebra Frame",
+   "Rainbow Frame",
+   "Pink Purple Frame",
+   "Flag Frame",
+   "Orange Black Frame",
+   "Snakeskin Frame"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/5351415f-8e80-46c2-817e-bfe8b389f5f4.jpg"
+ },
+ {
+  "id": "cj-60992512",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Sun Proof Goggles",
+  "note": "4 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-60992512.webp",
+  "price": 20.99,
+  "price_max": 20.99,
+  "sizes": [],
+  "colors": [
+   "Black",
+   "Blue",
+   "Golden",
+   "Pink"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "07",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/e037b668-e779-4432-9866-879726918034.jpg"
+ },
+ {
+  "id": "cj-96E2E610",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Waterproof Windproof Sunscreen Sunglasses",
+  "note": "One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-96E2E610.webp?v=2",
+  "price": 23.99,
+  "price_max": 23.99,
+  "sizes": [],
+  "colors": [
+   "Black"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "16",
+  "img_src": "https://cf.cjdropshipping.com/20190529/103610677528.png"
+ },
+ {
+  "id": "cj-27989760",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Helmet Headwear Hat",
+  "note": "2 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-27989760.webp",
+  "price": 47.99,
+  "price_max": 47.99,
+  "sizes": [
+   "L"
+  ],
+  "colors": [
+   "Black",
+   "White"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "07",
+  "img_src": "https://cf.cjdropshipping.com/dd38f8bd-1aaf-4486-b9a2-df9ed86e3f7e.jpg"
+ },
+ {
+  "id": "cj-65744128",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Ski Wind Protection Goggles · Black Frame Red Film",
+  "note": "21 colors · S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-65744128.webp",
+  "price": 26.99,
+  "price_max": 41.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Black Frame Red Film",
+   "Black Frame Grey Film",
+   "Black Frame Blue Film",
+   "Black Frame Transparent",
+   "Black Frame Silver Film",
+   "Red Frame Red Film",
+   "Red Frame Gray Film",
+   "Red Frame Transparent",
+   "Blue Frame Gray Film",
+   "Blue Frame Blue Film",
+   "Transparent Blue Frame",
+   "Red Tablets",
+   "Grey Flakes",
+   "Blue Chip",
+   "Transparent",
+   "Silver Sheet",
+   "Pink Frame Blue Film",
+   "Red Frame Blue Film",
+   "Pink Frame With Red Piece",
+   "Orange Framed Red Slices",
+   "Black Frame Gray Lenses"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/d0de6943-48a2-4a49-b1ff-1c75e8a5a3e2.jpg"
+ },
+ {
+  "id": "cj-19994624",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Law Fighting Strange Goggles",
+  "note": "2 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-19994624.webp",
+  "price": 22.99,
+  "price_max": 22.99,
+  "sizes": [],
+  "colors": [
+   "Black",
+   "Transparent"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/1620726654541.jpg"
+ },
+ {
+  "id": "cj-2D4D794C",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Waterproof Snow Proof Sunglasses",
+  "note": "2 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-2D4D794C.webp",
+  "price": 41.99,
+  "price_max": 41.99,
+  "sizes": [],
+  "colors": [
+   "Black",
+   "White"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/20200707/766475630214.png"
+ },
+ {
+  "id": "cj-91242752",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Protective Goggles",
+  "note": "3 colors · 1PC–3PCS",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-91242752.webp",
+  "price": 28.99,
+  "price_max": 47.99,
+  "sizes": [
+   "1PC",
+   "2PCS",
+   "3PCS"
+  ],
+  "colors": [
+   "Red",
+   "Black",
+   "Pink"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "14",
+  "img_src": "https://cf.cjdropshipping.com/6c8956e6-8900-418e-b6f1-4885c1c2d282.jpg"
+ },
+ {
+  "id": "cj-FDE29DB9",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Colorful Amazon Sunglasses",
+  "note": "4 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-FDE29DB9.webp",
+  "price": 20.99,
+  "price_max": 20.99,
+  "sizes": [],
+  "colors": [
+   "Blue",
+   "Black",
+   "Dazzle",
+   "Silvery"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/15589728/6116251407376.jpg"
+ },
+ {
+  "id": "cj-6E533712",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Ink Sunglasses",
+  "note": "4 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-6E533712.webp",
+  "price": 37.99,
+  "price_max": 41.99,
+  "sizes": [],
+  "colors": [
+   "Blue",
+   "Small Black",
+   "White",
+   "Black"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "07",
+  "img_src": "https://cf.cjdropshipping.com/20200528/11966412902663.jpg"
+ },
+ {
+  "id": "cj-24789760",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Full Package Eye Sunglasses",
+  "note": "5 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-24789760.webp?v=2",
+  "price": 30.99,
+  "price_max": 55.99,
+  "sizes": [
+   "L"
+  ],
+  "colors": [
+   "Black Rimmed Eye Shades",
+   "Clear Goggles With Black Frame",
+   "Clear Goggles With White Frame",
+   "Black",
+   "Transparency"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "07",
+  "img_src": "https://cf.cjdropshipping.com/00c312a9-cc44-415a-b78b-a41da823a4a9.jpg"
+ },
+ {
+  "id": "cj-59707904",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Skiing Goggles",
+  "note": "31 colors · S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-59707904.webp",
+  "price": 64.99,
+  "price_max": 64.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Black Framed Red Film",
+   "Black Framed Gray Film",
+   "Black Framed Blue Film",
+   "Black Frame Transparent",
+   "Black Framed Silver Film",
+   "Red Framed Red Film",
+   "Red Framed Grey Film",
+   "Red Framed Transparent",
+   "Blue Framed Gray Film",
+   "Blue Framed Blue Film",
+   "Blue Framed Transparent",
+   "Pink Framed Red Film",
+   "Pink Framed Grey Film",
+   "Pink Framed Blue Film",
+   "Pink Framed Transparent",
+   "Pink Framed Silver Film",
+   "Orange Framed Red Film",
+   "Orange Framed Gray Film",
+   "Orange Framed Blue Film",
+   "Orange Framed Transparent",
+   "Orange Framed Silver Film",
+   "Army Green Framed Red Film",
+   "Army Green Framed Gray Film",
+   "Army Green Framed Blue Film",
+   "Army Green Framed Transparent",
+   "Army Green Framed Silver Film",
+   "Khaki Framed Red Film",
+   "Khaki Framed Gray Film",
+   "Khaki Framed Blue Film",
+   "Khaki Framed Transparent",
+   "Khaki Framed Silver Film"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "00",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2023/12/19/02/7d9811ab-d260-476e-8670-f724bdf8125b.jpg"
+ },
+ {
+  "id": "cj-94233088",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Sun Sunshade Headdress Goggles",
+  "note": "2 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-94233088.webp",
+  "price": 20.99,
+  "price_max": 20.99,
+  "sizes": [],
+  "colors": [
+   "Black",
+   "Black And White"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/b0ee7f59-51b9-46eb-a538-ade3dc1141a3.jpg"
+ },
+ {
+  "id": "cj-08727296",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Fashionable Ski Sunglasses",
+  "note": "11 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-08727296.webp",
+  "price": 45.99,
+  "price_max": 46.99,
+  "sizes": [],
+  "colors": [
+   "Black Framed Red Film",
+   "Black Frame And Grey Patch",
+   "Black Frame Blue Chip",
+   "Black Box Transparent",
+   "Black Framed Silver Slice",
+   "Red Box And Red Film",
+   "Red Boxed Grey Patch",
+   "Red Box Transparent",
+   "Blue Frame Grey Patch",
+   "Blue Frame And Blue Chip",
+   "Blue Frame Transparent"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "04",
+  "img_src": "https://cf.cjdropshipping.com/307eed01-be58-4e45-bf6e-2b8e633af9de.jpg"
+ },
+ {
+  "id": "cj-01623900",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Protection Outdoor Sun Goggles",
+  "note": "16 colors · S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-01623900.webp",
+  "price": 20.99,
+  "price_max": 20.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "White Frame Red Lens",
+   "Pink Frame Red Lens",
+   "Black Frame Red Lens",
+   "Green Frame Red Lens",
+   "White Frame Silver Lens",
+   "Pink Frame Silver Lens",
+   "Black Frame Silver Lens",
+   "Green Frame Silver Lens",
+   "White Frame Transparent Lens",
+   "Pink Frame Transparent Mirror",
+   "Black Frame Transparent Lens",
+   "Green Frame Transparent Lens",
+   "White Frame Gray Lens",
+   "Pink Frame Gray Lens",
+   "Black Frame Gray Lens",
+   "Green Frame Gray Lens"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "00",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/495712a7-3b01-4bb4-a44f-638d27f77222.jpg"
+ },
+ {
+  "id": "cj-87622912",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Protection Windproof Goggles",
+  "note": "40 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-87622912.webp",
+  "price": 43.99,
+  "price_max": 43.99,
+  "sizes": [],
+  "colors": [
+   "White Frame Red Film",
+   "White Frame Gray Film",
+   "White Frame Blue Lens",
+   "White Frame Transparent",
+   "White Frame Silver Strip",
+   "Pink Frame Red Film",
+   "Pink Frame Gray Sheet",
+   "Pink Frame Blue Lens",
+   "Pink Frame Transparent",
+   "Pink Frame Silver Strip",
+   "Black Frame Red Film",
+   "Black Frame Gray Sheet",
+   "Black Frame Blue Lens",
+   "Black Frame Transparent",
+   "Black Frame Silver Strip",
+   "Red Frame Red Film",
+   "Red Frame Gray Sheet",
+   "Red Frame Blue Lens",
+   "Red Frame Transparent",
+   "Red Frame Silver Strip",
+   "Orange Frame Red Sheet",
+   "Orange Frame Gray Sheet",
+   "Orange Frame Blue Lens",
+   "Orange Frame Transparent",
+   "Orange Frame Silver Strip",
+   "Army Green Frame Red Film",
+   "Army Green Frame Gray Sheet",
+   "Army Green Frame Blue Lens",
+   "Army Green Frame Transparent",
+   "Army Green Frame Silver Strip",
+   "Khaki Frame Red Sheet",
+   "Khaki Frame Gray Sheet",
+   "Khaki Frame Blue Lens",
+   "Khaki Frame Transparent",
+   "Khaki Frame Silver Strip",
+   "Basketball Hoop Red Sheet",
+   "Basketball Hoop Gray Sheet",
+   "Basketball Hoop Blue Lens",
+   "Basketball Hoop Transparent",
+   "Basketball Hoop Silver Strip"
+  ],
+  "tags": [
+   "glasses"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/505688c4-b9c6-416f-a312-4d57dfaf44ce.jpg"
+ },
+ {
+  "id": "cj-81605100",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Portable Automatic Retractable Leash",
+  "note": "3 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-81605100.webp?v=2",
+  "price": 36.99,
+  "price_max": 36.99,
+  "sizes": [],
+  "colors": [
+   "Blue",
+   "Black",
+   "Red"
+  ],
+  "tags": [
+   "leash"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/8adaf6a9-4502-4b17-ad86-0058d38a4458.jpg"
+ },
+ {
+  "id": "cj-52792577",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Anti Breakaway Rush Harness",
+  "note": "4 colors · M–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-52792577.webp?v=2",
+  "price": 54.99,
+  "price_max": 56.99,
+  "sizes": [
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Black",
+   "Green",
+   "Khaki",
+   "Camouflage"
+  ],
+  "tags": [
+   "harness"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/7059fa71-613d-4ed6-8a98-fa39d528b684.jpg"
+ },
+ {
+  "id": "cj-82021378",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Escape Proof Adjustable Vest",
+  "note": "6 colors · S–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-82021378.webp?v=2",
+  "price": 19.99,
+  "price_max": 19.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Navy Blue",
+   "Blue",
+   "Orange",
+   "Pink",
+   "Black",
+   "Red"
+  ],
+  "tags": [
+   "harness"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/8884cdd4-aa64-4f2e-80cd-96c197c8e8a5.jpg"
+ },
+ {
+  "id": "cj-24044289",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Breathable Adjustable Chest Harness",
+  "note": "2 colors · S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-24044289.webp?v=2",
+  "price": 39.99,
+  "price_max": 41.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Blue",
+   "Pink"
+  ],
+  "tags": [
+   "harness"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/db12aeb4-c0a7-4027-b3b9-7383c0fff5d8.jpg"
+ },
+ {
+  "id": "cj-49895682",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Cooling Mesh Reflective Jacket",
+  "note": "2 colors · S–XXXL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-49895682.webp",
+  "price": 33.99,
+  "price_max": 38.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL",
+   "XXXL"
+  ],
+  "colors": [
+   "Orange",
+   "Blue"
+  ],
+  "tags": [
+   "harness"
+  ],
+  "badge": "06",
+  "img_src": "https://cf.cjdropshipping.com/bb483b92-dd80-468c-98cf-d9d037fe4ecc.jpg"
+ },
+ {
+  "id": "cj-91627600",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Harnesses Leashes Walking Harness",
+  "note": "6 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-91627600.webp",
+  "price": 26.99,
+  "price_max": 39.99,
+  "sizes": [
+   "Set"
+  ],
+  "colors": [
+   "Brown",
+   "Pink",
+   "Blue",
+   "Green",
+   "Black",
+   "Apricot"
+  ],
+  "tags": [
+   "harness"
+  ],
+  "badge": "14",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/5450a4a8-4e9c-492a-ace0-9a0fbb9ae29b.jpg"
+ },
+ {
+  "id": "cj-69749761",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Escape Proof Adjustable Harness",
+  "note": "4 colors · S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-69749761.webp",
+  "price": 18.99,
+  "price_max": 18.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Red",
+   "Blue",
+   "Pink",
+   "Orange"
+  ],
+  "tags": [
+   "harness"
+  ],
+  "badge": "14",
+  "img_src": "https://cf.cjdropshipping.com/6d3904f4-a9d7-4588-a862-6be84aa779ed.png"
+ },
+ {
+  "id": "cj-31608700",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Tactical Harness",
+  "note": "5 colors · S–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-31608700.webp",
+  "price": 33.99,
+  "price_max": 34.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Khaki",
+   "Black",
+   "Rose Red",
+   "Camouflage Blue",
+   "Camouflage White"
+  ],
+  "tags": [
+   "harness"
+  ],
+  "badge": "06",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/7774d11b-ee15-4329-a2ae-f2c13af14fc3.jpg"
+ },
+ {
+  "id": "cj-33215488",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Spiked Studded Leather Vest",
+  "note": "3 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-33215488.webp",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [],
+  "colors": [
+   "Black",
+   "Pink",
+   "Red"
+  ],
+  "tags": [
+   "harness"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/d2e14346-ce7b-4013-b517-a305eb3f3ba1.jpg"
+ },
+ {
+  "id": "cj-51620100",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Yellow Harness",
+  "note": "4 colors · S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-51620100.webp",
+  "price": 25.99,
+  "price_max": 25.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Yellow",
+   "Pink",
+   "Beige",
+   "Black"
+  ],
+  "tags": [
+   "harness"
+  ],
+  "badge": "07",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2024/10/29/09/8b03e686-9dc1-485f-8008-9f90e4e5b6e8_trans.jpeg"
+ },
+ {
+  "id": "cj-01615900",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Black Harness",
+  "note": "6 colors · S–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-01615900.webp",
+  "price": 28.99,
+  "price_max": 29.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Black",
+   "Camouflage Color",
+   "Khaki",
+   "Army Green",
+   "Red",
+   "Blue"
+  ],
+  "tags": [
+   "harness"
+  ],
+  "badge": "14",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/dfa7f0b8-10d3-4cbc-a941-43316feda55c.jpg"
+ },
+ {
+  "id": "cj-23300098",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Cooling Ice Packs Harness",
+  "note": "S–XXL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-23300098.webp?v=2",
+  "price": 45.99,
+  "price_max": 54.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "colors": [
+   "Grey"
+  ],
+  "tags": [
+   "harness"
+  ],
+  "badge": "08",
+  "img_src": "https://cf.cjdropshipping.com/362a1ff9-f64f-4c02-98f5-b49e8a5ec65e.jpg"
+ },
+ {
+  "id": "cj-39086081",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Escape Proof Adjustable Harness · Blue",
+  "note": "6 colors · S–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-39086081.webp?v=2",
+  "price": 21.99,
+  "price_max": 21.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Blue",
+   "Coffee",
+   "Gray",
+   "Red",
+   "Rose Red",
+   "Lake Blue"
+  ],
+  "tags": [
+   "harness"
+  ],
+  "badge": "07",
+  "img_src": "https://cf.cjdropshipping.com/ab1b9b94-2b62-4752-a121-3e6dfa57eb0c.jpg"
+ },
+ {
+  "id": "cj-01630300",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Multi Functional Minimalist Harness",
+  "note": "6 colors · XS–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-01630300.webp",
+  "price": 40.99,
+  "price_max": 50.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Light Green",
+   "Sapphire Blue",
+   "Black",
+   "Watermelon Red",
+   "Orange",
+   "Yellow Green"
+  ],
+  "tags": [
+   "harness"
+  ],
+  "badge": "09",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2026/01/28/09/ace5a1a4-aa75-4d9a-b41a-69ee6bbc199e_fine.jpeg"
+ },
+ {
+  "id": "cj-21629300",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Hand Holding Rope Leash",
+  "note": "6 colors · XS–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-21629300.webp",
+  "price": 23.99,
+  "price_max": 26.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Blue",
+   "Black",
+   "Red",
+   "Orange",
+   "Fluorescent Green",
+   "Pink"
+  ],
+  "tags": [
+   "harness"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/quick/product/755b2f3a-9760-4764-8e87-8dad447e79c8.jpg"
+ },
+ {
+  "id": "cj-41632600",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Professional Life Saving Vest",
+  "note": "10 colors · XS–M",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-41632600.webp",
+  "price": 42.99,
+  "price_max": 49.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M"
+  ],
+  "colors": [
+   "Blue",
+   "Blue Camouflage",
+   "Fluorescent Green",
+   "Orange Flowers",
+   "Pink",
+   "Pink Camouflage",
+   "Purple",
+   "Red",
+   "Sailboat",
+   "Yellow"
+  ],
+  "tags": [
+   "harness"
+  ],
+  "badge": "00",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2026/07/10/07/07c4335a-86a3-4788-bb7e-0c5f21df9395.jpg"
+ },
+ {
+  "id": "cj-92809729",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Adjustable Comfortable Walking Harness",
+  "note": "One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-92809729.webp",
+  "price": 29.99,
+  "price_max": 29.99,
+  "sizes": [
+   "XL"
+  ],
+  "colors": [
+   "Orange"
+  ],
+  "tags": [
+   "harness"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/967b611d-891b-4cd8-b103-e59f90b63870.jpg"
+ },
+ {
+  "id": "cj-84329985",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Elevated Tilted Food Feeder",
+  "note": "One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-84329985.webp?v=2",
+  "price": 45.99,
+  "price_max": 45.99,
+  "sizes": [],
+  "colors": [
+   "Grey"
+  ],
+  "tags": [
+   "bowl"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/27dea08f-b50e-4d8e-b021-9621bf8b5958.jpg"
+ },
+ {
+  "id": "cj-89892609",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Stainless Steel Bowls Bowl",
+  "note": "One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-89892609.webp",
+  "price": 28.99,
+  "price_max": 28.99,
+  "sizes": [],
+  "colors": [
+   "Silver"
+  ],
+  "tags": [
+   "bowl"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/a4dc73cc-db90-43a0-a158-225086204ae8.jpg"
+ },
+ {
+  "id": "cj-71611400",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Customized Double Layer Bowl",
+  "note": "8 colors · 14cm–18cm",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-71611400.webp",
+  "price": 37.99,
+  "price_max": 40.99,
+  "sizes": [
+   "14cm",
+   "16cm",
+   "18cm"
+  ],
+  "colors": [
+   "Pink",
+   "Mint Green",
+   "Sky Blue",
+   "Navy Blue",
+   "Grey",
+   "Orange",
+   "Red",
+   "Purple"
+  ],
+  "tags": [
+   "bowl"
+  ],
+  "badge": "16",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2026/08/15/02/117e48ed-25e8-4ca1-9380-faf8553a32d4.jpg"
+ },
+ {
+  "id": "cj-55475457",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Slow Stainless Steel Bowl",
+  "note": "3 colors · One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-55475457.webp?v=2",
+  "price": 48.99,
+  "price_max": 48.99,
+  "sizes": [],
+  "colors": [
+   "Green",
+   "Coffee",
+   "Beige"
+  ],
+  "tags": [
+   "bowl"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/a8ddda26-cd6b-4443-9468-352aa9d8e821.jpg"
+ },
+ {
+  "id": "cj-51614200",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Silicone Slow Feeding Blanket",
+  "note": "5 colors · One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-51614200.webp",
+  "price": 29.99,
+  "price_max": 29.99,
+  "sizes": [],
+  "colors": [
+   "Fluorescent Pink",
+   "Ginger Yellow",
+   "Gray",
+   "Green",
+   "Pink"
+  ],
+  "tags": [
+   "bowl"
+  ],
+  "badge": "08",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2026/10/23/06/128e0d5c-fb44-40cc-9b5c-8d81ef432a21_water.jpeg"
+ },
+ {
+  "id": "cj-93001730",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Enrichment Lick Stuffable Toy",
+  "note": "3 colors · One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-93001730.webp?v=2",
+  "price": 31.99,
+  "price_max": 31.99,
+  "sizes": [],
+  "colors": [
+   "Blue",
+   "Green",
+   "Pink"
+  ],
+  "tags": [
+   "bowl"
+  ],
+  "badge": "12",
+  "img_src": "https://cf.cjdropshipping.com/528960c0-ca42-4dce-859f-1bea35cd6459.jpg"
+ },
+ {
+  "id": "cj-16750082",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Wifi Smart App Feeder",
+  "note": "2 colors · One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-16750082.webp?v=2",
+  "price": 78.99,
+  "price_max": 87.99,
+  "sizes": [],
+  "colors": [
+   "Push Button Style",
+   "Doodle Smart App Version"
+  ],
+  "tags": [
+   "bowl"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/57d28b6b-da4a-4cde-b14c-a20d531f2548.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-38569729",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Elevated Bowls Raised Bowl Stand",
+  "note": "One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-38569729.webp?v=2",
+  "price": 77.99,
+  "price_max": 77.99,
+  "sizes": [],
+  "colors": [
+   "Black"
+  ],
+  "tags": [
+   "bowl"
+  ],
+  "badge": "09",
+  "img_src": "https://cf.cjdropshipping.com/a0345f58-a462-4da0-b092-7e231f3eaf88.jpg"
+ },
+ {
+  "id": "cj-01606200",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Wooden Riser Adjustable Bowl Stand",
+  "note": "4 colors · One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-01606200.webp",
+  "price": 63.99,
+  "price_max": 74.99,
+  "sizes": [],
+  "colors": [
+   "X X Cm",
+   "X X Cm",
+   "X X Cm",
+   "Trapezoid"
+  ],
+  "tags": [
+   "bowl"
+  ],
+  "badge": "07",
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2026/09/04/03/d4ab583a-beac-4883-a571-0a3f55abbec5_water.jpeg"
+ },
+ {
+  "id": "cj-08825089",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Slow Licking Anti Bowl",
+  "note": "8 colors · One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-08825089.webp?v=2",
+  "price": 38.99,
+  "price_max": 39.99,
+  "sizes": [],
+  "colors": [
+   "A Generation Of Blue",
+   "A Generation Of Blackness",
+   "A Generation Of Grays",
+   "Generation Of Yellow",
+   "The Third Generation Of Blue C",
+   "Three Generations Of Black Col",
+   "Thirdgeneration Red And Pink",
+   "The Third Generation Of Blueg"
+  ],
+  "tags": [
+   "bowl"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/1fac6a24-814f-4f68-b81b-5808cd99269a.jpg",
+  "badge": "04"
+ },
+ {
+  "id": "cj-11637400",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Fun Assemble Track Bed",
+  "note": "One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-11637400.webp?v=2",
+  "price": 37.99,
+  "price_max": 37.99,
+  "sizes": [],
+  "colors": [
+   "White"
+  ],
+  "tags": [
+   "bed"
+  ],
+  "img_src": "https://oss-cf.cjdropshipping.com/product/2026/10/09/00/6e41c47b-6128-4148-b0ce-31f5c8e5468a_trans.jpeg",
+  "badge": "14"
+ },
+ {
+  "id": "cj-F82E0983",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Warm Blanket",
+  "note": "5 colors · 100x70–70x60",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-F82E0983.webp",
+  "price": 30.99,
+  "price_max": 32.99,
+  "sizes": [
+   "100x70",
+   "70x60"
+  ],
+  "colors": [
+   "Blue",
+   "Grey",
+   "Wine Red",
+   "Coffee",
+   "White"
+  ],
+  "tags": [
+   "blanket"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/2045/2104338226730.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-22074112",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Winter Fall Thicken Blanket",
+  "note": "7 colors · One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-22074112.webp",
+  "price": 38.99,
+  "price_max": 40.99,
+  "sizes": [],
+  "colors": [
+   "White",
+   "Green Giraffe",
+   "Green",
+   "Red",
+   "Yellow",
+   "Blue Lucky Cat",
+   "Blue"
+  ],
+  "tags": [
+   "blanket"
+  ],
+  "badge": "07",
+  "img_src": "https://cf.cjdropshipping.com/1621063883571.jpg"
+ },
+ {
+  "id": "cj-95274752",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Blankets Sleep Blanket",
+  "note": "3 colors · S–M",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-95274752.webp",
+  "price": 56.99,
+  "price_max": 60.99,
+  "sizes": [
+   "S",
+   "M"
+  ],
+  "colors": [
+   "Blue",
+   "Red",
+   "Green"
+  ],
+  "tags": [
+   "blanket"
+  ],
+  "badge": "10",
+  "img_src": "https://cf.cjdropshipping.com/1620635413079.png"
+ },
+ {
+  "id": "cj-BF29B3ED",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Flannel Deep Sleeping Blanket",
+  "note": "One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-BF29B3ED.webp",
+  "price": 37.99,
+  "price_max": 37.99,
+  "sizes": [],
+  "colors": [
+   "Grey"
+  ],
+  "tags": [
+   "blanket"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/20200314/569143074264.png",
+  "badge": "08"
+ },
+ {
+  "id": "cj-68520960",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Fluffy Soft Flannel Blanket",
+  "note": "4 colors · One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-68520960.webp",
+  "price": 42.99,
+  "price_max": 54.99,
+  "sizes": [
+   "75x100"
+  ],
+  "colors": [
+   "Gray",
+   "Camel",
+   "Navy Blue",
+   "Coffee"
+  ],
+  "tags": [
+   "blanket"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/635f5388-9dfc-4971-a4ed-82f1bfb39f8b.jpg",
+  "badge": "09"
+ },
+ {
+  "id": "cj-12511234",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Winter Plush Thick Quilt",
+  "note": "3 colors · S–L",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-12511234.webp?v=2",
+  "price": 58.99,
+  "price_max": 72.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Gray",
+   "Coffee",
+   "Khaki"
+  ],
+  "tags": [
+   "blanket"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/70622c89-4653-4955-9bc5-1a5ebe4dfedc.jpg",
+  "badge": "07"
+ },
+ {
+  "id": "cj-36FE1062",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Farley Blanket",
+  "note": "One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-36FE1062.webp",
+  "price": 23.99,
+  "price_max": 23.99,
+  "sizes": [],
+  "colors": [
+   "Beige"
+  ],
+  "tags": [
+   "blanket"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/2055/957191058999.jpg",
+  "badge": "10"
+ },
+ {
+  "id": "cj-F12CFBA3",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Hole Blanket",
+  "note": "2 colors · One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-F12CFBA3.webp",
+  "price": 58.99,
+  "price_max": 58.99,
+  "sizes": [
+   "Square"
+  ],
+  "colors": [
+   "Blue",
+   "Grey"
+  ],
+  "tags": [
+   "blanket"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/20200623/945822070921.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-8EFA33AD",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Pure Cotton Blanket",
+  "note": "3 colors · One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-8EFA33AD.webp",
+  "price": 25.99,
+  "price_max": 25.99,
+  "sizes": [],
+  "colors": [
+   "Green",
+   "Coffee",
+   "Beige"
+  ],
+  "tags": [
+   "blanket"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/2043/549999761059.jpg",
+  "badge": "10"
+ },
+ {
+  "id": "cj-31610200",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Waterproof Shu Cotton Blanket",
+  "note": "6 colors · One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-31610200.webp",
+  "price": 58.99,
+  "price_max": 77.99,
+  "sizes": [],
+  "colors": [
+   "Blue Sky And White Clouds",
+   "White Brown Plaid",
+   "White Purple Plaid",
+   "Light Green Sunflower",
+   "Blue Wave",
+   "Red Waves"
+  ],
+  "tags": [
+   "blanket"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/ec229654-700d-449f-81fa-e93d8284e15d.jpg",
+  "badge": "10"
+ },
+ {
+  "id": "cj-65140736",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Lamb Wool Warm Blanket",
+  "note": "S–XL",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-65140736.webp",
+  "price": 41.99,
+  "price_max": 58.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Navy Blue"
+  ],
+  "tags": [
+   "blanket"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/3534c66c-ec24-4c58-a03f-5622826435fe.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-26142976",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Winter Thick Lamb Cushion",
+  "note": "3 colors · S–L",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-26142976.webp",
+  "price": 35.99,
+  "price_max": 42.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Gray",
+   "Pink",
+   "Blue"
+  ],
+  "tags": [
+   "blanket"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/66db25d4-ba31-4394-860c-df5d2694a7f2.jpeg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-47008256",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Sleeping Companion Sansheng Blanket",
+  "note": "3 colors · One size",
+  "color": "#ff3d7f",
+  "img": "img/cj/cj-47008256.webp",
+  "price": 36.99,
+  "price_max": 36.99,
+  "sizes": [],
+  "colors": [
+   "Sansheng Meow Pillow",
+   "Brown Cat Pillow",
+   "Tiger Meow Pillow"
+  ],
+  "tags": [
+   "blanket"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/1eb816fc-ac94-4477-b6c3-0e1b36765e4a.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-51625100",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Lightweight Chest Mounted Carrier",
+  "note": "2 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-51625100.webp",
+  "price": 56.99,
+  "price_max": 56.99,
+  "sizes": [],
+  "colors": [
+   "Black",
+   "Beige"
+  ],
+  "tags": [
+   "carrier"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/28897591-91c3-4f19-b81e-86ee447aedae.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-01629600",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Travel Carrier",
+  "note": "4 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-01629600.webp",
+  "price": 64.99,
+  "price_max": 64.99,
+  "sizes": [],
+  "colors": [
+   "Beige",
+   "Black",
+   "Dark Gray",
+   "Pink"
+  ],
+  "tags": [
+   "carrier"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/f33a7f9c-f964-43c1-8c43-e23b660faf70.jpg",
+  "badge": "14"
+ },
+ {
+  "id": "cj-11617600",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Outdoor Travel Portable Carrier",
+  "note": "6 colors · S–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-11617600.webp",
+  "price": 68.99,
+  "price_max": 71.99,
+  "sizes": [
+   "S",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Black",
+   "Gray",
+   "Pink",
+   "Blue",
+   "Purple",
+   "Green"
+  ],
+  "tags": [
+   "carrier"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/438df74e-d82b-47c8-9a6e-cf4a71edbf84.jpg",
+  "badge": "07"
+ },
+ {
+  "id": "cj-49885442",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Carriers Tsa Airline Carrier",
+  "note": "6 colors · S–XL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-49885442.webp",
+  "price": 73.99,
+  "price_max": 77.99,
+  "sizes": [
+   "S",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Black",
+   "Grey",
+   "Pink",
+   "Blue",
+   "Purple",
+   "Green"
+  ],
+  "tags": [
+   "carrier"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/3ef5b6c4-6f5b-4370-8b54-697fd4b7a5b7.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-72025602",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Soft Sided Carriers Carrier",
+  "note": "5 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-72025602.webp",
+  "price": 77.99,
+  "price_max": 77.99,
+  "sizes": [],
+  "colors": [
+   "Grey",
+   "Pink",
+   "Black",
+   "Blue",
+   "Beige"
+  ],
+  "tags": [
+   "carrier"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/cdface91-58eb-4b5f-8fd8-be50369909ac.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-99101697",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Hands Free Purse Leash",
+  "note": "S–L",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-99101697.webp?v=2",
+  "price": 26.99,
+  "price_max": 27.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Beige"
+  ],
+  "tags": [
+   "carrier"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/cc88bee0-8d4e-4b08-a9ac-41053bc87214.jpg",
+  "badge": "08"
+ },
+ {
+  "id": "cj-71606800",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Portable Shoulder Straps Carrier",
+  "note": "8 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-71606800.webp",
+  "price": 78.99,
+  "price_max": 81.99,
+  "sizes": [],
+  "colors": [
+   "Green",
+   "Brown",
+   "Black",
+   "Gray",
+   "White And Green",
+   "White And Purple",
+   "White Blue Stitching Color",
+   "White With Orange"
+  ],
+  "tags": [
+   "carrier"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/4c440026-2a1f-48ac-b8ab-4062843d3e7b.jpg",
+  "badge": "04"
+ },
+ {
+  "id": "cj-81623200",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Handheld Fashionable Single Carrier",
+  "note": "3 colors · One size",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-81623200.webp?v=2",
+  "price": 44.99,
+  "price_max": 44.99,
+  "sizes": [],
+  "colors": [
+   "Ivory White",
+   "Pink",
+   "Gray"
+  ],
+  "tags": [
+   "carrier"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/quick/product/f0c2e22c-eca6-460a-b7d3-06d9f8b18083.jpg",
+  "badge": "09"
+ },
+ {
+  "id": "cj-11185154",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Bear Front Hands Carrier",
+  "note": "S–XXL",
+  "color": "#0cc0df",
+  "img": "img/cj/cj-11185154.webp",
+  "price": 32.99,
+  "price_max": 38.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XXL"
+  ],
+  "colors": [
+   "Beige"
+  ],
+  "tags": [
+   "carrier"
+  ],
+  "img_src": "https://cf.cjdropshipping.com/70b958f0-600c-451b-a45e-5450c175c9c8.jpg",
+  "badge": "12"
  }
 ]

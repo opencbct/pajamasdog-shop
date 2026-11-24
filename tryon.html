@@ -165,6 +165,14 @@ $('love').addEventListener('click', async e => {
 // Share the branded picture (phone share sheet), or save it on computers.
 $('share').addEventListener('click', async () => {
   const p = outfits[idx], r = cache[p.id+'|'+pose]; if(!r) return;
+  // Inside the PajamasDog app (Capacitor): save the picture, then open the phone's share sheet.
+  const C = window.Capacitor;
+  if(C && C.isNativePlatform && C.isNativePlatform() && C.Plugins.Filesystem && C.Plugins.Share){
+    try {
+      const f = await C.Plugins.Filesystem.writeFile({path:'my-pajamasdog.jpg', data:r.url.split(',')[1], directory:'CACHE'});
+      return await C.Plugins.Share.share({title:'My pet in PajamasDog', text:'Try it on your pet at pajamasdog.com', url:'https://pajamasdog.com', files:[f.uri]});
+    } catch(e){ if(/cancel/i.test(e.message||'')) return; }
+  }
   const blob = await (await fetch(r.url)).blob();
   const file = new File([blob], 'my-pajamasdog.jpg', {type:'image/jpeg'});
   const data = {files:[file], title:'My pet in PajamasDog', text:'Try it on your pet at pajamasdog.com'};

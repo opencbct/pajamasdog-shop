@@ -52,7 +52,7 @@ export const handler = async (event) => {
   const pose = POSE[req.pose] ? req.pose : 'sit';
 
   // product photo as a data URI (our own site image)
-  const pr = await fetch(`${SITE}/${p.img.replace(/^\//, '').split('?')[0]}`);
+  const pr = await fetch(/^https?:/.test(p.img) ? p.img : `${SITE}/${p.img.replace(/^\//, '').split('?')[0]}`);
   if (!pr.ok) return json(502, { error: 'Product photo missing' });
   const ptype = (pr.headers.get('content-type') || 'image/webp').split(';')[0];
   const outfit = `data:${ptype};base64,${Buffer.from(await pr.arrayBuffer()).toString('base64')}`;

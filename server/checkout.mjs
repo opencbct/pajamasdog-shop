@@ -24,10 +24,13 @@ async function createCheckout(req) {
     const qty = Math.max(1, Math.min(5, parseInt(it.qty) || 1));
     // CJ variant = color (by index in p.colors) + size. Refuse when we can't map it, so we never charge for something we can't ship.
     const color = p.colors?.[parseInt(it.c) || 0] || '';
-    const vkey = p.variants ? Object.keys(p.variants).find(k => k.startsWith(color + '-') && k.split('-').includes(size)) : '';
-    if (p.variants && (!size || !vkey)) return json(400, { error: `Please pick a size for ${p.name}` });
+    const oneSize = !(p.sizes && p.sizes.length);
+    const vkey = !p.variants ? '' : oneSize ? (p.variants[color] ? color : Object.keys(p.variants).find(k => k === color || k.startsWith(color + '-')))
+                                          : Object.keys(p.variants).find(k => k.startsWith(color + '-') && k.split('-').includes(size));
+    if (p.variants && ((!oneSize && !size) || !vkey)) return json(400, { error: `Please pick a size for ${p.name}` });
+    const unit = (p.vprice && vkey && p.vprice[vkey]) || p.price;   // bigger sizes can cost more
     form.append(`line_items[${n}][price_data][currency]`, CATALOG.currency);
-    form.append(`line_items[${n}][price_data][unit_amount]`, String(p.price));
+    form.append(`line_items[${n}][price_data][unit_amount]`, String(unit));
     form.append(`line_items[${n}][price_data][product_data][name]`, p.name + (size ? ` · ${size}` : ''));
     form.append(`line_items[${n}][quantity]`, String(qty));
     form.append(`metadata[item_${n}]`, `${it.id}|${size}|${qty}|${vkey || ''}`);

@@ -46,7 +46,7 @@
 <main id="main" class="two"></main>
 <footer>PajamasDog links to partner shops and may earn a commission on purchases, at no extra cost to you. As an Amazon Associate we earn from qualifying purchases. Orders, shipping and returns are handled by each shop; for items sold by PajamasDog see <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>. <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
 <script src="shop.js"></script>
-<script src="sizes_data.js?v=1"></script>
+<script src="sizes_data.js?v=2"></script>
 <script src="sizefinder.js?v=1"></script>
 <script>
 (async () => {
@@ -67,9 +67,9 @@
     <div class="info">
       <h1>${p.name}</h1>
       <p>${p.note||''}</p>
-      ${p.src==='pd' ? `<div class="price">$${p.price.toFixed(2)} <small>Free US shipping · 7–12 days</small></div>
+      ${p.src==='pd' ? `<div class="price">${p.price_max>p.price?'<small style="margin:0 4px 0 0">from</small>':''}$${p.price.toFixed(2)} <small>Free US shipping · 7–12 days</small></div>
       ${(p.colors||[]).length>1 ? `<div class="lbl2">Color</div><div class="sizes cols">${p.colors.map((c,i)=>`<button class="chip${i===ci0?' on':''}" data-c="${i}">${c}</button>`).join('')}</div>` : ''}
-      <div class="lbl2">Size</div><div class="sizes szs"></div>${sizeFinderHTML()}` : ''}
+      ${(p.sizes||[]).length ? `<div class="lbl2">Size</div><div class="sizes szs"></div>${p.cat==='pajamas' ? sizeFinderHTML() : ''}` : ''}` : ''}
       <div class="ship">${p.src==='pd' ? 'Sold by PajamasDog. All sales final — <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>.' : live ? `Sold, shipped and returned by ${shop}.` : 'Coming soon.'}${p.look && !look && !tried ? ' Photo shows a similar style.' : ''}</div>
       <div class="acts">
         ${p.src==='pd' ? `<button class="btn" id="buy">${CHECKOUT_API ? 'Buy now' : 'Checkout opens soon'}</button>`
@@ -85,14 +85,15 @@
     const st = inStock(p, colorIdx());
     if(!st.includes(size)) size = '';
     box.innerHTML = (p.sizes||[]).map(z => `<button class="chip${z===size?' on':''}"${st.includes(z)?'':' disabled title="Sold out in this color"'} data-z="${z}">${z}</button>`).join('');
-    main.querySelector('#buy') && (main.querySelector('#buy').textContent = !CHECKOUT_API ? 'Checkout opens soon' : size ? `Buy now · ${size}` : 'Pick a size');
+    const one = !(p.sizes||[]).length;
+    main.querySelector('#buy') && (main.querySelector('#buy').textContent = !CHECKOUT_API ? 'Checkout opens soon' : one ? 'Buy now' : size ? `Buy now · ${size}` : 'Pick a size');
   };
   drawSizes();
   main.querySelector('.cols')?.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return;
     main.querySelectorAll('.cols .chip').forEach(c => c.classList.toggle('on', c===b)); drawSizes(); });
   main.querySelector('.szs')?.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b || b.disabled) return; size = b.dataset.z; drawSizes(); });
   bindSizeFinder(main, () => p, colorIdx, z => { size = z; drawSizes(); });
-  main.querySelector('#buy')?.addEventListener('click', () => { if(!size){ main.querySelector('.sf')?.setAttribute('open',''); main.querySelector('.szs')?.scrollIntoView({block:'center', behavior:'smooth'}); return; } payDirect([{id:p.id, size, c:colorIdx()}]); });
+  main.querySelector('#buy')?.addEventListener('click', () => { if(!size && (p.sizes||[]).length){ main.querySelector('.sf')?.setAttribute('open',''); main.querySelector('.szs')?.scrollIntoView({block:'center', behavior:'smooth'}); return; } payDirect([{id:p.id, size, c:colorIdx()}]); });
 })();
 </script>
 </body>
