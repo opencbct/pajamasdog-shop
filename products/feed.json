@@ -535,6 +535,90 @@
   ]
  },
  {
+  "id": "a-B0BWMYYHRQ",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0BWMYYHRQ",
+  "name": "BITE ME yubu sushi toy set",
+  "note": "Korean design · K-food",
+  "color": "#e8b96a",
+  "img": "img/p/plush_toy.webp",
+  "look": true,
+  "tags": [
+   "toy"
+  ]
+ },
+ {
+  "id": "a-B0BWF73X4S",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0BWF73X4S",
+  "name": "BITE ME K-BBQ meat sniff toy",
+  "note": "Korean design · nose work",
+  "color": "#b5523a",
+  "img": "img/p/rope_toy.webp",
+  "look": true,
+  "tags": [
+   "toy"
+  ]
+ },
+ {
+  "id": "a-B0BX3TV549",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0BX3TV549",
+  "name": "BITE ME pak choi squeaky toy",
+  "note": "Korean design · crinkly",
+  "color": "#7bbf6a",
+  "img": "img/p/ball_toy.webp",
+  "look": true,
+  "tags": [
+   "toy"
+  ]
+ },
+ {
+  "id": "a-B0BWMZPG1C",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0BWMZPG1C",
+  "name": "BITE ME cheeseburger sniff toy",
+  "note": "Korean design · hide-and-seek",
+  "color": "#e8a23a",
+  "img": "img/p/rope_toys.webp",
+  "look": true,
+  "tags": [
+   "toy"
+  ]
+ },
+ {
+  "id": "a-B0BX379X7N",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B0BX379X7N",
+  "name": "BITE ME croissant sniff toy",
+  "note": "Korean design · crinkly",
+  "color": "#d9a35e",
+  "img": "img/p/plush_toy.webp",
+  "look": true,
+  "tags": [
+   "toy"
+  ]
+ },
+ {
+  "id": "a-B09CSSFXRM",
+  "src": "amazon",
+  "cat": "acc",
+  "asin": "B09CSSFXRM",
+  "name": "BITE ME roll cake sniff mat",
+  "note": "Korean design · nose work mat",
+  "color": "#f3d9b1",
+  "img": "img/p/ball_toy.webp",
+  "look": true,
+  "tags": [
+   "toy"
+  ]
+ },
+ {
   "id": "a-olchi-store",
   "src": "amazon",
   "cat": "pajamas",
