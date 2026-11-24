@@ -460,8 +460,7 @@
   "name": "Howlpot ramen cup sniff toy",
   "note": "Korean design · hide-and-seek",
   "color": "#e8a23a",
-  "img": "img/p/plush_toy.webp",
-  "look": true,
+  "img": "img/toys/toy_ramen.webp",
   "tags": [
    "toy"
   ]
@@ -474,8 +473,7 @@
   "name": "Howlpot gimbap squeaky toy",
   "note": "Korean design · K-food",
   "color": "#2f6b46",
-  "img": "img/p/rope_toys.webp",
-  "look": true,
+  "img": "img/toys/toy_gimbap.webp",
   "tags": [
    "toy"
   ]
@@ -488,8 +486,7 @@
   "name": "Howlpot hopang bun sniff toy",
   "note": "Korean design · K-dessert",
   "color": "#f3d9b1",
-  "img": "img/p/ball_toy.webp",
-  "look": true,
+  "img": "img/toys/toy_hopang.webp",
   "tags": [
    "toy"
   ]
@@ -502,8 +499,7 @@
   "name": "Howlpot half onion sniff toy",
   "note": "Korean design · nose work",
   "color": "#c9a6d9",
-  "img": "img/p/rope_toy.webp",
-  "look": true,
+  "img": "img/toys/toy_onion.webp",
   "tags": [
    "toy"
   ]
@@ -518,7 +514,8 @@
   "color": "#b5835a",
   "tags": [
    "carrier"
-  ]
+  ],
+  "img": "img/toys/toy_carrier.webp"
  },
  {
   "id": "a-B07L8W5HS3",
@@ -542,8 +539,7 @@
   "name": "BITE ME yubu sushi toy set",
   "note": "Korean design · K-food",
   "color": "#e8b96a",
-  "img": "img/p/plush_toy.webp",
-  "look": true,
+  "img": "img/toys/toy_yubu.webp",
   "tags": [
    "toy"
   ]
@@ -556,8 +552,7 @@
   "name": "BITE ME K-BBQ meat sniff toy",
   "note": "Korean design · nose work",
   "color": "#b5523a",
-  "img": "img/p/rope_toy.webp",
-  "look": true,
+  "img": "img/toys/toy_bbq.webp",
   "tags": [
    "toy"
   ]
@@ -570,8 +565,7 @@
   "name": "BITE ME pak choi squeaky toy",
   "note": "Korean design · crinkly",
   "color": "#7bbf6a",
-  "img": "img/p/ball_toy.webp",
-  "look": true,
+  "img": "img/toys/toy_pakchoi.webp",
   "tags": [
    "toy"
   ]
@@ -584,8 +578,7 @@
   "name": "BITE ME cheeseburger sniff toy",
   "note": "Korean design · hide-and-seek",
   "color": "#e8a23a",
-  "img": "img/p/rope_toys.webp",
-  "look": true,
+  "img": "img/toys/toy_burger.webp",
   "tags": [
    "toy"
   ]
@@ -598,8 +591,7 @@
   "name": "BITE ME croissant sniff toy",
   "note": "Korean design · crinkly",
   "color": "#d9a35e",
-  "img": "img/p/plush_toy.webp",
-  "look": true,
+  "img": "img/toys/toy_croissant.webp",
   "tags": [
    "toy"
   ]
@@ -612,8 +604,7 @@
   "name": "BITE ME roll cake sniff mat",
   "note": "Korean design · nose work mat",
   "color": "#f3d9b1",
-  "img": "img/p/ball_toy.webp",
-  "look": true,
+  "img": "img/toys/toy_rollcake.webp",
   "tags": [
    "toy"
   ]
