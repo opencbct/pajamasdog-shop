@@ -44,7 +44,9 @@ header nav{display:flex;gap:18px;font-size:15px}
 .cats-row a{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:66px;padding:10px 8px;border-radius:18px;background:rgba(255,255,255,.14);backdrop-filter:blur(6px);font-size:13px;font-weight:400}
 .cats-row a:first-child{background:var(--pink)}
 .cats-row a span{font-size:26px;line-height:1}
-.tag img.plg{height:14px;display:block}
+.tag:has(img.plg){background:none!important;padding:0!important;box-shadow:none!important}
+.tag img.plg{filter:drop-shadow(0 0 1.5px #fff) drop-shadow(0 0 3px rgba(255,255,255,.95)) drop-shadow(0 0 6px rgba(255,255,255,.7))}
+.tag img.plg{height:26px!important;width:auto!important;max-width:none!important;aspect-ratio:auto!important;object-fit:contain!important;display:block;border-radius:0!important}
 .row.fun>*{flex:0 0 62%}
 @media(min-width:768px){.row.fun>*{flex:0 0 27%}}
 .fun-c{position:relative;border-radius:22px;padding:18px 16px 16px;min-height:190px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;color:#fff;background:linear-gradient(140deg,var(--c1),var(--c2));overflow:hidden}
@@ -170,7 +172,7 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
 
 <div class="sec" id="looks">
   <div class="hd"><h2>Cozy looks</h2><a href="gallery.html">Gallery</a></div>
-  <div class="row"><a class="tile photo" href="gallery.html" style="background-image:url(img/p/pajama_bichon.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/pug_blanket.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/santa_golden.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/puffer_pom.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/cavalier_blanket.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/plaid_pug.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/scarf_poodle.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/pug_sweater.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/puffer_four.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/pom_sweater.webp)"></a></div>
+  <div class="row"><a class="tile photo" href="gallery.html" style="background-image:url(img/p/pajama_bichon.webp?v=2)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/pug_blanket.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/santa_golden.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/puffer_pom.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/cavalier_blanket.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/plaid_pug.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/scarf_poodle.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/pug_sweater.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/puffer_four.webp)"></a><a class="tile photo" href="gallery.html" style="background-image:url(img/p/pom_sweater.webp)"></a></div>
 </div>
 
 <div class="vband"><video src="img/poms.mp4" poster="img/poms.jpg" autoplay muted loop playsinline></video><div class="vt"><h2>Wrap them in warmth</h2><p>The cozy pajama season is here.</p></div></div>
@@ -480,7 +482,7 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
 // ---- Infinite scroll --------------------------------------------------------
 const grid = document.getElementById('grid'), more = document.getElementById('more');
 let cat='all', page=0, busy=false, done=false, run=0;
-const card = p => `<a class="card" href="product.html?id=${encodeURIComponent(p.id)}"><span class="tag">${shopBadge(p.src||"sample")}</span>${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:`<div class="ph" style="--c:${p.color||'#f3c6d6'}"><span>🐾</span></div>`}<div class="cap"><b>${p.name}</b><span>${p.note||''}</span>${p.price?`<em class="pr">$${p.price.toFixed(2)}</em>`:''}</div></a>`;
+const card = p => `<a class="card" href="product.html?id=${encodeURIComponent(p.id)}"><span class="tag">${shopBadge(p.src||"sample", p.id, p.badge)}</span>${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:`<div class="ph" style="--c:${p.color||'#f3c6d6'}"><span>🐾</span></div>`}<div class="cap"><b>${p.name}</b><span>${p.note||''}</span>${p.price?`<em class="pr">$${p.price.toFixed(2)}</em>`:''}</div></a>`;
 async function loadNext(){
   if(busy||done) return; busy=true; const my=run;
   more.textContent='Loading more…';

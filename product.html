@@ -21,7 +21,20 @@
 .acts{display:grid;gap:10px}
 @media(min-width:768px){main.two{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}.info{padding-top:8px}}
 .price{font-size:26px;font-weight:300;margin:6px 0 10px}.price small{font-size:13px;opacity:.65;margin-left:6px}
+.tag:has(img.plg){background:none!important;padding:0!important;box-shadow:none!important}
+.tag img.plg{filter:drop-shadow(0 0 1.5px #fff) drop-shadow(0 0 3px rgba(255,255,255,.95)) drop-shadow(0 0 6px rgba(255,255,255,.7))}
+.tag img.plg{height:26px!important;width:auto!important;max-width:none!important;aspect-ratio:auto!important;object-fit:contain!important;display:block;border-radius:0!important}
 .sizes{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.lbl2{font-size:12px;opacity:.6;margin:4px 0 6px}
+.chip:disabled{opacity:.3;text-decoration:line-through}
+.sf{border-radius:14px;background:var(--card);padding:10px 12px;margin:4px 0 12px;font-weight:300}
+.sf summary{cursor:pointer;font-size:14px}
+.sf-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:10px 0 8px}
+.sf-row label{font-size:11px;opacity:.75;display:grid;gap:3px}
+.sf-row input{width:100%;padding:8px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:transparent;color:inherit;font:inherit;font-size:14px}
+.sf-unit{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.sf-unit .btn{margin-left:auto;padding:8px 14px}
+.sf-out{font-size:14px;margin:8px 0 2px}.sf-out small{opacity:.6;display:block}
+.sf-help{font-size:11px;opacity:.55;margin:4px 0 0}
 </style>
 <link rel="stylesheet" href="logo-motion.css">
 </head>
@@ -33,6 +46,8 @@
 <main id="main" class="two"></main>
 <footer>PajamasDog links to partner shops and may earn a commission on purchases, at no extra cost to you. As an Amazon Associate we earn from qualifying purchases. Orders, shipping and returns are handled by each shop; for items sold by PajamasDog see <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>. <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
 <script src="shop.js"></script>
+<script src="sizes_data.js?v=1"></script>
+<script src="sizefinder.js?v=1"></script>
 <script>
 (async () => {
   const q = new URLSearchParams(location.search);
@@ -44,16 +59,17 @@
   const look = (q.get('look')||'').match(/^img\/p\/[\w-]+\.webp$/) ? q.get('look') : null;
   const pic = tried ? `<img src="${tried}" alt="Your pet in ${p.name}"><span class="tag mine">Your pet</span>`
             : look ? `<img src="${look}" alt="${p.name}"><span class="tag mine">Similar pick</span>` : visualOf(p);
+  const ci0 = Math.max(0, Math.min((p.colors||[]).length-1, +(q.get('c')||0)));
   const shop = shopName(p);
   const live = p.src && p.src!=='sample';
   main.innerHTML = `
-    <div class="pic">${pic}${(tried||look)?'':`<span class="tag">${shopBadge(p.src||"sample")}</span>`}</div>
+    <div class="pic">${pic}${(tried||look)?'':`<span class="tag">${shopBadge(p.src||"sample", p.id, p.badge)}</span>`}</div>
     <div class="info">
       <h1>${p.name}</h1>
       <p>${p.note||''}</p>
       ${p.src==='pd' ? `<div class="price">$${p.price.toFixed(2)} <small>Free US shipping · 7–12 days</small></div>
-      ${(p.colors||[]).length>1 ? `<div class="sizes cols">${p.colors.map((c,i)=>`<button class="chip${i===0?' on':''}" data-c="${i}">${c}</button>`).join('')}</div>` : ''}
-      <div class="sizes szs">${(p.sizes||[]).map((z,i)=>`<button class="chip${i===1?' on':''}" data-z="${z}">${z}</button>`).join('')}</div>` : ''}
+      ${(p.colors||[]).length>1 ? `<div class="lbl2">Color</div><div class="sizes cols">${p.colors.map((c,i)=>`<button class="chip${i===ci0?' on':''}" data-c="${i}">${c}</button>`).join('')}</div>` : ''}
+      <div class="lbl2">Size</div><div class="sizes szs"></div>${sizeFinderHTML()}` : ''}
       <div class="ship">${p.src==='pd' ? 'Sold by PajamasDog. All sales final — <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>.' : live ? `Sold, shipped and returned by ${shop}.` : 'Coming soon.'}${p.look && !look && !tried ? ' Photo shows a similar style.' : ''}</div>
       <div class="acts">
         ${p.src==='pd' ? `<button class="btn" id="buy">${CHECKOUT_API ? 'Buy now' : 'Checkout opens soon'}</button>`
@@ -61,9 +77,22 @@
         ${p.cat==='pajamas' ? `<a class="btn ghost" href="tryon.html?id=${encodeURIComponent(p.id)}">Try it on my pet</a>` : ''}
       </div>
     </div>`;
-  main.querySelectorAll('.sizes').forEach(box => box.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return;
-    box.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c===b)); }));
-  main.querySelector('#buy')?.addEventListener('click', () => payDirect([{id:p.id, size:main.querySelector('.szs .on')?.dataset.z, c:+(main.querySelector('.cols .on')?.dataset.c||0)}]));
+  // Item -> color -> size: sizes shown are the ones in stock for the chosen color.
+  const colorIdx = () => +(main.querySelector('.cols .on')?.dataset.c || 0);
+  let size = q.get('size') || '';
+  const drawSizes = () => {
+    const box = main.querySelector('.szs'); if(!box) return;
+    const st = inStock(p, colorIdx());
+    if(!st.includes(size)) size = '';
+    box.innerHTML = (p.sizes||[]).map(z => `<button class="chip${z===size?' on':''}"${st.includes(z)?'':' disabled title="Sold out in this color"'} data-z="${z}">${z}</button>`).join('');
+    main.querySelector('#buy') && (main.querySelector('#buy').textContent = !CHECKOUT_API ? 'Checkout opens soon' : size ? `Buy now · ${size}` : 'Pick a size');
+  };
+  drawSizes();
+  main.querySelector('.cols')?.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return;
+    main.querySelectorAll('.cols .chip').forEach(c => c.classList.toggle('on', c===b)); drawSizes(); });
+  main.querySelector('.szs')?.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b || b.disabled) return; size = b.dataset.z; drawSizes(); });
+  bindSizeFinder(main, () => p, colorIdx, z => { size = z; drawSizes(); });
+  main.querySelector('#buy')?.addEventListener('click', () => { if(!size){ main.querySelector('.sf')?.setAttribute('open',''); main.querySelector('.szs')?.scrollIntoView({block:'center', behavior:'smooth'}); return; } payDirect([{id:p.id, size, c:colorIdx()}]); });
 })();
 </script>
 </body>

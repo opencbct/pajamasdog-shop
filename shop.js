@@ -59,7 +59,11 @@ async function getProduct(id){ await getProducts('all',0); return (await FEED).f
 const visualOf = p => p.img ? `<img src="${p.img}" alt="${p.name}">` : `<div class="ph" style="--c:${p.color||'#f3c6d6'}"><span>🐾</span></div>`;
 // Partner badge: uses img/partners/<src>.svg when we have the partner's approved logo file; else the name.
 const PARTNER_LOGOS = {}; // e.g. amazon:'img/partners/amazon.svg' (add only after approval)
-const shopBadge = src => PARTNER_LOGOS[src] ? `<img class="plg" src="${PARTNER_LOGOS[src]}" alt="${(SOURCES[src]||{}).label||''}">` : ((SOURCES[src]||{}).label||'');
+// 형님 11-24: until we may use a partner's logo (e.g. Amazon), every card carries the PajamasDog logo.
+// Our wordmark in rotating colors (multicolor, purple, cyan, pink, dark), picked per product so the grid looks lively.
+const BADGES = 19;   // img/badge_00..15.png = 형님's logo set (11-24)
+const badgeColor = id => String([...String(id||'')].reduce((h,c)=>(h*31+c.charCodeAt(0))>>>0, 7) % BADGES).padStart(2,'0');
+const shopBadge = (src, id, badge) => PARTNER_LOGOS[src] ? `<img class="plg" src="${PARTNER_LOGOS[src]}" alt="${(SOURCES[src]||{}).label||''}">` : `<img class="plg" src="img/badge_${badge || badgeColor(id)}.png" alt="PajamasDog">`;
 const shopName = p => (SOURCES[p.src||'sample']||{}).label || '';
 
 // ---- AI try-on -------------------------------------------------------------
