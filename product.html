@@ -31,7 +31,7 @@
   <a class="back" href="javascript:history.length>1?history.back():location.href='/'">← Back</a>
 </header>
 <main id="main" class="two"></main>
-<footer>PajamasDog links to partner shops and may earn a commission on purchases, at no extra cost to you. As an Amazon Associate we earn from qualifying purchases. Orders, shipping and returns are handled by each shop. <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
+<footer>PajamasDog links to partner shops and may earn a commission on purchases, at no extra cost to you. As an Amazon Associate we earn from qualifying purchases. Orders, shipping and returns are handled by each shop; for items sold by PajamasDog see <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>. <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
 <script src="shop.js"></script>
 <script>
 (async () => {
@@ -54,7 +54,7 @@
       ${p.src==='pd' ? `<div class="price">$${p.price.toFixed(2)} <small>Free US shipping · 7–12 days</small></div>
       ${(p.colors||[]).length>1 ? `<div class="sizes cols">${p.colors.map((c,i)=>`<button class="chip${i===0?' on':''}" data-c="${i}">${c}</button>`).join('')}</div>` : ''}
       <div class="sizes szs">${(p.sizes||[]).map((z,i)=>`<button class="chip${i===1?' on':''}" data-z="${z}">${z}</button>`).join('')}</div>` : ''}
-      <div class="ship">${p.src==='pd' ? 'Sold by PajamasDog.' : live ? `Sold, shipped and returned by ${shop}.` : 'Coming soon.'}${p.look && !look && !tried ? ' Photo shows a similar style.' : ''}</div>
+      <div class="ship">${p.src==='pd' ? 'Sold by PajamasDog. All sales final — <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>.' : live ? `Sold, shipped and returned by ${shop}.` : 'Coming soon.'}${p.look && !look && !tried ? ' Photo shows a similar style.' : ''}</div>
       <div class="acts">
         ${p.src==='pd' ? `<button class="btn" id="buy">${CHECKOUT_API ? 'Buy now' : 'Checkout opens soon'}</button>`
           : live ? `<a class="btn" href="${linkOf(p)}" rel="sponsored noopener" target="_blank">See it on ${shop}</a>` : ''}

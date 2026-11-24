@@ -45,6 +45,7 @@ async function createCheckout(req) {
   form.append('success_url', `${SITE}/thanks.html?s={CHECKOUT_SESSION_ID}`);
   form.append('cancel_url', `${SITE}/studio.html`);
   form.append('shipping_address_collection[allowed_countries][0]', 'US');
+  form.append('custom_text[submit][message]', 'All sales are final. By paying you agree to our Shipping & Returns policy: https://pajamasdog.com/returns.html');
   form.append('phone_number_collection[enabled]', 'true'); // the carrier needs a phone number
   form.append('metadata[wrap]', wrap);
   form.append('metadata[gift_to]', String(g.to || '').slice(0, 60));
