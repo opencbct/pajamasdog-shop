@@ -30,7 +30,7 @@ const SOURCES = {
   coupang: {label:'Coupang', regions:['KR']},
   naver:   {label:'Naver',   regions:['KR']},
   cj:      {label:'CJ',      regions:['GLOBAL','US','KR']},
-  // Our own products (we are the seller, CJ ships). US only for now.
+  // Our own products (we are the seller, CJ ships). Ships to US, CA, GB, AU, NZ, JP, KR, DE, FR, NL, IE, SG.
   // Hidden on the live site until CHECKOUT_API is set; add ?preview to see them.
   pd:      {label:'PajamasDog', regions:(CHECKOUT_API || PREVIEW) ? ['US'] : []},
   sample:  {label:'Soon',    regions:['GLOBAL','US','KR']},

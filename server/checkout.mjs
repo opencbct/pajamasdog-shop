@@ -8,6 +8,9 @@ import crypto from 'node:crypto';
 import { readFileSync } from 'node:fs';
 const CATALOG = JSON.parse(readFileSync(new URL('./catalog.json', import.meta.url)));
 const SITE = process.env.SITE_URL || 'https://pajamasdog.com';
+const SHIP_TO = ['US', 'CA', 'GB', 'AU', 'NZ', 'JP', 'KR', 'DE', 'FR', 'NL', 'IE', 'SG'];
+const COUNTRY_NAME = { US: 'United States', CA: 'Canada', GB: 'United Kingdom', AU: 'Australia', NZ: 'New Zealand', JP: 'Japan',
+  KR: 'Korea, Republic of', DE: 'Germany', FR: 'France', NL: 'Netherlands', IE: 'Ireland', SG: 'Singapore' };
 const json = (code, body) => ({ statusCode: code, headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
 
 // ---- 1. Create a Stripe Checkout session from SERVER prices only ----
@@ -47,7 +50,8 @@ async function createCheckout(req) {
   form.append('mode', 'payment');
   form.append('success_url', `${SITE}/thanks.html?s={CHECKOUT_SESSION_ID}`);
   form.append('cancel_url', `${SITE}/studio.html`);
-  form.append('shipping_address_collection[allowed_countries][0]', 'US');
+  // 형님 11-24: ship beyond the US. CJ cost to these is the same or lower than to the US (checked 11-24), so prices already cover it.
+  SHIP_TO.forEach((c, i) => form.append(`shipping_address_collection[allowed_countries][${i}]`, c));
   form.append('custom_text[submit][message]', 'All sales are final. By paying you agree to our Shipping & Returns policy: https://pajamasdog.com/returns.html');
   form.append('phone_number_collection[enabled]', 'true'); // the carrier needs a phone number
   form.append('metadata[wrap]', wrap);
@@ -86,7 +90,7 @@ async function placeCjOrder(session) {
   const token = await cjToken();
   const r = await fetch('https://developers.cjdropshipping.com/api2.0/v1/shopping/order/createOrderV2', {
     method: 'POST', headers: { 'content-type': 'application/json', 'CJ-Access-Token': token },
-    body: JSON.stringify({ orderNumber: session.id, shippingCountryCode: a.country, shippingCountry: a.country === 'US' ? 'United States' : a.country, shippingProvince: a.state, shippingCity: a.city,
+    body: JSON.stringify({ orderNumber: session.id, shippingCountryCode: a.country, shippingCountry: COUNTRY_NAME[a.country] || a.country, shippingProvince: a.state, shippingCity: a.city,
       shippingAddress: [a.line1, a.line2].filter(Boolean).join(' '), shippingZip: a.postal_code, shippingCustomerName: ship.name,
       shippingPhone: session.customer_details?.phone || '', email: session.customer_details?.email || '', remark: `Gift: ${session.metadata?.wrap || 'none'} ${session.metadata?.gift_msg || ''}`.slice(0, 200),
       logisticName: 'CJPacket Ordinary', fromCountryCode: 'CN', products }) });
