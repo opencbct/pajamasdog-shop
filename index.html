@@ -60,6 +60,12 @@ header nav{display:flex;gap:18px;font-size:15px}
 .fun-c.vid{opacity:1}.fun-c.vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}.fun-c.vid::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(20,14,30,.78))}.fun-c.vid>*:not(video){position:relative;z-index:1}.fun-c.vid .e,.fun-c.vid i{position:absolute;z-index:1}
 .kicker{display:inline-block;font-size:13px;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);margin-bottom:10px}
 .btn.big{font-size:19px;padding:16px 30px;cursor:pointer}
+/* 11-24: big centered Photo / Video upload buttons */
+.upl{display:flex;gap:12px;justify-content:center;margin:16px 0 6px}
+.upbtn{flex:1;max-width:220px;display:flex;align-items:center;justify-content:center;gap:10px;padding:18px 10px;border-radius:999px;background:#1a56db;color:#fff;font-size:21px;font-weight:400;cursor:pointer;box-shadow:0 6px 22px rgba(26,86,219,.45)}
+.upbtn.vid{background:#ff3d7f;box-shadow:0 6px 22px rgba(255,61,127,.45)}
+.upbtn span{font-size:24px}
+.upbtn:active{transform:scale(.97)}
 .btn.big span{font-size:22px;margin-right:8px;vertical-align:-2px}
 .hero .privacy{font-size:12px;opacity:.7;margin-top:10px}
 .hero .privacy.fine{font-size:10.5px;line-height:1.35;opacity:.62;max-width:520px;font-weight:300}
@@ -133,11 +139,15 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
   <div class="txt">
     <span class="kicker">✨ AI try-on · free</span>
     <h1>See <b>your pet</b><br>in pajamas.</h1>
-    <p>Add one photo. Swipe 30+ cozy looks. Shop the one you love.</p>
-    <label class="btn big" for="heroPhoto"><span>📷</span>Add your pet's photo</label>
+    <p>Add a photo or a short video. See your pet in our pajamas.</p>
+    <div class="upl">
+      <label class="upbtn" for="heroPhoto"><span>📷</span>Photo</label>
+      <label class="upbtn vid" for="heroVideo"><span>🎥</span>Video</label>
+    </div>
     <input type="file" accept="image/*" id="heroPhoto" hidden>
+    <input type="file" accept="video/*" id="heroVideo" hidden>
     <a class="btn ghost" href="#fun">More AI fun ✨</a>
-    <p class="privacy fine">AI photo of your pet in our pajamas: free, 5 a day. Coming soon: moving AI video (walk, spin, jump), free with any PajamasDog pajama purchase or $1.99. JPG or PNG. Your photo is sent to our AI partner (Runway) only to make your picture; we do not keep it. AI results can differ slightly from the real product. Upload only photos you own.</p>
+    <p class="privacy fine">AI photo of your pet in our pajamas: free, 5 a day. Coming soon: moving AI video (walk, spin, jump), free with any PajamasDog pajama purchase or $1.99. JPG, PNG or a short video (we use one clear frame). Your photo is sent to our AI partner (Runway) only to make your picture; we do not keep it. AI results can differ slightly from the real product. Upload only photos you own.</p>
 
   </div>
 </div>
@@ -538,6 +548,19 @@ async function fillRows(){
 fillRows();
 
 // ---- Hero try-on: pick a photo here, carry it to the try-on page ----
+// Video: grab a clear frame (about 1 s in) and use it like a photo.
+document.getElementById('heroVideo')?.addEventListener('change', e => {
+  const f = e.target.files[0]; if(!f) return;
+  const v = document.createElement('video'); v.muted = true; v.playsInline = true; v.preload = 'auto'; v.src = URL.createObjectURL(f);
+  v.addEventListener('loadedmetadata', () => { v.currentTime = Math.min(1, (v.duration || 2) / 2); }, {once:true});
+  v.addEventListener('seeked', () => {
+    const k = Math.min(1, 1400 / Math.max(v.videoWidth, v.videoHeight));
+    const c = document.createElement('canvas'); c.width = v.videoWidth*k; c.height = v.videoHeight*k;
+    c.getContext('2d').drawImage(v, 0, 0, c.width, c.height);
+    try { sessionStorage.setItem('pd:photo', c.toDataURL('image/jpeg', .86)); } catch(err){}
+    location.href = 'tryon.html?from=home';
+  }, {once:true});
+});
 document.getElementById('heroPhoto')?.addEventListener('change', e => {
   const f = e.target.files[0]; if(!f) return;
   const img = new Image();
