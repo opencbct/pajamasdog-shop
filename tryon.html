@@ -36,6 +36,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 12px}
 .pick{margin:18px 2px 12px}
 .pick b{font-weight:400;font-size:18px;display:block}
 .pick span{font-size:13px;opacity:.65}
+.quota{font-size:12px;opacity:.6;margin:2px 0 6px;text-align:center}
 .acts{display:grid;gap:10px}
 .hide{display:none!important}
 </style>
@@ -71,7 +72,9 @@ h1{font-weight:300;font-size:26px;margin:4px 0 12px}
     <div class="outfits" id="outfits"></div>
     <div class="pick"><b id="pName"></b><span id="pNote"></span></div>
     <div class="acts">
-      <a class="btn" id="love" href="#">Love it — see this pajama</a>
+      <button class="btn" id="dress" type="button">✨ Dress up with AI</button>
+      <p class="quota" id="quota"></p>
+      <a class="btn ghost" id="love" href="#">Love it — see this pajama</a>
       <button class="btn ghost" id="share" type="button">Share my pet</button>
       <label class="btn ghost" for="file">Change photo</label>
     </div>
@@ -125,15 +128,31 @@ async function render(){
   $('poseTag').textContent = POSES.find(x=>x.k===pose).label;
   document.querySelectorAll('#outfits button').forEach((b,i) => b.classList.toggle('on', i===idx));
   $('outfits').children[idx]?.scrollIntoView({inline:'center', block:'nearest', behavior:'smooth'});
-  $('stage').classList.add('loading');
-  try {
-    if(!cache[key]){ const r = await tryOn(photo, p, pose); cache[key] = {...r, url: await brand(r.url, r.preview ? (p.color || '#ff3d7f') : null)}; }
-    if(my !== run) return;
-    $('shot').src = cache[key].url;
-    $('prevTag').classList.toggle('hide', !cache[key].preview);
-  } catch(e){ if(my===run) $('note').textContent = 'Could not dress up — try again.'; }
-  finally { if(my===run) $('stage').classList.remove('loading'); }
+  // Swiping only shows the outfit; the AI runs (and costs) only when "Dress up" is tapped.
+  if(cache[key]){ $('shot').src = cache[key].url; $('prevTag').classList.add('hide'); }
+  else { $('shot').src = photoURL; $('prevTag').classList.add('hide'); }
+  $('dress').disabled = !!cache[key] || p.src === 'amazon';
+  $('dress').textContent = cache[key] ? '✓ Dressed' : p.src === 'amazon' ? 'AI try-on: PajamasDog pajamas only' : '✨ Dress up with AI';
+  showQuota();
 }
+
+// Free AI pictures per day on this device (the server also limits per connection).
+const FREE_PER_DAY = 5;
+const qKey = () => 'pd:ai:' + new Date().toISOString().slice(0,10);
+const used = () => { try { return +localStorage.getItem(qKey()) || 0; } catch(e){ return 0; } };
+function showQuota(){ const left = Math.max(0, FREE_PER_DAY - used()); $('quota').textContent = left ? `${left} free AI pictures left today` : 'Free AI pictures used up for today — come back tomorrow.'; }
+$('dress').addEventListener('click', async () => {
+  const p = outfits[idx], key = p.id+'|'+pose; if(cache[key] || !photo) return;
+  if(used() >= FREE_PER_DAY){ showQuota(); return; }
+  const my = ++run; $('stage').classList.add('loading'); $('dress').disabled = true;
+  try {
+    const r = await tryOn(photo, p, pose);
+    cache[key] = {...r, url: await brand(r.url, r.preview ? (p.color || '#ff3d7f') : null)};
+    if(!r.preview){ try { localStorage.setItem(qKey(), used()+1); } catch(e){} }
+    if(my === run){ $('stage').classList.remove('loading'); render(); }
+  } catch(e){ if(my===run){ $('note').textContent = e.message || 'Could not dress up — try again.'; $('dress').disabled = false; } }
+  finally { if(my===run) $('stage').classList.remove('loading'); }
+});
 
 // "Love it": stop here, keep this picture, open this product's detail page.
 $('love').addEventListener('click', async e => {
@@ -153,8 +172,9 @@ $('share').addEventListener('click', async () => {
   const a = document.createElement('a'); a.href = r.url; a.download = 'my-pajamasdog.jpg'; a.click();
 });
 
+let photoURL = '';
 async function usePhoto(file){
-  photo = await shrink(file);
+  photo = await shrink(file); photoURL = URL.createObjectURL(photo);
   Object.keys(cache).forEach(k => delete cache[k]);
   ['add'].forEach(id => $(id).classList.add('hide'));
   ['shot','badge','mini','note','controls'].forEach(id => $(id).classList.remove('hide'));

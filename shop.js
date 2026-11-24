@@ -73,13 +73,16 @@ const POSES = [
 ];
 // tryOn(photoFile, product, pose) -> {url, preview}. TRYON_API is the server (AWS Lambda)
 // that holds the image-AI key. Empty = preview mode: the dog photo is shown as-is.
-const TRYON_API = '';
+const TRYON_API = 'https://3staw7j6iq44tfguagocjlpwta0yfppp.lambda-url.us-east-1.on.aws/';   // pajamasdog-ai Lambda (Runway)
+const fileToDataURL = f => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(f); });
 async function tryOn(photoFile, product, pose='sit'){
-  if(!TRYON_API) return {url: URL.createObjectURL(photoFile), preview:true};
-  const fd = new FormData(); fd.append('photo', photoFile); fd.append('product', product.id); fd.append('pose', pose);
-  const r = await fetch(TRYON_API, {method:'POST', body:fd});
-  if(!r.ok) throw new Error('try-on failed');
-  return {url: URL.createObjectURL(await r.blob()), preview:false};
+  if(!TRYON_API || product.src === 'amazon') return {url: URL.createObjectURL(photoFile), preview:true};
+  const r = await fetch(TRYON_API, {method:'POST', headers:{'content-type':'application/json'},
+    body: JSON.stringify({photo: await fileToDataURL(photoFile), product: product.id, pose})});
+  const d = await r.json().catch(() => ({}));
+  if(!r.ok || !d.image) throw new Error(d.error || 'try-on failed');
+  const bin = Uint8Array.from(atob(d.image), c => c.charCodeAt(0));
+  return {url: URL.createObjectURL(new Blob([bin], {type: d.mime || 'image/png'})), preview:false, code: d.code};
 }
 
 // ---- Logo motion: replay a small bounce + shine whenever a logo scrolls into view.
