@@ -535,6 +535,17 @@
   ]
  },
  {
+  "id": "a-olchi-store",
+  "src": "amazon",
+  "cat": "pajamas",
+  "url": "https://www.amazon.com/stores/page/3A130D5C-EA93-40CD-A079-EDA4912178B0?tag=pajamasdog-20",
+  "name": "Olchi pastel sweater shop",
+  "note": "Korean design · Puppia sister brand",
+  "color": "#f3d1dc",
+  "img": "img/p/yorkie_tee.webp",
+  "look": true
+ },
+ {
   "id": "a-B0DY73PHVY",
   "src": "amazon",
   "cat": "acc",
