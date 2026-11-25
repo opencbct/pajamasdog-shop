@@ -93,7 +93,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
     <div class="step hide" id="step"></div>
     <button class="bag hide" id="bag">🛍 0 · Buy</button>
     <div class="item hide" id="item"><img id="iImg" alt=""><div class="t"><b id="iName"></b><span id="iPrice"></span></div><button class="heart" id="heart" aria-label="I like this">♡</button></div>
-    <div class="busy hide" id="busy"><b id="busyT">Getting dressed…</b><span id="busyS">AI is making 5 looks (about 30 seconds)</span></div>
+    <div class="busy hide" id="busy"><b id="busyT">Getting dressed…</b><span id="busyS">AI is making 5 looks (about a minute)</span></div>
   </div>
 
   <div class="lbl"><span>Tonight's lineup — tap one to swap</span><a id="shuffle">🎲 Shuffle</a></div>
@@ -180,7 +180,7 @@ async function makeFrame(i){
   const r = await fetch(TRYON_API, {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({
     photo, items: items.map(p => p.id), collage: await collage(items), move: SLOTS[i].move, pack: PACK_ID})});
   const d = await r.json().catch(() => ({}));
-  if(!r.ok || !d.image) throw new Error(d.error || 'AI could not make this look.');
+  if(!r.ok || !d.image){ const e = new Error(d.error || 'AI is busy — trying again…'); e.retry = r.status === 429 && !d.error || r.status >= 500 || !d.error; throw e; }
   return brand(`data:${d.mime||'image/png'};base64,${d.image}`);
 }
 
@@ -222,7 +222,13 @@ $('start').onclick = async () => {
   $('start').disabled = true; $('busy').classList.remove('hide'); $('busyT').textContent = 'Getting dressed…';
   try {
     let done = 0;
-    frames = await Promise.all(SLOTS.map((s,i) => makeFrame(i).then(u => { $('busyS').textContent = `${++done} of ${SLOTS.length} looks ready`; return u; })));
+    // 2 at a time (the AI server takes 3 jobs at once), with retries, so a busy moment never wastes the whole show
+    const out = new Array(SLOTS.length); let next = 0;
+    const worker = async () => { while(next < SLOTS.length){ const i = next++;
+      for(let t=0; t<4; t++){ try { out[i] = await makeFrame(i); break; } catch(e){ if(!e.retry || t===3) throw e; await new Promise(r => setTimeout(r, 2500*(t+1))); } }
+      $('busyS').textContent = `${++done} of ${SLOTS.length} looks ready`; } };
+    await Promise.all([worker(), worker()]);
+    frames = out;
     aiUse(SLOTS.length); showQuota();
     $('frames').innerHTML = frames.map((u,i) => `<div class="fr ${SLOTS[i].move}"><img src="${u}" alt="Your pet in look ${i+1}"></div>`).join('');
     $('bars').innerHTML = SLOTS.map(() => '<i><b></b></i>').join('');
