@@ -18,7 +18,8 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
 .stage{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:var(--card)}
 .stage .fr{position:absolute;inset:0;opacity:0;transition:opacity .5s}
 .stage .fr.on{opacity:1}
-.stage .fr img{width:100%;height:100%;object-fit:cover;display:block}
+.stage .fr img{width:100%;height:100%;object-fit:cover;display:block;-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;pointer-events:none}
+.stage{-webkit-touch-callout:none;user-select:none}
 .stage .fr.on.walk img{animation:walk 2.6s ease-in-out both}
 .stage .fr.on.spin img{animation:spin 2.6s ease-in-out both}
 .stage .fr.on.jump img{animation:jump 2.6s ease-in-out both}
@@ -175,6 +176,7 @@ async function collage(items){
   return c.toDataURL('image/jpeg', .85);
 }
 const LOGO = loadImg('img/logo2/lockup.png');
+// HD copy (corner logo) is kept for the paid download and the free single-picture share.
 async function brand(src){
   const [img, logo] = await Promise.all([loadImg(src), LOGO]);
   const iw = img.naturalWidth, ih = img.naturalHeight, cw = Math.min(iw, ih*4/5), ch = cw*5/4;
@@ -184,6 +186,21 @@ async function brand(src){
   g.shadowColor = 'rgba(0,0,0,.5)'; g.shadowBlur = c.width*.008; g.drawImage(logo, m, m, w, h);
   return c.toDataURL('image/jpeg', .9);
 }
+// What plays on screen: smaller, with the logo in the middle and pajamasdog.com across the picture,
+// so a screenshot or screen recording of the show is still our ad, not a clean copy (형님 11-25).
+async function protect(hd){
+  const [img, logo] = await Promise.all([loadImg(hd), LOGO]);
+  const W = 600, H = Math.round(W*img.naturalHeight/img.naturalWidth);
+  const c = document.createElement('canvas'); c.width = W; c.height = H; const g = c.getContext('2d');
+  g.drawImage(img, 0, 0, W, H);
+  g.save(); g.translate(W/2, H/2); g.rotate(-Math.PI/7);
+  g.font = '600 26px Nunito, sans-serif'; g.fillStyle = 'rgba(255,255,255,.16)'; g.textAlign = 'center';
+  for(let y=-H; y<H; y+=90) for(let x=-W; x<W; x+=260) g.fillText('pajamasdog.com', x + (y/90%2 ? 130 : 0), y);
+  g.restore();
+  const w = W*.5, h = w*logo.naturalHeight/logo.naturalWidth; g.globalAlpha = .28; g.drawImage(logo, (W-w)/2, H*.42 - h/2, w, h); g.globalAlpha = 1;
+  return c.toDataURL('image/jpeg', .8);
+}
+const HD = [];   // HD frames for the paid video download
 
 async function makeFrame(i){
   const items = lineup.slice(0, i+1);
@@ -191,7 +208,8 @@ async function makeFrame(i){
     photo, items: items.map(p => p.id), collage: await collage(items), move: SLOTS[i].move, pack: PACK_ID})});
   const d = await r.json().catch(() => ({}));
   if(!r.ok || !d.image){ const e = new Error(d.error || 'AI is busy — trying again…'); e.retry = r.status === 429 && !d.error || r.status >= 500 || !d.error; throw e; }
-  return brand(`data:${d.mime||'image/png'};base64,${d.image}`);
+  const hd = await brand(`data:${d.mime||'image/png'};base64,${d.image}`); HD[i] = hd;
+  return protect(hd);
 }
 
 function heartPop(){
@@ -250,7 +268,7 @@ $('start').onclick = async () => {
 
 // Share: the final full look (logo on it) + a link to the show page.
 $('share').onclick = async () => {
-  const last = frames[frames.length-1]; if(!last) return;
+  const last = HD[HD.length-1] || frames[frames.length-1]; if(!last) return;
   const text = 'My pet\'s AI fashion show 🎬 Make yours at pajamasdog.com', url = 'https://pajamasdog.com/show.html';
   const C = window.Capacitor;
   if(C && C.isNativePlatform && C.isNativePlatform() && C.Plugins.Filesystem && C.Plugins.Share){
@@ -288,6 +306,7 @@ async function usePhoto(dataURL){
   $('frames').innerHTML = `<div class="fr on"><img src="${dataURL}" alt="Your pet"></div>`;
   $('start').textContent = '▶ Start the show';
 }
+$('stage').addEventListener('contextmenu', e => e.preventDefault());
 $('file').onchange = async e => { const f = e.target.files[0]; if(f) usePhoto(await shrink(f)); };
 
 (async () => {
