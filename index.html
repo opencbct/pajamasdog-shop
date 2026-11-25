@@ -123,6 +123,7 @@ h2{font-weight:300;font-size:28px;margin-bottom:16px}
 footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 16px 40px}
 @media(max-width:600px){header nav{display:none}header img,header .hlogo{height:62px}}
 .cap .pr{display:block;font-style:normal;font-size:17px;margin-top:6px;color:var(--pink)}
+.cap .hot{display:block;font-style:normal;font-size:11px;font-weight:300;opacity:.75;margin-top:2px}
 </style>
 <link rel="stylesheet" href="logo-motion.css">
 </head>
@@ -441,7 +442,7 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
 
 <footer>Sold and shipped by PajamasDog. <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a> · <a href="privacy.html" style="text-decoration:underline">Privacy</a><br><br>© 2026 PajamasDog</footer>
 
-<script src="shop.js?v=2"></script>
+<script src="shop.js?v=4"></script>
 <script>
 // ---- Product source -------------------------------------------------------
 // getProducts(cat, page) returns one page of products.
@@ -450,7 +451,7 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
 // ---- Infinite scroll --------------------------------------------------------
 const grid = document.getElementById('grid'), more = document.getElementById('more');
 let cat='all', page=0, busy=false, done=false, run=0;
-const card = p => `<a class="card" href="product.html?id=${encodeURIComponent(p.id)}"><span class="tag">${shopBadge(p.src||"sample", p.id, p.badge)}</span>${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:`<div class="ph" style="--c:${p.color||'#f3c6d6'}"><span>🐾</span></div>`}<div class="cap"><b>${p.name}</b><span>${p.note||''}</span>${p.price?`<em class="pr">$${p.price.toFixed(2)}</em>`:''}</div></a>`;
+const card = p => `<a class="card" href="product.html?id=${encodeURIComponent(p.id)}"><span class="tag">${shopBadge(p.src||"sample", p.id, p.badge)}</span>${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:`<div class="ph" style="--c:${p.color||'#f3c6d6'}"><span>🐾</span></div>`}<div class="cap"><b>${p.name}</b><span>${p.note||''}</span>${p.price?`<em class="pr">$${p.price.toFixed(2)}</em>`:''}${p.pop>=100?`<i class="hot">🔥 In ${p.pop.toLocaleString('en-US')} shops</i>`:''}</div></a>`;
 async function loadNext(){
   if(busy||done) return; busy=true; const my=run;
   more.textContent='Loading more…';

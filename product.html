@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png?v=3">
 <meta name="theme-color" content="#15131c">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shop.css">
+<link rel="stylesheet" href="shop.css?v=2">
 <style>
 .pic{border-radius:24px;overflow:hidden;position:relative;margin-top:4px}
 .pic img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
@@ -45,7 +45,7 @@
 </header>
 <main id="main" class="two"></main>
 <footer>Sold and shipped by PajamasDog. <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a> · <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
-<script src="shop.js?v=2"></script>
+<script src="shop.js?v=4"></script>
 <script src="sizes_data.js?v=2"></script>
 <script src="sizefinder.js?v=1"></script>
 <script>
@@ -67,7 +67,7 @@
     <div class="info">
       <h1>${p.name}</h1>
       <p>${p.note||''}</p>
-      ${p.src==='pd' ? `<div class="price">${p.price_max>p.price?'<small style="margin:0 4px 0 0">from</small>':''}$${p.price.toFixed(2)} <small>Free shipping · US 7–12 days · worldwide</small></div>
+      ${p.src==='pd' ? `<div class="price">${p.price_max>p.price?'<small style="margin:0 4px 0 0">from</small>':''}$${p.price.toFixed(2)} <small>Free shipping · US 7–12 days · worldwide</small></div>${p.pop>=100?`<p class="hot2">🔥 Carried by ${p.pop.toLocaleString('en-US')} pet shops worldwide</p>`:''}
       ${(p.colors||[]).length>1 ? `<div class="lbl2">Color</div><div class="sizes cols">${p.colors.map((c,i)=>`<button class="chip${i===ci0?' on':''}" data-c="${i}">${c}</button>`).join('')}</div>` : ''}
       ${(p.sizes||[]).length ? `<div class="lbl2">Size</div><div class="sizes szs"></div>${p.cat==='pajamas' ? sizeFinderHTML() : ''}` : ''}` : ''}
       <div class="ship">${p.src==='pd' ? 'Sold by PajamasDog. All sales final — <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>.' : live ? `Sold, shipped and returned by ${shop}.` : 'Coming soon.'}${p.look && !look && !tried ? ' Photo shows a similar style.' : ''}</div>

@@ -23,3 +23,5 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.55);padding:30px
 @media(max-width:600px){header img{height:76px}}
 header .hlogo{height:78px;width:auto;display:block}
 @media(max-width:600px){header .hlogo{height:62px}}
+.cap .hot{display:block;font-style:normal;font-size:11px;font-weight:300;opacity:.75;margin-top:2px}
+.hot2{font-size:13px;font-weight:300;opacity:.8;margin:6px 0 0}

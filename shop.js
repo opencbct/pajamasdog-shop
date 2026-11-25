@@ -55,7 +55,9 @@ async function getProducts(cat, page){
   let list = (await FEED).filter(p => cat==='all' || p.cat===cat || (p.tags||[]).includes(cat) || (cat==='cats' && p.pet==='cat') || (cat==='dogs' && p.pet!=='cat' && (p.cat==='pajamas'||p.cat==='matching')));
   if(DEMO && list.length){ const out=[]; for(let i=0;i<PAGE_SIZE;i++){ const p=list[(page*PAGE_SIZE+i)%list.length]; out.push({...p,id:p.id+'-'+page+'-'+i}); } return page<20?out:[]; }
   // 형님 11-25: our own items (Buy now, no leaving the site) always first; partner/Amazon items go to the back.
-  list = list.filter(p => p.src==='pd').concat(list.filter(p => p.src!=='pd'));
+  // 11-25: "most popular first": our picks (pd-*) first, then what most shops carry.
+  const rank = p => /^pd-/.test(p.id) ? 1e9 : (p.cat==='pajamas' ? 1e6 : 0) + (p.pop || 0);   // clothes before gear
+  list = list.filter(p => p.src==='pd').sort((a,b) => rank(b) - rank(a)).concat(list.filter(p => p.src!=='pd'));
   return list.slice(page*PAGE_SIZE, (page+1)*PAGE_SIZE);
 }
 // In the app, partner links open in an in-app window (Custom Tab) instead of throwing the user out to Chrome.
