@@ -127,7 +127,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
 const $ = id => document.getElementById(id);
 // Slots in the order the pet puts them on. Each frame wears everything up to that slot.
 // 형님 11-25: more variety, one item per look (the previous item comes off), quick pace — the cards below do the selling.
-const PJ = p => p.cat==='pajamas' && !/robe|towel|blanket/i.test(p.name);
+const PJ = p => p.cat==='pajamas' && !/robe|towel|blanket|medical|anxiety|treatment|surgery|recovery|diaper|life ?jacket|vest/i.test(p.name);
 const SLOTS = [
   {k:'pj',    label:'Pajama',   move:'walk',  test:PJ},
   {k:'pj',    label:'Pajama',   move:'spin',  test:PJ},
