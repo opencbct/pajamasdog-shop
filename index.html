@@ -137,17 +137,17 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
   <div class="sparkle" id="sparkle" aria-hidden="true"></div>
   <div class="snow" id="snow" aria-hidden="true"></div>
   <div class="txt">
-    <span class="kicker">✨ AI fashion show</span>
-    <h1>See <b>your pet</b><br>in pajamas.</h1>
-    <p>Add a photo or a short video. See your pet in our pajamas.</p>
+    <span class="kicker">✨ Free AI playground</span>
+    <h1>Dress <b>your pet</b>.<br>Watch it dance.</h1>
+    <p>AI cuts out your pet, styles it in our real items and makes its dance video. Free, right on your phone.</p>
     <div class="upl">
       <label class="upbtn" for="heroPhoto"><span>📷</span>Photo</label>
       <label class="upbtn vid" for="heroVideo"><span>🎥</span>Video</label>
     </div>
     <input type="file" accept="image/*" id="heroPhoto" hidden>
     <input type="file" accept="video/*" id="heroVideo" hidden>
-    <a class="btn ghost" href="#fun">More AI fun ✨</a>
-    <p class="privacy fine">Free AI fashion show: your photo stays on your phone — the phone's own AI finds the closest pet, and that pet walks our runway in our real products. AI results can differ slightly from the real product.</p>
+    <a class="btn ghost" href="show.html">🎬 AI fashion show</a>
+    <p class="privacy fine">Your photo stays on your phone: the phone's own AI cuts out your pet; nothing is uploaded. Items are shown as a fun preview — the real product can look slightly different.</p>
 
   </div>
 </div>
@@ -558,7 +558,7 @@ document.getElementById('heroVideo')?.addEventListener('change', e => {
     const c = document.createElement('canvas'); c.width = v.videoWidth*k; c.height = v.videoHeight*k;
     c.getContext('2d').drawImage(v, 0, 0, c.width, c.height);
     try { sessionStorage.setItem('pd:photo', c.toDataURL('image/jpeg', .86)); } catch(err){}
-    location.href = 'show.html?from=home';
+    location.href = 'play.html?from=home';
   }, {once:true});
 });
 document.getElementById('heroPhoto')?.addEventListener('change', e => {
@@ -569,7 +569,7 @@ document.getElementById('heroPhoto')?.addEventListener('change', e => {
     const c = document.createElement('canvas'); c.width = img.width*k; c.height = img.height*k;
     c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
     try { sessionStorage.setItem('pd:photo', c.toDataURL('image/jpeg', .86)); } catch(err){}
-    location.href = 'show.html?from=home';
+    location.href = 'play.html?from=home';
   };
   img.src = URL.createObjectURL(f);
 });

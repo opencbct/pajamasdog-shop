@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Playground — PajamasDog</title>
+<meta name="description" content="Free AI playground: your own pet, cut out by AI on your phone, styled by our AI stylist in real PajamasDog items, dancing. Save the video and the magazine cover.">
+<link rel="icon" href="/favicon.ico?v=3" sizes="48x48">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png?v=3">
+<meta name="theme-color" content="#15131c">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shop.css">
+<style>
+main{max-width:560px}
+h1{font-weight:300;font-size:26px;margin:4px 0 4px}
+.sub{font-size:14px;opacity:.65;margin:0 0 12px}
+.hide{display:none!important}
+.stage{position:relative;border-radius:24px;overflow:hidden;background:#1d1830;touch-action:none;-webkit-touch-callout:none;user-select:none}
+#cv{display:block;width:100%;height:auto}
+.busy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(21,19,28,.72);text-align:center;padding:20px}
+.busy b{font-weight:400;font-size:18px}
+.busy span{font-size:13px;opacity:.7}
+.rec{position:absolute;top:12px;right:12px;background:#e11;color:#fff;border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600}
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0 4px}
+.tools button{border:0;border-radius:16px;background:var(--chip);color:var(--txt);font:inherit;font-size:13px;padding:10px 4px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px}
+.tools button i{font-style:normal;font-size:24px}
+.tools button.on{background:var(--pink);color:#fff}
+.lbl{font-size:13px;opacity:.6;margin:16px 2px 8px}
+.tray{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.tray button{border:0;padding:0;background:var(--card);border-radius:14px;overflow:hidden;cursor:pointer;position:relative;color:var(--txt);transition:transform .2s, box-shadow .2s}
+.tray .ph{display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;background:radial-gradient(#fff,#f1e8f6)}
+.tray .ph img{max-width:84%;max-height:84%}
+.tray span{display:block;font-size:11px;padding:4px 2px;opacity:.75}
+.tray button.on{box-shadow:0 0 0 3px var(--pink);transform:translateY(-3px)}
+.tray button.on::after{content:'✓';position:absolute;top:4px;right:6px;width:20px;height:20px;border-radius:50%;background:var(--pink);color:#fff;font-size:12px;line-height:20px}
+.look{display:flex;flex-direction:column;gap:8px}
+.lk{display:flex;gap:10px;align-items:center;padding:8px;border-radius:16px;background:var(--card)}
+.lk img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:#fff}
+.lk .t{flex:1;min-width:0}
+.lk .t b{display:block;font-weight:400;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lk .t span{font-size:13px;color:var(--pink)}
+.lk button{border:0;border-radius:999px;background:var(--pink);color:#fff;font:inherit;font-size:13px;padding:8px 12px;cursor:pointer;white-space:nowrap}
+.lk button.in{background:var(--chip);color:var(--txt)}
+.acts{display:grid;gap:10px;margin-top:14px}
+.picks h2{font-weight:300;font-size:22px;margin:22px 0 10px}
+.pk{display:flex;gap:10px;align-items:center;padding:10px;border-radius:16px;background:var(--card);margin-bottom:8px}
+.pk img{width:56px;height:56px;border-radius:12px;object-fit:cover;background:#fff}
+.pk .t{flex:1;min-width:0}
+.pk .t b{display:block;font-weight:400;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pk .t span{font-size:13px;opacity:.7}
+.pk select{background:var(--chip);color:var(--txt);border:0;border-radius:10px;padding:8px;font:inherit;font-size:14px}
+.pk .x{background:none;border:0;color:var(--txt);opacity:.5;font-size:18px;cursor:pointer}
+.fine{font-size:11px;font-weight:300;opacity:.5;margin:10px 2px;line-height:1.5}
+.name{font-size:15px;text-align:center;margin:8px 0 0;min-height:20px}
+.name b{color:var(--pink);font-weight:600}
+</style>
+<link rel="stylesheet" href="logo-motion.css">
+</head>
+<body>
+<header>
+  <a href="/" aria-label="PajamasDog home"><img class="hlogo" src="img/logo2/stack.png?v=1" alt="PajamasDog"></a>
+  <a class="back" href="/">← Shop</a>
+</header>
+<main>
+  <h1>AI Playground ✨</h1>
+  <p class="sub">Your own pet, cut out by AI on your phone. Our AI stylist dresses it in real PajamasDog items — then it dances. Free.</p>
+
+  <div class="stage" id="stage">
+    <canvas id="cv" width="720" height="900" aria-label="Your pet on stage"></canvas>
+    <div class="rec hide" id="rec">● REC</div>
+    <div class="busy hide" id="busy"><b id="busyT">AI is cutting out your pet…</b><span id="busyS">On your phone — the photo never leaves it</span></div>
+  </div>
+  <p class="name" id="name"></p>
+
+  <div class="tools">
+    <button id="tPhoto"><i>📷</i>My pet</button>
+    <button id="tAI"><i>✨</i>AI style me</button>
+    <button id="tDance" class="on"><i>💃</i>Dance</button>
+    <button id="tScene"><i>🎭</i>Stage</button>
+  </div>
+  <div class="acts">
+    <button class="btn" id="tVideo">🎬 Save my pet's dance video</button>
+    <button class="btn ghost" id="tCover">📰 Make our magazine cover</button>
+  </div>
+  <input type="file" accept="image/*" id="file" hidden>
+
+  <div class="lbl" id="lookLbl">Your pet is wearing — tap + Bag to buy the real thing</div>
+  <div class="look" id="look"></div>
+
+  <div class="lbl">Tap to put on / take off · drag or pinch on the stage to fit</div>
+  <div class="tray" id="tray"></div>
+
+  <section class="picks hide" id="picks">
+    <h2>Your bag</h2>
+    <div id="pkList"></div>
+    <button class="btn" id="buy">Buy</button>
+    <p class="fine">Prices include free shipping. All sales final — see <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>. Please pick sizes from your pet's measurements.</p>
+  </section>
+  <p class="fine">Your photo stays on your phone: the phone's own AI cuts out your pet and our AI stylist picks the look. Nothing is uploaded. Want a photo-real AI fashion show of your own pet? <a href="show.html" style="text-decoration:underline">See the AI fashion show</a>.</p>
+</main>
+<script src="shop.js"></script>
+<script src="sizes_data.js?v=2"></script>
+<script src="sizefinder.js?v=1"></script>
+<script type="module">
+const $ = id => document.getElementById(id);
+const ITEMS = [
+  {id:'pd-01',       slot:'body',  label:'Pajama'},
+  {id:'cj-15418368', slot:'body',  label:'Pajama'},
+  {id:'cj-27704576', slot:'body',  label:'Overalls'},
+  {id:'cj-05627136', slot:'neck',  label:'Pearls'},
+  {id:'cj-21605200', slot:'neck',  label:'Bandana'},
+  {id:'cj-58547456', slot:'neck',  label:'Collar'},
+  {id:'cj-20801280', slot:'neck',  label:'Lace bib'},
+  {id:'cj-60843008', slot:'eyes',  label:'Goggles'},
+  {id:'cj-08727296', slot:'eyes',  label:'Goggles'},
+  {id:'cj-6E533712', slot:'eyes',  label:'Visor'},
+  {id:'cj-71611400', slot:'floor', label:'Bowl'},
+];
+const ORDER = ['body','neck','eyes'];            // drawn on the pet in this order; floor is drawn beside it
+const W = 720, H = 900, cv = $('cv'), g = cv.getContext('2d');
+const load = src => new Promise((r, j) => { const i = new Image(); i.crossOrigin = 'anonymous'; i.onload = () => r(i); i.onerror = j; i.src = src; });
+let byId = {}, pet = null, geo = null, worn = {}, liked = new Set(), dancing = true, scene = 0, petName = '';
+const LOGO = load('img/logo2/stack.png');
+ITEMS.forEach(it => { it.img = load(`img/play/${it.id}.webp`); });
+
+// ---------- AI 1: cut the pet out (on the phone: MediaPipe DeepLab, dog + cat classes) ----------
+let SEG = null;
+async function cutout(img){
+  if(!SEG){
+    const v = await import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/vision_bundle.mjs');
+    const fs = await v.FilesetResolver.forVisionTasks('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm');
+    SEG = await v.ImageSegmenter.createFromOptions(fs, {baseOptions:{modelAssetPath:'https://storage.googleapis.com/mediapipe-models/image_segmenter/deeplab_v3/float32/1/deeplab_v3.tflite'},
+      runningMode:'IMAGE', outputCategoryMask:true, outputConfidenceMasks:false});
+  }
+  // work at most 900 px
+  const s = Math.min(1, 900/Math.max(img.naturalWidth, img.naturalHeight)), w = Math.round(img.naturalWidth*s), h = Math.round(img.naturalHeight*s);
+  const src = document.createElement('canvas'); src.width = w; src.height = h; src.getContext('2d').drawImage(img, 0, 0, w, h);
+  const res = SEG.segment(src); const m = res.categoryMask, mw = m.width, mh = m.height, cat = m.getAsUint8Array();
+  let keep = c => c === 12 || c === 8;                       // 12 dog, 8 cat
+  if(!cat.some(keep)) keep = c => c > 0;                     // anything that isn't background
+  const mc = document.createElement('canvas'); mc.width = mw; mc.height = mh; const mg = mc.getContext('2d'); const id = mg.createImageData(mw, mh);
+  let n = 0; for(let i=0;i<cat.length;i++){ if(keep(cat[i])){ id.data[i*4+3] = 255; n++; } }
+  m.close && m.close();
+  if(n < cat.length*0.02) return null;
+  mg.putImageData(id, 0, 0);
+  // soft edge: blur the mask, then use it to cut the photo
+  const out = document.createElement('canvas'); out.width = w; out.height = h; const og = out.getContext('2d');
+  og.filter = `blur(${Math.max(1, w/300)}px)`; og.drawImage(mc, 0, 0, w, h); og.filter = 'none';
+  og.globalCompositeOperation = 'source-in'; og.drawImage(src, 0, 0);
+  return trim(out);
+}
+function trim(c){
+  const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data; let x0 = c.width, y0 = c.height, x1 = 0, y1 = 0;
+  for(let y=0;y<c.height;y++) for(let x=0;x<c.width;x++) if(d[(y*c.width+x)*4+3] > 60){ if(x<x0)x0=x; if(x>x1)x1=x; if(y<y0)y0=y; if(y>y1)y1=y; }
+  const t = document.createElement('canvas'); t.width = x1-x0+1; t.height = y1-y0+1; t.getContext('2d').drawImage(c, -x0, -y0); return t;
+}
+// Where the head, neck and body are (from the cut-out shape) + fur colour
+function measure(c){
+  const w = c.width, h = c.height, d = c.getContext('2d').getImageData(0, 0, w, h).data;
+  const band = (a, b) => { let sx = 0, n = 0, minX = w, maxX = 0, sy = 0;
+    for(let y=Math.floor(h*a); y<Math.floor(h*b); y++) for(let x=0;x<w;x++) if(d[(y*w+x)*4+3] > 100){ sx += x; sy += y; n++; if(x<minX)minX=x; if(x>maxX)maxX=x; }
+    return n ? {cx: sx/n, cy: sy/n, w: Math.max(10, maxX-minX)} : {cx: w/2, cy: h*(a+b)/2, w: w*.5}; };
+  // head = the highest part of the pet (ears/head are on top for standing, sitting and side views)
+  let top = 0; outer: for(let y=0;y<h;y++) for(let x=0;x<w;x++) if(d[(y*w+x)*4+3] > 100){ top = y; break outer; }
+  const head = band(top/h, Math.min(1, top/h + .2));
+  head.w = Math.min(head.w, w*.5); head.cy = Math.max(head.cy, top + head.w*.45);
+  const body = band(.45, .8);
+  // body centre leans away from the head on side views
+  if(Math.abs(head.cx - w/2) > w*.15) body.cx = w/2 + (w/2 - head.cx)*.35;
+  body.w = Math.min(body.w, w*.75);
+  let r = 0, gg = 0, b = 0, n = 0;
+  for(let i=0;i<d.length;i+=16) if(d[i+3] > 200){ r += d[i]; gg += d[i+1]; b += d[i+2]; n++; }
+  const nx = head.cx + (body.cx - head.cx)*.25, ny = head.cy + head.w*.62;
+  return {w, h, head, body, neck: {cx: nx, cy: ny}, fur: n ? [r/n, gg/n, b/n] : [180,140,100]};
+}
+
+// ---------- stage ----------
+const fit = () => { const s = Math.min(W*.78/pet.width, H*.6/pet.height); return {s, x: W/2 - pet.width*s/2, y: H*.86 - pet.height*s}; };
+async function wear(it, on){
+  if(on === false || (on === undefined && worn[it.slot]?.it === it)){ delete worn[it.slot]; drawUI(); return; }
+  const img = await it.img, G = geo; let w, x, y;
+  if(it.slot === 'eyes'){ w = G.head.w*.62; x = G.head.cx; y = G.head.cy + G.head.w*.02; }
+  if(it.slot === 'neck'){ w = (G.headNeckW || G.head.w)*.72; x = G.neck.cx; y = G.neck.cy; }
+  if(it.slot === 'body'){ w = Math.min(G.body.w*.62, G.w*.6); x = G.body.cx; y = Math.max(G.body.cy, G.neck.cy + w*.45); }
+  if(it.slot === 'floor'){ w = G.w*.28; x = G.w*1.08; y = G.h*1.0; }
+  worn[it.slot] = {it, img, x, y, w};
+  drawUI();
+}
+const SCENES = [
+  {name:'Runway', draw(t){ const gr = g.createLinearGradient(0,0,0,H); gr.addColorStop(0,'#2a1745'); gr.addColorStop(1,'#120c1e'); g.fillStyle = gr; g.fillRect(0,0,W,H);
+    for(let k=0;k<3;k++){ const a = Math.sin(t*.8+k*2)*.25; g.save(); g.translate(W*(.2+.3*k), -20); g.rotate(a); const sg = g.createLinearGradient(0,0,0,H); sg.addColorStop(0,'rgba(255,220,250,.28)'); sg.addColorStop(1,'rgba(255,220,250,0)'); g.fillStyle = sg; g.beginPath(); g.moveTo(-20,0); g.lineTo(20,0); g.lineTo(160,H); g.lineTo(-160,H); g.fill(); g.restore(); }
+    g.fillStyle = 'rgba(255,61,127,.18)'; g.beginPath(); g.ellipse(W/2, H*.88, W*.44, 44, 0, 0, 7); g.fill(); }},
+  {name:'Party', draw(t){ const gr = g.createLinearGradient(0,0,W,H); gr.addColorStop(0,'#ff7eb3'); gr.addColorStop(1,'#7a5cff'); g.fillStyle = gr; g.fillRect(0,0,W,H);
+    for(let k=0;k<60;k++){ const x = (k*137.5 % W), y = ((k*71 + t*120*(1+k%3)) % (H+40)) - 20; g.fillStyle = ['#fff','#ffe066','#7cf','#ff3d7f'][k%4]; g.save(); g.translate(x,y); g.rotate(t*3+k); g.fillRect(-6,-3,12,6); g.restore(); } }},
+  {name:'Cozy', draw(t){ const gr = g.createLinearGradient(0,0,0,H); gr.addColorStop(0,'#fff3e6'); gr.addColorStop(1,'#ffd9e6'); g.fillStyle = gr; g.fillRect(0,0,W,H);
+    g.font = '40px serif'; for(let k=0;k<12;k++){ const x = (k*97) % W + 30, y = H - ((t*40 + k*90) % (H+60)); g.globalAlpha = .35; g.fillText('♥', x, y); } g.globalAlpha = 1;
+    g.fillStyle = 'rgba(255,61,127,.12)'; g.beginPath(); g.ellipse(W/2, H*.88, W*.44, 40, 0, 0, 7); g.fill(); }},
+];
+// dance moves: [dx, dy, rotation, scaleX, scaleY] for beat phase p (0..1)
+const MOVES = [
+  p => { const h = Math.abs(Math.sin(p*Math.PI)); return [0, -h*60, 0, 1 - h*.04, 1 + h*.06]; },            // bounce
+  p => [0, 0, Math.sin(p*Math.PI*2)*.16, 1, 1],                                                              // wiggle
+  p => [0, -Math.sin(p*Math.PI)*30, 0, Math.cos(p*Math.PI*2), 1],                                           // spin
+  p => [Math.sin(p*Math.PI*2)*70, -Math.abs(Math.sin(p*Math.PI*4))*25, Math.sin(p*Math.PI*2)*.08, 1, 1],    // shimmy
+  p => { const h = Math.sin(p*Math.PI); return [0, -h*150, 0, 1 - (p<.12||p>.88?.08:0), 1 + (p<.12||p>.88?-.1:.05)]; }, // big jump
+];
+const BEAT = 1.1;
+let t0 = performance.now(), sparks = [];
+function frame(now){
+  const t = (now - t0)/1000;
+  SCENES[scene].draw(t);
+  if(pet){
+    const F = fit(); let m = [0,0,0,1,1];
+    if(dancing && !drag){ const b = t/BEAT, mv = MOVES[Math.floor(b/2) % MOVES.length]; m = mv(b % 1); }
+    const gx = W/2, gy = H*.86;
+    // shadow
+    g.fillStyle = 'rgba(0,0,0,.28)'; g.beginPath(); g.ellipse(gx, gy+6, pet.width*F.s*.42*(1 + m[1]/600), 18, 0, 0, 7); g.fill();
+    g.save(); g.translate(gx + m[0], gy + m[1]); g.rotate(m[2]); g.scale(m[3], m[4]); g.translate(-gx, -gy);
+    // white sticker outline, then the pet
+    g.save(); g.shadowColor = 'rgba(0,0,0,.35)'; g.shadowBlur = 18; g.drawImage(OUTLINE, F.x - 8, F.y - 8, pet.width*F.s + 16, pet.height*F.s + 16); g.restore();
+    g.drawImage(pet, F.x, F.y, pet.width*F.s, pet.height*F.s);
+    for(const sl of ORDER){ const o = worn[sl]; if(o) drawItem(o, F); }
+    g.restore();
+    const fl = worn.floor; if(fl) drawItem(fl, F, true);
+    if(dancing && Math.random() < .25) sparks.push({x: gx + (Math.random()-.5)*W*.7, y: H*.3 + Math.random()*H*.5, life: 1, s: 10 + Math.random()*16});
+  }
+  sparks = sparks.filter(p => (p.life -= .02) > 0);
+  for(const p of sparks){ g.globalAlpha = p.life; g.fillStyle = '#fff'; star(p.x, p.y - (1-p.life)*40, p.s*p.life); } g.globalAlpha = 1;
+  if(petName){ g.font = '800 34px Nunito, sans-serif'; g.textAlign = 'center'; g.fillStyle = 'rgba(0,0,0,.35)'; g.fillText(petName, W/2+2, H-30); g.fillStyle = '#fff'; g.fillText(petName, W/2, H-32); g.textAlign = 'left'; }
+  LOGO.then(l => {}); if(LOGO_IMG) g.drawImage(LOGO_IMG, 22, 22, 150, 150*LOGO_IMG.naturalHeight/LOGO_IMG.naturalWidth);
+  requestAnimationFrame(frame);
+}
+let LOGO_IMG = null; LOGO.then(l => LOGO_IMG = l);
+function star(x, y, r){ g.beginPath(); for(let i=0;i<10;i++){ const a = i*Math.PI/5, rr = i%2 ? r*.4 : r; g.lineTo(x + Math.cos(a)*rr, y + Math.sin(a)*rr); } g.fill(); }
+function drawItem(o, F, floor){
+  const s = F.s, w = o.w*s, h = w*o.img.naturalHeight/o.img.naturalWidth;
+  g.save(); g.shadowColor = 'rgba(0,0,0,.3)'; g.shadowBlur = 8; g.drawImage(o.img, F.x + o.x*s - w/2, F.y + o.y*s - (floor ? h : h/2), w, h); g.restore();
+}
+let OUTLINE = null;
+function makeOutline(c){   // white die-cut border so rough edges look like a sticker
+  const o = document.createElement('canvas'); o.width = c.width + 16; o.height = c.height + 16; const og = o.getContext('2d');
+  for(let a=0;a<16;a++) og.drawImage(c, 8 + Math.cos(a*Math.PI/8)*7, 8 + Math.sin(a*Math.PI/8)*7);
+  og.globalCompositeOperation = 'source-in'; og.fillStyle = '#fff'; og.fillRect(0, 0, o.width, o.height); return o;
+}
+// Our demo pets: anchors set by hand (x, y as a share of the picture; w = head width share)
+const DEMO = {maltese:{eyes:[.64,.25,.42], neck:[.6,.42,.5], body:[.5,.66,.7]}, pomeranian:{eyes:[.73,.23,.22], neck:[.72,.38,.28], body:[.48,.5,.6]}, cat:{eyes:[.83,.17,.2], neck:[.8,.31,.24], body:[.55,.45,.6]}};
+async function setPet(c, demo){ pet = c; geo = measure(c);
+  if(demo){ const A = DEMO[demo], w = c.width, h = c.height; geo.head = {cx: A.eyes[0]*w, cy: A.eyes[1]*h, w: A.eyes[2]*w/.62}; geo.neck = {cx: A.neck[0]*w, cy: A.neck[1]*h}; geo.body = {cx: A.body[0]*w, cy: A.body[1]*h, w: A.body[2]*w/.58}; geo.headNeckW = A.neck[2]*w/.72; } OUTLINE = makeOutline(c); const keep = Object.values(worn).map(o => o.it); worn = {}; for(const it of keep) await wear(it, true); }
+
+// ---------- AI 2: stylist — picks a full look that pops against the fur, names the star ----------
+const avg = async it => { if(it.rgb) return it.rgb; const im = await it.img, c = document.createElement('canvas'); c.width = c.height = 24; const x = c.getContext('2d'); x.drawImage(im, 0, 0, 24, 24);
+  const d = x.getImageData(0,0,24,24).data; let r=0,gg=0,b=0,n=0; for(let i=0;i<d.length;i+=4) if(d[i+3]>150){ r+=d[i]; gg+=d[i+1]; b+=d[i+2]; n++; } return it.rgb = [r/n, gg/n, b/n]; };
+async function stylist(){
+  const fur = geo.fur, used = {};
+  for(const slot of ['body','neck','eyes','floor']){
+    if(slot === 'eyes' && Math.random() < .35) continue;          // not every look needs goggles
+    const opts = ITEMS.filter(i => i.slot === slot && worn[slot]?.it !== i);
+    let best = null, bs = -1;
+    for(const it of opts){ const c = await avg(it); const dist = Math.hypot(c[0]-fur[0], c[1]-fur[1], c[2]-fur[2]); const sc = dist + Math.random()*120; if(sc > bs){ bs = sc; best = it; } }
+    if(best) used[slot] = best;
+  }
+  worn = {}; for(const it of Object.values(used)) await wear(it, true);
+  const [r, gg, b] = fur, L = (r+gg+b)/3;
+  const adj = L > 200 ? ['Snowy','Cloud','Pearl'] : L < 70 ? ['Midnight','Shadow','Espresso'] : r - b > 70 ? ['Ginger','Honey','Sunny'] : r - b > 30 ? ['Cocoa','Caramel','Toffee'] : ['Silver','Smoky','Pepper'];
+  const role = used.eyes ? ['Pilot','Rocket','Cool Cat'] : used.neck?.label === 'Pearls' ? ['Princess','Duchess','Royal'] : used.body?.label === 'Overalls' ? ['Farmer','Builder','Buddy'] : ['Superstar','Model','Dreamer'];
+  const pickR = a => a[Math.floor(Math.random()*a.length)];
+  petName = `${pickR(adj)} ${pickR(role)}`;
+  $('name').innerHTML = `✨ AI stylist: <b>${petName}</b> · style score ${90 + Math.floor(Math.random()*10)}`;
+  dancing = true; $('tDance').classList.add('on');
+}
+
+// ---------- drag / pinch to fit an item ----------
+const pts = new Map(); let drag = null;
+function toPet(e){ const r = cv.getBoundingClientRect(), F = fit(); const x = (e.clientX - r.left)*W/r.width, y = (e.clientY - r.top)*H/r.height; return [(x - F.x)/F.s, (y - F.y)/F.s]; }
+cv.addEventListener('pointerdown', e => {
+  if(!pet) return; cv.setPointerCapture(e.pointerId); pts.set(e.pointerId, e);
+  if(pts.size === 1){ const [px, py] = toPet(e);
+    const hit = ['floor', ...ORDER.slice().reverse()].map(s => worn[s]).find(o => o && Math.abs(px - o.x) < o.w/2 && Math.abs(py - o.y) < o.w*o.img.naturalHeight/o.img.naturalWidth/2 + (o.it.slot==='floor' ? o.w : 0));
+    drag = hit ? {o: hit, px, py, ox: hit.x, oy: hit.y, ow: hit.w} : null; }
+  else if(pts.size === 2 && drag){ const [a, b] = [...pts.values()]; drag.d0 = Math.hypot(a.clientX-b.clientX, a.clientY-b.clientY); drag.ow = drag.o.w; }
+});
+cv.addEventListener('pointermove', e => { if(!drag || !pts.has(e.pointerId)) return; pts.set(e.pointerId, e);
+  if(pts.size === 1){ const [px, py] = toPet(e); drag.o.x = drag.ox + px - drag.px; drag.o.y = drag.oy + py - drag.py; }
+  else if(pts.size === 2 && drag.d0){ const [a, b] = [...pts.values()]; drag.o.w = Math.max(20, drag.ow * Math.hypot(a.clientX-b.clientX, a.clientY-b.clientY)/drag.d0); } });
+const up = e => { pts.delete(e.pointerId); if(!pts.size) drag = null; };
+cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
+cv.addEventListener('wheel', e => { if(!pet) return; const [px, py] = toPet(e); const o = ORDER.concat('floor').map(s => worn[s]).reverse().find(o => o && Math.abs(px-o.x) < o.w/2); if(o){ e.preventDefault(); o.w *= e.deltaY < 0 ? 1.06 : .94; } }, {passive:false});
+cv.addEventListener('contextmenu', e => e.preventDefault());
+
+// ---------- UI ----------
+const priceOf = p => (p.price_max > p.price ? 'from ' : '') + '$' + p.price.toFixed(2);
+function drawUI(){
+  $('tray').innerHTML = ITEMS.map((it, i) => `<button data-i="${i}" class="${worn[it.slot]?.it === it ? 'on' : ''}"><div class="ph"><img src="img/play/${it.id}.webp" alt="${it.label}"></div><span>${it.label}</span></button>`).join('');
+  const on = Object.values(worn).map(o => byId[o.it.id]).filter(Boolean);
+  $('lookLbl').classList.toggle('hide', !on.length);
+  $('look').innerHTML = on.map(p => `<div class="lk"><img src="${p.img}" alt=""><div class="t"><b><a href="product.html?id=${encodeURIComponent(p.id)}" target="_blank" rel="noopener">${p.name} ›</a></b><span>${priceOf(p)}</span></div><button data-id="${p.id}" class="${liked.has(p.id) ? 'in' : ''}">${liked.has(p.id) ? '✓ In bag' : '+ Bag'}</button></div>`).join('');
+}
+$('tray').onclick = e => { const b = e.target.closest('button'); if(b && pet) wear(ITEMS[+b.dataset.i]); };
+$('look').onclick = e => { const b = e.target.closest('button'); if(!b) return; const id = b.dataset.id; liked.has(id) ? liked.delete(id) : liked.add(id); drawUI(); drawPicks(); };
+$('tDance').onclick = () => { dancing = !dancing; $('tDance').classList.toggle('on', dancing); };
+$('tScene').onclick = () => { scene = (scene + 1) % SCENES.length; $('tScene').lastChild.textContent = SCENES[scene].name; };
+$('tAI').onclick = () => pet && stylist();
+$('tPhoto').onclick = () => $('file').click();
+const busy = (t, s) => { $('busy').classList.toggle('hide', !t); if(t){ $('busyT').textContent = t; $('busyS').textContent = s || ''; } };
+$('file').onchange = e => { const f = e.target.files[0]; if(f) usePhoto(URL.createObjectURL(f)); };
+async function usePhoto(src){
+  busy('AI is cutting out your pet…', 'On your phone — the photo never leaves it');
+  try { const img = new Image(); img.src = src; await img.decode();
+    const c = await cutout(img);
+    if(!c){ busy('Couldn\'t find a pet in this photo', 'Try a photo where your pet is big and clear'); setTimeout(() => busy(), 3500); return; }
+    await setPet(c); busy('✨ AI stylist is picking a look…', ''); await new Promise(r => setTimeout(r, 700)); await stylist(); busy();
+  } catch(err){ console.log(err); busy('AI could not open this photo', 'Try another JPG or PNG'); setTimeout(() => busy(), 3500); }
+}
+
+// ---------- outputs: dance video + magazine cover (our logo is on both) ----------
+async function share(file, text){
+  const url = 'https://pajamasdog.com/play.html', data = {files:[file], title:'PajamasDog', text: text + ' ' + url};
+  try { if(navigator.canShare && navigator.canShare(data)) return await navigator.share(data); } catch(e){ if(e.name === 'AbortError') return; }
+  const a = document.createElement('a'); a.href = URL.createObjectURL(file); a.download = file.name; a.click();
+}
+$('tVideo').onclick = async () => {
+  if(!pet) return; if(!cv.captureStream || !window.MediaRecorder){ alert('This browser cannot save videos. Try Chrome or Safari.'); return; }
+  const type = ['video/mp4;codecs=avc1','video/mp4','video/webm;codecs=vp9','video/webm'].find(t => MediaRecorder.isTypeSupported(t)) || '';
+  const rec = new MediaRecorder(cv.captureStream(30), type ? {mimeType:type, videoBitsPerSecond:5e6} : {}); const parts = [];
+  rec.ondataavailable = e => e.data.size && parts.push(e.data);
+  dancing = true; $('tDance').classList.add('on'); t0 = performance.now(); $('rec').classList.remove('hide'); $('tVideo').disabled = true;
+  const done = new Promise(r => rec.onstop = r); rec.start(); await new Promise(r => setTimeout(r, BEAT*2*MOVES.length*1000)); rec.stop(); await done;
+  $('rec').classList.add('hide'); $('tVideo').disabled = false;
+  const mime = (rec.mimeType || type || 'video/webm').split(';')[0];
+  share(new File([new Blob(parts, {type:mime})], 'pajamasdog-dance.' + (mime.includes('mp4') ? 'mp4' : 'webm'), {type:mime}), `${petName || 'My pet'} is dancing in PajamasDog 💃`);
+};
+$('tCover').onclick = async () => {
+  if(!pet) return;
+  const c = document.createElement('canvas'); c.width = W; c.height = H; const x = c.getContext('2d');
+  const was = dancing; dancing = false; await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+  x.drawImage(cv, 0, 0); dancing = was;
+  x.fillStyle = 'rgba(0,0,0,.25)'; x.fillRect(0, H*.62, W, H*.38);
+  x.fillStyle = '#fff'; x.textAlign = 'right'; x.font = '800 64px Nunito, sans-serif'; x.fillText('PAJAMASDOG', W-30, 86);
+  x.font = '600 22px Nunito, sans-serif'; x.fillText('MAGAZINE · ' + new Date().toLocaleString('en', {month:'long', year:'numeric'}).toUpperCase(), W-30, 118);
+  x.textAlign = 'left'; x.font = '800 46px Nunito, sans-serif'; x.fillText(petName || 'Cover Star', 30, H*.74);
+  x.font = '400 24px Nunito, sans-serif';
+  const lines = Object.values(worn).map(o => '✦ ' + (byId[o.it.id]?.name || o.it.label).slice(0, 34));
+  lines.slice(0, 4).forEach((l, i) => x.fillText(l, 30, H*.74 + 44 + i*32));
+  x.fillStyle = '#ff3d7f'; x.font = '600 22px Nunito, sans-serif'; x.fillText('Styled by AI · pajamasdog.com', 30, H - 24);
+  c.toBlob(b => share(new File([b], 'pajamasdog-cover.jpg', {type:'image/jpeg'}), `${petName || 'My pet'} made the cover of PajamasDog Magazine 📰`), 'image/jpeg', .92);
+};
+
+// Bag → sizes → one checkout
+function drawPicks(){
+  const items = [...liked].map(id => byId[id]).filter(Boolean);
+  $('picks').classList.toggle('hide', !items.length);
+  $('pkList').innerHTML = items.map(p => { const sz = (window.inStock ? inStock(p,0) : p.sizes) || [];
+    return `<div class="pk" data-id="${p.id}"><img src="${p.img}" alt=""><div class="t"><b>${p.name}</b><span>${priceOf(p)}</span></div>
+      ${(p.sizes||[]).length ? `<select aria-label="Size"><option value="">Size</option>${sz.map(z=>`<option>${z}</option>`).join('')}</select>` : ''}
+      <button class="x" aria-label="Remove">✕</button></div>`; }).join('');
+  $('buy').textContent = `Buy (${items.length})`;
+}
+$('pkList').onclick = e => { const x = e.target.closest('.x'); if(!x) return; liked.delete(x.closest('.pk').dataset.id); drawPicks(); drawUI(); };
+$('buy').onclick = () => {
+  const rows = [...document.querySelectorAll('.pk')];
+  const miss = rows.find(r => r.querySelector('select') && !r.querySelector('select').value);
+  if(miss){ miss.querySelector('select').focus(); miss.scrollIntoView({block:'center', behavior:'smooth'}); return; }
+  payDirect(rows.map(r => ({id: r.dataset.id, size: r.querySelector('select')?.value || '', c: 0})));
+};
+
+// Start with one of our AI demo pets, already styled and dancing
+(async () => {
+  requestAnimationFrame(frame);
+  const q = new URLSearchParams(location.search).get('pet'), dn = DEMO[q] ? q : ['maltese','pomeranian','cat'][Math.floor(Math.random()*3)], demo = await load(`img/play/demo_${dn}.webp`);
+  const c = document.createElement('canvas'); c.width = demo.naturalWidth; c.height = demo.naturalHeight; c.getContext('2d').drawImage(demo, 0, 0);
+  await setPet(c, dn); await stylist(); if(new URLSearchParams(location.search).has('still')){ dancing = false; $('tDance').classList.remove('on'); }
+  $('name').innerHTML = `Demo pet: <b>${petName}</b> — tap 📷 My pet to put your own pet on stage`;
+  let carried = null; try { carried = sessionStorage.getItem('pd:photo'); sessionStorage.removeItem('pd:photo'); } catch(e){}
+  if(carried) usePhoto(carried);   // photo picked on the home page
+  await getProducts('all', 0); byId = Object.fromEntries((await FEED).map(p => [p.id, p])); drawUI();
+})();
+</script>
+</body>
+</html>
