@@ -131,6 +131,7 @@ async function fullLook(req, photo){
   const promptText =
     `Cute, cozy, playful photo of every pet from @pet dressed in the numbered items shown in @items, all at once: ${list}. Each pet is ${MOVE[req.move] || MOVE.walk}. ` +
     `Copy each item exactly from @items: same colors, prints, fabric and shape. Everything fits naturally. ` +
+    `The pet wears ONLY the listed item${items.length > 1 ? 's' : ''}: no other clothes, hats, scarves, collars or accessories than these. ` +
     `Keep every pet's face, breed, fur color and markings exactly as in @pet. Bright, happy, photorealistic, soft natural light, no text, no numbers, no logos added.`;
   const start = await fetch(`${RW}/text_to_image`, { method: 'POST', headers: RW_HEAD(), body: JSON.stringify({
     model: MODEL, ratio: RATIO, promptText, outputCount: 1,
