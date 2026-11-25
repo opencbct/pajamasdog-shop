@@ -136,17 +136,17 @@ async function render(){
   showQuota();
 }
 
-// AI allowance: 5 free pictures a day, then the 30-picture pack (helpers in shop.js)
+// AI pictures are paid: 30 for $2.99 (helpers in shop.js)
 function showQuota(){
   const left = aiLeft();
-  $('quota').innerHTML = left ? `${left} AI pictures left` : `Free AI pictures used up for today. <a id="pack" style="color:var(--pink);text-decoration:underline;cursor:pointer">Get 30 more · $2.99</a>`;
+  $('quota').innerHTML = left ? `${left} AI pictures left` : `<a id="pack" style="color:var(--pink);text-decoration:underline;cursor:pointer">Get 30 AI pictures · $2.99</a>`;
   const pk = document.getElementById('pack'); if(pk) pk.onclick = buyPack;
 }
 const used = () => AI_FREE - aiLeft();
 const FREE_PER_DAY = AI_FREE;
 $('dress').addEventListener('click', async () => {
   const p = outfits[idx], key = p.id+'|'+pose; if(cache[key] || !photo) return;
-  if(used() >= FREE_PER_DAY){ showQuota(); return; }
+  if(aiLeft() < 1){ buyPack(); return; }
   const my = ++run; $('stage').classList.add('loading'); $('dress').disabled = true;
   try {
     const r = await tryOn(photo, p, pose);

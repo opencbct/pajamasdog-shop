@@ -116,8 +116,8 @@ async function tryOn(photoFile, product, pose='sit'){
   new MutationObserver(() => watch()).observe(document.documentElement, {childList:true, subtree:true});
 })();
 
-// ---- AI picture allowance (형님 11-25): 6 free a day (one show); then a 30-picture pack for $2.99 ----
-const AI_FREE = 6;   // = one fashion show a day
+// ---- AI pictures (형님 11-25): no free AI — the user pays for what they choose to make. 30 pictures = $2.99 ----
+const AI_FREE = 0;
 const aiDay = () => 'pd:ai:' + new Date().toISOString().slice(0,10);
 const aiGet = k => { try { return localStorage.getItem(k); } catch(e){ return null; } };
 const aiSet = (k, v) => { try { localStorage.setItem(k, v); } catch(e){} };
@@ -125,7 +125,7 @@ const aiPack = () => { try { return JSON.parse(aiGet('pd:pack')) || null; } catc
 const aiFreeLeft = () => Math.max(0, AI_FREE - (+aiGet(aiDay()) || 0));
 const aiLeft = () => aiFreeLeft() + ((aiPack()||{}).left || 0);
 // Which pack id to send for the next n pictures ('' while free pictures remain).
-const aiPackFor = n => aiFreeLeft() >= n ? '' : ((aiPack()||{}).s || '');
+const aiPackFor = n => (aiPack()||{}).s || '';
 function aiUse(n){
   const f = Math.min(n, aiFreeLeft()); aiSet(aiDay(), (+aiGet(aiDay()) || 0) + f);
   const rest = n - f, p = aiPack(); if(rest && p){ p.left = Math.max(0, p.left - rest); aiSet('pd:pack', JSON.stringify(p)); }

@@ -54,7 +54,9 @@ export const handler = async (event) => {
   let req; try { req = JSON.parse(event.isBase64Encoded ? Buffer.from(event.body, 'base64').toString() : event.body); } catch { return json(400, { error: 'Bad request' }); }
   // Paid picture pack (30 for $2.99) skips the free daily limit, up to its 30 pictures.
   const n = Array.isArray(req.items) ? 1 : 1;
-  if (!(await packOk(String(req.pack || ''), n)) && limited(ip)) return json(429, { error: 'Free AI pictures used up for today. Get 30 more for $2.99, or come back tomorrow.' });
+  // 형님 11-25: no free AI — every picture is paid for by the user (30 for $2.99). The platform never pays for users.
+  if (!(await packOk(String(req.pack || ''), n))) return json(402, { error: 'Get AI pictures first: 30 for $2.99.' });
+  if (limited(ip)) return json(429, { error: 'Too many pictures at once. Try again in a minute.' });
   const photo = String(req.photo || '');
   if (!/^data:image\/(jpeg|png|webp);base64,/.test(photo) || photo.length > MAX_PHOTO) return json(400, { error: 'Please use a JPG or PNG photo.' });
   // Full look (11-25): {items:[ids], collage:"data:image/jpeg..."} -> the pet wears / is shown with every item at once.

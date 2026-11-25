@@ -118,7 +118,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
     <button class="btn" id="buy">Buy my picks</button>
     <p class="fine">Prices include free shipping. All sales final — see <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>. AI pictures are a preview and can differ slightly from the real product; please pick sizes from your pet's measurements.</p>
   </section>
-  <p class="fine">Your photo is sent to our AI partner (Runway) only to make the pictures; we do not keep it. One show uses 6 AI pictures: one show a day is free, then 30 more pictures for $2.99.</p>
+  <p class="fine">Your photo is sent to our AI partner (Runway) only to make the pictures; we do not keep it. One show uses 6 AI pictures. AI pictures: 30 for $2.99.</p>
 </main>
 <script src="shop.js"></script>
 <script src="sizes_data.js?v=2"></script>
@@ -158,11 +158,12 @@ $('line').onclick = e => { const b = e.target.closest('button'); if(!b) return; 
   const p = lineup[i]; if(liked.has(p.id)) liked.delete(p.id); else { liked.add(p.id); if(i===cur) heartPop(); }
   drawLine(); drawPicks(); if(i===cur) show(cur); };
 
-// AI allowance: 5 free pictures a day, then the 30-picture pack (helpers in shop.js)
+// AI pictures are paid: 30 for $2.99 (helpers in shop.js)
 function showQuota(){
   const left = aiLeft(), enough = left >= SLOTS.length;
-  $('quota').innerHTML = enough ? `${left} AI pictures left${aiFreeLeft() < left ? '' : ' today'} · a show uses ${SLOTS.length}`
-    : `Free shows used up for today. <a id="pack" style="color:var(--pink);text-decoration:underline;cursor:pointer">Get 30 more pictures · $2.99</a>`;
+  $('quota').innerHTML = enough ? `${left} AI pictures left · a show uses ${SLOTS.length}`
+    : `A show uses ${SLOTS.length} AI pictures. <a id="pack" style="color:var(--pink);text-decoration:underline;cursor:pointer">Get 30 pictures · $2.99 (5 shows)</a>`;
+  if(!frames.length) $('start').textContent = enough ? '▶ Start the show' : '▶ Start the show · 30 pictures $2.99';
   const pk = document.getElementById('pack'); if(pk) pk.onclick = buyPack;
 }
 function shrink(file){
@@ -251,7 +252,7 @@ async function play(){
 $('start').onclick = async () => {
   if(!photo){ $('file').click(); return; }
   if(frames.length === SLOTS.length){ $('start').disabled = true; return play(); }
-  if(aiLeft() < SLOTS.length){ showQuota(); return; }
+  if(aiLeft() < SLOTS.length){ buyPack(); return; }
   PACK_ID = aiPackFor(SLOTS.length);
   $('start').disabled = true; $('busy').classList.remove('hide'); $('busyT').textContent = 'Getting dressed…';
   try {
