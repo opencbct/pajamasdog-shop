@@ -46,8 +46,10 @@ const REGION = (() => {
 const canShip = p => (SOURCES[p.src||'sample']||{regions:[]}).regions.includes(REGION);
 
 let FEED = null;
+// 형님 11-25: no jumping out to other shops — show only items people can buy right here (Buy now, Stripe).
+const OFFSITE = new Set(['amazon']);
 async function getProducts(cat, page){
-  FEED = FEED || fetch('products/feed.json',{cache:'no-store'}).then(r=>r.json()).then(a=>a.filter(p => !blocked(p) && canShip(p)));
+  FEED = FEED || fetch('products/feed.json',{cache:'no-store'}).then(r=>r.json()).then(a=>a.filter(p => !blocked(p) && canShip(p) && !OFFSITE.has(p.src)));
   let list = (await FEED).filter(p => cat==='all' || p.cat===cat || (p.tags||[]).includes(cat) || (cat==='cats' && p.pet==='cat') || (cat==='dogs' && p.pet!=='cat' && (p.cat==='pajamas'||p.cat==='matching')));
   if(DEMO && list.length){ const out=[]; for(let i=0;i<PAGE_SIZE;i++){ const p=list[(page*PAGE_SIZE+i)%list.length]; out.push({...p,id:p.id+'-'+page+'-'+i}); } return page<20?out:[]; }
   // 형님 11-25: our own items (Buy now, no leaving the site) always first; partner/Amazon items go to the back.
