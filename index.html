@@ -558,7 +558,7 @@ document.getElementById('heroVideo')?.addEventListener('change', e => {
     const c = document.createElement('canvas'); c.width = v.videoWidth*k; c.height = v.videoHeight*k;
     c.getContext('2d').drawImage(v, 0, 0, c.width, c.height);
     try { sessionStorage.setItem('pd:photo', c.toDataURL('image/jpeg', .86)); } catch(err){}
-    location.href = 'tryon.html?from=home';
+    location.href = 'show.html?from=home';
   }, {once:true});
 });
 document.getElementById('heroPhoto')?.addEventListener('change', e => {
@@ -569,7 +569,7 @@ document.getElementById('heroPhoto')?.addEventListener('change', e => {
     const c = document.createElement('canvas'); c.width = img.width*k; c.height = img.height*k;
     c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
     try { sessionStorage.setItem('pd:photo', c.toDataURL('image/jpeg', .86)); } catch(err){}
-    location.href = 'tryon.html?from=home';
+    location.href = 'show.html?from=home';
   };
   img.src = URL.createObjectURL(f);
 });

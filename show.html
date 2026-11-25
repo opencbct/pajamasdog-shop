@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Fashion Show — PajamasDog</title>
+<link rel="icon" href="/favicon.ico?v=3" sizes="48x48">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png?v=3">
+<meta name="theme-color" content="#15131c">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shop.css">
+<style>
+main{max-width:560px}
+h1{font-weight:300;font-size:26px;margin:4px 0 4px}
+.sub{font-size:14px;opacity:.65;margin:0 0 14px}
+.hide{display:none!important}
+/* stage */
+.stage{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:var(--card)}
+.stage .fr{position:absolute;inset:0;opacity:0;transition:opacity .5s}
+.stage .fr.on{opacity:1}
+.stage .fr img{width:100%;height:100%;object-fit:cover;display:block}
+.stage .fr.on.walk img{animation:walk 2.6s ease-in-out both}
+.stage .fr.on.spin img{animation:spin 2.6s ease-in-out both}
+.stage .fr.on.jump img{animation:jump 2.6s ease-in-out both}
+.stage .fr.on.dance img{animation:dance 2.6s ease-in-out both}
+.stage .fr.on.strut img{animation:strut 2.6s ease-in-out both}
+@keyframes walk{0%{transform:scale(1.18) translateY(4%)}100%{transform:scale(1.02) translateY(0)}}
+@keyframes spin{0%{transform:perspective(900px) rotateY(-70deg) scale(1.05)}35%{transform:perspective(900px) rotateY(0) scale(1.05)}100%{transform:scale(1.1)}}
+@keyframes jump{0%,100%{transform:translateY(0) scale(1.05)}25%{transform:translateY(-7%) scale(1.08)}45%{transform:translateY(0) scale(1.05)}65%{transform:translateY(-4%) scale(1.07)}}
+@keyframes dance{0%,100%{transform:rotate(0) scale(1.06)}20%{transform:rotate(-4deg) scale(1.08)}40%{transform:rotate(4deg) scale(1.06)}60%{transform:rotate(-3deg) scale(1.09)}80%{transform:rotate(3deg) scale(1.06)}}
+@keyframes strut{0%{transform:translateX(-6%) scale(1.1)}100%{transform:translateX(4%) scale(1.1)}}
+.bars{position:absolute;top:10px;left:10px;right:10px;display:flex;gap:4px;z-index:3}
+.bars i{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.3);overflow:hidden}
+.bars i b{display:block;height:100%;width:0;background:#fff}
+.bars i.done b{width:100%}
+.bars i.now b{animation:fill var(--t,2.6s) linear forwards}
+@keyframes fill{to{width:100%}}
+.step{position:absolute;top:22px;left:14px;font-size:13px;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.7);z-index:3}
+/* the item on screen + heart */
+.item{position:absolute;left:12px;right:12px;bottom:12px;display:flex;align-items:center;gap:10px;padding:8px 8px 8px 8px;border-radius:20px;background:rgba(21,19,28,.62);backdrop-filter:blur(8px);z-index:3}
+.item img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:#fff}
+.item .t{flex:1;min-width:0}
+.item .t b{display:block;font-weight:400;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item .t span{font-size:13px;color:var(--pink)}
+.heart{flex:0 0 64px;height:64px;border-radius:50%;border:0;background:#fff;font-size:30px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.35);transition:transform .15s}
+.heart:active{transform:scale(.9)}
+.heart.on{background:var(--pink)}
+.pop{position:absolute;z-index:4;font-size:54px;pointer-events:none;animation:pop .9s ease-out forwards}
+@keyframes pop{0%{transform:translate(-50%,-50%) scale(.4);opacity:1}100%{transform:translate(-50%,-160%) scale(1.4);opacity:0}}
+.busy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(21,19,28,.6);z-index:5;text-align:center;padding:20px}
+.busy b{font-weight:400;font-size:18px}
+.busy span{font-size:13px;opacity:.7}
+.add{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:2px dashed rgba(255,255,255,.25);border-radius:24px;cursor:pointer;text-align:center;padding:20px}
+.add .ic{font-size:56px}
+.add b{font-weight:400;font-size:20px}
+/* lineup */
+.lbl{font-size:13px;opacity:.6;margin:16px 2px 8px;display:flex;justify-content:space-between}
+.lbl a{color:var(--pink);cursor:pointer}
+.line{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.line button{border:0;padding:0;background:var(--card);border-radius:14px;overflow:hidden;cursor:pointer;position:relative}
+.line img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#fff}
+.line span{display:block;font-size:11px;padding:4px 2px;opacity:.75}
+.line button.liked::after{content:'♥';position:absolute;top:4px;right:6px;color:var(--pink);font-size:16px}
+.quota{font-size:12px;opacity:.6;margin:8px 0 6px;text-align:center}
+.acts{display:grid;gap:10px;margin-top:12px}
+/* picks */
+.picks h2{font-weight:300;font-size:22px;margin:22px 0 10px}
+.pk{display:flex;gap:10px;align-items:center;padding:10px;border-radius:16px;background:var(--card);margin-bottom:8px}
+.pk img{width:56px;height:56px;border-radius:12px;object-fit:cover;background:#fff}
+.pk .t{flex:1;min-width:0}
+.pk .t b{display:block;font-weight:400;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pk .t span{font-size:13px;opacity:.7}
+.pk select{background:var(--chip);color:var(--txt);border:0;border-radius:10px;padding:8px;font:inherit;font-size:14px}
+.pk .x{background:none;border:0;color:var(--txt);opacity:.5;font-size:18px;cursor:pointer}
+.bag{position:absolute;top:18px;right:12px;z-index:3;border:0;border-radius:999px;background:var(--pink);color:#fff;font:inherit;font-size:15px;padding:8px 14px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.fine{font-size:11px;font-weight:300;opacity:.5;margin:10px 2px;line-height:1.5}
+</style>
+<link rel="stylesheet" href="logo-motion.css">
+</head>
+<body>
+<header>
+  <a href="/" aria-label="PajamasDog home"><img class="hlogo" src="img/logo2/lockup.png?v=1" alt="PajamasDog"></a>
+  <a class="back" href="/">← Shop</a>
+</header>
+<main>
+  <h1>AI fashion show 🎬</h1>
+  <p class="sub">Your pet puts on our items one by one — walking, spinning, jumping, dancing. Tap ♥ on what you love.</p>
+
+  <div class="stage" id="stage">
+    <label class="add" id="add"><span class="ic">📷</span><b>Add your pet's photo</b><span style="font-size:13px;opacity:.6">Then press Start.</span><input type="file" accept="image/*" id="file" hidden></label>
+    <div id="frames"></div>
+    <div class="bars hide" id="bars"></div>
+    <div class="step hide" id="step"></div>
+    <button class="bag hide" id="bag">🛍 0 · Buy</button>
+    <div class="item hide" id="item"><img id="iImg" alt=""><div class="t"><b id="iName"></b><span id="iPrice"></span></div><button class="heart" id="heart" aria-label="I like this">♡</button></div>
+    <div class="busy hide" id="busy"><b id="busyT">Getting dressed…</b><span id="busyS">AI is making 5 looks (about 30 seconds)</span></div>
+  </div>
+
+  <div class="lbl"><span>Tonight's lineup — tap one to swap</span><a id="shuffle">🎲 Shuffle</a></div>
+  <div class="line" id="line"></div>
+  <div class="quota" id="quota"></div>
+  <div class="acts">
+    <button class="btn" id="start">▶ Start the show</button>
+    <button class="btn ghost hide" id="share">Share the show</button>
+  </div>
+
+  <section class="picks hide" id="picks">
+    <h2>Your ♥ picks</h2>
+    <div id="pkList"></div>
+    <button class="btn" id="buy">Buy my picks</button>
+    <p class="fine">Prices include free shipping. All sales final — see <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>. AI pictures are a preview and can differ slightly from the real product; please pick sizes from your pet's measurements.</p>
+  </section>
+  <p class="fine">Your photo is sent to our AI partner (Runway) only to make the pictures; we do not keep it. One show uses 5 of your free AI pictures for today.</p>
+</main>
+<script src="shop.js"></script>
+<script src="sizes_data.js?v=2"></script>
+<script src="sizefinder.js?v=1"></script>
+<script>
+const $ = id => document.getElementById(id);
+// Slots in the order the pet puts them on. Each frame wears everything up to that slot.
+const SLOTS = [
+  {k:'pj',   label:'Pajama',  move:'walk',  pose:'walking toward the camera like a runway model', test:p=>p.cat==='pajamas' && !/robe|towel|blanket/i.test(p.name)},
+  {k:'hat',  label:'Hat',     move:'spin',  pose:'turning around in a happy spin',               test:p=>/\bhat\b|beanie|\bcap\b/i.test(p.name)},
+  {k:'paws', label:'Boots',   move:'jump',  pose:'jumping up with all four paws off the ground', test:p=>/boot|shoe|sock/i.test(p.name)},
+  {k:'neck', label:'Neck',    move:'dance', pose:'dancing on its hind legs, front paws up',      test:p=>/scarf|bandana|bow ?tie|necklace/i.test(p.name)},
+  {k:'eyes', label:'Glasses', move:'strut', pose:'posing proudly like a star, head held high',  test:p=>/glass|goggle/i.test(p.name)},
+];
+const FRAME_MS = 2600;
+let pool = {}, lineup = [], photo = null, frames = [], liked = new Set(), playing = 0;
+
+const pick = (arr, not) => { const a = arr.filter(p => p.id !== not); return a[Math.floor(Math.random()*a.length)]; };
+const priceOf = p => (p.price_max > p.price ? 'from ' : '') + '$' + p.price.toFixed(2);
+
+function drawLine(){
+  $('line').innerHTML = lineup.map((p,i) => `<button data-i="${i}" class="${liked.has(p.id)?'liked':''}" aria-label="Swap ${SLOTS[i].label}"><img src="${p.img}" alt="${p.name}"><span>${SLOTS[i].label}</span></button>`).join('');
+}
+function shuffle(only){
+  lineup = SLOTS.map((s,i) => (only!==undefined && i!==only && lineup[i]) ? lineup[i] : pick(pool[s.k], lineup[i]?.id));
+  frames = []; drawLine();
+}
+$('shuffle').onclick = () => shuffle();
+$('line').onclick = e => { const b = e.target.closest('button'); if(!b || playing) return; shuffle(+b.dataset.i); };
+
+// free AI pictures per day on this device (same counter as the try-on page)
+const FREE_PER_DAY = 5;
+const qKey = () => 'pd:ai:' + new Date().toISOString().slice(0,10);
+const used = () => { try { return +localStorage.getItem(qKey()) || 0; } catch(e){ return 0; } };
+const addUsed = n => { try { localStorage.setItem(qKey(), used()+n); } catch(e){} };
+function showQuota(){ const left = Math.max(0, FREE_PER_DAY - used()); $('quota').textContent = left >= SLOTS.length ? `${left} free AI pictures left today · a show uses ${SLOTS.length}` : 'Free AI shows used up for today — come back tomorrow.'; }
+
+function shrink(file){
+  return new Promise(res => { const img = new Image(); img.onload = () => {
+    const s = Math.min(1, 1400 / Math.max(img.width, img.height)); const c = document.createElement('canvas'); c.width = img.width*s; c.height = img.height*s;
+    c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); res(c.toDataURL('image/jpeg', .86)); }; img.src = URL.createObjectURL(file); });
+}
+const loadImg = src => new Promise((r, j) => { const i = new Image(); i.onload = () => r(i); i.onerror = j; i.src = src; });
+// One picture of the items worn so far, numbered, for the AI to copy.
+async function collage(items){
+  const n = items.length, cols = n <= 2 ? n : n <= 4 ? 2 : 3, rows = Math.ceil(n/cols), S = 400;
+  const c = document.createElement('canvas'); c.width = cols*S; c.height = rows*S; const g = c.getContext('2d');
+  g.fillStyle = '#fff'; g.fillRect(0,0,c.width,c.height);
+  for(let i=0;i<n;i++){ const im = await loadImg(items[i].img); const x = (i%cols)*S, y = Math.floor(i/cols)*S, k = Math.min(S/im.width, S/im.height)*.92;
+    g.drawImage(im, x+(S-im.width*k)/2, y+(S-im.height*k)/2, im.width*k, im.height*k);
+    g.fillStyle = '#111'; g.font = '600 40px sans-serif'; g.fillText(String(i+1), x+12, y+46); }
+  return c.toDataURL('image/jpeg', .85);
+}
+const LOGO = loadImg('img/logo2/lockup.png');
+async function brand(src){
+  const [img, logo] = await Promise.all([loadImg(src), LOGO]);
+  const iw = img.naturalWidth, ih = img.naturalHeight, cw = Math.min(iw, ih*4/5), ch = cw*5/4;
+  const c = document.createElement('canvas'); c.width = Math.round(cw); c.height = Math.round(ch); const g = c.getContext('2d');
+  g.drawImage(img, (iw-cw)/2, (ih-ch)/2, cw, ch, 0, 0, c.width, c.height);
+  const w = c.width*.36, h = w*logo.naturalHeight/logo.naturalWidth, m = c.width*.04;
+  g.shadowColor = 'rgba(0,0,0,.5)'; g.shadowBlur = c.width*.008; g.drawImage(logo, m, m, w, h);
+  return c.toDataURL('image/jpeg', .9);
+}
+
+async function makeFrame(i){
+  const items = lineup.slice(0, i+1);
+  const r = await fetch(TRYON_API, {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({
+    photo, items: items.map(p => p.id), collage: await collage(items), move: SLOTS[i].move})});
+  const d = await r.json().catch(() => ({}));
+  if(!r.ok || !d.image) throw new Error(d.error || 'AI could not make this look.');
+  return brand(`data:${d.mime||'image/png'};base64,${d.image}`);
+}
+
+function heartPop(){
+  const s = $('stage').getBoundingClientRect(), h = $('heart').getBoundingClientRect();
+  const el = document.createElement('div'); el.className = 'pop'; el.textContent = '💖';
+  el.style.left = (h.left - s.left + h.width/2) + 'px'; el.style.top = (h.top - s.top) + 'px';
+  $('stage').appendChild(el); setTimeout(() => el.remove(), 900);
+}
+let cur = 0;
+$('heart').onclick = () => {
+  const p = lineup[cur]; if(!p) return;
+  if(liked.has(p.id)) liked.delete(p.id); else { liked.add(p.id); heartPop(); }
+  $('heart').classList.toggle('on', liked.has(p.id)); $('heart').textContent = liked.has(p.id) ? '♥' : '♡';
+  drawLine(); drawPicks();
+};
+
+function show(i){
+  cur = i; const p = lineup[i];
+  [...$('frames').children].forEach((f,k) => f.classList.toggle('on', k===i));
+  [...$('bars').children].forEach((b,k) => { b.className = k<i ? 'done' : k===i ? 'now' : ''; });
+  $('step').textContent = `${i+1}/${SLOTS.length} · + ${SLOTS[i].label}`;
+  $('iImg').src = p.img; $('iName').textContent = p.name; $('iPrice').textContent = priceOf(p);
+  $('heart').classList.toggle('on', liked.has(p.id)); $('heart').textContent = liked.has(p.id) ? '♥' : '♡';
+}
+async function play(){
+  const my = ++playing;
+  ['bars','step','item'].forEach(id => $(id).classList.remove('hide'));
+  for(let loop=0; loop<2 && my===playing; loop++)
+    for(let i=0;i<frames.length && my===playing;i++){ show(i); await new Promise(r => setTimeout(r, FRAME_MS)); }
+  if(my===playing){ playing = 0; $('start').textContent = '↻ Watch again'; $('start').disabled = false; }
+}
+
+$('start').onclick = async () => {
+  if(!photo){ $('file').click(); return; }
+  if(frames.length === SLOTS.length){ $('start').disabled = true; return play(); }
+  if(used() + SLOTS.length > FREE_PER_DAY){ showQuota(); return; }
+  $('start').disabled = true; $('busy').classList.remove('hide'); $('busyT').textContent = 'Getting dressed…';
+  try {
+    let done = 0;
+    frames = await Promise.all(SLOTS.map((s,i) => makeFrame(i).then(u => { $('busyS').textContent = `${++done} of ${SLOTS.length} looks ready`; return u; })));
+    addUsed(SLOTS.length); showQuota();
+    $('frames').innerHTML = frames.map((u,i) => `<div class="fr ${SLOTS[i].move}"><img src="${u}" alt="Your pet in look ${i+1}"></div>`).join('');
+    $('bars').innerHTML = SLOTS.map(() => '<i><b></b></i>').join('');
+    $('bars').style.setProperty('--t', FRAME_MS + 'ms');
+    $('busy').classList.add('hide'); $('share').classList.remove('hide'); play();
+  } catch(e){ $('busyT').textContent = e.message || 'Something went wrong.'; $('busyS').textContent = 'Try again in a moment.'; $('start').disabled = false; frames = []; setTimeout(() => $('busy').classList.add('hide'), 3500); }
+};
+
+// Share: the final full look (logo on it) + a link to the show page.
+$('share').onclick = async () => {
+  const last = frames[frames.length-1]; if(!last) return;
+  const text = 'My pet\'s AI fashion show 🎬 Make yours at pajamasdog.com', url = 'https://pajamasdog.com/show.html';
+  const C = window.Capacitor;
+  if(C && C.isNativePlatform && C.isNativePlatform() && C.Plugins.Filesystem && C.Plugins.Share){
+    try { const f = await C.Plugins.Filesystem.writeFile({path:'pajamasdog-show.jpg', data:last.split(',')[1], directory:'CACHE'});
+      return await C.Plugins.Share.share({title:'PajamasDog', text, url, files:[f.uri]}); } catch(e){ if(/cancel/i.test(e.message||'')) return; }
+  }
+  const file = new File([await (await fetch(last)).blob()], 'pajamasdog-show.jpg', {type:'image/jpeg'});
+  const data = {files:[file], title:'PajamasDog', text: text + ' ' + url};
+  try { if(navigator.canShare && navigator.canShare(data)) return await navigator.share(data); } catch(e){ if(e.name==='AbortError') return; }
+  const a = document.createElement('a'); a.href = last; a.download = 'pajamasdog-show.jpg'; a.click();
+};
+
+// Picks → sizes → one checkout
+function drawPicks(){
+  const items = lineup.filter(p => liked.has(p.id));
+  $('picks').classList.toggle('hide', !items.length);
+  $('pkList').innerHTML = items.map(p => { const sz = (window.inStock ? inStock(p,0) : p.sizes) || [];
+    return `<div class="pk" data-id="${p.id}"><img src="${p.img}" alt=""><div class="t"><b>${p.name}</b><span>${priceOf(p)}</span></div>
+      ${(p.sizes||[]).length ? `<select aria-label="Size"><option value="">Size</option>${sz.map(z=>`<option>${z}</option>`).join('')}</select>` : ''}
+      <button class="x" aria-label="Remove">✕</button></div>`; }).join('');
+  $('buy').textContent = `Buy my picks (${items.length})`;
+  $('bag').classList.toggle('hide', !items.length); $('bag').textContent = `🛍 ${items.length} · Buy`;
+}
+$('bag').onclick = () => $('picks').scrollIntoView({behavior:'smooth', block:'start'});
+$('pkList').onclick = e => { const x = e.target.closest('.x'); if(!x) return; liked.delete(x.closest('.pk').dataset.id); drawLine(); drawPicks(); if(lineup[cur]) show(cur); };
+$('buy').onclick = () => {
+  const rows = [...document.querySelectorAll('.pk')];
+  const miss = rows.find(r => r.querySelector('select') && !r.querySelector('select').value);
+  if(miss){ miss.querySelector('select').focus(); miss.scrollIntoView({block:'center', behavior:'smooth'}); return; }
+  payDirect(rows.map(r => ({id: r.dataset.id, size: r.querySelector('select')?.value || '', c: 0})));
+};
+
+async function usePhoto(dataURL){
+  photo = dataURL; frames = []; $('add').classList.add('hide');
+  $('frames').innerHTML = `<div class="fr on"><img src="${dataURL}" alt="Your pet"></div>`;
+  $('start').textContent = '▶ Start the show';
+}
+$('file').onchange = async e => { const f = e.target.files[0]; if(f) usePhoto(await shrink(f)); };
+
+(async () => {
+  await getProducts('all', 0); const all = await FEED;   // whole catalog (already filtered to buy-here items)
+  const own = all.filter(p => p.src === 'pd' && p.img);
+  SLOTS.forEach(s => pool[s.k] = own.filter(s.test));
+  shuffle(); showQuota();
+  let carried = null; try { carried = sessionStorage.getItem('pd:photo'); sessionStorage.removeItem('pd:photo'); } catch(e){}
+  if(carried) usePhoto(carried);
+})();
+</script>
+</body>
+</html>

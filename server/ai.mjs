@@ -11,7 +11,7 @@ const RW_HEAD = () => ({ authorization: `Bearer ${process.env.RUNWAY_API_KEY}`, 
 const MODEL = 'nano_banana_2.1';      // 4 credits ($0.04) per 1K image
 const RATIO = '768:1376';             // 9:16 portrait, good for phones and Shorts
 const MAX_PHOTO = 4_500_000;          // data URL length (~3.3 MB jpeg)
-const PER_IP_PER_DAY = 8;             // soft limit per warm Lambda; Runway also caps 200 images/day
+const PER_IP_PER_DAY = 20;            // soft limit per warm Lambda; Runway also caps 200 images/day
 
 const POSE = {
   sit:   'sitting calmly, facing the camera',
@@ -100,6 +100,13 @@ const PLACE = [
   [/blanket|bed|mat/i, 'under it, the pet sitting on it'],
   [/carrier|bag/i, 'next to it on the floor'],
 ];
+const MOVE = {
+  walk:  'walking toward the camera like a runway model, mid-step',
+  spin:  'turning around in a happy spin, fur flying',
+  jump:  'jumping up with all four paws off the ground',
+  dance: 'dancing on its hind legs with front paws up',
+  strut: 'posing proudly like a star, head held high',
+};
 const placeOf = name => (PLACE.find(([re]) => re.test(name)) || [null, 'next to it'])[1];
 
 async function fullLook(req, photo){
@@ -112,7 +119,7 @@ async function fullLook(req, photo){
   const code = `L-${new Date().toISOString().slice(0,10).replace(/-/g,'')}-${crypto.randomBytes(3).toString('hex')}`;
   const list = items.map((p, i) => `${i + 1}) ${p.name} - ${placeOf(p.name)}`).join('; ');
   const promptText =
-    `Cute, cozy, playful photo of every pet from @pet dressed in the numbered items shown in @items, all at once: ${list}. ` +
+    `Cute, cozy, playful photo of every pet from @pet dressed in the numbered items shown in @items, all at once: ${list}. Each pet is ${MOVE[req.move] || MOVE.walk}. ` +
     `Copy each item exactly from @items: same colors, prints, fabric and shape. Everything fits naturally. ` +
     `Keep every pet's face, breed, fur color and markings exactly as in @pet. Bright, happy, photorealistic, soft natural light, no text, no numbers, no logos added.`;
   const start = await fetch(`${RW}/text_to_image`, { method: 'POST', headers: RW_HEAD(), body: JSON.stringify({
