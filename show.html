@@ -88,6 +88,8 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
 .breeds img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
 .breeds span{display:block;font-size:10px;padding:3px 1px;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .breeds button.on{box-shadow:0 0 0 3px var(--pink)}
+.nm{position:absolute;left:14px;right:86px;top:40px;text-align:left;font-size:26px;font-weight:300;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.75);z-index:3;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pname{width:100%;margin-top:10px;padding:13px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:var(--card);color:var(--txt);font:inherit;font-size:16px;font-weight:300;text-align:center}
 .fine{font-size:11px;font-weight:300;opacity:.5;margin:10px 2px;line-height:1.5}
 </style>
 <link rel="stylesheet" href="logo-motion.css">
@@ -106,6 +108,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
     <video id="sv" class="sv" src="img/vid/show_bulldog.mp4" poster="img/vid/show_bulldog.jpg" muted autoplay loop playsinline preload="auto"></video>
     <img id="me" class="me hide" alt="Your pet">
     <div class="bars hide" id="bars"></div>
+    <div class="nm hide" id="nm"></div>
     <div class="step hide" id="step"></div>
     <button class="bag hide" id="bag">🛍 0 · Buy</button>
     <div class="item hide" id="item"><img id="iImg" alt=""><div class="t"><b id="iName"></b><span id="iPrice"></span></div><button class="heart" id="heart" aria-label="I like this">♡</button></div>
@@ -118,6 +121,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
     <button class="btn" id="start">📷 Add your pet — see its show free</button>
     <button class="btn ghost" id="share">Share the show</button>
   </div>
+  <input class="pname" id="pname" maxlength="16" autocomplete="off" placeholder="Your pet's name — it goes on the runway" aria-label="Your pet's name">
   <div class="lbl"><span id="hint">Or pick a pet:</span></div>
   <div class="breeds" id="breeds"></div>
 
@@ -172,9 +176,17 @@ function play(k){
   show = k; S = SHOWS[k]; lineup = S.items.map(id => byId[id]).filter(Boolean);
   sv.src = `img/vid/show_${k}.mp4`; sv.poster = `img/vid/show_${k}.jpg`; sv.currentTime = 0; sv.play().catch(()=>{});
   $('bars').innerHTML = lineup.map(() => '<i><b></b></i>').join(''); $('bars').style.setProperty('--t', S.seg*1000 + 'ms');
-  $('title').textContent = pet ? `Your ${S.name}'s fashion show 🎬` : `${S.name} fashion show 🎬`;
+  showName();
   $('item').dataset.i = ''; cur = -1; light(0); drawBreeds();
 }
+// Pet name on the runway (stays on this phone only)
+let NAME = ''; try { NAME = localStorage.getItem('pd:petname') || ''; } catch(e){}
+function showName(){
+  $('nm').textContent = NAME ? `${NAME}'s runway ✨` : ''; $('nm').classList.toggle('hide', !NAME);
+  $('title').textContent = NAME ? `${NAME}'s fashion show 🎬` : pet ? `Your ${S.name}'s fashion show 🎬` : `${S.name} fashion show 🎬`;
+}
+$('pname').value = NAME;
+$('pname').addEventListener('input', e => { NAME = e.target.value.trim().slice(0,16); try { localStorage.setItem('pd:petname', NAME); } catch(err){} showName(); });
 // Light look i: bars, step, the item chip and its card below — same timeline as the video.
 function light(i, force){
   if(!force && i === cur && $('item').dataset.i == i) return;
@@ -236,7 +248,7 @@ $('start').onclick = () => $('file').click();
 
 // Share: the show video itself (our logo is in it) + the link
 $('share').onclick = async () => {
-  const text = `My pet's AI fashion show 🎬 Find yours at pajamasdog.com`, url = 'https://pajamasdog.com/show.html';
+  const text = `${NAME || 'My pet'}'s AI fashion show 🎬 Find yours at pajamasdog.com`, url = 'https://pajamasdog.com/show.html';
   try { const blob = await (await fetch(`img/vid/show_${show}.mp4`)).blob();
     const data = {files:[new File([blob], 'pajamasdog-show.mp4', {type:'video/mp4'})], title:'PajamasDog', text: text + ' ' + url};
     if(navigator.canShare && navigator.canShare(data)) return await navigator.share(data);
