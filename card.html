@@ -30,7 +30,7 @@ input[type=text]{width:100%;padding:13px 16px;border-radius:14px;border:0;backgr
 </head>
 <body>
 <header>
-  <a href="/" aria-label="PajamasDog home"><video class="hlogo" src="img/logo_anim.mp4" poster="img/logo_poster.jpg" muted playsinline autoplay preload="auto"></video></a>
+  <a href="/" aria-label="PajamasDog home"><img class="hlogo" src="img/logo2/lockup.png?v=1" alt="PajamasDog"></a>
   <a class="back" href="/">← Home</a>
 </header>
 <main>
@@ -73,7 +73,7 @@ const STYLES = [
 ];
 let MSGS = ['Merry Christmas', 'Happy Holidays', 'Season\'s Greetings', 'Merry Woofmas', 'Meowy Christmas'];
 let st = STYLES[0], msg = MSGS[0], pet = null, seed = 1, GIFT = null;
-const LOGO = new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'img/wordmark.svg'; });
+const LOGO = new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'img/logo2/lockup.png'; });
 const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
 
 async function draw(){

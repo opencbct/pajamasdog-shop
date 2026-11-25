@@ -16,10 +16,10 @@ main{max-width:1000px;margin:0 auto;padding:0 16px 40px}
 .ph span{font-size:54px;opacity:.55;filter:grayscale(1) brightness(3)}
 .chip{padding:8px 14px;border-radius:999px;background:var(--chip);font-size:15px;cursor:pointer;border:0;font-weight:300;color:var(--txt);white-space:nowrap}
 .chip.on{background:#fff;color:var(--bg)}
-.plogo{position:relative;display:inline-block;width:var(--w,180px);aspect-ratio:429/174;vertical-align:middle}
+.plogo{position:relative;display:inline-block;width:var(--w,180px);aspect-ratio:618/174;vertical-align:middle}
 .plogo i{position:absolute;inset:0;background:var(--a,#fff);-webkit-mask:url(img/logo_a.png) center/contain no-repeat;mask:url(img/logo_a.png) center/contain no-repeat}
 .plogo i+i{background:var(--b,#ff3d7f);-webkit-mask-image:url(img/logo_b.png);mask-image:url(img/logo_b.png)}
 footer{text-align:center;font-size:13px;color:rgba(243,241,248,.55);padding:30px 16px 40px;max-width:700px;margin:0 auto}
 @media(max-width:600px){header img{height:76px}}
-header .hlogo{height:96px;width:auto;display:block;background:#15131c}
-@media(max-width:600px){header .hlogo{height:76px}}
+header .hlogo{height:58px;width:auto;display:block}
+@media(max-width:600px){header .hlogo{height:44px}}
