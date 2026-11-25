@@ -84,6 +84,14 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
 .bag{position:absolute;top:18px;right:12px;z-index:3;border:0;border-radius:999px;background:var(--pink);color:#fff;font:inherit;font-size:15px;padding:8px 14px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.35)}
 .me{position:absolute;right:12px;top:62px;width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 4px 14px rgba(0,0,0,.4);z-index:3}
 .breeds{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.bgrp{margin-top:10px}
+.bgrp h3{font-size:12px;font-weight:300;opacity:.6;margin:0 2px 6px}
+.bchips{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.bchips::-webkit-scrollbar{display:none}
+.bchips button{flex:0 0 auto;display:flex;align-items:center;gap:6px;border:0;border-radius:999px;background:var(--card);color:var(--txt);font:inherit;font-size:13px;font-weight:300;padding:5px 12px 5px 5px;cursor:pointer;white-space:nowrap}
+.bchips button img,.bchips button i{width:28px;height:28px;border-radius:50%;object-fit:cover;flex:0 0 28px;font-style:normal;display:grid;place-items:center;background:var(--chip);font-size:16px}
+.bchips button.on{background:var(--pink);color:#fff}
+.near{font-size:12px;font-weight:300;opacity:.7;margin:8px 2px 0;min-height:1em}
 .breeds button{border:0;padding:0;background:var(--card);border-radius:12px;overflow:hidden;cursor:pointer;color:var(--txt)}
 .breeds img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
 .breeds span{display:block;font-size:10px;padding:3px 1px;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -114,6 +122,8 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
     <div class="item hide" id="item"><img id="iImg" alt=""><div class="t"><b id="iName"></b><span id="iPrice"></span></div><button class="heart" id="heart" aria-label="I like this">♡</button></div>
     <div class="busy hide" id="busy"><b id="busyT">Getting dressed…</b><span id="busyS">AI is making 8 looks (about a minute)</span></div>
   </div>
+  <p class="near" id="near"></p>
+  <div id="breeds"></div>
 
   <div class="lbl"><span>In this show — tap to add to bag</span></div>
   <div class="line" id="line"></div>
@@ -122,8 +132,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
     <button class="btn ghost" id="share">Share the show</button>
   </div>
   <input class="pname" id="pname" maxlength="16" autocomplete="off" placeholder="Your pet's name — it goes on the runway" aria-label="Your pet's name">
-  <div class="lbl"><span id="hint">Or pick a pet:</span></div>
-  <div class="breeds" id="breeds"></div>
+  <p class="fine" id="hint"></p>
 
   <section class="picks hide" id="picks">
     <h2>Your ♥ picks</h2>
@@ -151,9 +160,25 @@ const SHOWS = {
   golden:     {name:'Golden retriever', icon:'🐕', seg:3, items:I4, labels:L4},
   cat:        {name:'Cat',         icon:'🐱', seg:3, items:I4, labels:L4},
 };
+// 30 pets in 3 groups. "show" = the ready AI video it plays (own video if the key matches, otherwise the closest one for now).
+const BREEDS = [
+  ['Small dogs', [['bulldog','French bulldog','bulldog'],['maltese','Maltese','maltese'],['pomeranian','Pomeranian','pomeranian'],['poodle','Poodle','poodle'],
+    ['chihuahua','Chihuahua','pomeranian'],['yorkie','Yorkshire terrier','pomeranian'],['shihtzu','Shih Tzu','maltese'],['bichon','Bichon','maltese'],
+    ['pug','Pug','bulldog'],['dachshund','Dachshund','bulldog'],['corgi','Corgi','bulldog'],['schnauzer','Schnauzer','poodle']]],
+  ['Big dogs', [['golden','Golden retriever','golden'],['labrador','Labrador','golden'],['shepherd','German shepherd','golden'],['husky','Husky','golden'],
+    ['samoyed','Samoyed','golden'],['chow','Chow Chow','golden'],['mastiff','Tibetan mastiff','golden'],['bernese','Bernese','golden'],
+    ['ebulldog','English bulldog','bulldog'],['jindo','Jindo','golden']]],
+  ['Cats', [['cat','Tabby cat','cat'],['persian','Persian','cat'],['siamese','Siamese','cat'],['ragdoll','Ragdoll','cat'],
+    ['british','British shorthair','cat'],['mainecoon','Maine coon','cat'],['fold','Scottish fold','cat'],['blackcat','Black cat','cat']]],
+];
+const BR = Object.fromEntries(BREEDS.flatMap(([,l]) => l.map(([k,name,show]) => [k, {k, name, show}])));
+let breed = 'bulldog';
 // ImageNet names (what the phone's own AI recognises) → our nearest show
 const MATCH = [
-  [/\bcat\b|tabby|persian|siamese|egyptian|lynx/i, 'cat'],
+  [/persian/i,'persian'],[/siamese/i,'siamese'],[/\bcat\b|tabby|egyptian|lynx/i, 'cat'],
+  [/french bulldog/i,'bulldog'],[/chihuahua/i,'chihuahua'],[/yorkshire|silky/i,'yorkie'],[/shih/i,'shihtzu'],[/\bpug\b/i,'pug'],
+  [/pembroke|cardigan/i,'corgi'],[/schnauzer/i,'schnauzer'],[/labrador/i,'labrador'],[/german shepherd|malinois/i,'shepherd'],
+  [/husky|eskimo|malamute/i,'husky'],[/samoyed/i,'samoyed'],[/\bchow\b/i,'chow'],[/tibetan mastiff/i,'mastiff'],[/bernese/i,'bernese'],
   [/maltese|shih|lhasa|west highland|samoyed|pyrenees|kuvasz|japanese spaniel|sealyham|dandie/i, 'maltese'],
   [/pomeranian|chihuahua|papillon|pekinese|spitz|keeshond|chow|yorkshire|silky|norwich|norfolk|cairn|pomeranian/i, 'pomeranian'],
   [/poodle|cocker|bedlington|irish water|curly|kerry|lakeland|wire-haired/i, 'poodle'],
@@ -169,10 +194,14 @@ function drawLine(){
   $('line').innerHTML = lineup.map((p,i) => `<button data-i="${i}" class="${liked.has(p.id)?'liked':''}${i===cur ? ' now' : ''}" aria-label="Add ${p.name}"><img src="${p.img}" alt="${p.name}"><i class="add2">${liked.has(p.id) ? '♥ In bag' : '+ Bag'}</i><span>${S.labels[i]}</span></button>`).join('');
 }
 function drawBreeds(){
-  $('breeds').innerHTML = Object.entries(SHOWS).map(([k,v]) => `<button data-k="${k}" class="${k===show?'on':''}"><img src="img/vid/show_${k}.jpg" alt=""><span>${v.name}</span></button>`).join('');
+  $('breeds').innerHTML = BREEDS.map(([g, list]) => `<div class="bgrp"><h3>${g}</h3><div class="bchips">${list.map(([k,name,sh]) =>
+    `<button data-k="${k}" class="${k===breed?'on':''}">${k===sh ? `<img src="img/vid/show_${k}.jpg" alt="">` : `<i>${g==='Cats'?'🐱':'🐶'}</i>`}${name}</button>`).join('')}</div></div>`).join('');
+  $('breeds').querySelector('.on')?.scrollIntoView({block:'nearest', inline:'center'});
 }
 $('breeds').onclick = e => { const b = e.target.closest('button'); if(b) play(b.dataset.k); };
 function play(k){
+  const B = BR[k] || BR.bulldog; breed = B.k; k = B.show;
+  $('near').textContent = B.k === B.show ? '' : `Closest show for the ${B.name} for now — its own show is being made.`;
   show = k; S = SHOWS[k]; lineup = S.items.map(id => byId[id]).filter(Boolean);
   sv.src = `img/vid/show_${k}.mp4`; sv.poster = `img/vid/show_${k}.jpg`; sv.currentTime = 0; sv.play().catch(()=>{});
   $('bars').innerHTML = lineup.map(() => '<i><b></b></i>').join(''); $('bars').style.setProperty('--t', S.seg*1000 + 'ms');
@@ -183,7 +212,7 @@ function play(k){
 let NAME = ''; try { NAME = localStorage.getItem('pd:petname') || ''; } catch(e){}
 function showName(){
   $('nm').textContent = NAME ? `${NAME}'s runway ✨` : ''; $('nm').classList.toggle('hide', !NAME);
-  $('title').textContent = NAME ? `${NAME}'s fashion show 🎬` : pet ? `Your ${S.name}'s fashion show 🎬` : `${S.name} fashion show 🎬`;
+  $('title').textContent = NAME ? `${NAME}'s fashion show 🎬` : pet ? `Your ${BR[breed].name}'s fashion show 🎬` : `${BR[breed].name} fashion show 🎬`;
 }
 $('pname').value = NAME;
 $('pname').addEventListener('input', e => { NAME = e.target.value.trim().slice(0,16); try { localStorage.setItem('pd:petname', NAME); } catch(err){} showName(); });
@@ -241,7 +270,7 @@ async function usePhoto(url){
   $('start').disabled = true; $('start').textContent = 'Finding your pet\'s look…';
   pet = await guess(img);
   $('start').disabled = false; $('start').textContent = '📷 Try another photo';
-  $('hint').textContent = 'Not quite your pet? Tap the closest one above.';
+  $('hint').textContent = 'Not quite your pet? Tap your breed under the video.';
   play(pet); $('stage').scrollIntoView({behavior:'smooth', block:'start'});
 }
 $('start').onclick = () => $('file').click();
