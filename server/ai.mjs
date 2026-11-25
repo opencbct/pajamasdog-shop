@@ -37,14 +37,24 @@ function limited(ip){
 }
 
 const json = (code, body) => ({ statusCode: code, headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
+const CHECKOUT = process.env.CHECKOUT_URL || 'https://6l5lt5zx2k7jra6ynbmmd32usm0nhbay.lambda-url.us-east-1.on.aws';
+const PACKS = new Map();   // session id -> {ok, credits, used}  (per warm Lambda; the page also counts)
+async function packOk(id, n){
+  if (!/^cs_(live|test)_[A-Za-z0-9]+$/.test(id)) return false;
+  let p = PACKS.get(id);
+  if (!p) { try { const r = await (await fetch(`${CHECKOUT}/pack-verify?s=${encodeURIComponent(id)}`)).json(); p = { ok: !!r.ok, credits: r.credits || 0, used: 0 }; } catch { return false; } PACKS.set(id, p); }
+  if (!p.ok || p.used + n > p.credits) return false;
+  p.used += n; return true;
+}
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 export const handler = async (event) => {
   if (event.requestContext?.http?.method !== 'POST') return json(405, { error: 'POST only' });
   const ip = event.requestContext?.http?.sourceIp || 'x';
-  if (limited(ip)) return json(429, { error: 'Free AI pictures used up for today. Come back tomorrow.' });
-
   let req; try { req = JSON.parse(event.isBase64Encoded ? Buffer.from(event.body, 'base64').toString() : event.body); } catch { return json(400, { error: 'Bad request' }); }
+  // Paid picture pack (30 for $2.99) skips the free daily limit, up to its 30 pictures.
+  const n = Array.isArray(req.items) ? 1 : 1;
+  if (!(await packOk(String(req.pack || ''), n)) && limited(ip)) return json(429, { error: 'Free AI pictures used up for today. Get 30 more for $2.99, or come back tomorrow.' });
   const photo = String(req.photo || '');
   if (!/^data:image\/(jpeg|png|webp);base64,/.test(photo) || photo.length > MAX_PHOTO) return json(400, { error: 'Please use a JPG or PNG photo.' });
   // Full look (11-25): {items:[ids], collage:"data:image/jpeg..."} -> the pet wears / is shown with every item at once.

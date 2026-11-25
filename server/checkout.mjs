@@ -1,6 +1,8 @@
 // PajamasDog direct checkout — AWS Lambda (Node 20, no dependencies). NOT DEPLOYED.
 // Routes (Lambda function URL):
 //   POST /checkout  {items:[{id,qty,size}], wrap, gift:{to,from,msg}, country}  -> {url} (Stripe Checkout)
+//   POST /pack      {}  -> {url}  30 extra AI pictures for $2.99 (형님 11-25)
+//   GET  /pack-verify?s=<session id> -> {ok, credits}  (the AI server asks this before using a pack)
 //   POST /webhook   Stripe event (checkout.session.completed)                -> places the CJ order
 // Env: STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, CJ_API_KEY, SITE_URL (https://pajamasdog.com)
 // Money: Stripe payouts go to the Bluevine account set in the Stripe dashboard (never in code).
@@ -79,6 +81,31 @@ async function cjToken() {
     method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ apiKey: process.env.CJ_API_KEY }) });
   return (await r.json()).data?.accessToken;
 }
+// ---- 1b. AI picture pack: no shipping, no CJ order ----
+const PACK = { credits: 30, cents: 299, name: '30 more AI pictures — PajamasDog' };
+const STRIPE = (path, form) => fetch(`https://api.stripe.com/v1/${path}`, { method: form ? 'POST' : 'GET',
+  headers: { authorization: `Bearer ${process.env.STRIPE_SECRET_KEY}`, ...(form ? { 'content-type': 'application/x-www-form-urlencoded' } : {}) }, body: form });
+async function createPack() {
+  const form = new URLSearchParams();
+  form.append('mode', 'payment');
+  form.append('line_items[0][price_data][currency]', 'usd');
+  form.append('line_items[0][price_data][unit_amount]', String(PACK.cents));
+  form.append('line_items[0][price_data][product_data][name]', PACK.name);
+  form.append('line_items[0][quantity]', '1');
+  form.append('metadata[kind]', 'pack');
+  form.append('success_url', `${SITE}/thanks.html?pack=1&s={CHECKOUT_SESSION_ID}`);
+  form.append('cancel_url', `${SITE}/show.html`);
+  form.append('custom_text[submit][message]', 'Digital AI pictures for use on pajamasdog.com. Non-refundable once used.');
+  const r = await STRIPE('checkout/sessions', form); const s = await r.json();
+  return r.ok ? json(200, { url: s.url }) : json(502, { error: s.error?.message || 'Stripe error' });
+}
+async function verifyPack(id) {
+  if (!/^cs_(live|test)_[A-Za-z0-9]+$/.test(id || '')) return json(400, { ok: false });
+  const r = await STRIPE(`checkout/sessions/${id}`); const s = await r.json();
+  const ok = r.ok && s.payment_status === 'paid' && s.metadata?.kind === 'pack';
+  return json(200, { ok, credits: ok ? PACK.credits : 0 });
+}
+
 async function placeCjOrder(session) {
   const ship = session.collected_information?.shipping_details || session.shipping_details || {};
   const a = ship.address || {};
@@ -103,12 +130,14 @@ export const handler = async (event) => {
   // CORS (preflight + allow-origin) is handled by the Lambda Function URL config, not here.
   try {
     if (path.endsWith('/checkout')) return await createCheckout(JSON.parse(raw || '{}'));
+    if (path.endsWith('/pack')) return await createPack();
+    if (path.endsWith('/pack-verify')) return await verifyPack(new URLSearchParams(event.rawQueryString || '').get('s'));
     if (path.endsWith('/webhook')) {
       if (!verifyStripe(raw, event.headers?.['stripe-signature'])) return json(400, { error: 'bad signature' });
       const ev = JSON.parse(raw);
       // Only paid sessions become CJ orders. CJ order number = Stripe session id, so a retried webhook can't double-order.
       // The CJ order is created unpaid: 형님 pays it in CJ (wallet) until we trust the flow.
-      if (ev.type === 'checkout.session.completed' && ev.data.object.payment_status === 'paid') { const r = await placeCjOrder(ev.data.object); console.log('CJ order', JSON.stringify(r)); }
+      if (ev.type === 'checkout.session.completed' && ev.data.object.payment_status === 'paid' && ev.data.object.metadata?.kind !== 'pack') { const r = await placeCjOrder(ev.data.object); console.log('CJ order', JSON.stringify(r)); }
       return json(200, { ok: true });
     }
     return json(404, { error: 'not found' });

@@ -15937,41 +15937,6 @@
     "OPP Bag Box Packaging-M or  L": 4899
    }
   },
-  "cj-51786753": {
-   "name": "Scary Doll Halloween Set",
-   "price": 2299,
-   "cj_pid": "2108851673251786753",
-   "colors": [
-    "Yellow",
-    "Blue"
-   ],
-   "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL"
-   ],
-   "variants": {
-    "Yellow-S": "2108851673323089922",
-    "Yellow-M": "2108851673323089923",
-    "Yellow-L": "2108851673323089924",
-    "Yellow-XL": "2108851673323089925",
-    "Blue-S": "2108851673323089926",
-    "Blue-M": "2108851673323089927",
-    "Blue-L": "2108851673323089928",
-    "Blue-XL": "2108851673323089929"
-   },
-   "vprice": {
-    "Yellow-S": 2299,
-    "Yellow-M": 2299,
-    "Yellow-L": 2299,
-    "Yellow-XL": 2299,
-    "Blue-S": 2299,
-    "Blue-M": 2299,
-    "Blue-L": 2299,
-    "Blue-XL": 2299
-   }
-  },
   "cj-41604700": {
    "name": "Halloween Transformation Costume",
    "price": 3999,
