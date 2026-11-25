@@ -147,3 +147,23 @@ async function payDirect(lines, wrap='none', gift=null){
     body: JSON.stringify({items: lines.map(l => ({id:l.id, size:l.size||'', c:l.c||0, qty:1})), wrap, gift})});
   const j = await r.json(); if(j.url) location.href = j.url; else alert(j.error || 'Checkout failed. Please try again.');
 }
+
+// ---- Real-order proof (11-25, after sanskartiwari.io): only real, paid Stripe orders; city + item + day, never names.
+// products/orders.json = {count, recent:[{item, city, country, at}]} made by tools/orders_public.py. Empty = nothing shown.
+(function(){
+  const ago = t => { const d = Math.floor((Date.now() - Date.parse(t)) / 864e5); return d <= 0 ? 'today' : d === 1 ? 'yesterday' : `${d} days ago`; };
+  fetch('products/orders.json', {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(o => {
+    if(!o || !o.count) return;
+    const f = document.querySelector('footer'); if(f) f.insertAdjacentHTML('afterbegin', `<p style="margin:0 0 10px">🛍 ${o.count.toLocaleString('en-US')} paid order${o.count>1?'s':''} so far · thank you!</p>`);
+    let seen = false; try { seen = sessionStorage.getItem('pd:toast'); sessionStorage.setItem('pd:toast','1'); } catch(e){}
+    const r = (o.recent||[])[0]; if(seen || !r) return;
+    setTimeout(() => {
+      const el = document.createElement('div');
+      el.style.cssText = 'position:fixed;left:12px;bottom:12px;max-width:320px;z-index:50;background:rgba(21,19,28,.94);color:#fff;border-radius:16px;padding:12px 36px 12px 14px;font:300 13px/1.4 inherit;box-shadow:0 8px 28px rgba(0,0,0,.4)';
+      el.innerHTML = `✓ Someone in ${r.city ? r.city + ', ' : ''}${r.country} bought <b style="font-weight:400">${r.item}</b><br><small style="opacity:.6">${ago(r.at)} · Verified purchase</small><button aria-label="Close" style="position:absolute;top:6px;right:8px;background:none;border:0;color:#fff;opacity:.6;font-size:16px;cursor:pointer">×</button>`;
+      el.querySelector('button').onclick = () => el.remove(); document.body.appendChild(el); setTimeout(() => el.remove(), 9000);
+    }, 6000);
+  }).catch(() => {});
+  // Christmas order-by note: only until the date passes
+  const x = document.getElementById('xmas'); if(x && new Date() < new Date('2026-12-09T00:00:00')) x.hidden = false;
+})();
