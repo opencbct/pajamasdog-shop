@@ -3,6 +3,8 @@ const PAGE_SIZE = 12;
 const EDIBLE = /\b(treat|food|kibble|jerky|chew stick|supplement|cbd|vitamin)s?\b/i;
 // Food only as links to shops that sell it themselves; never via CJ dropship (we would be the seller).
 const blocked = p => (p.cat==='food' || EDIBLE.test(p.name)) && (p.src==='cj');
+// 11-25 audit: these can't reach checkout (CJ size/color data mixed up, or no size in stock). Hidden until fixed.
+const BROKEN = new Set(['cj-01628500','cj-81625200','cj-49876992','cj-21605200','cj-91620800','cj-59756800','cj-91627600','cj-68520960','cj-01630700','cj-11625800','cj-01614900']);
 const DEMO = new URLSearchParams(location.search).has('demo'); // repeat samples to test scrolling
 
 // Shops we link to. Each one is shown only where it can really ship.
@@ -49,7 +51,7 @@ let FEED = null;
 // 형님 11-25: no jumping out to other shops — show only items people can buy right here (Buy now, Stripe).
 const OFFSITE = new Set(['amazon']);
 async function getProducts(cat, page){
-  FEED = FEED || fetch('products/feed.json',{cache:'no-store'}).then(r=>r.json()).then(a=>a.filter(p => !blocked(p) && canShip(p) && !OFFSITE.has(p.src)));
+  FEED = FEED || fetch('products/feed.json',{cache:'no-store'}).then(r=>r.json()).then(a=>a.filter((p,i) => !blocked(p) && !BROKEN.has(p.id) && canShip(p) && !OFFSITE.has(p.src) && a.findIndex(q => q.id===p.id)===i));
   let list = (await FEED).filter(p => cat==='all' || p.cat===cat || (p.tags||[]).includes(cat) || (cat==='cats' && p.pet==='cat') || (cat==='dogs' && p.pet!=='cat' && (p.cat==='pajamas'||p.cat==='matching')));
   if(DEMO && list.length){ const out=[]; for(let i=0;i<PAGE_SIZE;i++){ const p=list[(page*PAGE_SIZE+i)%list.length]; out.push({...p,id:p.id+'-'+page+'-'+i}); } return page<20?out:[]; }
   // 형님 11-25: our own items (Buy now, no leaving the site) always first; partner/Amazon items go to the back.
