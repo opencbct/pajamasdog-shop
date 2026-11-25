@@ -82,23 +82,29 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
 .pk select{background:var(--chip);color:var(--txt);border:0;border-radius:10px;padding:8px;font:inherit;font-size:14px}
 .pk .x{background:none;border:0;color:var(--txt);opacity:.5;font-size:18px;cursor:pointer}
 .bag{position:absolute;top:18px;right:12px;z-index:3;border:0;border-radius:999px;background:var(--pink);color:#fff;font:inherit;font-size:15px;padding:8px 14px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.me{position:absolute;right:12px;top:62px;width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 4px 14px rgba(0,0,0,.4);z-index:3}
+.breeds{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.breeds button{border:0;padding:0;background:var(--card);border-radius:12px;overflow:hidden;cursor:pointer;color:var(--txt)}
+.breeds img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.breeds span{display:block;font-size:10px;padding:3px 1px;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.breeds button.on{box-shadow:0 0 0 3px var(--pink)}
 .fine{font-size:11px;font-weight:300;opacity:.5;margin:10px 2px;line-height:1.5}
 </style>
 <link rel="stylesheet" href="logo-motion.css">
 </head>
 <body>
 <header>
-  <a href="/" aria-label="PajamasDog home"><img class="hlogo" src="img/logo2/lockup.png?v=1" alt="PajamasDog"></a>
+  <a href="/" aria-label="PajamasDog home"><img class="hlogo" src="img/logo2/stack.png?v=1" alt="PajamasDog"></a>
   <a class="back" href="/">← Shop</a>
 </header>
 <main>
-  <h1>AI fashion show 🎬</h1>
-  <p class="sub">Real AI video: the pet walks, spins, jumps and dances in our looks. Tap a lit card to put it in your bag.</p>
+  <h1 id="title">AI fashion show 🎬</h1>
+  <p class="sub">Add your pet's photo — free. Your pet's look-alike walks our runway; tap a lit card to put it in your bag.</p>
 
   <div class="stage" id="stage">
-    <label class="add" id="add"><span class="ic">📷</span><b>Add your pet's photo</b><span style="font-size:13px;opacity:.6">Then press Start.</span><input type="file" accept="image/*" id="file" hidden></label>
+    <input type="file" accept="image/*" id="file" hidden>
     <video id="sv" class="sv" src="img/vid/show_bulldog.mp4" poster="img/vid/show_bulldog.jpg" muted autoplay loop playsinline preload="auto"></video>
-    <div id="frames"></div>
+    <img id="me" class="me hide" alt="Your pet">
     <div class="bars hide" id="bars"></div>
     <div class="step hide" id="step"></div>
     <button class="bag hide" id="bag">🛍 0 · Buy</button>
@@ -106,123 +112,84 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
     <div class="busy hide" id="busy"><b id="busyT">Getting dressed…</b><span id="busyS">AI is making 8 looks (about a minute)</span></div>
   </div>
 
-  <div class="lbl"><span id="lineLbl">In this show — tap to add to bag</span><a id="shuffle" class="hide">🎲 Shuffle</a></div>
+  <div class="lbl"><span>In this show — tap to add to bag</span></div>
   <div class="line" id="line"></div>
-  <div class="quota" id="quota"></div>
   <div class="acts">
-    <button class="btn" id="start">▶ Start the show</button>
-    <button class="btn ghost hide" id="share">Share the show</button>
+    <button class="btn" id="start">📷 Add your pet — see its show free</button>
+    <button class="btn ghost" id="share">Share the show</button>
   </div>
+  <div class="lbl"><span id="hint">Or pick a pet:</span></div>
+  <div class="breeds" id="breeds"></div>
 
   <section class="picks hide" id="picks">
     <h2>Your ♥ picks</h2>
     <div id="pkList"></div>
     <button class="btn" id="buy">Buy my picks</button>
-    <p class="fine">Prices include free shipping. All sales final — see <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>. AI pictures are a preview and can differ slightly from the real product; please pick sizes from your pet's measurements.</p>
+    <p class="fine">Prices include free shipping. All sales final — see <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>. The AI show is a preview and can differ slightly from the real product; please pick sizes from your pet's measurements.</p>
   </section>
-  <p class="fine">Your photo is sent to our AI partner (Runway) only to make the pictures; we do not keep it. This show is a real AI video made with our own French bulldog.</p>
+  <p class="fine">Your photo stays on your phone: the phone's own AI only looks at it to find the closest pet. Every show is a real AI video we made with our own AI pets wearing our real products.</p>
 </main>
 <script src="shop.js"></script>
 <script src="sizes_data.js?v=2"></script>
 <script src="sizefinder.js?v=1"></script>
 <script>
 const $ = id => document.getElementById(id);
-// Slots in the order the pet puts them on. Each frame wears everything up to that slot.
-// 형님 11-25: more variety, one item per look (the previous item comes off), quick pace — the cards below do the selling.
-const PJ = p => p.cat==='pajamas' && !/robe|towel|blanket|medical|anxiety|treatment|surgery|recovery|diaper|life ?jacket|vest|mask|headgear|mane|wig|headdress/i.test(p.name);
-// 형님 11-25: the show's base lineup = 3 pajamas, 2 masks, scarf, necklace, bowl (one item per look).
-const MASK = p => /mask|headgear|mane|wig|horse head|headdress/i.test(p.name) && !/goggle|sunshade/i.test(p.name);
-const SLOTS = [
-  {k:'pj',    label:'Pajama',   move:'walk',  test:PJ},
-  {k:'pj',    label:'Pajama',   move:'spin',  test:PJ},
-  {k:'pj',    label:'Pajama',   move:'jump',  test:PJ},
-  {k:'mask',  label:'Mask',     move:'dance', test:MASK},
-  {k:'mask',  label:'Mask',     move:'strut', test:MASK},
-  {k:'scarf', label:'Scarf',    move:'dance', test:p=>/scarf|bandana/i.test(p.name)},
-  {k:'neck',  label:'Necklace', move:'strut', test:p=>/necklace|pendant|charm|\btag\b|collar/i.test(p.name) && !/scarf|bandana|harness/i.test(p.name)},
-  {k:'bowl',  label:'Bowl',     move:'strut', test:p=>/bowl|feeder/i.test(p.name)},
+// 형님 11-25: free for everyone, cost 0 per visitor. Every show is a real AI video we made once per breed;
+// the visitor's photo picks the matching breed (it never leaves the phone). Cards below light up on the same timeline.
+const L4 = ['Pajama','Lion mane','Scarf','Sweater'];
+const I4 = ['pd-01','cj-98989826','cj-77427968','cj-37931520'];
+const SHOWS = {
+  bulldog:    {name:'French bulldog', icon:'🐶', seg:2, items:['pd-01','cj-37931520','cj-67831296','cj-98989826','cj-61628400','cj-77427968','cj-78109953','cj-89892609'],
+               labels:['Pajama','Sweater','Sweater','Lion mane','Shark hat','Scarf','Charm','Bowl']},
+  maltese:    {name:'Maltese',     icon:'🐶', seg:3, items:I4, labels:L4},
+  pomeranian: {name:'Pomeranian',  icon:'🐶', seg:3, items:I4, labels:L4},
+  poodle:     {name:'Poodle',      icon:'🐶', seg:3, items:I4, labels:L4},
+  golden:     {name:'Golden retriever', icon:'🐕', seg:3, items:I4, labels:L4},
+  cat:        {name:'Cat',         icon:'🐱', seg:3, items:I4, labels:L4},
+};
+// ImageNet names (what the phone's own AI recognises) → our nearest show
+const MATCH = [
+  [/\bcat\b|tabby|persian|siamese|egyptian|lynx/i, 'cat'],
+  [/maltese|shih|lhasa|west highland|samoyed|pyrenees|kuvasz|japanese spaniel|sealyham|dandie/i, 'maltese'],
+  [/pomeranian|chihuahua|papillon|pekinese|spitz|keeshond|chow|yorkshire|silky|norwich|norfolk|cairn|pomeranian/i, 'pomeranian'],
+  [/poodle|cocker|bedlington|irish water|curly|kerry|lakeland|wire-haired/i, 'poodle'],
+  [/retriever|labrador|setter|collie|shepherd|husky|malamute|dane|vizsla|weimaraner|hound|pointer|newfoundland|bernese|saint|leonberg|kelpie|dingo|basenji|groenendael|malinois|briard|komondor|sheepdog|eskimo/i, 'golden'],
+  [/bull|pug|boxer|boston|mastiff|terrier|beagle|corgi|pembroke|cardigan|schnauzer|pinscher|dachshund|griffon|affenpinscher|basset|rottweiler|doberman/i, 'bulldog'],
 ];
-const FRAME_MS = 1700;
-let PACK_ID = '', pool = {}, lineup = [], photo = null, frames = [], liked = new Set(), playing = 0;
-
-const pick = (arr, not) => { const a = arr.filter(p => p.id !== not); return a[Math.floor(Math.random()*a.length)]; };
+let show = 'bulldog', S = SHOWS.bulldog, lineup = [], liked = new Set(), cur = 0, byId = {}, pet = null;
 const priceOf = p => (p.price_max > p.price ? 'from ' : '') + '$' + p.price.toFixed(2);
+const sv = $('sv');
 
 function drawLine(){
-  $('line').innerHTML = lineup.map((p,i) => `<button data-i="${i}" class="${liked.has(p.id)?'liked':''}${(frames.length || sampleOn) && i===cur ? ' now' : ''}" aria-label="${(frames.length || sampleOn) ? 'Add '+p.name : 'Swap '+SLOTS[i].label}"><img src="${p.img}" alt="${p.name}"><i class="add2">${liked.has(p.id) ? '♥ In bag' : '+ Bag'}</i><span>${SLOTS[i].label}</span></button>`).join('');
+  $('line').style.gridTemplateColumns = `repeat(4,1fr)`;
+  $('line').innerHTML = lineup.map((p,i) => `<button data-i="${i}" class="${liked.has(p.id)?'liked':''}${i===cur ? ' now' : ''}" aria-label="Add ${p.name}"><img src="${p.img}" alt="${p.name}"><i class="add2">${liked.has(p.id) ? '♥ In bag' : '+ Bag'}</i><span>${S.labels[i]}</span></button>`).join('');
 }
-function shuffle(only){
-  const taken = new Set(lineup.filter((p,i) => only!==undefined && i!==only && p).map(p => p.id));
-  lineup = SLOTS.map((s,i) => { if(only!==undefined && i!==only && lineup[i]) return lineup[i];
-    const p = pick(pool[s.k].filter(x => !taken.has(x.id)), lineup[i]?.id) || pick(pool[s.k]); taken.add(p.id); return p; });
-  frames = []; drawLine();
+function drawBreeds(){
+  $('breeds').innerHTML = Object.entries(SHOWS).map(([k,v]) => `<button data-k="${k}" class="${k===show?'on':''}"><img src="img/vid/show_${k}.jpg" alt=""><span>${v.name}</span></button>`).join('');
 }
-$('shuffle').onclick = () => shuffle();
-// Before the show: tap = swap that item. During/after the show: tap = put it in the bag (♥).
-$('line').onclick = e => { const b = e.target.closest('button'); if(!b) return; const i = +b.dataset.i;
-  if(!frames.length && !sampleOn){ if(!$('busy').classList.contains('hide')) return; shuffle(i); return; }
-  const p = lineup[i]; if(liked.has(p.id)) liked.delete(p.id); else { liked.add(p.id); if(i===cur) heartPop(); }
-  drawLine(); drawPicks(); if(i===cur && !sampleOn) show(cur); if(sampleOn){ $('item').dataset.i=''; syncSample(); } };
-
-// AI pictures are paid: 30 for $2.99 (helpers in shop.js)
-function showQuota(){
-  const left = aiLeft(), enough = left >= SLOTS.length;
-  $('quota').innerHTML = enough ? `${left} AI pictures left · a show uses ${SLOTS.length}`
-    : `A show uses ${SLOTS.length} AI pictures. <a id="pack" style="color:var(--pink);text-decoration:underline;cursor:pointer">Get 30 pictures · $2.99</a>`;
-  if(!frames.length) $('start').textContent = enough ? '▶ Start the show' : '▶ Start the show · 30 pictures $2.99';
-  const pk = document.getElementById('pack'); if(pk) pk.onclick = buyPack;
+$('breeds').onclick = e => { const b = e.target.closest('button'); if(b) play(b.dataset.k); };
+function play(k){
+  show = k; S = SHOWS[k]; lineup = S.items.map(id => byId[id]).filter(Boolean);
+  sv.src = `img/vid/show_${k}.mp4`; sv.poster = `img/vid/show_${k}.jpg`; sv.currentTime = 0; sv.play().catch(()=>{});
+  $('bars').innerHTML = lineup.map(() => '<i><b></b></i>').join(''); $('bars').style.setProperty('--t', S.seg*1000 + 'ms');
+  $('title').textContent = pet ? `Your ${S.name}'s fashion show 🎬` : `${S.name} fashion show 🎬`;
+  $('item').dataset.i = ''; cur = -1; light(0); drawBreeds();
 }
-function shrink(file){
-  return new Promise(res => { const img = new Image(); img.onload = () => {
-    const s = Math.min(1, 1400 / Math.max(img.width, img.height)); const c = document.createElement('canvas'); c.width = img.width*s; c.height = img.height*s;
-    c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); res(c.toDataURL('image/jpeg', .86)); }; img.src = URL.createObjectURL(file); });
+// Light look i: bars, step, the item chip and its card below — same timeline as the video.
+function light(i, force){
+  if(!force && i === cur && $('item').dataset.i == i) return;
+  cur = i; const p = lineup[i]; if(!p) return; $('item').dataset.i = i;
+  ['item','bars','step'].forEach(id => $(id).classList.remove('hide'));
+  [...$('bars').children].forEach((b,k) => { b.className = k<i ? 'done' : k===i ? 'now' : ''; });
+  $('step').textContent = `${i+1}/${lineup.length} · ${S.labels[i]}`;
+  $('iImg').src = p.img; $('iName').innerHTML = `<a href="product.html?id=${encodeURIComponent(p.id)}" target="_blank" rel="noopener">${p.name} ›</a>`; $('iPrice').textContent = priceOf(p);
+  $('heart').classList.toggle('on', liked.has(p.id)); $('heart').textContent = liked.has(p.id) ? '♥' : '♡';
+  drawLine();
 }
-const loadImg = src => new Promise((r, j) => { const i = new Image(); i.onload = () => r(i); i.onerror = j; i.src = src; });
-// One picture of the items worn so far, numbered, for the AI to copy.
-async function collage(items){
-  const n = items.length, cols = n <= 2 ? n : n <= 4 ? 2 : 3, rows = Math.ceil(n/cols), S = 400;
-  const c = document.createElement('canvas'); c.width = cols*S; c.height = rows*S; const g = c.getContext('2d');
-  g.fillStyle = '#fff'; g.fillRect(0,0,c.width,c.height);
-  for(let i=0;i<n;i++){ const im = await loadImg(items[i].img); const x = (i%cols)*S, y = Math.floor(i/cols)*S, k = Math.min(S/im.width, S/im.height)*.92;
-    g.drawImage(im, x+(S-im.width*k)/2, y+(S-im.height*k)/2, im.width*k, im.height*k);
-    g.fillStyle = '#111'; g.font = '600 40px sans-serif'; g.fillText(String(i+1), x+12, y+46); }
-  return c.toDataURL('image/jpeg', .85);
-}
-const LOGO = loadImg('img/logo2/lockup.png');
-// HD copy (corner logo) is kept for the paid download and the free single-picture share.
-async function brand(src){
-  const [img, logo] = await Promise.all([loadImg(src), LOGO]);
-  const iw = img.naturalWidth, ih = img.naturalHeight, cw = Math.min(iw, ih*4/5), ch = cw*5/4;
-  const c = document.createElement('canvas'); c.width = Math.round(cw); c.height = Math.round(ch); const g = c.getContext('2d');
-  g.drawImage(img, (iw-cw)/2, (ih-ch)/2, cw, ch, 0, 0, c.width, c.height);
-  const w = c.width*.36, h = w*logo.naturalHeight/logo.naturalWidth, m = c.width*.04;
-  g.shadowColor = 'rgba(0,0,0,.5)'; g.shadowBlur = c.width*.008; g.drawImage(logo, m, m, w, h);
-  return c.toDataURL('image/jpeg', .9);
-}
-// What plays on screen: smaller, with the logo in the middle and pajamasdog.com across the picture,
-// so a screenshot or screen recording of the show is still our ad, not a clean copy (형님 11-25).
-async function protect(hd){
-  const [img, logo] = await Promise.all([loadImg(hd), LOGO]);
-  const W = 600, H = Math.round(W*img.naturalHeight/img.naturalWidth);
-  const c = document.createElement('canvas'); c.width = W; c.height = H; const g = c.getContext('2d');
-  g.drawImage(img, 0, 0, W, H);
-  g.save(); g.translate(W/2, H/2); g.rotate(-Math.PI/7);
-  g.font = '600 26px Nunito, sans-serif'; g.fillStyle = 'rgba(255,255,255,.13)'; g.textAlign = 'center';
-  for(let y=-H; y<H; y+=90) for(let x=-W; x<W; x+=260) g.fillText('pajamasdog.com', x + (y/90%2 ? 130 : 0), y);
-  g.restore();
-  return c.toDataURL('image/jpeg', .8);
-}
-const HD = [];   // HD frames for the paid video download
-
-async function makeFrame(i){
-  const items = [lineup[i]];   // only this look's item
-  const r = await fetch(TRYON_API, {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({
-    photo, items: items.map(p => p.id), collage: await collage(items), move: SLOTS[i].move, pack: PACK_ID})});
-  const d = await r.json().catch(() => ({}));
-  if(!r.ok || !d.image){ const e = new Error(d.error || 'AI is busy — trying again…'); e.retry = r.status === 429 && !d.error || r.status >= 500 || !d.error; throw e; }
-  const hd = await brand(`data:${d.mime||'image/png'};base64,${d.image}`); HD[i] = hd;
-  return protect(hd);
-}
+sv.addEventListener('timeupdate', () => light(Math.min(lineup.length-1, Math.floor((sv.currentTime||0)/S.seg))));
+sv.addEventListener('seeked', () => { $('item').dataset.i = ''; light(Math.floor((sv.currentTime||0)/S.seg)); });
+sv.addEventListener('contextmenu', e => e.preventDefault());
+$('stage').addEventListener('contextmenu', e => e.preventDefault());
 
 function heartPop(){
   const s = $('stage').getBoundingClientRect(), h = $('heart').getBoundingClientRect();
@@ -230,72 +197,57 @@ function heartPop(){
   el.style.left = (h.left - s.left + h.width/2) + 'px'; el.style.top = (h.top - s.top) + 'px';
   $('stage').appendChild(el); setTimeout(() => el.remove(), 900);
 }
-let cur = 0;
-$('heart').onclick = () => {
-  const p = lineup[cur]; if(!p) return; if(sampleOn) $('item').dataset.i = '';
-  if(liked.has(p.id)) liked.delete(p.id); else { liked.add(p.id); heartPop(); }
-  $('heart').classList.toggle('on', liked.has(p.id)); $('heart').textContent = liked.has(p.id) ? '♥' : '♡';
-  drawLine(); drawPicks();
-};
+function toggle(p, here){ if(liked.has(p.id)) liked.delete(p.id); else { liked.add(p.id); if(here) heartPop(); } $('item').dataset.i = ''; light(cur, true); drawPicks(); }
+$('heart').onclick = () => lineup[cur] && toggle(lineup[cur], true);
+$('line').onclick = e => { const b = e.target.closest('button'); if(b) toggle(lineup[+b.dataset.i], +b.dataset.i === cur); };
 
-function show(i){
-  cur = i; const p = lineup[i];
-  [...$('frames').children].forEach((f,k) => f.classList.toggle('on', k===i));
-  [...$('bars').children].forEach((b,k) => { b.className = k<i ? 'done' : k===i ? 'now' : ''; });
-  $('step').textContent = `${i+1}/${SLOTS.length} · ${SLOTS[i].label}`;
-  $('iImg').src = p.img; $('iName').innerHTML = `<a href="product.html?id=${encodeURIComponent(p.id)}" target="_blank" rel="noopener">${p.name} ›</a>`; $('iPrice').textContent = priceOf(p);
-  drawLine();
-  $('heart').classList.toggle('on', liked.has(p.id)); $('heart').textContent = liked.has(p.id) ? '♥' : '♡';
-}
-async function play(){
-  const my = ++playing;
-  ['bars','step','item'].forEach(id => $(id).classList.remove('hide'));
-  for(let loop=0; loop<2 && my===playing; loop++)
-    for(let i=0;i<frames.length && my===playing;i++){ show(i); await new Promise(r => setTimeout(r, FRAME_MS)); }
-  if(my===playing){ playing = 0; $('start').textContent = '↻ Watch again'; $('start').disabled = false; }
-}
-
-$('start').onclick = async () => {
-  if(!photo){ $('file').click(); return; }
-  if(frames.length === SLOTS.length){ $('start').disabled = true; return play(); }
-  if(aiLeft() < SLOTS.length){ buyPack(); return; }
-  PACK_ID = aiPackFor(SLOTS.length);
-  $('start').disabled = true; $('busy').classList.remove('hide'); $('busyT').textContent = 'Getting dressed…';
+// ---- Your pet: the phone's own AI guesses the breed (free, the photo never leaves the phone) ----
+const loadScript = src => new Promise((r, j) => { const s = document.createElement('script'); s.src = src; s.onload = r; s.onerror = j; document.head.appendChild(s); });
+let NET = null;
+async function guess(img){
   try {
-    let done = 0;
-    // 2 at a time (the AI server takes 3 jobs at once), with retries, so a busy moment never wastes the whole show
-    const out = new Array(SLOTS.length); let next = 0;
-    const worker = async () => { while(next < SLOTS.length){ const i = next++;
-      for(let t=0; t<4; t++){ try { out[i] = await makeFrame(i); break; } catch(e){ if(!e.retry || t===3) throw e; await new Promise(r => setTimeout(r, 2500*(t+1))); } }
-      $('busyS').textContent = `${++done} of ${SLOTS.length} looks ready`; } };
-    await Promise.all([worker(), worker()]);
-    frames = out;
-    aiUse(SLOTS.length); showQuota();
-    $('frames').innerHTML = frames.map((u,i) => `<div class="fr ${SLOTS[i].move}"><img src="${u}" alt="Your pet in look ${i+1}"></div>`).join('');
-    $('bars').innerHTML = SLOTS.map(() => '<i><b></b></i>').join('');
-    $('bars').style.setProperty('--t', FRAME_MS + 'ms');
-    $('busy').classList.add('hide'); $('share').classList.remove('hide'); play();
-  } catch(e){ $('busyT').textContent = e.message || 'Something went wrong.'; $('busyS').textContent = 'Try again in a moment.'; $('start').disabled = false; frames = []; setTimeout(() => $('busy').classList.add('hide'), 3500); }
-};
+    if(!NET){ await loadScript('https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js');
+      await loadScript('https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.1/dist/mobilenet.min.js');
+      NET = await mobilenet.load({version:2, alpha:1}); }
+    const top = await NET.classify(img, 5);
+    for(const t of top){ const m = MATCH.find(([re]) => re.test(t.className)); if(m) return m[1]; }
+  } catch(e){ console.log('breed AI', e); }
+  return byColor(img);
+}
+// Fallback: fur colour in the middle of the photo
+function byColor(img){
+  const c = document.createElement('canvas'); c.width = c.height = 40; const g = c.getContext('2d');
+  const w = img.naturalWidth, h = img.naturalHeight; g.drawImage(img, w*.3, h*.3, w*.4, h*.4, 0, 0, 40, 40);
+  const d = g.getImageData(0,0,40,40).data; let r=0, gg=0, b=0; for(let i=0;i<d.length;i+=4){ r+=d[i]; gg+=d[i+1]; b+=d[i+2]; }
+  const n = d.length/4; r/=n; gg/=n; b/=n; const L = (r+gg+b)/3;
+  return L > 185 ? 'maltese' : r - b > 70 ? 'pomeranian' : r - b > 35 ? 'golden' : 'bulldog';
+}
+$('file').onchange = e => { const f = e.target.files[0]; if(f) usePhoto(URL.createObjectURL(f)); };
+async function usePhoto(url){
+  const img = new Image(); img.src = url; await img.decode().catch(()=>{});
+  $('me').src = url; $('me').classList.remove('hide');
+  $('start').disabled = true; $('start').textContent = 'Finding your pet\'s look…';
+  pet = await guess(img);
+  $('start').disabled = false; $('start').textContent = '📷 Try another photo';
+  $('hint').textContent = 'Not quite your pet? Tap the closest one above.';
+  play(pet); $('stage').scrollIntoView({behavior:'smooth', block:'start'});
+}
+$('start').onclick = () => $('file').click();
 
-// Share: the final full look (logo on it) + a link to the show page.
+// Share: the show video itself (our logo is in it) + the link
 $('share').onclick = async () => {
-  const last = HD[HD.length-1] || frames[frames.length-1]; if(!last) return;
-  const text = 'My pet\'s AI fashion show 🎬 Make yours at pajamasdog.com', url = 'https://pajamasdog.com/show.html';
-  const C = window.Capacitor;
-  if(C && C.isNativePlatform && C.isNativePlatform() && C.Plugins.Filesystem && C.Plugins.Share){
-    try { const f = await C.Plugins.Filesystem.writeFile({path:'pajamasdog-show.jpg', data:last.split(',')[1], directory:'CACHE'});
-      return await C.Plugins.Share.share({title:'PajamasDog', text, url, files:[f.uri]}); } catch(e){ if(/cancel/i.test(e.message||'')) return; }
-  }
-  const file = new File([await (await fetch(last)).blob()], 'pajamasdog-show.jpg', {type:'image/jpeg'});
-  const data = {files:[file], title:'PajamasDog', text: text + ' ' + url};
-  try { if(navigator.canShare && navigator.canShare(data)) return await navigator.share(data); } catch(e){ if(e.name==='AbortError') return; }
-  const a = document.createElement('a'); a.href = last; a.download = 'pajamasdog-show.jpg'; a.click();
+  const text = `My pet's AI fashion show 🎬 Find yours at pajamasdog.com`, url = 'https://pajamasdog.com/show.html';
+  try { const blob = await (await fetch(`img/vid/show_${show}.mp4`)).blob();
+    const data = {files:[new File([blob], 'pajamasdog-show.mp4', {type:'video/mp4'})], title:'PajamasDog', text: text + ' ' + url};
+    if(navigator.canShare && navigator.canShare(data)) return await navigator.share(data);
+    if(navigator.share) return await navigator.share({title:'PajamasDog', text, url});
+  } catch(e){ if(e.name === 'AbortError') return; }
+  try { await navigator.clipboard.writeText(url); $('share').textContent = 'Link copied ✓'; } catch(e){}
 };
 
 // Picks → sizes → one checkout
 function drawPicks(){
-  const items = lineup.filter(p => liked.has(p.id));
+  const items = [...liked].map(id => byId[id]).filter(Boolean);
   $('picks').classList.toggle('hide', !items.length);
   $('pkList').innerHTML = items.map(p => { const sz = (window.inStock ? inStock(p,0) : p.sizes) || [];
     return `<div class="pk" data-id="${p.id}"><img src="${p.img}" alt=""><div class="t"><b>${p.name}</b><span>${priceOf(p)}</span></div>
@@ -305,7 +257,7 @@ function drawPicks(){
   $('bag').classList.toggle('hide', !items.length); $('bag').textContent = `🛍 ${items.length} · Buy`;
 }
 $('bag').onclick = () => $('picks').scrollIntoView({behavior:'smooth', block:'start'});
-$('pkList').onclick = e => { const x = e.target.closest('.x'); if(!x) return; liked.delete(x.closest('.pk').dataset.id); drawLine(); drawPicks(); if(lineup[cur]) show(cur); };
+$('pkList').onclick = e => { const x = e.target.closest('.x'); if(!x) return; liked.delete(x.closest('.pk').dataset.id); drawPicks(); light(cur, true); };
 $('buy').onclick = () => {
   const rows = [...document.querySelectorAll('.pk')];
   const miss = rows.find(r => r.querySelector('select') && !r.querySelector('select').value);
@@ -313,44 +265,12 @@ $('buy').onclick = () => {
   payDirect(rows.map(r => ({id: r.dataset.id, size: r.querySelector('select')?.value || '', c: 0})));
 };
 
-async function usePhoto(dataURL){
-  photo = dataURL; frames = []; $('add').classList.add('hide');
-  $('frames').innerHTML = `<div class="fr on"><img src="${dataURL}" alt="Your pet"></div>`;
-  $('start').textContent = '▶ Start the show';
-}
-$('stage').addEventListener('contextmenu', e => e.preventDefault());
-$('file').onchange = async e => { const f = e.target.files[0]; if(f) usePhoto(await shrink(f)); };
-
-// ---- Sample show (형님 11-25): one real AI video; the cards below light up on the same timeline ----
-const SAMPLE = ['pd-01','cj-37931520','cj-67831296','cj-98989826','cj-61628400','cj-77427968','cj-78109953','cj-89892609'];
-const SEG = 2;   // seconds per look in the video
-let sampleOn = false;
-function syncSample(){
-  if(!sampleOn) return; const v = $('sv'); const i = Math.min(lineup.length-1, Math.floor((v.currentTime||0)/SEG));
-  if(i === cur && $('item').dataset.i == i) return;
-  cur = i; const p = lineup[i]; $('item').dataset.i = i;
-  ['item','bars','step'].forEach(id => $(id).classList.remove('hide'));
-  [...$('bars').children].forEach((b,k) => { b.className = k<i ? 'done' : k===i ? 'now' : ''; });
-  $('step').textContent = `${i+1}/${lineup.length} · ${SLOTS[i].label}`;
-  $('iImg').src = p.img; $('iName').innerHTML = `<a href="product.html?id=${encodeURIComponent(p.id)}" target="_blank" rel="noopener">${p.name} ›</a>`; $('iPrice').textContent = priceOf(p);
-  $('heart').classList.toggle('on', liked.has(p.id)); $('heart').textContent = liked.has(p.id) ? '♥' : '♡';
-  drawLine();
-}
-$('sv').addEventListener('timeupdate', syncSample);
-$('sv').addEventListener('seeked', () => { $('item').dataset.i = ''; syncSample(); });
-$('sv').addEventListener('contextmenu', e => e.preventDefault());
-
 (async () => {
-  await getProducts('all', 0); const all = await FEED;   // whole catalog (already filtered to buy-here items)
-  const own = all.filter(p => p.src === 'pd' && p.img);
-  SLOTS.forEach(s => pool[s.k] = own.filter(s.test));
-  shuffle(); showQuota();
-  const byId = Object.fromEntries(all.map(p => [p.id, p])), sample = SAMPLE.map(id => byId[id]);
-  if(sample.every(Boolean)){ sampleOn = true; lineup = sample; $('add').classList.add('hide');
-    $('bars').innerHTML = SAMPLE.map(() => '<i><b></b></i>').join(''); $('bars').style.setProperty('--t', SEG*1000 + 'ms');
-    $('start').textContent = '📷 Your pet\'s show — opening soon'; $('start').disabled = true; $('quota').textContent = 'Shop the looks now: tap a card while it lights up.'; drawLine(); syncSample(); }
+  await getProducts('all', 0); const all = await FEED;
+  byId = Object.fromEntries(all.map(p => [p.id, p]));
+  play('bulldog');
   let carried = null; try { carried = sessionStorage.getItem('pd:photo'); sessionStorage.removeItem('pd:photo'); } catch(e){}
-  if(carried && !sampleOn) usePhoto(carried);
+  if(carried) usePhoto(carried);   // photo picked on the home page
 })();
 </script>
 </body>

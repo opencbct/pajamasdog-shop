@@ -21,5 +21,5 @@ main{max-width:1000px;margin:0 auto;padding:0 16px 40px}
 .plogo i+i{background:var(--b,#ff3d7f);-webkit-mask-image:url(img/logo_b.png);mask-image:url(img/logo_b.png)}
 footer{text-align:center;font-size:13px;color:rgba(243,241,248,.55);padding:30px 16px 40px;max-width:700px;margin:0 auto}
 @media(max-width:600px){header img{height:76px}}
-header .hlogo{height:58px;width:auto;display:block}
-@media(max-width:600px){header .hlogo{height:44px}}
+header .hlogo{height:78px;width:auto;display:block}
+@media(max-width:600px){header .hlogo{height:62px}}

@@ -103,7 +103,7 @@ body{padding-bottom:70px}
 </head>
 <body>
 <header>
-  <a href="/" aria-label="PajamasDog home"><img class="hlogo" src="img/logo2/lockup.png?v=1" alt="PajamasDog"></a>
+  <a href="/" aria-label="PajamasDog home"><img class="hlogo" src="img/logo2/stack.png?v=1" alt="PajamasDog"></a>
   <a class="back" href="/">← Home</a>
 </header>
 <main>
@@ -516,7 +516,7 @@ function openGift(){
   document.querySelector('main h1').after(b); update();
 }
 // ---- Share: the dressed pet + our logo + link, as one picture ----
-const LOGO = new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'img/logo2/lockup.png'; });
+const LOGO = new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'img/logo2/stack.png'; });
 async function lookImage(){
   const svg = $('stage').querySelector('svg').outerHTML.replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" ');
   const pic = await new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg); });

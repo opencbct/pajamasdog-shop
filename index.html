@@ -17,7 +17,7 @@
 body{font-family:Nunito,system-ui,sans-serif;font-weight:300;color:#f3f1f8;background:var(--soft)}
 a{color:inherit;text-decoration:none}
 header{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;max-width:1200px;margin:0 auto}
-header img,header .hlogo{height:58px}
+header img,header .hlogo{height:78px}
 header nav{display:flex;gap:18px;font-size:15px}
 .hero{position:relative;max-width:1200px;width:calc(100% - 32px);margin:0 auto;border-radius:24px;overflow:hidden}
 .hero img,.hero video.bg{width:100%;height:78vh;max-height:720px;min-height:420px;object-fit:cover;object-position:center 60%;display:block}
@@ -121,14 +121,14 @@ h2{font-weight:300;font-size:28px;margin-bottom:16px}
 .band h2{color:#fff;margin-bottom:6px}
 .band p{opacity:.8}
 footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 16px 40px}
-@media(max-width:600px){header nav{display:none}header img,header .hlogo{height:44px}}
+@media(max-width:600px){header nav{display:none}header img,header .hlogo{height:62px}}
 .cap .pr{display:block;font-style:normal;font-size:17px;margin-top:6px;color:var(--pink)}
 </style>
 <link rel="stylesheet" href="logo-motion.css">
 </head>
 <body>
 <header>
-  <a href="/" aria-label="PajamasDog home"><img class="hlogo" src="img/logo2/lockup.png?v=1" alt="PajamasDog"></a>
+  <a href="/" aria-label="PajamasDog home"><img class="hlogo" src="img/logo2/stack.png?v=1" alt="PajamasDog"></a>
   <nav><a href="#pajamas">Pajamas</a><a href="#acc">Accessories</a><a href="#food">Food</a><a href="#used">Used</a><a href="#adopt">Adopt</a><a href="#clubs">Groups</a><a href="gallery.html">Gallery</a></nav>
 </header>
 
@@ -147,7 +147,7 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
     <input type="file" accept="image/*" id="heroPhoto" hidden>
     <input type="file" accept="video/*" id="heroVideo" hidden>
     <a class="btn ghost" href="#fun">More AI fun ✨</a>
-    <p class="privacy fine">AI pictures of your pet in our products: 30 for $2.99 (one fashion show uses 8). Coming soon: moving AI video. JPG, PNG or a short video (we use one clear frame). Your photo is sent to our AI partner (Runway) only to make your picture; we do not keep it. AI results can differ slightly from the real product. Upload only photos you own.</p>
+    <p class="privacy fine">Free AI fashion show: your photo stays on your phone — the phone's own AI finds the closest pet, and that pet walks our runway in our real products. AI results can differ slightly from the real product.</p>
 
   </div>
 </div>
@@ -542,7 +542,7 @@ async function fillRows(){
     KR:[['','img/p/corgi_walk.webp','네이버 카페','반려동물 카페 찾기','https://section.cafe.naver.com/ca-fe/home/search/cafes?q=%EB%B0%98%EB%A0%A4%EB%8F%99%EB%AC%BC']],
   };
   document.getElementById('clubRow').innerHTML = (GROUPS[REGION] || GROUPS.US).map(x=>tile(...x)).join('') +
-    tile('#fff1d6','<span class="plogo" style="--w:110px;--a:#5e17eb;--b:#ff3d7f"><i></i><i></i></span>','PajamasDog club','Share your pet · soon') +
+    tile('#fff1d6','<img src="img/logo2/stack_dark.png?v=1" alt="PajamasDog" style="width:110px;height:auto">','PajamasDog club','Share your pet · soon') +
     tile('','img/p/leash_jack.webp','Walk buddies','Coming soon');
 }
 fillRows();
