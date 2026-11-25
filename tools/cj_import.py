@@ -91,47 +91,58 @@ def ship_cost(vid):
     return float(o['logisticPrice']), o.get('logisticName'), o.get('logisticAging')
 
 items = []
-for cid, (cat, tag) in CATS.items():
-    cands = []
-    for page in (1, 2):
-        d = call(f'/product/list?categoryId={cid}&pageNum={page}&pageSize=100')
-        if not d: break
-        cands += d.get('list') or []
-        if len(cands) >= (d.get('total') or 0): break
-    good = [p for p in cands if not p.get('isTestProduct') and lo(p.get('sellPrice')) >= MIN_COST and (p.get('listedNum') or 0) >= MIN_LISTED]
-    good.sort(key=lambda p: -(p.get('listedNum') or 0))
-    print(f'{tag:10} {len(cands):4} found, {len(good):3} good', file=sys.stderr)
-    must = MUST.get(tag)
-    good = [p for p in good if not must or any(w in (p.get('productNameEn') or '').lower() for w in must)]
-    good = [p for p in good if not re.search(r'\b\d+\s*pcs\b|wholesale|bulk', (p.get('productNameEn') or ''), re.I)]
-    for p in good[:PER]:
-        det = call(f"/product/query?pid={p['pid']}")
-        if not det: continue
-        vars_ = det.get('variants') or []
-        if not vars_: continue
-        top = max(vars_, key=lambda v: float(v.get('variantSellPrice') or 0))
-        sc = ship_cost(top['vid'])
-        if not sc: continue
-        cost = float(top.get('variantSellPrice') or 0) + sc[0]
-        price = price_of(cost)
-        variants, colors, sizes, vprice = {}, [], [], {}
-        for v in vars_:
-            key = (v.get('variantKey') or '').strip() or 'Default'
-            parts = [x.strip() for x in key.split('-') if x.strip()]
-            if len(parts) >= 2: col, size = parts[0], parts[1]
-            elif parts and re.fullmatch(r'(XXS|XS|S|M|L|XL|XXL|2XL|XXXL|3XL|4XL|5XL|\d+(\.\d+)?(cm|CM)?)', parts[0]): col, size = 'Default', parts[0]
-            else: col, size = (parts[0] if parts else 'Default'), ''
-            k = f'{col}-{size}' if size else col
-            variants[k] = v['vid']; vprice[k] = price_of(float(v.get('variantSellPrice') or 0) + sc[0])
-            if col not in colors: colors.append(col)
-            if size and size not in sizes: sizes.append(size)
-        imgs = det.get('productImageSet') or [det.get('productImage')]
-        items.append({
-            'pid': p['pid'], 'cat': cat, 'tag': tag, 'cj_name': det.get('productNameEn'), 'name': clean_name(det.get('productNameEn') or ''),
-            'listed': p.get('listedNum'), 'cost': round(cost, 2), 'ship': sc, 'price': min(vprice.values()) if vprice else price, 'vprice': vprice,
-            'img': imgs[0] if imgs else '', 'imgs': imgs[:6], 'colors': colors, 'sizes': sizes, 'variants': variants,
-            'chart': size_chart(det.get('description')) if cat == 'pajamas' else None,
-            'weight_g': det.get('productWeight'),
-        })
-        json.dump(items, open(os.path.join(OUT, 'cj_items.json'), 'w'), indent=1, ensure_ascii=False)
+def add(p, cat, tag):
+    det = call(f"/product/query?pid={p['pid']}")
+    if not det: return
+    vars_ = det.get('variants') or []
+    if not vars_: return
+    top = max(vars_, key=lambda v: float(v.get('variantSellPrice') or 0))
+    sc = ship_cost(top['vid'])
+    if not sc: return
+    cost = float(top.get('variantSellPrice') or 0) + sc[0]
+    price = price_of(cost)
+    variants, colors, sizes, vprice = {}, [], [], {}
+    for v in vars_:
+        key = (v.get('variantKey') or '').strip() or 'Default'
+        parts = [x.strip() for x in key.split('-') if x.strip()]
+        if len(parts) >= 2: col, size = parts[0], parts[1]
+        elif parts and re.fullmatch(r'(XXS|XS|S|M|L|XL|XXL|2XL|XXXL|3XL|4XL|5XL|\d+(\.\d+)?(cm|CM)?)', parts[0]): col, size = 'Default', parts[0]
+        else: col, size = (parts[0] if parts else 'Default'), ''
+        k = f'{col}-{size}' if size else col
+        variants[k] = v['vid']; vprice[k] = price_of(float(v.get('variantSellPrice') or 0) + sc[0])
+        if col not in colors: colors.append(col)
+        if size and size not in sizes: sizes.append(size)
+    imgs = det.get('productImageSet') or [det.get('productImage')]
+    items.append({
+        'pid': p['pid'], 'cat': cat, 'tag': tag, 'cj_name': det.get('productNameEn'), 'name': clean_name(det.get('productNameEn') or ''),
+        'listed': p.get('listedNum'), 'cost': round(cost, 2), 'ship': sc, 'price': min(vprice.values()) if vprice else price, 'vprice': vprice,
+        'img': imgs[0] if imgs else '', 'imgs': imgs[:6], 'colors': colors, 'sizes': sizes, 'variants': variants,
+        'chart': size_chart(det.get('description')) if cat == 'pajamas' else None,
+        'weight_g': det.get('productWeight'),
+    })
+    json.dump(items, open(os.path.join(OUT, 'cj_items.json'), 'w'), indent=1, ensure_ascii=False)
+
+# --pids FILE: import exactly these products ([[pid, cat, tag], ...]) and ADD them to cj_items.json (형님 11-25: funny costumes)
+if '--pids' in sys.argv:
+    items = json.load(open(os.path.join(OUT, 'cj_items.json')))
+    have = {x['pid'] for x in items}
+    for pid, cat, tag in json.load(open(sys.argv[sys.argv.index('--pids') + 1])):
+        if pid in have: continue
+        add({'pid': pid, 'listedNum': 0}, cat, tag)
+else:
+    for cid, (cat, tag) in CATS.items():
+        cands = []
+        for page in (1, 2):
+            d = call(f'/product/list?categoryId={cid}&pageNum={page}&pageSize=100')
+            if not d: break
+            cands += d.get('list') or []
+            if len(cands) >= (d.get('total') or 0): break
+        good = [p for p in cands if not p.get('isTestProduct') and lo(p.get('sellPrice')) >= MIN_COST and (p.get('listedNum') or 0) >= MIN_LISTED]
+        good.sort(key=lambda p: -(p.get('listedNum') or 0))
+        print(f'{tag:10} {len(cands):4} found, {len(good):3} good', file=sys.stderr)
+        must = MUST.get(tag)
+        good = [p for p in good if not must or any(w in (p.get('productNameEn') or '').lower() for w in must)]
+        good = [p for p in good if not re.search(r'\b\d+\s*pcs\b|wholesale|bulk', (p.get('productNameEn') or ''), re.I)]
+        for p in good[:PER]:
+            add(p, cat, tag)
 print(len(items), 'items ->', os.path.join(OUT, 'cj_items.json'), file=sys.stderr)
