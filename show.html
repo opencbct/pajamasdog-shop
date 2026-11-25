@@ -60,6 +60,12 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
 .line button{border:0;padding:0;background:var(--card);border-radius:14px;overflow:hidden;cursor:pointer;position:relative}
 .line img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#fff}
 .line span{display:block;font-size:11px;padding:4px 2px;opacity:.75}
+.line button{transition:transform .25s, box-shadow .25s}
+.line button.now{transform:translateY(-6px) scale(1.08);box-shadow:0 0 0 3px var(--pink),0 8px 22px rgba(255,61,127,.55)}
+.line button.now span{opacity:1;color:#fff}
+.line .add2{position:absolute;left:4px;right:4px;bottom:24px;border-radius:999px;background:var(--pink);color:#fff;font-size:11px;padding:3px 0;display:none}
+.line button.now .add2{display:block}
+.item .t b a{color:inherit}
 .line button.liked::after{content:'♥';position:absolute;top:4px;right:6px;color:var(--pink);font-size:16px}
 .quota{font-size:12px;opacity:.6;margin:8px 0 6px;text-align:center}
 .acts{display:grid;gap:10px;margin-top:12px}
@@ -132,14 +138,18 @@ const pick = (arr, not) => { const a = arr.filter(p => p.id !== not); return a[M
 const priceOf = p => (p.price_max > p.price ? 'from ' : '') + '$' + p.price.toFixed(2);
 
 function drawLine(){
-  $('line').innerHTML = lineup.map((p,i) => `<button data-i="${i}" class="${liked.has(p.id)?'liked':''}" aria-label="Swap ${SLOTS[i].label}"><img src="${p.img}" alt="${p.name}"><span>${SLOTS[i].label}</span></button>`).join('');
+  $('line').innerHTML = lineup.map((p,i) => `<button data-i="${i}" class="${liked.has(p.id)?'liked':''}${frames.length && i===cur ? ' now' : ''}" aria-label="${frames.length ? 'Add '+p.name : 'Swap '+SLOTS[i].label}"><img src="${p.img}" alt="${p.name}"><i class="add2">${liked.has(p.id) ? '♥ In bag' : '+ Bag'}</i><span>${SLOTS[i].label}</span></button>`).join('');
 }
 function shuffle(only){
   lineup = SLOTS.map((s,i) => (only!==undefined && i!==only && lineup[i]) ? lineup[i] : pick(pool[s.k], lineup[i]?.id));
   frames = []; drawLine();
 }
 $('shuffle').onclick = () => shuffle();
-$('line').onclick = e => { const b = e.target.closest('button'); if(!b || playing) return; shuffle(+b.dataset.i); };
+// Before the show: tap = swap that item. During/after the show: tap = put it in the bag (♥).
+$('line').onclick = e => { const b = e.target.closest('button'); if(!b) return; const i = +b.dataset.i;
+  if(!frames.length){ if(!$('busy').classList.contains('hide')) return; shuffle(i); return; }
+  const p = lineup[i]; if(liked.has(p.id)) liked.delete(p.id); else { liked.add(p.id); if(i===cur) heartPop(); }
+  drawLine(); drawPicks(); if(i===cur) show(cur); };
 
 // AI allowance: 5 free pictures a day, then the 30-picture pack (helpers in shop.js)
 function showQuota(){
@@ -203,7 +213,8 @@ function show(i){
   [...$('frames').children].forEach((f,k) => f.classList.toggle('on', k===i));
   [...$('bars').children].forEach((b,k) => { b.className = k<i ? 'done' : k===i ? 'now' : ''; });
   $('step').textContent = `${i+1}/${SLOTS.length} · + ${SLOTS[i].label}`;
-  $('iImg').src = p.img; $('iName').textContent = p.name; $('iPrice').textContent = priceOf(p);
+  $('iImg').src = p.img; $('iName').innerHTML = `<a href="product.html?id=${encodeURIComponent(p.id)}" target="_blank" rel="noopener">${p.name} ›</a>`; $('iPrice').textContent = priceOf(p);
+  drawLine();
   $('heart').classList.toggle('on', liked.has(p.id)); $('heart').textContent = liked.has(p.id) ? '♥' : '♡';
 }
 async function play(){
