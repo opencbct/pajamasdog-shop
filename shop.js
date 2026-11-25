@@ -50,8 +50,16 @@ async function getProducts(cat, page){
   FEED = FEED || fetch('products/feed.json',{cache:'no-store'}).then(r=>r.json()).then(a=>a.filter(p => !blocked(p) && canShip(p)));
   let list = (await FEED).filter(p => cat==='all' || p.cat===cat || (p.tags||[]).includes(cat) || (cat==='cats' && p.pet==='cat') || (cat==='dogs' && p.pet!=='cat' && (p.cat==='pajamas'||p.cat==='matching')));
   if(DEMO && list.length){ const out=[]; for(let i=0;i<PAGE_SIZE;i++){ const p=list[(page*PAGE_SIZE+i)%list.length]; out.push({...p,id:p.id+'-'+page+'-'+i}); } return page<20?out:[]; }
+  // 형님 11-25: our own items (Buy now, no leaving the site) always first; partner/Amazon items go to the back.
+  list = list.filter(p => p.src==='pd').concat(list.filter(p => p.src!=='pd'));
   return list.slice(page*PAGE_SIZE, (page+1)*PAGE_SIZE);
 }
+// In the app, partner links open in an in-app window (Custom Tab) instead of throwing the user out to Chrome.
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[target=_blank], a[rel~=sponsored]'); const B = window.Capacitor?.Plugins?.Browser;
+  if(!a || !B || !/^https?:/.test(a.href) || a.host===location.host) return;
+  e.preventDefault(); B.open({url: a.href, toolbarColor: '#15131c'});
+});
 
 // One product by id (for detail + try-on pages).
 async function getProduct(id){ await getProducts('all',0); return (await FEED).find(p => p.id===id); }
