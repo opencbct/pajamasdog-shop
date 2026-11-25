@@ -23,7 +23,7 @@ p{opacity:.8;margin:0 0 12px;line-height:1.5}
 <header>
   <a href="/" aria-label="PajamasDog home"><img class="hlogo" src="img/logo2/lockup.png?v=1" alt="PajamasDog"></a>
 </header>
-<main>
+<main id="order">
   <div class="big">🐾</div>
   <h1>Thank <b>you!</b></h1>
   <p>Your order is in. A receipt is on its way to your email.</p>
@@ -33,6 +33,27 @@ p{opacity:.8;margin:0 0 12px;line-height:1.5}
     <a class="btn ghost" href="/">Back to the shop</a>
   </div>
 </main>
+<main id="packMain" class="hide" style="display:none">
+  <div class="big">✨</div>
+  <h1>30 more <b>AI pictures!</b></h1>
+  <p id="packMsg">Checking your payment…</p>
+  <div class="acts"><a class="btn" href="show.html">Back to the AI fashion show</a><a class="btn ghost" href="tryon.html">Try one outfit</a></div>
+</main>
+<script src="shop.js"></script>
+<script>
+// Picture pack: verify the payment with our server, then add 30 pictures on this device.
+(async () => {
+  const q = new URLSearchParams(location.search); if(!q.get('pack')) return;
+  document.getElementById('order').style.display = 'none'; document.getElementById('packMain').style.display = '';
+  const s = q.get('s') || '', msg = document.getElementById('packMsg');
+  try {
+    const r = await (await fetch(CHECKOUT_API.replace(/\/$/,'') + '/pack-verify?s=' + encodeURIComponent(s))).json();
+    if(!r.ok){ msg.textContent = 'We could not confirm the payment yet. Please refresh in a minute, or email info@opencbct.com.'; return; }
+    const cur = aiPack(); if(!cur || cur.s !== s) aiSet('pd:pack', JSON.stringify({s, left: r.credits}));
+    msg.textContent = `Done — you have ${aiLeft()} AI pictures ready on this device.`;
+  } catch(e){ msg.textContent = 'Network problem. Please refresh this page.'; }
+})();
+</script>
 <footer>Questions? <a href="mailto:info@opencbct.com" style="text-decoration:underline">info@opencbct.com</a> · <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
 </body>
 </html>

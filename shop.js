@@ -92,7 +92,7 @@ const fileToDataURL = f => new Promise((res, rej) => { const r = new FileReader(
 async function tryOn(photoFile, product, pose='sit'){
   if(!TRYON_API || product.src === 'amazon') return {url: URL.createObjectURL(photoFile), preview:true};
   const r = await fetch(TRYON_API, {method:'POST', headers:{'content-type':'application/json'},
-    body: JSON.stringify({photo: await fileToDataURL(photoFile), product: product.id, pose})});
+    body: JSON.stringify({photo: await fileToDataURL(photoFile), product: product.id, pose, pack: aiPackFor(1)})});
   const d = await r.json().catch(() => ({}));
   if(!r.ok || !d.image) throw new Error(d.error || 'try-on failed');
   const bin = Uint8Array.from(atob(d.image), c => c.charCodeAt(0));
@@ -115,6 +115,26 @@ async function tryOn(photoFile, product, pose='sit'){
   document.addEventListener('DOMContentLoaded', () => watch());
   new MutationObserver(() => watch()).observe(document.documentElement, {childList:true, subtree:true});
 })();
+
+// ---- AI picture allowance (형님 11-25): 5 free a day; then a 30-picture pack for $2.99 ----
+const AI_FREE = 5;
+const aiDay = () => 'pd:ai:' + new Date().toISOString().slice(0,10);
+const aiGet = k => { try { return localStorage.getItem(k); } catch(e){ return null; } };
+const aiSet = (k, v) => { try { localStorage.setItem(k, v); } catch(e){} };
+const aiPack = () => { try { return JSON.parse(aiGet('pd:pack')) || null; } catch(e){ return null; } };
+const aiFreeLeft = () => Math.max(0, AI_FREE - (+aiGet(aiDay()) || 0));
+const aiLeft = () => aiFreeLeft() + ((aiPack()||{}).left || 0);
+// Which pack id to send for the next n pictures ('' while free pictures remain).
+const aiPackFor = n => aiFreeLeft() >= n ? '' : ((aiPack()||{}).s || '');
+function aiUse(n){
+  const f = Math.min(n, aiFreeLeft()); aiSet(aiDay(), (+aiGet(aiDay()) || 0) + f);
+  const rest = n - f, p = aiPack(); if(rest && p){ p.left = Math.max(0, p.left - rest); aiSet('pd:pack', JSON.stringify(p)); }
+}
+async function buyPack(){
+  if(!CHECKOUT_API){ alert('Checkout opens soon.'); return; }
+  const r = await fetch(CHECKOUT_API.replace(/\/$/,'') + '/pack', {method:'POST', headers:{'Content-Type':'application/json'}, body:'{}'});
+  const j = await r.json().catch(() => ({})); if(j.url) location.href = j.url; else alert(j.error || 'Checkout failed. Please try again.');
+}
 
 // Pay for our own (pd) items. The server sets every price; the browser only sends ids + sizes.
 async function payDirect(lines, wrap='none', gift=null){

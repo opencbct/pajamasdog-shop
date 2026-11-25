@@ -110,7 +110,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
     <button class="btn" id="buy">Buy my picks</button>
     <p class="fine">Prices include free shipping. All sales final — see <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>. AI pictures are a preview and can differ slightly from the real product; please pick sizes from your pet's measurements.</p>
   </section>
-  <p class="fine">Your photo is sent to our AI partner (Runway) only to make the pictures; we do not keep it. One show uses 5 of your free AI pictures for today.</p>
+  <p class="fine">Your photo is sent to our AI partner (Runway) only to make the pictures; we do not keep it. One show uses 5 AI pictures: 5 are free each day, then 30 more for $2.99.</p>
 </main>
 <script src="shop.js"></script>
 <script src="sizes_data.js?v=2"></script>
@@ -126,7 +126,7 @@ const SLOTS = [
   {k:'eyes', label:'Glasses', move:'strut', pose:'posing proudly like a star, head held high',  test:p=>/glass|goggle/i.test(p.name)},
 ];
 const FRAME_MS = 2600;
-let pool = {}, lineup = [], photo = null, frames = [], liked = new Set(), playing = 0;
+let PACK_ID = '', pool = {}, lineup = [], photo = null, frames = [], liked = new Set(), playing = 0;
 
 const pick = (arr, not) => { const a = arr.filter(p => p.id !== not); return a[Math.floor(Math.random()*a.length)]; };
 const priceOf = p => (p.price_max > p.price ? 'from ' : '') + '$' + p.price.toFixed(2);
@@ -141,13 +141,13 @@ function shuffle(only){
 $('shuffle').onclick = () => shuffle();
 $('line').onclick = e => { const b = e.target.closest('button'); if(!b || playing) return; shuffle(+b.dataset.i); };
 
-// free AI pictures per day on this device (same counter as the try-on page)
-const FREE_PER_DAY = 5;
-const qKey = () => 'pd:ai:' + new Date().toISOString().slice(0,10);
-const used = () => { try { return +localStorage.getItem(qKey()) || 0; } catch(e){ return 0; } };
-const addUsed = n => { try { localStorage.setItem(qKey(), used()+n); } catch(e){} };
-function showQuota(){ const left = Math.max(0, FREE_PER_DAY - used()); $('quota').textContent = left >= SLOTS.length ? `${left} free AI pictures left today · a show uses ${SLOTS.length}` : 'Free AI shows used up for today — come back tomorrow.'; }
-
+// AI allowance: 5 free pictures a day, then the 30-picture pack (helpers in shop.js)
+function showQuota(){
+  const left = aiLeft(), enough = left >= SLOTS.length;
+  $('quota').innerHTML = enough ? `${left} AI pictures left${aiFreeLeft() < left ? '' : ' today'} · a show uses ${SLOTS.length}`
+    : `Free shows used up for today. <a id="pack" style="color:var(--pink);text-decoration:underline;cursor:pointer">Get 30 more pictures · $2.99</a>`;
+  const pk = document.getElementById('pack'); if(pk) pk.onclick = buyPack;
+}
 function shrink(file){
   return new Promise(res => { const img = new Image(); img.onload = () => {
     const s = Math.min(1, 1400 / Math.max(img.width, img.height)); const c = document.createElement('canvas'); c.width = img.width*s; c.height = img.height*s;
@@ -178,7 +178,7 @@ async function brand(src){
 async function makeFrame(i){
   const items = lineup.slice(0, i+1);
   const r = await fetch(TRYON_API, {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({
-    photo, items: items.map(p => p.id), collage: await collage(items), move: SLOTS[i].move})});
+    photo, items: items.map(p => p.id), collage: await collage(items), move: SLOTS[i].move, pack: PACK_ID})});
   const d = await r.json().catch(() => ({}));
   if(!r.ok || !d.image) throw new Error(d.error || 'AI could not make this look.');
   return brand(`data:${d.mime||'image/png'};base64,${d.image}`);
@@ -217,12 +217,13 @@ async function play(){
 $('start').onclick = async () => {
   if(!photo){ $('file').click(); return; }
   if(frames.length === SLOTS.length){ $('start').disabled = true; return play(); }
-  if(used() + SLOTS.length > FREE_PER_DAY){ showQuota(); return; }
+  if(aiLeft() < SLOTS.length){ showQuota(); return; }
+  PACK_ID = aiPackFor(SLOTS.length);
   $('start').disabled = true; $('busy').classList.remove('hide'); $('busyT').textContent = 'Getting dressed…';
   try {
     let done = 0;
     frames = await Promise.all(SLOTS.map((s,i) => makeFrame(i).then(u => { $('busyS').textContent = `${++done} of ${SLOTS.length} looks ready`; return u; })));
-    addUsed(SLOTS.length); showQuota();
+    aiUse(SLOTS.length); showQuota();
     $('frames').innerHTML = frames.map((u,i) => `<div class="fr ${SLOTS[i].move}"><img src="${u}" alt="Your pet in look ${i+1}"></div>`).join('');
     $('bars').innerHTML = SLOTS.map(() => '<i><b></b></i>').join('');
     $('bars').style.setProperty('--t', FRAME_MS + 'ms');

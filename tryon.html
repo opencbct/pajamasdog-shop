@@ -136,11 +136,14 @@ async function render(){
   showQuota();
 }
 
-// Free AI pictures per day on this device (the server also limits per connection).
-const FREE_PER_DAY = 5;
-const qKey = () => 'pd:ai:' + new Date().toISOString().slice(0,10);
-const used = () => { try { return +localStorage.getItem(qKey()) || 0; } catch(e){ return 0; } };
-function showQuota(){ const left = Math.max(0, FREE_PER_DAY - used()); $('quota').textContent = left ? `${left} free AI pictures left today` : 'Free AI pictures used up for today — come back tomorrow.'; }
+// AI allowance: 5 free pictures a day, then the 30-picture pack (helpers in shop.js)
+function showQuota(){
+  const left = aiLeft();
+  $('quota').innerHTML = left ? `${left} AI pictures left` : `Free AI pictures used up for today. <a id="pack" style="color:var(--pink);text-decoration:underline;cursor:pointer">Get 30 more · $2.99</a>`;
+  const pk = document.getElementById('pack'); if(pk) pk.onclick = buyPack;
+}
+const used = () => AI_FREE - aiLeft();
+const FREE_PER_DAY = AI_FREE;
 $('dress').addEventListener('click', async () => {
   const p = outfits[idx], key = p.id+'|'+pose; if(cache[key] || !photo) return;
   if(used() >= FREE_PER_DAY){ showQuota(); return; }
@@ -148,7 +151,7 @@ $('dress').addEventListener('click', async () => {
   try {
     const r = await tryOn(photo, p, pose);
     cache[key] = {...r, url: await brand(r.url, r.preview ? (p.color || '#ff3d7f') : null)};
-    if(!r.preview){ try { localStorage.setItem(qKey(), used()+1); } catch(e){} }
+    if(!r.preview) aiUse(1);
     if(my === run){ $('stage').classList.remove('loading'); render(); }
   } catch(e){ if(my===run){ $('note').textContent = e.message || 'Could not dress up — try again.'; $('dress').disabled = false; } }
   finally { if(my===run) $('stage').classList.remove('loading'); }
