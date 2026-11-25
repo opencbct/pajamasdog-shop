@@ -58,7 +58,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
 /* lineup */
 .lbl{font-size:13px;opacity:.6;margin:16px 2px 8px;display:flex;justify-content:space-between}
 .lbl a{color:var(--pink);cursor:pointer}
-.line{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.line{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .line button{border:0;padding:0;background:var(--card);border-radius:14px;overflow:hidden;cursor:pointer;position:relative}
 .line img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#fff}
 .line span{display:block;font-size:11px;padding:4px 2px;opacity:.75}
@@ -92,7 +92,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
 </header>
 <main>
   <h1>AI fashion show 🎬</h1>
-  <p class="sub">Your pet tries on 6 of our looks — walking, spinning, jumping, dancing. Tap a card below to add it to your bag.</p>
+  <p class="sub">Your pet tries on 8 of our looks — walking, spinning, jumping, dancing. Tap a card below to add it to your bag.</p>
 
   <div class="stage" id="stage">
     <label class="add" id="add"><span class="ic">📷</span><b>Add your pet's photo</b><span style="font-size:13px;opacity:.6">Then press Start.</span><input type="file" accept="image/*" id="file" hidden></label>
@@ -101,7 +101,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
     <div class="step hide" id="step"></div>
     <button class="bag hide" id="bag">🛍 0 · Buy</button>
     <div class="item hide" id="item"><img id="iImg" alt=""><div class="t"><b id="iName"></b><span id="iPrice"></span></div><button class="heart" id="heart" aria-label="I like this">♡</button></div>
-    <div class="busy hide" id="busy"><b id="busyT">Getting dressed…</b><span id="busyS">AI is making 6 looks (about a minute)</span></div>
+    <div class="busy hide" id="busy"><b id="busyT">Getting dressed…</b><span id="busyS">AI is making 8 looks (about a minute)</span></div>
   </div>
 
   <div class="lbl"><span>Tonight's lineup — tap one to swap</span><a id="shuffle">🎲 Shuffle</a></div>
@@ -118,7 +118,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
     <button class="btn" id="buy">Buy my picks</button>
     <p class="fine">Prices include free shipping. All sales final — see <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>. AI pictures are a preview and can differ slightly from the real product; please pick sizes from your pet's measurements.</p>
   </section>
-  <p class="fine">Your photo is sent to our AI partner (Runway) only to make the pictures; we do not keep it. One show uses 6 AI pictures. AI pictures: 30 for $2.99.</p>
+  <p class="fine">Your photo is sent to our AI partner (Runway) only to make the pictures; we do not keep it. One show uses 8 AI pictures. AI pictures: 30 for $2.99.</p>
 </main>
 <script src="shop.js"></script>
 <script src="sizes_data.js?v=2"></script>
@@ -127,11 +127,15 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
 const $ = id => document.getElementById(id);
 // Slots in the order the pet puts them on. Each frame wears everything up to that slot.
 // 형님 11-25: more variety, one item per look (the previous item comes off), quick pace — the cards below do the selling.
-const PJ = p => p.cat==='pajamas' && !/robe|towel|blanket|medical|anxiety|treatment|surgery|recovery|diaper|life ?jacket|vest/i.test(p.name);
+const PJ = p => p.cat==='pajamas' && !/robe|towel|blanket|medical|anxiety|treatment|surgery|recovery|diaper|life ?jacket|vest|mask|headgear|mane|wig|headdress/i.test(p.name);
+// 형님 11-25: the show's base lineup = 3 pajamas, 2 masks, scarf, necklace, bowl (one item per look).
+const MASK = p => /mask|headgear|mane|wig|horse head|headdress/i.test(p.name) && !/goggle|sunshade/i.test(p.name);
 const SLOTS = [
   {k:'pj',    label:'Pajama',   move:'walk',  test:PJ},
   {k:'pj',    label:'Pajama',   move:'spin',  test:PJ},
   {k:'pj',    label:'Pajama',   move:'jump',  test:PJ},
+  {k:'mask',  label:'Mask',     move:'dance', test:MASK},
+  {k:'mask',  label:'Mask',     move:'strut', test:MASK},
   {k:'scarf', label:'Scarf',    move:'dance', test:p=>/scarf|bandana/i.test(p.name)},
   {k:'neck',  label:'Necklace', move:'strut', test:p=>/necklace|pendant|charm|\btag\b|collar/i.test(p.name) && !/scarf|bandana|harness/i.test(p.name)},
   {k:'bowl',  label:'Bowl',     move:'strut', test:p=>/bowl|feeder/i.test(p.name)},
@@ -162,7 +166,7 @@ $('line').onclick = e => { const b = e.target.closest('button'); if(!b) return; 
 function showQuota(){
   const left = aiLeft(), enough = left >= SLOTS.length;
   $('quota').innerHTML = enough ? `${left} AI pictures left · a show uses ${SLOTS.length}`
-    : `A show uses ${SLOTS.length} AI pictures. <a id="pack" style="color:var(--pink);text-decoration:underline;cursor:pointer">Get 30 pictures · $2.99 (5 shows)</a>`;
+    : `A show uses ${SLOTS.length} AI pictures. <a id="pack" style="color:var(--pink);text-decoration:underline;cursor:pointer">Get 30 pictures · $2.99</a>`;
   if(!frames.length) $('start').textContent = enough ? '▶ Start the show' : '▶ Start the show · 30 pictures $2.99';
   const pk = document.getElementById('pack'); if(pk) pk.onclick = buyPack;
 }
