@@ -44,7 +44,7 @@
   <a class="back" href="javascript:history.length>1?history.back():location.href='/'">← Back</a>
 </header>
 <main id="main" class="two"></main>
-<footer>PajamasDog links to partner shops and may earn a commission on purchases, at no extra cost to you. As an Amazon Associate we earn from qualifying purchases. Orders, shipping and returns are handled by each shop; for items sold by PajamasDog see <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>. <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
+<footer>Sold and shipped by PajamasDog. <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a> · <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
 <script src="shop.js"></script>
 <script src="sizes_data.js?v=2"></script>
 <script src="sizefinder.js?v=1"></script>
@@ -74,7 +74,6 @@
       <div class="acts">
         ${p.src==='pd' ? `<button class="btn" id="buy">${CHECKOUT_API ? 'Buy now' : 'Checkout opens soon'}</button>`
           : live ? `<a class="btn" href="${linkOf(p)}" rel="sponsored noopener" target="_blank">See it on ${shop}</a>` : ''}
-        ${p.cat==='pajamas' ? `<a class="btn ghost" href="tryon.html?id=${encodeURIComponent(p.id)}">Try it on my pet</a>` : ''}
       </div>
     </div>`;
   // Item -> color -> size: sizes shown are the ones in stock for the chosen color.
