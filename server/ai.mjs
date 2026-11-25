@@ -47,6 +47,8 @@ export const handler = async (event) => {
   let req; try { req = JSON.parse(event.isBase64Encoded ? Buffer.from(event.body, 'base64').toString() : event.body); } catch { return json(400, { error: 'Bad request' }); }
   const photo = String(req.photo || '');
   if (!/^data:image\/(jpeg|png|webp);base64,/.test(photo) || photo.length > MAX_PHOTO) return json(400, { error: 'Please use a JPG or PNG photo.' });
+  // Full look (11-25): {items:[ids], collage:"data:image/jpeg..."} -> the pet wears / is shown with every item at once.
+  if (Array.isArray(req.items) && req.items.length) return fullLook(req, photo);
   const p = await product(String(req.product || ''));
   if (!p || !p.img) return json(400, { error: 'Unknown product' });
   const pose = POSE[req.pose] ? req.pose : 'sit';
@@ -84,3 +86,51 @@ export const handler = async (event) => {
   }
   return json(504, { error: 'Taking too long. Try again.' });
 };
+
+// Where each kind of item goes on the pet / in the picture.
+const PLACE = [
+  [/pajama|onesie|jumpsuit|hoodie|sweater|coat|robe|shirt|dress|clothes|vest/i, 'worn on its body as the main outfit'],
+  [/hat|cap|beanie|headband|hood/i, 'on its head'],
+  [/boot|shoe|sock|paw/i, 'on all four paws'],
+  [/glass|goggle/i, 'on its eyes'],
+  [/scarf|bandana|bow ?tie|tie|necklace|collar/i, 'around its neck'],
+  [/harness/i, 'fitted on its chest'],
+  [/leash/i, 'clipped to its collar, the leash lying on the floor'],
+  [/bowl|feeder/i, 'on the floor in front of it, filled with food'],
+  [/blanket|bed|mat/i, 'under it, the pet sitting on it'],
+  [/carrier|bag/i, 'next to it on the floor'],
+];
+const placeOf = name => (PLACE.find(([re]) => re.test(name)) || [null, 'next to it'])[1];
+
+async function fullLook(req, photo){
+  const ids = [...new Set(req.items.map(String))].slice(0, 6);
+  const items = [];
+  for (const id of ids) { const p = await product(id); if (p && p.src === 'pd') items.push(p); }
+  if (!items.length) return json(400, { error: 'Pick at least one item.' });
+  const collage = String(req.collage || '');
+  if (!/^data:image\/(jpeg|png|webp);base64,/.test(collage) || collage.length > MAX_PHOTO) return json(400, { error: 'Look picture missing.' });
+  const code = `L-${new Date().toISOString().slice(0,10).replace(/-/g,'')}-${crypto.randomBytes(3).toString('hex')}`;
+  const list = items.map((p, i) => `${i + 1}) ${p.name} - ${placeOf(p.name)}`).join('; ');
+  const promptText =
+    `Cute, cozy, playful photo of every pet from @pet dressed in the numbered items shown in @items, all at once: ${list}. ` +
+    `Copy each item exactly from @items: same colors, prints, fabric and shape. Everything fits naturally. ` +
+    `Keep every pet's face, breed, fur color and markings exactly as in @pet. Bright, happy, photorealistic, soft natural light, no text, no numbers, no logos added.`;
+  const start = await fetch(`${RW}/text_to_image`, { method: 'POST', headers: RW_HEAD(), body: JSON.stringify({
+    model: MODEL, ratio: RATIO, promptText, outputCount: 1,
+    referenceImages: [{ uri: photo, tag: 'pet' }, { uri: collage, tag: 'items' }],
+  }) });
+  const st = await start.json();
+  if (!start.ok || !st.id) { console.log('runway look start', start.status, JSON.stringify(st).slice(0, 400)); return json(502, { error: 'AI is busy. Try again.' }); }
+  for (let i = 0; i < 45; i++) {
+    await sleep(2000);
+    const t = await (await fetch(`${RW}/tasks/${st.id}`, { headers: RW_HEAD() })).json();
+    if (t.status === 'SUCCEEDED') {
+      const img = await fetch(t.output[0]);
+      const mime = (img.headers.get('content-type') || 'image/png').split(';')[0];
+      console.log('look ok', code, items.map(p => p.id).join(','));
+      return json(200, { image: Buffer.from(await img.arrayBuffer()).toString('base64'), mime, code, items: items.map(p => p.id) });
+    }
+    if (t.status === 'FAILED') { console.log('runway look failed', JSON.stringify(t).slice(0, 400)); return json(502, { error: 'AI could not make this one. Try another photo.' }); }
+  }
+  return json(504, { error: 'AI took too long. Try again.' });
+}
