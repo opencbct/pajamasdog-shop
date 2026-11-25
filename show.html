@@ -26,6 +26,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
 .stage .fr.on.dance img{animation:dance 2.6s ease-in-out both}
 .stage .fr.on.strut img{animation:strut 2.6s ease-in-out both}
 @keyframes walk{0%{transform:scale(1.18) translateY(4%)}100%{transform:scale(1.02) translateY(0)}}
+.stage .fr.on img{animation-duration:1.7s!important}
 @keyframes spin{0%{transform:perspective(900px) rotateY(-70deg) scale(1.05)}35%{transform:perspective(900px) rotateY(0) scale(1.05)}100%{transform:scale(1.1)}}
 @keyframes jump{0%,100%{transform:translateY(0) scale(1.05)}25%{transform:translateY(-7%) scale(1.08)}45%{transform:translateY(0) scale(1.05)}65%{transform:translateY(-4%) scale(1.07)}}
 @keyframes dance{0%,100%{transform:rotate(0) scale(1.06)}20%{transform:rotate(-4deg) scale(1.08)}40%{transform:rotate(4deg) scale(1.06)}60%{transform:rotate(-3deg) scale(1.09)}80%{transform:rotate(3deg) scale(1.06)}}
@@ -57,7 +58,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
 /* lineup */
 .lbl{font-size:13px;opacity:.6;margin:16px 2px 8px;display:flex;justify-content:space-between}
 .lbl a{color:var(--pink);cursor:pointer}
-.line{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.line{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
 .line button{border:0;padding:0;background:var(--card);border-radius:14px;overflow:hidden;cursor:pointer;position:relative}
 .line img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#fff}
 .line span{display:block;font-size:11px;padding:4px 2px;opacity:.75}
@@ -91,7 +92,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
 </header>
 <main>
   <h1>AI fashion show 🎬</h1>
-  <p class="sub">Your pet puts on our items one by one — walking, spinning, jumping, dancing. Tap ♥ on what you love.</p>
+  <p class="sub">Your pet tries on 6 of our looks — walking, spinning, jumping, dancing. Tap a card below to add it to your bag.</p>
 
   <div class="stage" id="stage">
     <label class="add" id="add"><span class="ic">📷</span><b>Add your pet's photo</b><span style="font-size:13px;opacity:.6">Then press Start.</span><input type="file" accept="image/*" id="file" hidden></label>
@@ -100,7 +101,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
     <div class="step hide" id="step"></div>
     <button class="bag hide" id="bag">🛍 0 · Buy</button>
     <div class="item hide" id="item"><img id="iImg" alt=""><div class="t"><b id="iName"></b><span id="iPrice"></span></div><button class="heart" id="heart" aria-label="I like this">♡</button></div>
-    <div class="busy hide" id="busy"><b id="busyT">Getting dressed…</b><span id="busyS">AI is making 5 looks (about a minute)</span></div>
+    <div class="busy hide" id="busy"><b id="busyT">Getting dressed…</b><span id="busyS">AI is making 6 looks (about a minute)</span></div>
   </div>
 
   <div class="lbl"><span>Tonight's lineup — tap one to swap</span><a id="shuffle">🎲 Shuffle</a></div>
@@ -117,7 +118,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
     <button class="btn" id="buy">Buy my picks</button>
     <p class="fine">Prices include free shipping. All sales final — see <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>. AI pictures are a preview and can differ slightly from the real product; please pick sizes from your pet's measurements.</p>
   </section>
-  <p class="fine">Your photo is sent to our AI partner (Runway) only to make the pictures; we do not keep it. One show uses 5 AI pictures: 5 are free each day, then 30 more for $2.99.</p>
+  <p class="fine">Your photo is sent to our AI partner (Runway) only to make the pictures; we do not keep it. One show uses 6 AI pictures: one show a day is free, then 30 more pictures for $2.99.</p>
 </main>
 <script src="shop.js"></script>
 <script src="sizes_data.js?v=2"></script>
@@ -125,14 +126,17 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
 <script>
 const $ = id => document.getElementById(id);
 // Slots in the order the pet puts them on. Each frame wears everything up to that slot.
+// 형님 11-25: more variety, one item per look (the previous item comes off), quick pace — the cards below do the selling.
+const PJ = p => p.cat==='pajamas' && !/robe|towel|blanket/i.test(p.name);
 const SLOTS = [
-  {k:'pj',   label:'Pajama',  move:'walk',  pose:'walking toward the camera like a runway model', test:p=>p.cat==='pajamas' && !/robe|towel|blanket/i.test(p.name)},
-  {k:'hat',  label:'Hat',     move:'spin',  pose:'turning around in a happy spin',               test:p=>/\bhat\b|beanie|\bcap\b/i.test(p.name)},
-  {k:'paws', label:'Boots',   move:'jump',  pose:'jumping up with all four paws off the ground', test:p=>/boot|shoe|sock/i.test(p.name)},
-  {k:'neck', label:'Neck',    move:'dance', pose:'dancing on its hind legs, front paws up',      test:p=>/scarf|bandana|bow ?tie|necklace/i.test(p.name)},
-  {k:'eyes', label:'Glasses', move:'strut', pose:'posing proudly like a star, head held high',  test:p=>/glass|goggle/i.test(p.name)},
+  {k:'pj',    label:'Pajama',   move:'walk',  test:PJ},
+  {k:'pj',    label:'Pajama',   move:'spin',  test:PJ},
+  {k:'pj',    label:'Pajama',   move:'jump',  test:PJ},
+  {k:'scarf', label:'Scarf',    move:'dance', test:p=>/scarf|bandana/i.test(p.name)},
+  {k:'neck',  label:'Necklace', move:'strut', test:p=>/necklace|pendant|charm|\btag\b|collar/i.test(p.name) && !/scarf|bandana|harness/i.test(p.name)},
+  {k:'bowl',  label:'Bowl',     move:'strut', test:p=>/bowl|feeder/i.test(p.name)},
 ];
-const FRAME_MS = 2600;
+const FRAME_MS = 1700;
 let PACK_ID = '', pool = {}, lineup = [], photo = null, frames = [], liked = new Set(), playing = 0;
 
 const pick = (arr, not) => { const a = arr.filter(p => p.id !== not); return a[Math.floor(Math.random()*a.length)]; };
@@ -142,7 +146,9 @@ function drawLine(){
   $('line').innerHTML = lineup.map((p,i) => `<button data-i="${i}" class="${liked.has(p.id)?'liked':''}${frames.length && i===cur ? ' now' : ''}" aria-label="${frames.length ? 'Add '+p.name : 'Swap '+SLOTS[i].label}"><img src="${p.img}" alt="${p.name}"><i class="add2">${liked.has(p.id) ? '♥ In bag' : '+ Bag'}</i><span>${SLOTS[i].label}</span></button>`).join('');
 }
 function shuffle(only){
-  lineup = SLOTS.map((s,i) => (only!==undefined && i!==only && lineup[i]) ? lineup[i] : pick(pool[s.k], lineup[i]?.id));
+  const taken = new Set(lineup.filter((p,i) => only!==undefined && i!==only && p).map(p => p.id));
+  lineup = SLOTS.map((s,i) => { if(only!==undefined && i!==only && lineup[i]) return lineup[i];
+    const p = pick(pool[s.k].filter(x => !taken.has(x.id)), lineup[i]?.id) || pick(pool[s.k]); taken.add(p.id); return p; });
   frames = []; drawLine();
 }
 $('shuffle').onclick = () => shuffle();
@@ -203,7 +209,7 @@ async function protect(hd){
 const HD = [];   // HD frames for the paid video download
 
 async function makeFrame(i){
-  const items = lineup.slice(0, i+1);
+  const items = [lineup[i]];   // only this look's item
   const r = await fetch(TRYON_API, {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({
     photo, items: items.map(p => p.id), collage: await collage(items), move: SLOTS[i].move, pack: PACK_ID})});
   const d = await r.json().catch(() => ({}));
@@ -230,7 +236,7 @@ function show(i){
   cur = i; const p = lineup[i];
   [...$('frames').children].forEach((f,k) => f.classList.toggle('on', k===i));
   [...$('bars').children].forEach((b,k) => { b.className = k<i ? 'done' : k===i ? 'now' : ''; });
-  $('step').textContent = `${i+1}/${SLOTS.length} · + ${SLOTS[i].label}`;
+  $('step').textContent = `${i+1}/${SLOTS.length} · ${SLOTS[i].label}`;
   $('iImg').src = p.img; $('iName').innerHTML = `<a href="product.html?id=${encodeURIComponent(p.id)}" target="_blank" rel="noopener">${p.name} ›</a>`; $('iPrice').textContent = priceOf(p);
   drawLine();
   $('heart').classList.toggle('on', liked.has(p.id)); $('heart').textContent = liked.has(p.id) ? '♥' : '♡';

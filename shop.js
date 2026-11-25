@@ -116,8 +116,8 @@ async function tryOn(photoFile, product, pose='sit'){
   new MutationObserver(() => watch()).observe(document.documentElement, {childList:true, subtree:true});
 })();
 
-// ---- AI picture allowance (형님 11-25): 5 free a day; then a 30-picture pack for $2.99 ----
-const AI_FREE = 5;
+// ---- AI picture allowance (형님 11-25): 6 free a day (one show); then a 30-picture pack for $2.99 ----
+const AI_FREE = 6;   // = one fashion show a day
 const aiDay = () => 'pd:ai:' + new Date().toISOString().slice(0,10);
 const aiGet = k => { try { return localStorage.getItem(k); } catch(e){ return null; } };
 const aiSet = (k, v) => { try { localStorage.setItem(k, v); } catch(e){} };
