@@ -70,7 +70,7 @@
   const shop = shopName(p);
   const live = p.src && p.src!=='sample';
   main.innerHTML = `
-    <div class="pic">${pic}${(tried||look)?'':`<span class="tag">${shopBadge(p.src||"sample", p.id, p.badge)}</span>`}</div>
+    <div class="pic">${pic}${(tried||look||p.src==='pd')?'':`<span class="tag">${shopBadge(p.src||"sample", p.id, p.badge)}</span>`}</div>
     <div class="info">
       <h1>${p.name}</h1>
       <p>${p.note||''}</p>
