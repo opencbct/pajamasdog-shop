@@ -95,12 +95,16 @@
   drawSizes();
   // 11-26: tapping a colour shows that colour's picture (from CJ variant photos, tools/cj_color_images.py).
   const CIMG = fetch('products/colorimgs.json?v=1').then(r => r.ok ? r.json() : {}).catch(() => ({}));
-  const mainImg = main.querySelector('.pic img'), img0 = mainImg?.getAttribute('src');
-  const showColorPic = () => { if(tried || look || !mainImg) return;
+  const mainImg = main.querySelector('.pic img'), img0 = (tried || look) ? (p.img || mainImg?.getAttribute('src')) : mainImg?.getAttribute('src');
+  // A "Similar pick" / try-on picture stays until the shopper taps a colour; then the real colour photo wins.
+  let keepLook = !!(tried || look);
+  const showColorPic = () => { if(keepLook || !mainImg) return;
     CIMG.then(M => { const src = (M[p.id] || [])[colorIdx()] || img0; if(mainImg.getAttribute('src') !== src) mainImg.src = src; }); };
   showColorPic();
   main.querySelector('.cols')?.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return;
-    main.querySelectorAll('.cols .chip').forEach(c => c.classList.toggle('on', c===b)); drawSizes(); showColorPic(); });
+    main.querySelectorAll('.cols .chip').forEach(c => c.classList.toggle('on', c===b)); drawSizes();
+    if(keepLook){ keepLook = false; main.querySelector('.pic .tag.mine')?.remove(); }
+    showColorPic(); });
   main.querySelector('.szs')?.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b || b.disabled) return; size = b.dataset.z; drawSizes(); });
   bindSizeFinder(main, () => p, colorIdx, z => { size = z; drawSizes(); });
   main.querySelector('#buy')?.addEventListener('click', () => { if(!size && (p.sizes||[]).length){ main.querySelector('.sf')?.setAttribute('open',''); main.querySelector('.szs')?.scrollIntoView({block:'center', behavior:'smooth'}); return; } payDirect([{id:p.id, size, c:colorIdx()}]); });
