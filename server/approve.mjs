@@ -71,7 +71,10 @@ export async function approve(event, cjToken) {
 
   if (event.requestContext?.http?.method !== 'POST') {
     if (why) return page('PajamasDog 승인', `<h1>CJ 결제 승인</h1>${head}<p class="bad">${why}</p>`);
-    return page('PajamasDog 승인', `<h1>CJ 결제 승인</h1>${head}
+    // 11-26: buyers may cancel for 12 h. Paying CJ before that risks paying for an order that gets cancelled.
+    const hrs = (Date.now() / 1000 - (st.sess.created || 0)) / 3600;
+    const wait = hrs < 12 ? `<p class="bad">⏳ 손님 취소 가능 시간 안이에요 (주문 ${Math.floor(hrs)}시간 전). ${Math.ceil(12 - hrs)}시간 뒤에 승인하면 취소돼도 CJ 돈이 안 나가요.</p>` : '';
+    return page('PajamasDog 승인', `<h1>CJ 결제 승인</h1>${head}${wait}
 <form method="post" onsubmit="this.querySelector('button').disabled=true;this.querySelector('button').textContent='결제 중…'">
 ${['s', 'o', 'x', 't'].map(k => `<input type="hidden" name="${k}" value="${esc(q[k])}">`).join('')}
 <button>CJ 잔액으로 $${st.cost.toFixed(2)} 결제하고 발송</button></form><p><small>누르면 CJ 지갑에서 이 주문 원가만 빠져나가요.</small></p>`);
