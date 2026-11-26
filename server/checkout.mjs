@@ -6,6 +6,7 @@
 //   POST /webhook   Stripe event (checkout.session.completed)                -> places the CJ order
 // Env: STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, CJ_API_KEY, SITE_URL (https://pajamasdog.com)
 // Money: Stripe payouts go to the Bluevine account set in the Stripe dashboard (never in code).
+import { sendTracking } from './tracking.mjs';
 import crypto from 'node:crypto';
 import { readFileSync } from 'node:fs';
 const CATALOG = JSON.parse(readFileSync(new URL('./catalog.json', import.meta.url)));
@@ -125,6 +126,10 @@ async function placeCjOrder(session) {
 }
 
 export const handler = async (event) => {
+  // 11-26: scheduled run (EventBridge) → tracking e-mails. Function URL requests never carry source 'aws.events'.
+  if (event.source === 'aws.events' || event['detail-type'] === 'Scheduled Event') {
+    const r = await sendTracking(await cjToken()); console.log('tracking', JSON.stringify(r)); return { ok: true, sent: r.length };
+  }
   const path = event.rawPath || event.path || '';
   const raw = event.isBase64Encoded ? Buffer.from(event.body || '', 'base64').toString() : (event.body || '');
   // CORS (preflight + allow-origin) is handled by the Lambda Function URL config, not here.
