@@ -10,7 +10,7 @@ import crypto from 'node:crypto';
 import { readFileSync } from 'node:fs';
 const CATALOG = JSON.parse(readFileSync(new URL('./catalog.json', import.meta.url)));
 const SITE = process.env.SITE_URL || 'https://pajamasdog.com';
-const SHIP_TO = ['US', 'CA', 'GB', 'AU', 'NZ', 'JP', 'KR', 'DE', 'FR', 'NL', 'IE', 'SG'];
+const SHIP_TO = ['US', 'CA']; // 11-26: US + Canada only until a return policy fits EU/UK/AU law
 const COUNTRY_NAME = { US: 'United States', CA: 'Canada', GB: 'United Kingdom', AU: 'Australia', NZ: 'New Zealand', JP: 'Japan',
   KR: 'Korea, Republic of', DE: 'Germany', FR: 'France', NL: 'Netherlands', IE: 'Ireland', SG: 'Singapore' };
 const json = (code, body) => ({ statusCode: code, headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });

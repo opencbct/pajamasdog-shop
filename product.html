@@ -67,7 +67,7 @@
     <div class="info">
       <h1>${p.name}</h1>
       <p>${p.note||''}</p>
-      ${p.src==='pd' ? `<div class="price"><span id="pr">${p.price_max>p.price?'<small style="margin:0 4px 0 0">from</small>':''}$${p.price.toFixed(2)}</span> <small>Free shipping · US 7–12 days · worldwide</small></div>${p.pop>=100?`<p class="hot2">🔥 Carried by ${p.pop.toLocaleString('en-US')} pet shops worldwide</p>`:''}
+      ${p.src==='pd' ? `<div class="price"><span id="pr">${p.price_max>p.price?'<small style="margin:0 4px 0 0">from</small>':''}$${p.price.toFixed(2)}</span> <small>Free shipping · US 7–12 days · Canada 7–15 days</small></div>${p.pop>=100?`<p class="hot2">🔥 Carried by ${p.pop.toLocaleString('en-US')} pet shops worldwide</p>`:''}
       ${(p.colors||[]).length>1 ? `<div class="lbl2">Color</div><div class="sizes cols">${p.colors.map((c,i)=>`<button class="chip${i===ci0?' on':''}" data-c="${i}">${c}</button>`).join('')}</div>` : ''}
       ${(p.sizes||[]).length ? `<div class="lbl2">Size</div><div class="sizes szs"></div>${p.cat==='pajamas' ? sizeFinderHTML() : ''}` : ''}` : ''}
       <div class="ship">${p.src==='pd' ? 'Sold by PajamasDog. All sales final — <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>.' : live ? `Sold, shipped and returned by ${shop}.` : 'Coming soon.'}${p.look && !look && !tried ? ' Photo shows a similar style.' : ''}</div>
