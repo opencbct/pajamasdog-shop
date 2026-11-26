@@ -130,9 +130,15 @@ if '--pids' in sys.argv:
         if pid in have: continue
         add({'pid': pid, 'listedNum': 0}, cat, tag)
 else:
+    # --more (11-26 형님: 1,000+ items): keep what we have and add the next best per category
+    MORE = '--more' in sys.argv
+    if MORE:
+        items = json.load(open(os.path.join(OUT, 'cj_items.json')))
+    have = {x['pid'] for x in items}
+    PAGES = (1, 2, 3, 4, 5) if MORE else (1, 2)
     for cid, (cat, tag) in CATS.items():
         cands = []
-        for page in (1, 2):
+        for page in PAGES:
             d = call(f'/product/list?categoryId={cid}&pageNum={page}&pageSize=100')
             if not d: break
             cands += d.get('list') or []
@@ -143,6 +149,8 @@ else:
         must = MUST.get(tag)
         good = [p for p in good if not must or any(w in (p.get('productNameEn') or '').lower() for w in must)]
         good = [p for p in good if not re.search(r'\b\d+\s*pcs\b|wholesale|bulk', (p.get('productNameEn') or ''), re.I)]
-        for p in good[:PER]:
-            add(p, cat, tag)
+        good = [p for p in good if p['pid'] not in have]
+        mine = sum(1 for x in items if x.get('tag') == tag and x.get('cat') == cat)
+        for p in good[:max(0, PER - mine)]:
+            add(p, cat, tag); have.add(p['pid'])
 print(len(items), 'items ->', os.path.join(OUT, 'cj_items.json'), file=sys.stderr)
