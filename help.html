@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order help — PajamasDog</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico?v=3" sizes="48x48">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png?v=3">
+<meta name="theme-color" content="#15131c">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shop.css?v=2">
+<style>
+main{max-width:520px;padding-top:20px}
+h1{font-weight:300;font-size:30px;margin:6px 0 6px}
+p{opacity:.8;margin:0 0 12px;line-height:1.5}
+label{display:block;font-size:14px;opacity:.75;margin:16px 0 6px}
+input,textarea{width:100%;box-sizing:border-box;background:#211e2b;color:inherit;border:1px solid #3a3547;border-radius:14px;padding:13px 14px;font:inherit;font-weight:300;font-size:16px}
+textarea{min-height:110px;resize:vertical}
+.kinds{display:flex;flex-wrap:wrap;gap:8px}
+.kinds .chip{font-weight:300}
+.btn{width:100%;margin-top:22px}
+#out{margin-top:18px;padding:14px 16px;border-radius:14px;background:#211e2b;display:none;line-height:1.5}
+small{opacity:.6}
+</style>
+</head>
+<body>
+<header>
+  <a href="/" aria-label="PajamasDog home"><img class="hlogo" src="img/logo2/stack.png?v=1" alt="PajamasDog"></a>
+</header>
+<main>
+  <h1>Order help</h1>
+  <p>Cancel within 12 hours for a full refund, or tell us about a problem.</p>
+  <form id="f">
+    <label for="email">E-mail you used to order</label>
+    <input id="email" type="email" required autocomplete="email" placeholder="you@example.com">
+    <label for="code">Order number <small>(optional, in your confirmation e-mail)</small></label>
+    <input id="code" maxlength="12" placeholder="e.g. 7GUYEH12" autocapitalize="characters">
+    <label>What do you need?</label>
+    <div class="kinds sizes">
+      <button type="button" class="chip on" data-k="cancel">Cancel my order</button>
+      <button type="button" class="chip" data-k="damaged">Damaged or defective</button>
+      <button type="button" class="chip" data-k="wrong">Wrong item</button>
+      <button type="button" class="chip" data-k="late">Not arrived</button>
+      <button type="button" class="chip" data-k="size">Wrong size</button>
+      <button type="button" class="chip" data-k="other">Something else</button>
+    </div>
+    <label for="msg">Message <small>(optional)</small></label>
+    <textarea id="msg" maxlength="1500" placeholder="Tell us what happened."></textarea>
+    <button class="btn" id="go" type="submit">Send</button>
+    <div id="out"></div>
+    <p style="margin-top:16px"><small>Photos for damaged or wrong items: reply to the e-mail we send you. Policy: <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>.</small></p>
+  </form>
+</main>
+<footer>Questions? <a href="mailto:info@opencbct.com" style="text-decoration:underline">info@opencbct.com</a> · <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
+<script src="shop.js?v=6"></script>
+<script>
+(() => {
+  const q = new URLSearchParams(location.search), $ = id => document.getElementById(id);
+  if (q.get('e')) $('email').value = q.get('e');
+  if (q.get('o')) $('code').value = q.get('o');
+  let kind = q.get('k') || 'cancel';
+  const kinds = document.querySelector('.kinds');
+  const mark = () => kinds.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c.dataset.k === kind));
+  mark();
+  kinds.addEventListener('click', e => { const b = e.target.closest('.chip'); if (b) { kind = b.dataset.k; mark(); } });
+  $('f').addEventListener('submit', async e => {
+    e.preventDefault();
+    const out = $('out'), go = $('go');
+    if (!CHECKOUT_URL) { out.style.display = 'block'; out.textContent = 'Please e-mail info@opencbct.com.'; return; }
+    go.disabled = true; go.textContent = 'Sending…';
+    try {
+      const r = await fetch(CHECKOUT_URL.replace(/\/$/, '') + '/help', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: $('email').value, code: $('code').value, kind, message: $('msg').value }) });
+      const j = await r.json().catch(() => ({}));
+      out.style.display = 'block';
+      out.textContent = j.ok ? '✓ Got it. ' + (j.message || 'We will reply within 2 business days.') : (j.error || 'Something went wrong. Please e-mail info@opencbct.com.');
+      if (j.ok) { go.textContent = 'Sent'; return; }
+    } catch (err) { out.style.display = 'block'; out.textContent = 'Network error. Please e-mail info@opencbct.com.'; }
+    go.disabled = false; go.textContent = 'Send';
+  });
+})();
+</script>
+</body>
+</html>
