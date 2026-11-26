@@ -87,12 +87,17 @@ h2{font-weight:300;font-size:28px;margin-bottom:16px}
 @media(prefers-reduced-motion:reduce){#grid>*{transform:none!important}}
 @media(min-width:768px){.grid{grid-template-columns:repeat(4,1fr);gap:18px}}
 .card{background:#221f2d;border-radius:20px;overflow:hidden;position:relative}
+/* 11-26 형님: product card = file folder; the logo sits on the folder tab */
+#grid .card,.row .card{overflow:visible;margin-top:30px;border-top-left-radius:0}
+#grid .card>.pw>.tag,.row .card>.pw>.tag{height:30px;display:flex!important;align-items:center;padding:0 16px 0 12px!important;background:#221f2d!important;border-radius:12px 12px 0 0!important}
+#grid .card>.pw>.tag::after,.row .card>.pw>.tag::after{content:"";position:absolute;right:-14px;bottom:0;width:14px;height:14px;background:radial-gradient(circle at 100% 0,transparent 13.5px,#221f2d 14px)}
+#grid .card .tag img.plg,.row .card .tag img.plg{height:21px!important;filter:drop-shadow(0 0 1px #fff) drop-shadow(0 0 2px rgba(255,255,255,.9))}
 .card img{width:calc(100% - 16px);margin:8px 8px 0;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:16px}
 .card .cap{padding:10px 14px 14px}
 .card .cap b{font-weight:400;font-size:16px;display:block}
 .card .cap span{font-size:13px;opacity:.65}
-.pw{position:relative;display:block}
-.tag{position:absolute;bottom:10px;right:18px;z-index:1;color:#15131c;background:rgba(255,255,255,.92);border-radius:999px;padding:4px 10px;font-size:12px}
+.pw{display:block}
+.tag{position:absolute;top:-30px;left:0;z-index:1;color:#15131c;background:rgba(255,255,255,.92);border-radius:999px;padding:4px 10px;font-size:12px}
 .sec{max-width:1200px;margin:0 auto;padding:30px 0 6px}
 .sec .hd{display:flex;align-items:baseline;justify-content:space-between;padding:0 16px;margin-bottom:12px}
 .sec .hd h2{margin:0;font-size:26px}
@@ -566,7 +571,7 @@ document.querySelectorAll('[data-go]').forEach(a => a.addEventListener('click', 
       for (let i = 0; i < kids.length; i++) { const k = kids[i], b = k.getBoundingClientRect();
         if (b.bottom < -50 || b.top > innerHeight + 50) continue;
         const dir = Math.floor(i / cols) % 2 ? 1 : -1, p = (b.top + b.height / 2) / innerHeight - .5;
-        k.style.transform = `translateX(${(dir * p * 60).toFixed(1)}px)`; } }
+        k.style.transform = `translateX(${(dir * p * Math.min(60, innerWidth * .06)).toFixed(1)}px)`; } }
   };
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(tick); } }, { passive: true });
 })();
