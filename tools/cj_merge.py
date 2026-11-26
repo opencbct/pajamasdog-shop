@@ -10,6 +10,9 @@ items = json.load(open(os.path.join(ROOT, 'tools/out/cj_items.json')))
 # 형님's review (11-24): never bring back removed items
 _rv = os.path.join(ROOT, 'tools/cj_review.json')
 if os.path.exists(_rv): _rm = set(json.load(open(_rv))['remove']); items = [x for x in items if 'cj-' + x['pid'][-8:] not in _rm]
+# 11-26: only the base set + hand-picked new items (tools/cj_pick.json)
+_pk = os.path.join(ROOT, 'tools/cj_pick.json')
+if os.path.exists(_pk): _p = json.load(open(_pk)); _ok = set(_p['base']) | set(_p['picks']); items = [x for x in items if x['pid'] in _ok]
 feed = json.load(open(os.path.join(ROOT, 'products/feed.json')))
 cat = json.load(open(os.path.join(ROOT, 'server/catalog.json')))
 

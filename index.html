@@ -56,6 +56,7 @@ header nav{display:flex;gap:18px;font-size:15px}
 .fun-c i{position:absolute;top:14px;right:14px;font-style:normal;font-size:12px;padding:4px 10px;border-radius:999px;background:rgba(0,0,0,.25)}
 .fun-c.live i{background:#fff;color:#15131c;font-weight:600}
 .fun-c:not(.live){opacity:.75}
+.fun-c.pic{background:linear-gradient(transparent 35%,rgba(20,14,30,.8)),var(--bg) center 30%/cover}
 /* 11-24 Maltese AI clip as card background */
 .fun-c.vid{opacity:1}.fun-c.vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}.fun-c.vid::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(20,14,30,.78))}.fun-c.vid>*:not(video){position:relative;z-index:1}.fun-c.vid .e,.fun-c.vid i{position:absolute;z-index:1}
 .kicker{display:inline-block;font-size:13px;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);margin-bottom:10px}
@@ -201,8 +202,8 @@ footer .flogo img{width:100%;height:auto;display:block}
 <div class="sec" id="fun">
   <div class="hd"><h2>✨ AI <b style="font-weight:600;color:var(--pink)">fun</b> with your pet</h2></div>
   <div class="row fun">
-    <a class="fun-c live" href="show.html" style="--c1:#ff3d7f;--c2:#7a2bd6"><span class="e">🎬</span><b>AI fashion show</b><span>6 breeds in our pajamas</span><i>Play</i></a>
-    <a class="fun-c live" href="card.html" style="--c1:#b3122e;--c2:#1f5a3a"><span class="e">🎄</span><b>Christmas card</b><span>Your pet, festive, in seconds</span><i>Play</i></a>
+    <a class="fun-c live vid" href="show.html" style="--c1:#ff3d7f;--c2:#7a2bd6"><video src="img/vid/show_yorkie.mp4?v=s2" poster="img/vid/show_yorkie.jpg?v=s2" autoplay muted loop playsinline preload="metadata"></video><b>AI fashion show</b><span>30 breeds on our runway</span><i>Play</i></a>
+    <a class="fun-c live pic" href="card.html" style="--c1:#b3122e;--c2:#1f5a3a;--bg:url(img/p/santa_golden.webp)"><b>Christmas card</b><span>Your pet, festive, in seconds</span><i>Play</i></a>
   </div>
 </div>
 
@@ -487,7 +488,7 @@ footer .flogo img{width:100%;height:auto;display:block}
 
 <footer><a href="/" class="flogo" aria-label="PajamasDog home"><img src="img/logo2/classic.webp?v=2" alt=""></a>Sold and shipped by PajamasDog. <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a> · <a href="privacy.html" style="text-decoration:underline">Privacy</a><br><br>© 2026 PajamasDog<br><small style="opacity:.6">As an Amazon Associate we earn from qualifying purchases. Some links to partner shops are affiliate links.</small></footer>
 
-<script src="shop.js?v=6"></script>
+<script src="shop.js?v=7"></script>
 <script>
 // ---- Product source -------------------------------------------------------
 // getProducts(cat, page) returns one page of products.

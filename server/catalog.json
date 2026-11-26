@@ -16146,6 +16146,5828 @@
     "Gray-M": 2399,
     "Gray-L": 2399
    }
+  },
+  "cj-62235136": {
+   "name": "Cotton Home Air Pajamas",
+   "price": 2399,
+   "cj_pid": "1391946091062235136",
+   "colors": [
+    "Black strawberry",
+    "Pink chick"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Black strawberry-XS": "1391946092396023808",
+    "Black strawberry-S": "1391946092408606720",
+    "Black strawberry-M": "1391946092425383936",
+    "Black strawberry-L": "1391946092446355456",
+    "Pink chick-XS": "1391946092454744064",
+    "Pink chick-S": "1391946092463132672",
+    "Pink chick-M": "1391946092471521280",
+    "Pink chick-L": "1391946092517658624",
+    "Pink chick-XL": "1391946092534435840"
+   },
+   "vprice": {
+    "Black strawberry-XS": 2399,
+    "Black strawberry-S": 2399,
+    "Black strawberry-M": 2399,
+    "Black strawberry-L": 2399,
+    "Pink chick-XS": 2399,
+    "Pink chick-S": 2399,
+    "Pink chick-M": 2399,
+    "Pink chick-L": 2399,
+    "Pink chick-XL": 2399
+   }
+  },
+  "cj-21624000": {
+   "name": "Winter Home Wear Pajamas",
+   "price": 2299,
+   "cj_pid": "2410090901021624000",
+   "colors": [
+    "Light Brown",
+    "Beige"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Light Brown-S": "2410090901021624200",
+    "Light Brown-M": "2410090901021624400",
+    "Light Brown-L": "2410090901021624500",
+    "Light Brown-XL": "2410090901021624700",
+    "Light Brown-XXL": "2410090901021624900",
+    "Beige-S": "2410090901021625000",
+    "Beige-M": "2410090901021625300",
+    "Beige-L": "2410090901021625500",
+    "Beige-XL": "2410090901021625600",
+    "Beige-XXL": "2410090901021626000"
+   },
+   "vprice": {
+    "Light Brown-S": 2299,
+    "Light Brown-M": 2299,
+    "Light Brown-L": 2299,
+    "Light Brown-XL": 2299,
+    "Light Brown-XXL": 2299,
+    "Beige-S": 2299,
+    "Beige-M": 2299,
+    "Beige-L": 2299,
+    "Beige-XL": 2299,
+    "Beige-XXL": 2299
+   }
+  },
+  "cj-21356288": {
+   "name": "Cotton Pajamas",
+   "price": 2199,
+   "cj_pid": "1611982296121356288",
+   "colors": [
+    "Pink",
+    "Yellow"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Pink-S": "1611982296192659456",
+    "Pink-M": "1611982296196853760",
+    "Pink-L": "1611982296196853761",
+    "Pink-XL": "1611982296201048064",
+    "Yellow-S": "1611982296205242368",
+    "Yellow-M": "1611982296205242369",
+    "Yellow-L": "1611982296209436672",
+    "Yellow-XL": "1611982296209436673"
+   },
+   "vprice": {
+    "Pink-S": 2199,
+    "Pink-M": 2199,
+    "Pink-L": 2199,
+    "Pink-XL": 2199,
+    "Yellow-S": 2199,
+    "Yellow-M": 2199,
+    "Yellow-L": 2199,
+    "Yellow-XL": 2199
+   }
+  },
+  "cj-48950016": {
+   "name": "Winter Solid Color Pajamas",
+   "price": 2399,
+   "cj_pid": "1747792995748950016",
+   "colors": [
+    "Red",
+    "White",
+    "Black"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "variants": {
+    "Red-S": "1747792995895750656",
+    "Red-M": "1747792996038356992",
+    "Red-L": "1747792996176769024",
+    "Red-XL": "1747792996298403840",
+    "Red-2XL": "1747792996512313344",
+    "White-S": "1747792996596199424",
+    "White-M": "1747792996684279808",
+    "White-L": "1747792996818497536",
+    "White-XL": "1747792996948520960",
+    "White-2XL": "1747792997028212736",
+    "Black-S": "1747792997133070336",
+    "Black-M": "1747792997275676672",
+    "Black-L": "1747792997367951360",
+    "Black-XL": "1747792997456031744",
+    "Black-2XL": "1747792997648969728"
+   },
+   "vprice": {
+    "Red-S": 2399,
+    "Red-M": 2399,
+    "Red-L": 2399,
+    "Red-XL": 2399,
+    "Red-2XL": 2399,
+    "White-S": 2399,
+    "White-M": 2399,
+    "White-L": 2399,
+    "White-XL": 2399,
+    "White-2XL": 2399,
+    "Black-S": 2399,
+    "Black-M": 2399,
+    "Black-L": 2399,
+    "Black-XL": 2399,
+    "Black-2XL": 2399
+   }
+  },
+  "cj-04701952": {
+   "name": "Plush Fleece Winter Pajamas",
+   "price": 2499,
+   "cj_pid": "1575449307304701952",
+   "colors": [
+    "Green"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "variants": {
+    "Green-S": "1575449307376005120",
+    "Green-M": "1575449307380199424",
+    "Green-L": "1575449307380199425",
+    "Green-XL": "1575449307380199426",
+    "Green-2XL": "1575449307380199427"
+   },
+   "vprice": {
+    "Green-S": 2499,
+    "Green-M": 2499,
+    "Green-L": 2499,
+    "Green-XL": 2499,
+    "Green-2XL": 2499
+   }
+  },
+  "cj-51628700": {
+   "name": "All-Season Onesie",
+   "price": 1799,
+   "cj_pid": "2502180211451628700",
+   "colors": [
+    "Grass Green"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Grass Green-XS": "2502180211451629000",
+    "Grass Green-S": "2502180211451629200",
+    "Grass Green-M": "2502180211451629500",
+    "Grass Green-L": "2502180211451629700",
+    "Grass Green-XL": "2502180211451629900",
+    "Grass Green-XXL": "2502180211461620100"
+   },
+   "vprice": {
+    "Grass Green-XS": 1799,
+    "Grass Green-S": 1799,
+    "Grass Green-M": 1799,
+    "Grass Green-L": 1799,
+    "Grass Green-XL": 1799,
+    "Grass Green-XXL": 1799
+   }
+  },
+  "cj-61605900": {
+   "name": "Yellow Tee",
+   "price": 1899,
+   "cj_pid": "2502140759061605900",
+   "colors": [
+    "Yellow",
+    "Khaki"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL",
+    "Xs"
+   ],
+   "variants": {
+    "Yellow-S": "2502140759061606100",
+    "Yellow-M": "2502140759061606200",
+    "Yellow-L": "2502140759061606400",
+    "Yellow-XL": "2502140759061606500",
+    "Yellow-XXL": "2502140759061606700",
+    "Khaki-S": "2502140759061606900",
+    "Khaki-M": "2502140759061607000",
+    "Khaki-L": "2502140759061607200",
+    "Khaki-XL": "2502140759061607300",
+    "Khaki-XXL": "2502140759061607500",
+    "Khaki-Xs": "2502170929001616100",
+    "Yellow-Xs": "2502170929001616200"
+   },
+   "vprice": {
+    "Yellow-S": 1899,
+    "Yellow-M": 1899,
+    "Yellow-L": 1899,
+    "Yellow-XL": 1899,
+    "Yellow-XXL": 1899,
+    "Khaki-S": 1899,
+    "Khaki-M": 1899,
+    "Khaki-L": 1899,
+    "Khaki-XL": 1899,
+    "Khaki-XXL": 1899,
+    "Khaki-Xs": 1899,
+    "Yellow-Xs": 1899
+   }
+  },
+  "cj-11603400": {
+   "name": "Dark Blue Tee",
+   "price": 2899,
+   "cj_pid": "2411060353511603400",
+   "colors": [
+    "Dark Blue"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Dark Blue-XS": "2411060353511603600",
+    "Dark Blue-S": "2411060353511603800",
+    "Dark Blue-M": "2411060353511604000",
+    "Dark Blue-L": "2411060353511604200",
+    "Dark Blue-XL": "2411060353511604300",
+    "Dark Blue-XXL": "2411060353511604500"
+   },
+   "vprice": {
+    "Dark Blue-XS": 2899,
+    "Dark Blue-S": 2899,
+    "Dark Blue-M": 2899,
+    "Dark Blue-L": 2899,
+    "Dark Blue-XL": 2899,
+    "Dark Blue-XXL": 2899
+   }
+  },
+  "cj-91629000": {
+   "name": "Winter Tee",
+   "price": 2099,
+   "cj_pid": "2412210745591629000",
+   "colors": [
+    "Dark Gray",
+    "Light Brown"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Dark Gray-S": "2412210745591629500",
+    "Dark Gray-M": "2412210746001620000",
+    "Dark Gray-L": "2412210746001620300",
+    "Dark Gray-XL": "2412210746001620500",
+    "Dark Gray-XXL": "2412210746001620800",
+    "Light Brown-S": "2412210746001621100",
+    "Light Brown-M": "2412210746001621400",
+    "Light Brown-L": "2412210746001621800",
+    "Light Brown-XL": "2412210746001622000",
+    "Light Brown-XXL": "2412210746001622600"
+   },
+   "vprice": {
+    "Dark Gray-S": 2099,
+    "Dark Gray-M": 2099,
+    "Dark Gray-L": 2099,
+    "Dark Gray-XL": 2099,
+    "Dark Gray-XXL": 2099,
+    "Light Brown-S": 2099,
+    "Light Brown-M": 2099,
+    "Light Brown-L": 2099,
+    "Light Brown-XL": 2099,
+    "Light Brown-XXL": 2099
+   }
+  },
+  "cj-31611300": {
+   "name": "Wool Scarf",
+   "price": 4299,
+   "cj_pid": "2510271040131611300",
+   "colors": [
+    "Red Hat Scarf",
+    "Blue Hat Scarf",
+    "Pitaya Color",
+    "Pink Purple"
+   ],
+   "sizes": [
+    "S",
+    "L"
+   ],
+   "variants": {
+    "Red Hat Scarf-S": "2510271040131611500",
+    "Red Hat Scarf-L": "2510271040131611700",
+    "Blue Hat Scarf-S": "2510271040131611900",
+    "Blue Hat Scarf-L": "2510271040131612000",
+    "Pitaya Color-S": "2510271040131612300",
+    "Pitaya Color-L": "2510271040131612400",
+    "Pink Purple-S": "2510271040131612700",
+    "Pink Purple-L": "2510271040131612900"
+   },
+   "vprice": {
+    "Red Hat Scarf-S": 4299,
+    "Red Hat Scarf-L": 4299,
+    "Blue Hat Scarf-S": 4299,
+    "Blue Hat Scarf-L": 4299,
+    "Pitaya Color-S": 4299,
+    "Pitaya Color-L": 4299,
+    "Pink Purple-S": 4299,
+    "Pink Purple-L": 4299
+   }
+  },
+  "cj-71613700": {
+   "name": "Winter Wear Warm Tee",
+   "price": 2899,
+   "cj_pid": "2411142220271613700",
+   "colors": [
+    "Greige"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Greige-S": "2411142220271613900",
+    "Greige-M": "2411142220271614100",
+    "Greige-L": "2411142220271614200",
+    "Greige-XL": "2411142220271614400",
+    "Greige-XS": "2411142220271614500"
+   },
+   "vprice": {
+    "Greige-S": 2899,
+    "Greige-M": 2899,
+    "Greige-L": 2899,
+    "Greige-XL": 2899,
+    "Greige-XS": 2899
+   }
+  },
+  "cj-61622700": {
+   "name": "Down Thick Warm Jacket",
+   "price": 4399,
+   "cj_pid": "2411020659361622700",
+   "colors": [
+    "Red",
+    "Black"
+   ],
+   "sizes": [
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "variants": {
+    "Red-M": "2411020659361622900",
+    "Red-L": "2411020659361623100",
+    "Red-XL": "2411020659361623200",
+    "Red-2XL": "2411020659361623400",
+    "Black-M": "2411020659361623600",
+    "Black-L": "2411020659361623700",
+    "Black-XL": "2411020659361623900",
+    "Black-2XL": "2411020659361624100"
+   },
+   "vprice": {
+    "Red-M": 4399,
+    "Red-L": 4399,
+    "Red-XL": 4399,
+    "Red-2XL": 4399,
+    "Black-M": 4399,
+    "Black-L": 4399,
+    "Black-XL": 4399,
+    "Black-2XL": 4399
+   }
+  },
+  "cj-21179136": {
+   "name": "Christmas Tree Elk Sweater",
+   "price": 2599,
+   "cj_pid": "1563706461321179136",
+   "colors": [
+    "Elk",
+    "Christmas tree"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Elk-XS": "1563706461396676608",
+    "Elk-S": "1563706461400870912",
+    "Elk-M": "1563706461400870913",
+    "Elk-L": "1563706461405065216",
+    "Elk-XL": "1563706461405065217",
+    "Elk-XXL": "1563706461405065218",
+    "Christmas tree-XS": "1563706461409259520",
+    "Christmas tree-S": "1563706461409259521",
+    "Christmas tree-M": "1563706461409259522",
+    "Christmas tree-L": "1563706461413453824",
+    "Christmas tree-XL": "1563706461413453825",
+    "Christmas tree-XXL": "1563706461413453826"
+   },
+   "vprice": {
+    "Elk-XS": 2599,
+    "Elk-S": 2599,
+    "Elk-M": 2599,
+    "Elk-L": 2599,
+    "Elk-XL": 2599,
+    "Elk-XXL": 2599,
+    "Christmas tree-XS": 2599,
+    "Christmas tree-S": 2599,
+    "Christmas tree-M": 2599,
+    "Christmas tree-L": 2599,
+    "Christmas tree-XL": 2599,
+    "Christmas tree-XXL": 2599
+   }
+  },
+  "cj-C937EC28": {
+   "name": "Christmas Sweater",
+   "price": 2099,
+   "cj_pid": "7A31D36A-734D-4495-AD8C-5052C937EC28",
+   "colors": [
+    "Grey",
+    "GreySET"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Grey-M": "0F69446E-2A9C-4D26-A88F-CDAD5CAC1DC9",
+    "Grey-S": "201C7E7A-AA34-46DF-9422-7A0DFB3ABCDF",
+    "GreySET-S": "2610290929071628700",
+    "GreySET-M": "2610290929071628701",
+    "GreySET-L": "2610290929071628702",
+    "GreySET-XL": "2610290929071628703",
+    "Grey-XL": "713FF2DB-317D-4EBE-BDA0-BB8A69744BAF",
+    "Grey-L": "9A66D431-3CC1-4CDF-B3A4-B27CEE3039EC"
+   },
+   "vprice": {
+    "Grey-M": 2099,
+    "Grey-S": 2099,
+    "GreySET-S": 2099,
+    "GreySET-M": 2099,
+    "GreySET-L": 2099,
+    "GreySET-XL": 2099,
+    "Grey-XL": 2099,
+    "Grey-L": 2099
+   }
+  },
+  "cj-45D763A4": {
+   "name": "Grey Sweater",
+   "price": 3299,
+   "cj_pid": "D997FD60-941A-4ED2-B002-5DD045D763A4",
+   "colors": [
+    "Grey",
+    "Grey color",
+    "Red"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Grey-S": "10284B05-0492-4FBC-9C50-8A562A0A4321",
+    "Grey-M": "182CD797-F57E-4729-9D3A-9D91197575F5",
+    "Grey color-L": "1CE6987C-AE60-4428-87EF-C1D82A00A843",
+    "Grey color-XXL": "29B2EDB7-B6EB-4312-B516-9ADA44844A60",
+    "Red-XXL": "2F81A55E-31BC-436B-8E5A-9728D4642830",
+    "Grey color-M": "3AE98200-E692-4385-A85A-286B2A0904FD",
+    "Grey-L": "772A107D-BDD9-4E22-B9CF-E2227C374440",
+    "Grey color-XL": "8153DDA5-C16F-4B4F-8FB0-3B5A15939F65",
+    "Grey-XXL": "8393CD1E-06D6-4C2C-94DD-F2331149750B",
+    "Grey-XL": "8E86CD6B-8B87-490B-88A7-493D8FAAFAA8",
+    "Red-L": "B03BF4A6-A633-4689-AD08-015665B8CB96",
+    "Red-M": "C769BD5F-6FFA-4032-9B74-90883EB6FF6B",
+    "Red-XL": "D1D48585-5BDD-4676-88FA-B99261AEED94",
+    "Red-S": "D75F7BF6-1128-48D4-A888-3D2AB9CFF8F6",
+    "Grey color-S": "EF339DD8-7BF0-46D2-948C-E23749986E02"
+   },
+   "vprice": {
+    "Grey-S": 3299,
+    "Grey-M": 3299,
+    "Grey color-L": 3299,
+    "Grey color-XXL": 3299,
+    "Red-XXL": 3299,
+    "Grey color-M": 3299,
+    "Grey-L": 3299,
+    "Grey color-XL": 3299,
+    "Grey-XXL": 3299,
+    "Grey-XL": 3299,
+    "Red-L": 3299,
+    "Red-M": 3299,
+    "Red-XL": 3299,
+    "Red-S": 3299,
+    "Grey color-S": 3299
+   }
+  },
+  "cj-08363264": {
+   "name": "Bowknot Hollow Knit Sweater",
+   "price": 1999,
+   "cj_pid": "1435422587508363264",
+   "colors": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L.",
+    "M.",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "A-XS": "1435422587600637952",
+    "A-S": "1435422587609026560",
+    "A-M": "1435422587617415168",
+    "A-L": "1435422587625803776",
+    "A-XL": "1435422587634192384",
+    "B-XS": "1435422587642580992",
+    "B-S": "1435422587659358208",
+    "B-M": "1435422587671941120",
+    "B-L": "1435422587688718336",
+    "B-XL": "1435422587713884160",
+    "C-XS": "1435422587734855680",
+    "C-S": "1435422587747438592",
+    "C-M": "1435422587755827200",
+    "C-L": "1435422587764215808",
+    "C-XL": "1435422587772604416",
+    "D-XS": "1435422587780993024",
+    "D-S": "1435422587789381632",
+    "D-M": "1435422587797770240",
+    "D-L": "1435422587806158848",
+    "D-XL": "1435422587810353152",
+    "E-XS": "1435422587818741760",
+    "E-S": "1435422587831324672",
+    "E-M": "1435422587839713280",
+    "E-L": "1435422587848101888",
+    "E-XL": "1435422587856490496",
+    "F-XS": "1435422587860684800",
+    "F-S": "1435422587869073408",
+    "F-M": "1435422587877462016",
+    "F-L": "1435422587881656320",
+    "F-XL": "1435422587890044928",
+    "G-XS": "1435422587898433536",
+    "G-S": "1435422587906822144",
+    "G-M": "1435422587915210752",
+    "G-L": "1435422587919405056",
+    "G-XL": "1435422587927793664",
+    "H-XS": "1435422587936182272",
+    "H-S": "1435422587940376576",
+    "H-M": "1435422587948765184",
+    "H-L": "1435422587957153792",
+    "H-XL": "1435422587965542400",
+    "I-XS": "1435422587973931008",
+    "I-S": "1435422587978125312",
+    "I-M": "1435422587986513920",
+    "I-L": "1435422587994902528",
+    "I-XL": "1435422588003291136",
+    "J-XS": "1435422588007485440",
+    "J-S": "1435422588015874048",
+    "J-M": "1435422588024262656",
+    "J-L": "1435422588032651264",
+    "J-XL": "1435422588036845568",
+    "K-XS": "1435422588045234176",
+    "K-S": "1435422588053622784",
+    "K-M": "1435422588057817088",
+    "K-L": "1435422588066205696",
+    "K-XL": "1435422588074594304",
+    "L.-XS": "1435422588078788608",
+    "L.-S": "1435422588087177216",
+    "L.-M": "1435422588095565824",
+    "L.-L": "1435422588103954432",
+    "L.-XL": "1435422588108148736",
+    "M.-XS": "1435422588116537344",
+    "M.-S": "1435422588124925952",
+    "M.-M": "1435422588129120256",
+    "M.-L": "1435422588137508864",
+    "M.-XL": "1435422588145897472",
+    "N-XS": "1435422588150091776",
+    "N-S": "1435422588158480384",
+    "N-M": "1435422588166868992",
+    "N-L": "1435422588171063296",
+    "N-XL": "1435422588179451904",
+    "O-XS": "1435422588183646208",
+    "O-S": "1435422588192034816",
+    "O-M": "1435422588200423424",
+    "O-L": "1435422588204617728",
+    "O-XL": "1435422588213006336",
+    "P-XS": "1435422588221394944",
+    "P-S": "1435422588229783552",
+    "P-M": "1435422588233977856",
+    "P-L": "1435422588242366464",
+    "P-XL": "1435422588250755072",
+    "Q-XS": "1435422588254949376",
+    "Q-S": "1435422588263337984",
+    "Q-M": "1435422588271726592",
+    "Q-L": "1435422588275920896",
+    "Q-XL": "1435422588284309504",
+    "R-XS": "1435422588292698112",
+    "R-S": "1435422588301086720",
+    "R-M": "1435422588309475328",
+    "R-L": "1435422588313669632",
+    "R-XL": "1435422588322058240",
+    "S-XS": "1435422588330446848",
+    "S-S": "1435422588334641152",
+    "S-M": "1435422588343029760",
+    "S-L": "1435422588351418368",
+    "S-XL": "1435422588355612672",
+    "T-L": "2511141059581606200",
+    "T-M": "2511141059581606500",
+    "T-S": "2511141059581606700",
+    "T-XS": "2511141059581606900"
+   },
+   "vprice": {
+    "A-XS": 2099,
+    "A-S": 2099,
+    "A-M": 2099,
+    "A-L": 2099,
+    "A-XL": 2099,
+    "B-XS": 1999,
+    "B-S": 1999,
+    "B-M": 1999,
+    "B-L": 1999,
+    "B-XL": 1999,
+    "C-XS": 2099,
+    "C-S": 2099,
+    "C-M": 2099,
+    "C-L": 2099,
+    "C-XL": 2099,
+    "D-XS": 1999,
+    "D-S": 1999,
+    "D-M": 1999,
+    "D-L": 1999,
+    "D-XL": 1999,
+    "E-XS": 2099,
+    "E-S": 2099,
+    "E-M": 2099,
+    "E-L": 2099,
+    "E-XL": 2099,
+    "F-XS": 2099,
+    "F-S": 2099,
+    "F-M": 2099,
+    "F-L": 2099,
+    "F-XL": 2099,
+    "G-XS": 2099,
+    "G-S": 2099,
+    "G-M": 2099,
+    "G-L": 2099,
+    "G-XL": 2099,
+    "H-XS": 2099,
+    "H-S": 2099,
+    "H-M": 2099,
+    "H-L": 2099,
+    "H-XL": 2099,
+    "I-XS": 1999,
+    "I-S": 1999,
+    "I-M": 1999,
+    "I-L": 1999,
+    "I-XL": 1999,
+    "J-XS": 1999,
+    "J-S": 1999,
+    "J-M": 1999,
+    "J-L": 1999,
+    "J-XL": 1999,
+    "K-XS": 1999,
+    "K-S": 1999,
+    "K-M": 1999,
+    "K-L": 1999,
+    "K-XL": 1999,
+    "L.-XS": 1999,
+    "L.-S": 1999,
+    "L.-M": 1999,
+    "L.-L": 1999,
+    "L.-XL": 1999,
+    "M.-XS": 1999,
+    "M.-S": 1999,
+    "M.-M": 1999,
+    "M.-L": 1999,
+    "M.-XL": 1999,
+    "N-XS": 1999,
+    "N-S": 1999,
+    "N-M": 1999,
+    "N-L": 1999,
+    "N-XL": 1999,
+    "O-XS": 1999,
+    "O-S": 1999,
+    "O-M": 1999,
+    "O-L": 1999,
+    "O-XL": 1999,
+    "P-XS": 1999,
+    "P-S": 1999,
+    "P-M": 1999,
+    "P-L": 1999,
+    "P-XL": 1999,
+    "Q-XS": 1999,
+    "Q-S": 1999,
+    "Q-M": 1999,
+    "Q-L": 1999,
+    "Q-XL": 1999,
+    "R-XS": 1999,
+    "R-S": 1999,
+    "R-M": 1999,
+    "R-L": 1999,
+    "R-XL": 1999,
+    "S-XS": 1999,
+    "S-S": 1999,
+    "S-M": 1999,
+    "S-L": 1999,
+    "S-XL": 1999,
+    "T-L": 1999,
+    "T-M": 1999,
+    "T-S": 1999,
+    "T-XS": 1999
+   }
+  },
+  "cj-55713024": {
+   "name": "Purple Flower Cardigan Sweater",
+   "price": 3299,
+   "cj_pid": "1455710011555713024",
+   "colors": [
+    "Purple"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Purple-XS": "1455710011643793408",
+    "Purple-S": "1455710011652182016",
+    "Purple-M": "1455710011656376320",
+    "Purple-L": "1455710011660570624",
+    "Purple-XL": "1455710011664764928",
+    "Purple-XXL": "1455710011685736448"
+   },
+   "vprice": {
+    "Purple-XS": 3299,
+    "Purple-S": 3299,
+    "Purple-M": 3299,
+    "Purple-L": 3299,
+    "Purple-XL": 3299,
+    "Purple-XXL": 3299
+   }
+  },
+  "cj-67200768": {
+   "name": "Yellow Sweater",
+   "price": 2799,
+   "cj_pid": "1421379680967200768",
+   "colors": [
+    "Yellow"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL",
+    "FB"
+   ],
+   "variants": {
+    "Yellow-XS": "1421379683886436352",
+    "Yellow-S": "1421379683919990784",
+    "Yellow-M": "1421379683932573696",
+    "Yellow-L": "1421379683945156608",
+    "Yellow-XL": "1421379683978711040",
+    "Yellow-XXL": "1421379683991293952",
+    "Yellow-FB": "1421379684003876864"
+   },
+   "vprice": {
+    "Yellow-XS": 2799,
+    "Yellow-S": 2799,
+    "Yellow-M": 2799,
+    "Yellow-L": 2799,
+    "Yellow-XL": 2799,
+    "Yellow-XXL": 2799,
+    "Yellow-FB": 2799
+   }
+  },
+  "cj-02759168": {
+   "name": "Jacquard Sweater",
+   "price": 1999,
+   "cj_pid": "1569179771802759168",
+   "colors": [
+    "Blue"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L"
+   ],
+   "variants": {
+    "Blue-XS": "1569179771890839552",
+    "Blue-S": "1569179771895033856",
+    "Blue-M": "1569179771895033857",
+    "Blue-L": "1569179771899228160"
+   },
+   "vprice": {
+    "Blue-XS": 1999,
+    "Blue-S": 1999,
+    "Blue-M": 2099,
+    "Blue-L": 2099
+   }
+  },
+  "cj-87688960": {
+   "name": "Warm Winter Coat",
+   "price": 2199,
+   "cj_pid": "1447398788187688960",
+   "colors": [
+    "Red"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Red-XS": "1447398788225437696",
+    "Red-S": "1447398788238020608",
+    "Red-M": "1447398788246409216",
+    "Red-L": "1447398788254797824",
+    "Red-XL": "1447398788267380736"
+   },
+   "vprice": {
+    "Red-XS": 2199,
+    "Red-S": 2199,
+    "Red-M": 2299,
+    "Red-L": 2399,
+    "Red-XL": 2499
+   }
+  },
+  "cj-B23DE92B": {
+   "name": "Christmas Pompom Sweater",
+   "price": 2099,
+   "cj_pid": "01310272-3A2C-4F45-8598-3F75B23DE92B",
+   "colors": [
+    "Grey",
+    "MYD67",
+    "Black",
+    "MYD65"
+   ],
+   "sizes": [
+    "XXS",
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Grey-L": "04756ACB-70B0-4EE9-A458-C6C84E984FB5",
+    "Grey-XS": "0F00D240-63C7-4373-8D1C-DCF05D8795CC",
+    "Grey-M": "19BE60A0-C107-46AE-AC30-54CF68C6E4B0",
+    "Grey-XXL": "1BE1D173-65F3-437D-9AAE-695FFC9DFEE3",
+    "MYD67-L": "262A5527-1D54-4355-ABC0-467B0A2ADD28",
+    "Black-S": "3FD4A314-52F2-448C-B14F-2277D692FC5F",
+    "MYD67-S": "6C54DFAA-07C8-44ED-9D7C-B1766DDE9860",
+    "MYD67-XL": "7E497A8D-298E-4DA4-91D8-9499FD5260AD",
+    "Black-XXL": "86EF0187-DAFE-4BA7-8E18-D94D16CA6CE8",
+    "MYD65-L": "8ABBA612-D4C2-43CD-B313-AE202A573268",
+    "MYD65-M": "98AC4D23-C9F9-434E-907C-77B7DB44CCCD",
+    "Black-M": "98AEFC19-1178-4EB6-869A-0C092CE47D57",
+    "Black-XL": "A22BF57A-2E96-4DC0-961D-0E54D6E4CF28",
+    "Black-XS": "B589E35C-7FC8-4025-8E1B-4746F6B8C30F",
+    "Black-L": "BF37EA9E-9302-4C4D-9E7B-58CF1972DF86",
+    "MYD67-XXL": "DDC9523A-8B9C-4A07-9C21-F5F7E635BB9D",
+    "MYD67-M": "DDFBA243-A4A1-45F5-80C1-D84CA3EFD57F",
+    "Grey-XL": "DF538DA9-EA4A-4A3E-BB17-17057BDCF690",
+    "Grey-S": "E28D61B0-0D7D-4700-8E8F-599A201871FF",
+    "Black-XXS": "E7895421-D6FB-47B4-839F-E258710B4FA6",
+    "MYD65-XXL": "EFE3F642-5201-4D31-984A-99A723846FAD",
+    "MYD65-S": "F8A4FD9A-1C66-4DC8-946D-E3A15D0D7AE1",
+    "MYD65-XL": "FC7F1FCA-9CED-4936-9CB9-C5D7A7EFACD4",
+    "Grey-XXS": "FEA55DE6-67FC-4FDA-A013-FAD0D5B8002A"
+   },
+   "vprice": {
+    "Grey-L": 2399,
+    "Grey-XS": 2099,
+    "Grey-M": 2099,
+    "Grey-XXL": 2399,
+    "MYD67-L": 2099,
+    "Black-S": 2199,
+    "MYD67-S": 2099,
+    "MYD67-XL": 2099,
+    "Black-XXL": 2399,
+    "MYD65-L": 2099,
+    "MYD65-M": 2099,
+    "Black-M": 2199,
+    "Black-XL": 2299,
+    "Black-XS": 2199,
+    "Black-L": 2299,
+    "MYD67-XXL": 2099,
+    "MYD67-M": 2099,
+    "Grey-XL": 2399,
+    "Grey-S": 2099,
+    "Black-XXS": 2199,
+    "MYD65-XXL": 2099,
+    "MYD65-S": 2099,
+    "MYD65-XL": 2099,
+    "Grey-XXS": 2099
+   }
+  },
+  "cj-DD83786B": {
+   "name": "Mustard Knit Sweater",
+   "price": 2299,
+   "cj_pid": "576BEE91-33D0-4AD7-834D-7153DD83786B",
+   "colors": [
+    "Yellow",
+    "Grey",
+    "Green",
+    "Sky Blue",
+    "A yellow",
+    "A Pink",
+    "Pink",
+    "Blue"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Yellow-XXL": "010C4757-C054-4EB0-B0DA-8AB53A8D1751",
+    "Grey-XL": "068D8FF0-878C-40F6-8F43-1AB5FB02EB4D",
+    "Green-XXL": "0695EAD4-1BE1-4D2E-9A2E-65C4FE4DDFFE",
+    "Green-XS": "08421CA0-0426-46B5-B7FF-F29140E10600",
+    "Yellow-XS": "11099F4C-7AEC-4E38-90F7-0251908430F9",
+    "Sky Blue-XS": "1469C599-5B7A-459B-9517-0F6DABD946E5",
+    "Sky Blue-XXL": "1B126058-31A5-437C-BA2D-4677499E98B9",
+    "A yellow-XS": "2435F5EB-EDB2-4B13-ABB2-01DBF9EE3525",
+    "Green-XL": "303239F9-03E4-4021-929C-1CA1ACBF4E7B",
+    "Grey-XXL": "315BE684-686D-410F-A76D-ED75BFAA4B91",
+    "Sky Blue-M": "33CAC1C6-3B8E-4C02-A55D-27116E79A724",
+    "A Pink-XXL": "3D4F0DB9-370E-462D-BF62-3FFFCCC049F1",
+    "Pink-XS": "446C34F5-EA5F-451E-A20E-1E1A52B64B78",
+    "Sky Blue-S": "48D18AD0-D48F-4025-9BF0-ABE3A97F0D07",
+    "Grey-S": "49E3E67F-5AAF-489D-9847-F78E9C32B723",
+    "A Pink-XL": "4BBA11A2-C233-4B50-9172-21E3474F09C1",
+    "Sky Blue-L": "4BBE5B1E-A7E4-46B9-B4FF-50E91E1EA767",
+    "Green-L": "520DFC1B-D639-4067-92A9-507F988C4969",
+    "Grey-XS": "54C1DEC7-FC04-45E7-A7B0-98F73A1EA352",
+    "Pink-XXL": "66A10AB2-3F52-41BE-B8E8-A4C5379BE65D",
+    "Yellow-XL": "66BA8A9B-EF21-4A61-B613-35B1F39935B1",
+    "Blue-S": "6B3C1B71-E688-4FDE-8DC1-D3181D9A2294",
+    "Blue-XL": "74B70058-ACD3-4E5A-8427-520448328316",
+    "Grey-L": "761A9362-A914-4019-8B80-963553D35C91",
+    "A Pink-XS": "85BDF39E-5B05-4235-81C7-85D9DFF0DF9C",
+    "Blue-XS": "89B759CC-C604-4D73-B32F-D76F5D24262C",
+    "A yellow-XXL": "8AEFBDB7-5E82-40C5-8487-C66365FA05CE",
+    "Green-S": "8B67132E-FCBF-4B8E-A921-2414A604DD36",
+    "Green-M": "8C27B357-5F52-4CEB-AD13-618AD7EF0AD8",
+    "A Pink-S": "90CDC9AD-E54C-46B0-B5DC-D94A178ED6E3",
+    "A Pink-M": "936E1CF8-E75F-4C1E-8620-554FB409D89C",
+    "Blue-L": "956AAB6D-9546-4D27-9161-61ACD595256C",
+    "Pink-L": "9B185DF7-4E9B-4B88-B37B-29543B058594",
+    "A yellow-S": "A22AC7E3-FC9D-4C2D-B136-28FD705313CA",
+    "Blue-XXL": "AAFF551A-AD00-4683-89DD-40DE71B6FEFC",
+    "Yellow-M": "B053AC86-DF7C-4763-8D3E-0B138F3D0849",
+    "Pink-XL": "B3B67CEC-B111-4105-9117-B10EFFA4E631",
+    "A Pink-L": "B6372DEA-C0E3-4BCC-AD7E-F99486688EB7",
+    "Sky Blue-XL": "CBEA7F60-130C-4C59-A84E-5FA007B89C81",
+    "A yellow-XL": "CCB594E5-F8DA-4B67-AC2E-45A2C37C515E",
+    "Grey-M": "CE97A59C-137E-4E2D-A753-37FFE6DC2651",
+    "A yellow-M": "D0A05849-D267-4E27-8149-CC5279EF770F",
+    "Yellow-L": "E2BDE5E4-8D60-433C-BD32-1C0741869648",
+    "Pink-M": "E6D03BB7-F79E-4198-9FC6-FDCB6E4AA109",
+    "Pink-S": "EBEFE421-B1B9-409E-9959-2A0F84C48EFA",
+    "Yellow-S": "EC924C13-20D3-496E-A12B-00A412ED0276",
+    "Blue-M": "F8762ECD-8943-4E46-A724-F2F194B72EC8",
+    "A yellow-L": "FB9319D9-953B-445C-B743-F24960BC7557"
+   },
+   "vprice": {
+    "Yellow-XXL": 2299,
+    "Grey-XL": 2299,
+    "Green-XXL": 2299,
+    "Green-XS": 2299,
+    "Yellow-XS": 2299,
+    "Sky Blue-XS": 2299,
+    "Sky Blue-XXL": 2299,
+    "A yellow-XS": 2299,
+    "Green-XL": 2299,
+    "Grey-XXL": 2299,
+    "Sky Blue-M": 2299,
+    "A Pink-XXL": 2299,
+    "Pink-XS": 2299,
+    "Sky Blue-S": 2299,
+    "Grey-S": 2299,
+    "A Pink-XL": 2299,
+    "Sky Blue-L": 2299,
+    "Green-L": 2299,
+    "Grey-XS": 2299,
+    "Pink-XXL": 2299,
+    "Yellow-XL": 2299,
+    "Blue-S": 2299,
+    "Blue-XL": 2299,
+    "Grey-L": 2299,
+    "A Pink-XS": 2299,
+    "Blue-XS": 2299,
+    "A yellow-XXL": 2299,
+    "Green-S": 2299,
+    "Green-M": 2299,
+    "A Pink-S": 2299,
+    "A Pink-M": 2299,
+    "Blue-L": 2299,
+    "Pink-L": 2299,
+    "A yellow-S": 2299,
+    "Blue-XXL": 2299,
+    "Yellow-M": 2299,
+    "Pink-XL": 2299,
+    "A Pink-L": 2299,
+    "Sky Blue-XL": 2299,
+    "A yellow-XL": 2299,
+    "Grey-M": 2299,
+    "A yellow-M": 2299,
+    "Yellow-L": 2299,
+    "Pink-M": 2299,
+    "Pink-S": 2299,
+    "Yellow-S": 2299,
+    "Blue-M": 2299,
+    "A yellow-L": 2299
+   }
+  },
+  "cj-275A80CF": {
+   "name": "Knitted Rabbit Ears Costume",
+   "price": 2799,
+   "cj_pid": "69C5E961-ABA1-453E-927E-D68B275A80CF",
+   "colors": [
+    "Grey",
+    "Pink"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Grey-L": "0CE1CE3D-4FEF-4659-9940-30A0C9C2A036",
+    "Grey-S": "55A9C762-B38E-4234-949E-7F9D3F756D22",
+    "Pink-XXL": "55D8F3CA-7931-4BE3-86E7-E15C6F262223",
+    "Pink-L": "696E7055-745A-4CC3-B7A0-930ECA18B8A7",
+    "Pink-XL": "84C8E16E-3088-4B46-823A-3A68E9DCE4D7",
+    "Grey-XXL": "B48A13C2-9EC1-4D02-9E47-9AA86CE725E0",
+    "Grey-XL": "B4C60667-2BA3-4F41-BEF8-6F9509613953",
+    "Grey-M": "E83861F1-3B57-46D7-BA99-D96682EF0B65",
+    "Grey-XS": "E9E174B5-A79E-425B-BC21-5EE72373C8EB",
+    "Pink-M": "EF8A169C-587F-4282-A6F2-25080755EAFC",
+    "Pink-S": "F1ECFEBD-796B-4588-9291-D436FE56B4EC",
+    "Pink-XS": "F9832572-BD47-4669-86B4-EBD8CF292771"
+   },
+   "vprice": {
+    "Grey-L": 2799,
+    "Grey-S": 2799,
+    "Pink-XXL": 2799,
+    "Pink-L": 2799,
+    "Pink-XL": 2799,
+    "Grey-XXL": 2799,
+    "Grey-XL": 2799,
+    "Grey-M": 2799,
+    "Grey-XS": 2799,
+    "Pink-M": 2799,
+    "Pink-S": 2799,
+    "Pink-XS": 2799
+   }
+  },
+  "cj-528BB9E9": {
+   "name": "Red Christmas Knit Sweater",
+   "price": 2399,
+   "cj_pid": "6FAF64B1-2EA0-4DE5-9821-182A528BB9E9",
+   "colors": [
+    "Red"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Red-M": "3A34CB2F-56D8-4D40-88CE-D6F266CCC41C",
+    "Red-S": "75303302-CDAB-4AC2-88C1-B66B7F72DC71",
+    "Red-XL": "C69FD46E-965B-44A8-B70B-31518A52F06F",
+    "Red-L": "D3708814-3C4F-48F1-9F5F-E4DAE1C340D3"
+   },
+   "vprice": {
+    "Red-M": 2399,
+    "Red-S": 2399,
+    "Red-XL": 2399,
+    "Red-L": 2399
+   }
+  },
+  "cj-29941760": {
+   "name": "Girly Checkerboard Sweater",
+   "price": 2599,
+   "cj_pid": "1570246075229941760",
+   "colors": [
+    "Pink"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "variants": {
+    "Pink-S": "1570246075297050624",
+    "Pink-M": "1570246075301244928",
+    "Pink-L": "1570246075301244929",
+    "Pink-XL": "1570246075305439232",
+    "Pink-2XL": "1570246075305439233"
+   },
+   "vprice": {
+    "Pink-S": 2599,
+    "Pink-M": 2599,
+    "Pink-L": 2599,
+    "Pink-XL": 2599,
+    "Pink-2XL": 2599
+   }
+  },
+  "cj-01380096": {
+   "name": "Blue Sweater",
+   "price": 2399,
+   "cj_pid": "1439043459301380096",
+   "colors": [
+    "Blue",
+    "Pink",
+    "Red",
+    "Yellow",
+    "Beige"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Blue-XS": "1439043459381071872",
+    "Blue-S": "1439043459393654784",
+    "Blue-M": "1439043459402043392",
+    "Blue-L": "1439043459414626304",
+    "Blue-XL": "1439043459423014912",
+    "Pink-XS": "1439043459435597824",
+    "Pink-S": "1439043459448180736",
+    "Pink-M": "1439043459456569344",
+    "Pink-L": "1439043459464957952",
+    "Pink-XL": "1439043459477540864",
+    "Red-XS": "1439043459485929472",
+    "Red-S": "1439043459494318080",
+    "Red-M": "1439043459502706688",
+    "Red-L": "1439043459515289600",
+    "Red-XL": "1439043459523678208",
+    "Yellow-XS": "1439043459536261120",
+    "Yellow-S": "1439043459544649728",
+    "Yellow-M": "1439043459553038336",
+    "Yellow-L": "1439043459561426944",
+    "Yellow-XL": "1439043459569815552",
+    "Beige-XS": "1439043459582398464",
+    "Beige-S": "1439043459590787072",
+    "Beige-M": "1439043459599175680",
+    "Beige-L": "1439043459611758592",
+    "Beige-XL": "1439043459620147200"
+   },
+   "vprice": {
+    "Blue-XS": 2399,
+    "Blue-S": 2399,
+    "Blue-M": 2399,
+    "Blue-L": 2399,
+    "Blue-XL": 2399,
+    "Pink-XS": 2399,
+    "Pink-S": 2399,
+    "Pink-M": 2399,
+    "Pink-L": 2399,
+    "Pink-XL": 2399,
+    "Red-XS": 2399,
+    "Red-S": 2399,
+    "Red-M": 2399,
+    "Red-L": 2399,
+    "Red-XL": 2399,
+    "Yellow-XS": 2399,
+    "Yellow-S": 2399,
+    "Yellow-M": 2399,
+    "Yellow-L": 2499,
+    "Yellow-XL": 2399,
+    "Beige-XS": 2399,
+    "Beige-S": 2399,
+    "Beige-M": 2399,
+    "Beige-L": 2399,
+    "Beige-XL": 2399
+   }
+  },
+  "cj-27769856": {
+   "name": "Knitted Pumpkin Sweater",
+   "price": 2299,
+   "cj_pid": "1431140680427769856",
+   "colors": [
+    "Orange",
+    "Navy Blue"
+   ],
+   "sizes": [
+    "XXS",
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "variants": {
+    "Orange-XXS": "1431140680507461632",
+    "Orange-XS": "1431140680515850240",
+    "Orange-S": "1431140680528433152",
+    "Orange-M": "1431140680536821760",
+    "Orange-L": "1431140680549404672",
+    "Orange-XL": "1431140680557793280",
+    "Orange-2XL": "1431140680570376192",
+    "Navy Blue-XXS": "1431140680578764800",
+    "Navy Blue-XS": "1431140680587153408",
+    "Navy Blue-S": "1431140680599736320",
+    "Navy Blue-M": "1431140680608124928",
+    "Navy Blue-L": "1431140680616513536",
+    "Navy Blue-XL": "1431140680629096448",
+    "Navy Blue-2XL": "1431140680637485056"
+   },
+   "vprice": {
+    "Orange-XXS": 2299,
+    "Orange-XS": 2299,
+    "Orange-S": 2299,
+    "Orange-M": 2299,
+    "Orange-L": 2399,
+    "Orange-XL": 2499,
+    "Orange-2XL": 2499,
+    "Navy Blue-XXS": 2299,
+    "Navy Blue-XS": 2299,
+    "Navy Blue-S": 2299,
+    "Navy Blue-M": 2299,
+    "Navy Blue-L": 2399,
+    "Navy Blue-XL": 2499,
+    "Navy Blue-2XL": 2499
+   }
+  },
+  "cj-26877696": {
+   "name": "Trendy Plaid Sweater",
+   "price": 2699,
+   "cj_pid": "1577599748926877696",
+   "colors": [
+    "Purple"
+   ],
+   "sizes": [
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "variants": {
+    "Purple-L": "1577599748993986560",
+    "Purple-XL": "1577599748998180864",
+    "Purple-2XL": "1577599749002375168",
+    "Purple-3XL": "1577599749002375169"
+   },
+   "vprice": {
+    "Purple-L": 2699,
+    "Purple-XL": 2699,
+    "Purple-2XL": 2699,
+    "Purple-3XL": 2699
+   }
+  },
+  "cj-74050560": {
+   "name": "Knitted Leopard Print Sweater",
+   "price": 2499,
+   "cj_pid": "1559416800474050560",
+   "colors": [
+    "Green Leopard",
+    "Yellow Leopard Print"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Green Leopard-XS": "1559416800641822720",
+    "Yellow Leopard Print-XS": "1559416800641822721",
+    "Green Leopard-S": "1559416800646017024",
+    "Yellow Leopard Print-S": "1559416800646017025",
+    "Green Leopard-M": "1559416800650211328",
+    "Yellow Leopard Print-M": "1559416800650211329",
+    "Green Leopard-L": "1559416800654405632",
+    "Yellow Leopard Print-L": "1559416800658599936",
+    "Green Leopard-XL": "1559416800658599937",
+    "Yellow Leopard Print-XL": "1559416800662794240"
+   },
+   "vprice": {
+    "Green Leopard-XS": 2499,
+    "Yellow Leopard Print-XS": 2499,
+    "Green Leopard-S": 2499,
+    "Yellow Leopard Print-S": 2499,
+    "Green Leopard-M": 2499,
+    "Yellow Leopard Print-M": 2499,
+    "Green Leopard-L": 2499,
+    "Yellow Leopard Print-L": 2499,
+    "Green Leopard-XL": 2499,
+    "Yellow Leopard Print-XL": 2499
+   }
+  },
+  "cj-77430784": {
+   "name": "Quilted Winter Jacket",
+   "price": 2999,
+   "cj_pid": "1407682728077430784",
+   "colors": [
+    "Photo Color"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "variants": {
+    "Photo Color-S": "1407682729469939712",
+    "Photo Color-M": "1407682729482522624",
+    "Photo Color-L": "1407682729490911232",
+    "Photo Color-XL": "1407682729499299840",
+    "Photo Color-2XL": "1407682729511882752"
+   },
+   "vprice": {
+    "Photo Color-S": 2999,
+    "Photo Color-M": 2999,
+    "Photo Color-L": 3099,
+    "Photo Color-XL": 2999,
+    "Photo Color-2XL": 2999
+   }
+  },
+  "cj-27137280": {
+   "name": "Comfortable Knitted Sweater",
+   "price": 2599,
+   "cj_pid": "1447797487527137280",
+   "colors": [
+    "White",
+    "Navy Blue"
+   ],
+   "sizes": [
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL",
+    "SM"
+   ],
+   "variants": {
+    "White-SM": "1447797487594246144",
+    "White-M": "1447797487602634752",
+    "White-L": "1447797487606829056",
+    "White-XL": "1447797487615217664",
+    "White-2XL": "1447797487623606272",
+    "White-3XL": "1447797487631994880",
+    "Navy Blue-SM": "1447797487636189184",
+    "Navy Blue-M": "1447797487644577792",
+    "Navy Blue-L": "1447797487648772096",
+    "Navy Blue-XL": "1447797487657160704",
+    "Navy Blue-2XL": "1447797487661355008",
+    "Navy Blue-3XL": "1447797487669743616"
+   },
+   "vprice": {
+    "White-SM": 2599,
+    "White-M": 2599,
+    "White-L": 2599,
+    "White-XL": 2599,
+    "White-2XL": 2599,
+    "White-3XL": 2599,
+    "Navy Blue-SM": 2599,
+    "Navy Blue-M": 2599,
+    "Navy Blue-L": 2599,
+    "Navy Blue-XL": 2599,
+    "Navy Blue-2XL": 2599,
+    "Navy Blue-3XL": 2599
+   }
+  },
+  "cj-277261B3": {
+   "name": "Cactus Sweater",
+   "price": 3099,
+   "cj_pid": "792E42C8-13A1-46BE-AF54-CF30277261B3",
+   "colors": [
+    "Yellow",
+    "Purple"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Yellow-L": "307E50EE-9EBE-4398-B3FD-DE9E80607499",
+    "Purple-L": "3870B86E-7A33-438F-A2A5-CED9A0F1AFD9",
+    "Yellow-S": "38A38DA6-2074-4E3A-94CC-D22754B9AA26",
+    "Purple-XL": "5278CA28-00ED-45EF-84EF-300559A3ACB3",
+    "Yellow-M": "67071F04-B56F-4257-B57E-B6C1E432F61E",
+    "Yellow-XXL": "6CC02177-AA43-4972-9681-DD028D6B7182",
+    "Yellow-XL": "76024AE4-AEAE-4519-9AF1-0198B40CED12",
+    "Purple-S": "89F106FE-1D55-4991-ABA6-029C6437F949",
+    "Purple-M": "9DF42297-9B88-4321-BEA9-F153C621185D",
+    "Purple-XXL": "B270234D-C8BE-4DBD-99E4-5B64EA709B57"
+   },
+   "vprice": {
+    "Yellow-L": 3099,
+    "Purple-L": 3099,
+    "Yellow-S": 3099,
+    "Purple-XL": 3099,
+    "Yellow-M": 3099,
+    "Yellow-XXL": 3099,
+    "Yellow-XL": 3099,
+    "Purple-S": 3099,
+    "Purple-M": 3099,
+    "Purple-XXL": 3099
+   }
+  },
+  "cj-00004352": {
+   "name": "Skull Halloween Sweater",
+   "price": 2199,
+   "cj_pid": "1401369084700004352",
+   "colors": [
+    "Black"
+   ],
+   "sizes": [
+    "XXS",
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Black-XXS": "1401369086079930368",
+    "Black-XS": "1401369086092513280",
+    "Black-S": "1401369086100901888",
+    "Black-M": "1401369086121873408",
+    "Black-L": "1401369086134456320",
+    "Black-XL": "1401369086142844928"
+   },
+   "vprice": {
+    "Black-XXS": 2199,
+    "Black-XS": 2199,
+    "Black-S": 2199,
+    "Black-M": 2199,
+    "Black-L": 2199,
+    "Black-XL": 2399
+   }
+  },
+  "cj-87360512": {
+   "name": "Christmas Fall Cotton Sweater",
+   "price": 2599,
+   "cj_pid": "1451731111687360512",
+   "colors": [
+    "Black",
+    "Red"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Black-S": "1451731111741886464",
+    "Black-M": "1451731111746080768",
+    "Black-L": "1451731111746080769",
+    "Black-XL": "1451731111750275072",
+    "Black-XXL": "1451731111750275073",
+    "Red-S": "1451731111750275074",
+    "Red-M": "1451731111750275075",
+    "Red-L": "1451731111754469376",
+    "Red-XL": "1451731111754469377",
+    "Red-XXL": "1451731111754469378"
+   },
+   "vprice": {
+    "Black-S": 2599,
+    "Black-M": 2599,
+    "Black-L": 2599,
+    "Black-XL": 2599,
+    "Black-XXL": 2599,
+    "Red-S": 2599,
+    "Red-M": 2599,
+    "Red-L": 2599,
+    "Red-XL": 2599,
+    "Red-XXL": 2599
+   }
+  },
+  "cj-50302208": {
+   "name": "Winter Print Sweater",
+   "price": 3099,
+   "cj_pid": "1470948886750302208",
+   "colors": [
+    "Red"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Red-S": "1470948886834188288",
+    "Red-M": "1470948886838382592",
+    "Red-L": "1470948886842576896",
+    "Red-XL": "1470948886842576897",
+    "Red-XXL": "1470948886842576898"
+   },
+   "vprice": {
+    "Red-S": 3099,
+    "Red-M": 3099,
+    "Red-L": 3099,
+    "Red-XL": 3099,
+    "Red-XXL": 3099
+   }
+  },
+  "cj-29004544": {
+   "name": "Sky Blue Knit Sweater",
+   "price": 1999,
+   "cj_pid": "1354981711729004544",
+   "colors": [
+    "Blue"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Blue-S": "1354981711779336192",
+    "Blue-M": "1354981711779336193",
+    "Blue-L": "1354981711779336194",
+    "Blue-XL": "1354981711779336195"
+   },
+   "vprice": {
+    "Blue-S": 1999,
+    "Blue-M": 1999,
+    "Blue-L": 1999,
+    "Blue-XL": 1999
+   }
+  },
+  "cj-87457024": {
+   "name": "Green Sweater",
+   "price": 3299,
+   "cj_pid": "1471660235587457024",
+   "colors": [
+    "Green",
+    "Black"
+   ],
+   "sizes": [
+    "3XL",
+    "4XL",
+    "5XL",
+    "6XL",
+    "7XL"
+   ],
+   "variants": {
+    "Green-3XL": "1471660235654565888",
+    "Green-4XL": "1471660235658760192",
+    "Green-5XL": "1471660235662954496",
+    "Green-6XL": "1471660235662954497",
+    "Green-7XL": "1471660235667148800",
+    "Black-3XL": "1471660235667148801",
+    "Black-4XL": "1471660235671343104",
+    "Black-5XL": "1471660235671343105",
+    "Black-6XL": "1471660235675537408",
+    "Black-7XL": "1471660235675537409"
+   },
+   "vprice": {
+    "Green-3XL": 3299,
+    "Green-4XL": 3299,
+    "Green-5XL": 3299,
+    "Green-6XL": 3899,
+    "Green-7XL": 3999,
+    "Black-3XL": 3299,
+    "Black-4XL": 3799,
+    "Black-5XL": 3299,
+    "Black-6XL": 3299,
+    "Black-7XL": 3999
+   }
+  },
+  "cj-75057408": {
+   "name": "Fleece Solid Color Hoodie",
+   "price": 2399,
+   "cj_pid": "1491604368775057408",
+   "colors": [
+    "Blue"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Blue-S": "1491604368905080832",
+    "Blue-M": "1491604368909275136",
+    "Blue-L": "1491604368913469440",
+    "Blue-XL": "1491604368913469441"
+   },
+   "vprice": {
+    "Blue-S": 2399,
+    "Blue-M": 2399,
+    "Blue-L": 2399,
+    "Blue-XL": 2399
+   }
+  },
+  "cj-48523CEE": {
+   "name": "Matching Owner & Pet Tee",
+   "price": 2499,
+   "cj_pid": "9E3EB83D-14C1-43FE-A984-309848523CEE",
+   "colors": [
+    "Red",
+    "Blue",
+    "Yellow",
+    "Pink"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL",
+    "3XL",
+    "4XL"
+   ],
+   "variants": {
+    "Red-4XL": "01164D1A-BF7C-45D5-ADB6-25A15874A3BC",
+    "Blue-XXL": "0378C91D-BC95-4B5D-B152-E2ED158C4F01",
+    "Red-L": "21CFFE2D-F27A-4745-A19F-7674009D2E32",
+    "Yellow-XL": "2BDF9029-4FEB-4266-A025-52DD43EA5557",
+    "Pink-4XL": "46BBA191-2AA5-418C-AD92-74DBB5A0C299",
+    "Pink-XL": "480BFF41-EFEC-4AAA-B6AC-C42874FAC2C2",
+    "Yellow-4XL": "58050D57-194F-4067-94C4-CBD52DC6F0F9",
+    "Blue-XL": "5898C7C4-F80C-4DC8-ACB5-888743DDC457",
+    "Blue-3XL": "5BC3C94F-ED30-49FD-AC4E-9B52F3D9D2F5",
+    "Pink-L": "79821BC9-86E1-43A7-A977-4530F8CE592B",
+    "Blue-L": "94660D51-2C5C-4B3C-B823-F9ECE3C1C074",
+    "Yellow-S": "994C308B-5CD1-4148-B457-2D5A235EC3B8",
+    "Yellow-L": "9A221F57-FDE6-414F-A7CE-12EA7A5F6953",
+    "Blue-M": "A104A760-106A-4C01-952E-39E5B5F0CF8A",
+    "Yellow-M": "A16EFC6F-BD07-4F6B-A441-51A4566E7A71",
+    "Red-M": "A43B84A5-C35A-4A65-9FDB-422045183093",
+    "Red-3XL": "A6376094-F890-45E7-A319-F83D2093E2C0",
+    "Blue-4XL": "ACAF358D-BD4B-4A2D-BC94-C15F2A2C490A",
+    "Red-One size": "AE4CE834-7A2D-4511-B485-A993305E5E52",
+    "Red-S": "C74E6050-1570-440D-813E-46505D680364",
+    "Pink-M": "CF909A49-F6BC-4DF2-8998-78B2E785BB57",
+    "Blue-One size": "CFD9F84C-9BC8-433E-9B92-2C3FECCCC63D",
+    "Pink-XXL": "DB7AF5BB-8A9B-4D95-B07B-270A357918E2",
+    "Blue-S": "DEEED70A-B0AD-4D68-893B-5372398C0F1D",
+    "Pink-S": "EBA61556-491B-4D9C-8494-84010AA5843B",
+    "Yellow-One size": "ED6943A7-37D2-4BC1-925E-1B1CFF6F91CE",
+    "Red-XXL": "EEFD0D68-B2E5-47E3-802D-28B0CB6F686C",
+    "Yellow-3XL": "EF20A982-4F83-4F5B-AC28-63E0833A9D71",
+    "Yellow-XXL": "F536FB10-5931-4DF3-B234-280079186A08",
+    "Red-XL": "F76E86B1-166D-434E-96E0-53496CB5CF9C",
+    "Pink-3XL": "F87993E1-81C3-43C1-AE27-E38151EAB8B5",
+    "Pink-One size": "F909FF18-ABB1-4270-BDF0-9B8DA9D9E992"
+   },
+   "vprice": {
+    "Red-4XL": 2499,
+    "Blue-XXL": 2499,
+    "Red-L": 2499,
+    "Yellow-XL": 2499,
+    "Pink-4XL": 2499,
+    "Pink-XL": 2499,
+    "Yellow-4XL": 2499,
+    "Blue-XL": 2499,
+    "Blue-3XL": 2499,
+    "Pink-L": 2499,
+    "Blue-L": 2499,
+    "Yellow-S": 2499,
+    "Yellow-L": 2499,
+    "Blue-M": 2499,
+    "Yellow-M": 2499,
+    "Red-M": 2499,
+    "Red-3XL": 2499,
+    "Blue-4XL": 2499,
+    "Red-One size": 2999,
+    "Red-S": 2499,
+    "Pink-M": 2499,
+    "Blue-One size": 2999,
+    "Pink-XXL": 2499,
+    "Blue-S": 2499,
+    "Pink-S": 2499,
+    "Yellow-One size": 2999,
+    "Red-XXL": 2499,
+    "Yellow-3XL": 2499,
+    "Yellow-XXL": 2499,
+    "Red-XL": 2499,
+    "Pink-3XL": 2499,
+    "Pink-One size": 2999
+   }
+  },
+  "cj-21C0B72F": {
+   "name": "Red Sweater",
+   "price": 2599,
+   "cj_pid": "0E3859C6-4CF9-48EB-B5B8-F38D21C0B72F",
+   "colors": [
+    "Red",
+    "Grey",
+    "Blue"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL",
+    "FB"
+   ],
+   "variants": {
+    "Red-XL": "05B1AA41-4D1B-41A6-ACB5-AD8F2A95E339",
+    "Red-XS": "07F0C98D-5715-4ADD-BF17-8E8115D217D5",
+    "Red-XXL": "13C06E3B-D429-41B0-BFCF-17D38770430A",
+    "Grey-XL": "34ED36F9-3297-4563-AA2D-01CDEC3F9919",
+    "Blue-M": "3F3CD301-91C8-40DC-9EE9-F6381BAC2AC4",
+    "Blue-XL": "42C46847-C734-48D9-B3E2-48D532B519D9",
+    "Red-FB": "46204722-A77C-4525-9931-D3BF9ADDF3BE",
+    "Blue-FB": "5A2DE791-735C-45BD-B675-BD23CBAF957A",
+    "Red-S": "671510E1-4818-40B6-B42B-DACE928A55E1",
+    "Grey-L": "6F14256D-560F-4C21-B3A3-2DE6B6EFAF7E",
+    "Grey-S": "74232C80-A2F0-4070-A1B5-C44391DB231A",
+    "Blue-L": "7E449B51-65BD-401C-A168-573C70FEAB9F",
+    "Grey-XS": "7FBC5E55-7748-4E3C-B909-AF21E0367C85",
+    "Blue-XXL": "93296C61-75CE-4387-A6E6-5E9ECD24B31B",
+    "Grey-XXL": "94080416-14C6-440A-B66F-52B61380BAE7",
+    "Blue-XS": "9E0846B5-AB89-4992-922B-895718568D3B",
+    "Blue-S": "BC5AF3CB-2AD3-4D1A-9329-2DE07FB59AD5",
+    "Red-M": "C04CF2E2-54A6-434B-ADC0-1BF8B2C17D70",
+    "Grey-M": "DE30F92D-3145-4299-B1B6-F0E5488C026A",
+    "Red-L": "EA68FD47-F840-479D-BA5F-B2C3B1A794D1",
+    "Grey-FB": "F7BF95AF-77EF-4A60-B06B-DB2D664C9C12"
+   },
+   "vprice": {
+    "Red-XL": 2599,
+    "Red-XS": 2599,
+    "Red-XXL": 2599,
+    "Grey-XL": 2599,
+    "Blue-M": 2599,
+    "Blue-XL": 2599,
+    "Red-FB": 2599,
+    "Blue-FB": 2599,
+    "Red-S": 2599,
+    "Grey-L": 2599,
+    "Grey-S": 2599,
+    "Blue-L": 2599,
+    "Grey-XS": 2599,
+    "Blue-XXL": 2599,
+    "Grey-XXL": 2599,
+    "Blue-XS": 2599,
+    "Blue-S": 2599,
+    "Red-M": 2599,
+    "Grey-M": 2599,
+    "Red-L": 2599,
+    "Grey-FB": 2599
+   }
+  },
+  "cj-A60234EA": {
+   "name": "Fleece-lined Street Sweater",
+   "price": 2699,
+   "cj_pid": "5B34C568-DD8D-4CC7-89B3-908FA60234EA",
+   "colors": [
+    "Yellow",
+    "Black",
+    "White"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Yellow-M": "01459DC4-BC02-4AB2-9837-1666103ADD50",
+    "Yellow-L": "046D509D-9D5E-4C6E-82A3-E876C1DB6084",
+    "Black-M": "0CC07740-06A1-4985-8D60-2E2387C0CBE5",
+    "White-S": "1D56A6F2-A25D-4C07-9E55-429F06D536D1",
+    "Yellow-S": "216D3978-F1F6-46B3-A3B8-E655CA218F38",
+    "White-XL": "26C5FF6C-2E75-4AEB-9AE2-2D9BD2FD124B",
+    "Black-XL": "29AB3360-C802-441E-A958-83EBABECEB9B",
+    "Black-S": "2D58A9D9-E558-4BF4-86AB-B56C8DEB97F8",
+    "White-M": "2DA45725-56B7-4DEF-835C-8AB30FCF6651",
+    "White-XXL": "30B542E0-C31E-41D2-8B07-BF9A9B497DF2",
+    "Black-L": "39B65A8E-EE72-4E66-8171-C6D96E9F0870",
+    "Black-XXL": "8BA47FE6-4567-4AE2-A7A0-188749457062",
+    "Yellow-XXL": "935873DB-8BF0-45EC-9F93-70919EAD9AEC",
+    "White-L": "AEF4404E-529D-41D1-8764-6755DEA577D5",
+    "Yellow-XL": "E0ABF5E5-2F70-4ED2-B98C-D30CFE15DB8D"
+   },
+   "vprice": {
+    "Yellow-M": 2699,
+    "Yellow-L": 2699,
+    "Black-M": 2699,
+    "White-S": 2699,
+    "Yellow-S": 2699,
+    "White-XL": 2699,
+    "Black-XL": 2699,
+    "Black-S": 2699,
+    "White-M": 2699,
+    "White-XXL": 2699,
+    "Black-L": 2699,
+    "Black-XXL": 2699,
+    "Yellow-XXL": 2699,
+    "White-L": 2699,
+    "Yellow-XL": 2699
+   }
+  },
+  "cj-27576064": {
+   "name": "Winter Warm Plush Coat",
+   "price": 2499,
+   "cj_pid": "1422016624927576064",
+   "colors": [
+    "Yellow striped bee costume"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "variants": {
+    "Yellow striped bee costume-XS": "1422016626324279296",
+    "Yellow striped bee costume-S": "1422016626336862208",
+    "Yellow striped bee costume-M": "1422016626353639424",
+    "Yellow striped bee costume-L": "1422016626366222336",
+    "Yellow striped bee costume-XL": "1422016626378805248",
+    "Yellow striped bee costume-2XL": "1422016626387193856",
+    "Yellow striped bee costume-3XL": "1422016626399776768"
+   },
+   "vprice": {
+    "Yellow striped bee costume-XS": 2499,
+    "Yellow striped bee costume-S": 2499,
+    "Yellow striped bee costume-M": 2499,
+    "Yellow striped bee costume-L": 2499,
+    "Yellow striped bee costume-XL": 2499,
+    "Yellow striped bee costume-2XL": 2499,
+    "Yellow striped bee costume-3XL": 2499
+   }
+  },
+  "cj-BD9372FE": {
+   "name": "Halloween Pumpkin Costume",
+   "price": 2299,
+   "cj_pid": "C9A69053-E326-4CD4-B33F-E967BD9372FE",
+   "colors": [
+    "Orange"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Orange-XS": "5F97E9F5-4DF2-4DBD-ACDB-AD1E03762325",
+    "Orange-L": "78903D8E-1744-4F09-84C9-F8B4FF2B268B",
+    "Orange-M": "98E2A848-7A1D-46EE-9630-5CA51291B12D",
+    "Orange-S": "A25A401F-CEAF-4A85-B617-D167D733A2CB",
+    "Orange-XL": "C1A6CC09-5CD9-4176-AF6F-32DC01B99381",
+    "Orange-XXL": "D70BFD31-EE39-44D5-8282-47CE06BB703F"
+   },
+   "vprice": {
+    "Orange-XS": 2299,
+    "Orange-L": 2499,
+    "Orange-M": 2499,
+    "Orange-S": 2399,
+    "Orange-XL": 2699,
+    "Orange-XXL": 2799
+   }
+  },
+  "cj-039001CF": {
+   "name": "Terry Knit Sweater",
+   "price": 3599,
+   "cj_pid": "127BF8AD-8628-463E-AC7D-82FA039001CF",
+   "colors": [
+    "Black",
+    "Khaki",
+    "Blac",
+    "Black Adult",
+    "Khaki Adult"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL",
+    "4XL"
+   ],
+   "variants": {
+    "Black-L": "01693810-A11B-44AD-9359-A58210447333",
+    "Black-2XL": "09118EF8-383E-460D-8C6A-63D4C9E0AFB6",
+    "Black-3XL": "163FEC85-3F90-4845-BA8B-52DC53EDEC82",
+    "Khaki-4XL": "516BBD8B-136C-40CD-9E87-2AB0BE80270B",
+    "Blac-XL": "51F24E9B-BEF7-441F-AB74-9DA0806CF51C",
+    "Khaki-S": "58E6D932-C878-4571-B8B3-0940926EFB96",
+    "Black-4XL": "610B0022-49D8-4A4B-8D7C-506C3140A9A5",
+    "Khaki-M": "77C83F8F-840D-4962-8564-4600E10A1B86",
+    "Khaki-XS": "78651973-5854-408B-9ECF-FAE48A9C87B8",
+    "Black Adult-One size": "88857EFC-C959-4EAE-932E-3C9B015F1EDF",
+    "Khaki-3XL": "8A081DC8-5F09-47BF-B1B3-F4204571183E",
+    "Black-XS": "9740DCD6-943C-43E3-A495-EACD86D17AFD",
+    "Khaki-L": "997E62C3-7CAD-4682-A864-FCD057AA17D2",
+    "Black-M": "EDB3279F-82BF-4AB2-BC98-719A16435283",
+    "Black-S": "F6368780-4CF3-4E65-905D-5F72F85A2BD1",
+    "Khaki-2XL": "F86AEDE6-F773-488C-BEDC-2CF433846AC5",
+    "Khaki Adult-One size": "F9DE5C76-510C-4F47-978B-E8616E5B6DE5",
+    "Khaki-XL": "FE1C5E72-494B-49FD-A7F0-6525F7463906"
+   },
+   "vprice": {
+    "Black-L": 3599,
+    "Black-2XL": 3599,
+    "Black-3XL": 3599,
+    "Khaki-4XL": 3599,
+    "Blac-XL": 3599,
+    "Khaki-S": 3599,
+    "Black-4XL": 3599,
+    "Khaki-M": 3599,
+    "Khaki-XS": 3599,
+    "Black Adult-One size": 4599,
+    "Khaki-3XL": 3599,
+    "Black-XS": 3599,
+    "Khaki-L": 3599,
+    "Black-M": 3599,
+    "Black-S": 3599,
+    "Khaki-2XL": 3599,
+    "Khaki Adult-One size": 4599,
+    "Khaki-XL": 3599
+   }
+  },
+  "cj-39643648": {
+   "name": "Fleece-lined Street Hoodie",
+   "price": 5799,
+   "cj_pid": "1457157680639643648",
+   "colors": [
+    "Pink",
+    "Blue",
+    "Grey",
+    "Black"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL",
+    "4XL"
+   ],
+   "variants": {
+    "Pink-S": "1457157680702558208",
+    "Pink-M": "1457157680706752512",
+    "Pink-L": "1457157680706752513",
+    "Pink-XL": "1457157680706752514",
+    "Pink-2XL": "1457157680710946816",
+    "Pink-3XL": "1457157680710946817",
+    "Pink-4XL": "1457157680710946818",
+    "Pink-Parent size": "1457157680715141120",
+    "Blue-S": "1457157680715141121",
+    "Blue-M": "1457157680715141122",
+    "Blue-L": "1457157680719335424",
+    "Blue-XL": "1457157680719335425",
+    "Blue-2XL": "1457157680719335426",
+    "Blue-3XL": "1457157680723529728",
+    "Blue-4XL": "1457157680723529729",
+    "Blue-Parent size": "1457157680723529730",
+    "Grey-S": "1457157680723529731",
+    "Grey-M": "1457157680727724032",
+    "Grey-L": "1457157680727724033",
+    "Grey-XL": "1457157680727724034",
+    "Grey-2XL": "1457157680731918336",
+    "Grey-3XL": "1457157680731918337",
+    "Grey-4XL": "1457157680731918338",
+    "Grey-Parent size": "1457157680731918339",
+    "Black-S": "1457157680736112640",
+    "Black-M": "1457157680736112641",
+    "Black-L": "1457157680736112642",
+    "Black-XL": "1457157680740306944",
+    "Black-2XL": "1457157680740306945",
+    "Black-3XL": "1457157680740306946",
+    "Black-4XL": "1457157680740306947",
+    "Black-Parent size": "1457157680744501248"
+   },
+   "vprice": {
+    "Pink-S": 5799,
+    "Pink-M": 5799,
+    "Pink-L": 5799,
+    "Pink-XL": 5799,
+    "Pink-2XL": 5799,
+    "Pink-3XL": 5799,
+    "Pink-4XL": 5799,
+    "Pink-Parent size": 8999,
+    "Blue-S": 5799,
+    "Blue-M": 5799,
+    "Blue-L": 5799,
+    "Blue-XL": 5799,
+    "Blue-2XL": 5799,
+    "Blue-3XL": 5799,
+    "Blue-4XL": 5799,
+    "Blue-Parent size": 8999,
+    "Grey-S": 5799,
+    "Grey-M": 5799,
+    "Grey-L": 5799,
+    "Grey-XL": 5799,
+    "Grey-2XL": 5799,
+    "Grey-3XL": 5799,
+    "Grey-4XL": 5799,
+    "Grey-Parent size": 8999,
+    "Black-S": 5799,
+    "Black-M": 5799,
+    "Black-L": 5799,
+    "Black-XL": 5799,
+    "Black-2XL": 5799,
+    "Black-3XL": 5799,
+    "Black-4XL": 5799,
+    "Black-Parent size": 8999
+   }
+  },
+  "cj-A82478E8": {
+   "name": "Striped Sweater",
+   "price": 2999,
+   "cj_pid": "6921538A-3730-459D-94A9-75EDA82478E8",
+   "colors": [
+    "Grey"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L"
+   ],
+   "variants": {
+    "Grey-L": "38187113-B1F7-4F8F-9F56-2E27F8656F76",
+    "Grey-S": "74A6D78F-FB0C-44D3-90E9-62B7CCE88DD0",
+    "Grey-M": "8CCBB1EC-048B-4E8C-8284-18E71D1F6D05"
+   },
+   "vprice": {
+    "Grey-L": 2999,
+    "Grey-S": 2999,
+    "Grey-M": 2999
+   }
+  },
+  "cj-10343680": {
+   "name": "Warm Sweet Hoodie",
+   "price": 1999,
+   "cj_pid": "1487625564310343680",
+   "colors": [
+    "Black",
+    "Navy Blue",
+    "Grey"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Black-XS": "1487625564411006976",
+    "Black-S": "1487625564415201280",
+    "Black-M": "1487625564419395584",
+    "Black-L": "1487625564419395585",
+    "Black-XL": "1487625564461338624",
+    "Navy Blue-XS": "1487625564465532928",
+    "Navy Blue-S": "1487625564465532929",
+    "Navy Blue-M": "1487625564469727232",
+    "Navy Blue-L": "1487625564473921536",
+    "Navy Blue-XL": "1487625564473921537",
+    "Grey-XS": "1487625564473921538",
+    "Grey-S": "1487625564478115840",
+    "Grey-M": "1487625564478115841",
+    "Grey-L": "1487625564482310144",
+    "Grey-XL": "1487625564482310145"
+   },
+   "vprice": {
+    "Black-XS": 2099,
+    "Black-S": 2099,
+    "Black-M": 2099,
+    "Black-L": 2099,
+    "Black-XL": 2099,
+    "Navy Blue-XS": 1999,
+    "Navy Blue-S": 1999,
+    "Navy Blue-M": 1999,
+    "Navy Blue-L": 1999,
+    "Navy Blue-XL": 1999,
+    "Grey-XS": 1999,
+    "Grey-S": 1999,
+    "Grey-M": 1999,
+    "Grey-L": 1999,
+    "Grey-XL": 1999
+   }
+  },
+  "cj-68618496": {
+   "name": "Angel Wing Winter Sweater",
+   "price": 2599,
+   "cj_pid": "1455711383168618496",
+   "colors": [
+    "Black",
+    "White"
+   ],
+   "sizes": [
+    "XXS",
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL",
+    "4XL",
+    "5XL"
+   ],
+   "variants": {
+    "Black-XXS": "1455711383256698880",
+    "Black-XS": "1455711383265087488",
+    "Black-S": "1455711383269281792",
+    "Black-M": "1455711383277670400",
+    "Black-L": "1455711383281864704",
+    "Black-XL": "1455711383286059008",
+    "Black-2XL": "1455711383290253312",
+    "Black-3XL": "1455711383294447616",
+    "Black-4XL": "1455711383298641920",
+    "Black-5XL": "1455711383302836224",
+    "White-XXS": "1455711383307030528",
+    "White-XS": "1455711383311224832",
+    "White-S": "1455711383311224833",
+    "White-M": "1455711383319613440",
+    "White-L": "1455711383323807744",
+    "White-XL": "1455711383323807745",
+    "White-2XL": "1455711383332196352",
+    "White-3XL": "1455711383336390656",
+    "White-4XL": "1455711383340584960",
+    "White-5XL": "1455711383369945088"
+   },
+   "vprice": {
+    "Black-XXS": 2599,
+    "Black-XS": 2599,
+    "Black-S": 2599,
+    "Black-M": 2599,
+    "Black-L": 2699,
+    "Black-XL": 2699,
+    "Black-2XL": 2799,
+    "Black-3XL": 2999,
+    "Black-4XL": 2799,
+    "Black-5XL": 2799,
+    "White-XXS": 2599,
+    "White-XS": 2599,
+    "White-S": 2599,
+    "White-M": 2599,
+    "White-L": 2699,
+    "White-XL": 2699,
+    "White-2XL": 2799,
+    "White-3XL": 2799,
+    "White-4XL": 2799,
+    "White-5XL": 2799
+   }
+  },
+  "cj-786C9823": {
+   "name": "Fleece Hoodie",
+   "price": 3499,
+   "cj_pid": "6F3FEDF0-39A2-47B7-803B-5C16786C9823",
+   "colors": [
+    "Purple woolen",
+    "Pink woolen",
+    "Pink",
+    "Blue",
+    "Black",
+    "Grey",
+    "Blue woolen"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL",
+    "3XL",
+    "4XL"
+   ],
+   "variants": {
+    "Purple woolen-3XL": "01FF348E-DEE0-4906-A4B8-94AA99F98A2C",
+    "Purple woolen-L": "05671E06-9F0E-4140-8CA6-1A32BF55E474",
+    "Pink woolen-S": "06361B20-06D6-4910-B55C-DD63F583F010",
+    "Pink-S": "097E2020-82B2-464E-9928-69503E6F401E",
+    "Pink woolen-XL": "12C93C1E-E8D6-4F77-B3F5-8E4A28AAF0CA",
+    "Blue-3XL": "19629ECC-1DAC-43D1-A043-7CEDEEC138B7",
+    "Black-3XL": "2055BE0B-0987-4866-9894-B31EF1B65642",
+    "Pink-XL": "28C78E9C-0B0C-4D5D-B652-B357C37146FB",
+    "Pink woolen-3XL": "2F81C7A2-AC1B-4C04-BF59-E6956B6B77A5",
+    "Pink-L": "2F82687D-3BAF-4028-A211-1BA1FD4FAF0A",
+    "Purple woolen-XL": "3B95AA6C-7A27-4D2C-BD8A-873FCBD336D6",
+    "Pink woolen-L": "3C9D5229-6C1B-497E-827F-2498214EF44C",
+    "Pink-M": "3D411AE8-262E-4CBA-B5B0-B0EDB3E70D9A",
+    "Purple woolen-XXL": "415733EC-8832-4569-AA1A-E007736D533F",
+    "Blue-XXL": "43DC393D-E18E-4E83-9AAD-18A73D8C07AD",
+    "Grey-S": "43FF81D2-DA20-4248-9020-619BE0FBCC44",
+    "Grey-XL": "4498186C-E534-4861-9D46-F91470F51E11",
+    "Blue woolen-XL": "4DB67061-5390-494F-9C3A-5925F3F2DB20",
+    "Blue woolen-L": "5B563CD4-F453-45F2-AEE1-94069BBF50C2",
+    "Blue-XL": "640387D3-9CA8-4936-82CC-2CD71D2221B5",
+    "Blue woolen-M": "641AE077-FAFB-40E3-BA5C-FA9806DCA8A2",
+    "Blue-S": "6664A2A0-1CFD-4011-B6AA-5D31DFB10D87",
+    "Black-L": "677D9B3F-6F92-4FF1-8501-61B1EFF6F5C5",
+    "Black-XXL": "6F38C13E-D5E7-4C12-875E-F49827893522",
+    "Black-4XL": "710F3229-2023-48D1-946E-3A770C573A76",
+    "Pink-3XL": "78304974-28F9-4B16-81C2-63C925478AD1",
+    "Black-M": "7869463A-1672-4953-8A3A-EE101A6F5EF3",
+    "Blue woolen-S": "7C8FE92C-6340-4712-8CE2-A48972BD6359",
+    "Blue-M": "7CA749F2-3785-4418-870B-70DF4C8E4AF2",
+    "Purple woolen-4XL": "81FEF0E6-09F9-47BC-B969-821C7491AB94",
+    "Pink-XXL": "858C0AAC-624B-4DD4-9427-F2B6FF81043E",
+    "Blue-4XL": "930C41D3-532A-4CC3-9610-220FCE295ABF",
+    "Pink woolen-4XL": "9358BBE3-9641-4BF9-BC1A-FD1F3C7F7EF8",
+    "Grey-3XL": "98AFAA3D-399A-4669-983B-BF6C928ECB04",
+    "Grey-M": "99D198C5-BDE2-44F9-83F9-3562F07E8BA8",
+    "Grey-XXL": "9ADA4A1F-A454-432E-AC39-D779A89B4499",
+    "Blue woolen-XXL": "9C1694D8-894B-405E-A9CB-16C7F3C5AA2E",
+    "Pink-4XL": "9ECCD9D6-FDFD-45B0-A672-93E38EC3C1FC",
+    "Black-S": "ABD36263-93A9-46F7-B073-60843C00BA11",
+    "Grey-L": "B60C3915-70B0-4478-A5DA-7894F9B63D1A",
+    "Blue-L": "BE2B42E5-EDB4-4158-AE58-8D057DFC7C38",
+    "Blue woolen-4XL": "C0156605-AC9B-4A42-ACBD-5539C6BD27B2",
+    "Purple woolen-M": "C8AF7254-AA24-4418-9BC4-D31C2A8E5C93",
+    "Pink woolen-M": "D84BA794-8617-4DCB-8071-3DEFAED7F9C7",
+    "Purple woolen-S": "E319B050-F3CD-4FD5-BA08-56DA0332969C",
+    "Grey-4XL": "E98AC608-A161-499C-AD27-EB06EFD2FF9A",
+    "Pink woolen-XXL": "F740AF33-4C9C-4705-8E32-CC9B7F5BD41B",
+    "Black-XL": "F7BB1CDB-B269-4BB0-994D-4084CA20D0B0",
+    "Blue woolen-3XL": "F7E23852-C905-4D3B-AAD8-6E657DA0BF81"
+   },
+   "vprice": {
+    "Purple woolen-3XL": 3499,
+    "Purple woolen-L": 3499,
+    "Pink woolen-S": 3499,
+    "Pink-S": 3499,
+    "Pink woolen-XL": 3499,
+    "Blue-3XL": 3499,
+    "Black-3XL": 3499,
+    "Pink-XL": 3499,
+    "Pink woolen-3XL": 3499,
+    "Pink-L": 3499,
+    "Purple woolen-XL": 3499,
+    "Pink woolen-L": 3499,
+    "Pink-M": 3499,
+    "Purple woolen-XXL": 3499,
+    "Blue-XXL": 3499,
+    "Grey-S": 3499,
+    "Grey-XL": 3499,
+    "Blue woolen-XL": 3499,
+    "Blue woolen-L": 3499,
+    "Blue-XL": 3499,
+    "Blue woolen-M": 3499,
+    "Blue-S": 3499,
+    "Black-L": 3499,
+    "Black-XXL": 3499,
+    "Black-4XL": 3499,
+    "Pink-3XL": 3499,
+    "Black-M": 3499,
+    "Blue woolen-S": 3499,
+    "Blue-M": 3499,
+    "Purple woolen-4XL": 3499,
+    "Pink-XXL": 3499,
+    "Blue-4XL": 3499,
+    "Pink woolen-4XL": 3499,
+    "Grey-3XL": 3499,
+    "Grey-M": 3499,
+    "Grey-XXL": 3499,
+    "Blue woolen-XXL": 3499,
+    "Pink-4XL": 3499,
+    "Black-S": 3499,
+    "Grey-L": 3499,
+    "Blue-L": 3499,
+    "Blue woolen-4XL": 3499,
+    "Purple woolen-M": 3499,
+    "Pink woolen-M": 3499,
+    "Purple woolen-S": 3499,
+    "Grey-4XL": 3499,
+    "Pink woolen-XXL": 3499,
+    "Black-XL": 3499,
+    "Blue woolen-3XL": 3499
+   }
+  },
+  "cj-24693760": {
+   "name": "Matching Owner & Pet Sweater",
+   "price": 4199,
+   "cj_pid": "1374253306024693760",
+   "colors": [
+    "Khaki",
+    "Black",
+    "Parent Black",
+    "Parent Khaki"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL",
+    "4XL"
+   ],
+   "variants": {
+    "Khaki-XS": "1374253307329122304",
+    "Khaki-S": "1374253307371065344",
+    "Khaki-M": "1374253307408814080",
+    "Khaki-L": "1374253307446562816",
+    "Khaki-XL": "1374253307484311552",
+    "Khaki-2XL": "1374253307522060288",
+    "Khaki-3XL": "1374253307564003328",
+    "Khaki-4XL": "1374253307601752064",
+    "Black-XS": "1374253307639500800",
+    "Black-S": "1374253307677249536",
+    "Black-M": "1374253307714998272",
+    "Black-L": "1374253307752747008",
+    "Black-XL": "1374253307790495744",
+    "Black-2XL": "1374253307828244480",
+    "Black-3XL": "1374253307865993216",
+    "Black-4XL": "1374253307903741952",
+    "Parent Black-One size": "1518437526317576192",
+    "Parent Khaki-One size": "1518437526317576193"
+   },
+   "vprice": {
+    "Khaki-XS": 4999,
+    "Khaki-S": 4999,
+    "Khaki-M": 4999,
+    "Khaki-L": 4999,
+    "Khaki-XL": 4999,
+    "Khaki-2XL": 4999,
+    "Khaki-3XL": 4999,
+    "Khaki-4XL": 4999,
+    "Black-XS": 4999,
+    "Black-S": 4999,
+    "Black-M": 4999,
+    "Black-L": 4999,
+    "Black-XL": 4999,
+    "Black-2XL": 4999,
+    "Black-3XL": 4999,
+    "Black-4XL": 4999,
+    "Parent Black-One size": 4199,
+    "Parent Khaki-One size": 4199
+   }
+  },
+  "cj-B01D9A06": {
+   "name": "Matching Owner & Pet Hoodie",
+   "price": 2399,
+   "cj_pid": "3F3A9B18-47D9-4AF8-9138-0674B01D9A06",
+   "colors": [
+    "Green",
+    "White",
+    "Pink"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL",
+    "3XL",
+    "4XL"
+   ],
+   "variants": {
+    "Green-XL": "01B1F658-C26C-4C55-9CBA-3DB14099F9DB",
+    "White-One size": "0A73F0C5-F988-4F0F-889A-2F32F0ACB868",
+    "Pink-L": "1B5EB8BA-3F29-434D-8BF7-46AF5F69C552",
+    "White-XL": "1EEC81F9-B317-46F2-82A4-3ACF5CDF3A3A",
+    "Green-3XL": "1F3F35FD-2B38-4FB8-9AD7-D8F125DC4D9C",
+    "Green-4XL": "39B70214-6750-4DF6-9AEE-13007D3C6A68",
+    "Pink-XXL": "46C9DF9D-FD46-4681-AC6B-C3CF180FAC89",
+    "White-M": "56F471D9-B3EB-4DCE-8D20-9173180A86B2",
+    "Pink-M": "5E7CEA99-9966-4F90-B085-4CB58969700B",
+    "Green-L": "67E50F9D-AA0F-49AF-BFA1-0C75C1EEF11B",
+    "White-3XL": "686E4A7A-FDF4-445F-A834-A4B8612BBC12",
+    "Green-XXL": "795DF82B-26E3-4F3A-BC42-4D946EFFD27E",
+    "Pink-3XL": "9E1E54B6-D815-4452-825B-DE23A9D99BB7",
+    "Green-S": "A49B0C19-5660-48A2-8542-3BCB1E87FDED",
+    "Pink-XL": "B8A0A985-498C-4615-981A-FA44B2424FA4",
+    "Green-M": "BBF0BBF6-717E-4B44-A9FE-BC2115253A9B",
+    "White-4XL": "BC5F6A1F-D467-4DEB-8DA3-9FBD76A82F1F",
+    "Pink-S": "C098835D-DB68-45A2-9CE0-C1CB0E3F7BA2",
+    "White-S": "C5A77D79-F46B-4096-9013-E5C9931CDEED",
+    "White-L": "CA5D39B3-9E2C-43F2-828E-C3F2B574D53F",
+    "White-XXL": "D430BB02-7DD9-49CC-B835-B8798E019C1E",
+    "Pink-4XL": "E39223AC-CA49-457C-BCDE-7E297F6671B4",
+    "Green-One size": "EA1C10E6-EC03-4F54-A8AD-49126B74F14F",
+    "Pink-One size": "F79E6153-AFA4-4242-9FA1-05954B762469"
+   },
+   "vprice": {
+    "Green-XL": 2399,
+    "White-One size": 3199,
+    "Pink-L": 2399,
+    "White-XL": 2399,
+    "Green-3XL": 2399,
+    "Green-4XL": 2399,
+    "Pink-XXL": 2399,
+    "White-M": 2399,
+    "Pink-M": 2399,
+    "Green-L": 2399,
+    "White-3XL": 2399,
+    "Green-XXL": 2399,
+    "Pink-3XL": 2399,
+    "Green-S": 2399,
+    "Pink-XL": 2399,
+    "Green-M": 2399,
+    "White-4XL": 2399,
+    "Pink-S": 2399,
+    "White-S": 2399,
+    "White-L": 2399,
+    "White-XXL": 2399,
+    "Pink-4XL": 2399,
+    "Green-One size": 3199,
+    "Pink-One size": 3199
+   }
+  },
+  "cj-35114752": {
+   "name": "Faux Leather Winter Jacket",
+   "price": 2999,
+   "cj_pid": "1472158115335114752",
+   "colors": [
+    "Black",
+    "Brown",
+    "Coffee"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Black-S": "1472158115439972352",
+    "Black-M": "1472158115456749568",
+    "Black-L": "1472158115460943872",
+    "Black-XL": "1472158115460943873",
+    "Brown-S": "1472158115465138176",
+    "Brown-M": "1472158115465138177",
+    "Brown-L": "1472158115469332480",
+    "Brown-XL": "1472158115469332481",
+    "Coffee-S": "1472158115469332482",
+    "Coffee-M": "1472158115473526784",
+    "Coffee-L": "1472158115473526785",
+    "Coffee-XL": "1472158115473526786"
+   },
+   "vprice": {
+    "Black-S": 2999,
+    "Black-M": 3099,
+    "Black-L": 3099,
+    "Black-XL": 3199,
+    "Brown-S": 2999,
+    "Brown-M": 3099,
+    "Brown-L": 3099,
+    "Brown-XL": 3199,
+    "Coffee-S": 2999,
+    "Coffee-M": 3099,
+    "Coffee-L": 3099,
+    "Coffee-XL": 3199
+   }
+  },
+  "cj-74555904": {
+   "name": "Velvet-lined Sweater",
+   "price": 2999,
+   "cj_pid": "1400300395074555904",
+   "colors": [
+    "Green",
+    "Blue"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "variants": {
+    "Green-S": "1400300396550950912",
+    "Green-M": "1400300396559339520",
+    "Green-L": "1400300396576116736",
+    "Green-XL": "1400300396584505344",
+    "Green-2XL": "1400300396592893952",
+    "Blue-S": "1400300396601282560",
+    "Blue-M": "1400300396605476864",
+    "Blue-L": "1400300396613865472",
+    "Blue-XL": "1400300396622254080",
+    "Blue-2XL": "1400300396626448384"
+   },
+   "vprice": {
+    "Green-S": 2999,
+    "Green-M": 2999,
+    "Green-L": 2999,
+    "Green-XL": 2999,
+    "Green-2XL": 2999,
+    "Blue-S": 2999,
+    "Blue-M": 2999,
+    "Blue-L": 2999,
+    "Blue-XL": 2999,
+    "Blue-2XL": 2999
+   }
+  },
+  "cj-29083822": {
+   "name": "Matching Striped Hoodie (Owner & Pet)",
+   "price": 2799,
+   "cj_pid": "AE302553-AAE6-4ED4-8182-133029083822",
+   "colors": [
+    "Red",
+    "Blue",
+    "Black"
+   ],
+   "sizes": [
+    "Pet",
+    "Parent"
+   ],
+   "variants": {
+    "Red-Pet": "E53C4180-BD37-41DC-B510-3412C9586DC4",
+    "Blue-Pet": "ED9916D2-3A0E-40CC-8C1B-2AC0DD9946AF",
+    "Black-Pet": "FC93B99A-3F1C-442A-BFC1-056E74A1FCE9",
+    "Red-Parent": "E77D299C-0C5C-495C-8909-7A28172C8F11",
+    "Blue-Parent": "F2370F14-F353-4E63-96F6-8DFFD365048E",
+    "Black-Parent": "F5808589-9DB0-405D-9F9A-0D16C0FDE158"
+   },
+   "vprice": {
+    "Red-Pet": 2799,
+    "Blue-Pet": 2799,
+    "Black-Pet": 2799,
+    "Red-Parent": 3799,
+    "Blue-Parent": 3799,
+    "Black-Parent": 3799
+   }
+  },
+  "cj-86503936": {
+   "name": "Thick Warm Hoodie",
+   "price": 2299,
+   "cj_pid": "1441692105486503936",
+   "colors": [
+    "Fuchsia",
+    "Pink",
+    "Turmeric",
+    "Mars Green"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Fuchsia-L": "1441948154634309632",
+    "Fuchsia-M": "1441948154646892544",
+    "Fuchsia-S": "1441948154655281152",
+    "Fuchsia-XL": "1441948154663669760",
+    "Fuchsia-XS": "1441948154672058368",
+    "Pink-L": "1441948154680446976",
+    "Pink-M": "1441948154693029888",
+    "Pink-S": "1441948154701418496",
+    "Pink-XL": "1441948154709807104",
+    "Pink-XS": "1441948154718195712",
+    "Turmeric-L": "1441948154726584320",
+    "Turmeric-M": "1441948154734972928",
+    "Turmeric-S": "1441948154747555840",
+    "Turmeric-XL": "1441948154755944448",
+    "Turmeric-XS": "1441948154764333056",
+    "Mars Green-L": "1441948154772721664",
+    "Mars Green-M": "1441948154781110272",
+    "Mars Green-S": "1441948154789498880",
+    "Mars Green-XL": "1441948154797887488",
+    "Mars Green-XS": "1441948154806276096"
+   },
+   "vprice": {
+    "Fuchsia-L": 2499,
+    "Fuchsia-M": 2399,
+    "Fuchsia-S": 2399,
+    "Fuchsia-XL": 2599,
+    "Fuchsia-XS": 2299,
+    "Pink-L": 2499,
+    "Pink-M": 2399,
+    "Pink-S": 2399,
+    "Pink-XL": 2599,
+    "Pink-XS": 2299,
+    "Turmeric-L": 2499,
+    "Turmeric-M": 2399,
+    "Turmeric-S": 2399,
+    "Turmeric-XL": 2599,
+    "Turmeric-XS": 2299,
+    "Mars Green-L": 2499,
+    "Mars Green-M": 2399,
+    "Mars Green-S": 2399,
+    "Mars Green-XL": 2599,
+    "Mars Green-XS": 2299
+   }
+  },
+  "cj-11618200": {
+   "name": "Winter Thick Coat",
+   "price": 4899,
+   "cj_pid": "2503141706311618200",
+   "colors": [
+    "Orange",
+    "Black"
+   ],
+   "sizes": [
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "variants": {
+    "Orange-M": "2503141706311618400",
+    "Orange-L": "2503141706311618500",
+    "Orange-XL": "2503141706311618700",
+    "Orange-2XL": "2503141706311618900",
+    "Orange-3XL": "2503141706311619000",
+    "Black-M": "2503141706311619200",
+    "Black-L": "2503141706311619300",
+    "Black-XL": "2503141706311619500",
+    "Black-2XL": "2503141706311619700",
+    "Black-3XL": "2503141706311619800"
+   },
+   "vprice": {
+    "Orange-M": 4899,
+    "Orange-L": 4899,
+    "Orange-XL": 5199,
+    "Orange-2XL": 5199,
+    "Orange-3XL": 5599,
+    "Black-M": 4899,
+    "Black-L": 4899,
+    "Black-XL": 5199,
+    "Black-2XL": 5199,
+    "Black-3XL": 5599
+   }
+  },
+  "cj-B0B2D0EE": {
+   "name": "Reflective Warm Coat",
+   "price": 4299,
+   "cj_pid": "77F0F438-260C-44C0-9F2E-DBB1B0B2D0EE",
+   "colors": [
+    "Purple",
+    "Black",
+    "Red",
+    "Blue"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL",
+    "3XL"
+   ],
+   "variants": {
+    "Purple-M": "04513F71-899F-4DFE-A294-A799D5345C7D",
+    "Black-XXL": "0DF47F21-8640-48EA-A584-2ADC8021B087",
+    "Red-L": "1E3AC211-14F8-438E-BC80-A85F5EDB155C",
+    "Purple-XXL": "1F993C39-F6EA-4B5C-887D-53BA4AB84605",
+    "Red-S": "355A680A-D978-4745-915A-8D3B67CD7169",
+    "Black-XL": "3D16140E-581B-4841-93B0-0B006D045358",
+    "Black-S": "490A0BDB-A1A2-49F4-999D-680C185118F5",
+    "Red-M": "4E8A221C-15B0-430E-B406-9E3D746125F8",
+    "Black-L": "6F0AFD00-3809-46FC-8BCD-EB03BBC1D2B2",
+    "Blue-S": "7BEF481A-B88A-4D71-9141-5308802E91F7",
+    "Purple-XL": "80068740-00C0-4332-B283-F17CCB6038F2",
+    "Black-M": "84CBB7E8-7331-4708-A30E-951405DE3E7B",
+    "Black-3XL": "9382F887-9521-40C7-BCD8-ACD8AAB51339",
+    "Blue-XXL": "9CC8D2CB-AE5F-45B8-A172-8718D1CD8AF5",
+    "Blue-L": "A32ECC01-9BCE-4DFC-8749-3FE92F0B6C71",
+    "Red-XL": "A79630B0-F932-43D9-83C2-23615F8EF85E",
+    "Blue-XL": "B33C50FC-7AB8-4FC4-A69D-043DF250BE2F",
+    "Purple-S": "BBD67ED4-4455-4533-9ED4-20F00B40449B",
+    "Red-XXL": "C080B03A-F418-460A-879A-E881A346ED3E",
+    "Purple-L": "C883DBA8-C88D-48D1-88D5-3C1EE82CB136",
+    "Blue-3XL": "D1EA034A-CF4E-4BF3-8751-C7B9A1640E5F",
+    "Purple-3XL": "E9C8FCBD-6CFC-466C-AD32-36934B18475C",
+    "Blue-M": "EB90B62F-88DA-4EAC-8530-6F8CAF6449F1",
+    "Red-3XL": "EDB30FD6-D1FF-4F22-BF24-022963AB9D94"
+   },
+   "vprice": {
+    "Purple-M": 4399,
+    "Black-XXL": 5099,
+    "Red-L": 4599,
+    "Purple-XXL": 5099,
+    "Red-S": 4299,
+    "Black-XL": 4899,
+    "Black-S": 4299,
+    "Red-M": 4399,
+    "Black-L": 4599,
+    "Blue-S": 4299,
+    "Purple-XL": 4899,
+    "Black-M": 4399,
+    "Black-3XL": 5299,
+    "Blue-XXL": 5099,
+    "Blue-L": 4599,
+    "Red-XL": 4899,
+    "Blue-XL": 4899,
+    "Purple-S": 4299,
+    "Red-XXL": 5099,
+    "Purple-L": 4599,
+    "Blue-3XL": 5299,
+    "Purple-3XL": 5299,
+    "Blue-M": 4399,
+    "Red-3XL": 5299
+   }
+  },
+  "cj-12030208": {
+   "name": "Winter Zipper Coat",
+   "price": 2399,
+   "cj_pid": "1740988991912030208",
+   "colors": [
+    "Black",
+    "White"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "variants": {
+    "Black-XS": "1740988992025276416",
+    "Black-S": "1740988992113356800",
+    "Black-M": "1740988992201437184",
+    "Black-L": "1740988992289517568",
+    "Black-XL": "1740988992373403648",
+    "Black-2XL": "1740988992457289728",
+    "Black-3XL": "1740988992545370112",
+    "White-XS": "1740988992629256192",
+    "White-S": "1740988992750891008",
+    "White-M": "1740988992847360000",
+    "White-L": "1740988992935440384",
+    "White-XL": "1740988993031909376",
+    "White-2XL": "1740988993124184064",
+    "White-3XL": "1740988993212264448"
+   },
+   "vprice": {
+    "Black-XS": 2399,
+    "Black-S": 2399,
+    "Black-M": 2399,
+    "Black-L": 2399,
+    "Black-XL": 2399,
+    "Black-2XL": 2399,
+    "Black-3XL": 2399,
+    "White-XS": 2399,
+    "White-S": 2399,
+    "White-M": 2399,
+    "White-L": 2399,
+    "White-XL": 2399,
+    "White-2XL": 2399,
+    "White-3XL": 2399
+   }
+  },
+  "cj-26757632": {
+   "name": "Camo Puffer Jacket",
+   "price": 5999,
+   "cj_pid": "1726538511026757632",
+   "colors": [
+    "White Camo",
+    "Creamy White",
+    "Dark Blue"
+   ],
+   "sizes": [
+    "M",
+    "L",
+    "XL",
+    "XXL",
+    "XXXL",
+    "FB"
+   ],
+   "variants": {
+    "White Camo-M": "1726538511186141184",
+    "White Camo-L": "1726538511307776000",
+    "White Camo-XL": "1726538511446188032",
+    "White Camo-FB": "1726538511559434240",
+    "White Camo-XXL": "1726538511668486144",
+    "White Camo-XXXL": "1726538511769149440",
+    "Creamy White-M": "1726538511874007040",
+    "Creamy White-L": "1726538511991447552",
+    "Creamy White-XL": "1726538512092110848",
+    "Creamy White-FB": "1726538512196968448",
+    "Creamy White-XXL": "1726538512326991872",
+    "Creamy White-XXXL": "1726538512436043776",
+    "Dark Blue-M": "1726538512545095680",
+    "Dark Blue-L": "1726538512645758976",
+    "Dark Blue-XL": "1726538512742227968",
+    "Dark Blue-FB": "1726538512847085568",
+    "Dark Blue-XXL": "1726538512964526080",
+    "Dark Blue-XXXL": "1726538513065189376"
+   },
+   "vprice": {
+    "White Camo-M": 5999,
+    "White Camo-L": 5999,
+    "White Camo-XL": 5999,
+    "White Camo-FB": 6299,
+    "White Camo-XXL": 6699,
+    "White Camo-XXXL": 6899,
+    "Creamy White-M": 5999,
+    "Creamy White-L": 5999,
+    "Creamy White-XL": 5999,
+    "Creamy White-FB": 6299,
+    "Creamy White-XXL": 6699,
+    "Creamy White-XXXL": 6899,
+    "Dark Blue-M": 5999,
+    "Dark Blue-L": 5999,
+    "Dark Blue-XL": 5999,
+    "Dark Blue-FB": 6299,
+    "Dark Blue-XXL": 6699,
+    "Dark Blue-XXXL": 6899
+   }
+  },
+  "cj-37363E3D": {
+   "name": "Sweet Suspender Dress",
+   "price": 2299,
+   "cj_pid": "AC7C7D02-C773-4B7A-B4BF-E5A637363E3D",
+   "colors": [
+    "Pink",
+    "Beige",
+    "Blue"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Pink-M": "08B6DF10-589C-462A-93A8-5534D6BC58D8",
+    "Beige-XXL": "0C412953-A2D6-4FCB-9879-E62F1B7DC095",
+    "Blue-XXL": "10B94C4D-A63C-4D14-9FD4-00E3431EE75A",
+    "Blue-L": "1DC3E761-051C-45A3-B415-71E45CE89825",
+    "Beige-XL": "586C3E37-3008-407B-8AC7-A8651C3AE1DA",
+    "Beige-L": "82A25855-618D-4BB3-8405-C5D2675558E2",
+    "Pink-S": "9CA4FDF7-6F9F-4127-8A07-939AC8054BF8",
+    "Beige-S": "A4270951-CD16-4DBF-AC27-EDC59461CE36",
+    "Pink-XXL": "A5124719-82BF-4C3B-9A7C-05A91B89FC68",
+    "Pink-L": "A602520C-8ED1-42BE-87BD-84D97DAE269B",
+    "Blue-XL": "B1BAEA6F-CED3-42B3-9C2B-408A62A96644",
+    "Pink-XL": "BDC06534-D868-4674-94CD-CB4007B54DF9",
+    "Beige-M": "D66645F0-94FA-47E5-A358-30CCFF2CFB91",
+    "Blue-M": "DD50A17F-CC83-42BA-A3B7-0F3C408CB84B",
+    "Blue-S": "FD90CD07-078F-43DF-8445-4EB22D0C158C"
+   },
+   "vprice": {
+    "Pink-M": 2299,
+    "Beige-XXL": 2299,
+    "Blue-XXL": 2299,
+    "Blue-L": 2299,
+    "Beige-XL": 2299,
+    "Beige-L": 2299,
+    "Pink-S": 2299,
+    "Beige-S": 2299,
+    "Pink-XXL": 2299,
+    "Pink-L": 2299,
+    "Blue-XL": 2299,
+    "Pink-XL": 2299,
+    "Beige-M": 2299,
+    "Blue-M": 2299,
+    "Blue-S": 2299
+   }
+  },
+  "cj-65923072": {
+   "name": "Little Black Dress",
+   "price": 2799,
+   "cj_pid": "1572068231265923072",
+   "colors": [
+    "White"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "White-S": "1572068231328837632",
+    "White-M": "1572068231333031936",
+    "White-L": "1572068231333031937",
+    "White-XL": "1572068231337226240"
+   },
+   "vprice": {
+    "White-S": 2799,
+    "White-M": 2799,
+    "White-L": 2799,
+    "White-XL": 2799
+   }
+  },
+  "cj-02076160": {
+   "name": "Snowflake Dress",
+   "price": 2199,
+   "cj_pid": "1430741264202076160",
+   "colors": [
+    "Pink",
+    "Green"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "variants": {
+    "Pink-XS": "1430741264264990720",
+    "Pink-S": "1430741264273379328",
+    "Pink-M": "1430741264290156544",
+    "Pink-L": "1430741264298545152",
+    "Pink-2XL": "1430741264306933760",
+    "Green-XS": "1430741264315322368",
+    "Green-S": "1430741264323710976",
+    "Green-M": "1430741264332099584",
+    "Green-L": "1430741264340488192",
+    "Green-XL": "1430741264353071104",
+    "Green-2XL": "1430741264361459712"
+   },
+   "vprice": {
+    "Pink-XS": 2199,
+    "Pink-S": 2299,
+    "Pink-M": 2399,
+    "Pink-L": 2399,
+    "Pink-2XL": 2599,
+    "Green-XS": 2199,
+    "Green-S": 2299,
+    "Green-M": 2399,
+    "Green-L": 2399,
+    "Green-XL": 2499,
+    "Green-2XL": 2599
+   }
+  },
+  "cj-74253312": {
+   "name": "Christmas Cape",
+   "price": 2199,
+   "cj_pid": "1854719252474253312",
+   "colors": [
+    "GREEN",
+    "RED"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L"
+   ],
+   "variants": {
+    "GREEN-S": "1854719253074038784",
+    "RED-S": "1854719253074038787",
+    "RED-M": "1854719253074038788",
+    "RED-L": "1854719253074038789"
+   },
+   "vprice": {
+    "GREEN-S": 2199,
+    "RED-S": 2199,
+    "RED-M": 2199,
+    "RED-L": 2199
+   }
+  },
+  "cj-53469440": {
+   "name": "Lace Mesh Dress",
+   "price": 2099,
+   "cj_pid": "1757242574353469440",
+   "colors": [
+    "Dream Purple Gradient"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Dream Purple Gradient-XS": "1757242574412189696",
+    "Dream Purple Gradient-S": "1757242574454132736",
+    "Dream Purple Gradient-M": "1757242574500270080",
+    "Dream Purple Gradient-L": "1757242574546407424",
+    "Dream Purple Gradient-XL": "1757242574609321984"
+   },
+   "vprice": {
+    "Dream Purple Gradient-XS": 2099,
+    "Dream Purple Gradient-S": 2099,
+    "Dream Purple Gradient-M": 2099,
+    "Dream Purple Gradient-L": 2099,
+    "Dream Purple Gradient-XL": 2099
+   }
+  },
+  "cj-38376448": {
+   "name": "Cotton Printed Dress",
+   "price": 2599,
+   "cj_pid": "1406909234838376448",
+   "colors": [
+    "Red",
+    "Green",
+    "Color",
+    "Yellow"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "variants": {
+    "Red-XS": "1406909236620955648",
+    "Red-S": "1406909236679675904",
+    "Red-M": "1406909236709036032",
+    "Red-L": "1406909236776144896",
+    "Red-XL": "1406909236801310720",
+    "Red-2XL": "1406909236830670848",
+    "Green-XS": "1406909236860030976",
+    "Green-S": "1406909236881002496",
+    "Green-M": "1406909236901974016",
+    "Green-L": "1406909236927139840",
+    "Green-XL": "1406909236943917056",
+    "Green-2XL": "1406909236960694272",
+    "Color-XS": "1406909236977471488",
+    "Color-S": "1406909236994248704",
+    "Color-M": "1406909237006831616",
+    "Color-L": "1406909237019414528",
+    "Color-XL": "1406909237036191744",
+    "Color-2XL": "1406909237052968960",
+    "Yellow-XS": "1406909237069746176",
+    "Yellow-S": "1406909237082329088",
+    "Yellow-M": "1406909237099106304",
+    "Yellow-L": "1406909237111689216",
+    "Yellow-XL": "1406909237124272128",
+    "Yellow-2XL": "1406909237149437952"
+   },
+   "vprice": {
+    "Red-XS": 2599,
+    "Red-S": 2599,
+    "Red-M": 2599,
+    "Red-L": 2599,
+    "Red-XL": 2599,
+    "Red-2XL": 2599,
+    "Green-XS": 2599,
+    "Green-S": 2599,
+    "Green-M": 2599,
+    "Green-L": 2599,
+    "Green-XL": 2599,
+    "Green-2XL": 2599,
+    "Color-XS": 2599,
+    "Color-S": 2599,
+    "Color-M": 2599,
+    "Color-L": 2599,
+    "Color-XL": 2599,
+    "Color-2XL": 2599,
+    "Yellow-XS": 2599,
+    "Yellow-S": 2599,
+    "Yellow-M": 2599,
+    "Yellow-L": 2599,
+    "Yellow-XL": 2599,
+    "Yellow-2XL": 2599
+   }
+  },
+  "cj-75529472": {
+   "name": "Mint Green Plaid Dress",
+   "price": 5599,
+   "cj_pid": "1472810136375529472",
+   "colors": [
+    "Mint Green"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Mint Green-XS": "1472810136438444032",
+    "Mint Green-S": "1472810136442638336",
+    "Mint Green-M": "1472810136446832640",
+    "Mint Green-L": "1472810136446832641",
+    "Mint Green-XL": "1472810136455221248"
+   },
+   "vprice": {
+    "Mint Green-XS": 5599,
+    "Mint Green-S": 5999,
+    "Mint Green-M": 6299,
+    "Mint Green-L": 6599,
+    "Mint Green-XL": 6899
+   }
+  },
+  "cj-53090048": {
+   "name": "Maid Dress Set with Hat",
+   "price": 2999,
+   "cj_pid": "1601475359353090048",
+   "colors": [
+    "Clothes and hat",
+    "Only Clothes"
+   ],
+   "sizes": [
+    "XXS",
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL",
+    "M Plus",
+    "L Plus"
+   ],
+   "variants": {
+    "Clothes and hat-XXS": "1601512252857921536",
+    "Clothes and hat-XS": "1601512252862115840",
+    "Clothes and hat-S": "1601512252862115841",
+    "Clothes and hat-M": "1601512252866310144",
+    "Clothes and hat-M Plus": "1601512252866310145",
+    "Clothes and hat-L": "1601512252866310146",
+    "Clothes and hat-L Plus": "1601512252870504448",
+    "Clothes and hat-XL": "1601512252870504449",
+    "Clothes and hat-XL Plus": "1601512252870504450",
+    "Clothes and hat-XXL": "1601512252874698752",
+    "Only Clothes-XXS": "1601512252874698753",
+    "Only Clothes-XS": "1601512252874698754",
+    "Only Clothes-S": "1601512252874698755",
+    "Only Clothes-M": "1601512252878893056",
+    "Only Clothes-M Plus": "1601512252878893057",
+    "Only Clothes-L": "1601512252878893058",
+    "Only Clothes-L Plus": "1601512252883087360",
+    "Only Clothes-XL": "1601512252883087361",
+    "Only Clothes-XL Plus": "1601512252883087362",
+    "Only Clothes-XXL Plus": "1601512252887281664"
+   },
+   "vprice": {
+    "Clothes and hat-XXS": 3699,
+    "Clothes and hat-XS": 3699,
+    "Clothes and hat-S": 4099,
+    "Clothes and hat-M": 4099,
+    "Clothes and hat-M Plus": 4399,
+    "Clothes and hat-L": 4399,
+    "Clothes and hat-L Plus": 4699,
+    "Clothes and hat-XL": 4699,
+    "Clothes and hat-XL Plus": 5099,
+    "Clothes and hat-XXL": 5099,
+    "Only Clothes-XXS": 2999,
+    "Only Clothes-XS": 2999,
+    "Only Clothes-S": 3399,
+    "Only Clothes-M": 3399,
+    "Only Clothes-M Plus": 3699,
+    "Only Clothes-L": 3699,
+    "Only Clothes-L Plus": 3999,
+    "Only Clothes-XL": 3999,
+    "Only Clothes-XL Plus": 4399,
+    "Only Clothes-XXL Plus": 4399
+   }
+  },
+  "cj-31568384": {
+   "name": "Warm Velvet Dress",
+   "price": 2399,
+   "cj_pid": "1574630867031568384",
+   "colors": [
+    "Black"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "FB",
+    "FB2"
+   ],
+   "variants": {
+    "Black-S": "1574630867060928512",
+    "Black-M": "1574630867060928513",
+    "Black-L": "1574630867065122816",
+    "Black-XL": "1574630867065122817",
+    "Black-2XL": "1574630867065122818",
+    "Black-FB": "1574630867069317120",
+    "Black-FB2": "1574630867069317121"
+   },
+   "vprice": {
+    "Black-S": 2399,
+    "Black-M": 2399,
+    "Black-L": 2399,
+    "Black-XL": 2399,
+    "Black-2XL": 2399,
+    "Black-FB": 2399,
+    "Black-FB2": 2399
+   }
+  },
+  "cj-25513216": {
+   "name": "Light Summer Dress",
+   "price": 2399,
+   "cj_pid": "1479342467525513216",
+   "colors": [
+    "Color"
+   ],
+   "sizes": [
+    "XXS",
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "Size1",
+    "Size2",
+    "Size3"
+   ],
+   "variants": {
+    "Color-XXS": "1479342467647148032",
+    "Color-XS": "1479342467651342336",
+    "Color-S": "1479342467655536640",
+    "Color-M": "1479342467655536641",
+    "Color-L": "1479342467659730944",
+    "Color-XL": "1479342467659730945",
+    "Color-2XL": "1479342467663925248",
+    "Color-Size1": "1479342467663925249",
+    "Color-Size2": "1479342467668119552",
+    "Color-Size3": "1479342467668119553"
+   },
+   "vprice": {
+    "Color-XXS": 2399,
+    "Color-XS": 2399,
+    "Color-S": 2399,
+    "Color-M": 2399,
+    "Color-L": 2399,
+    "Color-XL": 2399,
+    "Color-2XL": 2399,
+    "Color-Size1": 2399,
+    "Color-Size2": 2399,
+    "Color-Size3": 2399
+   }
+  },
+  "cj-EFADE5B7": {
+   "name": "Wool Winter Dress",
+   "price": 1999,
+   "cj_pid": "7F625A02-5ADB-470B-B7BB-2EAEEFADE5B7",
+   "colors": [
+    "Blue"
+   ],
+   "sizes": [
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "variants": {
+    "Blue-2XL": "6B935269-12D5-4E48-B1F5-B674D5BCC2F9",
+    "Blue-XL": "C7157747-9578-4A94-BB65-F13359CBD836",
+    "Blue-3XL": "F18191DF-0794-4454-878A-4374AD6BECCE"
+   },
+   "vprice": {
+    "Blue-2XL": 1999,
+    "Blue-XL": 1999,
+    "Blue-3XL": 1999
+   }
+  },
+  "cj-31621000": {
+   "name": "Winter Cotton Padded Dress",
+   "price": 2499,
+   "cj_pid": "2506270519431621000",
+   "colors": [
+    "Dark Green",
+    "Brown"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Dark Green-XS": "2506270519431621200",
+    "Dark Green-S": "2506270519431621400",
+    "Dark Green-M": "2506270519431621600",
+    "Dark Green-L": "2506270519431621800",
+    "Dark Green-XL": "2506270519431622000",
+    "Brown-XS": "2506270519431622100",
+    "Brown-S": "2506270519431622300",
+    "Brown-M": "2506270519431622500",
+    "Brown-L": "2506270519431622600",
+    "Brown-XL": "2506270519431622800"
+   },
+   "vprice": {
+    "Dark Green-XS": 2499,
+    "Dark Green-S": 2499,
+    "Dark Green-M": 2499,
+    "Dark Green-L": 2499,
+    "Dark Green-XL": 2499,
+    "Brown-XS": 2499,
+    "Brown-S": 2499,
+    "Brown-M": 2499,
+    "Brown-L": 2499,
+    "Brown-XL": 2499
+   }
+  },
+  "cj-12449792": {
+   "name": "Creative Plaid Set",
+   "price": 2199,
+   "cj_pid": "1747547676012449792",
+   "colors": [
+    "Blue",
+    "Green"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Blue-XS": "1747547676574486528",
+    "Blue-S": "1747547676712898560",
+    "Blue-M": "1747547676918419456",
+    "Blue-L": "1747547677077803008",
+    "Blue-XL": "1747547677295906816",
+    "Blue-XXL": "1747547677451096064",
+    "Green-XS": "1747547677555953664",
+    "Green-S": "1747547677899886592",
+    "Green-M": "1747547678168322048",
+    "Green-L": "1747547678256402432",
+    "Green-XL": "1747547678411591680",
+    "Green-XXL": "1747547678545809408"
+   },
+   "vprice": {
+    "Blue-XS": 2199,
+    "Blue-S": 2199,
+    "Blue-M": 2199,
+    "Blue-L": 2199,
+    "Blue-XL": 2199,
+    "Blue-XXL": 2199,
+    "Green-XS": 2199,
+    "Green-S": 2199,
+    "Green-M": 2199,
+    "Green-L": 2199,
+    "Green-XL": 2199,
+    "Green-XXL": 2199
+   }
+  },
+  "cj-87561728": {
+   "name": "Fashionable Christmas Red Dress",
+   "price": 1999,
+   "cj_pid": "1455041465087561728",
+   "colors": [
+    "Red"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Red-XS": "1455041465179836416",
+    "Red-S": "1455041465184030720",
+    "Red-M": "1455041465184030721",
+    "Red-L": "1455041465188225024",
+    "Red-XL": "1455041465188225025"
+   },
+   "vprice": {
+    "Red-XS": 1999,
+    "Red-S": 1999,
+    "Red-M": 1999,
+    "Red-L": 1999,
+    "Red-XL": 1999
+   }
+  },
+  "cj-07382528": {
+   "name": "Polka Dot Period Dress",
+   "price": 2599,
+   "cj_pid": "1371313220207382528",
+   "colors": [
+    "Pink",
+    "Purple"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Pink-S": "1371313221742497792",
+    "Pink-M": "1371313221801218048",
+    "Pink-L": "1371313221859938304",
+    "Pink-XL": "1371313221918658560",
+    "Pink-XXL": "1371313221977378816",
+    "Purple-S": "1371313222036099072",
+    "Purple-M": "1371313222099013632",
+    "Purple-L": "1371313222157733888",
+    "Purple-XL": "1371313222216454144",
+    "Purple-XXL": "1371313222275174400"
+   },
+   "vprice": {
+    "Pink-S": 2599,
+    "Pink-M": 2599,
+    "Pink-L": 2599,
+    "Pink-XL": 2599,
+    "Pink-XXL": 2599,
+    "Purple-S": 2599,
+    "Purple-M": 2599,
+    "Purple-L": 2599,
+    "Purple-XL": 2599,
+    "Purple-XXL": 2599
+   }
+  },
+  "cj-CA087DF3": {
+   "name": "Non Slip Wear Boots",
+   "price": 4899,
+   "cj_pid": "C77D16F5-5E8E-4427-9B9F-61F7CA087DF3",
+   "colors": [
+    "Red",
+    "Black",
+    "Red 2",
+    "Orange"
+   ],
+   "sizes": [],
+   "variants": {
+    "Red-7 Number": "0323FBE6-6CB0-4DA4-B600-5D5DDD197D67",
+    "Black-5 Number": "0C0CA4F1-D46A-4135-B40A-8096F91CBD25",
+    "Red 2-2 Number": "2601120610051635800",
+    "Red-4 Number": "3C1BC7FB-2568-4EAA-BF40-8D97A48D1A3E",
+    "Black-4 Number": "4DCCFF3E-960F-4856-ADDA-54990581B577",
+    "Orange-8 Number": "4F1FD8E8-DD5A-484E-A3AA-561E9116B8A7",
+    "Red-6 Number": "59C69DE6-2D43-4FFF-B848-FE1BD8879DE4",
+    "Orange-2 Number": "5CD16C63-5166-4F74-8A78-E103882DE294",
+    "Black-3 Number": "92D6C693-7216-43C1-A3AC-2BB6FABBBA71",
+    "Orange-5 Number": "935EE894-75D2-4555-89D8-D40E39F1FBAE",
+    "Orange-1 Number": "9601DE79-1611-4E68-AEF4-529597D547F2",
+    "Black-1 Number": "A6442588-F7A1-4280-8E6D-79D44DC3F50D",
+    "Red-2 Number": "A8421AEC-7367-4B53-A4CF-C4BFC82321DF",
+    "Black-6 Number": "AE2924AD-522B-459A-BCD3-7255E744770A",
+    "Red-1 Number": "B3C77921-43AE-42CE-8A64-169C608FE05C",
+    "Orange-3 Number": "D2076E0D-58F7-4148-B4BB-34F0C234B992",
+    "Black-7 Number": "D953022E-F8B4-4BEA-B7CF-D3B479A676B1",
+    "Red-5 Number": "DADD1D48-E868-46CA-8ED6-77F14939F8CE",
+    "Red-3 Number": "DADD1F01-9EAD-4CF7-BCFE-5EA3953E1955",
+    "Orange-4 Number": "DF257D5C-822B-40C1-AB5C-30B28E1C2B5E",
+    "Red-8 Number": "E14D974D-471E-45C1-AE3B-9A03D4042C8B",
+    "Orange-7 Number": "E7003387-1F12-4718-96AB-1FCCE06389E8",
+    "Black-8 Number": "EC31C82F-F95A-45E4-A101-1F84745B466C",
+    "Orange-6 Number": "FD3BDED1-C6A9-4E91-AC01-AEC9A3EB5414",
+    "Black-2 Number": "FDBAE7ED-822A-4289-B654-6F3E1B54ED45"
+   },
+   "vprice": {
+    "Red-7 Number": 4899,
+    "Black-5 Number": 4899,
+    "Red 2-2 Number": 6099,
+    "Red-4 Number": 4899,
+    "Black-4 Number": 4899,
+    "Orange-8 Number": 4899,
+    "Red-6 Number": 4899,
+    "Orange-2 Number": 4899,
+    "Black-3 Number": 4899,
+    "Orange-5 Number": 4899,
+    "Orange-1 Number": 4899,
+    "Black-1 Number": 4899,
+    "Red-2 Number": 4899,
+    "Black-6 Number": 4899,
+    "Red-1 Number": 4899,
+    "Orange-3 Number": 4899,
+    "Black-7 Number": 4899,
+    "Red-5 Number": 4899,
+    "Red-3 Number": 4899,
+    "Orange-4 Number": 4899,
+    "Red-8 Number": 4899,
+    "Orange-7 Number": 4899,
+    "Black-8 Number": 4899,
+    "Orange-6 Number": 4899,
+    "Black-2 Number": 4899
+   }
+  },
+  "cj-368F439A": {
+   "name": "Red Boots",
+   "price": 2099,
+   "cj_pid": "FF8EFDFF-50DB-4A94-AE2D-BEFB368F439A",
+   "colors": [
+    "Red"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "variants": {
+    "Red-XL": "236F3F00-5812-4823-95B1-80FA75C9AF66",
+    "Red-M": "349DC6B2-39AD-41C0-81C1-BF0BA688BC90",
+    "Red-L": "7960FB20-C18F-48D9-8294-9C8852BE8A95",
+    "Red-S": "AE361207-90F1-4A91-9F72-5C0D8D2B91AF",
+    "Red-2XL": "D7BADCBA-3966-4494-84EA-C9AB10F7871E"
+   },
+   "vprice": {
+    "Red-XL": 2199,
+    "Red-M": 2199,
+    "Red-L": 2199,
+    "Red-S": 2199,
+    "Red-2XL": 2099
+   }
+  },
+  "cj-F5CA04FE": {
+   "name": "Waterproof Winter Boots",
+   "price": 2299,
+   "cj_pid": "643822AA-37DE-48FA-AFEF-A1CEF5CA04FE",
+   "colors": [
+    "Color orange",
+    "Brown",
+    "Blue",
+    "Red",
+    "Leopard",
+    "Pink"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Color orange-XL": "18AD9BA8-2F21-456E-BBA5-1C7776EAC06E",
+    "Brown-L": "325B4998-D46D-41D6-AF73-353C4EBF16D1",
+    "Blue-M": "4115A216-63D1-4B2D-BBEC-ABCA237C144B",
+    "Blue-S": "4F72BB63-4C31-4285-816C-0954318D6E9A",
+    "Red-S": "50F65A5C-42A5-40C8-BF72-74AB64DDD8B4",
+    "Leopard-L": "6D786A24-FBB7-4A34-95AD-B753CF6D29D4",
+    "Pink-L": "71931288-B76D-4DA5-BF68-64D6EC01AB77",
+    "Leopard-XL": "89FDF345-2444-41F4-9F4F-478F1C3D34FE",
+    "Red-L": "92103962-64E0-48A5-B78D-CB779AE36658",
+    "Brown-S": "9924BF81-D453-4CD4-9FBD-FC92D780CCC9",
+    "Pink-M": "AB27B609-A5BD-469A-8F5F-E692AA018231",
+    "Pink-S": "AE2E3517-1DA4-4A22-8E5F-F05D9829F82D",
+    "Blue-XL": "B2F5DA8B-357C-494E-83D8-C04BBF083E47",
+    "Brown-XL": "B848772A-10F6-46DE-8DFA-BCF01CB453E8",
+    "Brown-M": "BA1FE0D9-A3EA-49C8-AFC9-1E87507CD0DF",
+    "Pink-XL": "C1B1AE59-C0E0-4879-8E09-996483F6C6D4",
+    "Red-XL": "C62FCF68-FCE8-4F00-B509-A866627F9638",
+    "Leopard-S": "CA1591B4-978B-4FA6-915D-7EE96BFDE15D",
+    "Red-M": "CE705AA5-388C-4893-9333-3209BF73EF01",
+    "Blue-L": "D326E020-2762-460D-AF8D-7D56514E3FDE",
+    "Color orange-S": "DA0B1E23-36A1-4014-8ED8-D58B300884D5",
+    "Color orange-M": "DD3B117E-4F2B-41DC-8E4E-0A591426515A",
+    "Color orange-L": "EC97BEEB-678F-454F-B661-E76D1BFCD332",
+    "Leopard-M": "FB1CD348-4899-400B-99B0-139C07D1C8B2"
+   },
+   "vprice": {
+    "Color orange-XL": 2299,
+    "Brown-L": 2299,
+    "Blue-M": 2299,
+    "Blue-S": 2299,
+    "Red-S": 2299,
+    "Leopard-L": 2299,
+    "Pink-L": 2299,
+    "Leopard-XL": 2299,
+    "Red-L": 2299,
+    "Brown-S": 2299,
+    "Pink-M": 2299,
+    "Pink-S": 2299,
+    "Blue-XL": 2299,
+    "Brown-XL": 2299,
+    "Brown-M": 2299,
+    "Pink-XL": 2299,
+    "Red-XL": 2299,
+    "Leopard-S": 2299,
+    "Red-M": 2299,
+    "Blue-L": 2299,
+    "Color orange-S": 2299,
+    "Color orange-M": 2299,
+    "Color orange-L": 2299,
+    "Leopard-M": 2299
+   }
+  },
+  "cj-874C3C43": {
+   "name": "Cowboy Boots",
+   "price": 2299,
+   "cj_pid": "FA0F2F46-0B7B-4C03-A655-EE55874C3C43",
+   "colors": [
+    "Blue"
+   ],
+   "sizes": [],
+   "variants": {
+    "Blue-Number 5": "346C7803-1193-4747-B437-2CE9CAEAC73F",
+    "Blue-Number 3": "384169CC-BD9C-4FCD-ABDE-30CF484EE59A",
+    "Blue-Number 4": "4D2DD474-C805-42E3-AF0D-8D5EFD818FC8",
+    "Blue-Number 1": "8FA62A80-2C74-4A06-947D-CCB845879B45",
+    "Blue-Number 2": "BA27D64B-893F-4A32-AADF-AC6583F08F14"
+   },
+   "vprice": {
+    "Blue-Number 5": 2299,
+    "Blue-Number 3": 2299,
+    "Blue-Number 4": 2299,
+    "Blue-Number 1": 2299,
+    "Blue-Number 2": 2299
+   }
+  },
+  "cj-ED200D73": {
+   "name": "Cowboy Canvas Boots",
+   "price": 2099,
+   "cj_pid": "70468009-EB75-43C8-8F1B-46C0ED200D73",
+   "colors": [
+    "Navy blue",
+    "Pink"
+   ],
+   "sizes": [
+    "1 yard"
+   ],
+   "variants": {
+    "Navy blue-3 yards": "1D762213-5B57-4152-B093-F743BC265BAE",
+    "Navy blue-1 yard": "443CAA1F-B5BD-4CCA-9F56-A75B213617DB",
+    "Pink-3 yards": "65FEF58A-D140-4477-A71F-EEDA28FAF238",
+    "Pink-2 yards": "858A45CD-296B-46E6-859D-1CFCDE1A9D99",
+    "Pink-1 yard": "89A8D7EF-A378-45E4-907B-735F370F3680",
+    "Navy blue-5 yards": "8B77D524-D9CE-4345-BC52-0F4E8FD68610",
+    "Navy blue-2 yards": "903D85AF-9785-45FE-96F8-683B3C7CB6A1",
+    "Pink-4 yards": "C819E9CA-6475-4346-8E2A-0567A32D5D1C",
+    "Pink-5 yards": "D5268CE6-00C6-4007-AAD2-27D95F436552",
+    "Navy blue-4 yards": "D8A15BAD-C98D-43C1-ABE0-261FA8FC97F4"
+   },
+   "vprice": {
+    "Navy blue-3 yards": 2099,
+    "Navy blue-1 yard": 2099,
+    "Pink-3 yards": 2099,
+    "Pink-2 yards": 2099,
+    "Pink-1 yard": 2099,
+    "Navy blue-5 yards": 2099,
+    "Navy blue-2 yards": 2099,
+    "Pink-4 yards": 2099,
+    "Pink-5 yards": 2099,
+    "Navy blue-4 yards": 2099
+   }
+  },
+  "cj-0F951C69": {
+   "name": "Waterproof Booties",
+   "price": 2299,
+   "cj_pid": "EE850711-1DC7-497C-A020-192A0F951C69",
+   "colors": [
+    "Brown",
+    "Orange",
+    "Black",
+    "Green",
+    "Dark Blue",
+    "Blue",
+    "Purple"
+   ],
+   "sizes": [
+    "2",
+    "6",
+    "3",
+    "1",
+    "0",
+    "4",
+    "5"
+   ],
+   "variants": {
+    "Brown-2": "01EEA1A7-4E6D-4C03-B74F-1E8ED8F18D9B",
+    "Orange-2": "068BD82D-054A-4F17-B0BE-2BA3F805C31E",
+    "Brown-6": "097180A7-ECD9-4F66-916D-0EFEEB921228",
+    "Brown-3": "0A80718C-1308-4C18-ACA9-55F081A3D236",
+    "Black-1": "0DF34223-2313-4C61-9614-4957C3DA0754",
+    "Green-3": "0ECC436A-489D-4A1B-A325-B7E96CA419A4",
+    "Dark Blue-3": "12F81FB0-1ED9-4882-ABFF-96B32A3CDBCD",
+    "Blue-0": "1D0127F4-C71A-438F-81A2-32A98E11F9C0",
+    "Dark Blue-1": "1D345C54-B746-4BAF-94F9-7F1E81289E78",
+    "Brown-4": "2BDDFDA6-13EB-4C76-9D38-EF72A42C97EE",
+    "Black-4": "3709BA67-6D7F-4A3D-A4B9-75140B786004",
+    "Blue-3": "39EFBF91-9192-45B6-8E5D-3193BEF1910D",
+    "Green-1": "3DE59364-11C1-4119-8221-11BDA5A108E0",
+    "Green-6": "3F9F58D2-8029-4996-A8CD-C3EC397810BD",
+    "Purple-6": "45196296-2EFF-4D76-ADB8-2CB1CD012587",
+    "Dark Blue-0": "49485762-6FDD-4B38-B1BB-CC5EE739A690",
+    "Orange-6": "51B6B628-B706-4B37-A4BD-46A3B0D08F5B",
+    "Purple-5": "5423F80B-5B3F-4E0F-8C20-594589E5FCCC",
+    "Brown-1": "69B94A31-DF78-4979-A2C0-9E1AA26F71E7",
+    "Purple-1": "6FC514C4-D9FD-4E43-8035-EE02BDF834BC",
+    "Blue-5": "709512E1-090F-4317-9E99-32B2D595808E",
+    "Black-6": "71401C42-4819-4164-B426-06FFCD742CA3",
+    "Orange-4": "7A5BB358-11C9-4AD2-9937-571E65E1DC4F",
+    "Purple-2": "80D476BE-3F76-4DEC-9A01-CA140A9631E6",
+    "Green-5": "817AA472-46D6-4C9D-A8C2-D58D8EE71E25",
+    "Dark Blue-2": "848E226A-DC46-42B3-94E0-31FF7899ACD0",
+    "Green-0": "84E735A0-D340-444E-8085-157A1E1858F8",
+    "Dark Blue-5": "90EC51DE-B033-4385-9535-388EC7A39037",
+    "Dark Blue-4": "940FA78B-2E2B-43D6-A19D-8F7517BE6E46",
+    "Black-2": "95B9E115-F42B-4F6B-BA16-A8C9A47DF7CA",
+    "Orange-5": "96393799-059E-4C96-A548-54205F1158F1",
+    "Orange-3": "972D3C6B-772E-4038-BEF7-87F6991084B2",
+    "Black-3": "9F4707E8-1E33-41DB-B93B-3BD417A50D97",
+    "Blue-1": "A0615FD1-641F-47D9-A997-B95C1B6CE95A",
+    "Black-0": "A703E867-D64B-48AF-9701-588E562E1835",
+    "Purple-3": "A7189A19-6FC1-4E53-A8DA-F6FB868571CD",
+    "Green-4": "AA3F7961-9066-4633-B3FB-32DC5FFE8462",
+    "Purple-4": "B0556173-7AA3-4E81-8C38-8E951501FC03",
+    "Brown-0": "BE6C2296-4076-4498-AC00-F12E79A7656C",
+    "Black-5": "C5EBCEC7-08BA-4B1F-99C9-AFD91ABBA882",
+    "Blue-2": "C729C029-7C58-4F7F-868A-BEF03BCAD587",
+    "Brown-5": "CCEA3D1F-C0C6-410F-BD25-6CEE69CDFF5C",
+    "Blue-4": "D5AA07A4-8302-461E-9689-A5C39DC98174",
+    "Dark Blue-6": "E13F65A5-6C4C-4E46-9BB4-4DB045910E48",
+    "Green-2": "E427A498-8344-4B60-83AA-D2B34FB9A932",
+    "Blue-6": "E7370BE6-3DF8-451B-AF94-146873C4F1C8",
+    "Purple-0": "F4B83998-62D4-466B-B689-D5284307D7ED",
+    "Orange-1": "F6AFD52A-FEB0-485B-9527-02E0649FA0AA",
+    "Orange-0": "FDA7BCB4-F0D7-466A-93D7-99659A598E22"
+   },
+   "vprice": {
+    "Brown-2": 2299,
+    "Orange-2": 2299,
+    "Brown-6": 2999,
+    "Brown-3": 2599,
+    "Black-1": 2299,
+    "Green-3": 2599,
+    "Dark Blue-3": 2599,
+    "Blue-0": 2299,
+    "Dark Blue-1": 2299,
+    "Brown-4": 2599,
+    "Black-4": 2599,
+    "Blue-3": 2599,
+    "Green-1": 2299,
+    "Green-6": 2999,
+    "Purple-6": 2999,
+    "Dark Blue-0": 2299,
+    "Orange-6": 2999,
+    "Purple-5": 2999,
+    "Brown-1": 2299,
+    "Purple-1": 2299,
+    "Blue-5": 2999,
+    "Black-6": 3099,
+    "Orange-4": 2599,
+    "Purple-2": 2299,
+    "Green-5": 2999,
+    "Dark Blue-2": 2299,
+    "Green-0": 2299,
+    "Dark Blue-5": 2999,
+    "Dark Blue-4": 2599,
+    "Black-2": 2299,
+    "Orange-5": 2999,
+    "Orange-3": 2599,
+    "Black-3": 2599,
+    "Blue-1": 2299,
+    "Black-0": 2299,
+    "Purple-3": 2599,
+    "Green-4": 2599,
+    "Purple-4": 2599,
+    "Brown-0": 2299,
+    "Black-5": 2999,
+    "Blue-2": 2299,
+    "Brown-5": 2999,
+    "Blue-4": 2599,
+    "Dark Blue-6": 2999,
+    "Green-2": 2299,
+    "Blue-6": 2999,
+    "Purple-0": 2299,
+    "Orange-1": 2299,
+    "Orange-0": 2299
+   }
+  },
+  "cj-A020879B": {
+   "name": "Waterproof Boots",
+   "price": 2399,
+   "cj_pid": "E1506A6C-4D34-4B68-8DAC-821BA020879B",
+   "colors": [
+    "Red",
+    "Blue"
+   ],
+   "sizes": [
+    "XXS",
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "variants": {
+    "Red-L": "093E1980-5994-4123-9D5C-F20ACC85DA22",
+    "Blue-L": "0F72A35C-BEEC-4434-92C1-604B729EE993",
+    "Blue-S": "26643A20-69CC-45BE-8CA4-3A55933590D4",
+    "Blue-XL": "36164806-A0AE-4742-9914-606FC2451317",
+    "Red-XXS": "4A7C247A-4066-4DB1-A080-3162F14E5396",
+    "Blue-XS": "528A930D-80CE-4F7B-9081-E0FE685F63C6",
+    "Blue-M": "54B5C293-5546-4A2B-8271-42A67E6FCD82",
+    "Blue-XXS": "62D6957C-D91F-4EE2-969E-4945C4814F5A",
+    "Red-S": "65BE95B9-2262-444C-A31A-82768B37A3C4",
+    "Red-M": "73006A76-6998-4F73-959C-198CC4DB4386",
+    "Red-XXL": "854BF7B3-D1A0-4CA2-AA90-BD5917ABDD07",
+    "Blue-XXL": "A7B57908-AA96-4E10-A9EA-160D4D2820C6",
+    "Red-XL": "B7C9E68B-281C-4490-AC5A-7659CBD120C4",
+    "Red-XS": "D8782179-B9AA-49E5-9067-D09A8D3F4E15"
+   },
+   "vprice": {
+    "Red-L": 2499,
+    "Blue-L": 2499,
+    "Blue-S": 2499,
+    "Blue-XL": 2499,
+    "Red-XXS": 2399,
+    "Blue-XS": 2399,
+    "Blue-M": 2499,
+    "Blue-XXS": 2399,
+    "Red-S": 2499,
+    "Red-M": 2499,
+    "Red-XXL": 2499,
+    "Blue-XXL": 2499,
+    "Red-XL": 2499,
+    "Red-XS": 2399
+   }
+  },
+  "cj-F196C7BC": {
+   "name": "Durable Hiking Boots",
+   "price": 2199,
+   "cj_pid": "D2EADB71-2B0B-4E32-9653-3B4CF196C7BC",
+   "colors": [
+    "Green",
+    "Blue",
+    "Rose Red"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Green-M": "032A7534-E801-4AF1-8B3F-85F697761D7A",
+    "Blue-L": "28A059D0-8BAB-4638-AFAB-62B738534CDC",
+    "Rose Red-S": "2E7B21DE-2EA0-4533-925B-8D64BFEDA159",
+    "Rose Red-L": "3EC39175-C7E5-4216-8388-E4E48BD072E1",
+    "Rose Red-M": "42452073-6E01-44CE-BA1C-597CAD0A91EC",
+    "Blue-M": "45FC49A9-3E24-499A-A772-F5279775075E",
+    "Green-L": "5FB7B934-D4AA-4CFB-93AC-85F134CFBD44",
+    "Blue-XS": "840CF6B5-76B5-41A5-9F05-86CDFBB2528E",
+    "Green-XS": "8E5015F9-3299-4811-AEBA-4A3782498B27",
+    "Green-XL": "8FDF67B4-E0FF-4D09-B261-08F2186A89EA",
+    "Blue-S": "B1FB0ED0-4060-4DDB-B374-99BDD0A6550E",
+    "Rose Red-XL": "C35985C0-1970-407F-A979-EB3AB79ED593",
+    "Blue-XL": "D4B6336E-409A-4099-AEE6-8C9E6E38B731",
+    "Green-S": "ED72C9D5-9B09-49D9-84BD-730DD9A1B81A",
+    "Rose Red-XS": "F17D4770-93F0-4C63-99F2-1AC206E77168"
+   },
+   "vprice": {
+    "Green-M": 2199,
+    "Blue-L": 2199,
+    "Rose Red-S": 2199,
+    "Rose Red-L": 2199,
+    "Rose Red-M": 2199,
+    "Blue-M": 2199,
+    "Green-L": 2199,
+    "Blue-XS": 2199,
+    "Green-XS": 2199,
+    "Green-XL": 2199,
+    "Blue-S": 2199,
+    "Rose Red-XL": 2199,
+    "Blue-XL": 2199,
+    "Green-S": 2199,
+    "Rose Red-XS": 2199
+   }
+  },
+  "cj-82750B4D": {
+   "name": "Cowboy Canvas Breathable Boots",
+   "price": 2099,
+   "cj_pid": "6F2B0F0D-D669-4A8C-BC4A-AEF282750B4D",
+   "colors": [
+    "Blue"
+   ],
+   "sizes": [],
+   "variants": {
+    "Blue-3number": "97B631BD-B381-404E-9C40-B7E9A2A6276A",
+    "Blue-1number": "A46DE17B-73A6-465C-8AE4-24BC441B1633",
+    "Blue-2number": "BBD7BEE3-31CA-4AAE-941D-A52C3CA00C81",
+    "Blue-4number": "DA58B935-3F0F-4AEB-B668-F0BE1D588467",
+    "Blue-5number": "E0161039-D3C3-437C-B5AF-6624945282A2"
+   },
+   "vprice": {
+    "Blue-3number": 2099,
+    "Blue-1number": 2099,
+    "Blue-2number": 2099,
+    "Blue-4number": 2099,
+    "Blue-5number": 2099
+   }
+  },
+  "cj-04EA21D9": {
+   "name": "Wedding Tuxedo Bandana",
+   "price": 2199,
+   "cj_pid": "539484FB-E2AD-40FD-8444-276B04EA21D9",
+   "colors": [
+    "Blue",
+    "Red"
+   ],
+   "sizes": [],
+   "variants": {
+    "Blue": "339C728E-0755-4A68-BF7F-87A2507420D5",
+    "Red": "DFB7E0E6-A83B-4274-A44D-09B5AEA89502"
+   },
+   "vprice": {
+    "Blue": 2199,
+    "Red": 2199
+   }
+  },
+  "cj-924FB7A5": {
+   "name": "Triangle Scarf",
+   "price": 1899,
+   "cj_pid": "6CAEB430-373A-4F3E-970F-EB05924FB7A5",
+   "colors": [
+    "Dolphin",
+    "Cat",
+    "Puppy"
+   ],
+   "sizes": [
+    "XL"
+   ],
+   "variants": {
+    "Dolphin-XL": "2ED3ED56-8818-4F38-86A1-ADD0C2F868B7",
+    "Cat-XL": "B12DD485-3DBB-4E36-9220-74FA4878B7E2",
+    "Puppy-XL": "CE6B2ED2-E902-417C-8D9C-6983074EAB2D"
+   },
+   "vprice": {
+    "Dolphin-XL": 1999,
+    "Cat-XL": 1899,
+    "Puppy-XL": 1999
+   }
+  },
+  "cj-49293056": {
+   "name": "Christmas Ornaments Warm Scarf",
+   "price": 2099,
+   "cj_pid": "1367733376949293056",
+   "colors": [
+    "Red",
+    "Green"
+   ],
+   "sizes": [
+    "S"
+   ],
+   "variants": {
+    "Red-S": "1367733378337607680",
+    "Green-S": "1367733378459242496"
+   },
+   "vprice": {
+    "Red-S": 2199,
+    "Green-S": 2099
+   }
+  },
+  "cj-86629888": {
+   "name": "Birthday Cake Bib",
+   "price": 1999,
+   "cj_pid": "1515633985886629888",
+   "colors": [
+    "Yellow Checked Bib Hat"
+   ],
+   "sizes": [],
+   "variants": {
+    "Yellow Checked Bib Hat": "1515633985978904576"
+   },
+   "vprice": {
+    "Yellow Checked Bib Hat": 1999
+   }
+  },
+  "cj-E644C3E2": {
+   "name": "Winter Windproof Fluffy Hat",
+   "price": 2099,
+   "cj_pid": "246F90DC-64B0-48FD-94FA-827BE644C3E2",
+   "colors": [
+    "Black"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L"
+   ],
+   "variants": {
+    "Black-M": "6A894CBE-F933-4317-8E31-A74F839D61D2",
+    "Black-L": "6E090AEA-E7E0-4D6E-AC04-71376A62F0DA",
+    "Black-S": "E6555875-B214-4285-B7A5-0A9B7783925A"
+   },
+   "vprice": {
+    "Black-M": 2799,
+    "Black-L": 2099,
+    "Black-S": 2099
+   }
+  },
+  "cj-9BBB3197": {
+   "name": "Panda Hat",
+   "price": 2099,
+   "cj_pid": "491A23AE-7A3F-46AC-99F1-34889BBB3197",
+   "colors": [
+    "White"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "White-L": "31654B9B-DB03-4C97-9545-260F281FFE52",
+    "White-S": "B300672D-619D-493D-B35D-2D3AD02BFD51",
+    "White-XL": "EB78F361-CFBD-4F66-8A9A-9771DBCA810D",
+    "White-M": "EF84E7C2-46FF-43E2-98A7-D06A00EDE7D3"
+   },
+   "vprice": {
+    "White-L": 2099,
+    "White-S": 2099,
+    "White-XL": 2099,
+    "White-M": 2099
+   }
+  },
+  "cj-A1F013E6": {
+   "name": "Scorpion Costume Hat",
+   "price": 2199,
+   "cj_pid": "887B6E00-E2F0-4F8D-B273-E5E0A1F013E6",
+   "colors": [
+    "Black",
+    "Yellow"
+   ],
+   "sizes": [
+    "S",
+    "M"
+   ],
+   "variants": {
+    "Black-S": "43AAD9B9-FA4A-41FE-82A0-0B165081B389",
+    "Yellow-S": "73912D08-B245-4C74-A141-200703BF9E30",
+    "Yellow-M": "7DD9DC3D-5F3E-46B7-9DD3-DC399C8F52F6",
+    "Black-M": "94E81E34-6C63-4CCD-9F0F-B9E604005D1D"
+   },
+   "vprice": {
+    "Black-S": 2199,
+    "Yellow-S": 2199,
+    "Yellow-M": 2199,
+    "Black-M": 2199
+   }
+  },
+  "cj-82499328": {
+   "name": "Pineapple Hat",
+   "price": 2299,
+   "cj_pid": "1371426722582499328",
+   "colors": [
+    "Red",
+    "Yellow"
+   ],
+   "sizes": [],
+   "variants": {
+    "Red-One size": "1371426723924676608",
+    "Yellow-One size": "1371426723962425344"
+   },
+   "vprice": {
+    "Red-One size": 2299,
+    "Yellow-One size": 2299
+   }
+  },
+  "cj-64E0C36D": {
+   "name": "Winter Woolen Hat",
+   "price": 2699,
+   "cj_pid": "D50943EE-3105-4876-B72D-3BAD64E0C36D",
+   "colors": [
+    "Grey"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L"
+   ],
+   "variants": {
+    "Grey-L": "52C50F18-1FB0-4961-921D-1917AAC7C57F",
+    "Grey-M": "AFAB0DD4-19F2-4D0E-9218-1EC978C375F3",
+    "Grey-S": "CF013148-20E6-4E9B-98AA-C14D418E39D4"
+   },
+   "vprice": {
+    "Grey-L": 2699,
+    "Grey-M": 2699,
+    "Grey-S": 2699
+   }
+  },
+  "cj-B4316F11": {
+   "name": "Cozy Knit Hat",
+   "price": 2699,
+   "cj_pid": "7FB10AD9-4ADC-4AFC-BF12-81BDB4316F11",
+   "colors": [
+    "Grey"
+   ],
+   "sizes": [
+    "L 26cm",
+    "M 23cm",
+    "S 20cm"
+   ],
+   "variants": {
+    "Grey-XL 30cm": "93C72FC6-B754-4576-93E9-B999B9152112",
+    "Grey-L 26cm": "B48D96C2-3415-45BF-890C-8E32B1DCFBC4",
+    "Grey-M 23cm": "C20BFDA3-85EC-457B-83FC-F551D67E9AA7",
+    "Grey-S 20cm": "E56D3370-5433-41C5-9B2F-01B45C2E89DE"
+   },
+   "vprice": {
+    "Grey-XL 30cm": 2699,
+    "Grey-L 26cm": 2699,
+    "Grey-M 23cm": 2699,
+    "Grey-S 20cm": 2699
+   }
+  },
+  "cj-CD1A5836": {
+   "name": "Banana Hat",
+   "price": 2699,
+   "cj_pid": "B4940F8A-459B-4753-AE3F-1692CD1A5836",
+   "colors": [
+    "Default",
+    "Adult"
+   ],
+   "sizes": [
+    "30cm"
+   ],
+   "variants": {
+    "Default-30cm": "82EE271B-52B7-4470-B00C-F3CB76BBDC9B",
+    "Adult": "DC0C5AB4-F907-48B4-A644-F75B0981DD70"
+   },
+   "vprice": {
+    "Default-30cm": 2699,
+    "Adult": 3899
+   }
+  },
+  "cj-16208640": {
+   "name": "Winter Simple Woolen Hat",
+   "price": 3399,
+   "cj_pid": "1418154607716208640",
+   "colors": [
+    "Red"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Red-S": "1418154609075163136",
+    "Red-M": "1418154609083551744",
+    "Red-L": "1418154609091940352",
+    "Red-XL": "1418154609100328960"
+   },
+   "vprice": {
+    "Red-S": 3399,
+    "Red-M": 3399,
+    "Red-L": 3499,
+    "Red-XL": 3599
+   }
+  },
+  "cj-58217474": {
+   "name": "Retractable Leash",
+   "price": 3299,
+   "cj_pid": "1985989610858217474",
+   "colors": [
+    "Pink purple",
+    "Champagne color",
+    "Green",
+    "White",
+    "Blue",
+    "Yellow"
+   ],
+   "sizes": [
+    "3M",
+    "5M"
+   ],
+   "variants": {
+    "Pink purple-3M": "1985989611097292801",
+    "Pink purple-5M": "1985989611097292802",
+    "Champagne color-3M": "1985989611097292803",
+    "Champagne color-5M": "1985989611097292804",
+    "Green-3M": "1985989611097292805",
+    "Green-5M": "1985989611097292806",
+    "White-3M": "1985989611097292807",
+    "White-5M": "1985989611097292808",
+    "Blue-3M": "1985989611097292809",
+    "Blue-5M": "1985989611097292810",
+    "Yellow-3M": "1985989611097292811",
+    "Yellow-5M": "1985989611097292812"
+   },
+   "vprice": {
+    "Pink purple-3M": 3299,
+    "Pink purple-5M": 3299,
+    "Champagne color-3M": 3299,
+    "Champagne color-5M": 3299,
+    "Green-3M": 3299,
+    "Green-5M": 3299,
+    "White-3M": 3299,
+    "White-5M": 3299,
+    "Blue-3M": 3299,
+    "Blue-5M": 3299,
+    "Yellow-3M": 3299,
+    "Yellow-5M": 3299
+   }
+  },
+  "cj-51623900": {
+   "name": "Tactical Leash",
+   "price": 2499,
+   "cj_pid": "2604201156351623900",
+   "colors": [
+    "Lavender Purple",
+    "Skin Color",
+    "Sky Blue",
+    "Orange Red",
+    "Brown",
+    "Black"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L"
+   ],
+   "variants": {
+    "Lavender Purple-S": "2604201156351624500",
+    "Lavender Purple-M": "2604201156351624900",
+    "Lavender Purple-L": "2604201156351625400",
+    "Skin Color-S": "2604201156351625900",
+    "Skin Color-M": "2604201156351626400",
+    "Skin Color-L": "2604201156351626800",
+    "Sky Blue-S": "2604201156351627300",
+    "Sky Blue-M": "2604201156351627800",
+    "Sky Blue-L": "2604201156351628300",
+    "Orange Red-S": "2604201156351628700",
+    "Orange Red-M": "2604201156351629200",
+    "Orange Red-L": "2604201156351629700",
+    "Brown-S": "2604201156361620101",
+    "Brown-M": "2604201156361620600",
+    "Brown-L": "2604201156361621100",
+    "Black-S": "2604201156361621500",
+    "Black-M": "2604201156361622000",
+    "Black-L": "2604201156361622500"
+   },
+   "vprice": {
+    "Lavender Purple-S": 2499,
+    "Lavender Purple-M": 2499,
+    "Lavender Purple-L": 2499,
+    "Skin Color-S": 2499,
+    "Skin Color-M": 2499,
+    "Skin Color-L": 2499,
+    "Sky Blue-S": 2499,
+    "Sky Blue-M": 2499,
+    "Sky Blue-L": 2499,
+    "Orange Red-S": 2499,
+    "Orange Red-M": 2499,
+    "Orange Red-L": 2499,
+    "Brown-S": 2499,
+    "Brown-M": 2499,
+    "Brown-L": 2499,
+    "Black-S": 2499,
+    "Black-M": 2499,
+    "Black-L": 2499
+   }
+  },
+  "cj-98205184": {
+   "name": "LED Light-up Harness Vest",
+   "price": 2499,
+   "cj_pid": "1742131093098205184",
+   "colors": [
+    "Blue",
+    "Red",
+    "Green"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L"
+   ],
+   "variants": {
+    "Blue-S": "1742131093156925440",
+    "Blue-M": "1742131093207257088",
+    "Blue-L": "1742131093253394432",
+    "Red-S": "1742131093295337472",
+    "Red-M": "1742131093341474816",
+    "Red-L": "1742131093387612160",
+    "Green-S": "1742131093433749504",
+    "Green-M": "1742131093479886848",
+    "Green-L": "1742131093526024192"
+   },
+   "vprice": {
+    "Blue-S": 2499,
+    "Blue-M": 2499,
+    "Blue-L": 2499,
+    "Red-S": 2499,
+    "Red-M": 2499,
+    "Red-L": 2499,
+    "Green-S": 2499,
+    "Green-M": 2499,
+    "Green-L": 2499
+   }
+  },
+  "cj-33835264": {
+   "name": "Breathable Adjustable Leash",
+   "price": 2199,
+   "cj_pid": "1588441159133835264",
+   "colors": [
+    "Black",
+    "Red",
+    "Purple",
+    "Grey"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Black-S": "1588441159205138432",
+    "Black-M": "1588441159205138433",
+    "Black-L": "1588441159209332736",
+    "Black-XL": "1588441159209332737",
+    "Red-S": "1588441159209332738",
+    "Red-M": "1588441159209332739",
+    "Red-L": "1588441159209332740",
+    "Red-XL": "1588441159213527040",
+    "Purple-S": "1588441159213527041",
+    "Purple-M": "1588441159213527042",
+    "Purple-L": "1588441159213527043",
+    "Purple-XL": "1588441159213527044",
+    "Grey-S": "1588441159213527045",
+    "Grey-M": "1588441159217721344",
+    "Grey-L": "1588441159217721345",
+    "Grey-XL": "1588441159217721346"
+   },
+   "vprice": {
+    "Black-S": 2199,
+    "Black-M": 2199,
+    "Black-L": 2199,
+    "Black-XL": 2199,
+    "Red-S": 2199,
+    "Red-M": 2199,
+    "Red-L": 2199,
+    "Red-XL": 2199,
+    "Purple-S": 2199,
+    "Purple-M": 2199,
+    "Purple-L": 2199,
+    "Purple-XL": 2199,
+    "Grey-S": 2199,
+    "Grey-M": 2199,
+    "Grey-L": 2199,
+    "Grey-XL": 2199
+   }
+  },
+  "cj-35122432": {
+   "name": "Flannel Chest Harness",
+   "price": 2299,
+   "cj_pid": "1516010768335122432",
+   "colors": [
+    "Strap",
+    "Leash"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Strap-S": "1516010768469340160",
+    "Strap-M": "1516010768469340161",
+    "Strap-L": "1516010768469340162",
+    "Strap-XL": "1516010768473534464",
+    "Leash-S": "1516010768473534465",
+    "Leash-M": "1516010768477728768",
+    "Leash-L": "1516010768477728769",
+    "Leash-XL": "1516010768477728770"
+   },
+   "vprice": {
+    "Strap-S": 2999,
+    "Strap-M": 2999,
+    "Strap-L": 2999,
+    "Strap-XL": 2999,
+    "Leash-S": 2299,
+    "Leash-M": 2299,
+    "Leash-L": 2299,
+    "Leash-XL": 2299
+   }
+  },
+  "cj-29241600": {
+   "name": "Bow Tie · Green",
+   "price": 4299,
+   "cj_pid": "1643511596729241600",
+   "colors": [
+    "Green",
+    "Blue",
+    "Pink",
+    "Yellow"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Green-S": "1643511596754407424",
+    "Green-M": "1643511596775378944",
+    "Green-L": "1643511596796350464",
+    "Green-XL": "1643511596813127680",
+    "Blue-S": "1643511596829904896",
+    "Blue-M": "1643511596850876416",
+    "Blue-L": "1643511596892819456",
+    "Blue-XL": "1643511596909596672",
+    "Pink-S": "1643511596926373888",
+    "Pink-M": "1643511596947345408",
+    "Pink-L": "1643511596964122624",
+    "Pink-XL": "1643511596985094144",
+    "Yellow-S": "1643511597001871360",
+    "Yellow-M": "1643511597022842880",
+    "Yellow-L": "1643511597039620096",
+    "Yellow-XL": "1643511597060591616"
+   },
+   "vprice": {
+    "Green-S": 4299,
+    "Green-M": 4399,
+    "Green-L": 4599,
+    "Green-XL": 4699,
+    "Blue-S": 4299,
+    "Blue-M": 4399,
+    "Blue-L": 4599,
+    "Blue-XL": 4699,
+    "Pink-S": 4299,
+    "Pink-M": 4399,
+    "Pink-L": 4599,
+    "Pink-XL": 4699,
+    "Yellow-S": 4299,
+    "Yellow-M": 4399,
+    "Yellow-L": 4599,
+    "Yellow-XL": 4699
+   }
+  },
+  "cj-86780416": {
+   "name": "Chain Leash",
+   "price": 1999,
+   "cj_pid": "1629047623086780416",
+   "colors": [
+    "Blue",
+    "Yellow",
+    "Pink"
+   ],
+   "sizes": [
+    "XXS",
+    "XS",
+    "S",
+    "M"
+   ],
+   "variants": {
+    "Blue-XXS": "1629047623120334848",
+    "Blue-XS": "1629047623141306368",
+    "Blue-S": "1629047623162277888",
+    "Blue-M": "1629047623183249408",
+    "Yellow-XXS": "1629047623204220928",
+    "Yellow-XS": "1629047623220998144",
+    "Yellow-S": "1629047623241969664",
+    "Yellow-M": "1629047623262941184",
+    "Pink-XXS": "1629047623279718400",
+    "Pink-XS": "1629047623300689920",
+    "Pink-S": "1629047623317467136",
+    "Pink-M": "1629047623342632960"
+   },
+   "vprice": {
+    "Blue-XXS": 1999,
+    "Blue-XS": 1999,
+    "Blue-S": 1999,
+    "Blue-M": 2099,
+    "Yellow-XXS": 1999,
+    "Yellow-XS": 1999,
+    "Yellow-S": 1999,
+    "Yellow-M": 2099,
+    "Pink-XXS": 1999,
+    "Pink-XS": 1999,
+    "Pink-S": 1999,
+    "Pink-M": 2099
+   }
+  },
+  "cj-23951360": {
+   "name": "Harness & Leash Set",
+   "price": 2299,
+   "cj_pid": "1663806712823951360",
+   "colors": [
+    "Army Green",
+    "Sky Blue",
+    "Black And Red"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Army Green-S": "1663806712849117184",
+    "Army Green-M": "1663806712870088704",
+    "Army Green-L": "1663806712886865920",
+    "Army Green-XL": "1663806712907837440",
+    "Sky Blue-S": "1663806712924614656",
+    "Sky Blue-M": "1663806712941391872",
+    "Sky Blue-L": "1663806712958169088",
+    "Sky Blue-XL": "1663806712974946304",
+    "Black And Red-S": "1663806712991723520",
+    "Black And Red-M": "1663806713008500736",
+    "Black And Red-L": "1663806713025277952",
+    "Black And Red-XL": "1663806713042055168"
+   },
+   "vprice": {
+    "Army Green-S": 2299,
+    "Army Green-M": 2399,
+    "Army Green-L": 2499,
+    "Army Green-XL": 2599,
+    "Sky Blue-S": 2299,
+    "Sky Blue-M": 2399,
+    "Sky Blue-L": 2499,
+    "Sky Blue-XL": 2599,
+    "Black And Red-S": 2299,
+    "Black And Red-M": 2399,
+    "Black And Red-L": 2499,
+    "Black And Red-XL": 2599
+   }
+  },
+  "cj-12188160": {
+   "name": "Blue Leash",
+   "price": 2999,
+   "cj_pid": "1584817995812188160",
+   "colors": [
+    "Blue",
+    "Black",
+    "Red",
+    "Purple",
+    "Orange",
+    "Green",
+    "Rose Red",
+    "Pink",
+    "Black set",
+    "Rose Red set",
+    "Blue set"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Blue-S": "1584817995887685632",
+    "Blue-M": "1584817995891879936",
+    "Blue-L": "1584817995891879937",
+    "Blue-XL": "1584817995891879938",
+    "Black-S": "1584817995896074240",
+    "Black-M": "1584817995896074241",
+    "Black-L": "1584817995896074242",
+    "Black-XL": "1584817995900268544",
+    "Red-S": "1584817995900268545",
+    "Red-M": "1584817995900268546",
+    "Red-L": "1584817995900268547",
+    "Red-XL": "1584817995904462848",
+    "Purple-S": "1584817995904462849",
+    "Purple-M": "1584817995908657152",
+    "Purple-L": "1584817995908657153",
+    "Purple-XL": "1584817995912851456",
+    "Orange-S": "1584817995912851457",
+    "Orange-M": "1584817995912851458",
+    "Orange-L": "1584817995912851459",
+    "Orange-XL": "1584817995917045760",
+    "Green-S": "1584817995917045761",
+    "Green-M": "1584817995917045762",
+    "Green-L": "1584817995921240064",
+    "Green-XL": "1584817995921240065",
+    "Rose Red-S": "1584817995921240066",
+    "Rose Red-M": "1584817995925434368",
+    "Rose Red-L": "1584817995925434369",
+    "Rose Red-XL": "1584817995925434370",
+    "Pink-S": "1584817995925434371",
+    "Pink-M": "1584817995929628672",
+    "Pink-L": "1584817995929628673",
+    "Pink-XL": "1584817995929628674",
+    "Black set-L": "1714546251695403008",
+    "Black set-M": "1714546251762511872",
+    "Black set-S": "1714546251812843520",
+    "Black set-XL": "1714546251863175168",
+    "Rose Red set-L": "1714546251917701120",
+    "Rose Red set-M": "1714546252127416320",
+    "Rose Red set-S": "1714546252186136576",
+    "Rose Red set-XL": "1714546252240662528",
+    "Blue set-L": "1714546252295188480",
+    "Blue set-M": "1714546252341325824",
+    "Blue set-S": "1714546252395851776",
+    "Blue set-XL": "1714546252450377728"
+   },
+   "vprice": {
+    "Blue-S": 2999,
+    "Blue-M": 2999,
+    "Blue-L": 3099,
+    "Blue-XL": 3099,
+    "Black-S": 2999,
+    "Black-M": 2999,
+    "Black-L": 3099,
+    "Black-XL": 3099,
+    "Red-S": 2999,
+    "Red-M": 2999,
+    "Red-L": 3099,
+    "Red-XL": 3099,
+    "Purple-S": 2999,
+    "Purple-M": 2999,
+    "Purple-L": 3099,
+    "Purple-XL": 3099,
+    "Orange-S": 2999,
+    "Orange-M": 2999,
+    "Orange-L": 3099,
+    "Orange-XL": 3099,
+    "Green-S": 2999,
+    "Green-M": 2999,
+    "Green-L": 3099,
+    "Green-XL": 3099,
+    "Rose Red-S": 2999,
+    "Rose Red-M": 2999,
+    "Rose Red-L": 3099,
+    "Rose Red-XL": 3099,
+    "Pink-S": 2999,
+    "Pink-M": 2999,
+    "Pink-L": 3099,
+    "Pink-XL": 3099,
+    "Black set-L": 3399,
+    "Black set-M": 3399,
+    "Black set-S": 3299,
+    "Black set-XL": 3399,
+    "Rose Red set-L": 3399,
+    "Rose Red set-M": 3399,
+    "Rose Red set-S": 3299,
+    "Rose Red set-XL": 3399,
+    "Blue set-L": 3399,
+    "Blue set-M": 3399,
+    "Blue set-S": 3299,
+    "Blue set-XL": 3399
+   }
+  },
+  "cj-83574016": {
+   "name": "Adjustable Harness",
+   "price": 4699,
+   "cj_pid": "1555381998783574016",
+   "colors": [
+    "Denim Blue",
+    "Grey",
+    "Brown"
+   ],
+   "sizes": [
+    "Leash"
+   ],
+   "variants": {
+    "Denim Blue-Chest strap": "1555381998871654400",
+    "Denim Blue-Leash": "1555381998871654401",
+    "Denim Blue-Chest strap with Leash": "1555381998880043009",
+    "Grey-Chest strap": "1555381998888431616",
+    "Grey-Leash": "1555381998888431617",
+    "Grey-Chest strap with Leash": "1555381998896820224",
+    "Brown-Chest strap": "1555381998901014529",
+    "Brown-Leash": "1555381998901014530",
+    "Brown-Chest strap with Leash": "1555381998909403136"
+   },
+   "vprice": {
+    "Denim Blue-Chest strap": 5499,
+    "Denim Blue-Leash": 4699,
+    "Denim Blue-Chest strap with Leash": 7999,
+    "Grey-Chest strap": 5499,
+    "Grey-Leash": 4699,
+    "Grey-Chest strap with Leash": 7999,
+    "Brown-Chest strap": 5499,
+    "Brown-Leash": 4699,
+    "Brown-Chest strap with Leash": 7999
+   }
+  },
+  "cj-71625984": {
+   "name": "Saddle Type Reflective Harness",
+   "price": 2099,
+   "cj_pid": "1506135798771625984",
+   "colors": [
+    "Blue",
+    "Red",
+    "Lake blue",
+    "Grey"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Blue-S": "1506135799006507008",
+    "Blue-M": "1506135799006507009",
+    "Blue-L": "1506135799010701312",
+    "Red-S": "1506135799010701313",
+    "Red-M": "1506135799014895616",
+    "Red-L": "1506135799014895617",
+    "Red-XL": "1506135799019089920",
+    "Lake blue-S": "1506135799019089921",
+    "Lake blue-M": "1506135799023284224",
+    "Lake blue-L": "1506135799023284225",
+    "Lake blue-XL": "1506135799027478528",
+    "Grey-S": "1506135799027478529",
+    "Grey-M": "1506135799031672832",
+    "Grey-L": "1506135799031672833",
+    "Grey-XL": "1506135799035867136"
+   },
+   "vprice": {
+    "Blue-S": 2099,
+    "Blue-M": 2099,
+    "Blue-L": 2099,
+    "Red-S": 2099,
+    "Red-M": 2099,
+    "Red-L": 2099,
+    "Red-XL": 2099,
+    "Lake blue-S": 2099,
+    "Lake blue-M": 2099,
+    "Lake blue-L": 2099,
+    "Lake blue-XL": 2099,
+    "Grey-S": 2099,
+    "Grey-M": 2099,
+    "Grey-L": 2099,
+    "Grey-XL": 2099
+   }
+  },
+  "cj-01937664": {
+   "name": "Durable Oxford Cloth Vest",
+   "price": 2899,
+   "cj_pid": "1534043353501937664",
+   "colors": [
+    "With accessories",
+    "Without accessories"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "With accessories-S": "1534043353648738304",
+    "With accessories-M": "1534043353652932608",
+    "With accessories-L": "1534043353652932609",
+    "With accessories-XL": "1534043353657126912",
+    "Without accessories-S": "1534043353661321216",
+    "Without accessories-M": "1534043353665515520",
+    "Without accessories-L": "1534043353665515521",
+    "Without accessories-XL": "1534043353669709824"
+   },
+   "vprice": {
+    "With accessories-S": 3299,
+    "With accessories-M": 3299,
+    "With accessories-L": 3499,
+    "With accessories-XL": 3499,
+    "Without accessories-S": 2899,
+    "Without accessories-M": 2899,
+    "Without accessories-L": 3199,
+    "Without accessories-XL": 3199
+   }
+  },
+  "cj-69293824": {
+   "name": "Heavy-duty Harness Vest",
+   "price": 2399,
+   "cj_pid": "1626553548169293824",
+   "colors": [
+    "Blue",
+    "Green",
+    "Silver Gray"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Blue-S": "1626553548504838144",
+    "Blue-M": "1626553548567752704",
+    "Blue-L": "1626553548639055872",
+    "Blue-XL": "1626553548701970432",
+    "Green-S": "1626553548802633728",
+    "Green-M": "1626553548852965376",
+    "Green-L": "1626553548966211584",
+    "Green-XL": "1626553549016543232",
+    "Silver Gray-S": "1626553549075263488",
+    "Silver Gray-M": "1626553549125595136",
+    "Silver Gray-L": "1626553549184315392",
+    "Silver Gray-XL": "1626553549234647040"
+   },
+   "vprice": {
+    "Blue-S": 2399,
+    "Blue-M": 2399,
+    "Blue-L": 2399,
+    "Blue-XL": 2399,
+    "Green-S": 2399,
+    "Green-M": 2399,
+    "Green-L": 2399,
+    "Green-XL": 2399,
+    "Silver Gray-S": 2399,
+    "Silver Gray-M": 2399,
+    "Silver Gray-L": 2399,
+    "Silver Gray-XL": 2399
+   }
+  },
+  "cj-19246848": {
+   "name": "Suede Harness",
+   "price": 2099,
+   "cj_pid": "1629048028919246848",
+   "colors": [
+    "Pink",
+    "Green",
+    "Purple"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Pink-S": "1629048029015715840",
+    "Pink-M": "1629048029091213312",
+    "Pink-L": "1629048029179293696",
+    "Pink-XL": "1629048029250596864",
+    "Green-S": "1629048029309317120",
+    "Green-M": "1629048029376425984",
+    "Green-L": "1629048029435146240",
+    "Green-XL": "1629048029502255104",
+    "Purple-S": "1629048029598724096",
+    "Purple-M": "1629048029653250048",
+    "Purple-L": "1629048029716164608",
+    "Purple-XL": "1629048029774884864"
+   },
+   "vprice": {
+    "Pink-S": 2099,
+    "Pink-M": 2099,
+    "Pink-L": 2099,
+    "Pink-XL": 2099,
+    "Green-S": 2099,
+    "Green-M": 2099,
+    "Green-L": 2099,
+    "Green-XL": 2099,
+    "Purple-S": 2099,
+    "Purple-M": 2099,
+    "Purple-L": 2099,
+    "Purple-XL": 2099
+   }
+  },
+  "cj-31602800": {
+   "name": "Raised Neck-guard Bowl",
+   "price": 7899,
+   "cj_pid": "2502240303231602800",
+   "colors": [
+    "Gray",
+    "Black"
+   ],
+   "sizes": [],
+   "variants": {
+    "Gray-Stainless Steel Food Bowl": "2502240303231603000",
+    "Black-Stainless Steel Food Bowl": "2502240608081610700"
+   },
+   "vprice": {
+    "Gray-Stainless Steel Food Bowl": 7899,
+    "Black-Stainless Steel Food Bowl": 7899
+   }
+  },
+  "cj-99130113": {
+   "name": "Non-slip Pet Blanket",
+   "price": 4399,
+   "cj_pid": "1872479501399130113",
+   "colors": [
+    "Blue",
+    "Yellow"
+   ],
+   "sizes": [],
+   "variants": {
+    "Blue": "1872479501470433282",
+    "Yellow": "1872479501470433283"
+   },
+   "vprice": {
+    "Blue": 4399,
+    "Yellow": 4399
+   }
+  },
+  "cj-23062016": {
+   "name": "Ceramic Slow Feeder",
+   "price": 6999,
+   "cj_pid": "1851831287423062016",
+   "colors": [
+    "Coffee",
+    "Blue"
+   ],
+   "sizes": [],
+   "variants": {
+    "Coffee": "1851831287578251264",
+    "Blue": "1851831287578251265"
+   },
+   "vprice": {
+    "Coffee": 6999,
+    "Blue": 6999
+   }
+  },
+  "cj-25165824": {
+   "name": "Ceramic Food Water Bowl",
+   "price": 4599,
+   "cj_pid": "1865228091225165824",
+   "colors": [
+    "Beige",
+    "Green",
+    "Khaki",
+    "Yellow"
+   ],
+   "sizes": [],
+   "variants": {
+    "Beige": "1865228091581681664",
+    "Green": "1865228091581681665",
+    "Khaki": "1865228091581681666",
+    "Yellow": "1865228091581681667"
+   },
+   "vprice": {
+    "Beige": 4599,
+    "Green": 4599,
+    "Khaki": 4599,
+    "Yellow": 4599
+   }
+  },
+  "cj-06883840": {
+   "name": "Stainless Slow Feeder Bowl",
+   "price": 2599,
+   "cj_pid": "1854061824606883840",
+   "colors": [
+    "Silver"
+   ],
+   "sizes": [],
+   "variants": {
+    "Silver": "1854061824753684480"
+   },
+   "vprice": {
+    "Silver": 2599
+   }
+  },
+  "cj-15571456": {
+   "name": "Cartoon Food & Water Bowl",
+   "price": 4599,
+   "cj_pid": "1860587813415571456",
+   "colors": [
+    "Yellow",
+    "Gray",
+    "Green"
+   ],
+   "sizes": [],
+   "variants": {
+    "Yellow": "1860587813818224640",
+    "Gray": "1860587813818224641",
+    "Green": "1860587813818224642"
+   },
+   "vprice": {
+    "Yellow": 4599,
+    "Gray": 4599,
+    "Green": 4599
+   }
+  },
+  "cj-11632600": {
+   "name": "Adjustable Tilted Feeding Bowl",
+   "price": 5999,
+   "cj_pid": "2512230538011632600",
+   "colors": [
+    "Designer Pieces In Stock"
+   ],
+   "sizes": [],
+   "variants": {
+    "Designer Pieces In Stock": "2512230538011632800"
+   },
+   "vprice": {
+    "Designer Pieces In Stock": 5999
+   }
+  },
+  "cj-69040896": {
+   "name": "Automatic Food & Water Feeder",
+   "price": 4799,
+   "cj_pid": "1852259979769040896",
+   "colors": [
+    "Blue",
+    "Pink",
+    "Green",
+    "Gray"
+   ],
+   "sizes": [
+    "Feeder"
+   ],
+   "variants": {
+    "Blue-Water feeder": "1852259980280745984",
+    "Blue-Feeder": "1852259980280745985",
+    "Pink-Water feeder": "1852259980280745986",
+    "Pink-Feeder": "1852259980280745987",
+    "Green-Water feeder": "1852259980280745988",
+    "Green-Feeder": "1852259980280745989",
+    "Gray-Water feeder": "1852259980280745990",
+    "Gray-Feeder": "1852259980280745991"
+   },
+   "vprice": {
+    "Blue-Water feeder": 4799,
+    "Blue-Feeder": 4799,
+    "Pink-Water feeder": 4799,
+    "Pink-Feeder": 4799,
+    "Green-Water feeder": 4799,
+    "Green-Feeder": 4799,
+    "Gray-Water feeder": 4799,
+    "Gray-Feeder": 4799
+   }
+  },
+  "cj-60732672": {
+   "name": "Super Soft Plush Bed",
+   "price": 5699,
+   "cj_pid": "1670715412360732672",
+   "colors": [
+    "Octopus Nest"
+   ],
+   "sizes": [
+    "50cm"
+   ],
+   "variants": {
+    "Octopus Nest-50cm": "2610190742021623000"
+   },
+   "vprice": {
+    "Octopus Nest-50cm": 5699
+   }
+  },
+  "cj-91604000": {
+   "name": "Warm Winter Nest Bed",
+   "price": 7199,
+   "cj_pid": "2411060327491604000",
+   "colors": [
+    "S Code",
+    "M Code",
+    "L Code"
+   ],
+   "sizes": [
+    "Bar",
+    "Cat",
+    "Frog"
+   ],
+   "variants": {
+    "S Code-Lightning Mouse Three Layers": "2411060327491604300",
+    "M Code-Lightning Mouse Three Layers": "2411060327491604400",
+    "L Code-Lightning Mouse Three Layers": "2411060327491604600",
+    "L Code-Bar": "2506210112391607700",
+    "L Code-Cat": "2506210112391607900",
+    "L Code-Frog": "2506210112391608100",
+    "M Code-Bar": "2506210112391608200",
+    "M Code-Cat": "2506210112391608500",
+    "M Code-Frog": "2506210112391608700",
+    "S Code-Bar": "2506210112391608800",
+    "S Code-Cat": "2506210112391609000",
+    "S Code-Frog": "2506210112391609200"
+   },
+   "vprice": {
+    "S Code-Lightning Mouse Three Layers": 7199,
+    "M Code-Lightning Mouse Three Layers": 7399,
+    "L Code-Lightning Mouse Three Layers": 7499,
+    "L Code-Bar": 7499,
+    "L Code-Cat": 7499,
+    "L Code-Frog": 7499,
+    "M Code-Bar": 7399,
+    "M Code-Cat": 7399,
+    "M Code-Frog": 7399,
+    "S Code-Bar": 7199,
+    "S Code-Cat": 7199,
+    "S Code-Frog": 7199
+   }
+  },
+  "cj-51624900": {
+   "name": "Plush Hammock Nest",
+   "price": 4699,
+   "cj_pid": "2411260408551624900",
+   "colors": [
+    "Bags",
+    "Boxed"
+   ],
+   "sizes": [],
+   "variants": {
+    "Bags-Lambswool Beige": "2411260408551625100",
+    "Bags-Lambswool Gray": "2411260408551625300",
+    "Bags-Rabbit Fur Beige": "2411260408551625400",
+    "Bags-Rabbit Fur Gray": "2411260408551625600",
+    "Boxed-Lambswool Beige": "2411260408551625700",
+    "Boxed-Lambswool Gray": "2411260408551625900",
+    "Boxed-Rabbit Fur Beige": "2411260408551626100",
+    "Boxed-Rabbit Fur Gray": "2411260408551626200"
+   },
+   "vprice": {
+    "Bags-Lambswool Beige": 4699,
+    "Bags-Lambswool Gray": 4699,
+    "Bags-Rabbit Fur Beige": 4699,
+    "Bags-Rabbit Fur Gray": 4699,
+    "Boxed-Lambswool Beige": 4699,
+    "Boxed-Lambswool Gray": 4699,
+    "Boxed-Rabbit Fur Beige": 4699,
+    "Boxed-Rabbit Fur Gray": 4699
+   }
+  },
+  "cj-12295936": {
+   "name": "Removable Washable Round Nest",
+   "price": 4799,
+   "cj_pid": "1640323806512295936",
+   "colors": [
+    "Yellow",
+    "Green"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Yellow-S": "1640323806600376320",
+    "Yellow-M": "1640323806663290880",
+    "Yellow-L": "1640323806730399744",
+    "Yellow-XL": "1640323806805897216",
+    "Green-S": "1640323806868811776",
+    "Green-M": "1640323806931726336",
+    "Green-L": "1640323806998835200",
+    "Green-XL": "1640323807061749760"
+   },
+   "vprice": {
+    "Yellow-S": 4799,
+    "Yellow-M": 5199,
+    "Yellow-L": 5399,
+    "Yellow-XL": 5899,
+    "Green-S": 4799,
+    "Green-M": 5199,
+    "Green-L": 5399,
+    "Green-XL": 5899
+   }
+  },
+  "cj-61261824": {
+   "name": "Foldable Camping Bed",
+   "price": 6199,
+   "cj_pid": "1745015456861261824",
+   "colors": [
+    "Pet Camp Bed",
+    "Pet Camp Bed Mat",
+    "Pet Camp Bed Mat Ceiling"
+   ],
+   "sizes": [],
+   "variants": {
+    "Pet Camp Bed": "1745015456928370688",
+    "Pet Camp Bed Mat": "1745015456978702336",
+    "Pet Camp Bed Mat Ceiling": "1745015457029033984"
+   },
+   "vprice": {
+    "Pet Camp Bed": 6199,
+    "Pet Camp Bed Mat": 6399,
+    "Pet Camp Bed Mat Ceiling": 7099
+   }
+  },
+  "cj-71611700": {
+   "name": "Square Removable Washable Bed",
+   "price": 4899,
+   "cj_pid": "2409290248471611700",
+   "colors": [
+    "Simple Bear Suit"
+   ],
+   "sizes": [
+    "S",
+    "M"
+   ],
+   "variants": {
+    "Simple Bear Suit-S": "2409290248471611900",
+    "Simple Bear Suit-M": "2409290248471612000"
+   },
+   "vprice": {
+    "Simple Bear Suit-S": 4899,
+    "Simple Bear Suit-M": 5099
+   }
+  },
+  "cj-51610000": {
+   "name": "Waterproof Plush Cushion",
+   "price": 6599,
+   "cj_pid": "2408290125251610000",
+   "colors": [
+    "Dark Gray",
+    "Light Gray",
+    "Rubber Color"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "variants": {
+    "Dark Gray-S": "2408290125251610200",
+    "Dark Gray-M": "2408290125251610400",
+    "Dark Gray-L": "2408290125251610800",
+    "Dark Gray-XL": "2408290125251611000",
+    "Light Gray-S": "2408290125251611100",
+    "Light Gray-M": "2408290125251611300",
+    "Light Gray-L": "2408290125251611700",
+    "Light Gray-XL": "2408290125251611800",
+    "Rubber Color-S": "2408290125251612000",
+    "Rubber Color-M": "2408290125251612100",
+    "Rubber Color-L": "2408290125251612300",
+    "Rubber Color-XL": "2408290125251612600"
+   },
+   "vprice": {
+    "Dark Gray-S": 6599,
+    "Dark Gray-M": 7099,
+    "Dark Gray-L": 7799,
+    "Dark Gray-XL": 8599,
+    "Light Gray-S": 6599,
+    "Light Gray-M": 7099,
+    "Light Gray-L": 7799,
+    "Light Gray-XL": 8599,
+    "Rubber Color-S": 6599,
+    "Rubber Color-M": 7099,
+    "Rubber Color-L": 7799,
+    "Rubber Color-XL": 8599
+   }
+  },
+  "cj-90415104": {
+   "name": "Winter Warm Coral Blanket",
+   "price": 3699,
+   "cj_pid": "1393467710490415104",
+   "colors": [
+    "Pink cat",
+    "Blue cat",
+    "Pink dog",
+    "Blue dog",
+    "Pink bear",
+    "Blue bear",
+    "Yellow bullfight",
+    "Blue bullfight",
+    "Pink bullfight",
+    "Navy blue bullfight"
+   ],
+   "sizes": [],
+   "variants": {
+    "Pink cat-100x75cm": "1393467711836786688",
+    "Blue cat-100x75cm": "1393467711845175296",
+    "Pink dog-100x75cm": "1393467711853563904",
+    "Blue dog-100x75cm": "1393467711861952512",
+    "Pink bear-100x75cm": "1393467711870341120",
+    "Blue bear-100x75cm": "1393467711878729728",
+    "Yellow bullfight-100x75cm": "1393467711891312640",
+    "Blue bullfight-100x75cm": "1393467711895506944",
+    "Pink bullfight-100x75cm": "1393467711903895552",
+    "Navy blue bullfight-100x75cm": "1393467711912284160"
+   },
+   "vprice": {
+    "Pink cat-100x75cm": 3699,
+    "Blue cat-100x75cm": 3699,
+    "Pink dog-100x75cm": 3699,
+    "Blue dog-100x75cm": 3699,
+    "Pink bear-100x75cm": 3699,
+    "Blue bear-100x75cm": 3699,
+    "Yellow bullfight-100x75cm": 3699,
+    "Blue bullfight-100x75cm": 3699,
+    "Pink bullfight-100x75cm": 3699,
+    "Navy blue bullfight-100x75cm": 3699
+   }
+  },
+  "cj-31626900": {
+   "name": "Sherpa Animal Pattern Blanket",
+   "price": 3099,
+   "cj_pid": "2412110114031626900",
+   "colors": [
+    "Style1",
+    "Style2",
+    "Style3",
+    "Style4",
+    "Style5",
+    "Style6",
+    "Style7",
+    "Style8",
+    "Style9",
+    "Style10",
+    "Style11",
+    "Style12",
+    "Style13",
+    "Style14",
+    "Style15",
+    "Style16",
+    "Style17",
+    "Style18",
+    "Style19"
+   ],
+   "sizes": [],
+   "variants": {
+    "Style1-70×100cm": "2412110114031627100",
+    "Style1-100×150cm": "2412110114031627300",
+    "Style1-130×150cm": "2412110114031627600",
+    "Style1-150×200cm": "2412110114031627800",
+    "Style2-70×100cm": "2412110114031627900",
+    "Style2-100×150cm": "2412110114031628100",
+    "Style2-130×150cm": "2412110114031628300",
+    "Style2-150×200cm": "2412110114031628500",
+    "Style3-70×100cm": "2412110114031628700",
+    "Style3-100×150cm": "2412110114031628900",
+    "Style3-130×150cm": "2412110114031629200",
+    "Style3-150×200cm": "2412110114031629300",
+    "Style4-70×100cm": "2412110114031629500",
+    "Style4-100×150cm": "2412110114031629700",
+    "Style4-130×150cm": "2412110114031629900",
+    "Style4-150×200cm": "2412110114041620100",
+    "Style5-70×100cm": "2412110114041620200",
+    "Style5-100×150cm": "2412110114041620500",
+    "Style5-130×150cm": "2412110114041620600",
+    "Style5-150×200cm": "2412110114041620800",
+    "Style6-70×100cm": "2412110114041621100",
+    "Style6-100×150cm": "2412110114041621300",
+    "Style6-130×150cm": "2412110114041621600",
+    "Style6-150×200cm": "2412110114041621800",
+    "Style7-70×100cm": "2412110114041622100",
+    "Style7-100×150cm": "2412110114041622300",
+    "Style7-130×150cm": "2412110114041622400",
+    "Style7-150×200cm": "2412110114041622700",
+    "Style8-70×100cm": "2412110114041622900",
+    "Style8-100×150cm": "2412110114041623100",
+    "Style8-130×150cm": "2412110114041623300",
+    "Style8-150×200cm": "2412110114041623500",
+    "Style9-70×100cm": "2412110114041623600",
+    "Style9-100×150cm": "2412110114041623800",
+    "Style9-130×150cm": "2412110114041624000",
+    "Style9-150×200cm": "2412110114041624200",
+    "Style10-70×100cm": "2412110114041624400",
+    "Style10-100×150cm": "2412110114041624600",
+    "Style10-130×150cm": "2412110114041624900",
+    "Style10-150×200cm": "2412110114041625100",
+    "Style11-70×100cm": "2412110114041625300",
+    "Style11-100×150cm": "2412110114041625500",
+    "Style11-130×150cm": "2412110114041625700",
+    "Style11-150×200cm": "2412110114041625800",
+    "Style12-70×100cm": "2412110114041626000",
+    "Style12-100×150cm": "2412110114041626200",
+    "Style12-130×150cm": "2412110114041626400",
+    "Style12-150×200cm": "2412110114041626600",
+    "Style13-70×100cm": "2412110114041626700",
+    "Style13-100×150cm": "2412110114041626900",
+    "Style13-130×150cm": "2412110114041627100",
+    "Style13-150×200cm": "2412110114041627300",
+    "Style14-70×100cm": "2412110114041627500",
+    "Style14-100×150cm": "2412110114041627600",
+    "Style14-130×150cm": "2412110114041627800",
+    "Style14-150×200cm": "2412110114041628000",
+    "Style15-70×100cm": "2412110114041628200",
+    "Style15-100×150cm": "2412110114041628300",
+    "Style15-130×150cm": "2412110114041628500",
+    "Style15-150×200cm": "2412110114041628700",
+    "Style16-70×100cm": "2412110114041628900",
+    "Style16-100×150cm": "2412110114041629000",
+    "Style16-130×150cm": "2412110114041629200",
+    "Style16-150×200cm": "2412110114041629400",
+    "Style17-70×100cm": "2412110114041629600",
+    "Style17-100×150cm": "2412110114041629800",
+    "Style17-130×150cm": "2412110114041629900",
+    "Style17-150×200cm": "2412110114051620100",
+    "Style18-70×100cm": "2412110114051620300",
+    "Style18-100×150cm": "2412110114051620400",
+    "Style18-130×150cm": "2412110114051620600",
+    "Style18-150×200cm": "2412110114051620800",
+    "Style19-70×100cm": "2412110114051621000",
+    "Style19-100×150cm": "2412110114051621100",
+    "Style19-130×150cm": "2412110114051621400",
+    "Style19-150×200cm": "2412110114051621600"
+   },
+   "vprice": {
+    "Style1-70×100cm": 3099,
+    "Style1-100×150cm": 3299,
+    "Style1-130×150cm": 3599,
+    "Style1-150×200cm": 3899,
+    "Style2-70×100cm": 3099,
+    "Style2-100×150cm": 3299,
+    "Style2-130×150cm": 3599,
+    "Style2-150×200cm": 3899,
+    "Style3-70×100cm": 3099,
+    "Style3-100×150cm": 3299,
+    "Style3-130×150cm": 3599,
+    "Style3-150×200cm": 3899,
+    "Style4-70×100cm": 3099,
+    "Style4-100×150cm": 3299,
+    "Style4-130×150cm": 3599,
+    "Style4-150×200cm": 3899,
+    "Style5-70×100cm": 3099,
+    "Style5-100×150cm": 3299,
+    "Style5-130×150cm": 3599,
+    "Style5-150×200cm": 3899,
+    "Style6-70×100cm": 3099,
+    "Style6-100×150cm": 3299,
+    "Style6-130×150cm": 3599,
+    "Style6-150×200cm": 3899,
+    "Style7-70×100cm": 3099,
+    "Style7-100×150cm": 3299,
+    "Style7-130×150cm": 3599,
+    "Style7-150×200cm": 3899,
+    "Style8-70×100cm": 3099,
+    "Style8-100×150cm": 3299,
+    "Style8-130×150cm": 3599,
+    "Style8-150×200cm": 3899,
+    "Style9-70×100cm": 3099,
+    "Style9-100×150cm": 3299,
+    "Style9-130×150cm": 3599,
+    "Style9-150×200cm": 3899,
+    "Style10-70×100cm": 3099,
+    "Style10-100×150cm": 3299,
+    "Style10-130×150cm": 3599,
+    "Style10-150×200cm": 3899,
+    "Style11-70×100cm": 3099,
+    "Style11-100×150cm": 3299,
+    "Style11-130×150cm": 3599,
+    "Style11-150×200cm": 3899,
+    "Style12-70×100cm": 3099,
+    "Style12-100×150cm": 3299,
+    "Style12-130×150cm": 3599,
+    "Style12-150×200cm": 3899,
+    "Style13-70×100cm": 3099,
+    "Style13-100×150cm": 3299,
+    "Style13-130×150cm": 3599,
+    "Style13-150×200cm": 3899,
+    "Style14-70×100cm": 3099,
+    "Style14-100×150cm": 3299,
+    "Style14-130×150cm": 3599,
+    "Style14-150×200cm": 3899,
+    "Style15-70×100cm": 3099,
+    "Style15-100×150cm": 3299,
+    "Style15-130×150cm": 3599,
+    "Style15-150×200cm": 3899,
+    "Style16-70×100cm": 3099,
+    "Style16-100×150cm": 3299,
+    "Style16-130×150cm": 3599,
+    "Style16-150×200cm": 3899,
+    "Style17-70×100cm": 3099,
+    "Style17-100×150cm": 3299,
+    "Style17-130×150cm": 3599,
+    "Style17-150×200cm": 3899,
+    "Style18-70×100cm": 3099,
+    "Style18-100×150cm": 3299,
+    "Style18-130×150cm": 3599,
+    "Style18-150×200cm": 3899,
+    "Style19-70×100cm": 3099,
+    "Style19-100×150cm": 3299,
+    "Style19-130×150cm": 3599,
+    "Style19-150×200cm": 3899
+   }
+  },
+  "cj-87969025": {
+   "name": "Car Seat Belt Leash",
+   "price": 7199,
+   "cj_pid": "1988501726787969025",
+   "colors": [
+    "Grey",
+    "White"
+   ],
+   "sizes": [
+    "M",
+    "L"
+   ],
+   "variants": {
+    "Grey-M": "1988501726863466498",
+    "Grey-L": "1988501726863466499",
+    "White-M": "1988501726863466500",
+    "White-L": "1988501726863466501"
+   },
+   "vprice": {
+    "Grey-M": 7199,
+    "Grey-L": 7599,
+    "White-M": 7199,
+    "White-L": 7599
+   }
+  },
+  "cj-89140736": {
+   "name": "Car Carrier Bag",
+   "price": 7199,
+   "cj_pid": "1853647216289140736",
+   "colors": [
+    "Black",
+    "Gray",
+    "Blue",
+    "Purple"
+   ],
+   "sizes": [
+    "Large",
+    "Small"
+   ],
+   "variants": {
+    "Black-Large": "1853647216947646464",
+    "Black-Small": "1853647216947646465",
+    "Gray-Large": "1853647216947646466",
+    "Gray-Small": "1853647216947646467",
+    "Blue-Large": "1853647216947646468",
+    "Blue-Small": "1853647216947646469",
+    "Purple-Large": "1853647216947646470",
+    "Purple-Small": "1853647216947646471"
+   },
+   "vprice": {
+    "Black-Large": 7299,
+    "Black-Small": 7199,
+    "Gray-Large": 7299,
+    "Gray-Small": 7199,
+    "Blue-Large": 7299,
+    "Blue-Small": 7199,
+    "Purple-Large": 7299,
+    "Purple-Small": 7199
+   }
+  },
+  "cj-49072384": {
+   "name": "Comfort Outdoor Travel Carrier",
+   "price": 3899,
+   "cj_pid": "1867036784749072384",
+   "colors": [
+    "White",
+    "Gray"
+   ],
+   "sizes": [],
+   "variants": {
+    "White": "1867036784996536320",
+    "Gray": "1867036784996536321"
+   },
+   "vprice": {
+    "White": 3899,
+    "Gray": 3899
+   }
+  },
+  "cj-01600600": {
+   "name": "Foldable Carrier Bag",
+   "price": 4199,
+   "cj_pid": "2410290750201600600",
+   "colors": [
+    "Gray Small Size",
+    "Khaki Small Size",
+    "Gray Large Size",
+    "Khaki Large Size"
+   ],
+   "sizes": [],
+   "variants": {
+    "Gray Small Size": "2410290750201601300",
+    "Khaki Small Size": "2410290750201601500",
+    "Gray Large Size": "2410290750201601700",
+    "Khaki Large Size": "2410290750201601800"
+   },
+   "vprice": {
+    "Gray Small Size": 4199,
+    "Khaki Small Size": 4199,
+    "Gray Large Size": 4199,
+    "Khaki Large Size": 4199
+   }
+  },
+  "cj-94002688": {
+   "name": "Double Pocket Front Backpack",
+   "price": 4699,
+   "cj_pid": "1866687646694002688",
+   "colors": [
+    "Gray",
+    "Pink"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L"
+   ],
+   "variants": {
+    "Gray-S": "1866687647067295744",
+    "Gray-M": "1866687647067295745",
+    "Gray-L": "1866687647067295746",
+    "Pink-S": "1866687647067295747",
+    "Pink-M": "1866687647067295748",
+    "Pink-L": "1866687647067295749"
+   },
+   "vprice": {
+    "Gray-S": 4699,
+    "Gray-M": 4999,
+    "Gray-L": 5299,
+    "Pink-S": 4699,
+    "Pink-M": 4999,
+    "Pink-L": 5299
+   }
+  },
+  "cj-91624201": {
+   "name": "Shoulder Warm Portable Carrier",
+   "price": 5799,
+   "cj_pid": "2409210311591624201",
+   "colors": [
+    "Green",
+    "Red",
+    "Yellow"
+   ],
+   "sizes": [],
+   "variants": {
+    "Green": "2409210311591624600",
+    "Red": "2409210312001621600",
+    "Yellow": "2409210312001621700"
+   },
+   "vprice": {
+    "Green": 5799,
+    "Red": 5899,
+    "Yellow": 5899
+   }
+  },
+  "cj-01619800": {
+   "name": "Oversized Travel Portable Backpack",
+   "price": 7399,
+   "cj_pid": "2501220259101619800",
+   "colors": [
+    "Gray Like Agate Silk Style",
+    "Beige Silk Surface",
+    "Blue Silk Surface Small Size",
+    "Gray Folding Large",
+    "Beige Folding Large",
+    "Green Folding Large",
+    "Blue Folding Large",
+    "Pink Folding Large",
+    "Beige Starry Sky Style"
+   ],
+   "sizes": [],
+   "variants": {
+    "Gray Like Agate Silk Style": "2501220259111610000",
+    "Beige Silk Surface": "2501220259111610200",
+    "Blue Silk Surface Small Size": "2501220259111610400",
+    "Gray Folding Large": "2501220259111610500",
+    "Beige Folding Large": "2501220259111610700",
+    "Green Folding Large": "2501220259111610900",
+    "Blue Folding Large": "2501220259111611000",
+    "Pink Folding Large": "2501220259111611200",
+    "Beige Starry Sky Style": "2501220259111611400"
+   },
+   "vprice": {
+    "Gray Like Agate Silk Style": 7399,
+    "Beige Silk Surface": 7399,
+    "Blue Silk Surface Small Size": 7799,
+    "Gray Folding Large": 8299,
+    "Beige Folding Large": 8299,
+    "Green Folding Large": 8299,
+    "Blue Folding Large": 8299,
+    "Pink Folding Large": 8299,
+    "Beige Starry Sky Style": 8899
+   }
+  },
+  "cj-41600900": {
+   "name": "Clear Bubble Backpack",
+   "price": 6599,
+   "cj_pid": "2504180651241600900",
+   "colors": [
+    "Transparent Skylight Green",
+    "Transparent Skylight Pink",
+    "Transparent Skylight Black",
+    "Transparent Skylight Gray",
+    "Transparent Skylight Blue",
+    "Transparent Skylight Yellow",
+    "Transparent Skylight Red"
+   ],
+   "sizes": [],
+   "variants": {
+    "Transparent Skylight Green": "2504180651241602000",
+    "Transparent Skylight Pink": "2504180651241602500",
+    "Transparent Skylight Black": "2504180651241602800",
+    "Transparent Skylight Gray": "2504180651241603000",
+    "Transparent Skylight Blue": "2504180651241603700",
+    "Transparent Skylight Yellow": "2504180651241604500",
+    "Transparent Skylight Red": "2504180651241604700"
+   },
+   "vprice": {
+    "Transparent Skylight Green": 6599,
+    "Transparent Skylight Pink": 6599,
+    "Transparent Skylight Black": 6599,
+    "Transparent Skylight Gray": 6599,
+    "Transparent Skylight Blue": 6599,
+    "Transparent Skylight Yellow": 6599,
+    "Transparent Skylight Red": 6599
+   }
+  },
+  "cj-61608700": {
+   "name": "Simple Crossbody Carrier",
+   "price": 3999,
+   "cj_pid": "2409120204461608700",
+   "colors": [
+    "White Bear",
+    "Grey"
+   ],
+   "sizes": [],
+   "variants": {
+    "White Bear-38*14*41cm": "2409120204461608900",
+    "Grey-38*14*41cm": "2411190814391621800"
+   },
+   "vprice": {
+    "White Bear-38*14*41cm": 3999,
+    "Grey-38*14*41cm": 3999
+   }
+  },
+  "cj-91627900": {
+   "name": "Travel Crossbody Backpack",
+   "price": 2199,
+   "cj_pid": "2410280612391627900",
+   "colors": [
+    "White"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L"
+   ],
+   "variants": {
+    "White-S": "2410280612391628100",
+    "White-M": "2410280612391628400",
+    "White-L": "2410280612391628600"
+   },
+   "vprice": {
+    "White-S": 2199,
+    "White-M": 2199,
+    "White-L": 2299
+   }
   }
  },
  "wraps": {

@@ -4,7 +4,7 @@ const EDIBLE = /\b(treat|food|kibble|jerky|chew stick|supplement|cbd|vitamin)s?\
 // Food only as links to shops that sell it themselves; never via CJ dropship (we would be the seller).
 const blocked = p => (p.cat==='food' || EDIBLE.test(p.name)) && (p.src==='cj');
 // 11-25 audit: these can't reach checkout (CJ size/color data mixed up, or no size in stock). Hidden until fixed.
-const BROKEN = new Set(['cj-01628500','cj-81625200','cj-49876992','cj-21605200','cj-91620800','cj-59756800','cj-91627600','cj-68520960','cj-01630700','cj-11625800','cj-01614900','cj-51618100','cj-01610500']);
+const BROKEN = new Set(['cj-01628500','cj-81625200','cj-49876992','cj-21605200','cj-91620800','cj-59756800','cj-91627600','cj-68520960','cj-01630700','cj-11625800','cj-01614900','cj-51618100','cj-01610500','cj-08363264','cj-B23DE92B','cj-039001CF']); // 11-26: colour options unreadable (A–T, Myd, Blac)
 const DEMO = new URLSearchParams(location.search).has('demo'); // repeat samples to test scrolling
 
 // Shops we link to. Each one is shown only where it can really ship.
