@@ -46,7 +46,7 @@ header nav{display:flex;gap:18px;font-size:15px}
 .cats-row a span{font-size:26px;line-height:1}
 .tag:has(img.plg){background:none!important;padding:0!important;box-shadow:none!important}
 .tag img.plg{filter:none}
-.tag img.plg{height:30px!important;width:auto!important;max-width:none!important;aspect-ratio:auto!important;object-fit:contain!important;display:block;border-radius:0!important}
+.tag img.plg{height:18px!important;opacity:.92;width:auto!important;max-width:none!important;aspect-ratio:auto!important;object-fit:contain!important;display:block;border-radius:0!important}
 .row.fun>*{flex:0 0 62%}
 @media(min-width:768px){.row.fun>*{flex:0 0 27%}}
 .fun-c{position:relative;border-radius:22px;padding:18px 16px 16px;min-height:190px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;color:#fff;background:linear-gradient(140deg,var(--c1),var(--c2));overflow:hidden}
@@ -91,7 +91,8 @@ h2{font-weight:300;font-size:28px;margin-bottom:16px}
 .card .cap{padding:10px 14px 14px}
 .card .cap b{font-weight:400;font-size:16px;display:block}
 .card .cap span{font-size:13px;opacity:.65}
-.tag{position:absolute;top:16px;left:16px;color:#15131c;background:rgba(255,255,255,.92);border-radius:999px;padding:4px 10px;font-size:12px}
+.pw{position:relative;display:block}
+.tag{position:absolute;bottom:10px;right:18px;z-index:1;color:#15131c;background:rgba(255,255,255,.92);border-radius:999px;padding:4px 10px;font-size:12px}
 .sec{max-width:1200px;margin:0 auto;padding:30px 0 6px}
 .sec .hd{display:flex;align-items:baseline;justify-content:space-between;padding:0 16px;margin-bottom:12px}
 .sec .hd h2{margin:0;font-size:26px}
@@ -459,7 +460,7 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
 // ---- Infinite scroll --------------------------------------------------------
 const grid = document.getElementById('grid'), more = document.getElementById('more');
 let cat='all', page=0, busy=false, done=false, run=0;
-const card = p => `<a class="card" href="product.html?id=${encodeURIComponent(p.id)}"><span class="tag">${shopBadge(p.src||"sample", p.id, p.badge)}</span>${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:`<div class="ph" style="--c:${p.color||'#f3c6d6'}"><span>🐾</span></div>`}<div class="cap"><b>${p.name}</b><span>${p.note||''}</span>${p.price?`<em class="pr">$${p.price.toFixed(2)}</em>`:''}${p.pop>=100?`<i class="hot">🔥 In ${p.pop.toLocaleString('en-US')} shops</i>`:''}</div></a>`;
+const card = p => `<a class="card" href="product.html?id=${encodeURIComponent(p.id)}"><span class="pw"><span class="tag">${shopBadge(p.src||"sample", p.id, p.badge)}</span>${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:`<div class="ph" style="--c:${p.color||'#f3c6d6'}"><span>🐾</span></div>`}</span><div class="cap"><b>${p.name}</b><span>${p.note||''}</span>${p.price?`<em class="pr">$${p.price.toFixed(2)}</em>`:''}${p.pop>=100?`<i class="hot">🔥 In ${p.pop.toLocaleString('en-US')} shops</i>`:''}</div></a>`;
 async function loadNext(){
   if(busy||done) return; busy=true; const my=run;
   more.textContent='Loading more…';
