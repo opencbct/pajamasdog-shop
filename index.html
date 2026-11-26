@@ -83,6 +83,8 @@ h2{font-weight:300;font-size:28px;margin-bottom:16px}
 .chip{padding:8px 16px;border-radius:999px;background:#26222f;font-size:15px;cursor:pointer;border:0;font-family:inherit;font-weight:300;color:#f3f1f8}
 .chip.on{background:#fff;color:#15131c}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+#grid{overflow-x:clip}#grid>*{transition:transform .7s ease-out;will-change:transform}
+@media(prefers-reduced-motion:reduce){#grid>*{transform:none!important}}
 @media(min-width:768px){.grid{grid-template-columns:repeat(4,1fr);gap:18px}}
 .card{background:#221f2d;border-radius:20px;overflow:hidden;position:relative}
 .card img{width:calc(100% - 16px);margin:8px 8px 0;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:16px}
@@ -95,6 +97,7 @@ h2{font-weight:300;font-size:28px;margin-bottom:16px}
 .sec .hd h2{margin:0;font-size:26px}
 .sec .hd a{font-size:15px;color:var(--pink)}
 .row{display:flex;gap:12px;overflow-x:auto;padding:0 16px 8px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.row.drift{scroll-snap-type:none}
 .row::-webkit-scrollbar{display:none}
 .row>*{flex:0 0 44%;scroll-snap-align:start}
 @media(min-width:768px){.row>*{flex:0 0 23%}}
@@ -537,6 +540,35 @@ document.getElementById('heroPhoto')?.addEventListener('change', e => {
   box.innerHTML = out.join('');
 })();
 document.querySelectorAll('[data-go]').forEach(a => a.addEventListener('click', () => document.querySelector(`.chip[data-k="${a.dataset.go}"]`)?.click()));
+// 11-26 형님: product rows glide left as the page scrolls down (and back when scrolling up).
+// A row the shopper touches stops gliding for a few seconds so it never fights a swipe.
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const rows = [...document.querySelectorAll('.row:not(.fun)')];
+  const hold = new WeakMap();
+  rows.forEach(r => { r.classList.add('drift');
+    const stop = () => { hold.set(r, Date.now() + 4000); r.classList.remove('drift'); };
+    ['pointerdown', 'touchstart', 'wheel'].forEach(ev => r.addEventListener(ev, stop, { passive: true })); });
+  let ticking = false;
+  const tick = () => { ticking = false;
+    for (const r of rows) {
+      if ((hold.get(r) || 0) > Date.now()) continue;
+      r.classList.add('drift');
+      const b = r.getBoundingClientRect(); if (b.bottom < 0 || b.top > innerHeight) continue;
+      const max = r.scrollWidth - r.clientWidth; if (max <= 0) continue;
+      const p = Math.min(1, Math.max(0, (innerHeight - b.top) / (innerHeight + b.height)));
+      r.scrollLeft = p * max * .7;
+    }
+    // 11-26 형님: All-products grid — rows sway gently, one row left, the next right (slow, max ~18px).
+    const g = document.getElementById('grid');
+    if (g) { const kids = g.children, cols = getComputedStyle(g).gridTemplateColumns.split(' ').length || 2;
+      for (let i = 0; i < kids.length; i++) { const k = kids[i], b = k.getBoundingClientRect();
+        if (b.bottom < -50 || b.top > innerHeight + 50) continue;
+        const dir = Math.floor(i / cols) % 2 ? 1 : -1, p = (b.top + b.height / 2) / innerHeight - .5;
+        k.style.transform = `translateX(${(dir * p * 36).toFixed(1)}px)`; } }
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(tick); } }, { passive: true });
+})();
 </script>
 </body>
 </html>
