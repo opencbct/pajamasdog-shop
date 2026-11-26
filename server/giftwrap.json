@@ -1,0 +1,41 @@
+{
+  "_note": "11-26 Digital gift reveal (no physical wrapping: suppliers can't pack per order). Site reads this file, server checks choices + price from it. Any premium choice → premium price.",
+  "price": { "free": 0, "premium": 199 },
+  "box": [
+    { "k": "kraft",    "name": "Kraft",           "tier": "free",    "bg": "#c89b6d", "bg2": "#b3855a", "pat": "" },
+    { "k": "snow",     "name": "Snow white",      "tier": "free",    "bg": "#f4f1ec", "bg2": "#e2ddd5", "pat": "" },
+    { "k": "red",      "name": "Holiday red",     "tier": "free",    "bg": "#c8102e", "bg2": "#a00c24", "pat": "" },
+    { "k": "candy",    "name": "Candy pink",      "tier": "premium", "bg": "#ff8fb8", "bg2": "#ff5f98", "pat": "dots" },
+    { "k": "midnight", "name": "Midnight stars",  "tier": "premium", "bg": "#1d2350", "bg2": "#121638", "pat": "stars" },
+    { "k": "plaid",    "name": "Christmas plaid", "tier": "premium", "bg": "#1f6b3a", "bg2": "#b3122a", "pat": "plaid" },
+    { "k": "paw",      "name": "Paw print",       "tier": "premium", "bg": "#fff0d6", "bg2": "#f2d9b0", "pat": "paws" }
+  ],
+  "ribbon": [
+    { "k": "red",    "name": "Red satin",      "tier": "free",    "c": "#d7192f", "c2": "#a50f22" },
+    { "k": "white",  "name": "White satin",    "tier": "free",    "c": "#ffffff", "c2": "#d9d4cc" },
+    { "k": "gold",   "name": "Gold",           "tier": "premium", "c": "#e6b93c", "c2": "#b88a17" },
+    { "k": "pink",   "name": "Pink velvet",    "tier": "premium", "c": "#ff4f8f", "c2": "#c92a66" },
+    { "k": "silver", "name": "Silver glitter", "tier": "premium", "c": "#d8dde6", "c2": "#9aa3b2", "glitter": true }
+  ],
+  "inside": [
+    { "k": "tissue",   "name": "Tissue paper",  "tier": "free",    "fx": "tissue" },
+    { "k": "confetti", "name": "Confetti burst","tier": "premium", "fx": "confetti" },
+    { "k": "snow",     "name": "Snowfall",      "tier": "premium", "fx": "snow" },
+    { "k": "hearts",   "name": "Floating hearts","tier": "premium","fx": "hearts" },
+    { "k": "paws",     "name": "Paw-print rain","tier": "premium", "fx": "paws" }
+  ],
+  "card": [
+    { "k": "classic",  "name": "Classic",       "tier": "free",    "bg": "#fffaf3", "ink": "#2b2530", "deco": "" },
+    { "k": "holiday",  "name": "Holiday",       "tier": "free",    "bg": "#0f5132", "ink": "#fff7e6", "deco": "🎄" },
+    { "k": "birthday", "name": "Birthday",      "tier": "premium", "bg": "#ffe1ec", "ink": "#5a1834", "deco": "🎂" },
+    { "k": "pawcard",  "name": "Paw love",      "tier": "premium", "bg": "#fff3d9", "ink": "#4a3112", "deco": "🐾" },
+    { "k": "polaroid", "name": "Photo card",    "tier": "premium", "bg": "#ffffff", "ink": "#222222", "deco": "📸", "photo": true }
+  ],
+  "messages": [
+    "Merry Christmas! Stay cozy 🎄",
+    "Happy birthday, sweet pup! 🎂",
+    "Just because you're the goodest. 🐾",
+    "Welcome home, little one! 🏡",
+    "Thank you for being family. ❤️"
+  ]
+}

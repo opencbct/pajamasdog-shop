@@ -5,6 +5,7 @@
 // Money never moves here: refunds are done by 형님 in Stripe. Sending only.
 import { SESv2Client, SendEmailCommand } from '@aws-sdk/client-sesv2';
 import { approveLink } from './approve.mjs';
+import { giftLink } from './gift.mjs';
 
 export const OWNER = 'orders@opencbct.com'; // 11-26 형님: order notices go here
 export const FROM = 'PajamasDog <info@opencbct.com>';
@@ -72,9 +73,10 @@ export async function orderMails(session, cj) {
   const help = `https://pajamasdog.com/help.html?e=${encodeURIComponent(to)}`;
   const bHtml = shell('Thank you — your order is in 🐾', p(`Hi ${esc(first)}, we got your order <b>#${code}</b>.`) + rows(items)
     + p(`Total ${money(session.amount_total)} · free shipping to ${esc(a.city)}, ${esc(a.state)}.<br>It leaves our partner warehouse in 1–3 days, and we e-mail the tracking number when it ships.`)
+    + (session.metadata?.gift ? p(`🎁 <b>Your gift reveal is ready.</b> Send this link to ${esc(session.metadata.gift_to || 'them')} — they tap the box to unwrap it:`) + btn(giftLink(session.id), 'Open the gift reveal') : '')
     + p('Need to cancel? You can cancel for a full refund within 12 hours, before it ships.')
     + btn(help, 'Cancel or get help'));
-  const bText = `Hi ${first}, we got your PajamasDog order #${code}.\n${items.map(i => `- ${i.name} x ${i.qty}`).join('\n')}\nTotal ${money(session.amount_total)}, free shipping.\nWe e-mail the tracking number when it ships.\nCancel within 12 hours or get help: ${help}`;
+  const bText = `Hi ${first}, we got your PajamasDog order #${code}.\n${items.map(i => `- ${i.name} x ${i.qty}`).join('\n')}\nTotal ${money(session.amount_total)}, free shipping.\nWe e-mail the tracking number when it ships.\n${session.metadata?.gift ? `Gift reveal link: ${giftLink(session.id)}\n` : ''}Cancel within 12 hours or get help: ${help}`;
   await send(to, `Order #${code} confirmed — PajamasDog`, bHtml, bText);
 }
 

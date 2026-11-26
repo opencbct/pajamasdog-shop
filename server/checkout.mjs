@@ -10,9 +10,20 @@ import { sendTracking } from './tracking.mjs';
 import { cjSweep } from './sweep.mjs';
 import { orderMails, helpRequest } from './notify.mjs';
 import { approve } from './approve.mjs';
+import { giftData, giftLinkFor } from './gift.mjs';
 import crypto from 'node:crypto';
 import { readFileSync } from 'node:fs';
 const CATALOG = JSON.parse(readFileSync(new URL('./catalog.json', import.meta.url)));
+// 11-26: digital gift reveal options (same file the site reads). No physical wrapping: suppliers can't pack per order.
+const GIFT = JSON.parse(readFileSync(new URL('./giftwrap.json', import.meta.url)));
+function giftOf(g) {
+  if (!g || !g.on) return null;
+  const pick = (list, k) => GIFT[list].find(o => o.k === k) || GIFT[list][0];
+  const o = { box: pick('box', g.box), ribbon: pick('ribbon', g.ribbon), inside: pick('inside', g.inside), card: pick('card', g.card) };
+  const tier = Object.values(o).some(x => x.tier === 'premium') ? 'premium' : 'free';
+  return { tier, price: GIFT.price[tier], keys: `${o.box.k}|${o.ribbon.k}|${o.inside.k}|${o.card.k}`,
+    to: String(g.to || '').slice(0, 40), from: String(g.from || '').slice(0, 40), msg: String(g.msg || '').slice(0, 280) };
+}
 const SITE = process.env.SITE_URL || 'https://pajamasdog.com';
 const SHIP_TO = ['US', 'CA']; // 11-26: US + Canada only until a return policy fits EU/UK/AU law
 const COUNTRY_NAME = { US: 'United States', CA: 'Canada', GB: 'United Kingdom', AU: 'Australia', NZ: 'New Zealand', JP: 'Japan',
@@ -22,7 +33,7 @@ const json = (code, body) => ({ statusCode: code, headers: { 'content-type': 'ap
 // ---- 1. Create a Stripe Checkout session from SERVER prices only ----
 async function createCheckout(req) {
   const items = (req.items || []).slice(0, 20);
-  const wrap = CATALOG.wraps[req.wrap] ? req.wrap : 'none';
+  const gift = giftOf(req.gift);
   const form = new URLSearchParams();
   let n = 0;
   for (const it of items) {
@@ -46,13 +57,12 @@ async function createCheckout(req) {
     n++;
   }
   if (!n) return json(400, { error: 'Cart is empty' });
-  if (CATALOG.wraps[wrap].price) {
+  if (gift?.price) {
     form.append(`line_items[${n}][price_data][currency]`, CATALOG.currency);
-    form.append(`line_items[${n}][price_data][unit_amount]`, String(CATALOG.wraps[wrap].price));
-    form.append(`line_items[${n}][price_data][product_data][name]`, `Gift wrap · ${CATALOG.wraps[wrap].name}`);
+    form.append(`line_items[${n}][price_data][unit_amount]`, String(gift.price));
+    form.append(`line_items[${n}][price_data][product_data][name]`, 'Digital gift reveal · Premium (online unboxing link, nothing extra is shipped)');
     form.append(`line_items[${n}][quantity]`, '1');
   }
-  const g = req.gift || {};
   form.append('mode', 'payment');
   form.append('success_url', `${SITE}/thanks.html?s={CHECKOUT_SESSION_ID}`);
   form.append('cancel_url', `${SITE}/studio.html`);
@@ -60,10 +70,13 @@ async function createCheckout(req) {
   SHIP_TO.forEach((c, i) => form.append(`shipping_address_collection[allowed_countries][${i}]`, c));
   form.append('custom_text[submit][message]', 'All sales are final. By paying you agree to our Shipping & Returns policy: https://pajamasdog.com/returns.html');
   form.append('phone_number_collection[enabled]', 'true'); // the carrier needs a phone number
-  form.append('metadata[wrap]', wrap);
-  form.append('metadata[gift_to]', String(g.to || '').slice(0, 60));
-  form.append('metadata[gift_from]', String(g.from || '').slice(0, 60));
-  form.append('metadata[gift_msg]', String(g.msg || '').slice(0, 300));
+  if (gift) {
+    form.append('metadata[gift]', gift.tier);
+    form.append('metadata[gift_look]', gift.keys);
+    form.append('metadata[gift_to]', gift.to);
+    form.append('metadata[gift_from]', gift.from);
+    form.append('metadata[gift_msg]', gift.msg);
+  }
   const r = await fetch('https://api.stripe.com/v1/checkout/sessions', {
     method: 'POST', headers: { authorization: `Bearer ${process.env.STRIPE_SECRET_KEY}`, 'content-type': 'application/x-www-form-urlencoded' }, body: form });
   const s = await r.json();
@@ -123,7 +136,7 @@ async function placeCjOrder(session) {
     method: 'POST', headers: { 'content-type': 'application/json', 'CJ-Access-Token': token },
     body: JSON.stringify({ orderNumber: session.id, shippingCountryCode: a.country, shippingCountry: COUNTRY_NAME[a.country] || a.country, shippingProvince: a.state, shippingCity: a.city,
       shippingAddress: [a.line1, a.line2].filter(Boolean).join(' '), shippingZip: a.postal_code, shippingCustomerName: ship.name,
-      shippingPhone: session.customer_details?.phone || '', email: session.customer_details?.email || '', remark: `Gift: ${session.metadata?.wrap || 'none'} ${session.metadata?.gift_msg || ''}`.slice(0, 200),
+      shippingPhone: session.customer_details?.phone || '', email: session.customer_details?.email || '', remark: session.metadata?.gift ? 'Gift order: please do not include any price or invoice in the parcel.' : '',
       logisticName: 'CJPacket Ordinary', fromCountryCode: 'CN', products }) });
   return r.json();
 }
@@ -149,6 +162,8 @@ export const handler = async (event) => {
     if (path.endsWith('/pack')) return await createPack();
     if (path.endsWith('/pack-verify')) return await verifyPack(new URLSearchParams(event.rawQueryString || '').get('s'));
     if (path.endsWith('/approve')) return await approve(event, cjToken);
+    if (path.endsWith('/gift')) return await giftData(new URLSearchParams(event.rawQueryString || '').get('g'));
+    if (path.endsWith('/gift-link')) return await giftLinkFor(new URLSearchParams(event.rawQueryString || '').get('s'));
     if (path.endsWith('/help')) {
       // Buyer's cancel / problem form. Sends e-mails only; refunds stay with 형님 in Stripe.
       const r = await helpRequest(JSON.parse(raw || '{}'), cjStatusOf);
