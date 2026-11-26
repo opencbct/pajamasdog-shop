@@ -35,6 +35,10 @@
 .sf-unit{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.sf-unit .btn{margin-left:auto;padding:8px 14px}
 .sf-out{font-size:14px;margin:8px 0 2px}.sf-out small{opacity:.6;display:block}
 .sf-help{font-size:11px;opacity:.55;margin:4px 0 0}
+.bf{margin:2px 0 10px}.bf select{width:100%;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.18);background:var(--card);color:inherit;font:inherit;font-weight:300;font-size:15px;-webkit-appearance:none;appearance:none}
+.bf-out{font-size:14px;margin:8px 0 0;font-weight:300}.bf-out small{opacity:.6;display:block}
+.fits{border-radius:14px;background:var(--card);padding:10px 12px;margin:0 0 12px;font-weight:300}.fits .lbl2{margin-top:0}.fits small{opacity:.8}
+.fz{display:grid;grid-template-columns:44px 1fr;gap:8px;font-size:13px;padding:5px 0;border-top:1px solid rgba(255,255,255,.07)}.fz b{font-weight:300;opacity:.95}.fz span{opacity:.75}
 </style>
 <link rel="stylesheet" href="logo-motion.css">
 </head>
@@ -47,7 +51,10 @@
 <footer>Sold and shipped by PajamasDog. <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a> · <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
 <script src="shop.js?v=6"></script>
 <script src="sizes_data.js?v=2"></script>
+<script src="sizes_extra.js?v=1"></script>
+<script src="breeds.js?v=1"></script>
 <script src="sizefinder.js?v=1"></script>
+<script src="breedfit.js?v=1"></script>
 <script>
 (async () => {
   const q = new URLSearchParams(location.search);
@@ -69,7 +76,7 @@
       <p>${p.note||''}</p>
       ${p.src==='pd' ? `<div class="price"><span id="pr">${p.price_max>p.price?'<small style="margin:0 4px 0 0">from</small>':''}$${p.price.toFixed(2)}</span> <small>Free shipping · US 7–12 days · Canada 7–15 days</small></div>${p.pop>=100?`<p class="hot2">🔥 Carried by ${p.pop.toLocaleString('en-US')} pet shops worldwide</p>`:''}
       ${(p.colors||[]).length>1 ? `<div class="lbl2">Color</div><div class="sizes cols">${p.colors.map((c,i)=>`<button class="chip${i===ci0?' on':''}" data-c="${i}">${c}</button>`).join('')}</div>` : ''}
-      ${(p.sizes||[]).length ? `<div class="lbl2">Size</div><div class="sizes szs"></div>${p.cat==='pajamas' ? sizeFinderHTML() : ''}` : ''}` : ''}
+      ${(p.sizes||[]).length ? `<div class="lbl2">Size</div><div class="sizes szs"></div>${p.cat==='pajamas' ? breedFitHTML(p) + sizeFinderHTML() : ''}` : ''}` : ''}
       <div class="ship">${p.src==='pd' ? 'Sold by PajamasDog. All sales final — <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>.' : live ? `Sold, shipped and returned by ${shop}.` : 'Coming soon.'}${p.look && !look && !tried ? ' Photo shows a similar style.' : ''}</div>
       <div class="acts">
         ${p.src==='pd' ? `<button class="btn" id="buy">${CHECKOUT_API ? 'Buy now' : 'Checkout opens soon'}</button>`
@@ -107,6 +114,7 @@
     showColorPic(); });
   main.querySelector('.szs')?.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b || b.disabled) return; size = b.dataset.z; drawSizes(); });
   bindSizeFinder(main, () => p, colorIdx, z => { size = z; drawSizes(); });
+  bindBreedFit(main, () => p, colorIdx, z => { size = z; drawSizes(); });
   main.querySelector('#buy')?.addEventListener('click', () => { if(!size && (p.sizes||[]).length){ main.querySelector('.sf')?.setAttribute('open',''); main.querySelector('.szs')?.scrollIntoView({block:'center', behavior:'smooth'}); return; } payDirect([{id:p.id, size, c:colorIdx()}]); });
 })();
 </script>
