@@ -25,3 +25,9 @@ header .hlogo{height:78px;width:auto;display:block}
 @media(max-width:600px){header .hlogo{height:62px}}
 .cap .hot{display:block;font-style:normal;font-size:11px;font-weight:300;opacity:.75;margin-top:2px}
 .hot2{font-size:13px;font-weight:300;opacity:.8;margin:6px 0 0}
+
+/* 11-26 new animated logo (header, footer). Its dark backdrop blends into the page with lighten. */
+header .hlogo.hv{height:74px;width:auto;display:block;mix-blend-mode:lighten;background:transparent}
+@media(max-width:600px){header .hlogo.hv{height:56px}}
+footer .flogo{display:block;width:220px;margin:0 auto 14px}
+footer .flogo video{width:100%;height:auto;display:block;mix-blend-mode:lighten}
