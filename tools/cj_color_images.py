@@ -34,7 +34,7 @@ def save(url, dst):
         print('  img fail', e); return False
 
 out = json.load(open(JSON_OUT)) if os.path.exists(JSON_OUT) else {}
-items = [(k, v) for k, v in CAT.items() if k.startswith('cj-') and v.get('cj_pid') and len(v.get('colors') or []) > 1]
+items = [(k, v) for k, v in CAT.items() if k.startswith(('cj-', 'pd-')) and v.get('cj_pid') and len(v.get('colors') or []) > 1]
 print('items with colours:', len(items))
 for n, (pid, it) in enumerate(items):
     if pid in out: continue
@@ -42,7 +42,10 @@ for n, (pid, it) in enumerate(items):
     vs = (j.get('data') or {}).get('variants') or []
     paths = []
     for ci, color in enumerate(it['colors']):
-        img = next((v.get('variantImage') for v in vs if v.get('variantImage') and (
+        # 11-26: match by variant id first (our colour names can differ from CJ's), then by CJ's colour name
+        vids = {vid for key, vid in (it.get('variants') or {}).items() if key == color or key.startswith(color + '-')}
+        img = next((v.get('variantImage') for v in vs if v.get('variantImage') and v.get('vid') in vids), None) or \
+              next((v.get('variantImage') for v in vs if v.get('variantImage') and (
             (v.get('variantKey') or '') == color or (v.get('variantKey') or '').startswith(color + '-'))), None)
         dst = os.path.join(OUT, f'{pid}_{ci}.webp')
         paths.append(f'img/cj/c/{pid}_{ci}.webp' if img and save(img, dst) else None)
