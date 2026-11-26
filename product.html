@@ -45,7 +45,7 @@
 </header>
 <main id="main" class="two"></main>
 <footer>Sold and shipped by PajamasDog. <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a> · <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
-<script src="shop.js?v=5"></script>
+<script src="shop.js?v=6"></script>
 <script src="sizes_data.js?v=2"></script>
 <script src="sizefinder.js?v=1"></script>
 <script>
@@ -67,7 +67,7 @@
     <div class="info">
       <h1>${p.name}</h1>
       <p>${p.note||''}</p>
-      ${p.src==='pd' ? `<div class="price">${p.price_max>p.price?'<small style="margin:0 4px 0 0">from</small>':''}$${p.price.toFixed(2)} <small>Free shipping · US 7–12 days · worldwide</small></div>${p.pop>=100?`<p class="hot2">🔥 Carried by ${p.pop.toLocaleString('en-US')} pet shops worldwide</p>`:''}
+      ${p.src==='pd' ? `<div class="price"><span id="pr">${p.price_max>p.price?'<small style="margin:0 4px 0 0">from</small>':''}$${p.price.toFixed(2)}</span> <small>Free shipping · US 7–12 days · worldwide</small></div>${p.pop>=100?`<p class="hot2">🔥 Carried by ${p.pop.toLocaleString('en-US')} pet shops worldwide</p>`:''}
       ${(p.colors||[]).length>1 ? `<div class="lbl2">Color</div><div class="sizes cols">${p.colors.map((c,i)=>`<button class="chip${i===ci0?' on':''}" data-c="${i}">${c}</button>`).join('')}</div>` : ''}
       ${(p.sizes||[]).length ? `<div class="lbl2">Size</div><div class="sizes szs"></div>${p.cat==='pajamas' ? sizeFinderHTML() : ''}` : ''}` : ''}
       <div class="ship">${p.src==='pd' ? 'Sold by PajamasDog. All sales final — <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>.' : live ? `Sold, shipped and returned by ${shop}.` : 'Coming soon.'}${p.look && !look && !tried ? ' Photo shows a similar style.' : ''}</div>
@@ -85,7 +85,12 @@
     if(!st.includes(size)) size = '';
     box.innerHTML = (p.sizes||[]).map(z => `<button class="chip${z===size?' on':''}"${st.includes(z)?'':' disabled title="Sold out in this color"'} data-z="${z}">${z}</button>`).join('');
     const one = !(p.sizes||[]).length;
-    main.querySelector('#buy') && (main.querySelector('#buy').textContent = !CHECKOUT_API ? 'Checkout opens soon' : one ? 'Buy now' : size ? `Buy now · ${size}` : 'Pick a size');
+    PRICES.then(P => {
+      const v = (one || size) ? priceSync(P, p, colorIdx(), size) : null, pr = main.querySelector('#pr');
+      if(pr && v) pr.textContent = '$' + v.toFixed(2);
+      else if(pr) pr.innerHTML = (p.price_max>p.price ? '<small style="margin:0 4px 0 0">from</small>' : '') + '$' + p.price.toFixed(2);
+      main.querySelector('#buy') && (main.querySelector('#buy').textContent = !CHECKOUT_API ? 'Checkout opens soon' : one ? `Buy now · $${(v||p.price).toFixed(2)}` : size ? `Buy now · ${size} · $${(v||p.price).toFixed(2)}` : 'Pick a size');
+    });
   };
   drawSizes();
   main.querySelector('.cols')?.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return;

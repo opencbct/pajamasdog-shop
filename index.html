@@ -446,7 +446,7 @@ footer{text-align:center;font-size:13px;color:rgba(243,241,248,.6);padding:30px 
 
 <footer>Sold and shipped by PajamasDog. <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a> · <a href="privacy.html" style="text-decoration:underline">Privacy</a><br><br>© 2026 PajamasDog</footer>
 
-<script src="shop.js?v=5"></script>
+<script src="shop.js?v=6"></script>
 <script>
 // ---- Product source -------------------------------------------------------
 // getProducts(cat, page) returns one page of products.
@@ -467,6 +467,8 @@ async function loadNext(){
   else if(more.getBoundingClientRect().top < innerHeight+600) loadNext(); // screen not full yet
 }
 new IntersectionObserver(e => { if(e[0].isIntersecting) loadNext(); }, {rootMargin:'600px'}).observe(more);
+// 11-26: a fast flick to the very bottom could leave "Loading more…" stuck (observer never re-fires). Scroll check as a backup.
+addEventListener('scroll', () => { if(!done && more.getBoundingClientRect().top < innerHeight + 600) loadNext(); }, {passive:true});
 document.getElementById('chips').addEventListener('click', e => {
   const b = e.target.closest('.chip'); if(!b) return;
   document.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c===b));

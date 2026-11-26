@@ -4,7 +4,7 @@ const EDIBLE = /\b(treat|food|kibble|jerky|chew stick|supplement|cbd|vitamin)s?\
 // Food only as links to shops that sell it themselves; never via CJ dropship (we would be the seller).
 const blocked = p => (p.cat==='food' || EDIBLE.test(p.name)) && (p.src==='cj');
 // 11-25 audit: these can't reach checkout (CJ size/color data mixed up, or no size in stock). Hidden until fixed.
-const BROKEN = new Set(['cj-01628500','cj-81625200','cj-49876992','cj-21605200','cj-91620800','cj-59756800','cj-91627600','cj-68520960','cj-01630700','cj-11625800','cj-01614900']);
+const BROKEN = new Set(['cj-01628500','cj-81625200','cj-49876992','cj-21605200','cj-91620800','cj-59756800','cj-91627600','cj-68520960','cj-01630700','cj-11625800','cj-01614900','cj-51618100','cj-01610500']);
 const DEMO = new URLSearchParams(location.search).has('demo'); // repeat samples to test scrolling
 
 // Shops we link to. Each one is shown only where it can really ship.
@@ -141,8 +141,17 @@ async function buyPack(){
 }
 
 // Pay for our own (pd) items. The server sets every price; the browser only sends ids + sizes.
+// 11-26: exact price per color + size (bigger sizes can cost more). Same mapping as server/checkout.mjs, data from tools/make_prices.py.
+const PRICES = fetch('products/prices.json').then(r => r.ok ? r.json() : {}).catch(() => ({}));
+function priceSync(P, p, ci=0, size=''){
+  const e = P && P[p.id]; if(!e) return p.price;
+  const color = e.c[ci] || '';
+  const k = Object.keys(e.v).find(k => e.one ? (k === color || k.startsWith(color + '-')) : (k.startsWith(color + '-') && k.split('-').includes(size)));
+  return k ? e.v[k] / 100 : (size || e.one ? p.price : null);
+}
 async function payDirect(lines, wrap='none', gift=null){
   if(!CHECKOUT_API){ alert('Checkout opens soon.'); return; }
+  try { sessionStorage.setItem('pd:back', location.href); } catch(e){}   // Stripe "Back" -> studio.html -> back to this page
   const r = await fetch(CHECKOUT_API.replace(/\/$/,'')+'/checkout', {method:'POST', headers:{'Content-Type':'application/json'},
     body: JSON.stringify({items: lines.map(l => ({id:l.id, size:l.size||'', c:l.c||0, qty:1})), wrap, gift})});
   const j = await r.json(); if(j.url) location.href = j.url; else alert(j.error || 'Checkout failed. Please try again.');

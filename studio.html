@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>/* 11-26: Stripe "Back" lands here (server cancel_url). Send the shopper back to the item they were buying. */
+try { const b = sessionStorage.getItem('pd:back'); if (b && /stripe\.com/.test(document.referrer) && new URL(b).origin === location.origin) location.replace(b); } catch (e) {}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dress-up studio — PajamasDog</title>
 <meta name="description" content="Pick your pet, dress it in pajamas, hats, collars, leashes and goggles, and see the whole look with prices.">
@@ -163,7 +165,7 @@ body{padding-bottom:70px}
 <a class="minicart" id="minicart" href="#cartbox" hidden><span id="mcN">0</span> items in your outfit · <b>View cart</b></a>
 <footer>PajamasDog links to partner shops. <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
 
-<script src="shop.js?v=5"></script>
+<script src="shop.js?v=6"></script>
 <script>
 const $ = id => document.getElementById(id);
 // ---- Animals (layouts) ----
@@ -401,13 +403,13 @@ function cart(){
   $('minicart').hidden = !ps.length; $('mcN').textContent = ps.length;
   $('count').textContent = ps.length ? `${ps.length} item${ps.length>1?'s':''}` : '';
   $('lines').innerHTML = ps.length ? ps.map(({s,p}) => `<div class="line"><a class="th" style="--c:${colorOf(p)}" href="product.html?id=${encodeURIComponent(p.id)}">${p.img?`<img src="${p.img}" alt="">`:''}</a>
-     <div><b>${p.name}</b><small>${p.note||''}${sizeOf() && !['bowl','leash'].includes(s.k) ? ' · Size '+sizeOf() : ''}</small><small>${p.price ? '$'+p.price.toFixed(2) : 'Price shown on '+shopName(p)} · Ships &amp; returns by ${shopName(p)}</small></div>
+     <div><b>${p.name}</b><small>${p.note||''}${sizeOf() && !['bowl','leash'].includes(s.k) ? ' · Size '+sizeOf() : ''}</small><small>${p.price ? '$'+cartPrice(p).toFixed(2) : 'Price shown on '+shopName(p)} · Ships &amp; returns by ${shopName(p)}</small></div>
      <button class="x" data-k="${s.k}" aria-label="Remove">×</button>
      <button class="alt-b" data-k="${s.k}">${openAlt===s.k ? 'Close options' : 'Other options & prices ›'}</button>
      ${openAlt===s.k ? `<div class="alts">${alternatives(s,p).map(a => `<button class="alt" data-k="${s.k}" data-id="${a.id}"><span class="sw2" style="--c:${colorOf(a)}">${a.img?`<img src="${a.img}" alt="">`:''}</span><span class="at"><b>${a.name}</b><small>${shopName(a)} · ${a.price ? '$'+a.price.toFixed(2) : 'see price'}</small></span><i>Swap</i></button>`).join('') || '<p class="empty">No other options yet.</p>'}</div>` : ''}</div>`).join('')
      : '<p class="empty">Nothing yet — dress up your pet above.</p>';
   const priced = ps.filter(x => x.p.price);
-  $('total').textContent = !ps.length ? '—' : priced.length===ps.length ? '$'+priced.reduce((t,x)=>t+x.p.price,0).toFixed(2) : 'See prices at checkout';
+  $('total').textContent = !ps.length ? '—' : priced.length===ps.length ? '$'+priced.reduce((t,x)=>t+cartPrice(x.p),0).toFixed(2) : 'See prices at checkout';
   // One checkout button per shop. Amazon takes the whole group in one link; other shops open item by item.
   const groups = {};
   ps.forEach(({p}) => (groups[p.src||'sample'] ||= []).push(p));
@@ -417,11 +419,15 @@ function cart(){
     keys.map(k => { const items = groups[k], name = (SOURCES[k]||{}).label || k;
       if(k==='amazon'){ const q = items.map((p,i) => `ASIN.${i+1}=${p.asin}&Quantity.${i+1}=1`).join('&');
         return `<a class="btn" href="https://www.amazon.com/gp/aws/cart/add.html?${q}${AMAZON_TAG?`&AssociateTag=${AMAZON_TAG}`:''}" target="_blank" rel="sponsored noopener">Add ${items.length>1?'all '+items.length:'it'} to Amazon cart</a>`; }
-      if(k==='pd'){ const t = items.reduce((a,p)=>a+p.price,0);
+      if(k==='pd'){ const t = items.reduce((a,p)=>a+cartPrice(p),0);
         return `<div class="shopgrp"><b>PajamasDog · ${items.length} item${items.length>1?'s':''} · free shipping</b><button class="btn" id="payPd">${CHECKOUT_API ? 'Pay $'+t.toFixed(2)+' · one checkout' : 'Checkout opens soon · $'+t.toFixed(2)}</button></div>`; }
       return `<div class="shopgrp"><b>${name} · ${items.length} item${items.length>1?'s':''}</b>${items.map(p => `<a class="btn ghost" href="${linkOf(p)}" target="_blank" rel="sponsored noopener">Buy ${p.name} on ${name}</a>`).join('')}</div>`;
     }).join('');
 }
+// 11-26: the cart charges colour 0 + the chest-size pick, so show that exact price (some sizes cost more)
+let PR = null; PRICES.then(P => { PR = P; try { update(); } catch(e){} });
+const fitZ = (p, z) => (p.sizes||[]).includes(z) ? z : z==='XXL' && (p.sizes||[]).includes('2XL') ? '2XL' : z;
+const cartPrice = p => p.src!=='pd' ? (p.price||0) : (priceSync(PR, p, 0, fitZ(p, sizeOf()||'')) || p.price);
 $('checkouts').addEventListener('click', e => { if(!e.target.closest('#payPd')) return;
   // studio size chart says XXL; some CJ items call it 2XL
   const fit = (p, z) => (p.sizes||[]).includes(z) ? z : z==='XXL' && (p.sizes||[]).includes('2XL') ? '2XL' : z;
