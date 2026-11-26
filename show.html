@@ -113,7 +113,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
 
   <div class="stage" id="stage">
     <input type="file" accept="image/*" id="file" hidden>
-    <video id="sv" class="sv" src="img/vid/show_bulldog.mp4" poster="img/vid/show_bulldog.jpg" muted autoplay loop playsinline preload="auto"></video>
+    <video id="sv" class="sv" src="img/vid/show_bulldog.mp4?v=s2" poster="img/vid/show_bulldog.jpg?v=s2" muted autoplay loop playsinline preload="auto"></video>
     <img id="me" class="me hide" alt="Your pet">
     <div class="bars hide" id="bars"></div>
     <div class="nm hide" id="nm"></div>
@@ -149,40 +149,40 @@ h1{font-weight:300;font-size:26px;margin:4px 0 4px}
 const $ = id => document.getElementById(id);
 // 형님 11-25: free for everyone, cost 0 per visitor. Every show is a real AI video we made once per breed;
 // the visitor's photo picks the matching breed (it never leaves the phone). Cards below light up on the same timeline.
-const L4 = ['Pajama','Lion mane','Scarf','Sweater'];
-const I4 = ['pd-01','cj-98989826','cj-77427968','cj-37931520'];
+// 11-26: every pet walks the same Blender-built PajamasDog stage: pajama walk + sweater spin, 5 s each.
+const L4 = ['Pajama','Sweater'];
+const I4 = ['pd-01','cj-37931520'];
 const SHOWS = {
-  bulldog:    {name:'French bulldog', icon:'🐶', seg:2, items:['pd-01','cj-37931520','cj-67831296','cj-98989826','cj-61628400','cj-77427968','cj-78109953','cj-89892609'],
-               labels:['Pajama','Sweater','Sweater','Lion mane','Shark hat','Scarf','Charm','Bowl']},
-  maltese:    {name:'Maltese',     icon:'🐶', seg:3, items:I4, labels:L4},
-  pomeranian: {name:'Pomeranian',  icon:'🐶', seg:3, items:I4, labels:L4},
-  poodle:     {name:'Poodle',      icon:'🐶', seg:3, items:I4, labels:L4},
-  golden:     {name:'Golden retriever', icon:'🐕', seg:3, items:I4, labels:L4},
-  cat:        {name:'Cat',         icon:'🐱', seg:3, items:I4, labels:L4},
-  chihuahua: {name:'chihuahua', seg:3, items:I4, labels:L4},
-  yorkie: {name:'yorkie', seg:3, items:I4, labels:L4},
-  shihtzu: {name:'shihtzu', seg:3, items:I4, labels:L4},
-  bichon: {name:'bichon', seg:3, items:I4, labels:L4},
-  pug: {name:'pug', seg:3, items:I4, labels:L4},
-  dachshund: {name:'dachshund', seg:3, items:I4, labels:L4},
-  corgi: {name:'corgi', seg:3, items:I4, labels:L4},
-  schnauzer: {name:'schnauzer', seg:3, items:I4, labels:L4},
-  labrador: {name:'labrador', seg:3, items:I4, labels:L4},
-  shepherd: {name:'shepherd', seg:3, items:I4, labels:L4},
-  husky: {name:'husky', seg:3, items:I4, labels:L4},
-  samoyed: {name:'samoyed', seg:3, items:I4, labels:L4},
-  chow: {name:'chow', seg:3, items:I4, labels:L4},
-  mastiff: {name:'mastiff', seg:3, items:I4, labels:L4},
-  bernese: {name:'bernese', seg:3, items:I4, labels:L4},
-  ebulldog: {name:'ebulldog', seg:3, items:I4, labels:L4},
-  jindo: {name:'jindo', seg:3, items:I4, labels:L4},
-  persian: {name:'persian', seg:3, items:I4, labels:L4},
-  siamese: {name:'siamese', seg:3, items:I4, labels:L4},
-  ragdoll: {name:'ragdoll', seg:3, items:I4, labels:L4},
-  british: {name:'british', seg:3, items:I4, labels:L4},
-  mainecoon: {name:'mainecoon', seg:3, items:I4, labels:L4},
-  fold: {name:'fold', seg:3, items:I4, labels:L4},
-  blackcat: {name:'blackcat', seg:3, items:I4, labels:L4},
+  bulldog:    {name:'French bulldog', icon:'🐶', seg:5, items:I4, labels:L4},
+  maltese:    {name:'Maltese',     icon:'🐶', seg:5, items:I4, labels:L4},
+  pomeranian: {name:'Pomeranian',  icon:'🐶', seg:5, items:I4, labels:L4},
+  poodle:     {name:'Poodle',      icon:'🐶', seg:5, items:I4, labels:L4},
+  golden:     {name:'Golden retriever', icon:'🐕', seg:5, items:I4, labels:L4},
+  cat:        {name:'Cat',         icon:'🐱', seg:5, items:I4, labels:L4},
+  chihuahua: {name:'chihuahua', seg:5, items:I4, labels:L4},
+  yorkie: {name:'yorkie', seg:5, items:I4, labels:L4},
+  shihtzu: {name:'shihtzu', seg:5, items:I4, labels:L4},
+  bichon: {name:'bichon', seg:5, items:I4, labels:L4},
+  pug: {name:'pug', seg:5, items:I4, labels:L4},
+  dachshund: {name:'dachshund', seg:5, items:I4, labels:L4},
+  corgi: {name:'corgi', seg:5, items:I4, labels:L4},
+  schnauzer: {name:'schnauzer', seg:5, items:I4, labels:L4},
+  labrador: {name:'labrador', seg:5, items:I4, labels:L4},
+  shepherd: {name:'shepherd', seg:5, items:I4, labels:L4},
+  husky: {name:'husky', seg:5, items:I4, labels:L4},
+  samoyed: {name:'samoyed', seg:5, items:I4, labels:L4},
+  chow: {name:'chow', seg:5, items:I4, labels:L4},
+  mastiff: {name:'mastiff', seg:5, items:I4, labels:L4},
+  bernese: {name:'bernese', seg:5, items:I4, labels:L4},
+  ebulldog: {name:'ebulldog', seg:5, items:I4, labels:L4},
+  jindo: {name:'jindo', seg:5, items:I4, labels:L4},
+  persian: {name:'persian', seg:5, items:I4, labels:L4},
+  siamese: {name:'siamese', seg:5, items:I4, labels:L4},
+  ragdoll: {name:'ragdoll', seg:5, items:I4, labels:L4},
+  british: {name:'british', seg:5, items:I4, labels:L4},
+  mainecoon: {name:'mainecoon', seg:5, items:I4, labels:L4},
+  fold: {name:'fold', seg:5, items:I4, labels:L4},
+  blackcat: {name:'blackcat', seg:5, items:I4, labels:L4},
 };
 // 30 pets in 3 groups. "show" = the ready AI video it plays (own video if the key matches, otherwise the closest one for now).
 const BREEDS = [
@@ -219,7 +219,7 @@ function drawLine(){
 }
 function drawBreeds(){
   $('breeds').innerHTML = BREEDS.map(([g, list]) => `<div class="bgrp"><h3>${g}</h3><div class="bchips">${list.map(([k,name,sh]) =>
-    `<button data-k="${k}" class="${k===breed?'on':''}">${k===sh ? `<img src="img/vid/show_${k}.jpg" alt="">` : `<i>${g==='Cats'?'🐱':'🐶'}</i>`}${name}</button>`).join('')}</div></div>`).join('');
+    `<button data-k="${k}" class="${k===breed?'on':''}">${k===sh ? `<img src="img/vid/show_${k}.jpg?v=s2" alt="">` : `<i>${g==='Cats'?'🐱':'🐶'}</i>`}${name}</button>`).join('')}</div></div>`).join('');
   $('breeds').querySelector('.on')?.scrollIntoView({block:'nearest', inline:'center'});
 }
 $('breeds').onclick = e => { const b = e.target.closest('button'); if(b) play(b.dataset.k); };
@@ -227,7 +227,7 @@ function play(k){
   const B = BR[k] || BR.bulldog; breed = B.k; k = B.show;
   $('near').textContent = B.k === B.show ? '' : `Closest show for the ${B.name} for now — its own show is being made.`;
   show = k; S = SHOWS[k]; lineup = S.items.map(id => byId[id]).filter(Boolean);
-  sv.src = `img/vid/show_${k}.mp4`; sv.poster = `img/vid/show_${k}.jpg`; sv.currentTime = 0; sv.play().catch(()=>{});
+  sv.src = `img/vid/show_${k}.mp4?v=s2`; sv.poster = `img/vid/show_${k}.jpg?v=s2`; sv.currentTime = 0; sv.play().catch(()=>{});
   $('bars').innerHTML = lineup.map(() => '<i><b></b></i>').join(''); $('bars').style.setProperty('--t', S.seg*1000 + 'ms');
   showName();
   $('item').dataset.i = ''; cur = -1; light(0); drawBreeds();
@@ -302,7 +302,7 @@ $('start').onclick = () => $('file').click();
 // Share: the show video itself (our logo is in it) + the link
 $('share').onclick = async () => {
   const text = `${NAME || 'My pet'}'s AI fashion show 🎬 Find yours at pajamasdog.com`, url = 'https://pajamasdog.com/show.html';
-  try { const blob = await (await fetch(`img/vid/show_${show}.mp4`)).blob();
+  try { const blob = await (await fetch(`img/vid/show_${show}.mp4?v=s2`)).blob();
     const data = {files:[new File([blob], 'pajamasdog-show.mp4', {type:'video/mp4'})], title:'PajamasDog', text: text + ' ' + url};
     if(navigator.canShare && navigator.canShare(data)) return await navigator.share(data);
     if(navigator.share) return await navigator.share({title:'PajamasDog', text, url});
