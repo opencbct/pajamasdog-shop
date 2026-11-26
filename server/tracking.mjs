@@ -35,7 +35,7 @@ export function trackingMail({ name, items, track, url, country }) {
   return { subject: 'Your PajamasDog order has shipped', html, text };
 }
 
-async function cjOrders(token) {
+export async function cjOrders(token) {
   const out = [];
   for (let page = 1; page <= 10; page++) {
     const j = await fetch(`https://developers.cjdropshipping.com/api2.0/v1/shopping/order/list?pageNum=${page}&pageSize=50`, { headers: { 'CJ-Access-Token': token } }).then(r => r.json());

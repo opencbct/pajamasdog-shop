@@ -7,6 +7,9 @@
 // Env: STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, CJ_API_KEY, SITE_URL (https://pajamasdog.com)
 // Money: Stripe payouts go to the Bluevine account set in the Stripe dashboard (never in code).
 import { sendTracking } from './tracking.mjs';
+import { cjSweep } from './sweep.mjs';
+import { orderMails, helpRequest } from './notify.mjs';
+import { approve } from './approve.mjs';
 import crypto from 'node:crypto';
 import { readFileSync } from 'node:fs';
 const CATALOG = JSON.parse(readFileSync(new URL('./catalog.json', import.meta.url)));
@@ -125,10 +128,18 @@ async function placeCjOrder(session) {
   return r.json();
 }
 
+async function cjStatusOf(orderNumber) {
+  const tok = await cjToken();
+  const j = await fetch('https://developers.cjdropshipping.com/api2.0/v1/shopping/order/list?pageNum=1&pageSize=50', { headers: { 'CJ-Access-Token': tok } }).then(r => r.json());
+  return (j.data?.list || []).find(o => o.orderNum === orderNumber)?.orderStatus || '';
+}
+
 export const handler = async (event) => {
   // 11-26: scheduled run (EventBridge) → tracking e-mails. Function URL requests never carry source 'aws.events'.
   if (event.source === 'aws.events' || event['detail-type'] === 'Scheduled Event') {
-    const r = await sendTracking(await cjToken()); console.log('tracking', JSON.stringify(r)); return { ok: true, sent: r.length };
+    const tok = await cjToken();
+    const r = await sendTracking(tok); console.log('tracking', JSON.stringify(r));
+    const w = await cjSweep(tok); console.log('sweep', JSON.stringify(w)); return { ok: true, sent: r.length };
   }
   const path = event.rawPath || event.path || '';
   const raw = event.isBase64Encoded ? Buffer.from(event.body || '', 'base64').toString() : (event.body || '');
@@ -137,12 +148,19 @@ export const handler = async (event) => {
     if (path.endsWith('/checkout')) return await createCheckout(JSON.parse(raw || '{}'));
     if (path.endsWith('/pack')) return await createPack();
     if (path.endsWith('/pack-verify')) return await verifyPack(new URLSearchParams(event.rawQueryString || '').get('s'));
+    if (path.endsWith('/approve')) return await approve(event, cjToken);
+    if (path.endsWith('/help')) {
+      // Buyer's cancel / problem form. Sends e-mails only; refunds stay with 형님 in Stripe.
+      const r = await helpRequest(JSON.parse(raw || '{}'), cjStatusOf);
+      return json(r.status, r.ok ? { ok: true, message: r.message } : { error: r.error });
+    }
     if (path.endsWith('/webhook')) {
       if (!verifyStripe(raw, event.headers?.['stripe-signature'])) return json(400, { error: 'bad signature' });
       const ev = JSON.parse(raw);
       // Only paid sessions become CJ orders. CJ order number = Stripe session id, so a retried webhook can't double-order.
       // The CJ order is created unpaid: 형님 pays it in CJ (wallet) until we trust the flow.
-      if (ev.type === 'checkout.session.completed' && ev.data.object.payment_status === 'paid' && ev.data.object.metadata?.kind !== 'pack') { const r = await placeCjOrder(ev.data.object); console.log('CJ order', JSON.stringify(r)); }
+      if (ev.type === 'checkout.session.completed' && ev.data.object.payment_status === 'paid' && ev.data.object.metadata?.kind !== 'pack') { const r = await placeCjOrder(ev.data.object); console.log('CJ order', JSON.stringify(r));
+        try { await orderMails(ev.data.object, r); } catch (e) { console.error('order mail', e); } }
       return json(200, { ok: true });
     }
     return json(404, { error: 'not found' });
