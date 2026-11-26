@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png?v=3">
 <meta name="theme-color" content="#15131c">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Silkscreen&display=swap" rel="stylesheet">
 <style>
 :root{--pink:#ff3d7f;--ink:#2b2340;--soft:#15131c;--blue:#1fa7e0;--purple:#5b3fd6}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -141,6 +141,19 @@ footer .flogo img{width:100%;height:auto;display:block}
 .trust{display:flex;flex-wrap:wrap;gap:6px 12px;margin:12px 0 0;font-size:12px;font-weight:300;opacity:.85}
 .txt .xmas{margin:8px 0 0;font-size:13px;font-weight:300;line-height:1.4}.xmas small{opacity:.6;font-size:11px}
 .cap .hot{display:block;font-style:normal;font-size:11px;font-weight:300;opacity:.75;margin-top:2px}
+/* LED ticker */
+.led{position:relative;overflow:hidden;background:#07060b;border-top:1px solid #1d1a26;border-bottom:1px solid #1d1a26;margin:18px 0 6px;height:54px;display:flex;align-items:center}
+.led::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle,transparent 55%,#07060b 60%) 0 0/4px 4px;opacity:.85}
+.led-track{display:flex;align-items:center;white-space:nowrap;width:max-content;animation:ledmove 38s linear infinite}
+.led:hover .led-track{animation-play-state:paused}
+.led .li{font-family:'Silkscreen',monospace;font-size:24px;letter-spacing:2px;color:#ffb347;text-shadow:0 0 6px #ff9d2e,0 0 14px rgba(255,140,40,.6);padding:0 18px}
+.led .li:nth-of-type(3n+2){color:#7fe3ff;text-shadow:0 0 6px #44c8ff,0 0 14px rgba(60,190,255,.6)}
+.led .li:nth-of-type(3n){color:#ff7ab8;text-shadow:0 0 6px #ff4f9a,0 0 14px rgba(255,80,150,.6)}
+.led .lb img{height:30px;width:auto;filter:brightness(0) invert(1) drop-shadow(0 0 6px #fff);display:block}
+.led .ls{color:#3b3550;font-style:normal;font-size:18px}
+@keyframes ledmove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:600px){.led{height:44px}.led .li{font-size:18px;padding:0 12px}}
+@media(prefers-reduced-motion:reduce){.led-track{animation:none}}
 </style>
 <link rel="stylesheet" href="logo-motion.css">
 </head>
@@ -172,6 +185,19 @@ footer .flogo img{width:100%;height:auto;display:block}
   </div>
 </div>
 
+<!-- 11-26 형님: LED screen that slides sideways. Brand logos join it (BRANDS) once each affiliate program approves us. -->
+<div class="led" aria-label="PajamasDog news"><div class="led-track" id="ledTrack"></div></div>
+<script>
+(() => {
+  // Official brand logos go here ONLY after that brand approves us (Awin / AvantLink creatives).
+  const BRANDS = [];   // e.g. {name:'Zee.Dog', logo:'img/brands/zeedog.svg', href:'#premium'}
+  const MSG = ['FREE SHIPPING · US AND CANADA', 'FREE AI FASHION SHOW', 'FIND YOUR BREED\u2019S SIZE', 'NEW WINTER LOOKS',
+    'GIFT IT · DIGITAL UNBOXING', 'PAJAMAS.DOG/SHOW'];
+  const items = MSG.map(t => `<span class="li">${t}</span>`).concat(BRANDS.map(b => `<a class="li lb" href="${b.href}"><img src="${b.logo}" alt="${b.name}"></a>`));
+  const row = items.join('<i class="ls">\u2726</i>') + '<i class="ls">\u2726</i>';
+  const t = document.getElementById('ledTrack'); t.innerHTML = row + row;   // two copies -> seamless loop
+})();
+</script>
 <div class="sec" id="fun">
   <div class="hd"><h2>✨ AI <b style="font-weight:600;color:var(--pink)">fun</b> with your pet</h2></div>
   <div class="row fun">
