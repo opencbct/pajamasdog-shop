@@ -23,13 +23,15 @@ export async function send(to, subject, html, text, replyTo = REPLY) {
 }
 
 // Same look as the tracking e-mail.
-export const shell = (title, body) => `<!doctype html><html><body style="margin:0;background:#f6f4f1;font-family:-apple-system,Helvetica,Arial,sans-serif;font-weight:300">
+// 11-26 형님: customer e-mails carry the Shipping & Returns policy in small print at the bottom.
+export const FINE = 'Shipping &amp; Returns: free shipping to the US and Canada. Cancel within 12 hours of ordering for a full refund. No returns or exchanges for size or change of mind. Damaged, defective or wrong item: e-mail photos within 48 hours of delivery and we ship a free replacement &mdash; please do not mail items back. No tracking movement 45 days after shipping: we ship it again once. Full policy: <a href="https://pajamasdog.com/returns.html" style="color:#aaa">pajamasdog.com/returns.html</a>. PajamasDog is operated by OPENCBCT LLC.';
+export const shell = (title, body, fine = false) => `<!doctype html><html><body style="margin:0;background:#f6f4f1;font-family:-apple-system,Helvetica,Arial,sans-serif;font-weight:300">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:28px 14px">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background:#fff;border-radius:18px">
-<tr><td style="padding:28px 28px 0"><img src="https://pajamasdog.com/img/logo2/stack.png?v=1" alt="PajamasDog" height="56" style="display:block;height:56px"></td></tr>
+<tr><td style="padding:28px 28px 0"><img src="https://pajamasdog.com/img/logo2/classic.jpg?v=1" alt="PajamasDog" width="200" style="display:block;width:200px;height:auto;border-radius:12px"></td></tr>
 <tr><td style="padding:22px 28px 0;font-size:24px;color:#111">${title}</td></tr>
 ${body}
-<tr><td style="padding:24px 28px 28px;font-size:12px;color:#aaa">PajamasDog · pajamasdog.com</td></tr>
+<tr><td style="padding:24px 28px 28px;font-size:12px;color:#aaa">PajamasDog · pajamasdog.com${fine ? `<div style="margin-top:12px;font-size:10px;line-height:1.5;color:#b3b3b3">${FINE}</div>` : ''}</td></tr>
 </table></td></tr></table></body></html>`;
 export const p = t => `<tr><td style="padding:10px 28px 0;font-size:15px;line-height:1.6;color:#444">${t}</td></tr>`;
 export const btn = (href, label) => `<tr><td style="padding:22px 28px 0" align="center"><a href="${esc(href)}" style="display:inline-block;background:#111;color:#fff;text-decoration:none;font-size:16px;padding:14px 34px;border-radius:999px">${esc(label)}</a></td></tr>`;
@@ -75,7 +77,7 @@ export async function orderMails(session, cj) {
     + p(`Total ${money(session.amount_total)} · free shipping to ${esc(a.city)}, ${esc(a.state)}.<br>It leaves our partner warehouse in 1–3 days, and we e-mail the tracking number when it ships.`)
     + (session.metadata?.gift ? p(`🎁 <b>Your gift reveal is ready.</b> Send this link to ${esc(session.metadata.gift_to || 'them')} — they tap the box to unwrap it:`) + btn(giftLink(session.id), 'Open the gift reveal') : '')
     + p('Need to cancel? You can cancel for a full refund within 12 hours, before it ships.')
-    + btn(help, 'Cancel or get help'));
+    + btn(help, 'Cancel or get help'), true);
   const bText = `Hi ${first}, we got your PajamasDog order #${code}.\n${items.map(i => `- ${i.name} x ${i.qty}`).join('\n')}\nTotal ${money(session.amount_total)}, free shipping.\nWe e-mail the tracking number when it ships.\n${session.metadata?.gift ? `Gift reveal link: ${giftLink(session.id)}\n` : ''}Cancel within 12 hours or get help: ${help}`;
   await send(to, `Order #${code} confirmed — PajamasDog`, bHtml, bText);
 }
@@ -125,7 +127,7 @@ export async function helpRequest(body, cjStatus) {
   const next = kind === 'cancel'
     ? (canCancel ? 'Your order has not shipped yet. We will cancel it and refund you in full — you will get a refund e-mail from Stripe within 1 business day.' : 'Your order is already being processed, so it may not be possible to cancel. We will reply within 2 business days.')
     : (kind === 'damaged' || kind === 'wrong' ? 'Please reply to this e-mail with clear photos of the problem, the product tag and the shipping label. We will reply within 2 business days.' : 'We will reply within 2 business days.');
-  await send(email, `We got your request — order #${orderCode(o.s.id)}`, shell('We got your request', p(`<b>${KINDS[kind]}</b> · order #${orderCode(o.s.id)}`) + p(esc(next))),
+  await send(email, `We got your request — order #${orderCode(o.s.id)}`, shell('We got your request', p(`<b>${KINDS[kind]}</b> · order #${orderCode(o.s.id)}`) + p(esc(next)), true),
     `We got your request: ${KINDS[kind]} (order #${orderCode(o.s.id)}).\n${next}\nPajamasDog`);
   return { status: 200, ok: true, message: next };
 }

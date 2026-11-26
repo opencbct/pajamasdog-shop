@@ -3,6 +3,7 @@
 // "Sent" is remembered on the Stripe PaymentIntent (metadata.tracking_sent = track number), so no database is needed
 // and a new track number (re-ship) gets a new e-mail.
 import { SESv2Client, SendEmailCommand } from '@aws-sdk/client-sesv2';
+import { FINE } from './notify.mjs';
 
 const FROM = 'PajamasDog <info@opencbct.com>';
 const REPLY = 'info@opencbct.com';
@@ -22,14 +23,14 @@ export function trackingMail({ name, items, track, url, country }) {
   const html = `<!doctype html><html><body style="margin:0;background:#f6f4f1;font-family:-apple-system,Helvetica,Arial,sans-serif;font-weight:300">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:28px 14px">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background:#fff;border-radius:18px">
-<tr><td style="padding:28px 28px 0"><img src="https://pajamasdog.com/img/logo2/stack.png?v=1" alt="PajamasDog" height="56" style="display:block;height:56px"></td></tr>
+<tr><td style="padding:28px 28px 0"><img src="https://pajamasdog.com/img/logo2/classic.jpg?v=1" alt="PajamasDog" width="200" style="display:block;width:200px;height:auto;border-radius:12px"></td></tr>
 <tr><td style="padding:22px 28px 0;font-size:24px;color:#111">Your order is on its way 🐾</td></tr>
 <tr><td style="padding:10px 28px 0;font-size:15px;line-height:1.6;color:#444">Hi ${esc(first)}, good news — your package just left our partner warehouse. Usual delivery is ${days} days.</td></tr>
 <tr><td style="padding:18px 28px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #eee;border-bottom:1px solid #eee">${list}</table></td></tr>
 <tr><td style="padding:18px 28px 0;font-size:14px;color:#666">Tracking number<br><span style="font-size:17px;color:#111;letter-spacing:.5px">${esc(track)}</span></td></tr>
 <tr><td style="padding:22px 28px 0" align="center"><a href="${esc(url)}" style="display:inline-block;background:#111;color:#fff;text-decoration:none;font-size:16px;padding:14px 34px;border-radius:999px">Track my package</a></td></tr>
 <tr><td style="padding:18px 28px 0;font-size:13px;line-height:1.6;color:#888">Tracking can take 1–3 days to show the first scan. Questions? Just reply to this e-mail.</td></tr>
-<tr><td style="padding:24px 28px 28px;font-size:12px;color:#aaa">PajamasDog · pajamasdog.com</td></tr>
+<tr><td style="padding:24px 28px 28px;font-size:12px;color:#aaa">PajamasDog · pajamasdog.com<div style="margin-top:12px;font-size:10px;line-height:1.5;color:#b3b3b3">${FINE}</div></td></tr>
 </table></td></tr></table></body></html>`;
   const text = `Hi ${first}, your PajamasDog order is on its way.\n\n${items.map(i => `- ${i.name} x ${i.qty}`).join('\n')}\n\nTracking number: ${track}\nTrack: ${url}\nUsual delivery: ${days} days. Tracking can take 1–3 days to show the first scan.\n\nQuestions? Reply to this e-mail.\nPajamasDog · pajamasdog.com`;
   return { subject: 'Your PajamasDog order has shipped', html, text };
