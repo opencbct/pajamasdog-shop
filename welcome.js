@@ -10,7 +10,7 @@
 .wpop.on{opacity:1}
 .wpop .in{position:relative;width:100%;max-width:400px;background:var(--card,#221f2d);color:var(--txt,#f3f1f8);border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.6);transform:scale(.94);transition:transform .3s}
 .wpop.on .in{transform:none}
-.wpop .ph{height:190px;background:url(img/hero_winter.webp) center 30%/cover}
+.wpop .wph{display:block;width:100%;height:190px;background:url(img/hero_winter.webp) center 30%/cover}
 .wpop .bd{padding:18px 20px 20px;text-align:center}
 .wpop h2{font-weight:300;font-size:30px;line-height:1.15;margin:0 0 6px}
 .wpop h2 b{font-weight:600;color:var(--pink,#ff3d7f)}
@@ -26,7 +26,7 @@
     const st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
     const el = document.createElement('div'); el.className = 'wpop';
     el.innerHTML = `<div class="in" role="dialog" aria-label="10% off your first order">
-      <button class="x" aria-label="Close">×</button><div class="ph"></div>
+      <button class="x" aria-label="Close">×</button><div class="wph"></div>
       <div class="bd"><h2>Save <b>10%</b><br>on your first order</h2><p>Get the code by e-mail.</p>
       <form><input type="email" required placeholder="Your e-mail" autocomplete="email"><input name="hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
       <button class="btn" type="submit">Get 10% off</button></form>
