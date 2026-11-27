@@ -33,7 +33,12 @@ p{opacity:.8;margin:0 0 12px;line-height:1.5}
     <p style="opacity:1;margin:4px 0 6px">Your gift link<span id="gTo"></span> is ready.</p>
     <p style="font-size:13px">Send it whenever you like. They tap it and unbox the gift on their phone. The parcel ships separately, with no prices inside.</p>
     <input id="gLink" readonly style="width:100%;box-sizing:border-box;background:var(--chip);color:var(--txt);border:1px solid #3a3446;border-radius:12px;padding:10px;font:inherit;font-size:13px;margin:6px 0 10px">
-    <div class="acts" style="margin-top:0"><button class="btn" id="gSend">Share the gift link</button><a class="btn ghost" id="gPeek" target="_blank">Open it myself</a></div>
+    <div id="gQR" style="background:#fff;border-radius:16px;padding:10px;margin:4px auto 10px;max-width:260px"></div>
+    <p style="font-size:13px">Print it or put it in a card: they scan it with their phone camera.</p>
+    <div class="acts" style="margin-top:0"><button class="btn" id="gSend">Share the gift link</button>
+      <button class="btn ghost" id="gPrint">🖨 Print a gift card with the QR</button>
+      <a class="btn ghost" id="gSave" download="pajamasdog-gift-qr.png">Save the QR picture</a>
+      <a class="btn ghost" id="gPeek" target="_blank">Open it myself</a></div>
   </div>
   <div class="acts">
     <a class="btn" href="card.html">Make a Christmas card while you wait</a>
@@ -47,6 +52,8 @@ p{opacity:.8;margin:0 0 12px;line-height:1.5}
   <div class="acts"><a class="btn" href="show.html">Back to the AI fashion show</a></div>
 </main>
 <script src="shop.js?v=7"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="qr.js?v=1"></script>
 <script src="gift.js?v=1"></script>
 <script>
 // 11-26: gift orders → show the unboxing link to share (server checks the order is paid and is a gift).
@@ -58,6 +65,22 @@ p{opacity:.8;margin:0 0 12px;line-height:1.5}
       if(r.ok){ const j = await r.json(), box = document.getElementById('giftShare');
         box.style.display = ''; document.getElementById('gLink').value = j.link; document.getElementById('gPeek').href = j.link;
         if(j.to) document.getElementById('gTo').textContent = ' for ' + j.to;
+        // 11-27 형님: gift link as our branded QR (logo inside) — save it or print a small card.
+        brandQR(j.link, 640).then(c => {
+          c.style.cssText = 'width:100%;height:auto;display:block'; document.getElementById('gQR').appendChild(c);
+          document.getElementById('gSave').href = c.toDataURL('image/png');
+          document.getElementById('gPrint').onclick = () => {
+            const w = window.open('', '_blank'); if(!w) return;
+            const to = (j.to || '').replace(/[<>&"]/g, '');
+            w.document.write(`<!doctype html><title>Gift card</title><style>body{margin:0;font-family:Helvetica,Arial,sans-serif;text-align:center}
+              .c{width:4in;margin:.4in auto;border:1px dashed #bbb;border-radius:14px;padding:.3in}h1{font-weight:300;font-size:22px;margin:0 0 6px}
+              p{color:#555;font-size:13px;margin:0 0 12px}img{width:2.6in}@media print{.c{border:0}}</style>
+              <div class="c"><h1>🎁 A gift${to ? ' for ' + to : ''}!</h1><p>Scan with your phone camera to unwrap it</p>
+              <img src="${c.toDataURL('image/png')}" alt="QR"><p style="margin-top:10px">pajamas.Dog</p></div>
+              <script>onload=()=>setTimeout(()=>print(),300)<\/script>`);
+            w.document.close();
+          };
+        }).catch(() => document.getElementById('gQR').remove());
         document.getElementById('gSend').onclick = async () => {
           const t = {title: '🎁 A gift for your pup', text: 'Tap to open your gift from PajamasDog', url: j.link};
           try { if(navigator.share) return await navigator.share(t); } catch(e){ return; }
