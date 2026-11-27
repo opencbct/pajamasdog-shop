@@ -55,7 +55,7 @@ export async function partnerApprove(event) {
   const a = JSON.parse(Buffer.from(q.d, 'base64url').toString());
   const code = codeOf(q.code || (a.code + '10'));
   const info = `<div class="box">${esc(a.name)} · ${esc(a.platform)} <b>@${esc(a.handle)}</b> · ${esc(a.followers)} 팔로워<br>PayPal ${esc(a.paypal)}</div>`;
-  if (!post) return page('파트너 승인', `<h1>파트너 승인</h1>${info}<form method="post">
+  if (!post) return page('파트너 승인', `<h1>파트너 승인</h1>${info}<form method="post" onsubmit="this.querySelector('button').disabled=true">
 <input type="hidden" name="d" value="${esc(q.d)}"><input type="hidden" name="t" value="${esc(q.t)}">
 <p>코드 (손님이 입력)</p><input name="code" value="${esc(code)}" maxlength="20" style="letter-spacing:2px">
 <p style="margin-top:14px">📱 폰 인증 앱(PajamasDog approve)의 6자리 숫자</p><input name="c" inputmode="numeric" maxlength="6" required placeholder="••••••">
@@ -66,6 +66,10 @@ export async function partnerApprove(event) {
     'metadata[partner]': code, 'metadata[handle]': a.handle, 'metadata[platform]': a.platform,
     'metadata[email]': a.email, 'metadata[paypal]': a.paypal, 'metadata[name]': a.name });
   const pc = await stripe('promotion_codes', form);
+  if (!pc.id && /already exists/i.test(pc.error?.message || '')) {   // pressed twice: the first press already made it
+    const ex = (await stripe(`promotion_codes?code=${encodeURIComponent(code)}&active=true&limit=1`)).data?.[0];
+    if (ex?.metadata?.handle === a.handle) return page('파트너 승인', `<h1 class="ok">✓ 이미 승인됐어요</h1>${info}<div class="box">코드 <b>${esc(code)}</b><br>링크 https://pajamas.dog/?ref=${esc(code)}</div><p>환영 메일은 처음 승인할 때 보냈어요.</p>`);
+  }
   if (!pc.id) return page('파트너 승인', `<h1 class="bad">코드를 못 만들었어요</h1>${info}<p>Stripe: ${esc(pc.error?.message || '?')}</p><p>코드 ${esc(code)} 이 이미 있거나, 쿠폰 ${PARTNER_COUPON} 이 없거나, 키 권한이 없을 수 있어요.</p>`);
   console.log('PARTNER_APPROVED', JSON.stringify({ code, handle: a.handle, email: a.email }));
   const link = `https://pajamas.dog/?ref=${code}`;
