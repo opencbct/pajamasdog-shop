@@ -25,12 +25,31 @@ function check(q) {
   return '';
 }
 
+// 11-27 형님: "승인 버튼에 폰 인증 넣자" — paying also needs the 6-digit code from his phone's authenticator app
+// (Google Authenticator, account "PajamasDog approve"). Secret = Lambda env APPROVE_TOTP_SECRET (base32). No secret → never pay.
+function b32(str) {
+  const A = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567'; let bits = '';
+  for (const c of String(str).replace(/[\s=]/g, '').toUpperCase()) { const v = A.indexOf(c); if (v < 0) return null; bits += v.toString(2).padStart(5, '0'); }
+  return Buffer.from((bits.match(/.{8}/g) || []).map(b => parseInt(b, 2)));
+}
+function totp(key, step) {
+  const msg = Buffer.alloc(8); msg.writeBigUInt64BE(BigInt(step));
+  const h = crypto.createHmac('sha1', key).update(msg).digest(), o = h[h.length - 1] & 15;
+  return String(((h.readUInt32BE(o) & 0x7fffffff) % 1e6)).padStart(6, '0');
+}
+export function phoneCodeOk(code) {
+  const key = b32(process.env.APPROVE_TOTP_SECRET || '');
+  if (!key || key.length < 10 || !/^\d{6}$/.test(String(code || ''))) return false;
+  const now = Math.floor(Date.now() / 30000);
+  return [-1, 0, 1].some(d => crypto.timingSafeEqual(Buffer.from(totp(key, now + d)), Buffer.from(String(code))));
+}
+
 const page = (title, body) => ({ statusCode: 200, headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-robots-tag': 'noindex' },
   body: `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>${esc(title)}</title>
 <style>body{margin:0;background:#15131c;color:#f2eef8;font-family:-apple-system,Helvetica,Arial,sans-serif;font-weight:300}main{max-width:460px;margin:0 auto;padding:28px 18px}
 h1{font-weight:300;font-size:26px;margin:8px 0 14px}p{line-height:1.6;opacity:.9;margin:0 0 10px}.box{background:#211e2b;border-radius:16px;padding:16px 18px;margin:16px 0}
 button{width:100%;border:0;border-radius:999px;background:#ff3d7f;color:#fff;font:inherit;font-size:18px;padding:16px;margin-top:10px;cursor:pointer}button:disabled{opacity:.5}
-.ok{color:#7ee2a8}.bad{color:#ff8a8a}small{opacity:.6}</style></head><body><main><img src="https://pajamasdog.com/img/logo2/stack.png?v=1" alt="PajamasDog" height="56">${body}</main></body></html>` });
+input.code{width:100%;box-sizing:border-box;background:#211e2b;color:#fff;border:1px solid #3a3446;border-radius:14px;padding:14px;font:inherit;font-size:28px;letter-spacing:8px;text-align:center;margin-top:8px}.ok{color:#7ee2a8}.bad{color:#ff8a8a}small{opacity:.6}</style></head><body><main><img src="https://pajamasdog.com/img/logo2/stack.png?v=1" alt="PajamasDog" height="56">${body}</main></body></html>` });
 
 async function cjGet(token, path) { return fetch(`${CJ}${path}`, { headers: { 'CJ-Access-Token': token } }).then(r => r.json()).catch(() => ({})); }
 async function cjSend(token, method, path, body) {
@@ -77,9 +96,17 @@ export async function approve(event, cjToken) {
     return page('PajamasDog 승인', `<h1>CJ 결제 승인</h1>${head}${wait}
 <form method="post" onsubmit="this.querySelector('button').disabled=true;this.querySelector('button').textContent='결제 중…'">
 ${['s', 'o', 'x', 't'].map(k => `<input type="hidden" name="${k}" value="${esc(q[k])}">`).join('')}
+<p style="margin-top:14px">📱 폰 인증 앱(PajamasDog approve)의 6자리 숫자</p>
+<input class="code" name="c" inputmode="numeric" autocomplete="one-time-code" pattern="\\d{6}" maxlength="6" required placeholder="••••••">
 <button>CJ 잔액으로 $${st.cost.toFixed(2)} 결제하고 발송</button></form><p><small>누르면 CJ 지갑에서 이 주문 원가만 빠져나가요.</small></p>`);
   }
   if (why) return page('PajamasDog 승인', `<h1>결제 안 함</h1>${head}<p class="bad">${why}</p>`);
+  if (!phoneCodeOk(q.c)) {
+    console.log('approve: wrong phone code', q.o);
+    await new Promise(r => setTimeout(r, 1500));   // slow down guessing
+    const back = `${API_BASE}/approve?${['s', 'o', 'x', 't'].map(k => `${k}=${encodeURIComponent(q[k])}`).join('&')}`;
+    return page('PajamasDog 승인', `<h1 class="bad">폰 인증 숫자가 틀렸어요</h1>${head}<p>결제 안 했어요. 앱의 새 숫자로 다시 해 주세요.</p><p><a href="${esc(back)}" style="color:#ff8fb8">다시 하기</a></p>`);
+  }
 
   // Confirm (CREATED → UNPAID) if needed, then pay from balance.
   let conf = null;
