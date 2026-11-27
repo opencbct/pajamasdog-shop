@@ -2052,34 +2052,6 @@
   "badge": "03"
  },
  {
-  "id": "cj-35413504",
-  "src": "pd",
-  "cat": "pajamas",
-  "name": "Cardigan Sweater",
-  "note": "XS–XXL",
-  "color": "#5e17eb",
-  "img": "img/cj/cj-35413504.webp",
-  "price": 28.99,
-  "price_max": 28.99,
-  "sizes": [
-   "XS",
-   "S",
-   "M",
-   "L",
-   "XL",
-   "XXL"
-  ],
-  "colors": [
-   "Gray"
-  ],
-  "tags": [
-   "sweater"
-  ],
-  "pop": 151,
-  "img_src": "https://cf.cjdropshipping.com/quick/product/bd3db034-2d4b-4064-910a-5549b8af25f7.jpg",
-  "badge": "05"
- },
- {
   "id": "cj-66325760",
   "src": "pd",
   "cat": "pajamas",
@@ -2578,47 +2550,6 @@
   "badge": "02"
  },
  {
-  "id": "cj-76966400",
-  "src": "pd",
-  "cat": "pajamas",
-  "name": "Green Coat Sweater",
-  "note": "8 colors · XS–8XL",
-  "color": "#5e17eb",
-  "img": "img/cj/cj-76966400.webp",
-  "price": 33.99,
-  "price_max": 33.99,
-  "sizes": [
-   "XS",
-   "S",
-   "M",
-   "L",
-   "XL",
-   "XXL",
-   "XXXL",
-   "4XL",
-   "5XL",
-   "6XL",
-   "7xl",
-   "8XL"
-  ],
-  "colors": [
-   "Green Coat",
-   "Green Coat",
-   "Green Coat",
-   "Green Coat",
-   "Primary Green Coat",
-   "Primary Green Coat",
-   "Primary Green Coat",
-   "Primary Green Coat"
-  ],
-  "tags": [
-   "hoodie"
-  ],
-  "pop": 70,
-  "img_src": "https://cf.cjdropshipping.com/quick/product/c1aeff35-3e5a-49b3-a990-4f6003b4e8ac.jpg",
-  "badge": "03"
- },
- {
   "id": "cj-38585856",
   "src": "pd",
   "cat": "pajamas",
@@ -3081,36 +3012,6 @@
   "badge": "03"
  },
  {
-  "id": "cj-98911232",
-  "src": "pd",
-  "cat": "pajamas",
-  "name": "Winter Heavy Cotton Jacket",
-  "note": "2 colors · XS–3XL",
-  "color": "#5e17eb",
-  "img": "img/cj/cj-98911232.webp",
-  "price": 23.99,
-  "price_max": 28.99,
-  "sizes": [
-   "XS",
-   "S",
-   "M",
-   "L",
-   "XL",
-   "2XL",
-   "3XL"
-  ],
-  "colors": [
-   "Green",
-   "Red"
-  ],
-  "tags": [
-   "coat"
-  ],
-  "pop": 466,
-  "img_src": "https://cf.cjdropshipping.com/6057dbfb-b143-4b07-a38e-96a47612b1ac.jpg",
-  "badge": "05"
- },
- {
   "id": "cj-01604500",
   "src": "pd",
   "cat": "pajamas",
@@ -3349,64 +3250,6 @@
   "pop": 310,
   "img_src": "https://cf.cjdropshipping.com/16023456/333346583520.jpg",
   "badge": "05"
- },
- {
-  "id": "cj-B9E5EA2E",
-  "src": "pd",
-  "cat": "pajamas",
-  "name": "Wool Cotton Hat",
-  "note": "3 colors · S–XXL",
-  "color": "#5e17eb",
-  "img": "img/cj/cj-B9E5EA2E.webp",
-  "price": 41.99,
-  "price_max": 41.99,
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL",
-   "XXL"
-  ],
-  "colors": [
-   "Yellow",
-   "Blue",
-   "Grey"
-  ],
-  "tags": [
-   "coat"
-  ],
-  "pop": 272,
-  "img_src": "https://cf.cjdropshipping.com/16013088/416244883796.jpg",
-  "badge": "05"
- },
- {
-  "id": "cj-DAC9F62A",
-  "src": "pd",
-  "cat": "pajamas",
-  "name": "Winter Hood Jacket",
-  "note": "2 colors · XS–XXL",
-  "color": "#5e17eb",
-  "img": "img/cj/cj-DAC9F62A.webp",
-  "price": 33.99,
-  "price_max": 45.99,
-  "sizes": [
-   "XS",
-   "S",
-   "M",
-   "L",
-   "XL",
-   "XXL"
-  ],
-  "colors": [
-   "Black",
-   "White"
-  ],
-  "tags": [
-   "coat"
-  ],
-  "pop": 227,
-  "img_src": "https://cf.cjdropshipping.com/16010496/853767648162.jpg",
-  "badge": "03"
  },
  {
   "id": "cj-91600400",
@@ -10963,35 +10806,6 @@
   "badge": "03"
  },
  {
-  "id": "cj-45D763A4",
-  "src": "pd",
-  "cat": "pajamas",
-  "name": "Grey Sweater",
-  "note": "3 colors · S–XXL",
-  "color": "#5e17eb",
-  "img": "img/cj/cj-45D763A4.webp",
-  "price": 32.99,
-  "price_max": 32.99,
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL",
-   "XXL"
-  ],
-  "colors": [
-   "Grey",
-   "Grey Color",
-   "Red"
-  ],
-  "tags": [
-   "sweater"
-  ],
-  "pop": 501,
-  "img_src": "https://cf.cjdropshipping.com/20200221/635811883709.png",
-  "badge": "05"
- },
- {
   "id": "cj-08363264",
   "src": "pd",
   "cat": "pajamas",
@@ -11688,66 +11502,6 @@
   ],
   "pop": 496,
   "img_src": "https://cf.cjdropshipping.com/20200802/3820277767758.jpg",
-  "badge": "03"
- },
- {
-  "id": "cj-21C0B72F",
-  "src": "pd",
-  "cat": "pajamas",
-  "name": "Red Sweater",
-  "note": "3 colors · XS–FB",
-  "color": "#5e17eb",
-  "img": "img/cj/cj-21C0B72F.webp",
-  "price": 25.99,
-  "price_max": 25.99,
-  "sizes": [
-   "XS",
-   "S",
-   "M",
-   "L",
-   "XL",
-   "XXL",
-   "FB"
-  ],
-  "colors": [
-   "Red",
-   "Grey",
-   "Blue"
-  ],
-  "tags": [
-   "hoodie"
-  ],
-  "pop": 261,
-  "img_src": "https://cf.cjdropshipping.com/15995808/2342743914305.jpg",
-  "badge": "01"
- },
- {
-  "id": "cj-A60234EA",
-  "src": "pd",
-  "cat": "pajamas",
-  "name": "Fleece-lined Street Sweater",
-  "note": "3 colors · S–XXL",
-  "color": "#5e17eb",
-  "img": "img/cj/cj-A60234EA.webp",
-  "price": 26.99,
-  "price_max": 26.99,
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL",
-   "XXL"
-  ],
-  "colors": [
-   "Yellow",
-   "Black",
-   "White"
-  ],
-  "tags": [
-   "hoodie"
-  ],
-  "pop": 219,
-  "img_src": "https://cf.cjdropshipping.com/2044/2349180052624.jpg",
   "badge": "03"
  },
  {
@@ -12801,7 +12555,7 @@
   "id": "cj-874C3C43",
   "src": "pd",
   "cat": "acc",
-  "name": "Cowboy Boots",
+  "name": "Denim High-top Sneakers",
   "note": "One size",
   "color": "#0cc0df",
   "img": "img/cj/cj-874C3C43.webp",
@@ -12822,7 +12576,7 @@
   "id": "cj-ED200D73",
   "src": "pd",
   "cat": "acc",
-  "name": "Cowboy Canvas Boots",
+  "name": "Canvas Denim Sneakers",
   "note": "2 colors · One size",
   "color": "#0cc0df",
   "img": "img/cj/cj-ED200D73.webp",
@@ -12940,7 +12694,7 @@
   "id": "cj-82750B4D",
   "src": "pd",
   "cat": "acc",
-  "name": "Cowboy Canvas Breathable Boots",
+  "name": "Breathable Denim Sneakers",
   "note": "One size",
   "color": "#0cc0df",
   "img": "img/cj/cj-82750B4D.webp",
@@ -13827,29 +13581,6 @@
   "pop": 772,
   "img_src": "https://cf.cjdropshipping.com/8fe26f58-3233-4b0d-befd-4c4ce7741569.jpg",
   "badge": "03"
- },
- {
-  "id": "cj-60732672",
-  "src": "pd",
-  "cat": "acc",
-  "name": "Super Soft Plush Bed",
-  "note": "One size",
-  "color": "#ff3d7f",
-  "img": "img/cj/cj-60732672.webp",
-  "price": 56.99,
-  "price_max": 56.99,
-  "sizes": [
-   "50cm"
-  ],
-  "colors": [
-   "Octopus Nest"
-  ],
-  "tags": [
-   "bed"
-  ],
-  "pop": 823,
-  "img_src": "https://cf.cjdropshipping.com/0bfab308-d49b-4035-9cfc-31bd298dbd80.jpg",
-  "badge": "02"
  },
  {
   "id": "cj-91604000",
