@@ -12,6 +12,7 @@ import { orderMails, helpRequest } from './notify.mjs';
 import { approve } from './approve.mjs';
 import { giftData, giftLinkFor } from './gift.mjs';
 import { welcome } from './welcome.mjs';
+import { partnerApply, partnerApprove, refCode } from './partner.mjs';
 import crypto from 'node:crypto';
 import { readFileSync } from 'node:fs';
 const CATALOG = JSON.parse(readFileSync(new URL('./catalog.json', import.meta.url)));
@@ -64,7 +65,14 @@ async function createCheckout(req) {
     form.append(`line_items[${n}][price_data][product_data][name]`, 'Digital gift reveal · Premium (online unboxing link, nothing extra is shipped)');
     form.append(`line_items[${n}][quantity]`, '1');
   }
-  form.append('allow_promotion_codes', 'true');   // 11-27: WELCOME10 (first order 10%)
+  // 11-27: partner link (?ref=CODE) fills the partner's 10% code in by itself and tags the order for the monthly commission report.
+  // Otherwise the buyer may type a code (WELCOME10). Stripe allows one or the other, not both.
+  const ref = req.ref ? await refCode(req.ref).catch(() => null) : null;
+  if (ref) {
+    form.append('discounts[0][promotion_code]', ref.id);
+    form.append('metadata[partner]', ref.code);
+    form.append('payment_intent_data[metadata][partner]', ref.code);
+  } else form.append('allow_promotion_codes', 'true');
   form.append('mode', 'payment');
   form.append('success_url', `${SITE}/thanks.html?s={CHECKOUT_SESSION_ID}`);
   form.append('cancel_url', `${SITE}/studio.html`);
@@ -166,6 +174,8 @@ export const handler = async (event) => {
     if (path.endsWith('/approve')) return await approve(event, cjToken);
     if (path.endsWith('/gift')) return await giftData(new URLSearchParams(event.rawQueryString || '').get('g'));
     if (path.endsWith('/gift-link')) return await giftLinkFor(new URLSearchParams(event.rawQueryString || '').get('s'));
+    if (path.endsWith('/partner-apply')) return await partnerApply(JSON.parse(raw || '{}'));
+    if (path.endsWith('/partner-approve')) return await partnerApprove(event);
     if (path.endsWith('/join')) {
       const r = await welcome(JSON.parse(raw || '{}'));
       return json(r.status, r.ok ? { ok: true } : { error: r.error });

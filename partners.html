@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Partners — PajamasDog</title>
+<meta name="description" content="Pet creators: give your followers 10% off and earn 15% on every order.">
+<meta property="og:title" content="Become a PajamasDog partner 🐾">
+<meta property="og:description" content="Your followers get 10% off. You earn 15% of every order.">
+<meta property="og:image" content="https://pajamasdog.com/img/logo2/logo3_mail.jpg?v=1">
+<link rel="icon" href="/favicon.ico?v=4" sizes="48x48">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png?v=4">
+<meta name="theme-color" content="#15131c">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shop.css?v=3">
+<style>
+main{max-width:560px;padding-top:8px}
+.hero{position:relative;border-radius:22px;overflow:hidden;height:230px;margin:6px 0 18px}
+.hero video{width:100%;height:100%;object-fit:cover;display:block}
+.hero div{position:absolute;inset:auto 0 0 0;padding:18px;background:linear-gradient(transparent,rgba(10,9,14,.85))}
+h1{font-weight:300;font-size:32px;line-height:1.15;margin:0}
+h1 b{font-weight:600;color:var(--pink)}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 18px}
+.nums div{background:var(--card);border-radius:18px;padding:16px;text-align:center}
+.nums b{display:block;font-size:34px;font-weight:600;color:var(--pink)}
+.nums span{font-size:14px;opacity:.75}
+.how{background:var(--card);border-radius:18px;padding:16px 18px;margin:0 0 18px;line-height:1.7;font-size:15px}
+.how ol{margin:0;padding-left:20px}
+label{display:block;font-size:14px;opacity:.75;margin:14px 0 6px}
+input,select{width:100%;box-sizing:border-box;background:#211e2b;color:inherit;border:1px solid #3a3547;border-radius:14px;padding:13px 14px;font:inherit;font-weight:300;font-size:16px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;opacity:.85;margin-top:16px;line-height:1.5}
+.agree input{width:20px;height:20px;flex:0 0 auto;margin-top:2px}
+.btn{margin-top:20px}
+#out{margin-top:18px;padding:14px 16px;border-radius:14px;background:#211e2b;display:none;line-height:1.5}
+details{margin:18px 0 0;font-size:14px;opacity:.85;line-height:1.6}
+</style>
+</head>
+<body>
+<header>
+  <a href="/" aria-label="PajamasDog home"><video class="hlogo hv" src="img/logo2/anim3.mp4?v=1" poster="img/logo2/anim3_poster.jpg?v=1" autoplay muted loop playsinline aria-label="PajamasDog" style="object-fit:contain"></video></a>
+  <a class="back" href="/">← Shop</a>
+</header>
+<main>
+  <div class="hero"><video src="img/vid/maltese_stare.mp4" autoplay muted loop playsinline poster="img/vid/maltese_stare.webp"></video>
+    <div><h1>Your dog is a star.<br>Get <b>paid</b> for it.</h1></div></div>
+
+  <div class="nums"><div><b>10%</b><span>off for your followers</span></div><div><b>15%</b><span>of every order, to you</span></div></div>
+
+  <div class="how"><ol>
+    <li>Apply below. We check every account by hand.</li>
+    <li>Get your own code and link, like <b>pajamas.dog/?ref=MAX10</b>.</li>
+    <li>Post your dog in our outfits, the free AI fashion show or a gift unboxing.</li>
+    <li>Get paid every month by PayPal.</li>
+  </ol></div>
+
+  <form id="f" novalidate>
+    <div class="row2">
+      <div><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
+      <div><label for="platform">Where you post</label><select id="platform" name="platform"><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Facebook</option><option>Other</option></select></div>
+    </div>
+    <div class="row2">
+      <div><label for="handle">Account (@name)</label><input id="handle" name="handle" placeholder="@maxthecorgi" required></div>
+      <div><label for="followers">Followers</label><input id="followers" name="followers" inputmode="numeric" placeholder="12,000"></div>
+    </div>
+    <label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required>
+    <label for="paypal">PayPal e-mail (for payouts)</label><input id="paypal" name="paypal" type="email" required>
+    <label for="code">Code you'd like (we add "10")</label><input id="code" name="code" maxlength="16" placeholder="MAX">
+    <input name="hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+    <label class="agree"><input type="checkbox" id="agree"> <span>I will mark posts as #ad or "PajamasDog partner", won't use my own code, coupon sites or search ads on the PajamasDog name. Commission counts 30 days after an order and is paid monthly from $25.</span></label>
+    <button class="btn" type="submit">Apply</button>
+  </form>
+  <div id="out"></div>
+
+  <details><summary>Questions</summary>
+    <p><b>Who can join?</b> Pet accounts in the US and Canada with real followers. Small accounts welcome.</p>
+    <p><b>What counts?</b> Paid orders made with your code or link, 30 days after the order (after the cancel window).</p>
+    <p><b>Taxes?</b> US partners: we ask for a W-9 before you pass $600 in a year.</p>
+    <p><b>Contact:</b> info@opencbct.com</p>
+  </details>
+</main>
+<footer><a href="/" class="flogo" aria-label="PajamasDog home"><video src="img/logo2/anim3.mp4?v=1" poster="img/logo2/anim3_poster.jpg?v=1" autoplay muted loop playsinline aria-hidden="true" style="width:100%;height:auto;display:block"></video></a>PajamasDog is operated by OPENCBCT LLC · <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
+<script src="shop.js?v=8"></script>
+<script>
+document.getElementById('f').addEventListener('submit', async e => {
+  e.preventDefault();
+  const f = e.target, out = document.getElementById('out'), b = f.querySelector('.btn');
+  const d = Object.fromEntries(new FormData(f)); d.agree = document.getElementById('agree').checked;
+  if(!d.agree){ out.style.display = ''; out.textContent = 'Please accept the partner rules.'; return; }
+  b.disabled = true; b.textContent = 'Sending…';
+  try {
+    const r = await fetch(CHECKOUT_URL + '/partner-apply', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(d)});
+    const j = await r.json().catch(() => ({}));
+    if(!r.ok) throw new Error(j.error || 'Please try again.');
+    f.style.display = 'none'; out.style.display = '';
+    out.innerHTML = '🐾 <b>Thanks!</b> We got your application and sent you an e-mail. We reply within a few days.';
+  } catch(err){ out.style.display = ''; out.textContent = err.message; b.disabled = false; b.textContent = 'Apply'; }
+});
+</script>
+</body>
+</html>

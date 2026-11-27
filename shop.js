@@ -149,11 +149,26 @@ function priceSync(P, p, ci=0, size=''){
   const k = Object.keys(e.v).find(k => e.one ? (k === color || k.startsWith(color + '-')) : (k.startsWith(color + '-') && k.split('-').includes(size)));
   return k ? e.v[k] / 100 : (size || e.one ? p.price : null);
 }
+// 11-27: partner links (pajamas.dog/?ref=MAX10) — remember the code for 30 days; checkout fills it in (10% off) and tags the order.
+const PD_REF = (() => {
+  try {
+    const q = new URLSearchParams(location.search).get('ref');
+    if(q && /^[A-Za-z0-9]{3,20}$/.test(q)) localStorage.setItem('pd:ref', JSON.stringify({c: q.toUpperCase(), t: Date.now()}));
+    const r = JSON.parse(localStorage.getItem('pd:ref') || 'null');
+    return r && Date.now() - r.t < 30 * 864e5 ? r.c : '';
+  } catch(e){ return ''; }
+})();
+if(PD_REF) document.addEventListener('DOMContentLoaded', () => {
+  const b = document.createElement('div');
+  b.style.cssText = 'background:#ff3d7f;color:#fff;text-align:center;font:400 14px/1.4 inherit;padding:7px 12px';
+  b.textContent = `🐾 Partner code ${PD_REF}: 10% off is added at checkout`;
+  document.body.prepend(b);
+});
 async function payDirect(lines, wrap='none', gift=null){
   if(!CHECKOUT_API){ alert('Checkout opens soon.'); return; }
   try { sessionStorage.setItem('pd:back', location.href); } catch(e){}   // Stripe "Back" -> studio.html -> back to this page
   const r = await fetch(CHECKOUT_API.replace(/\/$/,'')+'/checkout', {method:'POST', headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({items: lines.map(l => ({id:l.id, size:l.size||'', c:l.c||0, qty:1})), wrap, gift})});
+    body: JSON.stringify({items: lines.map(l => ({id:l.id, size:l.size||'', c:l.c||0, qty:1})), wrap, gift, ref: PD_REF})});
   const j = await r.json(); if(j.url) location.href = j.url; else alert(j.error || 'Checkout failed. Please try again.');
 }
 
