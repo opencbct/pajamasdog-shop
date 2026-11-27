@@ -23,14 +23,14 @@ img = qr.make_image(image_factory=StyledPilImage, module_drawer=RoundedModuleDra
 W = img.size[0]
 
 # Logo badge in the middle: the dark classic logo on a rounded plate with a white ring (≈ 36% wide, ≈ 15% tall).
-logo = Image.open(os.path.join(ROOT, 'img/logo2/classic.jpg')).convert('RGBA')
-lw = int(W * 0.36); lh = int(lw * logo.size[1] / logo.size[0])
+logo = Image.open(os.path.join(ROOT, 'img/logo2/ink.png')).convert('RGBA')   # 11-27: no dark box — dark-letter logo on white
+lw = int(W * float(os.environ.get("LOGO", "0.46"))); lh = int(lw * logo.size[1] / logo.size[0])
 logo = logo.resize((lw, lh), Image.LANCZOS)
 pad = int(W * 0.018)
 plate = Image.new('RGBA', (lw + 2 * pad, lh + 2 * pad), (0, 0, 0, 0))
 ImageDraw.Draw(plate).rounded_rectangle([0, 0, plate.size[0] - 1, plate.size[1] - 1], radius=int(lh * 0.32), fill=BG)
 mask = Image.new('L', (lw, lh), 0); ImageDraw.Draw(mask).rounded_rectangle([0, 0, lw - 1, lh - 1], radius=int(lh * 0.24), fill=255)
-plate.paste(logo, (pad, pad), mask)
+plate.alpha_composite(logo, (pad, pad))
 img.alpha_composite(plate, ((W - plate.size[0]) // 2, (W - plate.size[1]) // 2))
 
 # Test-read it.
