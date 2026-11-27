@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Try it on your pet — PajamasDog</title>
-<link rel="icon" href="/favicon.ico?v=3" sizes="48x48">
-<link rel="apple-touch-icon" href="/img/apple-touch-icon.png?v=3">
+<link rel="icon" href="/favicon.ico?v=4" sizes="48x48">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png?v=4">
 <meta name="theme-color" content="#15131c">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shop.css?v=3">
@@ -44,7 +44,7 @@ h1{font-weight:300;font-size:26px;margin:4px 0 12px}
 </head>
 <body>
 <header>
-  <a href="/" aria-label="PajamasDog home"><img class="hlogo hv" src="img/logo2/classic.webp?v=2" alt="PajamasDog"></a>
+  <a href="/" aria-label="PajamasDog home"><video class="hlogo hv" src="img/logo2/anim3.mp4?v=1" poster="img/logo2/anim3_poster.jpg?v=1" autoplay muted loop playsinline aria-label="PajamasDog" style="object-fit:contain"></video></a>
   <a class="back" href="/">← Shop</a>
 </header>
 <main>
@@ -101,7 +101,7 @@ function shrink(file){
   });
 }
 // Put the PajamasDog logo on the picture itself, so a saved or shared photo carries the brand.
-const LOGO = new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'img/logo2/stack.png'; });
+const LOGO = new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = 'img/logo2/logo3.png?v=1'; });
 async function brand(url, tint){
   const [img, logo] = await Promise.all([new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = url; }), LOGO]);
   // crop to the 4:5 frame people see, so the shared picture matches the screen

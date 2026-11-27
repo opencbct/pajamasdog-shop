@@ -29,7 +29,7 @@ export const FINE = JSON.parse(readFileSync(new URL('./policy_mail.json', import
 export const shell = (title, body, fine = false) => `<!doctype html><html><head><meta name="color-scheme" content="light only"><meta name="supported-color-schemes" content="light only"><style>:root{color-scheme:light only;supported-color-schemes:light only}</style></head><body bgcolor="#f6f4f1" style="margin:0;background:#f6f4f1;font-family:-apple-system,Helvetica,Arial,sans-serif;font-weight:300">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:28px 14px">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="max-width:520px;background:#fff;border-radius:18px">
-<tr><td style="padding:28px 28px 0"><img src="https://pajamasdog.com/img/logo2/classic.jpg?v=1" alt="PajamasDog" width="200" style="display:block;width:200px;height:auto;border-radius:12px"></td></tr>
+<tr><td style="padding:28px 28px 0"><img src="https://pajamasdog.com/img/logo2/logo3_mail.jpg?v=1" alt="PajamasDog" width="200" style="display:block;width:200px;height:auto;border-radius:12px"></td></tr>
 <tr><td style="padding:22px 28px 0;font-size:24px;color:#111">${title}</td></tr>
 ${body}
 <tr><td style="padding:24px 28px 28px;font-size:12px;color:#aaa"><a href="https://pajamasdog.com" style="color:#aaa;text-decoration:none">pajamas.Dog</a>${fine ? `<div style="margin-top:14px;padding-top:12px;border-top:1px solid #eee;font-size:9.5px;line-height:1.5;color:#b3b3b3">${FINE}</div>` : ''}</td></tr>

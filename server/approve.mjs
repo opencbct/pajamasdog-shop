@@ -49,7 +49,7 @@ const page = (title, body) => ({ statusCode: 200, headers: { 'content-type': 'te
 <style>body{margin:0;background:#15131c;color:#f2eef8;font-family:-apple-system,Helvetica,Arial,sans-serif;font-weight:300}main{max-width:460px;margin:0 auto;padding:28px 18px}
 h1{font-weight:300;font-size:26px;margin:8px 0 14px}p{line-height:1.6;opacity:.9;margin:0 0 10px}.box{background:#211e2b;border-radius:16px;padding:16px 18px;margin:16px 0}
 button{width:100%;border:0;border-radius:999px;background:#ff3d7f;color:#fff;font:inherit;font-size:18px;padding:16px;margin-top:10px;cursor:pointer}button:disabled{opacity:.5}
-input.code{width:100%;box-sizing:border-box;background:#211e2b;color:#fff;border:1px solid #3a3446;border-radius:14px;padding:14px;font:inherit;font-size:28px;letter-spacing:8px;text-align:center;margin-top:8px}.ok{color:#7ee2a8}.bad{color:#ff8a8a}small{opacity:.6}</style></head><body><main><img src="https://pajamasdog.com/img/logo2/stack.png?v=1" alt="PajamasDog" height="56">${body}</main></body></html>` });
+input.code{width:100%;box-sizing:border-box;background:#211e2b;color:#fff;border:1px solid #3a3446;border-radius:14px;padding:14px;font:inherit;font-size:28px;letter-spacing:8px;text-align:center;margin-top:8px}.ok{color:#7ee2a8}.bad{color:#ff8a8a}small{opacity:.6}</style></head><body><main><img src="https://pajamasdog.com/img/logo2/logo3.png?v=1" alt="PajamasDog" height="56">${body}</main></body></html>` });
 
 async function cjGet(token, path) { return fetch(`${CJ}${path}`, { headers: { 'CJ-Access-Token': token } }).then(r => r.json()).catch(() => ({})); }
 async function cjSend(token, method, path, body) {

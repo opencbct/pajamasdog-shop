@@ -23,7 +23,7 @@ export function trackingMail({ name, items, track, url, country, ids = [] }) {
   const html = `<!doctype html><html><head><meta name="color-scheme" content="light only"><meta name="supported-color-schemes" content="light only"><style>:root{color-scheme:light only;supported-color-schemes:light only}</style></head><body bgcolor="#f6f4f1" style="margin:0;background:#f6f4f1;font-family:-apple-system,Helvetica,Arial,sans-serif;font-weight:300">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:28px 14px">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="max-width:520px;background:#fff;border-radius:18px">
-<tr><td style="padding:28px 28px 0"><img src="https://pajamasdog.com/img/logo2/classic.jpg?v=1" alt="PajamasDog" width="200" style="display:block;width:200px;height:auto;border-radius:12px"></td></tr>
+<tr><td style="padding:28px 28px 0"><img src="https://pajamasdog.com/img/logo2/logo3_mail.jpg?v=1" alt="PajamasDog" width="200" style="display:block;width:200px;height:auto;border-radius:12px"></td></tr>
 <tr><td style="padding:22px 28px 0;font-size:24px;color:#111">Your order is on its way 🐾</td></tr>
 <tr><td style="padding:10px 28px 0;font-size:15px;line-height:1.6;color:#444">Hi ${esc(first)}, good news — your package just left our partner warehouse. Usual delivery is ${days} days.</td></tr>
 <tr><td style="padding:18px 28px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #eee;border-bottom:1px solid #eee">${list}</table></td></tr>
