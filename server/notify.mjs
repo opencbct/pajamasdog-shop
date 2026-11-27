@@ -32,7 +32,7 @@ export const shell = (title, body, fine = false) => `<!doctype html><html><head>
 <tr><td style="padding:28px 28px 0"><img src="https://pajamasdog.com/img/logo2/classic.jpg?v=1" alt="PajamasDog" width="200" style="display:block;width:200px;height:auto;border-radius:12px"></td></tr>
 <tr><td style="padding:22px 28px 0;font-size:24px;color:#111">${title}</td></tr>
 ${body}
-<tr><td style="padding:24px 28px 28px;font-size:12px;color:#aaa">PajamasDog · pajamasdog.com${fine ? `<div style="margin-top:14px;padding-top:12px;border-top:1px solid #eee;font-size:9.5px;line-height:1.5;color:#b3b3b3">${FINE}</div>` : ''}</td></tr>
+<tr><td style="padding:24px 28px 28px;font-size:12px;color:#aaa"><a href="https://pajamasdog.com" style="color:#aaa;text-decoration:none">pajamas.Dog</a>${fine ? `<div style="margin-top:14px;padding-top:12px;border-top:1px solid #eee;font-size:9.5px;line-height:1.5;color:#b3b3b3">${FINE}</div>` : ''}</td></tr>
 </table></td></tr></table></body></html>`;
 export const p = t => `<tr><td style="padding:10px 28px 0;font-size:15px;line-height:1.6;color:#444">${t}</td></tr>`;
 export const btn = (href, label) => `<tr><td style="padding:22px 28px 0" align="center"><a href="${esc(href)}" style="display:inline-block;background:#111;color:#fff;text-decoration:none;font-size:16px;padding:14px 34px;border-radius:999px">${esc(label)}</a></td></tr>`;
