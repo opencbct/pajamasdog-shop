@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A gift for you — PajamasDog</title>
+<meta name="robots" content="noindex">
+<meta property="og:title" content="🎁 Someone sent your pup a gift!">
+<meta property="og:description" content="Tap to open your PajamasDog gift box.">
+<meta property="og:image" content="https://pajamasdog.com/img/logo2/classic.jpg">
+<link rel="icon" href="/favicon.ico?v=3" sizes="48x48">
+<meta name="theme-color" content="#15131c">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shop.css?v=3">
+<style>
+main{max-width:520px;text-align:center;padding-top:10px;min-height:70vh}
+h1{font-weight:300;font-size:28px;margin:14px 0 4px}
+.sub{opacity:.7;margin:0}
+.tap{background:none;border:0;cursor:pointer;display:block;margin:0 auto;padding:0}
+.tap .gbox{transform:scale(1.15);margin-top:70px;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:scale(1.15) translateY(-8px)}}
+.tap .gbox.open,.tap .gbox.shake{animation-name:gshake}
+.tap .gbox.open{animation:none}
+.hint{margin:34px 0 0;font-size:15px;opacity:.85;animation:pump 2s ease-in-out infinite}
+.items{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:22px 0}
+.items a{background:var(--card);border-radius:16px;overflow:hidden;color:inherit;text-decoration:none;font-size:14px}
+.items img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.items span{display:block;padding:8px 10px 10px}
+.after{opacity:0;transform:translateY(16px);transition:all .7s}
+.after.on{opacity:1;transform:none}
+.err{opacity:.8;margin-top:60px}
+</style>
+</head>
+<body>
+<header>
+  <a href="/" aria-label="PajamasDog home"><img class="hlogo hv" src="img/logo2/classic.webp?v=2" alt="PajamasDog"></a>
+</header>
+<main id="m"><p class="sub" style="margin-top:60px">Loading your gift…</p></main>
+<footer><a href="/" class="flogo" aria-label="PajamasDog home"><img src="img/logo2/classic.webp?v=2" alt=""></a>The real parcel arrives by mail · <a href="help.html" style="text-decoration:underline">Order help</a> · <a href="privacy.html" style="text-decoration:underline">Privacy</a></footer>
+<script src="shop.js?v=7"></script>
+<script src="gift.js?v=1"></script>
+<script>
+// 11-26: the recipient's unboxing. ?g=<token> → server says what the buyer chose. ?demo=box|ribbon|inside|card shows a sample.
+(async () => {
+  const m = document.getElementById('m'), q = new URLSearchParams(location.search);
+  const W = await GIFTWRAP;
+  let g;
+  if(q.get('demo')){
+    const [box, ribbon, inside, card] = q.get('demo').split('|');
+    g = {box, ribbon, inside, card, to: 'Max', from: 'Aunt Jenny', msg: W.messages[0], items: [], demo: true};
+  } else {
+    try {
+      const r = await fetch(CHECKOUT_URL + '/gift?g=' + encodeURIComponent(q.get('g') || ''));
+      g = await r.json(); if(!r.ok) throw new Error(g.error);
+    } catch(e){
+      m.innerHTML = `<div class="big" style="font-size:60px;margin-top:40px">🎁</div><p class="err">${gEsc(e.message || 'This gift link is not valid.')}</p><a class="btn ghost" href="/" style="margin-top:20px">Visit PajamasDog</a>`;
+      return;
+    }
+  }
+  const o = GiftBox.pick(W, g);
+  // The items in the box (names + photos from our feed; never prices).
+  const feed = await fetch('products/feed.json').then(r => r.json()).catch(() => []);
+  const items = (g.items || []).map(id => feed.find(p => p.id === id)).filter(Boolean);
+  const photo = items[0]?.img || '';
+  m.innerHTML = `<h1>${g.to ? gEsc(g.to) + ', you' : 'You'} got a gift! 🎁</h1>
+    <p class="sub">${g.from ? 'From ' + gEsc(g.from) : 'Someone who loves your pup'}</p>
+    <button class="tap" aria-label="Open the gift">${GiftBox.html(o)}</button>
+    <p class="hint">Tap the box to open</p>
+    <div class="after">${GiftBox.card(o, g, photo)}
+      ${items.length ? `<p class="sub" style="margin-top:26px">Inside your box — arriving by mail:</p>
+        <div class="items">${items.map(p => `<a href="product.html?id=${encodeURIComponent(p.id)}"><img src="${gEsc(p.img)}" alt=""><span>${gEsc(p.name)}</span></a>`).join('')}</div>`
+        : g.demo ? '<p class="sub" style="margin-top:22px">(Sample gift — the real one shows the outfit inside.)</p>' : ''}
+      <a class="btn" href="show.html" style="margin-top:14px">Put your pup in our AI fashion show</a>
+      <a class="btn ghost" href="/" style="margin-top:10px">Send a gift back 🐾</a>
+    </div>`;
+  const tap = m.querySelector('.tap'), box = m.querySelector('.gbox');
+  tap.addEventListener('click', () => {
+    if(box.classList.contains('open') || box.classList.contains('shake')) return;
+    m.querySelector('.hint').remove(); box.classList.add('shake');
+    setTimeout(() => { box.classList.remove('shake'); box.classList.add('open'); GiftBox.fx(o.inside.fx); }, 1000);
+    setTimeout(() => m.querySelector('.after').classList.add('on'), 1700);
+  }, {once: false});
+})();
+</script>
+</body>
+</html>

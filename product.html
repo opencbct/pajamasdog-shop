@@ -55,6 +55,7 @@
 <script src="breeds.js?v=1"></script>
 <script src="sizefinder.js?v=1"></script>
 <script src="breedfit.js?v=1"></script>
+<script src="gift.js?v=1"></script>
 <script>
 (async () => {
   const q = new URLSearchParams(location.search);
@@ -79,7 +80,7 @@
       ${(p.sizes||[]).length ? `<div class="lbl2">Size</div><div class="sizes szs"></div>${p.cat==='pajamas' ? breedFitHTML(p) + sizeFinderHTML() : ''}` : ''}` : ''}
       <div class="ship">${p.src==='pd' ? 'Sold by PajamasDog. All sales final — <a href="returns.html" style="text-decoration:underline">Shipping &amp; Returns</a>.' : live ? `Sold, shipped and returned by ${shop}.` : 'Coming soon.'}${p.look && !look && !tried ? ' Photo shows a similar style.' : ''}</div>
       <div class="acts">
-        ${p.src==='pd' ? `<button class="btn" id="buy">${CHECKOUT_API ? 'Buy now' : 'Checkout opens soon'}</button>`
+        ${p.src==='pd' ? `<button class="btn" id="buy">${CHECKOUT_API ? 'Buy now' : 'Checkout opens soon'}</button>${CHECKOUT_API ? '<button class="btn ghost" id="gift">🎁 Send it as a gift</button>' : ''}`
           : live ? `<a class="btn" href="${linkOf(p)}" rel="sponsored noopener" target="_blank">See it on ${shop}</a>` : ''}
       </div>
     </div>`;
@@ -116,6 +117,13 @@
   bindSizeFinder(main, () => p, colorIdx, z => { size = z; drawSizes(); });
   bindBreedFit(main, () => p, colorIdx, z => { size = z; drawSizes(); });
   main.querySelector('#buy')?.addEventListener('click', () => { if(!size && (p.sizes||[]).length){ main.querySelector('.sf')?.setAttribute('open',''); main.querySelector('.szs')?.scrollIntoView({block:'center', behavior:'smooth'}); return; } payDirect([{id:p.id, size, c:colorIdx()}]); });
+  // 11-26: gift wrap = online unboxing (gift.js). Size first, then the gift sheet.
+  main.querySelector('#gift')?.addEventListener('click', async () => {
+    if(!size && (p.sizes||[]).length){ main.querySelector('.sf')?.setAttribute('open',''); main.querySelector('.szs')?.scrollIntoView({block:'center', behavior:'smooth'}); return; }
+    const P = await PRICES, v = priceSync(P, p, colorIdx(), size) || p.price;
+    GiftBuilder.open({photo: mainImg?.getAttribute('src') || p.img, total: v,
+      onBuy: gift => payDirect([{id:p.id, size, c:colorIdx()}], 'none', gift)});
+  });
 })();
 </script>
 </body>
