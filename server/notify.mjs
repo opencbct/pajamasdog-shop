@@ -34,6 +34,20 @@ export const shell = (title, body, fine = false) => `<!doctype html><html><head>
 ${body}
 <tr><td style="padding:24px 28px 28px;font-size:12px;color:#aaa"><a href="https://pajamasdog.com" style="color:#aaa;text-decoration:none">pajamas.Dog</a>${fine ? `<div style="margin-top:14px;padding-top:12px;border-top:1px solid #eee;font-size:9.5px;line-height:1.5;color:#b3b3b3">${FINE}</div>` : ''}</td></tr>
 </table></td></tr></table></body></html>`;
+// 11-27 형님: "영수증 같은 잠깐의 찬스에도 상품광고가 같이 가는 게 좋다" — 3 picks (2 outfits + 1 accessory) under customer e-mails.
+const PICKS = JSON.parse(readFileSync(new URL('./mail_picks.json', import.meta.url)));
+const shuffle = a => a.map(x => [Math.random(), x]).sort((x, y) => x[0] - y[0]).map(x => x[1]);
+export function picksHTML(exclude = [], from = 'receipt') {
+  const ex = new Set(exclude);
+  const pick = (cat, n) => shuffle(PICKS[cat].slice(0, 12).filter(x => !ex.has(x.id))).slice(0, n);
+  const list = [...pick('pajamas', 2), ...pick('acc', 1)];
+  if (!list.length) return '';
+  const cell = x => `<td width="33%" valign="top" style="padding:0 5px"><a href="https://pajamasdog.com/product.html?id=${encodeURIComponent(x.id)}&utm_source=email&utm_medium=${from}" style="text-decoration:none;color:#222">
+<img src="${esc(x.img)}" width="140" alt="" style="display:block;width:100%;max-width:140px;height:auto;border-radius:12px;background:#f2f0ec">
+<div style="font-size:13px;line-height:1.35;margin-top:7px;color:#333">${esc(x.name)}</div><div style="font-size:13px;color:#ff3d7f;margin-top:2px">$${Number(x.price).toFixed(2)}</div></a></td>`;
+  return `<tr><td style="padding:28px 23px 0"><div style="font-size:15px;color:#111;padding:0 5px 10px">You might also like 🐾</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>${list.map(cell).join('')}</tr></table></td></tr>`;
+}
 export const p = t => `<tr><td style="padding:10px 28px 0;font-size:15px;line-height:1.6;color:#444">${t}</td></tr>`;
 export const btn = (href, label) => `<tr><td style="padding:22px 28px 0" align="center"><a href="${esc(href)}" style="display:inline-block;background:#111;color:#fff;text-decoration:none;font-size:16px;padding:14px 34px;border-radius:999px">${esc(label)}</a></td></tr>`;
 export const rows = items => `<tr><td style="padding:18px 28px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #eee;border-bottom:1px solid #eee">${
@@ -78,7 +92,8 @@ export async function orderMails(session, cj) {
     + p(`Total ${money(session.amount_total)} · free shipping to ${esc(a.city)}, ${esc(a.state)}.<br>It leaves our partner warehouse in 1–3 days, and we e-mail the tracking number when it ships.`)
     + (session.metadata?.gift ? p(`🎁 <b>Your gift reveal is ready.</b> Send this link to ${esc(session.metadata.gift_to || 'them')} — they tap the box to unwrap it:`) + btn(giftLink(session.id), 'Open the gift reveal') : '')
     + p('Need to cancel? You can cancel for a full refund within 12 hours, before it ships.')
-    + btn(help, 'Cancel or get help'), true);
+    + btn(help, 'Cancel or get help')
+    + picksHTML(Object.entries(session.metadata || {}).filter(([k]) => k.startsWith('item_')).map(([, v]) => v.split('|')[0]), 'receipt'), true);
   const bText = `Hi ${first}, we got your PajamasDog order #${code}.\n${items.map(i => `- ${i.name} x ${i.qty}`).join('\n')}\nTotal ${money(session.amount_total)}, free shipping.\nWe e-mail the tracking number when it ships.\n${session.metadata?.gift ? `Gift reveal link: ${giftLink(session.id)}\n` : ''}Cancel within 12 hours or get help: ${help}`;
   await send(to, `Order #${code} confirmed — PajamasDog`, bHtml, bText);
 }
