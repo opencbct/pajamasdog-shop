@@ -92,7 +92,7 @@ h2{font-weight:300;font-size:28px;margin-bottom:16px}
 #grid .card,.row .card{background:#353049;overflow:visible;margin-top:30px;border-top-left-radius:0}
 #grid .card>.pw>.tag,.row .card>.pw>.tag{height:30px;display:flex!important;align-items:center;padding:0 16px 0 12px!important;background:#353049!important;border-radius:12px 12px 0 0!important}
 #grid .card>.pw>.tag::after,.row .card>.pw>.tag::after{content:"";position:absolute;right:-14px;bottom:0;width:14px;height:14px;background:radial-gradient(circle at 100% 0,transparent 13.5px,#353049 14px)}
-#grid .card .tag img.plg,.row .card .tag img.plg{height:22px!important;filter:none}
+#grid .card .tag img.plg,.row .card .tag img.plg{height:15px!important;filter:none;opacity:.8}
 .card img{width:calc(100% - 16px);margin:8px 8px 0;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:16px}
 .card .cap{padding:10px 14px 14px}
 .card .cap b{font-weight:400;font-size:16px;display:block}
@@ -498,7 +498,7 @@ footer .flogo img{width:100%;height:auto;display:block}
 // ---- Infinite scroll --------------------------------------------------------
 const grid = document.getElementById('grid'), more = document.getElementById('more');
 let cat='all', page=0, busy=false, done=false, run=0;
-const card = p => `<a class="card" href="product.html?id=${encodeURIComponent(p.id)}"><span class="pw"><span class="tag">${p.src==='pd' ? '<img class="plg" src="img/logo2/tab3.png?v=2" alt="PajamasDog">' : shopBadge(p.src||"sample", p.id, p.badge)}</span>${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:`<div class="ph" style="--c:${p.color||'#f3c6d6'}"><span>🐾</span></div>`}</span><div class="cap"><b>${p.name}</b><span>${p.note||''}</span>${p.price?`<em class="pr">$${p.price.toFixed(2)}</em>`:''}${p.pop>=100?`<i class="hot">🔥 In ${p.pop.toLocaleString('en-US')} shops</i>`:''}</div></a>`;
+const card = p => `<a class="card" href="product.html?id=${encodeURIComponent(p.id)}"><span class="pw"><span class="tag">${p.src==='pd' ? '<img class="plg" src="img/logo2/tab3.png?v=3" alt="PajamasDog">' : shopBadge(p.src||"sample", p.id, p.badge)}</span>${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:`<div class="ph" style="--c:${p.color||'#f3c6d6'}"><span>🐾</span></div>`}</span><div class="cap"><b>${p.name}</b><span>${p.note||''}</span>${p.price?`<em class="pr">$${p.price.toFixed(2)}</em>`:''}${p.pop>=100?`<i class="hot">🔥 In ${p.pop.toLocaleString('en-US')} shops</i>`:''}</div></a>`;
 async function loadNext(){
   if(busy||done) return; busy=true; const my=run;
   more.textContent='Loading more…';
