@@ -15,7 +15,8 @@ url = sys.argv[1] if len(sys.argv) > 1 else 'https://pajamas.dog'
 out = sys.argv[2] if len(sys.argv) > 2 else os.path.join(ROOT, 'img/qr/pajamas_dog.png')
 INK, BG = (21, 19, 28), (255, 255, 255)
 
-qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H, box_size=24, border=3)
+VER = int(os.environ.get('VER', '5')) or None   # bigger version = more, smaller dots
+qr = qrcode.QRCode(version=VER, error_correction=qrcode.constants.ERROR_CORRECT_H, box_size=24 if not VER else 30, border=3)
 qr.add_data(url); qr.make(fit=True)
 img = qr.make_image(image_factory=StyledPilImage, module_drawer=RoundedModuleDrawer(radius_ratio=1),
                     eye_drawer=RoundedModuleDrawer(radius_ratio=0.6),
@@ -24,12 +25,16 @@ W = img.size[0]
 
 # Logo badge in the middle: the dark classic logo on a rounded plate with a white ring (≈ 36% wide, ≈ 15% tall).
 logo = Image.open(os.path.join(ROOT, 'img/logo2/ink.png')).convert('RGBA')   # 11-27: no dark box — dark-letter logo on white
-lw = int(W * float(os.environ.get("LOGO", "0.46"))); lh = int(lw * logo.size[1] / logo.size[0])
+lw = int(W * float(os.environ.get("LOGO", "0.58"))); lh = int(lw * logo.size[1] / logo.size[0])
 logo = logo.resize((lw, lh), Image.LANCZOS)
-pad = int(W * 0.018)
-plate = Image.new('RGBA', (lw + 2 * pad, lh + 2 * pad), (0, 0, 0, 0))
-ImageDraw.Draw(plate).rounded_rectangle([0, 0, plate.size[0] - 1, plate.size[1] - 1], radius=int(lh * 0.32), fill=BG)
-mask = Image.new('L', (lw, lh), 0); ImageDraw.Draw(mask).rounded_rectangle([0, 0, lw - 1, lh - 1], radius=int(lh * 0.24), fill=255)
+# 11-27 형님 "코드 안에서 좀만 더 크게": clear only the dots under the logo's own shape (not a whole white box),
+# so more dots survive and the logo can be bigger.
+from PIL import ImageFilter
+pad = int(W * 0.022)
+sil = logo.getchannel('A').point(lambda a: 255 if a > 20 else 0)
+sil = Image.new('L', (lw + 2 * pad, lh + 2 * pad), 0); sil.paste(logo.getchannel('A').point(lambda a: 255 if a > 20 else 0), (pad, pad))
+sil = sil.filter(ImageFilter.MaxFilter(2 * (pad // 2) + 1)).filter(ImageFilter.MaxFilter(2 * (pad // 2) + 1))
+plate = Image.new('RGBA', sil.size, BG + (0,)); plate.putalpha(sil)
 plate.alpha_composite(logo, (pad, pad))
 img.alpha_composite(plate, ((W - plate.size[0]) // 2, (W - plate.size[1]) // 2))
 
