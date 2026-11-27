@@ -26,9 +26,9 @@ export async function send(to, subject, html, text, replyTo = REPLY) {
 // Same look as the tracking e-mail.
 // 11-26 형님: customer e-mails carry the Shipping & Returns policy in small print at the bottom.
 export const FINE = JSON.parse(readFileSync(new URL('./policy_mail.json', import.meta.url))).html;   // full Shipping & Returns, from returns.html (tools/policy_to_mail.py)
-export const shell = (title, body, fine = false) => `<!doctype html><html><body style="margin:0;background:#f6f4f1;font-family:-apple-system,Helvetica,Arial,sans-serif;font-weight:300">
+export const shell = (title, body, fine = false) => `<!doctype html><html><head><meta name="color-scheme" content="light only"><meta name="supported-color-schemes" content="light only"><style>:root{color-scheme:light only;supported-color-schemes:light only}</style></head><body bgcolor="#f6f4f1" style="margin:0;background:#f6f4f1;font-family:-apple-system,Helvetica,Arial,sans-serif;font-weight:300">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:28px 14px">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background:#fff;border-radius:18px">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="max-width:520px;background:#fff;border-radius:18px">
 <tr><td style="padding:28px 28px 0"><img src="https://pajamasdog.com/img/logo2/classic.jpg?v=1" alt="PajamasDog" width="200" style="display:block;width:200px;height:auto;border-radius:12px"></td></tr>
 <tr><td style="padding:22px 28px 0;font-size:24px;color:#111">${title}</td></tr>
 ${body}
