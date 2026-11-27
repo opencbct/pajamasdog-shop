@@ -61,7 +61,9 @@ export async function partnerApprove(event) {
 <p style="margin-top:14px">📱 폰 인증 앱(PajamasDog approve)의 6자리 숫자</p><input name="c" inputmode="numeric" maxlength="6" required placeholder="••••••">
 <button>승인하고 코드 만들기</button></form>`);
   if (!phoneCodeOk(q.c)) { await new Promise(r => setTimeout(r, 1500)); return page('파트너 승인', `<h1 class="bad">폰 인증 숫자가 틀렸어요</h1>${info}<p>아무것도 안 만들었어요. 메일의 버튼으로 다시 해 주세요.</p>`); }
-  const form = new URLSearchParams({ 'promotion[type]': 'coupon', 'promotion[coupon]': PARTNER_COUPON, code,   // newer Stripe API shape 'metadata[partner]': code, 'metadata[handle]': a.handle, 'metadata[platform]': a.platform,
+  // newer Stripe API shape: promotion[type]=coupon + promotion[coupon]
+  const form = new URLSearchParams({ 'promotion[type]': 'coupon', 'promotion[coupon]': PARTNER_COUPON, code,
+    'metadata[partner]': code, 'metadata[handle]': a.handle, 'metadata[platform]': a.platform,
     'metadata[email]': a.email, 'metadata[paypal]': a.paypal, 'metadata[name]': a.name });
   const pc = await stripe('promotion_codes', form);
   if (!pc.id) return page('파트너 승인', `<h1 class="bad">코드를 못 만들었어요</h1>${info}<p>Stripe: ${esc(pc.error?.message || '?')}</p><p>코드 ${esc(code)} 이 이미 있거나, 쿠폰 ${PARTNER_COUPON} 이 없거나, 키 권한이 없을 수 있어요.</p>`);
