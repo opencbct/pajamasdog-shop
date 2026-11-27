@@ -11,6 +11,7 @@ import { cjSweep } from './sweep.mjs';
 import { orderMails, helpRequest } from './notify.mjs';
 import { approve } from './approve.mjs';
 import { giftData, giftLinkFor } from './gift.mjs';
+import { welcome } from './welcome.mjs';
 import crypto from 'node:crypto';
 import { readFileSync } from 'node:fs';
 const CATALOG = JSON.parse(readFileSync(new URL('./catalog.json', import.meta.url)));
@@ -63,6 +64,7 @@ async function createCheckout(req) {
     form.append(`line_items[${n}][price_data][product_data][name]`, 'Digital gift reveal · Premium (online unboxing link, nothing extra is shipped)');
     form.append(`line_items[${n}][quantity]`, '1');
   }
+  form.append('allow_promotion_codes', 'true');   // 11-27: WELCOME10 (first order 10%)
   form.append('mode', 'payment');
   form.append('success_url', `${SITE}/thanks.html?s={CHECKOUT_SESSION_ID}`);
   form.append('cancel_url', `${SITE}/studio.html`);
@@ -164,6 +166,10 @@ export const handler = async (event) => {
     if (path.endsWith('/approve')) return await approve(event, cjToken);
     if (path.endsWith('/gift')) return await giftData(new URLSearchParams(event.rawQueryString || '').get('g'));
     if (path.endsWith('/gift-link')) return await giftLinkFor(new URLSearchParams(event.rawQueryString || '').get('s'));
+    if (path.endsWith('/join')) {
+      const r = await welcome(JSON.parse(raw || '{}'));
+      return json(r.status, r.ok ? { ok: true } : { error: r.error });
+    }
     if (path.endsWith('/help')) {
       // Buyer's cancel / problem form. Sends e-mails only; refunds stay with 형님 in Stripe.
       const r = await helpRequest(JSON.parse(raw || '{}'), cjStatusOf);
