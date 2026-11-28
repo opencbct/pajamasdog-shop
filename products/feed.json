@@ -14124,5 +14124,79 @@
   "tags": [
    "socks"
   ]
+ },
+ {
+  "id": "cj-77242112",
+  "src": "pd",
+  "cat": "acc",
+  "pet": "cat",
+  "name": "Breakaway Cat Collar with Tracker Holder",
+  "note": "7 colors · Tracker not included",
+  "color": "#0cc0df",
+  "img": "https://cf.cjdropshipping.com/7bbbfd4d-e8b5-4376-bdec-883042e6300f.jpg",
+  "price": 16.99,
+  "price_max": 16.99,
+  "sizes": [],
+  "colors": [
+   "Red",
+   "Yellow",
+   "Purple",
+   "Black",
+   "Pink",
+   "Orange",
+   "Sky Blue"
+  ],
+  "tags": [
+   "collar"
+  ]
+ },
+ {
+  "id": "cj-01601300",
+  "src": "pd",
+  "cat": "acc",
+  "pet": "cat",
+  "name": "Reflective Breakaway Cat Collar · Tracker Pocket",
+  "note": "7 colors · Tracker not included",
+  "color": "#0cc0df",
+  "img": "https://oss-cf.cjdropshipping.com/product/2026/10/17/11/3d9bf5fc-ac2c-4166-bfbb-692131709480.jpg",
+  "price": 14.99,
+  "price_max": 14.99,
+  "sizes": [],
+  "colors": [
+   "Red",
+   "Orange",
+   "Pink",
+   "Black",
+   "Yellow",
+   "Purple",
+   "Light Blue"
+  ],
+  "tags": [
+   "collar"
+  ]
+ },
+ {
+  "id": "cj-81603300",
+  "src": "pd",
+  "cat": "acc",
+  "pet": "cat",
+  "name": "Soft Silicone Tracker Cat Collar",
+  "note": "6 colors · QR ID tag included · Tracker not included",
+  "color": "#0cc0df",
+  "img": "https://cf.cjdropshipping.com/quick/product/3df9dcd1-1674-4c93-9a75-0c82fb49dc2d.jpg",
+  "price": 17.99,
+  "price_max": 17.99,
+  "sizes": [],
+  "colors": [
+   "Black Reflective",
+   "Black Three Lines",
+   "Pink Reflective",
+   "Pink Three Lines",
+   "Sky Blue Reflective",
+   "Sky Blue Three Lines"
+  ],
+  "tags": [
+   "collar"
+  ]
  }
 ]

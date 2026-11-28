@@ -25,6 +25,7 @@ NAMES = {
  '00004352': 'Skull Halloween Sweater', '27769856': 'Knitted Pumpkin Sweater',
  '874C3C43': 'Denim High-top Sneakers', 'ED200D73': 'Canvas Denim Sneakers', '82750B4D': 'Breathable Denim Sneakers',
  '31638400': 'Full-leg Rain Boots with Suspenders', '59964162': 'Paw Print Pool Float', '01559552': 'Balloon Rain Boots (4-pack)',
+ '77242112': 'Breakaway Cat Collar with Tracker Holder', '01601300': 'Reflective Breakaway Cat Collar · Tracker Pocket', '81603300': 'Soft Silicone Tracker Cat Collar',
 }
 fp, cp = os.path.join(ROOT, 'products/feed.json'), os.path.join(ROOT, 'server/catalog.json')
 feed, cat = json.load(open(fp)), json.load(open(cp))

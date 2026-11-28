@@ -21495,6 +21495,102 @@
     "Blue-XL": 2399,
     "Blue-2XL": 2499
    }
+  },
+  "cj-77242112": {
+   "name": "Breakaway Cat Collar with Tracker Holder",
+   "price": 1699,
+   "cj_pid": "1585221163377242112",
+   "colors": [
+    "Red",
+    "Yellow",
+    "Purple",
+    "Black",
+    "Pink",
+    "Orange",
+    "Sky Blue"
+   ],
+   "sizes": [],
+   "variants": {
+    "Red": "1585221163461128192",
+    "Yellow": "1585221163465322496",
+    "Purple": "1585221163465322497",
+    "Black": "1585221163469516800",
+    "Pink": "1585221163469516801",
+    "Orange": "1585221163473711104",
+    "Sky Blue": "1585221163473711105"
+   },
+   "vprice": {
+    "Red": 1699,
+    "Yellow": 1699,
+    "Purple": 1699,
+    "Black": 1699,
+    "Pink": 1699,
+    "Orange": 1699,
+    "Sky Blue": 1699
+   }
+  },
+  "cj-01601300": {
+   "name": "Reflective Breakaway Cat Collar · Tracker Pocket",
+   "price": 1499,
+   "cj_pid": "2607110911501601300",
+   "colors": [
+    "Red",
+    "Orange",
+    "Pink",
+    "Black",
+    "Yellow",
+    "Purple",
+    "Light Blue"
+   ],
+   "sizes": [],
+   "variants": {
+    "Red": "2607110911501603200",
+    "Orange": "2607110911501604800",
+    "Pink": "2607110911501606400",
+    "Black": "2607110911501608100",
+    "Yellow": "2607110911501609700",
+    "Purple": "2607110911511601500",
+    "Light Blue": "2607110911511603100"
+   },
+   "vprice": {
+    "Red": 1499,
+    "Orange": 1499,
+    "Pink": 1499,
+    "Black": 1499,
+    "Yellow": 1499,
+    "Purple": 1499,
+    "Light Blue": 1499
+   }
+  },
+  "cj-81603300": {
+   "name": "Soft Silicone Tracker Cat Collar",
+   "price": 1799,
+   "cj_pid": "2501191442181603300",
+   "colors": [
+    "Black Reflective",
+    "Black Three Lines",
+    "Pink Reflective",
+    "Pink Three Lines",
+    "Sky Blue Reflective",
+    "Sky Blue Three Lines"
+   ],
+   "sizes": [],
+   "variants": {
+    "Black Reflective": "2501191442181603500",
+    "Black Three Lines": "2501191442181603700",
+    "Pink Reflective": "2501191442181603900",
+    "Pink Three Lines": "2501191442181604100",
+    "Sky Blue Reflective": "2501191442181604200",
+    "Sky Blue Three Lines": "2501191442181604400"
+   },
+   "vprice": {
+    "Black Reflective": 1799,
+    "Black Three Lines": 1799,
+    "Pink Reflective": 1799,
+    "Pink Three Lines": 1799,
+    "Sky Blue Reflective": 1799,
+    "Sky Blue Three Lines": 1799
+   }
   }
  },
  "wraps": {
