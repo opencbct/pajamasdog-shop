@@ -610,6 +610,9 @@ document.getElementById('heroPhoto')?.addEventListener('change', e => {
   }).join('');
   box.querySelectorAll('[data-go]').forEach(a => a.addEventListener('click', () => document.querySelector(`.chip[data-k="${a.dataset.go}"]`)?.click()));
 })();
+// 11-28: e-mail links like /?cat=coat#shop open the shop already filtered
+{ const k = new URLSearchParams(location.search).get('cat');
+  if (k) addEventListener('load', () => setTimeout(() => { const c = document.querySelector(`.chip[data-k="${CSS.escape(k)}"]`); if (c) { c.click(); document.getElementById('shop')?.scrollIntoView(); } }, 300)); }
 document.querySelectorAll('[data-go]').forEach(a => a.addEventListener('click', () => document.querySelector(`.chip[data-k="${a.dataset.go}"]`)?.click()));
 // 11-26 형님: product rows glide left as the page scrolls down (and back when scrolling up).
 // A row the shopper touches stops gliding for a few seconds so it never fights a swipe.
