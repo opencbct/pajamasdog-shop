@@ -14051,5 +14051,78 @@
   "pop": 75,
   "img_src": "https://cf.cjdropshipping.com/quick/product/b1e26095-9f4b-4878-925d-42831d540576.jpg",
   "badge": "01"
+ },
+ {
+  "id": "cj-31638400",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Full-leg Rain Boots with Suspenders",
+  "note": "S–XL",
+  "color": "#0cc0df",
+  "img": "https://oss-cf.cjdropshipping.com/product/2026/11/03/01/0e8691f7-e2da-429e-8f11-ae32516fc158_water.jpeg",
+  "price": 20.99,
+  "price_max": 21.99,
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "tags": [
+   "socks"
+  ]
+ },
+ {
+  "id": "cj-59964162",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Paw Print Pool Float",
+  "note": "2 colors · S–L",
+  "color": "#ff3d7f",
+  "img": "https://cf.cjdropshipping.com/72cf7fce-a809-4207-87bc-111c866f4d7a.jpg",
+  "price": 72.99,
+  "price_max": 84.99,
+  "sizes": [
+   "S",
+   "M",
+   "L"
+  ],
+  "colors": [
+   "Blue",
+   "Orange"
+  ],
+  "tags": [
+   "toy"
+  ]
+ },
+ {
+  "id": "cj-01559552",
+  "src": "pd",
+  "cat": "acc",
+  "name": "Balloon Rain Boots (4-pack)",
+  "note": "3 colors · XS–2XL",
+  "color": "#0cc0df",
+  "img": "https://cf.cjdropshipping.com/4b84b563-9be1-4910-bfdd-35837264332a.jpg",
+  "price": 21.99,
+  "price_max": 24.99,
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   "Yellow",
+   "Pink",
+   "Blue"
+  ],
+  "tags": [
+   "socks"
+  ]
  }
 ]

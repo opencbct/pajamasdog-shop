@@ -23,6 +23,8 @@ NAMES = {
  '51610000': 'Waterproof Plush Cushion', '87969025': 'Car Seat Belt Leash', '89140736': 'Car Carrier Bag',
  '41600900': 'Clear Bubble Backpack', '61608700': 'Simple Crossbody Carrier', '01600600': 'Foldable Carrier Bag',
  '00004352': 'Skull Halloween Sweater', '27769856': 'Knitted Pumpkin Sweater',
+ '874C3C43': 'Denim High-top Sneakers', 'ED200D73': 'Canvas Denim Sneakers', '82750B4D': 'Breathable Denim Sneakers',
+ '31638400': 'Full-leg Rain Boots with Suspenders', '59964162': 'Paw Print Pool Float', '01559552': 'Balloon Rain Boots (4-pack)',
 }
 fp, cp = os.path.join(ROOT, 'products/feed.json'), os.path.join(ROOT, 'server/catalog.json')
 feed, cat = json.load(open(fp)), json.load(open(cp))
