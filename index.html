@@ -70,6 +70,12 @@ header nav{display:flex;gap:18px;font-size:15px}
 .btn.big span{font-size:22px;margin-right:8px;vertical-align:-2px}
 .hero .privacy{font-size:12px;opacity:.7;margin-top:10px}
 .hero .privacy.fine{font-size:10.5px;line-height:1.35;opacity:.62;max-width:520px;font-weight:300}
+.catc-row{padding:0 16px 8px}
+.catc{position:relative;flex:0 0 38%;aspect-ratio:1;border-radius:20px;overflow:hidden;background:#353049 center/cover;scroll-snap-align:start;display:flex;align-items:flex-end;color:#fff}
+.catc::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(20,14,30,.82))}
+.catc b{position:relative;z-index:1;padding:0 12px 12px;font-weight:600;font-size:16px;line-height:1.15}
+.catc b small{display:block;font-weight:400;font-size:12px;opacity:.8}
+@media(min-width:768px){.catc{flex:0 0 15%}}
 .cats-row.under{padding:0 16px;margin-top:0}
 .cats-row.under a{background:var(--card)}
 .cats-row.under a:first-child{background:var(--card)}
@@ -209,7 +215,8 @@ footer .flogo img{width:100%;height:auto;display:block}
 </div>
 
 <div class="sec" style="padding-top:18px">
-  <div class="cats-row under"><a href="#shop" data-go="dogs"><span>🐶</span>Dogs</a><a href="#shop" data-go="pajamas"><span>👕</span>Pajamas</a><a href="#shop" data-go="hat"><span>🧶</span>Hats</a><a href="#shop" data-go="tie"><span>🎀</span>Bow ties</a><a href="#shop" data-go="harness"><span>🦮</span>Harness &amp; leash</a><a href="#shop" data-go="bowl"><span>🥣</span>Bowls</a></div>
+  <div class="hd"><h2>Shop by category</h2></div>
+  <div class="row catc-row" id="catCards"></div>
 </div>
 
 <div class="sec" id="looks">
@@ -235,6 +242,13 @@ footer .flogo img{width:100%;height:auto;display:block}
     <button class="chip" data-k="tie">Bow ties</button>
     <button class="chip" data-k="harness">Harness &amp; leash</button>
     <button class="chip" data-k="bowl">Bowls</button>
+    <button class="chip" data-k="coat">Coats</button>
+    <button class="chip" data-k="sweater">Sweaters</button>
+    <button class="chip" data-k="dress">Dresses</button>
+    <button class="chip" data-k="costume">Costumes</button>
+    <button class="chip" data-k="socks">Boots</button>
+    <button class="chip" data-k="carrier">Carriers</button>
+    <button class="chip" data-k="cats">Cats</button>
   </div>
   <div class="grid" id="grid"></div>
   <div id="more" class="more">Loading more…</div>
@@ -578,6 +592,23 @@ document.getElementById('heroPhoto')?.addEventListener('change', e => {
     out.push(`<i class="${star?'star':''}" style="left:${x}%;top:${y}%;width:${sz}px;height:${sz}px;--d:${(2.2+Math.random()*3).toFixed(2)}s;--w:${(-Math.random()*5).toFixed(2)}s;--o:${(.45+Math.random()*.5).toFixed(2)}"></i>`);
   }
   box.innerHTML = out.join('');
+})();
+// 11-28 형님: photo category cards under "AI fun" (our own products only; the picture = a top item of that category)
+(async () => {
+  const CATS = [['pajamas','Pajamas'],['coat','Coats & jackets'],['sweater','Sweaters'],['dress','Dresses'],['costume','Costumes'],
+                ['socks','Boots'],['hat','Hats'],['harness','Harness & leash'],['carrier','Carriers'],['cats','For cats'],['bowl','Bowls']];
+  // hand-picked cover photo per category (real pet wearing it, no infographics); falls back to the most popular item
+  const PIC = {pajamas:'cj-21179136', coat:'cj-66403584', sweater:'cj-49382400', dress:'cj-97129216', costume:'cj-61628400', socks:'cj-CA087DF3',
+               hat:'cj-E644C3E2', harness:'cj-33835264', carrier:'cj-51625100', cats:'pd-23', bowl:'cj-99130113'};
+  const box = document.getElementById('catCards'); if (!box) return;
+  const all = (await (await fetch('products/feed.json')).json()).filter(p => p.src === 'pd' && p.img);
+  const has = (p, k) => k === 'cats' ? p.pet === 'cat' : (p.cat === k || (p.tags || []).includes(k));
+  box.innerHTML = CATS.map(([k, label]) => {
+    const list = all.filter(p => has(p, k)); if (list.length < 3) return '';
+    const pic = (list.find(p => p.id === PIC[k]) || list.sort((a, b) => (b.pop || 0) - (a.pop || 0))[0]).img;
+    return `<a class="catc" href="#shop" data-go="${k}" style="background-image:url('${pic}')"><b>${label}<small>${list.length} items</small></b></a>`;
+  }).join('');
+  box.querySelectorAll('[data-go]').forEach(a => a.addEventListener('click', () => document.querySelector(`.chip[data-k="${a.dataset.go}"]`)?.click()));
 })();
 document.querySelectorAll('[data-go]').forEach(a => a.addEventListener('click', () => document.querySelector(`.chip[data-k="${a.dataset.go}"]`)?.click()));
 // 11-26 형님: product rows glide left as the page scrolls down (and back when scrolling up).
